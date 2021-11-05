@@ -1,10 +1,10 @@
-let _sequelize  = null;
+let _sequelize = null;
 
 function getConnection() {
-    if (_sequelize ) {
-        return _sequelize 
+    if (_sequelize) {
+        return _sequelize
     } else {
-        const _sequelize  = new Sequelize({
+        const _sequelize = new Sequelize({
             dialect: 'sqlite',
             storage: '~/.coctohug-web/db/coctohug.sqlite',
             pool: {
@@ -15,6 +15,10 @@ function getConnection() {
             }
         });
 
-        return _sequelize ;
+        return _sequelize;
     }
 }
+
+module.exports = {
+    getConnection
+};
