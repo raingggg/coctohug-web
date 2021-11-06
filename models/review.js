@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const { getConnection } = require('../utils/sql-connection');
+const { getConnection } = require('../utils/sqlConnection');
 
 sequelize = getConnection();
 const ReviewPlotCount = sequelize.define('ReviewPlotCount', {
