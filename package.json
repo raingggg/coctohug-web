@@ -9,6 +9,7 @@
     "less": "lessc public/stylesheets/style.less public/stylesheets/style.css"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "cookie-parser": "~1.4.4",
     "cron": "^1.8.2",
     "debug": "~2.6.9",
@@ -16,8 +17,8 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "i18n": "^0.13.3",
+    "log4js": "^6.3.0",
     "morgan": "~1.9.1",
-    "nexpect": "^0.6.0",
     "node-dir": "^0.1.17",
     "sequelize": "^6.9.0",
     "sqllite": "^1.1.2"

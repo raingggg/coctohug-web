@@ -1,22 +1,22 @@
-const os = require('os');
 const fs = require('fs');
-const path = require('path');
 const { promisify } = require('util');
 const exec = promisify(require('child_process').exec);
-const stat = util.promisify(fs.stat);
-const nexpect = require('nexpect');
-var dir = require('node-dir');
+const dir = require('node-dir');
 const {
-    parseFarm,
-    parseWallet,
-    parseBlockchain,
-    parseConnecitons,
-    parseKeys,
-    parsePlots
+  parseFarm,
+  parseWallet,
+  parseBlockchain,
+  parseConnecitons,
+  parseKeys,
+  parsePlots
 } = require('./chiaParser');
-let { blockchainConfig: { binary, mainnet } } = require('./chiaConfig');
-binary = path.resolve(os.homedir(), binary);
-mainnet = path.resolve(os.homedir(), mainnet);
+const { blockchainConfig: { binary, mainnet, config } } = require('./chiaConfig');
+const { logger } = require('./logger');
+
+const stat = promisify(fs.stat);
+const readFile = promisify(fs.readFile);
+const copyFile = promisify(fs.copyFile);
+const writeFile = promisify(fs.writeFile);
 
 const G_SIZE = 1024 * 1024 * 1024;
 
@@ -38,178 +38,195 @@ const G_SIZE = 1024 * 1024 * 1024;
 //     "hddcoin": "/root/.hddcoin/mainnet",
 // };
 const TIMEOUT_1MINUTE = 60 * 1000;
-const TIMEOUT_2MINUTE = 2 * TIMEOUT_1MINUTE;
 const loadFarmSummary = async () => {
-    let result = '';
+  let result = '';
 
-    try {
-        const cmdOutput = await exec(`${binary} farm summary`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
-        result = cmdOutput.stdout.trim();
-    } catch (e) {
-        console.log(e);
-    }
-    // console.log(result);
-    return parseFarm(result);
+  try {
+    const cmdOutput = await exec(`${binary} farm summary`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
+    result = cmdOutput.stdout.trim();
+  } catch (e) {
+    logger.error(e);
+  }
+
+  return parseFarm(result);
 };
 
 const loadWalletShow = async () => {
-    try {
-        nexpect.spawn(`${binary} wallet show`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' })
-            .expect("Wallet height:")
-            .run(function (err, re) {
-                if (err) {
-                    console.log("No wallet heigt: ", err)
-                    nexpect.spawn(`${binary} wallet show`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' })
-                        .wait("Choose wallet key:")
-                        .sendline("1")
-                        .run(function (err, re) {
-                            if (err) {
-                                console.log("multiple wallets: ", err);
-                                nexpect.spawn(`${binary} wallet show`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' })
-                                    .wait("Choose wallet key:")
-                                    .sendline("1")
-                                    .wait("No online backup file found")
-                                    .sendline("S")
-                                    .run(function (err, re) {
-                                        if (err) {
-                                            console.log("multiple wallets: ", err)
-                                        } else {
-                                            console.log("actual result:", re);
-                                            return parseWallet(re);
-                                        }
-                                    });
-                            } else {
-                                console.log("actual result for the first wallet:", re);
-                                return parseWallet(re);
-                            }
-                        });
-                } else {
-                    console.log("actual result for one wallet:", re);
-                    return parseWallet(re);
-                }
-            });
-    } catch (e) {
-        console.log(e);
+  const spawn = require('child_process').spawn;
+  const sp = spawn(binary, ['wallet', 'show'], { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
+
+  sp.stdout.on('data', (data) => {
+    logger.info(`stdout: ${data}`);
+    if (data) {
+      if (data.includes("Wallet height:")) {
+        return parseWallet(data.toString());
+      } else if (data.includes("Choose wallet key:")) {
+        sp.stdin.write("1\n");
+      } else if (data.includes("No online backup file found:")) {
+        sp.stdin.write("S\n");
+      }
     }
+  });
+
+  sp.stderr.on('data', (data) => {
+    logger.error(`stderr: ${data}`);
+  });
+
+  sp.on('close', (code) => {
+    logger.info(`child process exited with code ${code}`);
+  });
 };
 
-const loadPlotNFTShow = async () => {
-    try {
-        nexpect.spawn(`${binary} plotnft show`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' })
-            .expect("Wallet height:")
-            .run(function (err, re) {
-                if (err) {
-                    console.log("No wallet heigt: ", err)
-                    nexpect.spawn(`${binary} plotnft show`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' })
-                        .wait("Choose wallet key:")
-                        .sendline("1")
-                        .run(function (err, re) {
-                            if (err) {
-                                console.log("multiple wallets: ", err);
-                                nexpect.spawn(`${binary} plotnft show`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' })
-                                    .wait("Choose wallet key:")
-                                    .sendline("1")
-                                    .wait("No online backup file found")
-                                    .sendline("S")
-                                    .run(function (err, re) {
-                                        if (err) {
-                                            console.log("multiple wallets: ", err)
-                                        } else {
-                                            console.log("actual result:", re);
-                                            return parseWallet(re);
-                                        }
-                                    });
-                            } else {
-                                console.log("actual result for the first wallet:", re);
-                                return parseWallet(re);
-                            }
-                        });
-                } else {
-                    console.log("actual result for one wallet:", re);
-                    return parseWallet(re);
-                }
-            });
-    } catch (e) {
-        console.log(e);
+const loadPlotnftShow = async () => {
+  const spawn = require('child_process').spawn;
+  const sp = spawn(binary, ['plotnft', 'show'], { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
+
+  sp.stdout.on('data', (data) => {
+    logger.info(`stdout: ${data}`);
+    if (data) {
+      if (data.includes("Wallet height:")) {
+        return parseWallet(data.toString());
+      } else if (data.includes("Choose wallet key:")) {
+        sp.stdin.write("1\n");
+      } else if (data.includes("No online backup file found:")) {
+        sp.stdin.write("S\n");
+      }
     }
+  });
+
+  sp.stderr.on('data', (data) => {
+    logger.error(`stderr: ${data}`);
+  });
+
+  sp.on('close', (code) => {
+    logger.info(`child process exited with code ${code}`);
+  });
 };
 
 const loadBlockchainShow = async () => {
-    let result = '';
+  let result = '';
 
-    try {
-        const cmdOutput = await exec(`${binary} show --state`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
-        result = cmdOutput.stdout.trim();
-    } catch (e) {
-        console.log(e);
-    }
-    console.log(result);
-    return parseBlockchain(result);
+  try {
+    const cmdOutput = await exec(`${binary} show --state`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
+    result = cmdOutput.stdout.trim();
+  } catch (e) {
+    logger.error(e);
+  }
+  logger.info(result);
+  return parseBlockchain(result);
 };
 
 const loadConnectionsShow = async () => {
-    let result = '';
+  let result = '';
 
-    try {
-        const cmdOutput = await exec(`${binary} show --connections`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
-        result = cmdOutput.stdout.trim();
-    } catch (e) {
-        console.log(e);
-    }
-    console.log(result);
-    return parseConnecitons(result);
+  try {
+    const cmdOutput = await exec(`${binary} show --connections`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
+    result = cmdOutput.stdout.trim();
+  } catch (e) {
+    logger.error(e);
+  }
+  logger.info(result);
+  return parseConnecitons(result);
 };
 
 const loadKeysShow = async () => {
-    let result = '';
+  let result = '';
 
-    try {
-        const cmdOutput = await exec(`${binary} keys show`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
-        result = cmdOutput.stdout.trim();
-    } catch (e) {
-        console.log(e);
-    }
-    console.log(result);
-    return parseKeys(result);
+  try {
+    const cmdOutput = await exec(`${binary} keys show`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
+    result = cmdOutput.stdout.trim();
+  } catch (e) {
+    logger.error(e);
+  }
+  logger.info(result);
+  return parseKeys(result);
 };
 
 const loadPlots = async () => {
-    allEntries = [];
+  allEntries = [];
 
-    process.env['plots_dir'].split(':').forEach((dirPath) => {
-        try {
-            const allFiles = await dir.promiseFiles(dirPath);
-            const plotFiles = allFiles.filter(f => f.endsWith('.plot'));
-            for (let i = 0; i < plotFiles.length; i++) {
-                const bSize = await stat(plotFiles[i]);
-                const gSize = bSize / G_SIZE;
-                allEntries.push({
-                    file: plotFiles[i],
-                    size: gSize
-                });
-            }
-        }
-        catch (e) {
-            console.log(e);
-        }
-    });
+  const dirs = process.env['plots_dir'].split(':');
+  for (let p = 0; p < dirs.length; p++) {
+    const dirPath = dirs[p];
+    try {
+      const allFiles = await dir.promiseFiles(dirPath);
+      const plotFiles = allFiles.filter(f => f.endsWith('.plot'));
+      for (let i = 0; i < plotFiles.length; i++) {
+        const bSize = await stat(plotFiles[i]);
+        const gSize = bSize / G_SIZE;
+        allEntries.push({
+          file: plotFiles[i],
+          size: gSize
+        });
+      }
+    }
+    catch (e) {
+      logger.error(e);
+    }
+  }
 
-    return allEntries;
+  return allEntries;
+};
+
+const loadConfig = async () => {
+  let content = '';
+  try {
+    content = await readFile(config);
+  } catch (e) {
+    logger.error(e);
+  }
+  return content;
+};
+
+const saveConfig = async (newConfig) => {
+  try {
+    await copyFile(config, `${copyFile}.${new Date()}`);
+    await writeFile(config, newConfig);
+  } catch (e) {
+    logger.error(e);
+  }
+};
+
+const addConnection = async () => {
+
+};
+
+const removeConnection = async () => {
+
+};
+
+const isPlotsCheckRunning = async () => {
+
+};
+
+const checkPlots = async () => {
+
+};
+
+const getPoolLoginLink = async () => {
+
 };
 
 // loadFarmSummary();
 // loadWalletShow();
-// loadPlotNFTShow();
+// loadPlotnftShow();
 // loadBlockchainShow();
 // loadConnectionsShow();
 // loadKeysShow();
 
 module.exports = {
-    loadFarmSummary,
-    loadWalletShow,
-    loadPlotNFTShow,
-    loadBlockchainShow,
-    loadConnectionsShow,
-    loadKeysShow,
-    loadPlots,
+  loadFarmSummary,
+  loadWalletShow,
+  loadPlotnftShow,
+  loadBlockchainShow,
+  loadConnectionsShow,
+  loadKeysShow,
+  loadPlots,
+  loadConfig,
+  saveConfig,
+  addConnection,
+  removeConnection,
+  isPlotsCheckRunning,
+  checkPlots,
+  getPoolLoginLink,
 }

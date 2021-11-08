@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const { getConnection } = require('../utils/sqlConnection');
 
 sequelize = getConnection();
-const Keys = sequelize.define('Keys', {
+const Key = sequelize.define('Key', {
     hostname: { type: DataTypes.STRING, primaryKey: true },
     blockchain: { type: DataTypes.STRING(70), primaryKey: true },
     details: { type: DataTypes.TEXT },
@@ -11,5 +11,5 @@ const Keys = sequelize.define('Keys', {
 });
 
 module.exports = {
-    Keys
+    Key
 };
