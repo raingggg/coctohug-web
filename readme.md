@@ -1,17 +1,6 @@
-# todo
-- get_signage_points: rpc
-- get_pool_state: rpc
-- get_all_plots: rpc
-- load_farm_summary: {0} farm summary
-- load_wallet_show: {0} wallet show
-- load_plotnft_show: {0} plotnft show
-- load_blockchain_show: {0} show --state
-- load_connections_show: {0} show --connections
-- load_keys_show: {0} keys show
-- add_connection
-- remove_connection: {0} show --remove-connection {1}
-- add_connection: {0} show --add-connection {1}
-- get_pool_login_link: chia plotnft get_login_link -l {0}
+# web
+- a web ui to show the chia forks farming status
+
 
 
 

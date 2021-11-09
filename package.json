@@ -1,7 +1,7 @@
 {
-  "name": "tiny-express-template",
-  "version": "0.0.0",
-  "private": true,
+  "name": "coctohug-web",
+  "version": "0.0.1",
+  "private": false,
   "main": "index.js",
   "scripts": {
     "start": "node ./test/test",
