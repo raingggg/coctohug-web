@@ -5,6 +5,7 @@ const CONTROLLER_HOST = process.env['controller_host'] || 'localhost'
 const CONTROLLER_PORT = process.env['controller_api_port'] || '3000';
 const MODE = process.env['mode'];
 
+const SQL_LOG = false;
 const CONTROLLER_SCHEME = 'http';
 const blockchainConfig = require(CONFIG_FILENAME);
 
@@ -34,6 +35,7 @@ const getSqlitePath = () => {
 }
 
 module.exports = {
+  SQL_LOG,
   blockchainConfig,
   getHostname,
   getControllerUrl,

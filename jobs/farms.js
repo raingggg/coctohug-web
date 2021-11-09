@@ -10,6 +10,7 @@ const { loadFarmSummary } = require('../utils/chiaClient');
 
 const mode = getMode();
 const hostname = getHostname();
+const controllerUrl = getControllerUrl();
 
 const updateFarm = async () => {
   try {
@@ -19,7 +20,7 @@ const updateFarm = async () => {
       blockchain,
       mode,
     });
-    await axios.post(`${controllerUrl}/farms/update`, payload);
+    axios.post(`${controllerUrl}/farms/update`, payload);
   } catch (e) {
     logger.error(e);
   }

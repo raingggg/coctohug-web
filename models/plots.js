@@ -1,4 +1,5 @@
 const { DataTypes } = require('sequelize');
+
 const { getConnection } = require('../utils/sqlConnection');
 
 sequelize = getConnection();
@@ -9,7 +10,7 @@ const Plot = sequelize.define('Plot', {
     file: { type: DataTypes.STRING },
     size: { type: DataTypes.INTEGER },
 }, {
-    // Other model options go here
+    
 });
 
 module.exports = {

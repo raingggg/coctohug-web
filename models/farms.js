@@ -1,4 +1,5 @@
 const { DataTypes } = require('sequelize');
+
 const { getConnection } = require('../utils/sqlConnection');
 
 sequelize = getConnection();
@@ -13,7 +14,7 @@ const Farm = sequelize.define('Farm', {
   netspace_size: { type: DataTypes.REAL },
   expected_time_to_win: { type: DataTypes.STRING(64) },
 }, {
-  // Other model options go here
+  
 });
 
 const syncTable = async () => {

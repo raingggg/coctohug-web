@@ -1,6 +1,7 @@
 const fs = require('fs');
 const { promisify } = require('util');
 const exec = promisify(require('child_process').exec);
+
 const dir = require('node-dir');
 const {
   parseFarm,
@@ -47,11 +48,11 @@ const loadFarmSummary = async () => {
   } catch (e) {
     logger.error(e);
   }
-
+  logger.debug(result);
   return parseFarm(result);
 };
 
-const loadWalletShow = async () => {
+const loadWalletShowCallback = async (done) => {
   const spawn = require('child_process').spawn;
   const sp = spawn(binary, ['wallet', 'show'], { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
 
@@ -59,7 +60,7 @@ const loadWalletShow = async () => {
     logger.info(`stdout: ${data}`);
     if (data) {
       if (data.includes("Wallet height:")) {
-        return parseWallet(data.toString());
+        return done(null, parseWallet(data.toString()));
       } else if (data.includes("Choose wallet key:")) {
         sp.stdin.write("1\n");
       } else if (data.includes("No online backup file found:")) {
@@ -70,14 +71,17 @@ const loadWalletShow = async () => {
 
   sp.stderr.on('data', (data) => {
     logger.error(`stderr: ${data}`);
+    return done(data);
   });
 
   sp.on('close', (code) => {
     logger.info(`child process exited with code ${code}`);
+    return done(code);
   });
 };
+const loadWalletShow = promisify(loadWalletShowCallback);
 
-const loadPlotnftShow = async () => {
+const loadPlotnftShowCallback = async (done) => {
   const spawn = require('child_process').spawn;
   const sp = spawn(binary, ['plotnft', 'show'], { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
 
@@ -85,7 +89,7 @@ const loadPlotnftShow = async () => {
     logger.info(`stdout: ${data}`);
     if (data) {
       if (data.includes("Wallet height:")) {
-        return parseWallet(data.toString());
+        return done(null, parseWallet(data.toString()));
       } else if (data.includes("Choose wallet key:")) {
         sp.stdin.write("1\n");
       } else if (data.includes("No online backup file found:")) {
@@ -96,12 +100,15 @@ const loadPlotnftShow = async () => {
 
   sp.stderr.on('data', (data) => {
     logger.error(`stderr: ${data}`);
+    return done(data);
   });
 
   sp.on('close', (code) => {
     logger.info(`child process exited with code ${code}`);
+    return done(code);
   });
 };
+const loadPlotnftShow = promisify(loadPlotnftShowCallback);
 
 const loadBlockchainShow = async () => {
   let result = '';
@@ -112,7 +119,7 @@ const loadBlockchainShow = async () => {
   } catch (e) {
     logger.error(e);
   }
-  logger.info(result);
+  logger.debug(result);
   return parseBlockchain(result);
 };
 
@@ -125,7 +132,7 @@ const loadConnectionsShow = async () => {
   } catch (e) {
     logger.error(e);
   }
-  logger.info(result);
+  logger.debug(result);
   return parseConnecitons(result);
 };
 
@@ -138,7 +145,7 @@ const loadKeysShow = async () => {
   } catch (e) {
     logger.error(e);
   }
-  logger.info(result);
+  logger.debug(result);
   return parseKeys(result);
 };
 
@@ -207,12 +214,17 @@ const getPoolLoginLink = async () => {
 
 };
 
-// loadFarmSummary();
-loadWalletShow();
-// loadPlotnftShow();
-// loadBlockchainShow();
-// loadConnectionsShow();
-// loadKeysShow();
+
+// const at = async () => {
+//   const tresult = await loadFarmSummary();
+//   const tresult = await loadWalletShow();
+//   const tresult = await loadPlotnftShow();
+//   const tresult = await loadBlockchainShow();
+//   const tresult = await loadConnectionsShow();
+//   const tresult = await loadKeysShow();
+//   console.log('tresult: ', tresult);
+// };
+// at();
 
 module.exports = {
   loadFarmSummary,

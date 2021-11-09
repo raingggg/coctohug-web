@@ -6,7 +6,7 @@ const { Farm } = require('../models');
 router.post('/update', function (req, res, next) {
   try {
     const payload = req.body;
-    logger.info(payload);
+    logger.debug(payload);
     Farm.upsert(payload);
   } catch (e) {
     logger.error(e);

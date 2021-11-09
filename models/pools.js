@@ -1,4 +1,5 @@
 const { DataTypes } = require('sequelize');
+
 const { getConnection } = require('../utils/sqlConnection');
 
 sequelize = getConnection();
@@ -10,7 +11,7 @@ const Pool = sequelize.define('Pool', {
     login_link: { type: DataTypes.TEXT },
     pool_state: { type: DataTypes.TEXT },
 }, {
-    // Other model options go here
+    
 });
 
 module.exports = {

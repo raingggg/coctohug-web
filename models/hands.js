@@ -1,4 +1,5 @@
 const { DataTypes } = require('sequelize');
+
 const { getConnection } = require('../utils/sqlConnection');
 
 sequelize = getConnection();
@@ -14,7 +15,7 @@ const Hand = sequelize.define('Hand', {
     latest_ping_result: { type: DataTypes.TEXT },
     ping_success_at: { type: DataTypes.DATE, defaultValue: DataTypes.NOW }
 }, {
-    // Other model options go here
+    
 });
 
 module.exports = {

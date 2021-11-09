@@ -5,6 +5,7 @@ const {
   updateFarm,
   updateConnection,
   updateKey,
+  updateBlockchain,
 } = require('../jobs');
 
 const everyMinute = '*/1 * * * *';
@@ -12,27 +13,31 @@ const every2Minute = '*/2 * * * *';
 const every5Minute = '*/5 * * * *';
 
 const oneMinuteJob = new CronJob(everyMinute, async () => {
+  logger.info('oneMinuteJob start');
   await updateWallet();
   await updateConnection();
-  logger.info('oneMinuteJob started');
+  await updateBlockchain();
+  logger.info('oneMinuteJob end');
 }, null, true, 'America/Los_Angeles');
 
 const twoMinuteJob = new CronJob(every2Minute, async () => {
-  logger.info('twoMinuteJob started');
+  logger.info('twoMinuteJob start');
+  logger.info('twoMinuteJob end');
 }, null, true, 'America/Los_Angeles');
 
 const fiveMinuteJob = new CronJob(every5Minute, async () => {
+  logger.info('fiveMinuteJob start');
   await updateFarm();
   await updateKey();
-  logger.info('fiveMinuteJob started');
+  logger.info('fiveMinuteJob end');
 }, null, true, 'America/Los_Angeles');
 
 const startAllJobs = () => {
-  logger.info('starting all jobs');
-  oneMinuteJob.start();
-  twoMinuteJob.start();
-  fiveMinuteJob.start();
-  logger.info('all jobs started');
+  logger.info('all jobs start');
+  // oneMinuteJob.start();
+  // twoMinuteJob.start();
+  // fiveMinuteJob.start();
+  logger.info('all jobs end');
 };
 
 module.exports = {

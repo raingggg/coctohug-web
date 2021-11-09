@@ -1,1 +1,5 @@
-this is a summary
+<% data.forEach(function(dt){ %>
+  <div>hostname: <%= dt.hostname %></div>
+  <div>blockchain: <%= dt.blockchain %></div>
+  <div>details: <%= dt.details %></div>
+<% }); %>

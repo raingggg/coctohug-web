@@ -18,7 +18,7 @@ const updateConnection = async () => {
       blockchain,
       details: data,
     };
-    await axios.post(`${controllerUrl}/connections/update`, payload);
+    axios.post(`${controllerUrl}/connections/update`, payload);
   } catch (e) {
     logger.error(e);
   }

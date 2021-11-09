@@ -1,4 +1,5 @@
 const { DataTypes } = require('sequelize');
+
 const { getConnection } = require('../utils/sqlConnection');
 
 sequelize = getConnection();
@@ -10,7 +11,7 @@ const News = sequelize.define('News', {
     service: { type: DataTypes.STRING(70) },
     message: { type: DataTypes.TEXT },
 }, {
-    // Other model options go here
+    
 });
 
 module.exports = {
