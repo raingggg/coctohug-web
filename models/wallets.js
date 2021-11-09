@@ -3,13 +3,18 @@ const { getConnection } = require('../utils/sqlConnection');
 
 sequelize = getConnection();
 const Wallet = sequelize.define('Wallet', {
-    hostname: { type: DataTypes.STRING, primaryKey: true },
-    blockchain: { type: DataTypes.STRING(70), primaryKey: true },
-    details: { type: DataTypes.TEXT },
+  hostname: { type: DataTypes.STRING, primaryKey: true },
+  blockchain: { type: DataTypes.STRING(70), primaryKey: true },
+  details: { type: DataTypes.TEXT },
 }, {
-    // Other model options go here
+  // Other model options go here
 });
 
+const syncTable = async () => {
+  await Wallet.sync();
+};
+syncTable();
+
 module.exports = {
-    Wallet
+  Wallet
 };

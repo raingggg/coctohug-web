@@ -1,6 +1,6 @@
 const { Blockchain } = require('./blockchains');
 const { Connection } = require('./connections');
-const { Farm } = require('./Farm');
+const { Farm } = require('./farms');
 const { Hand } = require('./hands');
 const { Key } = require('./keys');
 const { News } = require('./news');

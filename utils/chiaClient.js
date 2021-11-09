@@ -208,7 +208,7 @@ const getPoolLoginLink = async () => {
 };
 
 // loadFarmSummary();
-// loadWalletShow();
+loadWalletShow();
 // loadPlotnftShow();
 // loadBlockchainShow();
 // loadConnectionsShow();

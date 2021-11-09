@@ -16,6 +16,11 @@ const Farm = sequelize.define('Farm', {
   // Other model options go here
 });
 
+const syncTable = async () => {
+  await Farm.sync();
+};
+syncTable();
+
 module.exports = {
   Farm
 };

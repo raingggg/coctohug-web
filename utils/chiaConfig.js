@@ -2,7 +2,7 @@ const os = require('os');
 const path = require('path');
 const CONFIG_FILENAME = process.env['blockchain'] ? `/coctohug/web/${process.env['blockchain']}.json` : '../chia.json';
 const CONTROLLER_HOST = process.env['controller_host'] || 'localhost'
-const CONTROLLER_PORT = process.env['controller_api_port'] || '8926';
+const CONTROLLER_PORT = process.env['controller_api_port'] || '3000';
 const MODE = process.env['mode'];
 
 const CONTROLLER_SCHEME = 'http';
@@ -12,26 +12,31 @@ const homedir = os.homedir();
 const hostname = os.hostname();
 
 Object.assign(blockchainConfig, {
-    binary: path.resolve(homedir, blockchainConfig.binary),
-    mainnet: path.resolve(homedir, blockchainConfig.mainnet),
-    config: path.resolve(homedir, blockchainConfig.config),
+  binary: path.resolve(homedir, blockchainConfig.binary),
+  mainnet: path.resolve(homedir, blockchainConfig.mainnet),
+  config: path.resolve(homedir, blockchainConfig.config),
 });
 
 const getHostname = () => {
-    return process.env.worker_address || hostname;
+  return process.env.worker_address || hostname;
 };
 
 const getControllerUrl = () => {
-    return `${CONTROLLER_SCHEME}://${CONTROLLER_HOST}:${CONTROLLER_PORT}`;
+  return `${CONTROLLER_SCHEME}://${CONTROLLER_HOST}:${CONTROLLER_PORT}`;
 };
 
 const getMode = () => {
-    return MODE;
+  return MODE;
 };
 
+const getSqlitePath = () => {
+  return path.resolve(homedir, '.coctohug-web/db/coctohug.sqlite');
+}
+
 module.exports = {
-    blockchainConfig,
-    getHostname,
-    getControllerUrl,
-    getMode,
+  blockchainConfig,
+  getHostname,
+  getControllerUrl,
+  getMode,
+  getSqlitePath,
 };
