@@ -5,7 +5,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <% data.forEach(function(dt, index){ %>
             <li class="nav-item">
-              <a class="nav-link active" href="#" data-tab-index="<%= index %>"><%= dt.blockchain %></a>
+              <a class="nav-link nav-tab <%= index === 0 ? 'active' : '' %>" href="#" data-tabp-index="<%= index %>"><%= dt.blockchain %></a>
             </li>
           <% }); %>
         </ul>
@@ -14,7 +14,7 @@
   </nav>
 
   <% data.forEach(function(dt, index){ %>
-    <div class="col" data-panel-index="<%= index %>">
+    <div class="tab-panel <%= index === 0 ? '' : 'd-none' %>" data-panel-index="<%= index %>">
       <div>last_update: <%= dt.updatedAt %></div>
       <div>hostname: <%= dt.hostname %></div>
       <div>blockchain: <%= dt.blockchain %></div>
