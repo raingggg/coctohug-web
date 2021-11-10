@@ -1,8 +1,12 @@
-const { updateWallet } = require('./wallets');
-const { updateFarm } = require('./farms');
-const { updateConnection } = require('./connections');
-const { updateKey } = require('./keys');
-const { updateBlockchain } = require('./blockchains');
+const { isWebControllerMode } = require('../utils/chiaConfig');
+const isWebController = isWebControllerMode();
+
+const emptyObject = {};
+const { updateWallet } = isWebController ? emptyObject : require('./wallets');
+const { updateFarm } = isWebController ? emptyObject : require('./farms');
+const { updateConnection } = isWebController ? emptyObject : require('./connections');
+const { updateKey } = isWebController ? emptyObject : require('./keys');
+const { updateBlockchain } = isWebController ? emptyObject : require('./blockchains');
 
 module.exports = {
   updateWallet,

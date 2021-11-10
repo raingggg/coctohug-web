@@ -14,7 +14,7 @@ var { startAllJobs } = require('../utils/statusJobs');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.worker_web_port || '12630');
 app.set('port', port);
 
 /**
@@ -95,6 +95,7 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.log('Listening on ' + bind);
   logger.info('Listening on ' + bind);
 }
 

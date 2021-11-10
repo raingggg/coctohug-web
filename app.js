@@ -48,6 +48,10 @@ const {
   weeklyReportWeb,
 } = require('./routes');
 
+const { isWebControllerMode } = require('./utils/chiaConfig');
+
+const isWebController = isWebControllerMode();
+
 // another 'global' object that is bound to i18n additionaly
 // DANGER! this `funkyObject` is NOT concurrency aware,
 // while req, res and res.locals are and will always be
@@ -79,43 +83,47 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /* ************* web pages begin ************* */
 app.use('/', reviewWeb);
-app.use('/users', usersRouter);
-app.use('/blockchainsWeb', blockchainsWeb);
-app.use('/coldWalletWeb', coldWalletWeb);
-app.use('/connectionsWeb', connectionsWeb);
-app.use('/dailyReportWeb', dailyReportWeb);
-app.use('/handsWeb', handsWeb);
-app.use('/keysWeb', keysWeb);
-app.use('/newsWeb', newsWeb);
-app.use('/plotsWeb', plotsWeb);
-app.use('/poolsWeb', poolsWeb);
-app.use('/receivedCoinsWeb', receivedCoinsWeb);
-app.use('/reviewWeb', reviewWeb);
-app.use('/settingsWeb', settingsWeb);
-app.use('/walletsWeb', walletsWeb);
-app.use('/weeklyReportWeb', weeklyReportWeb);
+if (isWebController) {
+  app.use('/users', usersRouter);
+  app.use('/blockchainsWeb', blockchainsWeb);
+  app.use('/coldWalletWeb', coldWalletWeb);
+  app.use('/connectionsWeb', connectionsWeb);
+  app.use('/dailyReportWeb', dailyReportWeb);
+  app.use('/handsWeb', handsWeb);
+  app.use('/keysWeb', keysWeb);
+  app.use('/newsWeb', newsWeb);
+  app.use('/plotsWeb', plotsWeb);
+  app.use('/poolsWeb', poolsWeb);
+  app.use('/receivedCoinsWeb', receivedCoinsWeb);
+  app.use('/reviewWeb', reviewWeb);
+  app.use('/settingsWeb', settingsWeb);
+  app.use('/walletsWeb', walletsWeb);
+  app.use('/weeklyReportWeb', weeklyReportWeb);
+}
 /* ************* web pages end ************* */
 
 /* ************* apis begin ************* */
-app.use('/actions', actionsRouter);
-app.use('/analysis', analysisRouter);
-app.use('/blockchains', blockchainsRouter);
-app.use('/certificates', certificatesRouter);
-app.use('/challenges', challengesRouter);
-app.use('/configs', configsRouter);
-app.use('/connections', connectionsRouter);
-app.use('/hands', handsRouter);
-app.use('/farms', farmsRouter);
-app.use('/keys', keysRouter);
-app.use('/logs', logsRouter);
-app.use('/news', newsRouter);
-app.use('/partials', partialsRouter);
-app.use('/ping', pingRouter);
-app.use('/plotnfts', plotnftsRouter);
-app.use('/plots', plotsRouter);
-app.use('/pools', poolsRouter);
-app.use('/stats', statsRouter);
-app.use('/wallets', walletsRouter);
+if (!isWebController) {
+  app.use('/actions', actionsRouter);
+  app.use('/analysis', analysisRouter);
+  app.use('/blockchains', blockchainsRouter);
+  app.use('/certificates', certificatesRouter);
+  app.use('/challenges', challengesRouter);
+  app.use('/configs', configsRouter);
+  app.use('/connections', connectionsRouter);
+  app.use('/hands', handsRouter);
+  app.use('/farms', farmsRouter);
+  app.use('/keys', keysRouter);
+  app.use('/logs', logsRouter);
+  app.use('/news', newsRouter);
+  app.use('/partials', partialsRouter);
+  app.use('/ping', pingRouter);
+  app.use('/plotnfts', plotnftsRouter);
+  app.use('/plots', plotsRouter);
+  app.use('/pools', poolsRouter);
+  app.use('/stats', statsRouter);
+  app.use('/wallets', walletsRouter);
+}
 /* ************* apis end ************* */
 
 // catch 404 and forward to error handler

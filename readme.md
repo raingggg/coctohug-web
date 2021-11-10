@@ -1,5 +1,6 @@
 # web
 - a web ui to show the chia forks farming status
+- env WEB_MODE=controller (one of controller or hand)
 
 
 

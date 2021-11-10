@@ -1,9 +1,10 @@
 const os = require('os');
 const path = require('path');
 const CONFIG_FILENAME = process.env['blockchain'] ? `/coctohug/web/${process.env['blockchain']}.json` : '../chia.json';
-const CONTROLLER_HOST = process.env['controller_host'] || 'localhost'
-const CONTROLLER_PORT = process.env['controller_api_port'] || '3000';
+const CONTROLLER_HOST = process.env['controller_address'] || 'localhost'
+const CONTROLLER_PORT = process.env['controller_web_port'] || '12630';
 const MODE = process.env['mode'];
+const WEB_MODE = process.env['WEB_MODE'] || 'controller';
 
 const SQL_LOG = false;
 const CONTROLLER_SCHEME = 'http';
@@ -32,7 +33,11 @@ const getMode = () => {
 
 const getSqlitePath = () => {
   return path.resolve(homedir, '.coctohug-web/db/coctohug.sqlite');
-}
+};
+
+const isWebControllerMode = () => {
+  return WEB_MODE === 'controller';
+};
 
 module.exports = {
   SQL_LOG,
@@ -41,4 +46,5 @@ module.exports = {
   getControllerUrl,
   getMode,
   getSqlitePath,
+  isWebControllerMode,
 };
