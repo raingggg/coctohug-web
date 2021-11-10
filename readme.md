@@ -8,7 +8,8 @@
 
 # quick start for flora testing
 - WEB_MODE="controller" config_file="../flora.json" npm start
-- WEB_MODE="worker" worker_web_port="12631" worker_web_port="12631" config_file="../flora.json" npm start
+- WEB_MODE="worker" worker_web_port="12631" config_file="../flora.json" npm start
+- WEB_MODE="worker" controller_address="192.168.124.158" worker_web_port="12631" config_file="../flora.json" npm start
 
 
 ## Trademark Notice
