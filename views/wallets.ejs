@@ -1,11 +1,24 @@
-<div class="container">
-  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
-    <% data.forEach(function(dt){ %>
-      <div class="col">
-        <div>hostname: <%= dt.hostname %></div>
-        <div>blockchain: <%= dt.blockchain %></div>
-        <div style="white-space: pre-wrap;word-break: break-word;">details: <%= dt.details %></div>
+<div class="page-wrapper">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <% data.forEach(function(dt, index){ %>
+            <li class="nav-item">
+              <a class="nav-link active" href="#" data-tab-index="<%= index %>"><%= dt.blockchain %></a>
+            </li>
+          <% }); %>
+        </ul>
       </div>
-    <% }); %>
-  </div>
+    </div>
+  </nav>
+
+  <% data.forEach(function(dt, index){ %>
+    <div class="col" data-panel-index="<%= index %>">
+      <div>last_update: <%= dt.updatedAt %></div>
+      <div>hostname: <%= dt.hostname %></div>
+      <div>blockchain: <%= dt.blockchain %></div>
+      <div style="white-space: pre-wrap;word-break: break-word;">details: <%= dt.details %></div>
+    </div>
+  <% }); %>
 </div>

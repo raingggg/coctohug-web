@@ -2,6 +2,7 @@
   <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
     <% data.forEach(function(dt){ %>
       <div class="col">
+        <div>last_update: <%= dt.updatedAt %></div>
         <div>hostname: <%= dt.hostname %></div>
         <div>blockchain: <%= dt.blockchain %></div>
         <div style="white-space: pre-wrap;word-break: break-word;">details: <%= dt.details %></div>

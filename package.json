@@ -1,7 +1,9 @@
 {
   "name": "coctohug-web",
-  "version": "0.0.2",
-  "private": false,
+  "version": "0.0.3",
+  "license": "MIT",
+  "repository": "raingggg/coctohug-web",
+  "homepage": "https://github.com/raingggg/coctohug-web",
   "main": "index.js",
   "scripts": {
     "start": "node ./test/test",
