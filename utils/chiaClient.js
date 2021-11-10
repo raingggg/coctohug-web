@@ -61,9 +61,9 @@ const loadWalletShowCallback = async (done) => {
     if (data) {
       if (data.includes("Wallet height:")) {
         return done(null, parseWallet(data.toString()));
-      } else if (data.includes("Choose wallet key:")) {
+      } else if (data.includes("Choose wallet key")) {
         sp.stdin.write("1\n");
-      } else if (data.includes("No online backup file found:")) {
+      } else if (data.includes("No online backup file found")) {
         sp.stdin.write("S\n");
       }
     }
@@ -90,9 +90,9 @@ const loadPlotnftShowCallback = async (done) => {
     if (data) {
       if (data.includes("Wallet height:")) {
         return done(null, parseWallet(data.toString()));
-      } else if (data.includes("Choose wallet key:")) {
+      } else if (data.includes("Choose wallet key")) {
         sp.stdin.write("1\n");
-      } else if (data.includes("No online backup file found:")) {
+      } else if (data.includes("No online backup file found")) {
         sp.stdin.write("S\n");
       }
     }

@@ -20,7 +20,9 @@ const updateFarm = async () => {
       blockchain,
       mode,
     });
-    axios.post(`${controllerUrl}/farms/update`, payload);
+    axios.post(`${controllerUrl}/farms/update`, payload, {
+      headers: { 'Content-Type': 'application/json' }
+    });
   } catch (e) {
     logger.error(e);
   }

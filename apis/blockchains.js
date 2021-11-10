@@ -6,7 +6,7 @@ const { logger } = require('../utils/logger');
 router.post('/update', function (req, res, next) {
   try {
     const payload = req.body;
-    logger.debug(payload);
+    logger.debug('api-blockchain-update', payload);
     Blockchain.upsert(payload);
   } catch (e) {
     logger.error(e);

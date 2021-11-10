@@ -1,6 +1,6 @@
 const os = require('os');
 const path = require('path');
-const CONFIG_FILENAME = process.env['blockchain'] ? `/coctohug/web/${process.env['blockchain']}.json` : '../chia.json';
+const CONFIG_FILENAME = process.env['config_file'] || '../chia.json';
 const CONTROLLER_HOST = process.env['controller_address'] || 'localhost'
 const CONTROLLER_PORT = process.env['controller_web_port'] || '12630';
 const MODE = process.env['mode'];
@@ -24,6 +24,7 @@ const getHostname = () => {
 };
 
 const getControllerUrl = () => {
+  console.error('getControllerUrl', `${CONTROLLER_SCHEME}://${CONTROLLER_HOST}:${CONTROLLER_PORT}`);
   return `${CONTROLLER_SCHEME}://${CONTROLLER_HOST}:${CONTROLLER_PORT}`;
 };
 
@@ -39,6 +40,10 @@ const isWebControllerMode = () => {
   return WEB_MODE === 'controller';
 };
 
+const getWebLogLevel = () => {
+  return blockchainConfig.webLogLevel || "error";
+};
+
 module.exports = {
   SQL_LOG,
   blockchainConfig,
@@ -47,4 +52,5 @@ module.exports = {
   getMode,
   getSqlitePath,
   isWebControllerMode,
+  getWebLogLevel,
 };

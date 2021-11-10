@@ -9,7 +9,7 @@ const parseFarm = (cmdStr) => {
       result.plots_size = line.trim().split(':')[1].trim();
     } else if (line.includes('status')) {
       result.status = line.trim().split(':')[1].trim();
-    } else if (line.includes('farmed')) {
+    } else if (/Total.*farmed.*/.test(line)) {
       result.total_coins = line.trim().split(':')[1].trim();
     } else if (line.includes('Estimated network space')) {
       result.netspace_size = line.trim().split(':')[1].trim();
@@ -42,7 +42,7 @@ const parsePlots = (cmdStr) => {
 
   const lines = cmdStr.split('\n');
   lines.forEach(line => {
-    logger.info('--', line);
+    // logger.info('--', line);
   });
 
   return result;

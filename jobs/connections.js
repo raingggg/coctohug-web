@@ -18,7 +18,9 @@ const updateConnection = async () => {
       blockchain,
       details: data,
     };
-    axios.post(`${controllerUrl}/connections/update`, payload);
+    axios.post(`${controllerUrl}/connections/update`, payload, {
+      headers: { 'Content-Type': 'application/json' }
+    });
   } catch (e) {
     logger.error(e);
   }
