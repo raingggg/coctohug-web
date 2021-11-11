@@ -13,6 +13,14 @@ $(document).ready(function () {
     const index = $(this).data("tabp-index");
     const page = $(this).closest('.page-wrapper');
     if (page && index >= 0) {
+      page.find('.nav-tab').each(function () {
+        if ($(this).data("tabp-index") == index) {
+          $(this).addClass('active');
+        } else {
+          $(this).removeClass('active');
+        }
+      });
+      
       page.find('.tab-panel').each(function () {
         if ($(this).data("panel-index") == index) {
           $(this).removeClass('d-none');
