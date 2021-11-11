@@ -13,10 +13,15 @@ const blockchainConfig = require(CONFIG_FILENAME);
 const homedir = os.homedir();
 const hostname = os.hostname();
 
+const getFullPath = (p) => {
+  if (p.startsWith('/')) return p;
+  else return path.resolve(homedir, p);
+};
+
 Object.assign(blockchainConfig, {
-  binary: path.resolve(homedir, blockchainConfig.binary),
-  mainnet: path.resolve(homedir, blockchainConfig.mainnet),
-  config: path.resolve(homedir, blockchainConfig.config),
+  binary: getFullPath(blockchainConfig.binary),
+  mainnet: getFullPath(blockchainConfig.mainnet),
+  config: getFullPath(blockchainConfig.config),
 });
 
 const getHostname = () => {
@@ -33,7 +38,7 @@ const getMode = () => {
 };
 
 const getSqlitePath = () => {
-  return path.resolve(homedir, '.coctohug-web/db/coctohug.sqlite');
+  return getFullPath('.coctohug-web/db/coctohug.sqlite');
 };
 
 const isWebControllerMode = () => {

@@ -3,5 +3,5 @@
     "binary": "works/chiacodes/chia-blockchain/venv/bin/chia",
     "mainnet": ".chia/mainnet",
     "config": ".chia/mainnet/config/config.yaml",
-    "webLogLevel": "debug"
+    "webLogLevel": "error"
 }
