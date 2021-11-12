@@ -1,15 +1,80 @@
-body {
-  // padding: 50px;
-  // font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  // background-color: #e7ebea;
-}
-  
-a {
-  // color: #00B7FF;
+@blankBlue: #021c1e;
+@darkBlue : #004445;
+@lightBlue: #2c7873;
+@green    : #6fb98f;
+
+
+html {
+  height: 100%;
 }
 
-.header-wrapper  {
+body {
+  min-height: 100%;
+  background: @lightBlue;
+}
+
+.nav-tabs {
+  a.nav-link {
+    color: @lightBlue;
+
+    &.active {
+      background: @green;
+      border-radius: 30px;
+    }
+  }
+}
+
+.header-wrapper {
   // position: fixed;
   // width: 200px;
   // height: 100%;
+}
+
+.block-wrapper {
+  margin-top: 20px;
+  min-height: 600px;
+}
+
+.leftbar-wrapper {
+  min-height: 100%;
+  background: linear-gradient(to right bottom, #f6f6f6 0%, #6cada2 100%, #40726a 100%) 100% center no-repeat;
+
+  ul {
+    padding-left: 1.2rem;
+
+    li {
+      list-style : none;
+      line-height: 35px;
+
+      a.link-primary {
+        color: @lightBlue;
+      }
+    }
+
+  }
+}
+
+.content-wrapper {
+  min-height: 100%;
+  background: linear-gradient(to right bottom, #6cada2 80%, #40726a 100%) 100% center no-repeat;
+}
+
+.review-column {
+  margin-top: 10px;
+  border    : 1px solid @lightBlue;
+  padding   : 5px;
+  height    : 100%;
+  box-shadow: 6px 5px 5px @lightBlue;
+
+  div:first-child {
+    margin-bottom: 5px;
+  }
+}
+
+.tab-panel {
+  padding: 20px;
+
+  div:first-child {
+    margin-bottom: 5px;
+  }
 }

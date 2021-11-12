@@ -2,16 +2,18 @@
       <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
         <% data.forEach(function(dt){ %>
           <div class="col">
-            <div>last_update: <%= dt.updatedAt %></div>
-            <div>hostname: <%= dt.hostname %></div>
-            <div>blockchain: <%= dt.blockchain %></div>
-            <div>mode: <%= dt.mode %></div>
-            <div>status: <%= dt.status %></div>
-            <div>plot_count: <%= dt.plot_count %></div>
-            <div>plots_size: <%= dt.plots_size %></div>
-            <div>total_coins: <%= dt.total_coins %></div>
-            <div>netspace_size: <%= dt.netspace_size %></div>
-            <div>expected_time_to_win: <%= dt.expected_time_to_win %></div>
+            <div class="review-column">
+              <div>last_update: <%= dt.updatedAt %></div>
+              <div>hostname: <%= dt.hostname %></div>
+              <div>blockchain: <%= dt.blockchain %></div>
+              <div>mode: <%= dt.mode %></div>
+              <div>status: <%= dt.status %></div>
+              <div>plot_count: <%= dt.plot_count %></div>
+              <div>plots_size: <%= dt.plots_size %></div>
+              <div>total_coins: <%= dt.total_coins %></div>
+              <div>netspace_size: <%= dt.netspace_size %></div>
+              <div>expected_time_to_win: <%= dt.expected_time_to_win %></div>
+            </div>
           </div>
         <% }); %>
       </div>

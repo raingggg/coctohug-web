@@ -17,12 +17,14 @@
   <%- include('header'); -%>
 
   <div class="container">
-    <div class="row">
+    <div class="row block-wrapper">
       <div class="col-sm-2">
         <%- include('leftbar'); -%>
       </div>
       <div class="col-sm-10">
-        <%- include(pageName); -%>
+        <div class="content-wrapper">
+          <%- include(pageName); -%>
+        </div>
       </div>
     </div>
   </div>
