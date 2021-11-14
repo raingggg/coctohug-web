@@ -3,10 +3,7 @@
         <% data.forEach(function(dt){ %>
           <div class="col">
             <div class="review-column">
-              <div>last_update: <%= dt.updatedAt %></div>
-              <div>hostname: <%= dt.hostname %></div>
-              <div>blockchain: <%= dt.blockchain %></div>
-              <div>mode: <%= dt.mode %></div>
+              <div><%= dt.blockchain %></div>
               <div>status: <%= dt.status %></div>
               <div>plot_count: <%= dt.plot_count %></div>
               <div>plots_size: <%= dt.plots_size %></div>
