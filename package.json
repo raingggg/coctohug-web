@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "chia-watch-dog": "^0.0.2",
     "cookie-parser": "~1.4.4",
     "cron": "^1.8.2",
     "debug": "~2.6.9",

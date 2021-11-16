@@ -2,9 +2,8 @@
       <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
         <% data.forEach(function(dt){ %>
           <div class="col">
-            <div class="review-column">
-              <div><%= dt.blockchain %></div>
-              <div>status: <%= dt.status %></div>
+            <div class="review-column <%= dt.status === 'Farming' ? 'Farming' : 'NotFarming' %>">
+              <div><%= dt.blockchain %> <%= dt.status %></div>
               <div>plot_count: <%= dt.plot_count %></div>
               <div>plots_size: <%= dt.plots_size %></div>
               <div>total_coins: <%= dt.total_coins %></div>

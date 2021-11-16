@@ -4,7 +4,11 @@ const router = express.Router();
 const { Key } = require('../models');
 
 router.get('/', async (req, res, next) => {
-  const data = await Key.findAll();
+  const data = await Key.findAll({
+    order: [
+      ['blockchain', 'ASC'],
+    ]
+  });
   res.render('index', { title: req.__('Welcome to Express'), data, pageName: 'keys' });
 });
 

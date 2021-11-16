@@ -4,7 +4,11 @@ const router = express.Router();
 const { Blockchain } = require('../models');
 
 router.get('/', async (req, res, next) => {
-  const data = await Blockchain.findAll();
+  const data = await Blockchain.findAll({
+    order: [
+      ['blockchain', 'ASC'],
+    ]
+  });
   res.render('index', { title: req.__('Welcome to Express'), data, pageName: 'blockchains' });
 });
 

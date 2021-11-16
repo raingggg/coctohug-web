@@ -4,7 +4,11 @@ const router = express.Router();
 const { Wallet } = require('../models');
 
 router.get('/', async (req, res, next) => {
-  const data = await Wallet.findAll();
+  const data = await Wallet.findAll({
+    order: [
+      ['blockchain', 'ASC'],
+    ]
+  });
   res.render('index', { title: req.__('Welcome to Express'), data, pageName: 'wallets' });
 });
 

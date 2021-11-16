@@ -9,10 +9,10 @@ const Farm = sequelize.define('Farm', {
   mode: { type: DataTypes.STRING(70) },
   status: { type: DataTypes.STRING(128) },
   plot_count: { type: DataTypes.INTEGER },
-  plots_size: { type: DataTypes.REAL },
+  plots_size: { type: DataTypes.STRING },
   total_coins: { type: DataTypes.REAL },
-  netspace_size: { type: DataTypes.REAL },
-  expected_time_to_win: { type: DataTypes.STRING(64) },
+  netspace_size: { type: DataTypes.STRING(70) },
+  expected_time_to_win: { type: DataTypes.STRING(128) },
 }, {
   
 });

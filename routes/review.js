@@ -7,7 +7,11 @@ const isWebController = isWebControllerMode();
 
 router.get('/', async (req, res, next) => {
   if (isWebController) {
-    const data = await Farm.findAll();
+    const data = await Farm.findAll({
+      order: [
+        ['blockchain', 'ASC'],
+      ]
+    });
     res.render('index', { title: req.__('Welcome to Express'), data, pageName: 'review' });
   } else {
     res.render('index', { title: req.__('Welcome to Express'), pageName: 'api' });

@@ -3,6 +3,7 @@
 @lightBlue: #2c7873;
 @green    : #6fb98f;
 
+@warning: #e9debe;
 
 html {
   height: 100%;
@@ -18,7 +19,7 @@ body {
     color: @lightBlue;
 
     &.active {
-      background: @green;
+      background   : @green;
       border-radius: 30px;
     }
   }
@@ -36,12 +37,12 @@ body {
 }
 
 .leftbar-wrapper {
-  min-height: 100%;
+  min-height   : 100%;
   border-radius: 5px;
-  background: linear-gradient(to right bottom, #f6f6f6 0%, #6cada2 100%, #40726a 100%) 100% center no-repeat;
+  background   : linear-gradient(to right bottom, #f6f6f6 0%, #6cada2 100%, #40726a 100%) 100% center no-repeat;
 
   ul {
-    padding-left: 1.2rem;
+    padding-left: 0.6rem;
 
     li {
       list-style : none;
@@ -56,30 +57,47 @@ body {
 }
 
 .content-wrapper {
-  min-height: 100%;
+  min-height   : 100%;
   border-radius: 5px;
   // background: linear-gradient(to right bottom, #6cada2 80%, #40726a 100%) 100% center no-repeat;
-  background: linear-gradient(to right bottom, #f6f6f6 0%, #6cada2 100%, #40726a 100%) 100% center no-repeat;
+  background   : linear-gradient(to right bottom, #f6f6f6 0%, #6cada2 100%, #40726a 100%) 100% center no-repeat;
 }
 
 .review-column {
-  margin-top: 10px;
+  margin-top   : 10px;
   border-radius: 5px;
-  border    : 1px solid @lightBlue;
-  padding   : 5px;
-  height    : 100%;
-  box-shadow: 6px 5px 5px @lightBlue;
+  border       : 1px solid @lightBlue;
+  padding      : 5px;
+  height       : 100%;
+  box-shadow   : 6px 5px 5px @lightBlue;
+
+  &.NotFarming {
+    background: @warning;
+  }
 
   div:first-child {
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight  : bold;
   }
 }
 
 .tab-panel {
   padding: 20px;
 
-  div:first-child {
+  div:nth-child(2) {
     margin-bottom: 5px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .leftbar-wrapper {
+    ul li {
+      font-size: larger;
+    }
+
+    .link-text {
+      display: none;
+    }
   }
 }
