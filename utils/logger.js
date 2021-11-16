@@ -3,7 +3,7 @@ const { getWebLogLevel } = require('./chiaConfig');
 
 const logLevel = getWebLogLevel();
 log4js.configure({
-  appenders: { cheese: { type: "file", filename: "cheese.log" } },
+  appenders: { cheese: { type: "file", filename: "web.log" } },
   categories: { default: { appenders: ["cheese"], level: logLevel } }
 });
 

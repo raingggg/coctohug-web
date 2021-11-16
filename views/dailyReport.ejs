@@ -1,1 +1,8 @@
-this is a summary
+<div class="page-wrapper">
+  <table>
+    <tr><td>Recorded At</td><td>Message</td><td>Blockchain</td><td>Hostname</td><td>Priority</td><td>Type</td></tr>
+    <% data.forEach(function(dt, index){ %>
+      <tr><td><%= dt.createdAt %></td><td><%= dt.message %></td><td><%= dt.blockchain %></td><td><%= dt.hostname %></td><td><%= dt.priority %></td><td><%= dt.type %></td></tr>
+    <% }); %>
+  </table>
+</div>

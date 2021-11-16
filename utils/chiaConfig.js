@@ -22,6 +22,7 @@ Object.assign(blockchainConfig, {
   binary: getFullPath(blockchainConfig.binary),
   mainnet: getFullPath(blockchainConfig.mainnet),
   config: getFullPath(blockchainConfig.config),
+  chainlog: getFullPath(blockchainConfig.chainlog),
 });
 
 const getHostname = () => {

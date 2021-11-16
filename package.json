@@ -1,6 +1,6 @@
 {
   "name": "coctohug-web",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "repository": "raingggg/coctohug-web",
   "homepage": "https://github.com/raingggg/coctohug-web",
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
-    "chia-watch-dog": "^0.0.2",
+    "chia-watch-dog": "^0.0.4",
     "cookie-parser": "~1.4.4",
     "cron": "^1.8.2",
     "debug": "~2.6.9",

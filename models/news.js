@@ -9,10 +9,16 @@ const News = sequelize.define('News', {
     blockchain: { type: DataTypes.STRING(70) },
     priority: { type: DataTypes.STRING(70) },
     service: { type: DataTypes.STRING(70) },
+    type: { type: DataTypes.STRING(70) },
     message: { type: DataTypes.TEXT },
 }, {
     
 });
+
+const syncTable = async () => {
+  await News.sync();
+};
+syncTable();
 
 module.exports = {
     News
