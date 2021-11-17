@@ -8,16 +8,17 @@ const WEB_MODE = process.env['WEB_MODE'] || 'controller';
 
 const SQL_LOG = false;
 const CONTROLLER_SCHEME = 'http';
-const blockchainConfig = require(CONFIG_FILENAME);
 
 const homedir = os.homedir();
 const hostname = os.hostname();
 
 const getFullPath = (p) => {
   if (p.startsWith('/')) return p;
+  else if (p.startsWith('./') || p.startsWith('../')) return path.resolve(__dirname, p);
   else return path.resolve(homedir, p);
 };
 
+const blockchainConfig = require(getFullPath(CONFIG_FILENAME));
 Object.assign(blockchainConfig, {
   binary: getFullPath(blockchainConfig.binary),
   mainnet: getFullPath(blockchainConfig.mainnet),
@@ -31,7 +32,7 @@ const getHostname = () => {
 };
 
 const getControllerUrl = () => {
-  console.error('getControllerUrl', `${CONTROLLER_SCHEME}://${CONTROLLER_HOST}:${CONTROLLER_PORT}`);
+  // console.error('getControllerUrl', `${CONTROLLER_SCHEME}://${CONTROLLER_HOST}:${CONTROLLER_PORT}`);
   return `${CONTROLLER_SCHEME}://${CONTROLLER_HOST}:${CONTROLLER_PORT}`;
 };
 

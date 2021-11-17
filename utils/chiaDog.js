@@ -2,20 +2,20 @@ const { ChiaWatchDog } = require('chia-watch-dog');
 const axios = require('axios');
 const { logger } = require('./logger');
 const {
-  blockchainConfig: { blockchain },
+  blockchainConfig,
   getHostname,
   getControllerUrl,
   isWebControllerMode,
 } = require('./chiaConfig');
 
+const { chainlog, blockchain } = blockchainConfig;
 const hostname = getHostname();
 const controllerUrl = getControllerUrl();
 const isWebController = isWebControllerMode();
 
 const startWatchDog = () => {
   if (isWebController) return;
-
-  const cwd = new ChiaWatchDog(blockchainConfig.chainlog);
+  const cwd = new ChiaWatchDog(chainlog);
 
   cwd.on('dog', (evs) => {
     postEvents(evs);
