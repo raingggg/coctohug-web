@@ -5,7 +5,7 @@
     </thead>
     <tbody>
       <% data.forEach(function(dt, index){ %>
-        <tr><td><%= dt.createdAt %></td><td><%= dt.message %></td><td><%= dt.blockchain %></td><td><%= dt.hostname %></td><td><%= dt.priority %></td><td><%= dt.type %></td></tr>
+        <tr><td><%= dt.createdAt.toLocaleString("en-US", {hour12: false}) %></td><td><%= dt.message %></td><td><%= dt.blockchain %></td><td><%= dt.hostname %></td><td><%= dt.priority %></td><td><%= dt.type %></td></tr>
       <% }); %>
     </tbody>
   </table>

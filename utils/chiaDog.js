@@ -29,8 +29,7 @@ const startWatchDog = () => {
 };
 
 const postEvents = (evs) => {
-  const evArray = Array.isArray(evs) ? evs : [evs];
-  evArray.forEach(ev => {
+  evs.forEach(ev => {
     try {
       const payload = {
         hostname,

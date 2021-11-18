@@ -51,10 +51,13 @@ body {
   margin-bottom: 5px;
   font-weight: bold;
 }
-.review-column .total-coins span:nth-child(2),
-.review-column .plot-count span:nth-child(2) {
+.review-column .total-coins span:nth-child(2) {
   font-weight: bold;
   color: #2c7873;
+}
+.review-column .plot-count span:nth-child(2) {
+  font-weight: bold;
+  color: #9696bf;
 }
 .tab-panel {
   padding: 20px;

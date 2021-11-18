@@ -39,11 +39,13 @@ const G_SIZE = 1024 * 1024 * 1024;
 //     "hddcoin": "/root/.hddcoin/mainnet",
 // };
 const TIMEOUT_1MINUTE = 60 * 1000;
+const TIMEOUT_2MINUTE = 2 * 60 * 1000;
+
 const loadFarmSummary = async () => {
   let result = '';
 
   try {
-    const cmdOutput = await exec(`${binary} farm summary`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
+    const cmdOutput = await exec(`${binary} farm summary`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = cmdOutput.stdout.trim();
   } catch (e) {
     logger.error(e);
@@ -54,7 +56,7 @@ const loadFarmSummary = async () => {
 
 const loadWalletShowCallback = async (done) => {
   const spawn = require('child_process').spawn;
-  const sp = spawn(binary, ['wallet', 'show'], { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
+  const sp = spawn(binary, ['wallet', 'show'], { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
 
   sp.stdout.on('data', (data) => {
     logger.info(`stdout: ${data}`);
@@ -83,7 +85,7 @@ const loadWalletShow = promisify(loadWalletShowCallback);
 
 const loadPlotnftShowCallback = async (done) => {
   const spawn = require('child_process').spawn;
-  const sp = spawn(binary, ['plotnft', 'show'], { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
+  const sp = spawn(binary, ['plotnft', 'show'], { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
 
   sp.stdout.on('data', (data) => {
     logger.info(`stdout: ${data}`);
@@ -127,7 +129,7 @@ const loadConnectionsShow = async () => {
   let result = '';
 
   try {
-    const cmdOutput = await exec(`${binary} show --connections`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
+    const cmdOutput = await exec(`${binary} show --connections`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = cmdOutput.stdout.trim();
   } catch (e) {
     logger.error(e);
@@ -140,7 +142,7 @@ const loadKeysShow = async () => {
   let result = '';
 
   try {
-    const cmdOutput = await exec(`${binary} keys show`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
+    const cmdOutput = await exec(`${binary} keys show`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = cmdOutput.stdout.trim();
   } catch (e) {
     logger.error(e);

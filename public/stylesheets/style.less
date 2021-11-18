@@ -3,6 +3,7 @@
 @lightBlue: #2c7873;
 @green    : #6fb98f;
 
+@blue   : #9696bf;
 @warning: #e9debe;
 
 html {
@@ -80,11 +81,17 @@ body {
     font-weight  : bold;
   }
 
-  .total-coins,
-  .plot-count {
+  .total-coins {
     span:nth-child(2) {
       font-weight: bold;
       color      : @lightBlue;
+    }
+  }
+
+  .plot-count {
+    span:nth-child(2) {
+      font-weight: bold;
+      color      : @blue;
     }
   }
 }
