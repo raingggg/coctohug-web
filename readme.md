@@ -12,10 +12,8 @@
 - WEB_MODE="worker" controller_address="192.168.124.158" worker_web_port="12632" config_file="/home/username/works/coctohug/coctohug-web/flora.json" npm start
 
 # todo
-- mobile bar and tab font-size larger
 - tab in yellow color when too long not response
 - show # under chainname
-- plot size under plot#
 
 
 ## Trademark Notice

@@ -59,6 +59,10 @@ body {
   font-weight: bold;
   color: #9696bf;
 }
+.review-column .plot-count span:nth-child(3) {
+  opacity: 0.5;
+  font-size: x-small;
+}
 .tab-panel {
   padding: 20px;
 }
@@ -68,6 +72,8 @@ body {
 @media (max-width: 1024px) {
   .leftbar-wrapper ul li {
     font-size: larger;
+    font-size: x-large;
+    line-height: 45px;
   }
   .leftbar-wrapper .link-text {
     display: none;

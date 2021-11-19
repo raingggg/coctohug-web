@@ -5,8 +5,7 @@
             <div class="review-column <%= dt.status === 'Farming' ? 'Farming' : 'NotFarming' %>">
               <div><%= dt.blockchain %> <%= dt.status %></div>
               <div class="total-coins"><span>total_coins: </span><span><%= dt.total_coins %></span></div>
-              <div class="plot-count"><span>plot_count: </span><span><%= dt.plot_count %></span></div>
-              <div>plots_size: <%= dt.plots_size %></div>
+              <div class="plot-count"><span>plot_count: </span><span><%= dt.plot_count %></span><span> - <%= dt.plots_size %></span></div>
               <div>netspace_size: <%= dt.netspace_size %></div>
               <div>expected_time_to_win: <%= dt.expected_time_to_win %></div>
             </div>
