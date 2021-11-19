@@ -7,7 +7,7 @@ const { Op } = require("sequelize");
 router.get('/', async (req, res, next) => {
   const data = await News.findAll({
     order: [
-      ['unique_id', 'DESC'],
+      ['updatedAt', 'DESC'],
     ],
     where: {
       type: {

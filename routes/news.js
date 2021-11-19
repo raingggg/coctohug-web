@@ -7,16 +7,11 @@ const { Op } = require("sequelize");
 router.get('/', async (req, res, next) => {
   const data = await News.findAll({
     order: [
-      ['unique_id', 'DESC'],
+      ['updatedAt', 'DESC'],
     ],
     where: {
       [Op.not]: [
-        { type: ['EVT_INTIME_BLOCK_FOUND', 'EVT_INTIME_RECEIVE_COIN'] },
-        {
-          type: {
-            [Op.like]: 'EVT_DAILY_%'
-          }
-        }
+        { type: ['EVT_INTIME_BLOCK_FOUND', 'EVT_INTIME_RECEIVE_COIN', 'EVT_DAILY_ALL_IN_ONE'] }
       ]
     },
     limit: 100,

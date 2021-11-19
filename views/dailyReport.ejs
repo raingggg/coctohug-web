@@ -1,11 +1,11 @@
 <div class="page-wrapper">
   <table class="table table-striped table-hover">
     <thead>
-      <tr><td>Recorded At</td><td>Message</td><td>Blockchain</td><td>Hostname</td><td>Priority</td><td>Type</td></tr>
+      <tr><td>Recorded At</td><td>Message</td><td>Blockchain</td><td>Hostname</td></tr>
     </thead>
     <tbody>
       <% data.forEach(function(dt, index){ %>
-        <tr><td><%= dt.createdAt.toLocaleString("en-US", {hour12: false}) %></td><td><%= dt.message %></td><td><%= dt.blockchain %></td><td><%= dt.hostname %></td><td><%= dt.priority %></td><td><%= dt.type %></td></tr>
+        <tr><td><%= dt.createdAt.toLocaleString("en-US", {hour12: false}) %></td><td><%- dt.message.replace(/\n/g, "<br/>") %></td><td><%= dt.blockchain %></td><td><%= dt.hostname %></td><td></tr>
       <% }); %>
     </tbody>
   </table>
