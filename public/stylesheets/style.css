@@ -12,6 +12,14 @@ body {
   background: #6fb98f;
   border-radius: 30px;
 }
+.nav-tabs a.nav-link.SyncError {
+  color: #9f5c5c;
+}
+.nav-tabs a.nav-link span:nth-child(2) {
+  opacity: 0.5;
+  font-size: xx-small;
+  color: #021c1e;
+}
 .block-wrapper {
   margin-top: 20px;
   min-height: 600px;
@@ -50,6 +58,14 @@ body {
 .review-column div:first-child {
   margin-bottom: 5px;
   font-weight: bold;
+  position: relative;
+}
+.review-column div:first-child span:nth-child(2) {
+  position: absolute;
+  right: 0;
+  opacity: 0.5;
+  font-size: x-small;
+  font-weight: normal;
 }
 .review-column .total-coins span:nth-child(2) {
   font-weight: bold;

@@ -20,24 +20,6 @@ const copyFile = promisify(fs.copyFile);
 const writeFile = promisify(fs.writeFile);
 
 const G_SIZE = 1024 * 1024 * 1024;
-
-// const BLOCKCHAIN_BINARY = {
-//     "chia": '/chia-blockchain/venv/bin/chia',
-//     "flax": '/flax-blockchain/venv/bin/flax',
-//     "flora": '/flora-blockchain/venv/bin/flora',
-//     "sit": '/silicoin-blockchain/venv/bin/sit',
-//     "nchain": '/ext9-blockchain/venv/bin/chia',
-//     "hddcoin": '/hddcoin-blockchain/venv/bin/hddcoin',
-// };
-
-// const BLOCKCHAIN_MAINNET = {
-//     "chia": "/root/.chia/mainnet",
-//     "flax": "/root/.flax/mainnet",
-//     "flora": "/root/.flora/mainnet",
-//     "sit": "/root/.sit/mainnet",
-//     "nchain": "/root/.chia/ext9",
-//     "hddcoin": "/root/.hddcoin/mainnet",
-// };
 const TIMEOUT_1MINUTE = 60 * 1000;
 const TIMEOUT_2MINUTE = 2 * 60 * 1000;
 

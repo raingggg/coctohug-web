@@ -5,7 +5,7 @@
         <ul class="nav nav-tabs">
           <% data.forEach(function(dt, index){ %>
             <li class="nav-item">
-              <a class="nav-link nav-tab <%= index === 0 ? 'active' : '' %>" href="#" data-tabp-index="<%= index %>"><%= dt.blockchain %></a>
+              <a class="nav-link nav-tab <%= index === 0 ? 'active' : '' %>" href="#" data-tabp-index="<%= index %>"><span><%= dt.blockchain %></span><span> <%= index + 1 %></a>
             </li>
           <% }); %>
         </ul>
