@@ -13,8 +13,8 @@
 
 # todo
 - hands tab
-- cold wallet mode
 - show wallet balance on review page as well
+- cold wallet mode
 - import/export cold wallet
 - harvester mode
 - restart support

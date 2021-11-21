@@ -16,6 +16,16 @@ body {
   background: @lightBlue;
 }
 
+.tooltip>.tooltip-inner {
+  background-color: @lightBlue;
+  opacity         : 1;
+  text-align      : left;
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: @lightBlue;
+}
+
 .nav-tabs {
   a.nav-link {
     color: @lightBlue;
@@ -90,6 +100,13 @@ body {
   div:first-child {
     margin-bottom: 5px;
     font-weight  : bold;
+
+    span:nth-child(2) {
+      opacity    : 0.5;
+      font-size  : xx-small;
+      font-weight: normal;
+      color      : @blankBlue;
+    }
   }
 
   .total-coins {
@@ -97,32 +114,24 @@ body {
       font-weight: bold;
       color      : @lightBlue;
     }
+
+    span:nth-child(3) {
+      color: @lightBlue;
+    }
   }
 
   .plot-count {
     span:nth-child(2) {
-      font-weight: bold;
-      color      : @blue;
+      color: @blue;
     }
 
     span:nth-child(3) {
+      display: none;
       opacity  : 0.5;
       font-size: x-small;
     }
   }
 
-  .expect-win {
-    position: relative;
-
-    span:nth-child(2) {
-      position   : absolute;
-      right      : 0;
-      bottom     : 0;
-      opacity    : 0.5;
-      font-size  : x-small;
-      font-weight: normal;
-    }
-  }
 }
 
 .tab-panel {

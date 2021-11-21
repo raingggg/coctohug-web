@@ -3,11 +3,11 @@
         <% data.forEach(function(dt, dtIndex){ %>
           <div class="col">
             <div class="review-column <%= dt.status === 'Farming' ? 'Farming' : 'NotFarming' %>">
-              <div><span><%= dt.blockchain %> <%= dt.status %></span></div>
-              <div class="total-coins"><span>total_coins: </span><span><%= dt.total_coins %></span></div>
-              <div class="plot-count"><span>plot_count: </span><span><%= dt.plot_count %></span><span> - <%= dt.plots_size %></span></div>
+              <div><span><%= dt.blockchain %></span><span> <%= dtIndex + 1 %></span><span> <%= dt.status %></span></div>
+              <div class="total-coins" data-bs-html=true data-bs-toggle="tooltip" data-bs-placement="top" title="<div style='background: green;'>Farmed: <%= dt.total_coins %></br>Balance: <%= dt.balance %></div>"><span>total_coins: </span><span><%= dt.total_coins %></span><span> - <%= dt.balance %></span></div>
+              <div class="plot-count" data-bs-html=true data-bs-toggle="tooltip" data-bs-placement="top" title="Plot Count: <%= dt.plot_count %></br>Plot Size: <%= dt.plots_size %>"><span>plot_count: </span><span><%= dt.plot_count %></span><span> - <%= dt.plots_size %></span></div>
               <div>netspace_size: <%= dt.netspace_size %></div>
-              <div class="expect-win"><span>expected_time_to_win: <%= dt.expected_time_to_win %></span><span><%= dtIndex + 1 %></span></div>
+              <div class="expect-win"><span>expected_time_to_win: <%= dt.expected_time_to_win %></span></div>
             </div>
           </div>
         <% }); %>
