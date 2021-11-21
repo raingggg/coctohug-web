@@ -11,7 +11,10 @@ const {
   parseKeys,
   parsePlots
 } = require('./chiaParser');
-const { blockchainConfig: { binary, mainnet, config } } = require('./chiaConfig');
+const {
+  blockchainConfig: { binary, mainnet, blockchain, config },
+  getCoctohugWebVersion,
+} = require('./chiaConfig');
 const { logger } = require('./logger');
 
 const stat = promisify(fs.stat);
@@ -198,6 +201,22 @@ const getPoolLoginLink = async () => {
 
 };
 
+const loadAllVersions = async () => {
+  let result = '';
+
+  try {
+    const cmdOutput = await exec(`${binary} version`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
+    result = `${blockchain}: ${cmdOutput.stdout.trim()}`;
+  } catch (e) {
+    logger.error(e);
+  }
+  logger.debug(result);
+
+  const coctohugWeb = getCoctohugWebVersion();
+  result += `\ncoctohugWeb: ${coctohugWeb}`;
+
+  return result;
+}
 
 // const at = async () => {
 //   const tresult = await loadFarmSummary();
@@ -206,6 +225,7 @@ const getPoolLoginLink = async () => {
 //   const tresult = await loadBlockchainShow();
 //   const tresult = await loadConnectionsShow();
 //   const tresult = await loadKeysShow();
+//   const tresult = await loadAllVersions();
 //   console.log('tresult: ', tresult);
 // };
 // at();
@@ -225,4 +245,5 @@ module.exports = {
   isPlotsCheckRunning,
   checkPlots,
   getPoolLoginLink,
+  loadAllVersions,
 }

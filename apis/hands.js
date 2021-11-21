@@ -1,9 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const { logger } = require('../utils/logger');
+const { Hand } = require('../models');
 
-router.get('/', function (req, res, next) {
-  res.json({ status: "OOKK" });
+router.post('/update', function (req, res, next) {
+  try {
+    const payload = req.body;
+    logger.debug('api-hand-update', payload);
+    Hand.upsert(payload);
+  } catch (e) {
+    logger.error(e);
+  }
 });
 
 module.exports = router;

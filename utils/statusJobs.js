@@ -7,10 +7,10 @@ const {
   updateConnection,
   updateKey,
   updateBlockchain,
+  updateHand,
 } = require('../jobs');
 
 const everyMinute = '0 */1 * * * *';
-const every2Minute = '0 */2 * * * *';
 const every5Minute = '0 */5 * * * *';
 const every30Minute = '0 */30 * * * *';
 const every4Hour = '0 0 */4 * * *';
@@ -24,11 +24,6 @@ const oneMinuteJob = new CronJob(everyMinute, async () => {
   logger.info('oneMinuteJob end');
 }, null, true, 'America/Los_Angeles');
 
-const twoMinuteJob = new CronJob(every2Minute, async () => {
-  logger.info('twoMinuteJob start');
-  logger.info('twoMinuteJob end');
-}, null, true, 'America/Los_Angeles');
-
 const fiveMinuteJob = new CronJob(every5Minute, async () => {
   logger.info('fiveMinuteJob start');
   if (!isWebController) {
@@ -37,6 +32,14 @@ const fiveMinuteJob = new CronJob(every5Minute, async () => {
     await updateConnection();
   }
   logger.info('fiveMinuteJob end');
+}, null, true, 'America/Los_Angeles');
+
+const thirtyMinuteJob = new CronJob(every30Minute, async () => {
+  logger.info('thirtyMinuteJob start');
+  if (!isWebController) {
+    await updateHand();
+  }
+  logger.info('thirtyMinuteJob end');
 }, null, true, 'America/Los_Angeles');
 
 const fourHourJob = new CronJob(every4Hour, async () => {
@@ -52,8 +55,8 @@ const startAllJobs = () => {
   // start jobs in hand mode only
   if (!isWebController) {
     oneMinuteJob.start();
-    twoMinuteJob.start();
     fiveMinuteJob.start();
+    thirtyMinuteJob.start();
     fourHourJob.start();
   }
   logger.info('all jobs end');

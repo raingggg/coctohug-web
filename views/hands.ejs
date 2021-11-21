@@ -1,1 +1,12 @@
-this is a summary
+<div class="page-wrapper">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr><td>hostname</td><td>blockchain</td><td>mode</td><td>versions</td><td>last_update</td></tr>
+    </thead>
+    <tbody>
+      <% data.forEach(function(dt, index){ %>
+        <tr><td><%= dt.hostname %></td><td><%= dt.blockchain %></td><td><%= dt.mode %></td><td><%= dt.versions %></td><td><%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %></td></tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>

@@ -4,20 +4,20 @@ const { getConnection } = require('../utils/sqlConnection');
 
 sequelize = getConnection();
 const Hand = sequelize.define('Hand', {
-    hostname: { type: DataTypes.STRING, primaryKey: true },
-    port: { type: DataTypes.INTEGER, primaryKey: true },
-    blockchain: { type: DataTypes.STRING(70) },
-    displayname: { type: DataTypes.STRING },
-    mode: { type: DataTypes.STRING(70) },
-    services: { type: DataTypes.TEXT },
-    url: { type: DataTypes.TEXT },
-    config: { type: DataTypes.TEXT },
-    latest_ping_result: { type: DataTypes.TEXT },
-    ping_success_at: { type: DataTypes.DATE, defaultValue: DataTypes.NOW }
+  hostname: { type: DataTypes.STRING, primaryKey: true },
+  blockchain: { type: DataTypes.STRING(70), primaryKey: true },
+  mode: { type: DataTypes.STRING(70) },
+  url: { type: DataTypes.TEXT },
+  versions: { type: DataTypes.TEXT },
 }, {
-    
+
 });
 
+const syncTable = async () => {
+  await Hand.sync();
+};
+syncTable();
+
 module.exports = {
-    Hand
+  Hand
 };
