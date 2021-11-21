@@ -5,7 +5,7 @@
 
 @blue   : #9696bf;
 @warning: #e9debe;
-@error: #9f5c5c;
+@error  : #9f5c5c;
 
 html {
   height: 100%;
@@ -32,7 +32,7 @@ body {
     span:nth-child(2) {
       opacity  : 0.5;
       font-size: xx-small;
-      color: @blankBlue;
+      color    : @blankBlue;
     }
   }
 }
@@ -90,15 +90,6 @@ body {
   div:first-child {
     margin-bottom: 5px;
     font-weight  : bold;
-    position     : relative;
-
-    span:nth-child(2) {
-      position : absolute;
-      right: 0;
-      opacity  : 0.5;
-      font-size: x-small;
-      font-weight: normal;
-    }
   }
 
   .total-coins {
@@ -117,6 +108,19 @@ body {
     span:nth-child(3) {
       opacity  : 0.5;
       font-size: x-small;
+    }
+  }
+
+  .expect-win {
+    position: relative;
+
+    span:nth-child(2) {
+      position   : absolute;
+      right      : 0;
+      bottom     : 0;
+      opacity    : 0.5;
+      font-size  : x-small;
+      font-weight: normal;
     }
   }
 }

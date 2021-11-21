@@ -58,14 +58,6 @@ body {
 .review-column div:first-child {
   margin-bottom: 5px;
   font-weight: bold;
-  position: relative;
-}
-.review-column div:first-child span:nth-child(2) {
-  position: absolute;
-  right: 0;
-  opacity: 0.5;
-  font-size: x-small;
-  font-weight: normal;
 }
 .review-column .total-coins span:nth-child(2) {
   font-weight: bold;
@@ -78,6 +70,17 @@ body {
 .review-column .plot-count span:nth-child(3) {
   opacity: 0.5;
   font-size: x-small;
+}
+.review-column .expect-win {
+  position: relative;
+}
+.review-column .expect-win span:nth-child(2) {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  font-size: x-small;
+  font-weight: normal;
 }
 .tab-panel {
   padding: 20px;

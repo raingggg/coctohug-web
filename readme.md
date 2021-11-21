@@ -12,8 +12,19 @@
 - WEB_MODE="worker" controller_address="192.168.124.158" worker_web_port="12632" config_file="/home/username/works/coctohug/coctohug-web/flora.json" npm start
 
 # todo
+- fist time check and generate keys
+- hands tab
 - cold wallet mode
+- import/export cold wallet
 - harvester mode
+- restart support
+- connections add remove support
+- money transfer support
+- password protect for setting
+- Integrate cold wallet value check into wallet page
+- pools
+- nft recovery
+- multiple language support
 
 ## Trademark Notice
 CHIA NETWORK INC, CHIA™, the CHIA BLOCKCHAIN™, the CHIA PROTOCOL™, CHIALISP™ and the “leaf Logo” (including the leaf logo alone when it refers to or indicates Chia), are trademarks or registered trademarks of Chia Network, Inc., a Delaware corporation. *There is no affliation between this Coctohug project and the main Chia Network project.*

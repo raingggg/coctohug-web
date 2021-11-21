@@ -3,11 +3,11 @@
         <% data.forEach(function(dt, dtIndex){ %>
           <div class="col">
             <div class="review-column <%= dt.status === 'Farming' ? 'Farming' : 'NotFarming' %>">
-              <div><span><%= dt.blockchain %> <%= dt.status %></span><span><%= dtIndex + 1 %></span></div>
+              <div><span><%= dt.blockchain %> <%= dt.status %></span></div>
               <div class="total-coins"><span>total_coins: </span><span><%= dt.total_coins %></span></div>
               <div class="plot-count"><span>plot_count: </span><span><%= dt.plot_count %></span><span> - <%= dt.plots_size %></span></div>
               <div>netspace_size: <%= dt.netspace_size %></div>
-              <div>expected_time_to_win: <%= dt.expected_time_to_win %></div>
+              <div class="expect-win"><span>expected_time_to_win: <%= dt.expected_time_to_win %></span><span><%= dtIndex + 1 %></span></div>
             </div>
           </div>
         <% }); %>
