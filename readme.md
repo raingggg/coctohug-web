@@ -12,7 +12,6 @@
 - WEB_MODE="worker" controller_address="192.168.124.158" worker_web_port="12632" config_file="/home/username/works/coctohug/coctohug-web/flora.json" npm start
 
 # todo
-- fist time check and generate keys
 - hands tab
 - cold wallet mode
 - import/export cold wallet
@@ -24,6 +23,7 @@
 - Integrate cold wallet value check into wallet page
 - pools
 - nft recovery
+- fist time check and generate keys(raw 1024 words on html got from chia)
 - multiple language support
 
 ## Trademark Notice
