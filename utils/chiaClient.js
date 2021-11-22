@@ -218,6 +218,21 @@ const loadAllVersions = async () => {
   return result;
 }
 
+const restartBlockchain = async () => {
+  let result = '';
+
+  try {
+    const cmdOutput = await exec(`${binary} start farmer -r`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
+    result = `${blockchain}: ${cmdOutput.stdout.trim()}`;
+  } catch (e) {
+    logger.error(e);
+  }
+
+  logger.debug(result);
+
+  return result;
+};
+
 // const at = async () => {
 //   const tresult = await loadFarmSummary();
 //   const tresult = await loadWalletShow();
@@ -226,6 +241,7 @@ const loadAllVersions = async () => {
 //   const tresult = await loadConnectionsShow();
 //   const tresult = await loadKeysShow();
 //   const tresult = await loadAllVersions();
+//   const tresult = await restartBlockchain();
 //   console.log('tresult: ', tresult);
 // };
 // at();
@@ -246,4 +262,5 @@ module.exports = {
   checkPlots,
   getPoolLoginLink,
   loadAllVersions,
+  restartBlockchain,
 }

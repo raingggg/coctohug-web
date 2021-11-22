@@ -14,11 +14,11 @@
 # todo
 - hands tab
 - show wallet balance on review page as well
+- restart support
 - fist time check and generate keys(raw 1024 words on html got from chia)
 - cold wallet mode
 - import/export cold wallet
 - harvester mode
-- restart support
 - connections add remove support
 - money transfer support
 - password protect for setting

@@ -104,27 +104,25 @@ if (isWebController) {
 /* ************* web pages end ************* */
 
 /* ************* apis begin ************* */
-if (isWebController) {
-  app.use('/actions', actionsRouter);
-  app.use('/analysis', analysisRouter);
-  app.use('/blockchains', blockchainsRouter);
-  app.use('/certificates', certificatesRouter);
-  app.use('/challenges', challengesRouter);
-  app.use('/configs', configsRouter);
-  app.use('/connections', connectionsRouter);
-  app.use('/hands', handsRouter);
-  app.use('/farms', farmsRouter);
-  app.use('/keys', keysRouter);
-  app.use('/logs', logsRouter);
-  app.use('/news', newsRouter);
-  app.use('/partials', partialsRouter);
-  app.use('/ping', pingRouter);
-  app.use('/plotnfts', plotnftsRouter);
-  app.use('/plots', plotsRouter);
-  app.use('/pools', poolsRouter);
-  app.use('/stats', statsRouter);
-  app.use('/wallets', walletsRouter);
-}
+app.use('/actions', actionsRouter);
+app.use('/analysis', analysisRouter);
+app.use('/blockchains', blockchainsRouter);
+app.use('/certificates', certificatesRouter);
+app.use('/challenges', challengesRouter);
+app.use('/configs', configsRouter);
+app.use('/connections', connectionsRouter);
+app.use('/hands', handsRouter);
+app.use('/farms', farmsRouter);
+app.use('/keys', keysRouter);
+app.use('/logs', logsRouter);
+app.use('/news', newsRouter);
+app.use('/partials', partialsRouter);
+app.use('/ping', pingRouter);
+app.use('/plotnfts', plotnftsRouter);
+app.use('/plots', plotsRouter);
+app.use('/pools', poolsRouter);
+app.use('/stats', statsRouter);
+app.use('/wallets', walletsRouter);
 /* ************* apis end ************* */
 
 // catch 404 and forward to error handler

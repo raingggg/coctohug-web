@@ -6,23 +6,19 @@
     </div>
     <hr>
 
-    <p>To get started with Coctohug, either import your existing
-      24-word
-      mnemonic seed phrase: </p>
+    <p>To get started with Coctohug, either import your existing 24-word mnemonic seed phrase: </p>
     <!-- Sample mnemonic to hint with, key long since thrown-away -->
     <form id="main-form" method="POST">
       <input class="form-control me-2" id="mnemonic" name="mnemonic" type="text"
         placeholder="north divorce holiday whisper inquiry toy rare minute father ostrich surprise runway ill episode dance rather unaware concert sunset maid gather grain gift wire"
         aria-label="Import Key">
       <br />
-      <button class="btn btn-outline-success" type="submit" id="btnImport">Import Existing
-        Key</button>
+      <button class="btn btn-outline-success" id="btnImport">Import Existing Key</button>
       <h3 style="padding-top: 25px;">OR</h3>
 
       <p>You can generate a brand-new mnemonic phrase that will be written to path: <%= mncPath %>
       </p>
-      <button class="btn btn-outline-success" type="submit" id="btnGenerate">Generate New
-        Key</button>
+      <button class="btn btn-outline-success" id="btnGenerate">Generate New Key</button>
     </form>
   </div>
 </div>

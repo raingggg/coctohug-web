@@ -22,4 +22,15 @@ router.get('/', async (req, res, next) => {
   res.render('index', { title: req.__('Welcome to Express'), data, pageName: 'wallets' });
 });
 
+router.post('/importNew', async (req, res, next) => {
+  const { mnemonic } = req.body;
+  // update mnc.txt and call all hands to restart
+  res.redirect('/reviewWeb');
+});
+
+router.post('/generateNew', async (req, res, next) => {
+  // generate mnc.txt with the first hand, and call all hands to restart
+  res.redirect('/reviewWeb');
+});
+
 module.exports = router;

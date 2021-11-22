@@ -6,7 +6,7 @@ const { access } = require('fs/promises');
 const CONFIG_FILENAME = process.env['config_file'] || '../chia.json';
 const CONTROLLER_HOST = process.env['controller_address'] || 'localhost'
 const CONTROLLER_PORT = process.env['controller_web_port'] || '12630';
-const WORKER_HOST = process.env['worker_address'];
+const WORKER_HOST = process.env['worker_address'] || process.env['controller_address'];
 const WORKER_PORT = process.env['worker_web_port'];
 
 const MODE = process.env['mode'];

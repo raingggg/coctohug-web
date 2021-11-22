@@ -1,1 +1,29 @@
-restart
+<div class="page-wrapper">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <td>hostname</td>
+        <td>blockchain</td>
+        <td>last_update</td>
+        <td>actions</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(function(dt, index){ %>
+        <tr>
+          <td>
+            <%= dt.hostname %>
+          </td>
+          <td>
+            <%= dt.blockchain %>
+          </td>
+          <td>
+            <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
+          </td>
+          <td><button class="btn btn-outline-success restart" data-hostname="<%= dt.hostname %>"
+              data-blockchain="<%= dt.blockchain %>">Restart</button></td>
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>
+</div>
