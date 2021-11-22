@@ -26,6 +26,8 @@ const updateHand = async () => {
     };
     axios.post(`${controllerUrl}/hands/update`, payload, {
       headers: { 'Content-Type': 'application/json' }
+    }).catch(function (error) {
+      logger.error(error);
     });
   } catch (e) {
     logger.error(e);

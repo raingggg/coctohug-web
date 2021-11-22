@@ -3,11 +3,11 @@ const { blockchainConfig, getWebLogLevel } = require('./chiaConfig');
 
 const logLevel = getWebLogLevel();
 log4js.configure({
-  appenders: { cheese: { type: "file", filename: blockchainConfig.webLogFile } },
-  categories: { default: { appenders: ["cheese"], level: logLevel } }
+  appenders: { cchweb: { type: "file", filename: blockchainConfig.webLogFile } },
+  categories: { default: { appenders: ["cchweb"], level: logLevel } }
 });
 
-const logger = log4js.getLogger("cheese");
+const logger = log4js.getLogger("cchweb");
 
 module.exports = {
   logger

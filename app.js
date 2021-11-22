@@ -32,6 +32,7 @@ const {
 } = require('./apis');
 
 const {
+  home,
   blockchainsWeb,
   coldWalletWeb,
   connectionsWeb,
@@ -82,7 +83,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /* ************* web pages begin ************* */
-app.use('/', reviewWeb);
+app.use('/', home);
 if (isWebController) {
   app.use('/users', usersRouter);
   app.use('/blockchainsWeb', blockchainsWeb);

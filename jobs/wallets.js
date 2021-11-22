@@ -20,6 +20,8 @@ const updateWallet = async () => {
     };
     axios.post(`${controllerUrl}/wallets/update`, payload, {
       headers: { 'Content-Type': 'application/json' }
+    }).catch(function (error) {
+      logger.error(error);
     });
   } catch (e) {
     logger.error(e);

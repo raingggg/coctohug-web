@@ -7,7 +7,7 @@ const { updateFarm } = isWebController ? emptyObject : require('./farms');
 const { updateConnection } = isWebController ? emptyObject : require('./connections');
 const { updateKey } = isWebController ? emptyObject : require('./keys');
 const { updateBlockchain } = isWebController ? emptyObject : require('./blockchains');
-const { updateHand } = isWebController ? emptyObject : require('./updateHand');
+const { updateHand } = isWebController ? emptyObject : require('./hands');
 
 module.exports = {
   updateWallet,

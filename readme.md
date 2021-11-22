@@ -14,6 +14,7 @@
 # todo
 - hands tab
 - show wallet balance on review page as well
+- fist time check and generate keys(raw 1024 words on html got from chia)
 - cold wallet mode
 - import/export cold wallet
 - harvester mode
@@ -24,7 +25,6 @@
 - Integrate cold wallet value check into wallet page
 - pools
 - nft recovery
-- fist time check and generate keys(raw 1024 words on html got from chia)
 - multiple language support
 
 ## Trademark Notice

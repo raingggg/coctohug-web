@@ -1,15 +1,28 @@
-<p>
-    <button type="button" class="btn btn-primary" id="enLanguage">EN language</button>
-    <button type="button" class="btn btn-secondary" id="deLanguage">DE language</button>
-    <a href="/users">click this link to show users</a>
-</p>
+<div class="page-wrapper">
+  <div class="container">
+    <div class="text-center" style="margin-top: 20px">
+      <div class="display-4">Welcome to Coctohug!</div>
+      <div>An all-in-one solution for Chia™ forks farming.</div>
+    </div>
+    <hr>
 
-<p>
-    <button type="button" class="btn btn-success">Success</button>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-warning">Warning</button>
-    <button type="button" class="btn btn-info">Info</button>
-    <button type="button" class="btn btn-light">Light</button>
-    <button type="button" class="btn btn-dark">Dark</button>
-    <button type="button" class="btn btn-link">Link</button>
-</p>
+    <p>To get started with Coctohug, either import your existing
+      24-word
+      mnemonic seed phrase: </p>
+    <!-- Sample mnemonic to hint with, key long since thrown-away -->
+    <form id="main-form" method="POST">
+      <input class="form-control me-2" id="mnemonic" name="mnemonic" type="text"
+        placeholder="north divorce holiday whisper inquiry toy rare minute father ostrich surprise runway ill episode dance rather unaware concert sunset maid gather grain gift wire"
+        aria-label="Import Key">
+      <br />
+      <button class="btn btn-outline-success" type="submit" id="btnImport">Import Existing
+        Key</button>
+      <h3 style="padding-top: 25px;">OR</h3>
+
+      <p>You can generate a brand-new mnemonic phrase that will be written to path: <%= mncPath %>
+      </p>
+      <button class="btn btn-outline-success" type="submit" id="btnGenerate">Generate New
+        Key</button>
+    </form>
+  </div>
+</div>

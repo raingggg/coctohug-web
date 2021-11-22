@@ -1,5 +1,8 @@
 const os = require('os');
 const path = require('path');
+const { constants } = require('fs');
+const { access } = require('fs/promises');
+
 const CONFIG_FILENAME = process.env['config_file'] || '../chia.json';
 const CONTROLLER_HOST = process.env['controller_address'] || 'localhost'
 const CONTROLLER_PORT = process.env['controller_web_port'] || '12630';
@@ -28,6 +31,8 @@ Object.assign(blockchainConfig, {
   config: getFullPath(blockchainConfig.config),
   chainlog: getFullPath(blockchainConfig.chainlog),
   webLogFile: getFullPath(blockchainConfig.webLogFile),
+  mncPath: getFullPath('.coctohug/mnc.txt'),
+  coctohugPath: getFullPath('.coctohug'),
 });
 
 const getHostname = () => {
@@ -62,6 +67,18 @@ const getCoctohugWebVersion = () => {
   return require('../package.json').version;
 };
 
+const hasMNCFile = async () => {
+  let mncExists = false;
+  try {
+    await access(blockchainConfig.mncPath, constants.F_OK);
+    mncExists = true;
+  } catch (e) {
+    console.error(`${blockchainConfig.mncPath} does not exist`);
+  }
+  return mncExists;
+}
+
+
 module.exports = {
   SQL_LOG,
   blockchainConfig,
@@ -73,4 +90,5 @@ module.exports = {
   isWebControllerMode,
   getWebLogLevel,
   getCoctohugWebVersion,
+  hasMNCFile,
 };
