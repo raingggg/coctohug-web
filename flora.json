@@ -3,6 +3,7 @@
   "binary": "works/chiacodes/flora-blockchain/venv/bin/flora",
   "mainnet": ".flora/mainnet",
   "config": ".flora/mainnet/config/config.yaml",
+  "coldWalletName": "xfl_target_address",
   "chainlog": ".flora/mainnet/log/debug.log",
   "webLogLevel": "error",
   "webLogFile": ".coctohug-web/web.log",

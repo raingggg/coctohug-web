@@ -2,7 +2,12 @@ const express = require('express');
 const router = express.Router();
 const { Blockchain } = require('../models');
 const { logger } = require('../utils/logger');
-const { restartBlockchain, addKeyBlockchain, generateKeyBlockchain } = require('../utils/chiaClient');
+const {
+  restartBlockchain,
+  addKeyBlockchain,
+  generateKeyBlockchain,
+  saveColdWallet,
+} = require('../utils/chiaClient');
 const { blockchainConfig: { blockchain } } = require('../utils/chiaConfig');
 
 router.post('/update', async (req, res, next) => {
@@ -58,6 +63,19 @@ router.get('/generatekey', async (req, res, next) => {
   }
 
   res.json(data);
+});
+
+router.post('/savecoldwallet', async (req, res, next) => {
+  let result = false;
+  try {
+    const { coldWalletAddress } = req.body;
+    logger.debug('api-blockchain-savecoldwallet', coldWalletAddress);
+    result = await saveColdWallet(coldWalletAddress);
+  } catch (e) {
+    logger.error(e);
+  }
+
+  return result;
 });
 
 module.exports = router;

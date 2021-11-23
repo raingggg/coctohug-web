@@ -69,14 +69,34 @@ router.get('/coldWalletExport', async (req, res, next) => {
 
 router.post('/coldWalletImport', async (req, res, next) => {
   try {
+    let result = {};
     const { wallets } = req.body;
-    Object.keys(wallets).forEach(k => {
-      console.log(k, wallets[k]);
+
+    const data = await Hand.findAll({
+      where: {
+        mode: 'fullnode'
+      }
     });
-    res.json({ result: 'success' });
+
+    for (let i = 0; i < data.length; i++) {
+      try {
+        const { url, blockchain } = data[i];
+        if (url && wallets[blockchain]) {
+          const finalUrl = `${url}/blockchains/savecoldwallet`;
+          const apiRes = await axios.post(finalUrl, { coldWalletAddress: wallets[blockchain] }).catch(function (error) {
+            logger.error(error);
+          });
+          result[blockchain] = apiRes.data;
+        }
+      } catch (ex) {
+        logger.error(ex);
+      }
+    }
+
+    res.json(result);
   } catch (e) {
     logger.error(e);
-    res.json({ result: 'failed' });
+    res.json({ status: 'failed' });
   }
 });
 

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { promisify } = require('util');
+const { stat, readFile, copyFile, writeFile } = require('fs/promises');
 const exec = promisify(require('child_process').exec);
 
 const dir = require('node-dir');
@@ -12,15 +13,11 @@ const {
   parsePlots
 } = require('./chiaParser');
 const {
-  blockchainConfig: { binary, blockchain, config, mncPath },
+  blockchainConfig: { binary, blockchain, config, mncPath, coldWalletName },
   getCoctohugWebVersion,
 } = require('./chiaConfig');
 const { logger } = require('./logger');
 
-const stat = promisify(fs.stat);
-const readFile = promisify(fs.readFile);
-const copyFile = promisify(fs.copyFile);
-const writeFile = promisify(fs.writeFile);
 
 const G_SIZE = 1024 * 1024 * 1024;
 const TIMEOUT_1MINUTE = 60 * 1000;
@@ -165,7 +162,7 @@ const loadPlots = async () => {
 const loadConfig = async () => {
   let content = '';
   try {
-    content = await readFile(config);
+    content = await readFile(config, 'utf8');
   } catch (e) {
     logger.error(e);
   }
@@ -173,12 +170,33 @@ const loadConfig = async () => {
 };
 
 const saveConfig = async (newConfig) => {
+  let result = false;
+
   try {
-    await copyFile(config, `${copyFile}.${new Date()}`);
+    await copyFile(config, `${config}.${new Date().toISOString().replace(/[:\.]/g, '-')}`);
     await writeFile(config, newConfig);
+    result = true;
   } catch (e) {
     logger.error(e);
   }
+
+  return result;
+};
+
+const saveColdWallet = async (coldWalletAddress) => {
+  let result = false;
+
+  try {
+    const content = await loadConfig();
+    const reg = new RegExp('(' + coldWalletName + ':\\s*)(\\w+)', 'g');
+    const dest = `$1${coldWalletAddress}`;
+    const newConfig = content.replace(reg, dest);
+    result = await saveConfig(newConfig);
+  } catch (e) {
+    logger.error(e);
+  }
+
+  return result;
 };
 
 const saveMNC = async (mnc) => {
@@ -281,7 +299,8 @@ const generateKeyBlockchain = async () => {
 // await saveMNC('hoholala');
 // const tresult = await addKeyBlockchain();
 // await generateKeyBlockchain();
-// console.log('tresult: ', tresult);
+//   const tresult = await saveColdWallet('cac19sgmf7ulreve95rzmyqyyc5rduqx0aw8kt53thw3dt5zs8v830zqcm4vk8');
+//   console.log('tresult: ', tresult);
 // };
 // at();
 
@@ -305,4 +324,5 @@ module.exports = {
   restartBlockchain,
   addKeyBlockchain,
   generateKeyBlockchain,
+  saveColdWallet,
 }
