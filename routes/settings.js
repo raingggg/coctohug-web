@@ -60,7 +60,15 @@ router.get('/coldWalletExport', async (req, res, next) => {
     });
 
     await writeFile(coldWalletFile, JSON.stringify(obj, null, 4));
-    res.download(coldWalletFile, `${new Date().toISOString().substring(0,10)}-coldwallet.json`);
+    res.download(coldWalletFile, `${new Date().toISOString().substring(0, 10)}-coldwallet.json`);
+  } catch (e) {
+    logger.error(e);
+    res.json({ result: 'failed' });
+  }
+});
+
+router.get('/coldWalletImport', async (req, res, next) => {
+  try {
   } catch (e) {
     logger.error(e);
     res.json({ result: 'failed' });

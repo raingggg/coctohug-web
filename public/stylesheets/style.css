@@ -94,6 +94,10 @@ body {
 .tab-panel div:nth-child(2) {
   margin-bottom: 5px;
 }
+#textareaImportColdWallet {
+  width: 100%;
+  height: 300px;
+}
 @media (max-width: 1024px) {
   .leftbar-wrapper ul li {
     font-size: larger;

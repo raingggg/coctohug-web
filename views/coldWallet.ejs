@@ -1,6 +1,19 @@
 <div class="page-wrapper">
   <div class="container">
-    <button class="btn btn-outline-success" id="btnExportColdWallet">Export Cold Wallet</button>
-    <button class="btn btn-outline-success" id="btnImportColdWallet">Import Cold Wallet</button>
+    <div>
+      <p>Click Export button will download a yyyy-mm-dd-coldwallet.json file into your local disk:</p>
+      <button class="btn btn-outline-success" id="btnExportColdWallet">Export Cold Wallet</button>
+    </div>
+
+    <hr>
+
+    <div>
+      <p class="error">Please choose the cold wallet file:</p>
+      <form method="post" id="formImportColdWallet">
+        <p><input type="file" id="inputImportColdWallet" name="inputImportColdWallet" accept=".json"></p>
+        <p><textarea id="textareaImportColdWallet"></textarea></p>
+        <button class="btn btn-outline-danger" id="btnImportColdWallet">Import Cold Wallet</button>
+      </form>
+    </div>
   </div>
 </div>

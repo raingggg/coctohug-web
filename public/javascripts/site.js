@@ -81,5 +81,28 @@ $(document).ready(function () {
     window.open('/settingsWeb/coldWalletExport');
   });
 
+  $('#inputImportColdWallet').change(function (e) {
+    const [file] = document.querySelector('#inputImportColdWallet').files;
+    const reader = new FileReader();
+
+    reader.addEventListener("load", () => {
+      $('#textareaImportColdWallet').val(reader.result);
+    }, false);
+
+    if (file) {
+      reader.readAsText(file);
+    }
+  });
+
+  $("#btnImportColdWallet").click(function (e) {
+    e.preventDefault();
+
+    $(this).prop("disabled", true);
+    if (confirm('All farming rewards will go to addresses included in the uploaded cold wallet file. Do you really feel safe to make this change?')) {
+      // $('#formImportColdWallet').attr('action', '/walletsWeb/generateNew');
+      // $("#formImportColdWallet").submit();
+    }
+  });
+
 });
 
