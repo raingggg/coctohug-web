@@ -3,7 +3,7 @@ const router = express.Router();
 const { Wallet } = require('../models');
 const { logger } = require('../utils/logger');
 
-router.post('/update', function (req, res, next) {
+router.post('/update', async (req, res, next) => {
   try {
     const payload = req.body;
     logger.debug('api-wallet-update', payload);

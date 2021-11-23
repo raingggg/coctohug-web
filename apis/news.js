@@ -3,7 +3,7 @@ const router = express.Router();
 const { News } = require('../models');
 const { logger } = require('../utils/logger');
 
-router.post('/add', function (req, res, next) {
+router.post('/add', async (req, res, next) => {
   try {
     const payload = req.body;
     logger.debug('api-news-create', payload);

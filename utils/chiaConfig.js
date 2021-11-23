@@ -32,6 +32,7 @@ Object.assign(blockchainConfig, {
   chainlog: getFullPath(blockchainConfig.chainlog),
   webLogFile: getFullPath(blockchainConfig.webLogFile),
   mncPath: getFullPath('.coctohug/mnc.txt'),
+  coldWalletFile: getFullPath('.coctohug/coldwallet.json'),
   coctohugPath: getFullPath('.coctohug'),
 });
 

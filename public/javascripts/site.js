@@ -76,5 +76,10 @@ $(document).ready(function () {
     });
   });
 
+  $('button#btnExportColdWallet').click(function () {
+    $(this).attr('disabled', true);
+    window.open('/settingsWeb/coldWalletExport');
+  });
+
 });
 

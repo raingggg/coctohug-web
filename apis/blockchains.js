@@ -5,7 +5,7 @@ const { logger } = require('../utils/logger');
 const { restartBlockchain, addKeyBlockchain, generateKeyBlockchain } = require('../utils/chiaClient');
 const { blockchainConfig: { blockchain } } = require('../utils/chiaConfig');
 
-router.post('/update', function (req, res, next) {
+router.post('/update', async (req, res, next) => {
   try {
     const payload = req.body;
     logger.debug('api-blockchain-update', payload);

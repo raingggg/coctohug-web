@@ -3,7 +3,7 @@ const router = express.Router();
 const { logger } = require('../utils/logger');
 const { Farm } = require('../models');
 
-router.post('/update', function (req, res, next) {
+router.post('/update', async (req, res, next) => {
   try {
     const payload = req.body;
     logger.debug('api-farm-update', payload);

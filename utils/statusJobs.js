@@ -23,6 +23,7 @@ const immediateTryTasks = async () => {
   logger.info('immediateTryTasks start');
   if (currentTry < MAX_TRY) {
     currentTry += 1;
+    await updateKey();
     await updateHand();
     logger.info('immediateTryTasks trying: ', currentTry);
   }

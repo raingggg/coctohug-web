@@ -3,7 +3,7 @@ const router = express.Router();
 const { Connection } = require('../models');
 const { logger } = require('../utils/logger');
 
-router.post('/update', function (req, res, next) {
+router.post('/update', async (req, res, next) => {
   try {
     const payload = req.body;
     logger.debug('api-connection-update', payload);

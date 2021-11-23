@@ -126,7 +126,7 @@ app.use('/wallets', walletsRouter);
 /* ************* apis end ************* */
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(async (req, res, next) => {
   next(createError(404));
 });
 
