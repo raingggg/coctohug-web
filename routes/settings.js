@@ -67,8 +67,13 @@ router.get('/coldWalletExport', async (req, res, next) => {
   }
 });
 
-router.get('/coldWalletImport', async (req, res, next) => {
+router.post('/coldWalletImport', async (req, res, next) => {
   try {
+    const { wallets } = req.body;
+    Object.keys(wallets).forEach(k => {
+      console.log(k, wallets[k]);
+    });
+    res.json({ result: 'success' });
   } catch (e) {
     logger.error(e);
     res.json({ result: 'failed' });

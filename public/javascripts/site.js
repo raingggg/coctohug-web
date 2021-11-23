@@ -97,12 +97,27 @@ $(document).ready(function () {
   $("#btnImportColdWallet").click(function (e) {
     e.preventDefault();
 
-    $(this).prop("disabled", true);
     if (confirm('All farming rewards will go to addresses included in the uploaded cold wallet file. Do you really feel safe to make this change?')) {
-      // $('#formImportColdWallet').attr('action', '/walletsWeb/generateNew');
-      // $("#formImportColdWallet").submit();
+      $(this).prop("disabled", true);
+
+      const wallets = JSON.parse($('#textareaImportColdWallet').val());
+      $.ajax({
+        url: '/settingsWeb/coldWalletImport',
+        type: 'POST',
+        cache: false,
+        data: JSON.stringify({ wallets }),
+        contentType: 'application/json',
+        success: function (data) {
+          alert(JSON.stringify(data, null, 2));
+        },
+        error: function (jqXHR, textStatus, err) {
+          alert(JSON.stringify(err, null, 2));
+        }
+      });
     }
+
   });
+
 
 });
 
