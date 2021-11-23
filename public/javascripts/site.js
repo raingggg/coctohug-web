@@ -68,10 +68,11 @@ $(document).ready(function () {
   });
 
   $('button.restart').click(function () {
+    $(this).attr('disabled', true);
     const hostname = $(this).data("hostname");
     const blockchain = $(this).data("blockchain");
     $.get('/settingsWeb/restartOp', { hostname, blockchain }, function (data) {
-      alert(JSON.stringify(data));
+      alert(JSON.stringify(data, null, 2));
     });
   });
 

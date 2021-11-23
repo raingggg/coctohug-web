@@ -15,7 +15,7 @@
 - hands tab
 - show wallet balance on review page as well
 - restart support
-- fist time check and generate keys(raw 1024 words on html got from chia)
+- fist time check and generate keys
 - cold wallet mode
 - import/export cold wallet
 - harvester mode

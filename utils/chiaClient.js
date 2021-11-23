@@ -12,7 +12,7 @@ const {
   parsePlots
 } = require('./chiaParser');
 const {
-  blockchainConfig: { binary, mainnet, blockchain, config },
+  blockchainConfig: { binary, blockchain, config, mncPath },
   getCoctohugWebVersion,
 } = require('./chiaConfig');
 const { logger } = require('./logger');
@@ -181,6 +181,17 @@ const saveConfig = async (newConfig) => {
   }
 };
 
+const saveMNC = async (mnc) => {
+  if (!mnc) return;
+
+  try {
+    await writeFile(mncPath, mnc.trim());
+  } catch (e) {
+    logger.error(e);
+  }
+};
+
+
 const addConnection = async () => {
 
 };
@@ -233,6 +244,31 @@ const restartBlockchain = async () => {
   return result;
 };
 
+const addKeyBlockchain = async () => {
+  let result = '';
+
+  try {
+    const cmdOutput = await exec(`${binary} keys add -f ${mncPath}`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
+    result = `${addKeyBlockchain}: ${cmdOutput.stdout.trim()}`;
+  } catch (e) {
+    logger.error(e);
+  }
+
+  logger.debug(result);
+
+  return result;
+};
+
+const generateKeyBlockchain = async () => {
+  try {
+    await exec(`${binary} keys generate`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
+    const cmdOutput = await exec(`${binary} keys show --show-mnemonic-seed | tail -n 1`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
+    await saveMNC(cmdOutput.stdout.trim());
+  } catch (e) {
+    logger.error(e);
+  }
+};
+
 // const at = async () => {
 //   const tresult = await loadFarmSummary();
 //   const tresult = await loadWalletShow();
@@ -242,7 +278,10 @@ const restartBlockchain = async () => {
 //   const tresult = await loadKeysShow();
 //   const tresult = await loadAllVersions();
 //   const tresult = await restartBlockchain();
-//   console.log('tresult: ', tresult);
+// await saveMNC('hoholala');
+// const tresult = await addKeyBlockchain();
+// await generateKeyBlockchain();
+// console.log('tresult: ', tresult);
 // };
 // at();
 
@@ -256,6 +295,7 @@ module.exports = {
   loadPlots,
   loadConfig,
   saveConfig,
+  saveMNC,
   addConnection,
   removeConnection,
   isPlotsCheckRunning,
@@ -263,4 +303,6 @@ module.exports = {
   getPoolLoginLink,
   loadAllVersions,
   restartBlockchain,
+  addKeyBlockchain,
+  generateKeyBlockchain,
 }
