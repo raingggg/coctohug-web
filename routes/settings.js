@@ -130,5 +130,61 @@ router.get('/resetPasswordWeb', async (req, res, next) => {
   res.render('index', { title: req.__('Welcome to Express'), pageName: 'resetPassword' });
 });
 
+router.post('/resetPasswordOp', async (req, res, next) => {
+  try {
+    const { oldPassword, password } = req.body;
+    logger.debug('createPasswordOp');
+    const data = await AppConfig.findOne({
+      where: { key: 'password' }
+    });
+
+    if (data && data.value === oldPassword) {
+      await AppConfig.upsert({ key: 'password', value: password });
+      return res.json({ status: 'success' });
+    } else {
+      return res.json({ status: 'incorrect old password' });
+    }
+  } catch (e) {
+    logger.error(e);
+  }
+
+  return res.json({ status: 'failed' });
+});
+
+router.post('/login', async (req, res, next) => {
+  try {
+    const { password } = req.body;
+    logger.debug('login');
+    const data = await AppConfig.findOne({
+      where: { key: 'password' }
+    });
+
+    if (data && data.value === password) {
+      req.session.authed = 'true';
+      res.cookie('authed', 'true', { maxAge: 300000 });
+
+      return res.json({ status: 'success' });
+    } else {
+      return res.json({ status: 'incorrect password' });
+    }
+  } catch (e) {
+    logger.error(e);
+  }
+
+  return res.json({ status: 'failed' });
+});
+
+router.get('/logout', async (req, res, next) => {
+  try {
+    logger.debug('logout');
+    req.session.destroy();
+    res.cookie('authed', '', { expires: new Date(0) });
+  } catch (e) {
+    logger.error(e);
+  }
+
+  return res.redirect('/reviewWeb');
+});
+
 
 module.exports = router;

@@ -1,3 +1,15 @@
+function getCookie(name) {
+  var cookieArr = document.cookie.split(";");
+  for (var i = 0; i < cookieArr.length; i++) {
+    var cookiePair = cookieArr[i].split("=");
+    if (name == cookiePair[0].trim()) {
+      return decodeURIComponent(cookiePair[1]);
+    }
+  }
+
+  return null;
+}
+
 $(document).ready(function () {
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -189,6 +201,34 @@ $(document).ready(function () {
     }
   });
 
+  $("#resetPasswordButton").click(function (e) {
+    e.preventDefault();
+
+    const parent = $(this).closest('.resetPassword');
+    const oldPassword = parent.find('#inputOldPassword').val();
+    const password = parent.find('#inputResetPassword').val();
+    const password2 = parent.find('#inputResetPassword2').val();
+    if (oldPassword && password && password === password2) {
+      $(this).prop("disabled", true);
+
+      $.ajax({
+        url: '/settingsWeb/resetPasswordOp',
+        type: 'POST',
+        cache: false,
+        data: JSON.stringify({ oldPassword: md5(oldPassword), password: md5(password) }),
+        contentType: 'application/json',
+        success: function (data) {
+          alert(JSON.stringify(data, null, 2));
+        },
+        error: function (jqXHR, textStatus, err) {
+          alert(JSON.stringify(err, null, 2));
+        }
+      });
+    } else {
+      alert('confirm password must be same with password');
+    }
+  });
+
   $(".tranferButton").click(function (e) {
     e.preventDefault();
     $(this).prop("disabled", true);
@@ -200,7 +240,6 @@ $(document).ready(function () {
     const amount = parseFloat(parent.find('.amount').val().trim());
     const password = parent.find('.password').val();
     if (blockchain && hostname && toAddress && amount && amount > 0 && password) {
-
       $.ajax({
         url: '/walletsWeb/transferCoin',
         type: 'POST',
@@ -218,6 +257,41 @@ $(document).ready(function () {
       alert('Please ensure all fields are entered!');
     }
   });
+
+  const passwordModal = new bootstrap.Modal(document.getElementById('passwordModal'), { keyboard: false });
+  $(".settings-link").click(function (e) {
+    if (getCookie('authed') !== 'true') {
+      passwordModal.show();
+    }
+  });
+
+  $("#btnSettingPassword").click(function (e) {
+    const password = $('#inputSettingPassword').val();
+    if (password) {
+      $.ajax({
+        url: '/settingsWeb/login',
+        type: 'POST',
+        cache: false,
+        data: JSON.stringify({ password: md5(password) }),
+        contentType: 'application/json',
+        success: function (data) {
+          if (data.status === 'success') {
+            passwordModal.hide();
+            $('.setting-li').removeClass('visually-hidden');
+          } else {
+            alert(JSON.stringify(data, null, 2));
+          }
+        },
+        error: function (jqXHR, textStatus, err) {
+          alert(JSON.stringify(err, null, 2));
+        }
+      });
+    }
+  });
+
+  if (getCookie('authed') === 'true') {
+    $('.setting-li').removeClass('visually-hidden');
+  }
 
 });
 

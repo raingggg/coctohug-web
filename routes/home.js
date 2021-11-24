@@ -10,6 +10,7 @@ router.get('/', async (req, res, next) => {
 
   if (!data) return res.redirect('/settingsWeb/createPasswordWeb');
 
+  
   const shouldRedirect = await hasMNCFile();
   if (shouldRedirect) {
     return res.redirect('/reviewWeb');

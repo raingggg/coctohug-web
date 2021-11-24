@@ -1,20 +1,90 @@
 <div class="leftbar-wrapper">
-    <ul>
-        <li><a href="/reviewWeb" class="link-primary"><span class="icon-leaf"></span> <span class="link-text">Review</span></a></li>
-        <li><a href="/receivedCoinsWeb" class="link-primary"><span class="icon-coin-dollar"></span> <span class="link-text">Received Coins</span></a></li>
-        <li><a href="/newsWeb" class="link-primary"><span class="icon-notification"></span> <span class="link-text">New Warnings</span></a></li>
-        <li><a href="/dailyReportWeb" class="link-primary"><span class="icon-brightness-contrast"></span> <span class="link-text">Daily Report</span></a></li>
-        <li><a href="#" class="link-primary"><span class="icon-calendar"></span> <span class="link-text">Weekly Report</span></a></li>
-        <li><a href="/blockchainsWeb" class="link-primary"><span class="icon-link"></span> <span class="link-text">Blockchains</span></a></li>
-        <li><a href="/connectionsWeb" class="link-primary"><span class="icon-sphere"></span> <span class="link-text">Connections</span></a></li>
-        <li><a href="/walletsWeb" class="link-primary"><span class="icon-coin-dollar"></span> <span class="link-text">Wallets</span></a></li>
-        <li><a href="#" class="link-primary"><span class="icon-database"></span> <span class="link-text">Plots</span></a></li>
-        <li><a href="/keysWeb" class="link-primary"><span class="icon-key2"></span> <span class="link-text">Keys</span></a></li>
-        <li><a href="#" class="link-primary"><span class="icon-spinner10"></span> <span class="link-text">Pools</span></a></li>
-        <li><a href="/handsWeb" class="link-primary"><span class="icon-point-up"></span> <span class="link-text">Hands</span></a></li>
-        <li><a href="#" class="link-primary"><span class="icon-wrench"></span> <span class="link-text">Settings</span></a></li>
-        <li><a href="/settingsWeb/restartWeb" class="setting-item link-primary"><span class="link-text">Restart</span></a></li>
-        <li><a href="/settingsWeb/coldWalletWeb" class="setting-item link-primary"><span class="link-text">Cold Wallet</span></a></li>
-        <li><a href="/settingsWeb/resetPasswordWeb" class="setting-item link-primary"><span class="link-text">Reset Password</span></a></li>
-    </ul>
+  <ul>
+    <li>
+      <a href="/reviewWeb" class="link-primary"><span class="icon-leaf"></span> <span
+          class="link-text">Review</span></a>
+    </li>
+    <li>
+      <a href="/receivedCoinsWeb" class="link-primary"><span class="icon-coin-dollar"></span> <span
+          class="link-text">Received Coins</span></a>
+    </li>
+    <li>
+      <a href="/newsWeb" class="link-primary"><span class="icon-notification"></span> <span class="link-text">New
+          Warnings</span></a>
+    </li>
+    <li>
+      <a href="/dailyReportWeb" class="link-primary"><span class="icon-brightness-contrast"></span> <span
+          class="link-text">Daily Report</span></a>
+    </li>
+    <li>
+      <a href="#" class="link-primary"><span class="icon-calendar"></span> <span class="link-text">Weekly
+          Report</span></a>
+    </li>
+    <li>
+      <a href="/blockchainsWeb" class="link-primary"><span class="icon-link"></span> <span
+          class="link-text">Blockchains</span></a>
+    </li>
+    <li>
+      <a href="/connectionsWeb" class="link-primary"><span class="icon-sphere"></span> <span
+          class="link-text">Connections</span></a>
+    </li>
+    <li>
+      <a href="/walletsWeb" class="link-primary"><span class="icon-coin-dollar"></span> <span
+          class="link-text">Wallets</span></a>
+    </li>
+    <li>
+      <a href="#" class="link-primary visually-hidden"><span class="icon-database"></span> <span
+          class="link-text">Plots</span></a>
+    </li>
+    <li>
+      <a href="/keysWeb" class="link-primary"><span class="icon-key2"></span> <span class="link-text">Keys</span></a>
+    </li>
+    <li>
+      <a href="#" class="link-primary visually-hidden"><span class="icon-spinner10"></span> <span
+          class="link-text">Pools</span></a>
+    </li>
+    <li>
+      <a href="/handsWeb" class="link-primary"><span class="icon-point-up"></span> <span
+          class="link-text">Hands</span></a>
+    </li>
+    <li>
+      <a href="#" class="link-primary settings-link"><span class="icon-wrench"></span> <span
+          class="link-text">Settings</span></a>
+    </li>
+    <li class="setting-li visually-hidden">
+      <a href="/settingsWeb/restartWeb" class="setting-item link-primary"><span class="link-text">Restart</span></a>
+    </li>
+    <li class="setting-li visually-hidden">
+      <a href="/settingsWeb/coldWalletWeb" class="setting-item link-primary"><span class="link-text">Cold
+          Wallet</span></a>
+    </li>
+    <li class="setting-li visually-hidden">
+      <a href="/settingsWeb/resetPasswordWeb" class="setting-item link-primary"><span class="link-text">Reset
+          Password</span></a>
+    </li>
+    <li class="setting-li visually-hidden">
+      <a href="/settingsWeb/logout" class="setting-item link-primary"><span class="link-text">Logout</span></a>
+    </li>
+  </ul>
+</div>
+
+<div class="passwordModalWrapper">
+  <div class="modal fade" id="passwordModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="passwordModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="passwordModalLabel">Input your password to access settings</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="password" class="formInput" id="inputSettingPassword" autocomplete="off">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-success" id="btnSettingPassword">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

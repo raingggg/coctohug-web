@@ -9,6 +9,8 @@ router.get('/', async (req, res, next) => {
       ['blockchain', 'ASC'],
     ]
   });
+
+  
   res.render('index', { title: req.__('Welcome to Express'), data, pageName: 'keys' });
 });
 

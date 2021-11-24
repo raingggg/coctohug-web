@@ -1,11 +1,13 @@
 var createError = require('http-errors');
-const express = require('express');
+var express = require('express');
 var url = require('url');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var i18n = require('i18n');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var sessionAuth = require('./middlewares/sessionAuth');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -81,6 +83,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'coctohug',
+  cookie: { maxAge: 300000 },
+  resave: false,
+  saveUninitialized: false,
+  rolling: false,
+}));
+app.use(sessionAuth);
 
 /* ************* web pages begin ************* */
 app.use('/', home);
