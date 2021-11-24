@@ -115,9 +115,52 @@ $(document).ready(function () {
         }
       });
     }
-
   });
 
+  $(".btnConnectionRemove").click(function (e) {
+    e.preventDefault();
+
+    const table = $(this).closest('.tab-panel').find('table');
+    const blockchain = table.data('blockchain');
+    const hostname = table.data('hostname');
+
+    const nodeIds = [];
+    table.find('input:checkbox:checked').each(function (index, item) {
+      nodeIds.push($(this).val());
+    });
+
+    $.ajax({
+      url: '/connectionsWeb/remove',
+      type: 'POST',
+      cache: false,
+      data: JSON.stringify({ blockchain, hostname, nodeIds }),
+      contentType: 'application/json'
+    });
+
+    alert('removing... please check again few minutes later');
+  });
+
+  $(".btnConnectionAdd").click(function (e) {
+    e.preventDefault();
+
+    const table = $(this).closest('.tab-panel').find('table');
+    const blockchain = table.data('blockchain');
+    const hostname = table.data('hostname');
+    const connection = $(this).closest('.row').find('.new-connection').val();
+    if (connection && connection.length > 10 && connection.includes(':')) {
+      $.ajax({
+        url: '/connectionsWeb/add',
+        type: 'POST',
+        cache: false,
+        data: JSON.stringify({ blockchain, hostname, connection }),
+        contentType: 'application/json'
+      });
+  
+      alert('adding... please check again few minutes later');
+    } else {
+      alert('new connection must have : to specify the port number');
+    }
+  });
 
 });
 

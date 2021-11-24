@@ -18,13 +18,12 @@
 - fist time check and generate keys
 - cold wallet mode
 - import/export cold wallet
-- harvester mode
 - connections add remove support
 - money transfer support
-- password protect for setting
 - Integrate cold wallet value check into wallet page
-- pools
 - nft recovery
+- password protect for setting
+- harveuster mode
 - multiple language support
 
 ## Trademark Notice

@@ -5,9 +5,14 @@
         <ul class="nav nav-tabs">
           <% data.forEach(function(dt, index){ %>
             <li class="nav-item">
-              <a class="nav-link nav-tab <%= index === 0 ? 'active' : '' %> <%= dt.status %>" href="#" data-tabp-index="<%= index %>"><span><%= dt.blockchain %></span><span> <%= index + 1 %></span></a>
+              <a class="nav-link nav-tab <%= index === 0 ? 'active' : '' %> <%= dt.status %>" href="#"
+                data-tabp-index="<%= index %>"><span>
+                  <%= dt.blockchain %>
+                </span><span>
+                  <%= index + 1 %>
+                </span></a>
             </li>
-          <% }); %>
+            <% }); %>
         </ul>
       </div>
     </div>
@@ -15,9 +20,72 @@
 
   <% data.forEach(function(dt, index){ %>
     <div class="tab-panel <%= index === 0 ? '' : 'd-none' %>" data-panel-index="<%= index %>">
-      <div>last_update: <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %></div>
-      <div>hostname: <%= dt.hostname %></div>
-      <div style="white-space: pre-wrap;word-break: break-word;"><hr><%= dt.details %></div>
+      <table class="table table-striped table-hover" data-blockchain="<%=dt.blockchain %>" data-hostname="<%= dt.hostname
+          %>">
+        <thead>
+          <tr>
+            <td> </td>
+            <td>type</td>
+            <td>ip</td>
+            <td>ports</td>
+            <td>nodeid</td>
+            <td>last_connect</td>
+            <td>height</td>
+            <td>mib_up</td>
+            <td>mib_down</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% dt.connections.forEach(function(dtc, index){ %>
+            <tr>
+              <td>
+                <% if (dtc.type==='FULL_NODE' ) { %>
+                  <input type="checkbox" name="nodeid" value="<%= dtc.nodeid %>" />
+                  <% } %>
+              </td>
+              <td>
+                <%= dtc.type %>
+              </td>
+              <td>
+                <%= dtc.ip %>
+              </td>
+              <td>
+                <%= dtc.ports %>
+              </td>
+              <td>
+                <%= dtc.nodeid %>
+              </td>
+              <td>
+                <%= dtc.last_connect %>
+              </td>
+              <td>
+                <%= dtc.height %>
+              </td>
+              <td>
+                <%= dtc.mib_up %>
+              </td>
+              <td>
+                <%= dtc.mib_down %>
+              </td>
+            </tr>
+            <% }); %>
+        </tbody>
+      </table>
+
+      <div class="row">
+        <div class="col-6">
+          <button class="btn btn-outline-success btnConnectionRemove">Disconnect
+            Selected</button>
+        </div>
+
+        <div class="col-3">
+          <input class="form-control me-2 new-connection" type="text" placeholder="node.chia.net:8444">
+        </div>
+        <div class="col-3">
+          <button class="btn btn-outline-success text-nowrap text-right btnConnectionAdd">Add New
+            Connection</button>
+        </div>
+      </div>
     </div>
-  <% }); %>
+    <% }); %>
 </div>

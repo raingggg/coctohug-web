@@ -117,7 +117,8 @@ const loadConnectionsShow = async () => {
     logger.error(e);
   }
   logger.debug(result);
-  return parseConnecitons(result);
+
+  return result;
 };
 
 const loadKeysShow = async () => {
@@ -210,12 +211,33 @@ const saveMNC = async (mnc) => {
 };
 
 
-const addConnection = async () => {
+const addConnection = async (connection) => {
+  let result = '';
 
+  try {
+    const cmdOutput = await exec(`${binary} show --add-connection ${connection}`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
+    result = cmdOutput.stdout.trim();
+  } catch (e) {
+    logger.error(e);
+  }
+  logger.debug(result);
+
+  return result;
 };
 
-const removeConnection = async () => {
-
+const removeConnection = async (nodeIds) => {
+  try {
+    for (let i = 0; i < nodeIds.length; i++) {
+      try {
+        const nodeId = nodeIds[i];
+        await exec(`${binary} show --remove-connection ${nodeId}`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
+      } catch (ex) {
+        logger.error(ex);
+      }
+    }
+  } catch (e) {
+    logger.error(e);
+  }
 };
 
 const isPlotsCheckRunning = async () => {
