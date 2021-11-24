@@ -11,6 +11,8 @@ router.post('/add', async (req, res, next) => {
   } catch (e) {
     logger.error(e);
   }
+
+  return res.json({ status: "success" });
 });
 
 module.exports = router;

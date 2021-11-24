@@ -5,7 +5,7 @@ const {
   getHostname,
   getControllerUrl,
 } = require('../utils/chiaConfig');
-const { loadWalletShow } = require('../utils/chiaClient');
+const { loadWalletShow, getColdWalletAddress } = require('../utils/chiaClient');
 
 const hostname = getHostname();
 const controllerUrl = getControllerUrl();
@@ -13,10 +13,12 @@ const controllerUrl = getControllerUrl();
 const updateWallet = async () => {
   try {
     const data = await loadWalletShow();
+    const coldWallet = await getColdWalletAddress();
     const payload = {
       hostname,
       blockchain,
       details: data,
+      coldWallet,
     };
     axios.post(`${controllerUrl}/wallets/update`, payload, {
       headers: { 'Content-Type': 'application/json' }

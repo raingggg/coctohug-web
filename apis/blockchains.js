@@ -32,7 +32,7 @@ router.get('/restart', async (req, res, next) => {
     data[`${blockchain}`] = e;
   }
 
-  res.json(data);
+  return res.json(data);
 });
 
 router.get('/addkey', async (req, res, next) => {
@@ -47,7 +47,7 @@ router.get('/addkey', async (req, res, next) => {
     data[`${blockchain}`] = e;
   }
 
-  res.json(data);
+  return res.json(data);
 });
 
 router.get('/generatekey', async (req, res, next) => {
@@ -62,7 +62,7 @@ router.get('/generatekey', async (req, res, next) => {
     data.status = 'Failed';
   }
 
-  res.json(data);
+  return res.json(data);
 });
 
 router.post('/savecoldwallet', async (req, res, next) => {
@@ -75,7 +75,7 @@ router.post('/savecoldwallet', async (req, res, next) => {
     logger.error(e);
   }
 
-  return result;
+  return res.json({ result });
 });
 
 module.exports = router;

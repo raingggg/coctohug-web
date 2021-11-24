@@ -12,6 +12,8 @@ router.post('/update', async (req, res, next) => {
   } catch (e) {
     logger.error(e);
   }
+
+  return res.json({ status: "success" });
 });
 
 router.post('/remove', async (req, res, next) => {
@@ -22,6 +24,8 @@ router.post('/remove', async (req, res, next) => {
   } catch (e) {
     logger.error(e);
   }
+
+  return res.json({ status: "success" });
 });
 
 router.post('/add', async (req, res, next) => {
@@ -32,6 +36,8 @@ router.post('/add', async (req, res, next) => {
   } catch (e) {
     logger.error(e);
   }
+
+  return res.json({ status: "success" });
 });
 
 module.exports = router;

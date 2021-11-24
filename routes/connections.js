@@ -26,43 +26,54 @@ router.get('/', async (req, res, next) => {
 });
 
 router.post('/remove', async (req, res, next) => {
-  const { blockchain, hostname, nodeIds } = req.body;
-  const data = await Hand.findOne({
-    where: {
-      mode: 'fullnode',
-      blockchain,
-      hostname
-    }
-  });
-
-  if (data) {
-    const finalUrl = `${data.url}/connections/remove`;
-    await axios.post(finalUrl, { nodeIds }).catch(function (error) {
-      logger.error(error);
+  try {
+    const { blockchain, hostname, nodeIds } = req.body;
+    const data = await Hand.findOne({
+      where: {
+        mode: 'fullnode',
+        blockchain,
+        hostname
+      }
     });
+
+    if (data) {
+      const finalUrl = `${data.url}/connections/remove`;
+      await axios.post(finalUrl, { nodeIds }).catch(function (error) {
+        logger.error(error);
+      });
+      return res.json({ status: 'success' });
+    }
+  } catch (e) {
+    logger.error(e);
   }
 
-  res.json({ status: 'Success' });
+  return res.json({ status: 'failed' });
 });
 
 router.post('/add', async (req, res, next) => {
-  const { blockchain, hostname, connection } = req.body;
-  const data = await Hand.findOne({
-    where: {
-      mode: 'fullnode',
-      blockchain,
-      hostname
-    }
-  });
-
-  if (data) {
-    const finalUrl = `${data.url}/connections/add`;
-    await axios.post(finalUrl, { connection }).catch(function (error) {
-      logger.error(error);
+  try {
+    const { blockchain, hostname, connection } = req.body;
+    const data = await Hand.findOne({
+      where: {
+        mode: 'fullnode',
+        blockchain,
+        hostname
+      }
     });
+
+    if (data) {
+      const finalUrl = `${data.url}/connections/add`;
+      await axios.post(finalUrl, { connection }).catch(function (error) {
+        logger.error(error);
+      });
+      return res.json({ status: 'success' });
+    }
+
+  } catch (e) {
+    logger.error(e);
   }
 
-  res.json({ status: 'Success' });
+  return res.json({ status: 'failed' });
 });
 
 module.exports = router;

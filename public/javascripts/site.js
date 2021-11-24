@@ -155,10 +155,67 @@ $(document).ready(function () {
         data: JSON.stringify({ blockchain, hostname, connection }),
         contentType: 'application/json'
       });
-  
+
       alert('adding... please check again few minutes later');
     } else {
       alert('new connection must have : to specify the port number');
+    }
+  });
+
+  $("#createPasswordButton").click(function (e) {
+    e.preventDefault();
+
+    const parent = $(this).closest('.createPassword');
+    const password = parent.find('#inputCreatePassword').val();
+    const password2 = parent.find('#inputCreatePassword2').val();
+    if (password && password === password2) {
+      $(this).prop("disabled", true);
+
+      $.ajax({
+        url: '/settingsWeb/createPasswordOp',
+        type: 'POST',
+        cache: false,
+        data: JSON.stringify({ password: md5(password) }),
+        contentType: 'application/json',
+        success: function (data) {
+          window.location.href = '/';
+        },
+        error: function (jqXHR, textStatus, err) {
+          alert(JSON.stringify(err, null, 2));
+        }
+      });
+    } else {
+      alert('confirm password must be same with password');
+    }
+  });
+
+  $(".tranferButton").click(function (e) {
+    e.preventDefault();
+    $(this).prop("disabled", true);
+
+    const parent = $(this).closest('.transferMoney');
+    const blockchain = parent.data('blockchain');
+    const hostname = parent.data('hostname');
+    const toAddress = parent.find('.toAddress').val().trim();
+    const amount = parseFloat(parent.find('.amount').val().trim());
+    const password = parent.find('.password').val();
+    if (blockchain && hostname && toAddress && amount && amount > 0 && password) {
+
+      $.ajax({
+        url: '/walletsWeb/transferCoin',
+        type: 'POST',
+        cache: false,
+        data: JSON.stringify({ blockchain, hostname, toAddress, amount, password: md5(password) }),
+        contentType: 'application/json',
+        success: function (data) {
+          alert(JSON.stringify(data, null, 2));
+        },
+        error: function (jqXHR, textStatus, err) {
+          alert(JSON.stringify(err, null, 2));
+        }
+      });
+    } else {
+      alert('Please ensure all fields are entered!');
     }
   });
 

@@ -19,12 +19,13 @@
 - cold wallet mode
 - import/export cold wallet
 - connections add remove support
-- money transfer support
-- Integrate cold wallet value check into wallet page
 - nft recovery
+- Integrate cold wallet value check into wallet page
+- money transfer support
 - password protect for setting
-- harveuster mode
+- harvester mode
 - multiple language support
+- enable coldwallet in wallet.model
 
 ## Trademark Notice
 CHIA NETWORK INC, CHIA™, the CHIA BLOCKCHAIN™, the CHIA PROTOCOL™, CHIALISP™ and the “leaf Logo” (including the leaf logo alone when it refers to or indicates Chia), are trademarks or registered trademarks of Chia Network, Inc., a Delaware corporation. *There is no affliation between this Coctohug project and the main Chia Network project.*

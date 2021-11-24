@@ -5,9 +5,14 @@
         <ul class="nav nav-tabs">
           <% data.forEach(function(dt, index){ %>
             <li class="nav-item">
-              <a class="nav-link nav-tab <%= index === 0 ? 'active' : '' %> <%= dt.status %>" href="#" data-tabp-index="<%= index %>"><span><%= dt.blockchain %></span><span> <%= index + 1 %></span></a>
+              <a class="nav-link nav-tab <%= index === 0 ? 'active' : '' %> <%= dt.status %>" href="#"
+                data-tabp-index="<%= index %>"><span>
+                  <%= dt.blockchain %>
+                </span><span>
+                  <%= index + 1 %>
+                </span></a>
             </li>
-          <% }); %>
+            <% }); %>
         </ul>
       </div>
     </div>
@@ -15,9 +20,32 @@
 
   <% data.forEach(function(dt, index){ %>
     <div class="tab-panel <%= index === 0 ? '' : 'd-none' %>" data-panel-index="<%= index %>">
-      <div>last_update: <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %></div>
-      <div>hostname: <%= dt.hostname %></div>
-      <div style="white-space: pre-wrap;word-break: break-word;"><hr><%= dt.details %></div>
+      <div><a class="nav-link" target="_blank" href="<%= dt.coldWallet %>">Check
+          Farming Rewards Online</a>
+        <p>last_update: <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
+        </p>
+      </div>
+      <div>
+        <hr>
+        <%- dt.details.replace(/\n/g, "</br>" ) %>
+      </div>
+      <div class="transferMoney" data-blockchain="<%= dt.blockchain %>" data-hostname="<%= dt.hostname %>">
+        <hr>
+        <div>
+          <span class="formLabel">Recipient Address:</span> <input type="text" class="formInput toAddress">
+        </div>
+        <div>
+          <span class="formLabel">Transfer Amount:</span> <input type="text" class="formInput amount">
+        </div>
+        <div>
+          <span class="formLabel">Your Password:</span> <input type="password" class="formInput password"
+            id="exampleInputPassword1" autocomplete="off">
+        </div>
+        <div>
+          <button class="btn btn-outline-danger actionButton tranferButton">Transfer Coins to Others with Secure
+            Password</button>
+        </div>
+      </div>
     </div>
-  <% }); %>
+    <% }); %>
 </div>

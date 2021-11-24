@@ -309,6 +309,35 @@ const generateKeyBlockchain = async () => {
   }
 };
 
+const getColdWalletAddress = async () => {
+  let result = '';
+
+  try {
+    const content = await loadConfig();
+    const reg = new RegExp('(' + coldWalletName + ':\\s*)(\\w+)');
+    const match = reg.exec(content);
+    if (match) result = match[2];
+  } catch (e) {
+    logger.error(e);
+  }
+
+  return result;
+};
+
+const transferCoin = async (toAddress, amount) => {
+  let result = '';
+
+  try {
+    const cmdOutput = await exec(`${binary} wallet send -t ${toAddress} -a ${amount}`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
+    result = cmdOutput.stdout.trim();
+  } catch (e) {
+    logger.error(e);
+  }
+  logger.debug(result);
+
+  return result;
+};
+
 // const at = async () => {
 //   const tresult = await loadFarmSummary();
 //   const tresult = await loadWalletShow();
@@ -321,7 +350,9 @@ const generateKeyBlockchain = async () => {
 // await saveMNC('hoholala');
 // const tresult = await addKeyBlockchain();
 // await generateKeyBlockchain();
-//   const tresult = await saveColdWallet('cac19sgmf7ulreve95rzmyqyyc5rduqx0aw8kt53thw3dt5zs8v830zqcm4vk8');
+// const tresult = await saveColdWallet('cac19sgmf7ulreve95rzmyqyyc5rduqx0aw8kt53thw3dt5zs8v830zqcm4vk8');
+// const tresult = await getColdWalletAddress();
+//   const tresult = await transferCoin('cac19sgmf7ulreve95rzmyqyyc5rduqx0aw8kt53thw3dt5zs8v830zqcm4vk8');
 //   console.log('tresult: ', tresult);
 // };
 // at();
@@ -347,4 +378,6 @@ module.exports = {
   addKeyBlockchain,
   generateKeyBlockchain,
   saveColdWallet,
+  getColdWalletAddress,
+  transferCoin,
 }

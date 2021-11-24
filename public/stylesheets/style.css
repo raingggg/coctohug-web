@@ -98,6 +98,19 @@ body {
   width: 100%;
   height: 300px;
 }
+.formLabel {
+  display: inline-block;
+  min-width: 140px;
+}
+.formInput {
+  width: 65%;
+}
+.actionButton {
+  margin-top: 10px;
+}
+.transferMoney .formLabel {
+  color: #9f5c5c;
+}
 @media (max-width: 1024px) {
   .leftbar-wrapper ul li {
     font-size: larger;

@@ -12,6 +12,7 @@ const { Plotnft } = isWebController ? require('./plotnfts') : emptyObject;
 const { Plot } = isWebController ? require('./plots') : emptyObject;
 const { Pool } = isWebController ? require('./pools') : emptyObject;
 const { Wallet } = isWebController ? require('./wallets') : emptyObject;
+const { AppConfig } = isWebController ? require('./appConfigs') : emptyObject;
 const {
   ReviewPlotCount,
   ReviewPlotsSize,
@@ -34,6 +35,7 @@ module.exports = {
   Plot,
   Pool,
   Wallet,
+  AppConfig,
   ReviewPlotCount,
   ReviewPlotsSize,
   ReviewTotalChia,
