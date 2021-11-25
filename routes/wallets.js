@@ -90,7 +90,7 @@ router.post('/transferCoin', async (req, res, next) => {
       });
 
       if (hand && hand.url) {
-        const finalUrl = `${hand.url}/wallets/transfer`;
+        const finalUrl = `${hand.url}/walletsWorker/transfer`;
         await axios.post(finalUrl, { toAddress, amount }).catch(function (error) {
           logger.error(error);
         });
@@ -112,7 +112,7 @@ const genKey = async (hand) => {
 
   if (hand) {
     try {
-      let finalUrl = `${hand.url}/blockchains/generatekey`;
+      let finalUrl = `${hand.url}/blockchainsWorker/generatekey`;
       let apiRes = await axios.get(finalUrl);
       if (apiRes && apiRes.data && apiRes.data.status === 'OK') {
         gResult = true;
@@ -128,10 +128,10 @@ const genKey = async (hand) => {
 const addKeyNRestart = async (data) => {
   for (let i = 0; i < data.length; i++) {
     try {
-      let finalUrl = `${data[i].url}/blockchains/addkey`;
+      let finalUrl = `${data[i].url}/blockchainsWorker/addkey`;
       await axios.get(finalUrl);
 
-      finalUrl = `${data[i].url}/blockchains/restart`;
+      finalUrl = `${data[i].url}/blockchainsWorker/restart`;
       await axios.get(finalUrl);
     } catch (ex) {
       logger.error(ex);

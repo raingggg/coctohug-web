@@ -32,7 +32,7 @@ router.get('/restartOp', async (req, res, next) => {
     });
 
     const url = data && data[0] && data[0].url;
-    const finalUrl = `${url}/blockchains/restart`;
+    const finalUrl = `${url}/blockchainsWorker/restart`;
     const apiRes = await axios.get(finalUrl);
     return res.json(apiRes.data);
   } catch (e) {
@@ -84,7 +84,7 @@ router.post('/coldWalletImport', async (req, res, next) => {
       try {
         const { url, blockchain } = data[i];
         if (url && wallets[blockchain]) {
-          const finalUrl = `${url}/blockchains/savecoldwallet`;
+          const finalUrl = `${url}/blockchainsWorker/savecoldwallet`;
           const apiRes = await axios.post(finalUrl, { coldWalletAddress: wallets[blockchain] }).catch(function (error) {
             logger.error(error);
           });

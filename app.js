@@ -34,6 +34,13 @@ const {
 } = require('./apis');
 
 const {
+  blockchainsWorker,
+  certificatesWorker,
+  connectionsWorker,
+  walletsWorker,
+} = require('./workerApis');
+
+const {
   home,
   blockchainsWeb,
   coldWalletWeb,
@@ -113,27 +120,37 @@ if (isWebController) {
 }
 /* ************* web pages end ************* */
 
-/* ************* apis begin ************* */
-app.use('/actions', actionsRouter);
-app.use('/analysis', analysisRouter);
-app.use('/blockchains', blockchainsRouter);
-app.use('/certificates', certificatesRouter);
-app.use('/challenges', challengesRouter);
-app.use('/configs', configsRouter);
-app.use('/connections', connectionsRouter);
-app.use('/hands', handsRouter);
-app.use('/farms', farmsRouter);
-app.use('/keys', keysRouter);
-app.use('/logs', logsRouter);
-app.use('/news', newsRouter);
-app.use('/partials', partialsRouter);
-app.use('/ping', pingRouter);
-app.use('/plotnfts', plotnftsRouter);
-app.use('/plots', plotsRouter);
-app.use('/pools', poolsRouter);
-app.use('/stats', statsRouter);
-app.use('/wallets', walletsRouter);
-/* ************* apis end ************* */
+/* ************* controller apis begin ************* */
+if (isWebController) {
+  app.use('/actions', actionsRouter);
+  app.use('/analysis', analysisRouter);
+  app.use('/blockchains', blockchainsRouter);
+  app.use('/challenges', challengesRouter);
+  app.use('/configs', configsRouter);
+  app.use('/connections', connectionsRouter);
+  app.use('/hands', handsRouter);
+  app.use('/farms', farmsRouter);
+  app.use('/keys', keysRouter);
+  app.use('/logs', logsRouter);
+  app.use('/news', newsRouter);
+  app.use('/partials', partialsRouter);
+  app.use('/ping', pingRouter);
+  app.use('/plotnfts', plotnftsRouter);
+  app.use('/plots', plotsRouter);
+  app.use('/pools', poolsRouter);
+  app.use('/stats', statsRouter);
+  app.use('/wallets', walletsRouter);
+}
+/* ************* controller apis end ************* */
+
+/* ************* worker apis begin ************* */
+if (!isWebController) {
+  app.use('/blockchainsWorker', blockchainsWorker);
+  app.use('/certificates', certificatesWorker);
+  app.use('/connectionsWorker', connectionsWorker);
+  app.use('/walletsWorker', walletsWorker);
+}
+/* ************* worker apis begin ************* */
 
 // catch 404 and forward to error handler
 app.use(async (req, res, next) => {

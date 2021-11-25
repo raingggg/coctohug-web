@@ -1,12 +1,48 @@
 <div class="page-wrapper">
   <table class="table table-striped table-hover">
     <thead>
-      <tr><td>hostname</td><td>blockchain</td><td>mode</td><td>versions</td><td>last_update</td></tr>
+      <tr>
+        <td></td>
+        <td>hostname</td>
+        <td>blockchain</td>
+        <td>mode</td>
+        <td>versions</td>
+        <td>last_update</td>
+      </tr>
     </thead>
     <tbody>
       <% data.forEach(function(dt, index){ %>
-        <tr><td><%= dt.hostname %></td><td><%= dt.blockchain %></td><td><%= dt.mode %></td><td><%- dt.versions.replace(/\n/g, "</br>") %></td><td><%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %></td></tr>
-      <% }); %>
+        <tr>
+          <td>
+            <input type="checkbox" name="handcheck" value="<%= dt.index %>" data-hostname="<%= dt.hostname %>"
+              data-blockchain="<%= dt.blockchain %>" />
+          </td>
+          <td>
+            <%= dt.hostname %>
+          </td>
+          <td>
+            <%= dt.blockchain %>
+          </td>
+          <td>
+            <%= dt.mode %>
+          </td>
+          <td>
+            <%- dt.versions.replace(/\n/g, "</br>" ) %>
+          </td>
+          <td>
+            <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
+          </td>
+        </tr>
+        <% }); %>
     </tbody>
   </table>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <button class="btn btn-outline-success" id="btnHandRemove">Remove
+          Selected</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,7 +1,6 @@
 const actionsRouter = require('./actions');
 const analysisRouter = require('./analysis');
 const blockchainsRouter = require('./blockchains');
-const certificatesRouter = require('./certificates');
 const challengesRouter = require('./challenges');
 const configsRouter = require('./configs');
 const connectionsRouter = require('./connections');
@@ -23,7 +22,6 @@ module.exports = {
     actionsRouter,
     analysisRouter,
     blockchainsRouter,
-    certificatesRouter,
     challengesRouter,
     configsRouter,
     connectionsRouter,

@@ -38,7 +38,7 @@ router.post('/remove', async (req, res, next) => {
     });
 
     if (data) {
-      const finalUrl = `${data.url}/connections/remove`;
+      const finalUrl = `${data.url}/connectionsWorker/remove`;
       await axios.post(finalUrl, { nodeIds }).catch(function (error) {
         logger.error(error);
       });
@@ -63,7 +63,7 @@ router.post('/add', async (req, res, next) => {
     });
 
     if (data) {
-      const finalUrl = `${data.url}/connections/add`;
+      const finalUrl = `${data.url}/connectionsWorker/add`;
       await axios.post(finalUrl, { connection }).catch(function (error) {
         logger.error(error);
       });

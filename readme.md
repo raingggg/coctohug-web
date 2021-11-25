@@ -24,6 +24,8 @@
 - money transfer support
 - password protect for setting
 - harvester mode
+- certificates api interval 30 mins for harvester
+- random contoller-worker access key in memory
 - multiple language support
 - enable coldwallet in wallet.model
 

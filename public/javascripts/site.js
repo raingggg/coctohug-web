@@ -152,6 +152,37 @@ $(document).ready(function () {
     alert('removing... please check again few minutes later');
   });
 
+  $("#btnHandRemove").click(function (e) {
+    e.preventDefault();
+    $(this).prop("disabled", true);
+
+    const hands = [];
+    const table = $(this).closest('table');
+    table.find('input:checkbox:checked').each(function (index, item) {
+      const blockchain = $(this).data('blockchain');
+      const hostname = $(this).data('hostname');
+      hands.push({ blockchain, hostname });
+    });
+
+    $.ajax({
+      url: '/handsWeb/remove',
+      type: 'POST',
+      cache: false,
+      data: JSON.stringify({ hands }),
+      contentType: 'application/json',
+      success: function (data) {
+        if (data.status === 'success') {
+          window.location.reload();
+        } else {
+          alert(JSON.stringify(data, null, 2));
+        }
+      },
+      error: function (jqXHR, textStatus, err) {
+        alert(JSON.stringify(err, null, 2));
+      }
+    });
+  });
+
   $(".btnConnectionAdd").click(function (e) {
     e.preventDefault();
 

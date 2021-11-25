@@ -29,6 +29,7 @@ Object.assign(blockchainConfig, {
   binary: getFullPath(blockchainConfig.binary),
   mainnet: getFullPath(blockchainConfig.mainnet),
   config: getFullPath(blockchainConfig.config),
+  certificates: getFullPath(blockchainConfig.certificates),
   chainlog: getFullPath(blockchainConfig.chainlog),
   webLogFile: getFullPath(blockchainConfig.webLogFile),
   mncPath: getFullPath('.coctohug/mnc.txt'),
