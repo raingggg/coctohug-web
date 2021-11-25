@@ -7,9 +7,13 @@ const {
   generateKeyBlockchain,
   saveColdWallet,
 } = require('../utils/chiaClient');
-const { blockchainConfig: { blockchain } } = require('../utils/chiaConfig');
+const { blockchainConfig: { blockchain }, isValidAccessToken, getIp } = require('../utils/chiaConfig');
 
 router.get('/restart', async (req, res, next) => {
+  if (!isValidAccessToken(req.header('tk'))) {
+    logger.error('invalid access - blockchain restart: ', [getIp(req), req.header('tk')]);
+    return res.json({ status: 'invalid token' });
+  }
   const data = {};
 
   try {
@@ -25,6 +29,10 @@ router.get('/restart', async (req, res, next) => {
 });
 
 router.get('/addkey', async (req, res, next) => {
+  if (!isValidAccessToken(req.header('tk'))) {
+    logger.error('invalid access - blockchain addkey: ', getIp(req));
+    return res.json({ status: 'invalid token' });
+  }
   const data = {};
 
   try {
@@ -40,6 +48,10 @@ router.get('/addkey', async (req, res, next) => {
 });
 
 router.get('/generatekey', async (req, res, next) => {
+  if (!isValidAccessToken(req.header('tk'))) {
+    logger.error('invalid access - blockchain generatekey: ', getIp(req));
+    return res.json({ status: 'invalid token' });
+  }
   const data = {};
 
   try {
@@ -55,7 +67,12 @@ router.get('/generatekey', async (req, res, next) => {
 });
 
 router.post('/savecoldwallet', async (req, res, next) => {
+  if (!isValidAccessToken(req.header('tk'))) {
+    logger.error('invalid access - blockchain savecoldwallet: ', getIp(req));
+    return res.json({ status: 'invalid token' });
+  }
   let result = false;
+
   try {
     const { coldWalletAddress } = req.body;
     logger.debug('api-blockchain-savecoldwallet', coldWalletAddress);

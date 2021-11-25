@@ -8,6 +8,7 @@ const {
   getMode,
 } = require('../utils/chiaConfig');
 const { loadAllVersions } = require('../utils/chiaClient');
+const { getAccessToken } = require('../utils/chiaConfig');
 
 const hostname = getHostname();
 const controllerUrl = getControllerUrl();
@@ -25,7 +26,7 @@ const updateHand = async () => {
       versions,
     };
     axios.post(`${controllerUrl}/hands/update`, payload, {
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json', 'tk': getAccessToken() }
     }).catch(function (error) {
       logger.error(error);
     });

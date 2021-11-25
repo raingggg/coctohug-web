@@ -6,7 +6,7 @@ const router = express.Router();
 const { Hand, Key, AppConfig } = require('../models');
 const { logger } = require('../utils/logger');
 const { getWalletAddress } = require('../utils/blockUtil');
-const { blockchainConfig: { coldWalletFile } } = require('../utils/chiaConfig');
+const { blockchainConfig: { coldWalletFile }, getWorkerToken } = require('../utils/chiaConfig');
 
 router.get('/restartWeb', async (req, res, next) => {
   const data = await Hand.findAll({
@@ -33,7 +33,7 @@ router.get('/restartOp', async (req, res, next) => {
 
     const url = data && data[0] && data[0].url;
     const finalUrl = `${url}/blockchainsWorker/restart`;
-    const apiRes = await axios.get(finalUrl);
+    const apiRes = await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hostname, blockchain) } });
     return res.json(apiRes.data);
   } catch (e) {
     logger.error(e);
@@ -82,12 +82,13 @@ router.post('/coldWalletImport', async (req, res, next) => {
 
     for (let i = 0; i < data.length; i++) {
       try {
-        const { url, blockchain } = data[i];
+        const { url, hostname, blockchain } = data[i];
         if (url && wallets[blockchain]) {
           const finalUrl = `${url}/blockchainsWorker/savecoldwallet`;
-          const apiRes = await axios.post(finalUrl, { coldWalletAddress: wallets[blockchain] }).catch(function (error) {
-            logger.error(error);
-          });
+          const apiRes = await axios.post(finalUrl, { coldWalletAddress: wallets[blockchain] },
+            { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
+              logger.error(error);
+            });
           result[blockchain] = apiRes.data;
         }
       } catch (ex) {

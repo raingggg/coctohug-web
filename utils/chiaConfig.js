@@ -2,6 +2,7 @@ const os = require('os');
 const path = require('path');
 const { constants } = require('fs');
 const { access } = require('fs/promises');
+const requestIp = require('request-ip');
 
 const CONFIG_FILENAME = process.env['config_file'] || '../chia.json';
 const CONTROLLER_HOST = process.env['controller_address'] || 'localhost'
@@ -17,6 +18,8 @@ const CONTROLLER_SCHEME = 'http';
 
 const homedir = os.homedir();
 const hostname = os.hostname();
+const accessToken = `tk-${Math.random()}`;
+const workerToken = {};
 
 const getFullPath = (p) => {
   if (p.startsWith('/')) return p;
@@ -80,6 +83,25 @@ const hasMNCFile = async () => {
   return mncExists;
 }
 
+const getAccessToken = () => {
+  return accessToken;
+};
+
+const isValidAccessToken = (token) => {
+  return token === accessToken
+};
+
+const setWorkerToken = (hostname, blockchain, tk) => {
+  workerToken[`${hostname}${blockchain}`] = tk;
+}
+
+const getWorkerToken = (hostname, blockchain) => {
+  return workerToken[`${hostname}${blockchain}`] || 'error';
+}
+
+const getIp = (req) => {
+  return requestIp.getClientIp(req);
+}
 
 module.exports = {
   SQL_LOG,
@@ -93,4 +115,9 @@ module.exports = {
   getWebLogLevel,
   getCoctohugWebVersion,
   hasMNCFile,
+  getAccessToken,
+  isValidAccessToken,
+  setWorkerToken,
+  getWorkerToken,
+  getIp,
 };

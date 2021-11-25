@@ -6,6 +6,7 @@ const { Wallet, Hand, AppConfig } = require('../models');
 const { logger } = require('../utils/logger');
 const { saveMNC } = require('../utils/chiaClient');
 const chainConfigs = require('../utils/chainConfigs');
+const { getWorkerToken } = require('../utils/chiaConfig');
 
 const UNSYNC_THRESHHOLD = 10 * 60 * 1000; // 10 mins
 router.get('/', async (req, res, next) => {
@@ -91,7 +92,7 @@ router.post('/transferCoin', async (req, res, next) => {
 
       if (hand && hand.url) {
         const finalUrl = `${hand.url}/walletsWorker/transfer`;
-        await axios.post(finalUrl, { toAddress, amount }).catch(function (error) {
+        await axios.post(finalUrl, { toAddress, amount }, { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
           logger.error(error);
         });
         logger.error('transferCoin', [blockchain, toAddress, amount]);
@@ -113,7 +114,7 @@ const genKey = async (hand) => {
   if (hand) {
     try {
       let finalUrl = `${hand.url}/blockchainsWorker/generatekey`;
-      let apiRes = await axios.get(finalUrl);
+      let apiRes = await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hand.hostname, hand.blockchain) } });
       if (apiRes && apiRes.data && apiRes.data.status === 'OK') {
         gResult = true;
       }
@@ -128,11 +129,12 @@ const genKey = async (hand) => {
 const addKeyNRestart = async (data) => {
   for (let i = 0; i < data.length; i++) {
     try {
-      let finalUrl = `${data[i].url}/blockchainsWorker/addkey`;
-      await axios.get(finalUrl);
+      const hand = data[i];
+      let finalUrl = `${hand.url}/blockchainsWorker/addkey`;
+      await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hand.hostname, hand.blockchain) } });
 
-      finalUrl = `${data[i].url}/blockchainsWorker/restart`;
-      await axios.get(finalUrl);
+      finalUrl = `${hand.url}/blockchainsWorker/restart`;
+      await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hand.hostname, hand.blockchain) } });
     } catch (ex) {
       logger.error(ex);
     }

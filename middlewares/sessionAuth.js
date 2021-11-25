@@ -17,6 +17,7 @@ const sessionAuth = (req, res, next) => {
 
   for (let i = 0; i < securePaths.length; i++) {
     if (!authed && originalUrl.includes(securePaths[i])) {
+      res.cookie('authed', '', { expires: new Date(0) });
       return res.redirect('/reviewWeb');
     }
   }
