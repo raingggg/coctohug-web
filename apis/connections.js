@@ -9,7 +9,7 @@ router.post('/update', async (req, res, next) => {
     logger.debug('api-connection-update', payload);
     Connection.upsert(payload);
   } catch (e) {
-    logger.error(e);
+    logger.error('api-connection-update', e);
   }
 
   return res.json({ status: "success" });

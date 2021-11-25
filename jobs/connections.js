@@ -24,7 +24,7 @@ const updateConnection = async () => {
       logger.error(error);
     });
   } catch (e) {
-    logger.error(e);
+    logger.error('updateConnection-job', e);
   }
 };
 

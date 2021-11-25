@@ -12,7 +12,7 @@ router.post('/update', async (req, res, next) => {
     logger.debug('api-hand-update', payload);
     Hand.upsert(payload);
   } catch (e) {
-    logger.error(e);
+    logger.error('api-hand-update', e);
   }
 
   return res.json({ status: "success" });

@@ -9,7 +9,7 @@ router.post('/update', async (req, res, next) => {
     logger.debug('api-blockchain-update', payload);
     Blockchain.upsert(payload);
   } catch (e) {
-    logger.error(e);
+    logger.error('api-blockchain-update', e);
   }
   return res.json({ status: 'success' });
 });

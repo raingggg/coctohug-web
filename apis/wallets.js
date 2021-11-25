@@ -9,7 +9,7 @@ router.post('/update', async (req, res, next) => {
     logger.debug('api-wallet-update', payload);
     Wallet.upsert(payload);
   } catch (e) {
-    logger.error(e);
+    logger.error('api-wallet-update', e);
   }
 
   return res.json({ status: "success" });

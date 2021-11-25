@@ -9,7 +9,7 @@ router.post('/update', async (req, res, next) => {
     logger.debug('api-key-update', payload);
     Key.upsert(payload);
   } catch (e) {
-    logger.error(e);
+    logger.error('api-key-update', e);
   }
 
   return res.json({ status: "success" });

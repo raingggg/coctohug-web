@@ -26,7 +26,7 @@ const updateFarm = async () => {
       logger.error(error);
     });
   } catch (e) {
-    logger.error(e);
+    logger.error('updateFarm-job', e);
   }
 };
 

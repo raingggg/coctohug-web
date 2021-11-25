@@ -9,7 +9,7 @@ router.post('/add', async (req, res, next) => {
     logger.debug('api-news-create', payload);
     News.create(payload);
   } catch (e) {
-    logger.error(e);
+    logger.error('api-news-create', e);
   }
 
   return res.json({ status: "success" });

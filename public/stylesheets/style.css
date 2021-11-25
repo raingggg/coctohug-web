@@ -117,6 +117,10 @@ body {
     font-size: x-large;
     line-height: 45px;
   }
+  .leftbar-wrapper ul li.setting,
+  .leftbar-wrapper ul li.setting-li {
+    display: none;
+  }
   .leftbar-wrapper .link-text {
     display: none;
   }

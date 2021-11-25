@@ -31,7 +31,7 @@ const updateHand = async () => {
       logger.error(error);
     });
   } catch (e) {
-    logger.error(e);
+    logger.error('updateHand-job', e);
   }
 };
 

@@ -9,7 +9,7 @@ router.post('/update', async (req, res, next) => {
     logger.debug('api-farm-update', payload);
     Farm.upsert(payload);
   } catch (e) {
-    logger.error(e);
+    logger.error('api-farm-update', e);
   }
 
   return res.json({ status: "success" });

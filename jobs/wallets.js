@@ -26,7 +26,7 @@ const updateWallet = async () => {
       logger.error(error);
     });
   } catch (e) {
-    logger.error(e);
+    logger.error('updateWallet-job', e);
   }
 };
 

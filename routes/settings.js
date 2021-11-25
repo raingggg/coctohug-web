@@ -36,7 +36,7 @@ router.get('/restartOp', async (req, res, next) => {
     const apiRes = await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hostname, blockchain) } });
     return res.json(apiRes.data);
   } catch (e) {
-    logger.error(e);
+    logger.error('restartOp', e);
   }
 
   return res.json({ result: 'failed' });
@@ -63,7 +63,7 @@ router.get('/coldWalletExport', async (req, res, next) => {
     await writeFile(coldWalletFile, JSON.stringify(obj, null, 4));
     return res.download(coldWalletFile, `${new Date().toISOString().substring(0, 10)}-coldwallet.json`);
   } catch (e) {
-    logger.error(e);
+    logger.error('coldWalletExport', e);
   }
 
   return res.json({ result: 'failed' });
@@ -98,7 +98,7 @@ router.post('/coldWalletImport', async (req, res, next) => {
 
     return res.json(result);
   } catch (e) {
-    logger.error(e);
+    logger.error('coldWalletImport', e);
   }
 
   return res.json({ status: 'failed' });
@@ -121,7 +121,7 @@ router.post('/createPasswordOp', async (req, res, next) => {
       return res.json({ status: 'success' });
     }
   } catch (e) {
-    logger.error(e);
+    logger.error('createPasswordOp', e);
   }
 
   return res.json({ status: 'failed' });
@@ -146,7 +146,7 @@ router.post('/resetPasswordOp', async (req, res, next) => {
       return res.json({ status: 'incorrect old password' });
     }
   } catch (e) {
-    logger.error(e);
+    logger.error('resetPasswordOp', e);
   }
 
   return res.json({ status: 'failed' });
@@ -169,7 +169,7 @@ router.post('/login', async (req, res, next) => {
       return res.json({ status: 'incorrect password' });
     }
   } catch (e) {
-    logger.error(e);
+    logger.error('login', e);
   }
 
   return res.json({ status: 'failed' });
@@ -181,11 +181,41 @@ router.get('/logout', async (req, res, next) => {
     req.session.destroy();
     res.cookie('authed', '', { expires: new Date(0) });
   } catch (e) {
-    logger.error(e);
+    logger.error('logout', e);
   }
 
   return res.redirect('/reviewWeb');
 });
 
+router.get('/harvesterWeb', async (req, res, next) => {
+  let result = { status: 'failed' };
+
+  try {
+    logger.debug('harvesterWeb');
+    const data = await Hand.findAll({
+      where: {
+        mode: 'fullnode'
+      }
+    });
+
+    for (let i = 0; i < data.length; i++) {
+      try {
+        const { url, hostname, blockchain } = data[i];
+        const finalUrl = `${url}/certificates/allowHarvester`;
+        const apiRes = await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
+          logger.error(error);
+        });
+      } catch (ex) {
+        logger.error(ex);
+      }
+    }
+
+    result = { status: 'Success! Please setup your harvester in 30 minutes!' };
+  } catch (e) {
+    logger.error('harvesterWeb', e);
+  }
+
+  res.render('index', { title: req.__('Welcome to Express'), result, pageName: 'harvester' });
+});
 
 module.exports = router;

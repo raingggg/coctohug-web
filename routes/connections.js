@@ -46,7 +46,7 @@ router.post('/remove', async (req, res, next) => {
       return res.json({ status: 'success' });
     }
   } catch (e) {
-    logger.error(e);
+    logger.error('remove-connection', e);
   }
 
   return res.json({ status: 'failed' });
@@ -72,7 +72,7 @@ router.post('/add', async (req, res, next) => {
     }
 
   } catch (e) {
-    logger.error(e);
+    logger.error('add-connection', e);
   }
 
   return res.json({ status: 'failed' });

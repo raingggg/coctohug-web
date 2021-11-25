@@ -24,7 +24,7 @@ const updateKey = async () => {
       logger.error(error);
     });
   } catch (e) {
-    logger.error(e);
+    logger.error('updateKey-job', e);
   }
 };
 

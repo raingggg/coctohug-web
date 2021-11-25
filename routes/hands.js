@@ -42,7 +42,7 @@ router.post('/remove', async (req, res, next) => {
 
     return res.json({ status: 'success' });
   } catch (e) {
-    logger.error(e);
+    logger.error('remove-hand', e);
   }
 
   return res.json({ status: 'failed' });

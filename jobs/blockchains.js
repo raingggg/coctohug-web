@@ -24,7 +24,7 @@ const updateBlockchain = async () => {
       logger.error(error);
     });
   } catch (e) {
-    logger.error(e);
+    logger.error('updateBlockchain-job', e);
   }
 };
 

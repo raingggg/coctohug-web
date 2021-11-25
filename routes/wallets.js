@@ -42,7 +42,7 @@ router.post('/importNew', async (req, res, next) => {
 
     await addKeyNRestart(data);
   } catch (e) {
-    logger.error(e);
+    logger.error('importNew', e);
   }
 
   return res.redirect('/reviewWeb');
@@ -95,7 +95,7 @@ router.post('/transferCoin', async (req, res, next) => {
         await axios.post(finalUrl, { toAddress, amount }, { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
           logger.error(error);
         });
-        logger.error('transferCoin', [blockchain, toAddress, amount]);
+        logger.error('transferCoin', [blockchain, toAddress, amount, getIp(req)]);
         return res.json({ status: 'success' });
       }
     } else {
