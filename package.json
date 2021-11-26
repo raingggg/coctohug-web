@@ -31,6 +31,6 @@
     "zip-a-folder": "^1.1.0"
   },
   "devDependencies": {
-    "@vitalets/google-translate-api": "^7.0.0"
+    "google-translate-open-api": "^1.3.7"
   }
 }

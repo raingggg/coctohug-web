@@ -210,7 +210,7 @@ router.get('/harvesterWeb', async (req, res, next) => {
       }
     }
 
-    result = { status: 'Success! Please setup your harvester in 30 minutes!' };
+    result = { status: 'success' };
   } catch (e) {
     logger.error('harvesterWeb', e);
   }

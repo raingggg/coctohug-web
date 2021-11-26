@@ -1,5 +1,13 @@
 <div class="page-wrapper">
   <div class="container">
-    <%= result.status %>
+    <% if (result.status === 'success' ) { %>
+      <p>
+        <%= __('allowharvester.success') %>
+      </p>
+      <% } else { %>
+        <p>
+          <%= result.status %>
+        </p>
+        <% } %>
   </div>
 </div>
