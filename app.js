@@ -68,7 +68,14 @@ const isWebController = isWebControllerMode();
 var funkyObject = {};
 
 i18n.configure({
-  locales: ['en', 'de'],
+  locales: [
+    'ar', 'bg', 'ca', 'de',
+    'en', 'es', 'fa', 'fr',
+    'gl', 'id', 'it', 'ja',
+    'ko', 'pt', 'ro', 'ru',
+    'sr', 'th', 'tl', 'tr',
+    'uk', 'vi', 'zh-CN', 'zh-TW'
+  ],
   register: funkyObject,
   directory: path.join(__dirname, 'locales'),
   updateFiles: false,

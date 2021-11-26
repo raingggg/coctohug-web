@@ -1,28 +1,36 @@
-function getCookie(name) {
-  var cookieArr = document.cookie.split(";");
-  for (var i = 0; i < cookieArr.length; i++) {
-    var cookiePair = cookieArr[i].split("=");
-    if (name == cookiePair[0].trim()) {
-      return decodeURIComponent(cookiePair[1]);
-    }
-  }
-
-  return null;
-}
-
 $(document).ready(function () {
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
   });
 
-  $("#enLanguage").click(function () {
-    $.cookie('language', 'en');
-    window.location.reload();
-  });
+  function detectLanguage() {
+    if (!$.cookie('language')) {
+      let userLang = navigator.language || navigator.userLanguage;
+      const codes = $('#lang-picker a').map(function () { return $(this).data('lang'); }).toArray();
+      console.log('codes', codes);
 
-  $("#deLanguage").click(function () {
-    $.cookie('language', 'de');
+      let finalLang = ''
+      if (codes.includes(userLang)) {
+        finalLang = userLang;
+      } else {
+        userLang = userLang.replace(/-\w*/, '');
+        if (codes.includes(userLang)) {
+          finalLang = userLang;
+        }
+      }
+
+      if (finalLang && finalLang !== 'en') {
+        $.cookie('language', finalLang, { expires: 30 });
+        window.location.reload();
+      }
+    }
+  }
+  detectLanguage();
+
+  $('#lang-picker li a').click(function () {
+    const lang = $(this).data('lang');
+    $.cookie('language', lang, { expires: 30 });
     window.location.reload();
   });
 
@@ -291,7 +299,7 @@ $(document).ready(function () {
 
   const passwordModal = new bootstrap.Modal(document.getElementById('passwordModal'), { keyboard: false });
   $(".settings-link").click(function (e) {
-    if (getCookie('authed') !== 'true') {
+    if ($.cookie('authed') !== 'true') {
       passwordModal.show();
     }
   });
@@ -320,7 +328,7 @@ $(document).ready(function () {
     }
   });
 
-  if (getCookie('authed') === 'true') {
+  if ($.cookie('authed') === 'true') {
     $('.setting-li').removeClass('visually-hidden');
   }
 

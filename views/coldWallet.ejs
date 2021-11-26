@@ -1,17 +1,25 @@
 <div class="page-wrapper">
   <div class="container">
     <div>
-      <p>Click Export button will download a yyyy-mm-dd-coldwallet.json file into your local disk:</p>
-      <button class="btn btn-outline-success" id="btnExportColdWallet">Export Cold Wallet</button>
+      <p>
+        <%= __('coldwallet.export_message') %>
+      </p>
+      <button class="btn btn-outline-success" id="btnExportColdWallet">
+        <%= __('coldwallet.export_button') %>
+      </button>
     </div>
 
     <hr>
 
     <div>
-      <p class="error">Please choose the cold wallet file:</p>
+      <p class="error">
+        <%= __('coldwallet.import_message') %>
+      </p>
       <p><input type="file" id="inputImportColdWallet" name="inputImportColdWallet" accept=".json"></p>
       <p><textarea id="textareaImportColdWallet"></textarea></p>
-      <button class="btn btn-outline-danger" id="btnImportColdWallet">Import Cold Wallet</button>
+      <button class="btn btn-outline-danger" id="btnImportColdWallet">
+        <%= __('coldwallet.import_button') %>
+      </button>
     </div>
   </div>
 </div>

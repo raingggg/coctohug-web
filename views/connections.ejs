@@ -18,7 +18,7 @@
     </div>
   </nav>
 
-  
+
   <% data.forEach(function(dt, index){ %>
     <div class="tab-panel <%= index === 0 ? '' : 'd-none' %>" data-panel-index="<%= index %>">
       <table class="table table-striped table-hover" data-blockchain="<%=dt.blockchain %>" data-hostname="<%= dt.hostname
@@ -26,14 +26,30 @@
         <thead>
           <tr>
             <td> </td>
-            <td>type</td>
-            <td>ip</td>
-            <td>ports</td>
-            <td>nodeid</td>
-            <td>last_connect</td>
-            <td>height</td>
-            <td>mib_up</td>
-            <td>mib_down</td>
+            <td>
+              <%= __('connections.type') %>
+            </td>
+            <td>
+              <%= __('connections.ip') %>
+            </td>
+            <td>
+              <%= __('connections.ports') %>
+            </td>
+            <td>
+              <%= __('connections.nodeid') %>
+            </td>
+            <td>
+              <%= __('connections.last_connect') %>
+            </td>
+            <td>
+              <%= __('connections.height') %>
+            </td>
+            <td>
+              <%= __('connections.mib_up') %>
+            </td>
+            <td>
+              <%= __('connections.mib_down') %>
+            </td>
           </tr>
         </thead>
         <tbody>
@@ -75,16 +91,18 @@
 
       <div class="row">
         <div class="col-6">
-          <button class="btn btn-outline-success btnConnectionRemove">Disconnect
-            Selected</button>
+          <button class="btn btn-outline-success btnConnectionRemove">
+            <%= __('connections.disconnect_selected') %>
+          </button>
         </div>
 
         <div class="col-3">
           <input class="form-control me-2 new-connection" type="text" placeholder="node.chia.net:8444">
         </div>
         <div class="col-3">
-          <button class="btn btn-outline-success text-nowrap text-right btnConnectionAdd">Add New
-            Connection</button>
+          <button class="btn btn-outline-success text-nowrap text-right btnConnectionAdd">
+            <%= __('connections.add_new') %>
+          </button>
         </div>
       </div>
     </div>

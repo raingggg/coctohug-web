@@ -5,6 +5,14 @@ body {
   min-height: 100%;
   background: #2c7873;
 }
+.language-wrapper {
+  position: absolute;
+  right: 5px;
+  top: -10px;
+}
+.language-wrapper #lang-picker li {
+  font-size: 0.8rem;
+}
 .tooltip > .tooltip-inner {
   background-color: #2c7873;
   opacity: 1;

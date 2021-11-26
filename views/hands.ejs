@@ -3,11 +3,21 @@
     <thead>
       <tr>
         <td></td>
-        <td>hostname</td>
-        <td>blockchain</td>
-        <td>mode</td>
-        <td>versions</td>
-        <td>last_update</td>
+        <td>
+          <%= __('general.hostname') %>
+        </td>
+        <td>
+          <%= __('general.blockchain') %>
+        </td>
+        <td>
+          <%= __('general.mode') %>
+        </td>
+        <td>
+          <%= __('general.versions') %>
+        </td>
+        <td>
+          <%= __('general.updatedAt') %>
+        </td>
       </tr>
     </thead>
     <tbody>
@@ -40,8 +50,9 @@
   <div class="container">
     <div class="row">
       <div class="col-6">
-        <button class="btn btn-outline-success" id="btnHandRemove">Remove
-          Selected</button>
+        <button class="btn btn-outline-success" id="btnHandRemove">
+          <%= __('hands.remove_selected') %>
+        </button>
       </div>
     </div>
   </div>

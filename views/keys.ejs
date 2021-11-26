@@ -15,7 +15,7 @@
 
   <% data.forEach(function(dt, index){ %>
     <div class="tab-panel <%= index === 0 ? '' : 'd-none' %>" data-panel-index="<%= index %>">
-      <div>last_update: <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %></div>
+      <div><%= __('general.updatedAt') %> <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %></div>
       <div><hr><%- dt.details.replace(/\n/g, "</br>") %></div>
     </div>
   <% }); %>

@@ -8,7 +8,8 @@
   "scripts": {
     "start": "node ./test/test",
     "client": "node ./utils/chiaClient",
-    "less": "lessc public/stylesheets/style.less public/stylesheets/style.css"
+    "less": "lessc public/stylesheets/style.less public/stylesheets/style.css",
+    "translate": "node ./utils/translate"
   },
   "dependencies": {
     "axios": "^0.24.0",
@@ -28,5 +29,8 @@
     "sequelize": "^6.9.0",
     "sqlite3": "github:mapbox/node-sqlite3#593c9d",
     "zip-a-folder": "^1.1.0"
+  },
+  "devDependencies": {
+    "@vitalets/google-translate-api": "^7.0.0"
   }
 }
