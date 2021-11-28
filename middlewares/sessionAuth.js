@@ -7,8 +7,7 @@ const securePaths = [
   '/settingsWeb/resetPasswordWeb',
   '/settingsWeb/resetPasswordOp',
   '/settingsWeb/restartOp',
-  '/settingsWeb/restartOp',
-  '/walletsWeb/transferCoin'
+  '/settingsWeb/restartOp'
 ];
 
 const sessionAuth = (req, res, next) => {

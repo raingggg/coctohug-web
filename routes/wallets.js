@@ -6,7 +6,7 @@ const { Wallet, Hand, AppConfig } = require('../models');
 const { logger } = require('../utils/logger');
 const { saveMNC } = require('../utils/chiaClient');
 const chainConfigs = require('../utils/chainConfigs');
-const { getWorkerToken } = require('../utils/chiaConfig');
+const { getWorkerToken, getIp } = require('../utils/chiaConfig');
 
 const UNSYNC_THRESHHOLD = 10 * 60 * 1000; // 10 mins
 router.get('/', async (req, res, next) => {
@@ -26,7 +26,7 @@ router.get('/', async (req, res, next) => {
     });
   })
 
-  res.render('index', {data, pageName: 'wallets' });
+  res.render('index', { data, pageName: 'wallets' });
 });
 
 router.post('/importNew', async (req, res, next) => {
@@ -99,7 +99,7 @@ router.post('/transferCoin', async (req, res, next) => {
         return res.json({ status: 'success' });
       }
     } else {
-      return res.json({ status: 'incorrect password' });
+      return res.json({ status: 'incorrect_old_password' });
     }
   } catch (e) {
     logger.error(e);

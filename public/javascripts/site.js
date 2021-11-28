@@ -108,32 +108,36 @@ $(document).ready(function () {
   });
 
   $("#btnImportColdWallet").click(function (e) {
+    const coldWalletImportModal = new bootstrap.Modal(document.getElementById('coldWalletImportModal'), { keyboard: false });
+    coldWalletImportModal.show();
+  });
+
+  $("#btnColdWalletImportConfirm").click(function (e) {
     e.preventDefault();
 
-    if (confirm('All farming rewards will go to addresses included in the uploaded cold wallet file. Do you really feel safe to make this change?')) {
-      $(this).prop("disabled", true);
+    $(this).prop("disabled", true);
 
-      const wallets = JSON.parse($('#textareaImportColdWallet').val());
-      $.ajax({
-        url: '/settingsWeb/coldWalletImport',
-        type: 'POST',
-        cache: false,
-        data: JSON.stringify({ wallets }),
-        contentType: 'application/json',
-        success: function (data) {
-          alert(JSON.stringify(data, null, 2));
-        },
-        error: function (jqXHR, textStatus, err) {
-          alert(JSON.stringify(err, null, 2));
-        }
-      });
-    }
+    const wallets = JSON.parse($('#textareaImportColdWallet').val());
+    $.ajax({
+      url: '/settingsWeb/coldWalletImport',
+      type: 'POST',
+      cache: false,
+      data: JSON.stringify({ wallets }),
+      contentType: 'application/json',
+      success: function (data) {
+        alert(JSON.stringify(data, null, 2));
+      },
+      error: function (jqXHR, textStatus, err) {
+        alert(JSON.stringify(err, null, 2));
+      }
+    });
   });
 
   $(".btnConnectionRemove").click(function (e) {
     e.preventDefault();
 
-    const table = $(this).closest('.tab-panel').find('table');
+    const tabPanel = $(this).closest('.tab-panel');
+    const table = tabPanel.find('table');
     const blockchain = table.data('blockchain');
     const hostname = table.data('hostname');
 
@@ -150,7 +154,7 @@ $(document).ready(function () {
       contentType: 'application/json'
     });
 
-    alert('removing... please check again few minutes later');
+    tabPanel.find('.removing-connection').removeClass('visually-hidden');
   });
 
   $("#btnHandRemove").click(function (e) {
@@ -187,6 +191,7 @@ $(document).ready(function () {
   $(".btnConnectionAdd").click(function (e) {
     e.preventDefault();
 
+    const tabPanel = $(this).closest('.tab-panel');
     const table = $(this).closest('.tab-panel').find('table');
     const blockchain = table.data('blockchain');
     const hostname = table.data('hostname');
@@ -200,9 +205,9 @@ $(document).ready(function () {
         contentType: 'application/json'
       });
 
-      alert('adding... please check again few minutes later');
+      tabPanel.find('.adding-connection').removeClass('visually-hidden');
     } else {
-      alert('new connection must have : to specify the port number');
+      tabPanel.find('.connection-error').removeClass('visually-hidden');
     }
   });
 
@@ -229,7 +234,7 @@ $(document).ready(function () {
         }
       });
     } else {
-      alert('confirm password must be same with password');
+      $('#confirmSamePassword').removeClass('visually-hidden');
     }
   });
 
@@ -250,14 +255,20 @@ $(document).ready(function () {
         data: JSON.stringify({ oldPassword: md5(oldPassword), password: md5(password) }),
         contentType: 'application/json',
         success: function (data) {
-          alert(JSON.stringify(data, null, 2));
+          if (data.status === 'success') {
+            $('#resetPasswordSuccess').removeClass('visually-hidden');
+          } else if (data.status === 'incorrect_old_password') {
+            $('#resetPasswordIncorrectOld').removeClass('visually-hidden');
+          } else {
+            alert(JSON.stringify(data, null, 2));
+          }
         },
         error: function (jqXHR, textStatus, err) {
           alert(JSON.stringify(err, null, 2));
         }
       });
     } else {
-      alert('confirm password must be same with password');
+      $('#resetConfirmSamePassword').removeClass('visually-hidden');
     }
   });
 
@@ -279,14 +290,20 @@ $(document).ready(function () {
         data: JSON.stringify({ blockchain, hostname, toAddress, amount, password: md5(password) }),
         contentType: 'application/json',
         success: function (data) {
-          alert(JSON.stringify(data, null, 2));
+          if (data.status === 'success') {
+            parent.find('.transferSuccess').removeClass('visually-hidden');
+          } else if (data.status === 'incorrect_old_password') {
+            parent.find('.transferIncorrectPassword').removeClass('visually-hidden');
+          } else {
+            alert(JSON.stringify(data, null, 2));
+          }
         },
         error: function (jqXHR, textStatus, err) {
           alert(JSON.stringify(err, null, 2));
         }
       });
     } else {
-      alert('Please ensure all fields are entered!');
+      parent.find('.transferIncorrectFields').removeClass('visually-hidden');
     }
   });
 
@@ -311,7 +328,7 @@ $(document).ready(function () {
             passwordModal.hide();
             $('.setting-li').removeClass('visually-hidden');
           } else {
-            alert(JSON.stringify(data, null, 2));
+            $('#incorrectLoginPassword').removeClass('visually-hidden');
           }
         },
         error: function (jqXHR, textStatus, err) {

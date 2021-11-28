@@ -18,7 +18,6 @@
     </div>
   </nav>
 
-
   <% data.forEach(function(dt, index){ %>
     <div class="tab-panel <%= index === 0 ? '' : 'd-none' %>" data-panel-index="<%= index %>">
       <table class="table table-striped table-hover" data-blockchain="<%=dt.blockchain %>" data-hostname="<%= dt.hostname
@@ -88,6 +87,16 @@
             <% }); %>
         </tbody>
       </table>
+
+      <div class="alert alert-success removing-connection visually-hidden" role="alert">
+        <%= __('connections.removing') %>
+      </div>
+      <div class="alert alert-success adding-connection visually-hidden" role="alert">
+        <%= __('connections.adding') %>
+      </div>
+      <div class="alert alert-danger connection-error visually-hidden" role="alert">
+        <%= __('connections.no_colon') %>
+      </div>
 
       <div class="row">
         <div class="col-6">

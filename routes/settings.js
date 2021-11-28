@@ -17,7 +17,7 @@ router.get('/restartWeb', async (req, res, next) => {
       ['blockchain', 'ASC'],
     ]
   });
-  res.render('index', {data, pageName: 'restart' });
+  res.render('index', { data, pageName: 'restart' });
 });
 
 router.get('/restartOp', async (req, res, next) => {
@@ -143,7 +143,7 @@ router.post('/resetPasswordOp', async (req, res, next) => {
       await AppConfig.upsert({ key: 'password', value: password });
       return res.json({ status: 'success' });
     } else {
-      return res.json({ status: 'incorrect old password' });
+      return res.json({ status: 'incorrect_old_password' });
     }
   } catch (e) {
     logger.error('resetPasswordOp', e);
@@ -165,8 +165,6 @@ router.post('/login', async (req, res, next) => {
       res.cookie('authed', 'true', { maxAge: 300000 });
 
       return res.json({ status: 'success' });
-    } else {
-      return res.json({ status: 'incorrect password' });
     }
   } catch (e) {
     logger.error('login', e);

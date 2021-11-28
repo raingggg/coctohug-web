@@ -47,8 +47,19 @@
         <div>
           <span class="formLabel">
             <%= __('wallets.your_password') %>
-          </span> <input type="password" class="formInput password" id="exampleInputPassword1" autocomplete="off">
+          </span> <input type="password" class="formInput password" autocomplete="off">
         </div>
+
+        <div class="alert alert-success visually-hidden transferSuccess" role="alert">
+          <%= __('wallets.transfer_success') %>
+        </div>
+        <div class="alert alert-danger visually-hidden transferIncorrectPassword" role="alert">
+          <%= __('password.incorrect') %>
+        </div>
+        <div class="alert alert-danger visually-hidden transferIncorrectFields" role="alert">
+          <%= __('wallets.transfer_incorrect_fields') %>
+        </div>
+
         <div>
           <button class="btn btn-outline-danger actionButton tranferButton">
             <%= __('wallets.transfer_with_password') %>

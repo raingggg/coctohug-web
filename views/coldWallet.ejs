@@ -23,6 +23,35 @@
       <button class="btn btn-outline-danger" id="btnImportColdWallet">
         <%= __('coldwallet.import_button') %>
       </button>
+      <br />
+      <br />
+    </div>
+  </div>
+
+  <div class="coldWalletImportModalWrapper">
+    <div class="modal fade" id="coldWalletImportModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="coldWalletImportModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="coldWalletImportModalLabel">
+              <%- __('coldwallet.dialog_title') %>
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%- __('coldwallet.dialog_confirm') %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              <%= __('general.cancel') %>
+            </button>
+            <button type="button" class="btn btn-success" id="btnColdWalletImportConfirm">
+              <%= __('general.submit') %>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

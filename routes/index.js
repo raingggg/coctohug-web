@@ -13,6 +13,7 @@ const reviewWeb = require('./review');
 const settingsWeb = require('./settings');
 const walletsWeb = require('./wallets');
 const weeklyReportWeb = require('./weeklyReport');
+const faqWeb = require('./faq');
 
 module.exports = {
   home,
@@ -30,4 +31,5 @@ module.exports = {
   settingsWeb,
   walletsWeb,
   weeklyReportWeb,
+  faqWeb,
 };

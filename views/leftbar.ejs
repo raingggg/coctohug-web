@@ -61,6 +61,11 @@
           <%= __('leftbar.hands') %>
         </span></a>
     </li>
+    <li>
+      <a href="/faqWeb" class="link-primary"><span class="icon-point-up"></span> <span class="link-text">
+          <%= __('leftbar.faq') %>
+        </span></a>
+    </li>
     <li class="setting">
       <a href="#" class="link-primary settings-link"><span class="icon-wrench"></span> <span class="link-text">
           <%= __('leftbar.settings') %>
@@ -107,6 +112,9 @@
         </div>
         <div class="modal-body">
           <input type="password" class="formInput" id="inputSettingPassword" autocomplete="off">
+          <div class="alert alert-danger visually-hidden" id="incorrectLoginPassword" role="alert">
+            <%= __('password.incorrect') %>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">

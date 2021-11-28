@@ -56,6 +56,7 @@ const {
   settingsWeb,
   walletsWeb,
   weeklyReportWeb,
+  faqWeb,
 } = require('./routes');
 
 const { isWebControllerMode } = require('./utils/chiaConfig');
@@ -124,6 +125,7 @@ if (isWebController) {
   app.use('/settingsWeb', settingsWeb);
   app.use('/walletsWeb', walletsWeb);
   app.use('/weeklyReportWeb', weeklyReportWeb);
+  app.use('/faqWeb', faqWeb);
 }
 /* ************* web pages end ************* */
 
