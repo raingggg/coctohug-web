@@ -24,7 +24,7 @@ router.get('/', async (req, res, next) => {
   })
 
 
-  res.render('index', { title: req.__('Welcome to Express'), data, pageName: 'connections' });
+  res.render('index', {data, pageName: 'connections' });
 });
 
 router.post('/remove', async (req, res, next) => {

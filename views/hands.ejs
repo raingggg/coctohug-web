@@ -24,7 +24,7 @@
       <% data.forEach(function(dt, index){ %>
         <tr>
           <td>
-            <input type="checkbox" name="handcheck" value="<%= dt.index %>" data-hostname="<%= dt.hostname %>"
+            <input type="checkbox" name="handcheck" value="<%= index %>" data-hostname="<%= dt.hostname %>"
               data-blockchain="<%= dt.blockchain %>" />
           </td>
           <td>

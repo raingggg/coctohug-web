@@ -1,24 +1,49 @@
 <div class="page-wrapper">
   <div class="container">
     <div class="text-center" style="margin-top: 20px">
-      <div class="display-4">Welcome to Coctohug!</div>
-      <div>An all-in-one solution for Chia™ forks farming.</div>
+      <div class="display-4">
+        <%= __('home.welcome') %>
+      </div>
+      <div>
+        <%= __('home.short_desc') %>
+      </div>
     </div>
     <hr>
 
-    <p>To get started with Coctohug, either import your existing 24-word mnemonic seed phrase: </p>
+    <p>
+      <%= __('home.import_message') %>
+    </p>
     <!-- Sample mnemonic to hint with, key long since thrown-away -->
     <form id="main-form" method="POST">
       <input class="form-control me-2" id="mnemonic" name="mnemonic" type="text"
         placeholder="north divorce holiday whisper inquiry toy rare minute father ostrich surprise runway ill episode dance rather unaware concert sunset maid gather grain gift wire"
         aria-label="Import Key">
       <br />
-      <button class="btn btn-outline-success" id="btnImport">Import Existing Key</button>
-      <h3 style="padding-top: 25px;">OR</h3>
+      <div class="alert alert-danger enter-24-words visually-hidden" role="alert">
+        <%= __('home.enter_24_words') %>
+      </div>
+      <button class="btn btn-outline-success" id="btnImport">
+        <%= __('home.import_button') %>
+      </button>
+      <div class="importing-wrapper visually-hidden text-danger">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        <%= __('home.importing') %>
+      </div>
+      <h3 style="padding-top: 25px;">
+        <%= __('home.or_message') %>
+      </h3>
 
-      <p>You can generate a brand-new mnemonic phrase that will be written to path: <%= mncPath %>
+      <p>
+        <%= __('home.generate_message') %>
+          <%= mncPath %>
       </p>
-      <button class="btn btn-outline-success" id="btnGenerate">Generate New Key</button>
+      <button class="btn btn-outline-success" id="btnGenerate">
+        <%= __('home.generate_button') %>
+      </button>
+      <div class="generating-wrapper visually-hidden text-danger">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        <%= __('home.generating') %>
+      </div>
     </form>
   </div>
 </div>

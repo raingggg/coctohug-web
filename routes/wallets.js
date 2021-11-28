@@ -26,7 +26,7 @@ router.get('/', async (req, res, next) => {
     });
   })
 
-  res.render('index', { title: req.__('Welcome to Express'), data, pageName: 'wallets' });
+  res.render('index', {data, pageName: 'wallets' });
 });
 
 router.post('/importNew', async (req, res, next) => {

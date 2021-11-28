@@ -15,7 +15,7 @@ router.get('/', async (req, res, next) => {
   if (shouldRedirect) {
     return res.redirect('/reviewWeb');
   } else {
-    return res.render('index', { title: req.__('Welcome to Express'), pageName: 'home', mncPath });
+    return res.render('index', { pageName: 'home', mncPath });
   }
 });
 

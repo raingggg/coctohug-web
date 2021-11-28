@@ -38,18 +38,13 @@ $(document).ready(function () {
     e.preventDefault();
 
     var mnemonic = $('#mnemonic').val().trim();
-    if (!mnemonic) {
-      alert("Please provide a non-empty mnemonic seed phrase to import.");
+    if (!mnemonic || mnemonic.split(' ').length != 24) {
+      $('.enter-24-words').removeClass('visually-hidden');
       return;
     }
-    if (mnemonic.split(' ').length != 24) {
-      alert("Please exactly 24 words in the mnemonic seed phrase to import.");
-      return;
-    }
+
     $(this).prop("disabled", true);
-    $(this).html(
-      `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Importing...`
-    );
+    $(this).closest('#main-form').find('.importing-wrapper').removeClass('visually-hidden');
     $('#main-form').attr('action', '/walletsWeb/importNew');
     $("#main-form").submit();
   });
@@ -58,9 +53,7 @@ $(document).ready(function () {
     e.preventDefault();
 
     $(this).prop("disabled", true);
-    $(this).html(
-      `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Generating...`
-    );
+    $(this).closest('#main-form').find('.generating-wrapper').removeClass('visually-hidden');
     $('#main-form').attr('action', '/walletsWeb/generateNew');
     $("#main-form").submit();
   });
@@ -165,7 +158,7 @@ $(document).ready(function () {
     $(this).prop("disabled", true);
 
     const hands = [];
-    const table = $(this).closest('table');
+    const table = $(this).closest('.page-wrapper');
     table.find('input:checkbox:checked').each(function (index, item) {
       const blockchain = $(this).data('blockchain');
       const hostname = $(this).data('hostname');

@@ -20,7 +20,7 @@ router.get('/', async (req, res, next) => {
   })
 
   
-  res.render('index', { title: req.__('Welcome to Express'), data, pageName: 'blockchains' });
+  res.render('index', {data, pageName: 'blockchains' });
 });
 
 module.exports = router;

@@ -29,7 +29,7 @@
             <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
           </td>
           <td><button class="btn btn-outline-success restart" data-hostname="<%= dt.hostname %>"
-              data-blockchain="<%= dt.blockchain %>">Restart</button></td>
+              data-blockchain="<%= dt.blockchain %>"><%= __('leftbar.restart') %></button></td>
         </tr>
         <% }); %>
     </tbody>

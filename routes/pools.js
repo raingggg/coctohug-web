@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 router.get('/', async (req, res, next) => {
-  res.render('index', { title: req.__('Welcome to Express'), pageName: 'pools' });
+  res.render('index', { pageName: 'pools' });
 });
 
 module.exports = router;

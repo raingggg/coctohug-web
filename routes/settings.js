@@ -17,7 +17,7 @@ router.get('/restartWeb', async (req, res, next) => {
       ['blockchain', 'ASC'],
     ]
   });
-  res.render('index', { title: req.__('Welcome to Express'), data, pageName: 'restart' });
+  res.render('index', {data, pageName: 'restart' });
 });
 
 router.get('/restartOp', async (req, res, next) => {
@@ -43,7 +43,7 @@ router.get('/restartOp', async (req, res, next) => {
 });
 
 router.get('/coldWalletWeb', async (req, res, next) => {
-  res.render('index', { title: req.__('Welcome to Express'), pageName: 'coldWallet' });
+  res.render('index', { pageName: 'coldWallet' });
 });
 
 router.get('/coldWalletExport', async (req, res, next) => {
@@ -105,7 +105,7 @@ router.post('/coldWalletImport', async (req, res, next) => {
 });
 
 router.get('/createPasswordWeb', async (req, res, next) => {
-  res.render('index', { title: req.__('Welcome to Express'), pageName: 'createPassword' });
+  res.render('index', { pageName: 'createPassword' });
 });
 
 router.post('/createPasswordOp', async (req, res, next) => {
@@ -128,7 +128,7 @@ router.post('/createPasswordOp', async (req, res, next) => {
 });
 
 router.get('/resetPasswordWeb', async (req, res, next) => {
-  res.render('index', { title: req.__('Welcome to Express'), pageName: 'resetPassword' });
+  res.render('index', { pageName: 'resetPassword' });
 });
 
 router.post('/resetPasswordOp', async (req, res, next) => {
@@ -215,7 +215,7 @@ router.get('/harvesterWeb', async (req, res, next) => {
     logger.error('harvesterWeb', e);
   }
 
-  res.render('index', { title: req.__('Welcome to Express'), result, pageName: 'harvester' });
+  res.render('index', { result, pageName: 'harvester' });
 });
 
 module.exports = router;

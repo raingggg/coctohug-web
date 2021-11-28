@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
   });
 
   
-  res.render('index', { title: req.__('Welcome to Express'), data, pageName: 'keys' });
+  res.render('index', {data, pageName: 'keys' });
 });
 
 module.exports = router;

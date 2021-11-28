@@ -35,9 +35,9 @@ router.get('/', async (req, res, next) => {
       }
     })
 
-    res.render('index', { title: req.__('Welcome to Express'), data, pageName: 'review' });
+    res.render('index', {data, pageName: 'review' });
   } else {
-    res.render('index', { title: req.__('Welcome to Express'), pageName: 'api' });
+    res.render('index', { pageName: 'api' });
   }
 });
 

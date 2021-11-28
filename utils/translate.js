@@ -53,5 +53,5 @@ const retryTrans = async (val, options) => {
   return res.data.sentences.map(s => s.trans).join('');
 };
 
-// translateAll();
-translateAll('ko');
+translateAll();
+// translateAll('ko');
