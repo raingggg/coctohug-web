@@ -28,5 +28,15 @@
 - multiple language support
 - enable coldwallet in wallet.model
 
+- wallet mode in dockers
+- check mnc.bak
+- icon for faq
+- news/report with translation
+- general alert dialog for all with dynamic message support
+- watchdog message do not alert too often - once per 5 minutes
+- auto transfer to coldwallet every 5 minutes as a job
+- show latest 500 messages
+- https://www.coctohug.xyz/latestNews?locale=zh-CN
+
 ## Trademark Notice
 CHIA NETWORK INC, CHIA™, the CHIA BLOCKCHAIN™, the CHIA PROTOCOL™, CHIALISP™ and the “leaf Logo” (including the leaf logo alone when it refers to or indicates Chia), are trademarks or registered trademarks of Chia Network, Inc., a Delaware corporation. *There is no affliation between this Coctohug project and the main Chia Network project.*
