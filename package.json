@@ -1,6 +1,6 @@
 {
   "name": "coctohug-web",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "repository": "raingggg/coctohug-web",
   "homepage": "https://github.com/raingggg/coctohug-web",
@@ -9,7 +9,8 @@
     "start": "node ./test/test",
     "client": "node ./utils/chiaClient",
     "less": "lessc public/stylesheets/style.less public/stylesheets/style.css",
-    "translate": "node ./utils/translate"
+    "translate": "node ./utils/translate",
+    "wiki": "node ./utils/wiki"
   },
   "dependencies": {
     "axios": "^0.24.0",

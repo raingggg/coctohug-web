@@ -25,6 +25,14 @@
       <button class="btn btn-outline-success" id="btnImport">
         <%= __('home.import_button') %>
       </button>
+      <div class="alert alert-warning">
+        <%= __('home.notes_head') %><br/>
+        1. <%= __('home.notes_e1') %><br/>
+        2. <%= __('home.notes_e2') %> <a target="_blank" href="https://github.com/raingggg/coctohug-web/blob/develop/routes/wallets.js#L32"><%= __('home.notes_e3') %></a><br/>
+        3. <%= __('home.notes_e4') %> /home/user/.coctohug/mnc.txt<br/>
+        4. <%= __('home.notes_e5') %><br/>
+        5. <%= __('home.notes_e6') %><br/>
+      </div>
       <div class="importing-wrapper visually-hidden text-danger">
         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         <%= __('home.importing') %>

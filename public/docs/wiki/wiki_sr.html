@@ -1,0 +1,279 @@
+<h1 id="цоцтохуг---управљајте-десетинама-цхиа-блоцкцхаин-форкс-рударења-из-веб-претраживача">Цоцтохуг - Управљајте десетинама цхиа блоцкцхаин форкс рударења из веб претраживача!</h1>
+<ul>
+<li>Лепа локализација са подршком за десетине језика: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
+</ul>
+<p>Лако подешавање помоћу <a href="https://www.coctohug.xyz/">Брз почетак</a></p>
+<p><em>Потражите додатну помоћ на нашем <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/channels/914698944435613716/914698944435613718">Discord</a></em>.</p>
+<h1 id="брз-почетак">Брз почетак</h1>
+<ul>
+<li><a href="#cch-linux">Поставите Цоцтохуг на Линук ОС</a></li>
+<li><a href="#cch-windows">Подесите Цоцтохуг на Виндовс ОС</a></li>
+<li><a href="#cch-macOS">Подесите Цоцтохуг на Мац ОС</a></li>
+</ul>
+<h1 id="уобичајена-подешавања">Уобичајена подешавања</h1>
+<ul>
+<li><a href="#cch-password">Лозинка</a></li>
+<li><a href="#cch-keys">Кључеви</a></li>
+<li><a href="#cch-farming">Рударство</a></li>
+<li><a href="#cch-monitoring">Мониторинг</a></li>
+<li><a href="#cch-nft_recovery">НФТ опоравак</a></li>
+<li><a href="#cch-blocks_found">Пронађени блокови / Примљени новчићи</a></li>
+<li><a href="#cch-farming_warnings">Мининг Варнингс</a></li>
+<li><a href="#cch-daily_report">Дневни извештај</a></li>
+<li><a href="#cch-weekly_report">Недељни извештај</a></li>
+<li><a href="#cch-node_sync">Ноде Синц</a></li>
+<li><a href="#cch-connections_management">Управљање везама</a></li>
+<li><a href="#cch-wallets_management">Управљање новчаницима</a></li>
+<li><a href="#cch-hands_management">Хандс Манагемент</a></li>
+<li><a href="#cch-transfer_coins">Трансфер Цоинс</a></li>
+</ul>
+<h1 id="напредна-подешавања">Напредна подешавања</h1>
+<ul>
+<li><a href="#cch-cold_wallet">Цолд Валлет</a></li>
+<li><a href="#cch-secure_passphrase">Сигурне шифроване 24 мнемоничке речи</a></li>
+<li><a href="#cch-forks">Блоцкцхаин Форкс</a></li>
+<li><a href="#cch-harvester">Харвестер</a></li>
+<li><a href="#cch-upgrade">Надоградите</a></li>
+</ul>
+<h1 id="најбоље-праксе">Најбоље праксе</h1>
+<ul>
+<li><a href="#cch-local_language">Локални језик</a></li>
+<li><a href="#cch-hardware_requirements">Хардверски захтеви</a></li>
+</ul>
+<p id="cch-linux">&nbsp;</p>
+
+<h2 id="поставите-цоцтохуг-на-линук-ос">Поставите Цоцтохуг на Линук ОС</h2>
+<ul>
+<li>Подесити <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
+<li>Иди на сајт <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, затим унесите сва потребна поља обрасца и преузмите генерисане зиповане доцкер-цомпосе датотеке</li>
+<li>Распакујте преузете фасцикле и копирајте их у свој радни директоријум</li>
+<li>Покрените све фасцикле по редоследу:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>Отворите претраживач и приступите ВебУИ са урл-ом <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>Напомена 1: Немојте покретати више од 5 блоцкцхаин виљушки у исто време, пошто цхиа блоцкцхаин виљушке заиста једу ЦПУ када се чвор синхронизује по први пут</li>
+<li>Напомена 2: Око 1,8Г РАМ-а је потребно за сваку виљушку блоцкцхаин-а, тако да изаберите неке блокчејн виљушке на основу меморије вашег рачунара</li>
+</ul>
+<p id="cch-windows">&nbsp;</p>
+
+<h2 id="подесите-цоцтохуг-на-виндовс-ос">Подесите Цоцтохуг на Виндовс ОС</h2>
+<ul>
+<li>Подесити <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
+<li>Инсталирајте Убунту или други Линук систем користећи ВСЛ</li>
+<li>Преостали кораци су исти као горе <a href="#cch-linux">Поставите Цоцтохуг на Линук ОС</a></li>
+</ul>
+<p id="cch-macOS">&nbsp;</p>
+
+<h2 id="подесите-цоцтохуг-на-мац-ос">Подесите Цоцтохуг на Мац ОС</h2>
+<ul>
+<li>Исто је и са <a href="#cch-linux">Поставите Цоцтохуг на Линук ОС</a></li>
+</ul>
+<p id="cch-password">&nbsp;</p>
+
+<h2 id="лозинка">Лозинка</h2>
+<ul>
+<li>Од вас ће бити затражено да поставите лозинку за безбедна подешавања када први пут приступите ВебУИ са урл-ом <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>Безбедна подешавања укључују: Хладни новчаник, Трансфер новчића, Рестарт Блоцкцхаин Форкс, Харвестер...</li>
+</ul>
+<p id="cch-keys">&nbsp;</p>
+
+<h2 id="кључеви">Кључеви</h2>
+<ul>
+<li>Од вас ће бити затражено да унесете 24 мнемоничке речи када први пут приступите ВебУИ са урл-ом - ово је углавном за пољопривредне сврхе</li>
+<li>Или можете да генеришете један потпуно нови кључ - ово је углавном за потребе хладног новчаника</li>
+</ul>
+<p id="cch-farming">&nbsp;</p>
+
+<h2 id="рударство">Рударство</h2>
+<ul>
+<li>Када се изврши синхронизација чворова, фарма би требало да почне аутоматски</li>
+<li>Тада ћете моћи да пратите статус рударења на различите начине</li>
+</ul>
+<p><img src="../../images/coctohug-summary-en-min.png" alt="English"></p>
+<p id="cch-monitoring">&nbsp;</p>
+
+<h2 id="мониторинг">Мониторинг</h2>
+<ul>
+<li>Картица Резиме може да прикаже: Укупно ископане новчиће, стање на рачуну, број парцела, величину парцеле, величину мрежног простора и очекивано време за победу</li>
+<li>сваки блок-панел виљушке на картици Резиме ће имати светло зелену позадину ако ради добро, у супротном ће бити светло жута позадина</li>
+<li>Такође можете да прегледате детаље користећи друге картице</li>
+</ul>
+<p id="cch-nft_recovery">&nbsp;</p>
+
+<h2 id="нфт-опоравак">НФТ опоравак</h2>
+<ul>
+<li>Картица Примљени новчићи има везу: <a class="nav-link" target="_blank" href="https://alltheblocks.net/nft-recovery">Преузмите своје НФТ 7/8 награде</a></li>
+</ul>
+<p id="cch-blocks_found">&nbsp;</p>
+
+<h2 id="пронађени-блокови--примљени-новчићи">Пронађени блокови / Примљени новчићи</h2>
+<ul>
+<li>Наведите укупан број пронађених блокова</li>
+<li>Наведите укупно примљене новчиће</li>
+</ul>
+<p><img src="../../images/received-coins-min.png" alt="English"></p>
+<p id="cch-farming_warnings">&nbsp;</p>
+
+<h2 id="мининг-варнингс">Мининг Варнингс</h2>
+<ul>
+<li>Наведите могући проблем са мрежом</li>
+<li>Наведите могући проблем са сигналном тачком</li>
+<li>Наведите могући проблем претраге диска</li>
+<li>Наведите могући проблем смањења броја парцела</li>
+</ul>
+<p id="cch-daily_report">&nbsp;</p>
+
+<h2 id="дневни-извештај">Дневни извештај</h2>
+<ul>
+<li>Сумирајте пронађене блокове / новчиће примљене по дану</li>
+<li>Сумирајте упозорења о рударству по дану</li>
+</ul>
+<p><img src="../../images/daily_report-min.png" alt="English"></p>
+<p id="cch-weekly_report">&nbsp;</p>
+
+<h2 id="недељни-извештај">Недељни извештај</h2>
+<ul>
+<li>Сумирајте пронађене блокове / новчиће примљене по седмицама</li>
+<li>Сумирајте упозорења о рударству по седмицама</li>
+</ul>
+<p id="cch-node_sync">&nbsp;</p>
+
+<h2 id="ноде-синц">Ноде Синц</h2>
+<ul>
+<li>Чвор ће се аутоматски синхронизовати подразумевано</li>
+<li>Можете отићи на картицу Везе или Блоцкцхаинс да бисте испитали детаљан статус</li>
+<li>Да бисте убрзали синхронизацију чвора, <a href="https://alltheblocks.net/">https://alltheblocks.net/</a> пружа листу чворова и датотеку базе података (кликните на сваки блок и онда их можете пронаћи у горњем десном делу)</li>
+</ul>
+<p id="cch-connections_management">&nbsp;</p>
+
+<h2 id="управљање-везама">Управљање везама</h2>
+<ul>
+<li>Наведите све везе чворова</li>
+<li>Можете додати/уклонити везе на картици Везе</li>
+</ul>
+<p><img src="../../images/connections-min.png" alt="English"></p>
+<p id="cch-wallets_management">&nbsp;</p>
+
+<h2 id="управљање-новчаницима">Управљање новчаницима</h2>
+<ul>
+<li>Наведите статус новчаника и стање на рачуну</li>
+<li>Такође можете пренети новчиће на картици новчаника</li>
+</ul>
+<p><img src="../../images/wallets-min.png" alt="English"></p>
+<p id="cch-hands_management">&nbsp;</p>
+
+<h2 id="хандс-манагемент">Хандс Манагемент</h2>
+<ul>
+<li>Ово је сваки блоцкцхаин форк радници</li>
+<li>Можете уклонити једну руку када више не планирате да је узгајате</li>
+</ul>
+<p id="cch-transfer_coins">&nbsp;</p>
+
+<h2 id="трансфер-цоинс">Трансфер Цоинс</h2>
+<ul>
+<li>Идите на картицу Новчаник и унесите своју безбедну лозинку за пренос новчића</li>
+</ul>
+<p id="cch-cold_wallet">&nbsp;</p>
+
+<h2 id="цолд-валлет">Цолд Валлет</h2>
+<ul>
+<li>Идите на картицу подешавања са својом безбедном лозинком</li>
+<li>Извезите налог хладног новчаника<pre><code>1. Припремите нову машину (различито од рударске машине)
+2. Посетите https://www.coctohug.xyz и кликните на Режим новчаника да бисте генерисали фасцикле за доцкер-цомпосе
+3. Подесите доцкер-цомпосе фасцикле [Поставите Цоцтохуг на Линук ОС]
+4. На екрану за покретање ВебУИ, овог пута генеришите нови кључ
+5. Сачекајте неколико минута да се блоцкцхаин форкс поново покрене
+6. Идите у сваку фасциклу и извршите скрипту docker-compose stop &amp;&amp; docker-compose up -d
+7. Посетите http://localhost:12630/, и идите на подешавања - картица хладног новчаника да бисте извезли адресе хладног новчаника
+8. Потврдите да је свака адреса тачна ручно тако што ћете упоредити преузету датотеку са информацијама приказаним на картици Кључеви
+9. Набавите 24 мнемоничке речи помоћу сличне терминалске скрипте
+  docker exec -it coctohug-flora flora keys show --show-mnemonic-seed
+  docker exec -it coctohug-covid covid keys show --show-mnemonic-seed
+  docker exec -it coctohug-lucky lucky keys show --show-mnemonic-seed
+</code></pre>
+</li>
+<li>Увезите налог хладног новчаника<pre><code>1. На вашој машини за рударење посетите подешавања - картицу хладног новчаника
+2. Увезите претходно преузету јсон датотеку хладног новчаника
+3. Сачекајте неколико минута и идите на картицу Новчаник да видите да ли је адреса хладног новчаника ажурирана или не
+4. Напомена: препоручујемо да направите резервну копију конфигурација новчаника пре увоза
+</code></pre>
+<img src="../../images/cold_wallet-min.png" alt="English"></li>
+</ul>
+<p id="cch-secure_passphrase">&nbsp;</p>
+
+<h2 id="сигурне-шифроване-24-мнемоничке-речи">Сигурне шифроване 24 мнемоничке речи</h2>
+<ul>
+<li><a target='_blank' href='https://github.com/raingggg/coctohug-passphrase'>coctohug-passphrase</a> може да се користи да обезбеди ваше 24 мнемоничке речи</li>
+<li>Шифрује ваше кључеве лозинком коју само ви знате</li>
+<li>Можете га дешифровати помоћу лозинке када додајете нове блокчејн виљушке</li>
+</ul>
+<p id="cch-forks">&nbsp;</p>
+
+<h2 id="блоцкцхаин-форкс">Блоцкцхаин Форкс</h2>
+<ul>
+<li>Проверавајте цоцтохуг гитхуб сваких неколико дана</li>
+<li>Нове блоцкцхаин виљушке ће бити подржане врло брзо</li>
+</ul>
+<p id="cch-harvester">&nbsp;</p>
+
+<h2 id="харвестер">Харвестер</h2>
+<ul>
+<li>Посетите <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a> и кликните Харвестер Моде да бисте генерисали фасцикле за доцкер-цомпосе</li>
+<li>Посетите <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a> и кликните на Дозволи Харвестер да бисте изградили везу између контролера и комбајна</li>
+<li>Подесите доцкер-цомпосе фасцикле <a href="#cch-linux">Поставите Цоцтохуг на Линук ОС</a></li>
+<li>Неколико минута касније, моћи ћете да видите комбајн на картици ВебУИ руке</li>
+</ul>
+<p id="cch-upgrade">&nbsp;</p>
+
+<h2 id="надоградите">Надоградите</h2>
+<ul>
+<li>Скрипта у једном реду<pre><code>docker-compose stop &amp;&amp; docker-compose rm -f &amp;&amp; docker-compose pull &amp;&amp; docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>Такође можете извршити горе наведене скрипте корак по корак<pre><code>docker-compose stop
+docker-compose rm -f
+docker-compose pull
+docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>У случају некомпатибилног дб проблема, можете уклонити постојећу датотеку базе података пре него што извршите доцкер-цомпосе старт скрипту тако што ћете<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+</code></pre>
+</li>
+</ul>
+<p id="cch-local_language">&nbsp;</p>
+
+<h2 id="локални-језик">Локални језик</h2>
+<ul>
+<li>У горњем десном углу ВебУИ-ја изаберите језик који вам се највише свиђа</li>
+<li>Касније можете да пређете на било који други језик ако желите</li>
+</ul>
+<p id="cch-hardware_requirements">&nbsp;</p>
+
+<h2 id="хардверски-захтеви">Хардверски захтеви</h2>
+<ul>
+<li>Једном синхронизовани, десете генерације Интел® Цоре™ и7 процесора би требало да буду довољне за производњу 50+ блокчејн виљушки</li>
+<li>Међутим, за почетну фазу синхронизације чвора, он заиста једе ЦПУ. Зато препоручујемо да подесите 5 блокчејн виљушки по групи и започнете групу по групу</li>
+<li>Потребна меморија је једнака: број рударских блокчејн виљушки помножи 1,8Г РАМ-а</li>
+<li>Нормални диск би требао бити у реду за 50+ блокчејн виљушки</li>
+</ul>
+<h1 id="пројекти-отвореног-кода-на-гитхуб-у">Пројекти отвореног кода на Гитхуб-у</h1>
+<p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
+<p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cryptodoge">cryptodoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
+<p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
+<p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<h2 id="обавештење-о-жиговима">Обавештење о жиговима</h2>
+<p>ЦХИА НЕТВОРК ИНЦ, ЦХИА™, ЦХИА БЛОЦКЦХАИН™, ЦХИА ПРОТОЦОЛ™, ЦХИАЛИСП™ и „лого листа“ (укључујући само лого листа када се односи на или означава Цхиа), су заштитни знаци или регистровани заштитни знаци компаније Цхиа Нетворк, Инц. ., корпорација из Делавера. <em>Не постоји веза између овог пројекта Цоцтохуг и главног пројекта Цхиа Нетворк.</em></p>

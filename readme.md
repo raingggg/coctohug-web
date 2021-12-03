@@ -35,7 +35,6 @@
 - general alert dialog for all with dynamic message support
 - watchdog message do not alert too often - once per 5 minutes
 - auto transfer to coldwallet every 5 minutes as a job
-- show latest 500 messages
 - https://www.coctohug.xyz/latestNews?locale=zh-CN
 
 ## Trademark Notice

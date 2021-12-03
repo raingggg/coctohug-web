@@ -10,7 +10,7 @@ const CONTROLLER_PORT = process.env['controller_web_port'] || '12630';
 const WORKER_HOST = process.env['worker_address'] || process.env['controller_address'];
 const WORKER_PORT = process.env['worker_web_port'];
 
-const MODE = process.env['mode'];
+const MODE = process.env['mode'] || 'fullnode';
 const WEB_MODE = process.env['WEB_MODE'] || 'controller';
 
 const SQL_LOG = false;
@@ -54,6 +54,14 @@ const getWorkerUrl = () => {
 
 const getMode = () => {
   return MODE;
+};
+
+const isHarvesterMode = () => {
+  return MODE.includes('harvester');
+};
+
+const isFullnodeMode = () => {
+  return MODE.includes('fullnode');
 };
 
 const getSqlitePath = () => {
@@ -110,6 +118,8 @@ module.exports = {
   getControllerUrl,
   getWorkerUrl,
   getMode,
+  isHarvesterMode,
+  isFullnodeMode,
   getSqlitePath,
   isWebControllerMode,
   getWebLogLevel,

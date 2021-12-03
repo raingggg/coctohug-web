@@ -1,6 +1,6 @@
 const CronJob = require('cron').CronJob;
 const { logger } = require('./logger');
-const { isWebControllerMode } = require('./chiaConfig');
+const { isWebControllerMode, isHarvesterMode } = require('./chiaConfig');
 const {
   updateWallet,
   updateFarm,
@@ -16,6 +16,7 @@ const every30Minute = '0 */30 * * * *';
 const every4Hour = '0 0 */4 * * *';
 
 const isWebController = isWebControllerMode();
+const isNotHarvester = !isHarvesterMode();
 
 const MAX_TRY = 10;
 let currentTry = 0;
@@ -23,7 +24,7 @@ const immediateTryTasks = async () => {
   logger.info('immediateTryTasks start');
   if (currentTry < MAX_TRY) {
     currentTry += 1;
-    await updateKey();
+    if (isNotHarvester) await updateKey();
     await updateHand();
     logger.info('immediateTryTasks trying: ', currentTry);
   }
@@ -34,7 +35,7 @@ const oneMinuteJob = new CronJob(everyMinute, async () => {
   logger.info('oneMinuteJob start');
   if (!isWebController) {
     await immediateTryTasks();
-    await updateBlockchain();
+    if (isNotHarvester) await updateBlockchain();
   }
   logger.info('oneMinuteJob end');
 }, null, true, 'America/Los_Angeles');
@@ -42,9 +43,9 @@ const oneMinuteJob = new CronJob(everyMinute, async () => {
 const fiveMinuteJob = new CronJob(every5Minute, async () => {
   logger.info('fiveMinuteJob start');
   if (!isWebController) {
-    await updateFarm();
-    await updateWallet();
-    await updateConnection();
+    if (isNotHarvester) await updateFarm();
+    if (isNotHarvester) await updateWallet();
+    if (isNotHarvester) await updateConnection();
   }
   logger.info('fiveMinuteJob end');
 }, null, true, 'America/Los_Angeles');
@@ -60,7 +61,7 @@ const thirtyMinuteJob = new CronJob(every30Minute, async () => {
 const fourHourJob = new CronJob(every4Hour, async () => {
   logger.info('fourHourJob start');
   if (!isWebController) {
-    await updateKey();
+    if (isNotHarvester) await updateKey();
   }
   logger.info('fourHourJob end');
 }, null, true, 'America/Los_Angeles');

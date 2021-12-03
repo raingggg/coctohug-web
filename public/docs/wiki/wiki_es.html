@@ -1,0 +1,279 @@
+<h1 id="coctohug-administre-docenas-de-bifurcaciones-de-blockchain-de-chia-que-minan-desde-un-navegador-web">Coctohug: administre docenas de bifurcaciones de blockchain de chia que minan desde un navegador web.</h1>
+<ul>
+<li>Buena localización con soporte para docenas de idiomas: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
+</ul>
+<p>Fácil configuración usando <a href="https://www.coctohug.xyz/">Inicio rápido</a></p>
+<p><em>Busque más ayuda en nuestro <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/channels/914698944435613716/914698944435613718">Discord</a></em>.</p>
+<h1 id="inicio-rápido">Inicio rápido</h1>
+<ul>
+<li><a href="#cch-linux">Configurar Coctohug en el sistema operativo Linux</a></li>
+<li><a href="#cch-windows">Configurar Coctohug en el sistema operativo Windows</a></li>
+<li><a href="#cch-macOS">Configurar Coctohug en Mac OS</a></li>
+</ul>
+<h1 id="configuraciones-comunes">Configuraciones comunes</h1>
+<ul>
+<li><a href="#cch-password">Contraseña</a></li>
+<li><a href="#cch-keys">Teclas</a></li>
+<li><a href="#cch-farming">Minería</a></li>
+<li><a href="#cch-monitoring">Vigilancia</a></li>
+<li><a href="#cch-nft_recovery">Recuperación NFT</a></li>
+<li><a href="#cch-blocks_found">Bloques encontrados / Monedas recibidas</a></li>
+<li><a href="#cch-farming_warnings">Advertencias mineras</a></li>
+<li><a href="#cch-daily_report">Reporte diario</a></li>
+<li><a href="#cch-weekly_report">Reporte semanal</a></li>
+<li><a href="#cch-node_sync">Sincronización de nodo</a></li>
+<li><a href="#cch-connections_management">Gestión de conexiones</a></li>
+<li><a href="#cch-wallets_management">Gestión de carteras</a></li>
+<li><a href="#cch-hands_management">Manejo de manos</a></li>
+<li><a href="#cch-transfer_coins">Transferencia de monedas</a></li>
+</ul>
+<h1 id="ajustes-avanzados">Ajustes avanzados</h1>
+<ul>
+<li><a href="#cch-cold_wallet">Billetera fría</a></li>
+<li><a href="#cch-secure_passphrase">24 palabras mnemotécnicas seguras con frase de contraseña</a></li>
+<li><a href="#cch-forks">Horquillas Blockchain</a></li>
+<li><a href="#cch-harvester">Segador</a></li>
+<li><a href="#cch-upgrade">Potenciar</a></li>
+</ul>
+<h1 id="mejores-prácticas">Mejores prácticas</h1>
+<ul>
+<li><a href="#cch-local_language">Lenguaje local</a></li>
+<li><a href="#cch-hardware_requirements">Requisitos de hardware</a></li>
+</ul>
+<p id="cch-linux">&nbsp;</p>
+
+<h2 id="configurar-coctohug-en-el-sistema-operativo-linux">Configurar Coctohug en el sistema operativo Linux</h2>
+<ul>
+<li>Configuración <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
+<li>Ir al sitio <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, luego ingrese todos los campos de formulario necesarios y descargue los archivos comprimidos generados de la ventana acoplable componer</li>
+<li>Descomprima las carpetas descargadas y cópielas en su directorio de trabajo</li>
+<li>Ejecute todas las carpetas por orden:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>Abra el navegador y acceda a WebUI con url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>Nota 1: No inicie más de 5 bifurcaciones de blockchain al mismo tiempo, ya que las bifurcaciones de chia blockchain realmente consumen CPU cuando se sincroniza el nodo por primera vez.</li>
+<li>Nota 2: Se requieren alrededor de 1.8G de RAM para cada bifurcación de blockchain, así que elija algunas bifurcaciones de blockchain según la memoria de su computadora</li>
+</ul>
+<p id="cch-windows">&nbsp;</p>
+
+<h2 id="configurar-coctohug-en-el-sistema-operativo-windows">Configurar Coctohug en el sistema operativo Windows</h2>
+<ul>
+<li>Configuración <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
+<li>Instale Ubuntu u otro sistema Linux usando WSL</li>
+<li>Los pasos restantes son los mismos que los anteriores <a href="#cch-linux">Configurar Coctohug en el sistema operativo Linux</a></li>
+</ul>
+<p id="cch-macOS">&nbsp;</p>
+
+<h2 id="configurar-coctohug-en-mac-os">Configurar Coctohug en Mac OS</h2>
+<ul>
+<li>Lo mismo con <a href="#cch-linux">Configurar Coctohug en el sistema operativo Linux</a></li>
+</ul>
+<p id="cch-password">&nbsp;</p>
+
+<h2 id="contraseña">Contraseña</h2>
+<ul>
+<li>Se le pedirá que establezca una contraseña para configuraciones seguras, cuando acceda por primera vez a WebUI con url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>Las configuraciones seguras incluyen: billetera fría, transferencia de monedas, reiniciar las horquillas de blockchain, cosechadora ...</li>
+</ul>
+<p id="cch-keys">&nbsp;</p>
+
+<h2 id="teclas">Teclas</h2>
+<ul>
+<li>Se le pedirá que ingrese las 24 palabras mnemotécnicas cuando acceda por primera vez a WebUI con url; esto es principalmente para fines agrícolas</li>
+<li>O puede generar una clave totalmente nueva, esto es principalmente para fines de billetera fría</li>
+</ul>
+<p id="cch-farming">&nbsp;</p>
+
+<h2 id="minería">Minería</h2>
+<ul>
+<li>Una vez que se realiza la sincronización de nodos, la agricultura debería comenzar automáticamente</li>
+<li>Entonces podrá monitorear el estado de la minería de varias formas</li>
+</ul>
+<p><img src="../../images/coctohug-summary-en-min.png" alt="English"></p>
+<p id="cch-monitoring">&nbsp;</p>
+
+<h2 id="vigilancia">Vigilancia</h2>
+<ul>
+<li>La pestaña Resumen puede mostrar: Total de monedas extraídas, saldo de la cuenta, recuento de parcelas, tamaño de parcela, tamaño del espacio de red y tiempo esperado para ganar</li>
+<li>cada panel de la bifurcación de blockchain en la pestaña Resumen tendrá un fondo verde claro si está funcionando bien, de lo contrario será un fondo amarillo claro</li>
+<li>También puede examinar los detalles utilizando otras pestañas</li>
+</ul>
+<p id="cch-nft_recovery">&nbsp;</p>
+
+<h2 id="recuperación-nft">Recuperación NFT</h2>
+<ul>
+<li>La pestaña Monedas recibidas tiene un enlace: <a class="nav-link" target="_blank" href="https://alltheblocks.net/nft-recovery">Reclama tus recompensas NFT 7/8</a></li>
+</ul>
+<p id="cch-blocks_found">&nbsp;</p>
+
+<h2 id="bloques-encontrados--monedas-recibidas">Bloques encontrados / Monedas recibidas</h2>
+<ul>
+<li>Lista de bloques totales encontrados</li>
+<li>Lista de monedas totales recibidas</li>
+</ul>
+<p><img src="../../images/received-coins-min.png" alt="English"></p>
+<p id="cch-farming_warnings">&nbsp;</p>
+
+<h2 id="advertencias-mineras">Advertencias mineras</h2>
+<ul>
+<li>Lista de posibles problemas de red</li>
+<li>Enumere el posible problema del punto de señalización</li>
+<li>Lista de posibles problemas de búsqueda de disco</li>
+<li>Enumere el posible problema de disminución del recuento de parcelas</li>
+</ul>
+<p id="cch-daily_report">&nbsp;</p>
+
+<h2 id="reporte-diario">Reporte diario</h2>
+<ul>
+<li>Resumir bloques encontrados / monedas recibidas por día</li>
+<li>Resumir las advertencias de minería por día</li>
+</ul>
+<p><img src="../../images/daily_report-min.png" alt="English"></p>
+<p id="cch-weekly_report">&nbsp;</p>
+
+<h2 id="reporte-semanal">Reporte semanal</h2>
+<ul>
+<li>Resumir bloques encontrados / monedas recibidas por semana</li>
+<li>Resumir las advertencias de minería por semana</li>
+</ul>
+<p id="cch-node_sync">&nbsp;</p>
+
+<h2 id="sincronización-de-nodo">Sincronización de nodo</h2>
+<ul>
+<li>El nodo se sincronizará automáticamente de forma predeterminada</li>
+<li>Puede ir a la pestaña Conexiones o Blockchains para examinar el estado detallado</li>
+<li>Para acelerar la sincronización de su nodo, <a href="https://alltheblocks.net/">https://alltheblocks.net/</a> proporciona una lista de nodos y un archivo de base de datos (haga clic en cada blockchain y luego podrá encontrarlos en la sección superior derecha)</li>
+</ul>
+<p id="cch-connections_management">&nbsp;</p>
+
+<h2 id="gestión-de-conexiones">Gestión de conexiones</h2>
+<ul>
+<li>Lista de todas las conexiones de nodo</li>
+<li>Puede agregar / eliminar conexiones en la pestaña Conexiones</li>
+</ul>
+<p><img src="../../images/connections-min.png" alt="English"></p>
+<p id="cch-wallets_management">&nbsp;</p>
+
+<h2 id="gestión-de-carteras">Gestión de carteras</h2>
+<ul>
+<li>Muestra el estado de la billetera y el saldo de la cuenta</li>
+<li>También puede transferir monedas en la pestaña de billetera</li>
+</ul>
+<p><img src="../../images/wallets-min.png" alt="English"></p>
+<p id="cch-hands_management">&nbsp;</p>
+
+<h2 id="manejo-de-manos">Manejo de manos</h2>
+<ul>
+<li>Este es cada trabajador de la bifurcación de blockchain</li>
+<li>Puede quitar una mano cuando ya no planea cultivarla</li>
+</ul>
+<p id="cch-transfer_coins">&nbsp;</p>
+
+<h2 id="transferencia-de-monedas">Transferencia de monedas</h2>
+<ul>
+<li>Vaya a la pestaña de billetera e ingrese su contraseña segura para transferir monedas</li>
+</ul>
+<p id="cch-cold_wallet">&nbsp;</p>
+
+<h2 id="billetera-fría">Billetera fría</h2>
+<ul>
+<li>Vaya a la pestaña de configuración con su contraseña segura</li>
+<li>Exportar cuenta de Cold Wallet<pre><code>1. Prepare una nueva máquina (diferente con la máquina de minería)
+2. Visita https://www.coctohug.xyz y haga clic en Modo billetera para generar carpetas de composición de ventana acoplable
+3. Configurar las carpetas docker-compose [Configurar Coctohug en el sistema operativo Linux]
+4. En la pantalla de inicio de WebUI, esta vez genera una nueva clave
+5. Espere unos minutos para que se reinicien las bifurcaciones de blockchain
+6. Vaya a cada carpeta y ejecute el script docker-compose stop &amp;&amp; docker-compose up -d
+7. Visita http://localhost:12630/, y vaya a configuración - pestaña billetera fría para exportar las direcciones de billetera fría
+8. Confirme que cada dirección sea correcta manualmente comparando el archivo descargado con la información que se muestra en la pestaña Teclas
+9. Obtenga 24 palabras mnemotécnicas mediante un script de terminal similar
+  docker exec -it coctohug-flora flora keys show --show-mnemonic-seed
+  docker exec -it coctohug-covid covid keys show --show-mnemonic-seed
+  docker exec -it coctohug-lucky lucky keys show --show-mnemonic-seed
+</code></pre>
+</li>
+<li>Importar cuenta de Cold Wallet<pre><code>1. En su máquina de minería, visite la configuración - pestaña billetera fría
+2. Importe el archivo json de billetera fría descargado anteriormente
+3. Espere unos minutos y vaya a la pestaña de billetera para ver si la dirección de la billetera fría está actualizada o no
+4. Nota: recomendamos hacer una copia de seguridad de las configuraciones de su billetera antes de importar
+</code></pre>
+<img src="../../images/cold_wallet-min.png" alt="English"></li>
+</ul>
+<p id="cch-secure_passphrase">&nbsp;</p>
+
+<h2 id="24-palabras-mnemotécnicas-seguras-con-frase-de-contraseña">24 palabras mnemotécnicas seguras con frase de contraseña</h2>
+<ul>
+<li><a target='_blank' href='https://github.com/raingggg/coctohug-passphrase'>coctohug-passphrase</a> se puede utilizar para asegurar sus 24 palabras mnemotécnicas</li>
+<li>Cifra sus claves con una contraseña que solo usted conoce</li>
+<li>Puede descifrarlo con la contraseña al agregar nuevas bifurcaciones de blockchain</li>
+</ul>
+<p id="cch-forks">&nbsp;</p>
+
+<h2 id="horquillas-blockchain">Horquillas Blockchain</h2>
+<ul>
+<li>Compruebe coctohug github cada pocos días</li>
+<li>Las nuevas bifurcaciones de blockchain serán compatibles muy pronto</li>
+</ul>
+<p id="cch-harvester">&nbsp;</p>
+
+<h2 id="segador">Segador</h2>
+<ul>
+<li>Visita <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a> y haga clic en Harvester Mode para generar carpetas de composición acoplable</li>
+<li>Visita <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a> y haga clic en Permitir que el recolector cree el vínculo entre el controlador y el recolector</li>
+<li>Configurar las carpetas docker-compose <a href="#cch-linux">Configurar Coctohug en el sistema operativo Linux</a></li>
+<li>Unos minutos más tarde, podrá ver el recolector en la pestaña de manos de WebUI</li>
+</ul>
+<p id="cch-upgrade">&nbsp;</p>
+
+<h2 id="potenciar">Potenciar</h2>
+<ul>
+<li>Script de una línea<pre><code>docker-compose stop &amp;&amp; docker-compose rm -f &amp;&amp; docker-compose pull &amp;&amp; docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>También puede ejecutar los scripts anteriores paso a paso<pre><code>docker-compose stop
+docker-compose rm -f
+docker-compose pull
+docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>En caso de un problema de base de datos incompatible, puede eliminar el archivo de base de datos existente antes de ejecutar el script de inicio de docker-compose mediante<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+</code></pre>
+</li>
+</ul>
+<p id="cch-local_language">&nbsp;</p>
+
+<h2 id="lenguaje-local">Lenguaje local</h2>
+<ul>
+<li>En la parte superior derecha de WebUI, elija el idioma que más le guste</li>
+<li>Puede cambiar a cualquier otro idioma más tarde si lo desea</li>
+</ul>
+<p id="cch-hardware_requirements">&nbsp;</p>
+
+<h2 id="requisitos-de-hardware">Requisitos de hardware</h2>
+<ul>
+<li>Una vez sincronizados, los procesadores Intel® Core ™ i7 de décima generación deberían ser suficientes para cultivar más de 50 bifurcaciones blockchain</li>
+<li>Sin embargo, para la etapa inicial de sincronización de nodos, realmente consume CPU. Por lo tanto, recomendamos configurar 5 bifurcaciones de blockchain por grupo y comenzar grupo por grupo</li>
+<li>La memoria necesaria equivale a: la cantidad de bifurcaciones de la cadena de bloques de minería se multiplica por 1,8 G de RAM</li>
+<li>El disco normal debería estar bien para más de 50 bifurcaciones blockchain</li>
+</ul>
+<h1 id="proyectos-de-código-abierto-en-github">Proyectos de código abierto en Github</h1>
+<p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
+<p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cryptodoge">cryptodoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
+<p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
+<p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<h2 id="aviso-de-marca-comercial">Aviso de marca comercial</h2>
+<p>CHIA NETWORK INC, CHIA ™, CHIA BLOCKCHAIN ​​™, CHIA PROTOCOL ™, CHIALISP ™ y el &#34;logotipo de la hoja&#34; (incluido el logotipo de la hoja solo cuando se refiere o indica Chia), son marcas comerciales o marcas comerciales registradas de Chia Network, Inc ., una corporación de Delaware. * No existe ninguna afiliación entre este proyecto Coctohug y el proyecto principal de Chia Network. *</p>

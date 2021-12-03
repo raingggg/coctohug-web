@@ -1,0 +1,279 @@
+<h1 id="coctohug---ده-ها-چنگال-بلاک-چین-چیا-را-که-از-یک-مرورگر-وب-استخراج-می-کنند-را-مدیریت-کنید">Coctohug - ده ها چنگال بلاک چین چیا را که از یک مرورگر وب استخراج می کنند را مدیریت کنید!</h1>
+<ul>
+<li>بومی سازی خوب با پشتیبانی از ده ها زبان: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
+</ul>
+<p>راه اندازی آسان با استفاده از <a href="https://www.coctohug.xyz/">شروع سریع</a></p>
+<p><em>از ما کمک بیشتری بخواهید <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/channels/914698944435613716/914698944435613718">Discord</a></em>.</p>
+<h1 id="شروع-سریع">شروع سریع</h1>
+<ul>
+<li><a href="#cch-linux">راه اندازی Coctohug در سیستم عامل لینوکس</a></li>
+<li><a href="#cch-windows">Coctohug را در سیستم عامل ویندوز راه اندازی کنید</a></li>
+<li><a href="#cch-macOS">راه اندازی Coctohug در سیستم عامل مک</a></li>
+</ul>
+<h1 id="تنظیمات-مشترک">تنظیمات مشترک</h1>
+<ul>
+<li><a href="#cch-password">کلمه عبور</a></li>
+<li><a href="#cch-keys">کلیدها</a></li>
+<li><a href="#cch-farming">معدن</a></li>
+<li><a href="#cch-monitoring">نظارت بر</a></li>
+<li><a href="#cch-nft_recovery">بازیابی NFT</a></li>
+<li><a href="#cch-blocks_found">بلوک پیدا شد / سکه دریافت شد</a></li>
+<li><a href="#cch-farming_warnings">هشدارهای معدن</a></li>
+<li><a href="#cch-daily_report">گزارش روزانه</a></li>
+<li><a href="#cch-weekly_report">گزارش هفتگی</a></li>
+<li><a href="#cch-node_sync">همگام سازی گره</a></li>
+<li><a href="#cch-connections_management">مدیریت اتصالات</a></li>
+<li><a href="#cch-wallets_management">مدیریت کیف پول</a></li>
+<li><a href="#cch-hands_management">مدیریت دست</a></li>
+<li><a href="#cch-transfer_coins">انتقال سکه</a></li>
+</ul>
+<h1 id="تنظیمات-پیشرفته">تنظیمات پیشرفته</h1>
+<ul>
+<li><a href="#cch-cold_wallet">کیف پول سرد</a></li>
+<li><a href="#cch-secure_passphrase">رمز عبور امن 24 کلمه یادگاری</a></li>
+<li><a href="#cch-forks">فورک های بلاک چین</a></li>
+<li><a href="#cch-harvester">دروگر</a></li>
+<li><a href="#cch-upgrade">ارتقا دهید</a></li>
+</ul>
+<h1 id="بهترین-شیوه-ها">بهترین شیوه ها</h1>
+<ul>
+<li><a href="#cch-local_language">زبان محلی</a></li>
+<li><a href="#cch-hardware_requirements">الزامات سخت افزاری</a></li>
+</ul>
+<p id="cch-linux">&nbsp;</p>
+
+<h2 id="راه-اندازی-coctohug-در-سیستم-عامل-لینوکس">راه اندازی Coctohug در سیستم عامل لینوکس</h2>
+<ul>
+<li>برپایی <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
+<li>به سایت بروید <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, سپس تمام فیلدهای فرم لازم را وارد کرده و فایل های زیپ شده docker-compose تولید شده را دانلود کنید</li>
+<li>پوشه های دانلود شده را از حالت فشرده خارج کنید و آنها را در پوشه کاری خود کپی کنید</li>
+<li>همه پوشه ها را به ترتیب اجرا کنید:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>مرورگر را باز کنید و با url به WebUI دسترسی پیدا کنید <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>نکته 1: بیش از 5 فورک بلاک چین را همزمان راه اندازی نکنید، زیرا فورک های بلاک چین چیا هنگام همگام سازی گره برای اولین بار CPU را می خورند.</li>
+<li>نکته 2: برای هر فورک بلاک چین حدود 1.8 گیگ رم لازم است، بنابراین چند فورک بلاک چین را بر اساس حافظه رایانه خود انتخاب کنید.</li>
+</ul>
+<p id="cch-windows">&nbsp;</p>
+
+<h2 id="coctohug-را-در-سیستم-عامل-ویندوز-راه-اندازی-کنید">Coctohug را در سیستم عامل ویندوز راه اندازی کنید</h2>
+<ul>
+<li>برپایی <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
+<li>اوبونتو یا سیستم لینوکس دیگر را با استفاده از WSL نصب کنید</li>
+<li>مراحل باقیمانده مانند بالا هستند <a href="#cch-linux">راه اندازی Coctohug در سیستم عامل لینوکس</a></li>
+</ul>
+<p id="cch-macOS">&nbsp;</p>
+
+<h2 id="راه-اندازی-coctohug-در-سیستم-عامل-مک">راه اندازی Coctohug در سیستم عامل مک</h2>
+<ul>
+<li>مشابه با <a href="#cch-linux">راه اندازی Coctohug در سیستم عامل لینوکس</a></li>
+</ul>
+<p id="cch-password">&nbsp;</p>
+
+<h2 id="کلمه-عبور">کلمه عبور</h2>
+<ul>
+<li>هنگامی که برای اولین بار با URL به WebUI دسترسی پیدا می کنید، از شما خواسته می شود یک رمز عبور برای تنظیمات ایمن تنظیم کنید <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>تنظیمات ایمن عبارتند از: کیف پول سرد، انتقال سکه، راه اندازی مجدد فورک های بلاک چین، دروگر...</li>
+</ul>
+<p id="cch-keys">&nbsp;</p>
+
+<h2 id="کلیدها">کلیدها</h2>
+<ul>
+<li>هنگامی که برای اولین بار با URL به WebUI دسترسی پیدا می کنید، از شما خواسته می شود 24 کلمه یادگاری را وارد کنید - این عمدتا برای اهداف کشاورزی است.</li>
+<li>یا می توانید یک کلید کاملاً جدید ایجاد کنید - این عمدتاً برای اهداف کیف پول سرد است</li>
+</ul>
+<p id="cch-farming">&nbsp;</p>
+
+<h2 id="معدن">معدن</h2>
+<ul>
+<li>هنگامی که همگام سازی گره انجام شد، کشاورزی باید به طور خودکار شروع شود</li>
+<li>سپس می توانید وضعیت استخراج را با روش های مختلف نظارت کنید</li>
+</ul>
+<p><img src="../../images/coctohug-summary-en-min.png" alt="English"></p>
+<p id="cch-monitoring">&nbsp;</p>
+
+<h2 id="نظارت-بر">نظارت بر</h2>
+<ul>
+<li>برگه خلاصه می تواند موارد زیر را نشان دهد: مجموع سکه های استخراج شده، موجودی حساب، تعداد قطعه، اندازه قطعه، اندازه Netspace و زمان مورد انتظار برای برنده شدن</li>
+<li>هر چنگال-پنل بلاک چین در تب Summary اگر خوب کار کند پس زمینه سبز روشن خواهد داشت، در غیر این صورت پس زمینه زرد روشن خواهد بود.</li>
+<li>شما همچنین می توانید جزئیات را با استفاده از برگه های دیگر بررسی کنید</li>
+</ul>
+<p id="cch-nft_recovery">&nbsp;</p>
+
+<h2 id="بازیابی-nft">بازیابی NFT</h2>
+<ul>
+<li>برگه سکه های دریافتی دارای پیوند است: <a class="nav-link" target="_blank" href="https://alltheblocks.net/nft-recovery">جوایز NFT 7/8 خود را مطالبه کنید</a></li>
+</ul>
+<p id="cch-blocks_found">&nbsp;</p>
+
+<h2 id="بلوک-پیدا-شد--سکه-دریافت-شد">بلوک پیدا شد / سکه دریافت شد</h2>
+<ul>
+<li>کل بلوک های یافت شده را فهرست کنید</li>
+<li>کل سکه های دریافتی را فهرست کنید</li>
+</ul>
+<p><img src="../../images/received-coins-min.png" alt="English"></p>
+<p id="cch-farming_warnings">&nbsp;</p>
+
+<h2 id="هشدارهای-معدن">هشدارهای معدن</h2>
+<ul>
+<li>مشکل احتمالی شبکه را فهرست کنید</li>
+<li>مشکل احتمالی نشانه را فهرست کنید</li>
+<li>مشکل احتمالی جستجوی دیسک را فهرست کنید</li>
+<li>مشکل احتمالی کاهش تعداد نمودار را فهرست کنید</li>
+</ul>
+<p id="cch-daily_report">&nbsp;</p>
+
+<h2 id="گزارش-روزانه">گزارش روزانه</h2>
+<ul>
+<li>خلاصه بلوک های یافت شده / سکه های دریافت شده در روز</li>
+<li>خلاصه هشدارهای معدن در روز</li>
+</ul>
+<p><img src="../../images/daily_report-min.png" alt="English"></p>
+<p id="cch-weekly_report">&nbsp;</p>
+
+<h2 id="گزارش-هفتگی">گزارش هفتگی</h2>
+<ul>
+<li>خلاصه بلوک های یافت شده / سکه های دریافت شده در هفته</li>
+<li>هشدارهای معدن را به صورت هفته خلاصه کنید</li>
+</ul>
+<p id="cch-node_sync">&nbsp;</p>
+
+<h2 id="همگام-سازی-گره">همگام سازی گره</h2>
+<ul>
+<li>Node به طور پیش فرض به طور خودکار همگام می شود</li>
+<li>برای بررسی وضعیت دقیق می توانید به تب Connections یا Blockchains بروید</li>
+<li>برای تسریع همگام سازی گره خود، <a href="https://alltheblocks.net/">https://alltheblocks.net/</a> لیست گره ها و فایل پایگاه داده را ارائه می دهد (روی هر بلاک چین کلیک کنید و سپس می توانید آنها را در قسمت بالا سمت راست پیدا کنید)</li>
+</ul>
+<p id="cch-connections_management">&nbsp;</p>
+
+<h2 id="مدیریت-اتصالات">مدیریت اتصالات</h2>
+<ul>
+<li>تمام اتصالات گره را فهرست کنید</li>
+<li>می توانید اتصالات را در تب Connections اضافه یا حذف کنید</li>
+</ul>
+<p><img src="../../images/connections-min.png" alt="English"></p>
+<p id="cch-wallets_management">&nbsp;</p>
+
+<h2 id="مدیریت-کیف-پول">مدیریت کیف پول</h2>
+<ul>
+<li>وضعیت کیف پول و موجودی حساب را فهرست کنید</li>
+<li>همچنین می توانید سکه ها را در تب کیف پول انتقال دهید</li>
+</ul>
+<p><img src="../../images/wallets-min.png" alt="English"></p>
+<p id="cch-hands_management">&nbsp;</p>
+
+<h2 id="مدیریت-دست">مدیریت دست</h2>
+<ul>
+<li>این هر کارگر فورک بلاک چین است</li>
+<li>زمانی که دیگر قصد کشاورزی ندارید، می توانید یک دست را بردارید</li>
+</ul>
+<p id="cch-transfer_coins">&nbsp;</p>
+
+<h2 id="انتقال-سکه">انتقال سکه</h2>
+<ul>
+<li>به تب کیف پول بروید و رمز عبور امن خود را برای انتقال سکه وارد کنید</li>
+</ul>
+<p id="cch-cold_wallet">&nbsp;</p>
+
+<h2 id="کیف-پول-سرد">کیف پول سرد</h2>
+<ul>
+<li>با رمز عبور امن خود به تب تنظیمات بروید</li>
+<li>صادرات حساب کیف پول سرد<pre><code>1. یک ماشین جدید (متفاوت با ماشین معدن) آماده کنید
+2. بازدید کنید https://www.coctohug.xyz و برای ایجاد پوشه های docker-compose روی Wallet Mode کلیک کنید
+3. پوشه های docker-compose را راه اندازی کنید [راه اندازی Coctohug در سیستم عامل لینوکس]
+4. در صفحه راه اندازی WebUI، این بار یک کلید جدید ایجاد کنید
+5. چند دقیقه صبر کنید تا فورک های بلاک چین راه اندازی مجدد شوند
+6. به هر پوشه بروید و اسکریپت را اجرا کنید docker-compose stop &amp;&amp; docker-compose up -d
+7. بازدید کنید http://localhost:12630/, و به تنظیمات - تب سرد کیف پول بروید تا آدرس های کیف پول سرد را صادر کنید
+8. با مقایسه فایل دانلود شده با اطلاعات نشان داده شده در برگه کلیدها، صحت هر آدرس را به صورت دستی تأیید کنید
+9. با اسکریپت ترمینال مشابه، 24 کلمه یادگاری دریافت کنید
+  docker exec -it coctohug-flora flora keys show --show-mnemonic-seed
+  docker exec -it coctohug-covid covid keys show --show-mnemonic-seed
+  docker exec -it coctohug-lucky lucky keys show --show-mnemonic-seed
+</code></pre>
+</li>
+<li>وارد کردن حساب کیف پول سرد<pre><code>1. در دستگاه ماینینگ خود، به تنظیمات - تب کیف پول سرد مراجعه کنید
+2. فایل json کیف پول سرد دانلود شده قبلی را وارد کنید
+3. چند دقیقه صبر کنید و به تب کیف پول بروید تا ببینید آیا آدرس کیف پول سرد به روز شده است یا خیر
+4. توجه: توصیه می کنیم قبل از وارد کردن، از تنظیمات کیف پول خود نسخه پشتیبان تهیه کنید
+</code></pre>
+<img src="../../images/cold_wallet-min.png" alt="English"></li>
+</ul>
+<p id="cch-secure_passphrase">&nbsp;</p>
+
+<h2 id="رمز-عبور-امن-24-کلمه-یادگاری">رمز عبور امن 24 کلمه یادگاری</h2>
+<ul>
+<li><a target='_blank' href='https://github.com/raingggg/coctohug-passphrase'>coctohug-passphrase</a> می توان برای ایمن سازی 24 کلمه یادداشتی خود استفاده کرد</li>
+<li>کلیدهای شما را با رمزی که فقط شما می دانید رمزگذاری می کند</li>
+<li>هنگام اضافه کردن فورک های بلاک چین جدید، می توانید آن را با رمز عبور رمزگشایی کنید</li>
+</ul>
+<p id="cch-forks">&nbsp;</p>
+
+<h2 id="فورک-های-بلاک-چین">فورک های بلاک چین</h2>
+<ul>
+<li>هر چند روز یکبار گیتهاب کوکتوگ را چک کنید</li>
+<li>فورک های جدید بلاک چین به زودی پشتیبانی خواهند شد</li>
+</ul>
+<p id="cch-harvester">&nbsp;</p>
+
+<h2 id="دروگر">دروگر</h2>
+<ul>
+<li>بازدید کنید <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a> و برای ایجاد پوشه های docker-compose روی Harvester Mode کلیک کنید</li>
+<li>بازدید کنید <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a> و روی Allow Harvester کلیک کنید تا پیوند بین کنترلر و دروگر ایجاد شود</li>
+<li>پوشه های docker-compose را راه اندازی کنید <a href="#cch-linux">راه اندازی Coctohug در سیستم عامل لینوکس</a></li>
+<li>چند دقیقه بعد، می‌توانید در برگه دست‌های WebUI، دروگر را ببینید</li>
+</ul>
+<p id="cch-upgrade">&nbsp;</p>
+
+<h2 id="ارتقا-دهید">ارتقا دهید</h2>
+<ul>
+<li>اسکریپت یک خطی<pre><code>docker-compose stop &amp;&amp; docker-compose rm -f &amp;&amp; docker-compose pull &amp;&amp; docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>همچنین می توانید اسکریپت های بالا را مرحله به مرحله اجرا کنید<pre><code>docker-compose stop
+docker-compose rm -f
+docker-compose pull
+docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>در صورت بروز مشکل db ناسازگار، می توانید فایل پایگاه داده موجود را قبل از اجرای اسکریپت شروع docker-compose حذف کنید.<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+</code></pre>
+</li>
+</ul>
+<p id="cch-local_language">&nbsp;</p>
+
+<h2 id="زبان-محلی">زبان محلی</h2>
+<ul>
+<li>در سمت راست بالای WebUI، هر زبانی را که بیشتر دوست دارید انتخاب کنید</li>
+<li>در صورت تمایل می توانید بعداً به هر زبان دیگری تغییر دهید</li>
+</ul>
+<p id="cch-hardware_requirements">&nbsp;</p>
+
+<h2 id="الزامات-سخت-افزاری">الزامات سخت افزاری</h2>
+<ul>
+<li>پس از همگام سازی، پردازنده های نسل دهم Intel® Core™ i7 باید برای پرورش بیش از 50 فورک بلاک چین کافی باشد.</li>
+<li>با این حال، برای مرحله همگام سازی گره اولیه، واقعا CPU را می خورد. بنابراین توصیه می کنیم برای هر گروه 5 فورک بلاک چین راه اندازی کنید و گروه به گروه شروع کنید</li>
+<li>حافظه مورد نیاز برابر است با: تعداد فورک های استخراج بلاک چین، ضربدر 1.8G RAM</li>
+<li>دیسک معمولی باید برای فورک های بلاک چین بیش از 50 مناسب باشد</li>
+</ul>
+<h1 id="پروژه-های-متن-باز-در-github">پروژه های متن باز در Github</h1>
+<p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
+<p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cryptodoge">cryptodoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
+<p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
+<p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<h2 id="اعلامیه-علامت-تجاری">اعلامیه علامت تجاری</h2>
+<p>CHIA NETWORK INC، CHIA™، CHIA BLOCKCHAIN™، CHIA PROTOCOL™، CHIALISP™ و &#34;لوگوی برگ&#34; (شامل لوگوی برگ به تنهایی هنگامی که به Chia اشاره یا نشان می دهد)، علائم تجاری یا علائم تجاری ثبت شده Chia Network, Inc هستند. .، یک شرکت دلاور. <em>هیچ وابستگی بین این پروژه Coctohug و پروژه اصلی Chia Network وجود ندارد.</em></p>

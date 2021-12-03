@@ -1,0 +1,279 @@
+<h1 id="coctohug---pamahalaan-ang-dose-dosenang-chia-blockchain-forks-mining-mula-sa-isang-web-browser">Coctohug - Pamahalaan ang dose-dosenang chia blockchain forks mining mula sa isang web browser!</h1>
+<ul>
+<li>Magandang lokalisasyon na may suporta ng dose-dosenang mga wika: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
+</ul>
+<p>Madaling paggamit ng Setup <a href="https://www.coctohug.xyz/">Mabilis na Pagsisimula</a></p>
+<p><em>Humingi ng higit pang tulong sa aming <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/channels/914698944435613716/914698944435613718">Discord</a></em>.</p>
+<h1 id="mabilis-na-pagsisimula">Mabilis na Pagsisimula</h1>
+<ul>
+<li><a href="#cch-linux">I-setup ang Coctohug sa Linux OS</a></li>
+<li><a href="#cch-windows">I-setup ang Coctohug sa Windows OS</a></li>
+<li><a href="#cch-macOS">I-setup ang Coctohug sa Mac OS</a></li>
+</ul>
+<h1 id="mga-karaniwang-setting">Mga Karaniwang Setting</h1>
+<ul>
+<li><a href="#cch-password">Password</a></li>
+<li><a href="#cch-keys">Mga susi</a></li>
+<li><a href="#cch-farming">Pagmimina</a></li>
+<li><a href="#cch-monitoring">Pagsubaybay</a></li>
+<li><a href="#cch-nft_recovery">Pagbawi ng NFT</a></li>
+<li><a href="#cch-blocks_found">Natagpuan ang mga bloke / Natanggap na mga barya</a></li>
+<li><a href="#cch-farming_warnings">Mga Babala sa Pagmimina</a></li>
+<li><a href="#cch-daily_report">Pang-araw-araw na Ulat</a></li>
+<li><a href="#cch-weekly_report">Lingguhang ulat</a></li>
+<li><a href="#cch-node_sync">Node Sync</a></li>
+<li><a href="#cch-connections_management">Pamamahala ng Koneksyon</a></li>
+<li><a href="#cch-wallets_management">Pamamahala ng Wallets</a></li>
+<li><a href="#cch-hands_management">Pamamahala ng mga Kamay</a></li>
+<li><a href="#cch-transfer_coins">Maglipat ng mga barya</a></li>
+</ul>
+<h1 id="mga-advanced-na-setting">Mga Advanced na Setting</h1>
+<ul>
+<li><a href="#cch-cold_wallet">Malamig na Wallet</a></li>
+<li><a href="#cch-secure_passphrase">Secure Passphrased 24 Mnemonic Words</a></li>
+<li><a href="#cch-forks">Blockchain Forks</a></li>
+<li><a href="#cch-harvester">Mang-aani</a></li>
+<li><a href="#cch-upgrade">Mag-upgrade</a></li>
+</ul>
+<h1 id="pinakamahusay-na-kasanayan">Pinakamahusay na kasanayan</h1>
+<ul>
+<li><a href="#cch-local_language">Lokal na Wika</a></li>
+<li><a href="#cch-hardware_requirements">Mga Kinakailangan sa Hardware</a></li>
+</ul>
+<p id="cch-linux">&nbsp;</p>
+
+<h2 id="i-setup-ang-coctohug-sa-linux-os">I-setup ang Coctohug sa Linux OS</h2>
+<ul>
+<li>Setup <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
+<li>Pumunta sa site <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, pagkatapos ay ilagay ang lahat ng kinakailangang mga patlang ng form at i-download ang nabuong mga naka-zip na docker-compose na mga file</li>
+<li>I-unzip ang mga na-download na folder at kopyahin ang mga ito sa iyong gumaganang direktoryo</li>
+<li>Patakbuhin ang lahat ng mga folder ayon sa pagkakasunud-sunod:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>Buksan ang browser at i-access ang WebUI gamit ang url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>Tandaan 1: Huwag simulan ang higit sa 5 blockchain forks nang sabay-sabay, dahil ang chia blockchain forks ay talagang kumakain ng CPU kapag ang node ay nagsi-sync sa unang pagkakataon</li>
+<li>Tandaan 2: Humigit-kumulang 1.8G RAM ang kinakailangan para sa bawat blockchain fork, kaya pumili ng ilang blockchain forks batay sa memorya ng iyong computer</li>
+</ul>
+<p id="cch-windows">&nbsp;</p>
+
+<h2 id="i-setup-ang-coctohug-sa-windows-os">I-setup ang Coctohug sa Windows OS</h2>
+<ul>
+<li>Setup <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
+<li>I-install ang Ubuntu o iba pang Linux system gamit ang WSL</li>
+<li>Ang mga natitirang hakbang ay pareho sa itaas <a href="#cch-linux">I-setup ang Coctohug sa Linux OS</a></li>
+</ul>
+<p id="cch-macOS">&nbsp;</p>
+
+<h2 id="i-setup-ang-coctohug-sa-mac-os">I-setup ang Coctohug sa Mac OS</h2>
+<ul>
+<li>Pareho sa <a href="#cch-linux">I-setup ang Coctohug sa Linux OS</a></li>
+</ul>
+<p id="cch-password">&nbsp;</p>
+
+<h2 id="password">Password</h2>
+<ul>
+<li>Ipo-prompt kang magtakda ng password para sa mga secure na setting, kapag unang beses mong na-access ang WebUI gamit ang url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>Kasama sa mga secure na setting ang: Cold Wallet, Coin Transfer, I-restart ang Blockchain Forks, Harvester...</li>
+</ul>
+<p id="cch-keys">&nbsp;</p>
+
+<h2 id="mga-susi">Mga susi</h2>
+<ul>
+<li>Magiging maagap kang ipasok ang 24 na mnemonic na salita, kapag unang beses mong na-access ang WebUI gamit ang url - ito ay pangunahin para sa layunin ng pagsasaka</li>
+<li>O maaari kang bumuo ng isang ganap na bagong key - ito ay pangunahin para sa layunin ng malamig na pitaka</li>
+</ul>
+<p id="cch-farming">&nbsp;</p>
+
+<h2 id="pagmimina">Pagmimina</h2>
+<ul>
+<li>Kapag tapos na ang node sync, dapat na awtomatikong magsimula ang pagsasaka</li>
+<li>Pagkatapos ay masusubaybayan mo ang katayuan ng pagmimina sa iba&#39;t ibang paraan</li>
+</ul>
+<p><img src="../../images/coctohug-summary-en-min.png" alt="English"></p>
+<p id="cch-monitoring">&nbsp;</p>
+
+<h2 id="pagsubaybay">Pagsubaybay</h2>
+<ul>
+<li>Maaaring magpakita ang tab ng Buod: Kabuuang Mined Coins, Balanse ng Account, Bilang ng Plot, Laki ng Plot, Sukat ng Netspace at Inaasahang Oras para Manalo</li>
+<li>bawat blockchain fork-panel sa tab na Buod ay magkakaroon ng mapusyaw na berdeng background kung ito ay gumagana nang maayos, kung hindi, ito ay magiging mapusyaw na dilaw na background</li>
+<li>Maaari mo ring suriin ang detalye gamit ang iba pang mga tab</li>
+</ul>
+<p id="cch-nft_recovery">&nbsp;</p>
+
+<h2 id="pagbawi-ng-nft">Pagbawi ng NFT</h2>
+<ul>
+<li>May link ang tab na Received Coins: <a class="nav-link" target="_blank" href="https://alltheblocks.net/nft-recovery">I-claim ang iyong mga reward sa NFT 7/8</a></li>
+</ul>
+<p id="cch-blocks_found">&nbsp;</p>
+
+<h2 id="natagpuan-ang-mga-bloke--natanggap-na-mga-barya">Natagpuan ang mga bloke / Natanggap na mga barya</h2>
+<ul>
+<li>Ilista ang kabuuang mga bloke na natagpuan</li>
+<li>Ilista ang kabuuang mga barya na natanggap</li>
+</ul>
+<p><img src="../../images/received-coins-min.png" alt="English"></p>
+<p id="cch-farming_warnings">&nbsp;</p>
+
+<h2 id="mga-babala-sa-pagmimina">Mga Babala sa Pagmimina</h2>
+<ul>
+<li>Ilista ang posibleng isyu sa network</li>
+<li>Ilista ang posibleng isyu ng signapoint</li>
+<li>Ilista ang posibleng isyu sa paghahanap sa disk</li>
+<li>Ilista ang posibleng pagbabawas ng bilang ng plot na isyu</li>
+</ul>
+<p id="cch-daily_report">&nbsp;</p>
+
+<h2 id="pang-araw-araw-na-ulat">Pang-araw-araw na Ulat</h2>
+<ul>
+<li>Ibuod ang Mga Nahanap na Block / Mga Barya na Natanggap ayon sa araw</li>
+<li>Ibuod ang Mga Babala sa Pagmimina ayon sa araw</li>
+</ul>
+<p><img src="../../images/daily_report-min.png" alt="English"></p>
+<p id="cch-weekly_report">&nbsp;</p>
+
+<h2 id="lingguhang-ulat">Lingguhang ulat</h2>
+<ul>
+<li>Ibuod ang Mga Block na Nahanap / Mga Barya na Natanggap ayon sa linggo</li>
+<li>Ibuod ang Mga Babala sa Pagmimina ayon sa linggo</li>
+</ul>
+<p id="cch-node_sync">&nbsp;</p>
+
+<h2 id="node-sync">Node Sync</h2>
+<ul>
+<li>Awtomatikong magsi-sync ang node bilang default</li>
+<li>Maaari kang pumunta sa tab na Connections o Blockchains upang suriin ang detalyadong katayuan</li>
+<li>Upang mapabilis ang iyong pag-sync ng node, <a href="https://alltheblocks.net/">https://alltheblocks.net/</a> nagbibigay ng listahan ng mga node at database file (i-click ang bawat blockchain at pagkatapos ay mahahanap mo ang mga ito sa kanang bahagi sa itaas)</li>
+</ul>
+<p id="cch-connections_management">&nbsp;</p>
+
+<h2 id="pamamahala-ng-koneksyon">Pamamahala ng Koneksyon</h2>
+<ul>
+<li>Ilista ang lahat ng koneksyon sa node</li>
+<li>Maaari kang magdagdag/mag-alis ng mga koneksyon sa tab na Mga Koneksyon</li>
+</ul>
+<p><img src="../../images/connections-min.png" alt="English"></p>
+<p id="cch-wallets_management">&nbsp;</p>
+
+<h2 id="pamamahala-ng-wallets">Pamamahala ng Wallets</h2>
+<ul>
+<li>Ilista ang katayuan ng wallet at balanse ng account</li>
+<li>Maaari ka ring maglipat ng mga barya sa tab na wallet</li>
+</ul>
+<p><img src="../../images/wallets-min.png" alt="English"></p>
+<p id="cch-hands_management">&nbsp;</p>
+
+<h2 id="pamamahala-ng-mga-kamay">Pamamahala ng mga Kamay</h2>
+<ul>
+<li>Ito ang bawat manggagawa ng blockchain fork</li>
+<li>Maaari mong tanggalin ang isang kamay kapag wala ka nang planong sakahan ito</li>
+</ul>
+<p id="cch-transfer_coins">&nbsp;</p>
+
+<h2 id="maglipat-ng-mga-barya">Maglipat ng mga barya</h2>
+<ul>
+<li>Pumunta sa tab na wallet at ilagay ang iyong secure na password para maglipat ng mga barya</li>
+</ul>
+<p id="cch-cold_wallet">&nbsp;</p>
+
+<h2 id="malamig-na-wallet">Malamig na Wallet</h2>
+<ul>
+<li>Pumunta sa tab na mga setting gamit ang iyong secure na password</li>
+<li>I-export ang Cold Wallet Account<pre><code>1. Maghanda ng bagong makina(iba sa mining machine)
+2. Bisitahin https://www.coctohug.xyz at i-click ang Wallet Mode upang bumuo ng mga folder ng docker-compose
+3. I-setup ang mga folder ng docker-compose [I-setup ang Coctohug sa Linux OS]
+4. Sa screen ng paglulunsad ng WebUI, bumuo ng bagong key sa pagkakataong ito
+5. Maghintay ng ilang minuto para mag-restart ang blockchain forks
+6. Pumunta sa bawat folder at isagawa ang script docker-compose stop &amp;&amp; docker-compose up -d
+7. Bisitahin http://localhost:12630/, at pumunta sa mga setting - tab na cold wallet para i-export ang mga address ng cold wallet
+8. Kumpirmahing tama ang bawat address nang manu-mano sa pamamagitan ng paghahambing ng na-download na file sa impormasyong ipinapakita sa tab na Mga Key
+9. Kumuha ng 24 na mnemonic na salita sa pamamagitan ng katulad na terminal script
+  docker exec -it coctohug-flora flora keys show --show-mnemonic-seed
+  docker exec -it coctohug-covid covid keys show --show-mnemonic-seed
+  docker exec -it coctohug-lucky lucky keys show --show-mnemonic-seed
+</code></pre>
+</li>
+<li>Mag-import ng Cold Wallet Account<pre><code>1. Sa iyong mining machine, bisitahin ang mga setting - tab na cold wallet
+2. I-import ang dating na-download na cold wallet json file
+3. Maghintay ng ilang minuto, at pumunta sa tab na wallet para makita kung na-update o hindi ang address ng cold wallet
+4. Tandaan: inirerekomenda namin na i-backup ang iyong mga configuration ng wallet bago mag-import
+</code></pre>
+<img src="../../images/cold_wallet-min.png" alt="English"></li>
+</ul>
+<p id="cch-secure_passphrase">&nbsp;</p>
+
+<h2 id="secure-passphrased-24-mnemonic-words">Secure Passphrased 24 Mnemonic Words</h2>
+<ul>
+<li><a target='_blank' href='https://github.com/raingggg/coctohug-passphrase'>coctohug-passphrase</a> ay maaaring gamitin upang ma-secure ang iyong 24 mnemonic na salita</li>
+<li>Ine-encrypt nito ang iyong mga susi gamit ang isang password na ikaw lang ang nakakaalam</li>
+<li>Maaari mong i-decrypt ito gamit ang password kapag nagdadagdag ng mga bagong blockchain forks</li>
+</ul>
+<p id="cch-forks">&nbsp;</p>
+
+<h2 id="blockchain-forks">Blockchain Forks</h2>
+<ul>
+<li>Suriin ang coctohug github bawat ilang araw</li>
+<li>Ang mga bagong blockchain forks ay susuportahan sa lalong madaling panahon</li>
+</ul>
+<p id="cch-harvester">&nbsp;</p>
+
+<h2 id="mang-aani">Mang-aani</h2>
+<ul>
+<li>Bisitahin <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a> at i-click ang Harvester Mode upang bumuo ng mga folder ng docker-compose</li>
+<li>Bisitahin <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a> at i-click ang Payagan ang Harvester na bumuo ng link sa pagitan ng controller at harvester</li>
+<li>I-setup ang mga folder ng docker-compose <a href="#cch-linux">I-setup ang Coctohug sa Linux OS</a></li>
+<li>Pagkalipas ng ilang minuto, makikita mo ang harvester sa tab ng WebUI hands</li>
+</ul>
+<p id="cch-upgrade">&nbsp;</p>
+
+<h2 id="mag-upgrade">Mag-upgrade</h2>
+<ul>
+<li>Isang linyang script<pre><code>docker-compose stop &amp;&amp; docker-compose rm -f &amp;&amp; docker-compose pull &amp;&amp; docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>Maaari mo ring isagawa ang mga script sa itaas nang sunud-sunod<pre><code>docker-compose stop
+docker-compose rm -f
+docker-compose pull
+docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>Sa kaso ng hindi tugmang isyu sa db, maaari mong alisin ang umiiral na database file bago isagawa ang docker-compose start script sa pamamagitan ng<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+</code></pre>
+</li>
+</ul>
+<p id="cch-local_language">&nbsp;</p>
+
+<h2 id="lokal-na-wika">Lokal na Wika</h2>
+<ul>
+<li>Sa kanang itaas ng WebUI, piliin ang anumang wika na pinakagusto mo</li>
+<li>Maaari kang lumipat sa anumang iba pang mga wika sa ibang pagkakataon kung gusto mo</li>
+</ul>
+<p id="cch-hardware_requirements">&nbsp;</p>
+
+<h2 id="mga-kinakailangan-sa-hardware">Mga Kinakailangan sa Hardware</h2>
+<ul>
+<li>Kapag na-synchronize, ang 10th Generation Intel® Core™ i7 Processor ay dapat sapat na para sa pagsasaka ng 50+ blockchain forks</li>
+<li>Gayunpaman para sa yugto ng pag-sync ng intial node, talagang kumakain ito ng CPU. Kaya inirerekomenda namin ang pag-setup ng 5 blockchain forks bawat grupo, at simulan ang pangkat ayon sa grupo</li>
+<li>Ang memory na kailangan ay katumbas ng: ang bilang ng mga mining blockchain forks ay dumarami sa 1.8G RAM</li>
+<li>Ang normal na disk ay dapat na maayos para sa 50+ blockchain forks</li>
+</ul>
+<h1 id="mga-open-source-na-proyekto-sa-github">Mga Open Source na Proyekto sa Github</h1>
+<p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
+<p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cryptodoge">cryptodoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
+<p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
+<p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<h2 id="paunawa-sa-trademark">Paunawa sa Trademark</h2>
+<p>Ang CHIA NETWORK INC, CHIA™, ang CHIA BLOCKCHAIN™, ang CHIA PROTOCOL™, CHIALISP™ at ang “leaf Logo” (kabilang ang leaf logo lamang kapag ito ay tumutukoy o nagpapahiwatig ng Chia), ay mga trademark o rehistradong trademark ng Chia Network, Inc ., isang korporasyon ng Delaware. <em>Walang kaugnayan ang proyektong ito ng Coctohug at ang pangunahing proyekto ng Chia Network.</em></p>

@@ -1,6 +1,6 @@
 {
   "allowharvester.success": "Tagumpay! Mangyaring i-setup ang iyong harvester sa loob ng 30 minuto!",
-  "coldwallet.dialog_confirm": "Mapupunta ang lahat ng reward sa pagmimina sa mga address na kasama sa na-upload na cold wallet file. <br/> Talaga bang ligtas kang gawin ang pagbabagong ito?",
+  "coldwallet.dialog_confirm": "Mapupunta ang lahat ng reward sa pagmimina sa mga address na kasama sa na-upload na cold wallet file. <br/> Talaga bang ligtas ka na gawin ang pagbabagong ito?",
   "coldwallet.dialog_title": "Gumamit ng Bagong Wallet Address para sa Mga Rewards sa Pagmimina",
   "coldwallet.export_button": "I-export ang Aking Cold Wallet para Gamitin Ito sa Iba Pang Mining Machine",
   "coldwallet.export_message": "I-click ang I-export na button ay magda-download ng coldwallet.json file sa iyong lokal na disk:",
@@ -40,8 +40,15 @@
   "home.import_button": "Mag-import ng Umiiral na Key",
   "home.import_message": "Upang makapagsimula sa Coctohug, i-import ang iyong umiiral nang 24 na salita na mnemonic seed na parirala:",
   "home.importing": "Mag-import... Ire-redirect ka sa pahina ng buod kapag tapos na ang operasyon.",
+  "home.notes_e1": "Ang mnemonic-seed ay naka-save sa sarili mong lokal na disk, at maaari mo itong alisin pagkatapos makumpleto ang panimulang setup",
+  "home.notes_e2": "Hindi namin ipinapadala ang iyong mnemonic-seed, para kumpirmahin ito maaari mong suriin ang",
+  "home.notes_e3": "Github Open Source Code",
+  "home.notes_e4": "Maaari mo ring laktawan ang hakbang na ito at manu-manong idagdag ang iyong file sa ibang pagkakataon. Ilagay ang iyong kasalukuyang mnemonic-seed (24 na salita, space-separated, single-line) sa isang text file na pinangalanang mnc.txt. Ang landas ng file ay:",
+  "home.notes_e5": "Karagdagang paliwanag: Ang Chia at ito ay blockchain forks ay nangangailangan ng mnemonic-seed na ito upang makilala ang iyong plot disk file. Kung hindi, magkakaroon ng 0 magagamit na mga plot",
+  "home.notes_e6": "Kung hindi ka pa rin komportable tungkol dito, maaari mong subukan sa pamamagitan ng pagbuo ng mga bagong key upang maranasan ang mga feature ng Coctohug",
+  "home.notes_head": "Mga Tala:",
   "home.or_message": "O",
-  "home.short_desc": "Isang all-in-one na solusyon para sa dose-dosenang Chia™ forks farming.",
+  "home.short_desc": "Isang all-in-one na solusyon para sa dose-dosenang Chia™ blockchain forks farming.",
   "home.welcome": "Maligayang pagdating sa Coctohug!",
   "leftbar.allow_harvester": "Payagan ang Harvester",
   "leftbar.blockchains": "Mga Blockchain",
@@ -84,6 +91,6 @@
   "wallets.transfer_amount": "Halaga ng Paglipat:",
   "wallets.transfer_incorrect_fields": "Pakitiyak na ang lahat ng mga patlang ay naipasok nang tama!",
   "wallets.transfer_success": "Ang transaksyon ay ginawa sa blockchain. Maaari mong ilagay ang iyong sender/receiver address sa https://alltheblocks.net/ para makita ang mga detalye.",
-  "wallets.transfer_with_password": "Maglipat ng mga Barya sa Iba gamit ang Secure Password",
+  "wallets.transfer_with_password": "Maglipat ng mga Barya sa Iba gamit ang Secure na Password",
   "wallets.your_password": "Ang iyong password:"
 }

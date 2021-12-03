@@ -1,0 +1,279 @@
+<h1 id="coctohug---從網絡瀏覽器管理數十個-chia-區塊鏈分叉挖礦！">Coctohug - 從網絡瀏覽器管理數十個 chia 區塊鏈分叉挖礦！</h1>
+<ul>
+<li>支持數十種語言的良好本地化： <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
+</ul>
+<p>使用簡單設置 <a href="https://www.coctohug.xyz/">快速開始</a></p>
+<p><em>尋求更多關於我們的幫助 <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/channels/914698944435613716/914698944435613718">Discord</a></em>.</p>
+<h1 id="快速開始">快速開始</h1>
+<ul>
+<li><a href="#cch-linux">在 Linux 操作系統上設置 Coctohug</a></li>
+<li><a href="#cch-windows">在 Windows 操作系統上設置 Coctohug</a></li>
+<li><a href="#cch-macOS">在 Mac OS 上設置 Coctohug</a></li>
+</ul>
+<h1 id="常用設置">常用設置</h1>
+<ul>
+<li><a href="#cch-password">密碼</a></li>
+<li><a href="#cch-keys">鑰匙</a></li>
+<li><a href="#cch-farming">礦業</a></li>
+<li><a href="#cch-monitoring">監控</a></li>
+<li><a href="#cch-nft_recovery">NFT 恢復</a></li>
+<li><a href="#cch-blocks_found">找到的塊/收到的硬幣</a></li>
+<li><a href="#cch-farming_warnings">採礦警告</a></li>
+<li><a href="#cch-daily_report">每日報告</a></li>
+<li><a href="#cch-weekly_report">每週報告</a></li>
+<li><a href="#cch-node_sync">節點同步</a></li>
+<li><a href="#cch-connections_management">連接管理</a></li>
+<li><a href="#cch-wallets_management">錢包管理</a></li>
+<li><a href="#cch-hands_management">手部管理</a></li>
+<li><a href="#cch-transfer_coins">轉移硬幣</a></li>
+</ul>
+<h1 id="高級設置">高級設置</h1>
+<ul>
+<li><a href="#cch-cold_wallet">冷錢包</a></li>
+<li><a href="#cch-secure_passphrase">安全密碼短語 24 個助記詞</a></li>
+<li><a href="#cch-forks">區塊鏈分叉</a></li>
+<li><a href="#cch-harvester">收割機</a></li>
+<li><a href="#cch-upgrade">升級</a></li>
+</ul>
+<h1 id="最佳實踐">最佳實踐</h1>
+<ul>
+<li><a href="#cch-local_language">當地語言</a></li>
+<li><a href="#cch-hardware_requirements">硬件要求</a></li>
+</ul>
+<p id="cch-linux">&nbsp;</p>
+
+<h2 id="在-linux-操作系統上設置-coctohug">在 Linux 操作系統上設置 Coctohug</h2>
+<ul>
+<li>設置 <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
+<li>前往網站 <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, 然後輸入所有必要的表單字段並下載生成的壓縮 docker-compose 文件</li>
+<li>解壓下載的文件夾並將它們複製到您的工作目錄中</li>
+<li>按順序運行所有文件夾：<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>打開瀏覽器並通過 url 訪問 WebUI <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>注意1：不要同時啟動超過5個區塊鏈分叉，因為chia區塊鏈分叉在第一次節點同步時真的很吃CPU</li>
+<li>注 2：每個區塊鏈分叉大約需要 1.8G RAM，因此請根據您的計算機內存選擇一些區塊鏈分叉</li>
+</ul>
+<p id="cch-windows">&nbsp;</p>
+
+<h2 id="在-windows-操作系統上設置-coctohug">在 Windows 操作系統上設置 Coctohug</h2>
+<ul>
+<li>設置 <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
+<li>使用 WSL 安裝 Ubuntu 或其他 Linux 系統</li>
+<li>其餘步驟同上 <a href="#cch-linux">在 Linux 操作系統上設置 Coctohug</a></li>
+</ul>
+<p id="cch-macOS">&nbsp;</p>
+
+<h2 id="在-mac-os-上設置-coctohug">在 Mac OS 上設置 Coctohug</h2>
+<ul>
+<li>同 <a href="#cch-linux">在 Linux 操作系統上設置 Coctohug</a></li>
+</ul>
+<p id="cch-password">&nbsp;</p>
+
+<h2 id="密碼">密碼</h2>
+<ul>
+<li>當您第一次使用 url 訪問 WebUI 時，系統會提示您設置密碼以進行安全設置 <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>安全設置包括：冷錢包、硬幣轉移、重啟區塊鏈分叉、收割機...</li>
+</ul>
+<p id="cch-keys">&nbsp;</p>
+
+<h2 id="鑰匙">鑰匙</h2>
+<ul>
+<li>當您第一次使用 url 訪問 WebUI 時，您將被提示輸入 24 個助記詞 - 這主要用於農業目的</li>
+<li>或者您可以生成一個全新的密鑰 - 這主要用於冷錢包</li>
+</ul>
+<p id="cch-farming">&nbsp;</p>
+
+<h2 id="礦業">礦業</h2>
+<ul>
+<li>節點同步完成後，農業應自動開始</li>
+<li>然後你就可以通過各種方式監控挖礦狀態</li>
+</ul>
+<p><img src="../../images/coctohug-summary-en-min.png" alt="English"></p>
+<p id="cch-monitoring">&nbsp;</p>
+
+<h2 id="監控">監控</h2>
+<ul>
+<li>摘要選項卡可以顯示：總開採硬幣、賬戶餘額、地塊計數、地塊大小、網絡空間大小和預期獲勝時間</li>
+<li>如果工作正常，摘要選項卡中的每個區塊鏈分叉面板將具有淺綠色背景，否則將是淺黃色背景</li>
+<li>您還可以使用其他選項卡檢查詳細信息</li>
+</ul>
+<p id="cch-nft_recovery">&nbsp;</p>
+
+<h2 id="nft-恢復">NFT 恢復</h2>
+<ul>
+<li>收到的硬幣標籤有一個鏈接： <a class="nav-link" target="_blank" href="https://alltheblocks.net/nft-recovery">領取您的 NFT 7/8 獎勵</a></li>
+</ul>
+<p id="cch-blocks_found">&nbsp;</p>
+
+<h2 id="找到的塊收到的硬幣">找到的塊/收到的硬幣</h2>
+<ul>
+<li>列出找到的總塊</li>
+<li>列出收到的硬幣總數</li>
+</ul>
+<p><img src="../../images/received-coins-min.png" alt="English"></p>
+<p id="cch-farming_warnings">&nbsp;</p>
+
+<h2 id="採礦警告">採礦警告</h2>
+<ul>
+<li>列出可能的網絡問題</li>
+<li>列出可能的簽名點問題</li>
+<li>列出可能的磁盤搜索問題</li>
+<li>列出可能的繪圖計數減少問題</li>
+</ul>
+<p id="cch-daily_report">&nbsp;</p>
+
+<h2 id="每日報告">每日報告</h2>
+<ul>
+<li>總結當天發現的區塊/收到的硬幣</li>
+<li>按天匯總採礦警告</li>
+</ul>
+<p><img src="../../images/daily_report-min.png" alt="English"></p>
+<p id="cch-weekly_report">&nbsp;</p>
+
+<h2 id="每週報告">每週報告</h2>
+<ul>
+<li>總結每週發現的區塊/收到的硬幣</li>
+<li>按週匯總採礦警告</li>
+</ul>
+<p id="cch-node_sync">&nbsp;</p>
+
+<h2 id="節點同步">節點同步</h2>
+<ul>
+<li>默認情況下，節點將自動同步</li>
+<li>您可以前往連接或區塊鏈選項卡查看詳細狀態</li>
+<li>為了加速您的節點同步， <a href="https://alltheblocks.net/">https://alltheblocks.net/</a> 提供節點列表和數據庫文件（單擊每個區塊鏈，然後您可以在右上角找到它們）</li>
+</ul>
+<p id="cch-connections_management">&nbsp;</p>
+
+<h2 id="連接管理">連接管理</h2>
+<ul>
+<li>列出所有節點連接</li>
+<li>您可以在連接選項卡中添加/刪除連接</li>
+</ul>
+<p><img src="../../images/connections-min.png" alt="English"></p>
+<p id="cch-wallets_management">&nbsp;</p>
+
+<h2 id="錢包管理">錢包管理</h2>
+<ul>
+<li>列出錢包狀態和賬戶餘額</li>
+<li>您還可以在錢包選項卡中轉移硬幣</li>
+</ul>
+<p><img src="../../images/wallets-min.png" alt="English"></p>
+<p id="cch-hands_management">&nbsp;</p>
+
+<h2 id="手部管理">手部管理</h2>
+<ul>
+<li>這是每個區塊鏈分叉工人</li>
+<li>當您不打算再耕種時，您可以移除一隻手</li>
+</ul>
+<p id="cch-transfer_coins">&nbsp;</p>
+
+<h2 id="轉移硬幣">轉移硬幣</h2>
+<ul>
+<li>轉到錢包選項卡並輸入您的安全密碼以轉移硬幣</li>
+</ul>
+<p id="cch-cold_wallet">&nbsp;</p>
+
+<h2 id="冷錢包">冷錢包</h2>
+<ul>
+<li>使用您的安全密碼轉到設置選項卡</li>
+<li>導出冷錢包賬戶<pre><code>1. 準備一台新機器（與礦機不同）
+2. 訪問 https://www.coctohug.xyz 然後點擊錢包模式生成docker-compose文件夾
+3. 設置 docker-compose 文件夾 [在 Linux 操作系統上設置 Coctohug]
+4. 在 WebUI 啟動屏幕上，這次生成一個新密鑰
+5. 等待幾分鐘讓區塊鏈分叉重新啟動
+6. 轉到每個文件夾並執行腳本 docker-compose stop &amp;&amp; docker-compose up -d
+7. 訪問 http://localhost:12630/, 並轉到設置-冷錢包選項卡以導出冷錢包地址
+8. 通過將下載的文件與密鑰選項卡上顯示的信息進行比較，手動確認每個地址是否正確
+9. 通過類似的終端腳本獲取24個助記詞
+  docker exec -it coctohug-flora flora keys show --show-mnemonic-seed
+  docker exec -it coctohug-covid covid keys show --show-mnemonic-seed
+  docker exec -it coctohug-lucky lucky keys show --show-mnemonic-seed
+</code></pre>
+</li>
+<li>導入冷錢包賬戶<pre><code>1. 在您的礦機上，訪問設置-冷錢包選項卡
+2. 導入之前下載的冷錢包json文件
+3. 等幾分鐘，到錢包選項卡查看冷錢包地址是否更新
+4. 注意：我們建議在導入之前備份您的錢包配置
+</code></pre>
+<img src="../../images/cold_wallet-min.png" alt="English"></li>
+</ul>
+<p id="cch-secure_passphrase">&nbsp;</p>
+
+<h2 id="安全密碼短語-24-個助記詞">安全密碼短語 24 個助記詞</h2>
+<ul>
+<li><a target='_blank' href='https://github.com/raingggg/coctohug-passphrase'>coctohug-passphrase</a> 可用於保護您的 24 個助記詞</li>
+<li>它使用只有您知道的密碼來加密您的密鑰</li>
+<li>您可以在添加新的區塊鏈分叉時使用密碼解密</li>
+</ul>
+<p id="cch-forks">&nbsp;</p>
+
+<h2 id="區塊鏈分叉">區塊鏈分叉</h2>
+<ul>
+<li>每隔幾天檢查一次 coctohug github</li>
+<li>新的區塊鏈分叉將很快得到支持</li>
+</ul>
+<p id="cch-harvester">&nbsp;</p>
+
+<h2 id="收割機">收割機</h2>
+<ul>
+<li>訪問 <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a> 然後點擊 Harvester Mode 生成 docker-compose 文件夾</li>
+<li>訪問 <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a> 然後點擊 Allow Harvester 建立控制器和收割機之間的鏈接</li>
+<li>設置 docker-compose 文件夾 <a href="#cch-linux">在 Linux 操作系統上設置 Coctohug</a></li>
+<li>幾分鐘後，您將能夠在 WebUI 手選項卡上看到收割機</li>
+</ul>
+<p id="cch-upgrade">&nbsp;</p>
+
+<h2 id="升級">升級</h2>
+<ul>
+<li>一行腳本<pre><code>docker-compose stop &amp;&amp; docker-compose rm -f &amp;&amp; docker-compose pull &amp;&amp; docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>也可以一步步執行上面的腳本<pre><code>docker-compose stop
+docker-compose rm -f
+docker-compose pull
+docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>如果出現不兼容的數據庫問題，您可以在執行 docker-compose 啟動腳本之前刪除現有的數據庫文件<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+</code></pre>
+</li>
+</ul>
+<p id="cch-local_language">&nbsp;</p>
+
+<h2 id="當地語言">當地語言</h2>
+<ul>
+<li>在WebUI的右上角，選擇你最喜歡的語言</li>
+<li>如果您願意，您可以稍後切換到任何其他語言</li>
+</ul>
+<p id="cch-hardware_requirements">&nbsp;</p>
+
+<h2 id="硬件要求">硬件要求</h2>
+<ul>
+<li>同步後，第 10 代智能英特爾® 酷睿™ i7 處理器應該足以支持 50 多個區塊鏈分叉</li>
+<li>然而，對於初始節點同步階段，它確實會消耗 CPU。所以我們建議每組設置 5 個區塊鏈分叉，並逐組啟動</li>
+<li>所需內存等於：挖礦區塊鏈分叉數乘以 1.8G RAM</li>
+<li>普通磁盤應該可以用於 50 多個區塊鏈分叉</li>
+</ul>
+<h1 id="github-上的開源項目">Github 上的開源項目</h1>
+<p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
+<p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cryptodoge">cryptodoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
+<p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
+<p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<h2 id="商標聲明">商標聲明</h2>
+<p>CHIA NETWORK INC、CHIA™、CHIA BLOCKCHAIN™、CHIA PROTOCOL™、CHIALISP™ 和“葉子徽標”（包括單獨的葉子徽標，當它提到或指示 Chia 時）是 Chia Network, Inc 的商標或註冊商標., 一家特拉華州公司。 <em>此 Coctohug 項目與主要 Chia Network 項目之間沒有關聯。</em></p>

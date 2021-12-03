@@ -1,0 +1,279 @@
+<h1 id="coctohug---قم-بإدارة-العشرات-من-تعدين-chia-blockchain-من-متصفح-الويب">Coctohug - قم بإدارة العشرات من تعدين chia blockchain من متصفح الويب!</h1>
+<ul>
+<li>توطين لطيف مع دعم عشرات اللغات: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
+</ul>
+<p>الإعداد السهل باستخدام <a href="https://www.coctohug.xyz/">بداية سريعة</a></p>
+<p><em>اطلب المزيد من المساعدة في موقعنا <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/channels/914698944435613716/914698944435613718">Discord</a></em>.</p>
+<h1 id="بداية-سريعة">بداية سريعة</h1>
+<ul>
+<li><a href="#cch-linux">قم بإعداد Coctohug على Linux OS</a></li>
+<li><a href="#cch-windows">قم بإعداد Coctohug على نظام التشغيل Windows</a></li>
+<li><a href="#cch-macOS">قم بإعداد Coctohug على نظام Mac OS</a></li>
+</ul>
+<h1 id="الإعدادات-العامة">الإعدادات العامة</h1>
+<ul>
+<li><a href="#cch-password">كلمه السر</a></li>
+<li><a href="#cch-keys">مفاتيح</a></li>
+<li><a href="#cch-farming">التعدين</a></li>
+<li><a href="#cch-monitoring">يراقب</a></li>
+<li><a href="#cch-nft_recovery">استرداد NFT</a></li>
+<li><a href="#cch-blocks_found">تم العثور على الكتل / استلام العملات المعدنية</a></li>
+<li><a href="#cch-farming_warnings">تحذيرات التعدين</a></li>
+<li><a href="#cch-daily_report">تقرير يومي</a></li>
+<li><a href="#cch-weekly_report">تقرير أسبوعي</a></li>
+<li><a href="#cch-node_sync">مزامنة العقدة</a></li>
+<li><a href="#cch-connections_management">إدارة الاتصالات</a></li>
+<li><a href="#cch-wallets_management">إدارة المحافظ</a></li>
+<li><a href="#cch-hands_management">إدارة اليدين</a></li>
+<li><a href="#cch-transfer_coins">عملات التحويل</a></li>
+</ul>
+<h1 id="إعدادات-متقدمة">إعدادات متقدمة</h1>
+<ul>
+<li><a href="#cch-cold_wallet">المحفظة الباردة</a></li>
+<li><a href="#cch-secure_passphrase">تأمين مرور 24 كلمة ذاكري</a></li>
+<li><a href="#cch-forks">شوك بلوكتشين</a></li>
+<li><a href="#cch-harvester">حصاد</a></li>
+<li><a href="#cch-upgrade">تطوير</a></li>
+</ul>
+<h1 id="أفضل-الممارسات">أفضل الممارسات</h1>
+<ul>
+<li><a href="#cch-local_language">لغة محلية</a></li>
+<li><a href="#cch-hardware_requirements">متطلبات الأجهزة</a></li>
+</ul>
+<p id="cch-linux">&nbsp;</p>
+
+<h2 id="قم-بإعداد-coctohug-على-linux-os">قم بإعداد Coctohug على Linux OS</h2>
+<ul>
+<li>اقامة <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
+<li>انتقل إلى الموقع <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, ثم أدخل جميع حقول النموذج الضرورية وقم بتنزيل ملفات إنشاء عامل الإرساء المضغوطة التي تم إنشاؤها</li>
+<li>قم بفك ضغط المجلدات التي تم تنزيلها وانسخها في دليل العمل الخاص بك</li>
+<li>قم بتشغيل جميع المجلدات بالترتيب:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>افتح المستعرض وقم بالوصول إلى WebUI باستخدام عنوان url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>ملحوظة 1: لا تبدأ تشغيل أكثر من 5 مفترقات blockchain في نفس الوقت ، لأن شوكات blockchain chia تأكل بالفعل وحدة المعالجة المركزية عند مزامنة العقدة لأول مرة</li>
+<li>ملاحظة 2: مطلوب حوالي 1.8 جيجا من ذاكرة الوصول العشوائي لكل مفترق blockchain ، لذلك اختر بعض مفترقات blockchain بناءً على ذاكرة الكمبيوتر لديك</li>
+</ul>
+<p id="cch-windows">&nbsp;</p>
+
+<h2 id="قم-بإعداد-coctohug-على-نظام-التشغيل-windows">قم بإعداد Coctohug على نظام التشغيل Windows</h2>
+<ul>
+<li>اقامة <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
+<li>قم بتثبيت Ubuntu أو أي نظام Linux آخر باستخدام WSL</li>
+<li>الخطوات المتبقية هي نفسها المذكورة أعلاه <a href="#cch-linux">قم بإعداد Coctohug على Linux OS</a></li>
+</ul>
+<p id="cch-macOS">&nbsp;</p>
+
+<h2 id="قم-بإعداد-coctohug-على-نظام-mac-os">قم بإعداد Coctohug على نظام Mac OS</h2>
+<ul>
+<li>نفس الشيء مع <a href="#cch-linux">قم بإعداد Coctohug على Linux OS</a></li>
+</ul>
+<p id="cch-password">&nbsp;</p>
+
+<h2 id="كلمه-السر">كلمه السر</h2>
+<ul>
+<li>ستتم مطالبتك بتعيين كلمة مرور للإعدادات الآمنة ، عند الوصول لأول مرة إلى WebUI باستخدام عنوان url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>تشمل الإعدادات الآمنة: Cold Wallet ، وتحويل العملات ، وإعادة تشغيل Blockchain Forks ، والحصادة ...</li>
+</ul>
+<p id="cch-keys">&nbsp;</p>
+
+<h2 id="مفاتيح">مفاتيح</h2>
+<ul>
+<li>ستتم مطالبتك بإدخال 24 كلمة ذاكري ، عند الوصول لأول مرة إلى WebUI باستخدام عنوان url - هذا مخصص بشكل أساسي لغرض الزراعة</li>
+<li>أو يمكنك إنشاء مفتاح جديد تمامًا - هذا بشكل أساسي لغرض المحفظة الباردة</li>
+</ul>
+<p id="cch-farming">&nbsp;</p>
+
+<h2 id="التعدين">التعدين</h2>
+<ul>
+<li>بمجرد الانتهاء من مزامنة العقدة ، يجب أن تبدأ الزراعة تلقائيًا</li>
+<li>بعد ذلك ستتمكن من مراقبة حالة التعدين بطرق مختلفة</li>
+</ul>
+<p><img src="../../images/coctohug-summary-en-min.png" alt="English"></p>
+<p id="cch-monitoring">&nbsp;</p>
+
+<h2 id="يراقب">يراقب</h2>
+<ul>
+<li>يمكن أن تظهر علامة تبويب الملخص: إجمالي العملات المعدنية ، رصيد الحساب ، عدد القطع ، حجم قطعة الأرض ، حجم Netspace والوقت المتوقع للفوز</li>
+<li>سيكون لكل لوحة شوكة blockchain في علامة تبويب الملخص خلفية خضراء فاتحة إذا كانت تعمل بشكل جيد ، وإلا ستكون خلفية صفراء فاتحة</li>
+<li>يمكنك أيضًا فحص التفاصيل باستخدام علامات تبويب أخرى</li>
+</ul>
+<p id="cch-nft_recovery">&nbsp;</p>
+
+<h2 id="استرداد-nft">استرداد NFT</h2>
+<ul>
+<li>تحتوي علامة التبويب العملات المستلمة على رابط: <a class="nav-link" target="_blank" href="https://alltheblocks.net/nft-recovery">احصل على مكافآت NFT 7/8 الخاصة بك</a></li>
+</ul>
+<p id="cch-blocks_found">&nbsp;</p>
+
+<h2 id="تم-العثور-على-الكتل--استلام-العملات-المعدنية">تم العثور على الكتل / استلام العملات المعدنية</h2>
+<ul>
+<li>قائمة الكتل الإجمالية التي تم العثور عليها</li>
+<li>قائمة مجموع العملات المستلمة</li>
+</ul>
+<p><img src="../../images/received-coins-min.png" alt="English"></p>
+<p id="cch-farming_warnings">&nbsp;</p>
+
+<h2 id="تحذيرات-التعدين">تحذيرات التعدين</h2>
+<ul>
+<li>ضع قائمة بمشكلات الشبكة المحتملة</li>
+<li>ضع قائمة بالمشكلات المحتملة في نقطة التوقيع</li>
+<li>سرد مشكلة البحث القرص المحتملة</li>
+<li>قائمة عدد قطعة الأرض المحتملة المتناقصة</li>
+</ul>
+<p id="cch-daily_report">&nbsp;</p>
+
+<h2 id="تقرير-يومي">تقرير يومي</h2>
+<ul>
+<li>لخص الكتل التي تم العثور عليها / العملات المعدنية المستلمة في اليوم</li>
+<li>تلخيص تحذيرات التعدين حسب اليوم</li>
+</ul>
+<p><img src="../../images/daily_report-min.png" alt="English"></p>
+<p id="cch-weekly_report">&nbsp;</p>
+
+<h2 id="تقرير-أسبوعي">تقرير أسبوعي</h2>
+<ul>
+<li>لخص الكتل التي تم العثور عليها / العملات المتلقاة حسب الأسبوع</li>
+<li>تلخيص تحذيرات التعدين حسب الأسبوع</li>
+</ul>
+<p id="cch-node_sync">&nbsp;</p>
+
+<h2 id="مزامنة-العقدة">مزامنة العقدة</h2>
+<ul>
+<li>ستتم مزامنة العقدة تلقائيًا بشكل افتراضي</li>
+<li>يمكنك الانتقال إلى علامة التبويب Connections أو Blockchains لفحص الحالة التفصيلية</li>
+<li>لتسريع مزامنة العقدة ، <a href="https://alltheblocks.net/">https://alltheblocks.net/</a> يوفر قائمة العقد وملف قاعدة البيانات (انقر فوق كل blockchain ثم يمكنك العثور عليها في الجزء العلوي الأيمن)</li>
+</ul>
+<p id="cch-connections_management">&nbsp;</p>
+
+<h2 id="إدارة-الاتصالات">إدارة الاتصالات</h2>
+<ul>
+<li>قائمة بجميع اتصالات العقدة</li>
+<li>يمكنك إضافة / إزالة الاتصالات في علامة التبويب اتصالات</li>
+</ul>
+<p><img src="../../images/connections-min.png" alt="English"></p>
+<p id="cch-wallets_management">&nbsp;</p>
+
+<h2 id="إدارة-المحافظ">إدارة المحافظ</h2>
+<ul>
+<li>قائمة حالة المحفظة ورصيد الحساب</li>
+<li>يمكنك أيضًا تحويل العملات المعدنية في علامة تبويب المحفظة</li>
+</ul>
+<p><img src="../../images/wallets-min.png" alt="English"></p>
+<p id="cch-hands_management">&nbsp;</p>
+
+<h2 id="إدارة-اليدين">إدارة اليدين</h2>
+<ul>
+<li>هذا هو كل عمال شوكة blockchain</li>
+<li>يمكنك إزالة يد واحدة عندما لا تخطط لزراعتها بعد الآن</li>
+</ul>
+<p id="cch-transfer_coins">&nbsp;</p>
+
+<h2 id="عملات-التحويل">عملات التحويل</h2>
+<ul>
+<li>انتقل إلى علامة تبويب المحفظة وأدخل كلمة المرور الآمنة لتحويل العملات المعدنية</li>
+</ul>
+<p id="cch-cold_wallet">&nbsp;</p>
+
+<h2 id="المحفظة-الباردة">المحفظة الباردة</h2>
+<ul>
+<li>انتقل إلى علامة التبويب &#34;الإعدادات&#34; باستخدام كلمة المرور الآمنة</li>
+<li>تصدير حساب المحفظة الباردة<pre><code>1. تحضير آلة جديدة (مختلفة بآلة التعدين)
+2. يزور https://www.coctohug.xyz وانقر فوق Wallet Mode (وضع المحفظة) لإنشاء مجلدات إنشاء عامل الإرساء
+3. قم بإعداد مجلدات عامل الإرساء [قم بإعداد Coctohug على Linux OS]
+4. على شاشة تشغيل WebUI ، قم بإنشاء مفتاح جديد هذه المرة
+5. انتظر بضع دقائق لإعادة تشغيل شوكات blockchain
+6. انتقل إلى كل مجلد وقم بتنفيذ البرنامج النصي docker-compose stop &amp;&amp; docker-compose up -d
+7. يزور http://localhost:12630/, وانتقل إلى الإعدادات - علامة تبويب المحفظة الباردة لتصدير عناوين المحفظة الباردة
+8. تأكد من صحة كل عنوان يدويًا عن طريق مقارنة الملف الذي تم تنزيله بالمعلومات الموضحة في علامة التبويب المفاتيح
+9. احصل على 24 كلمة ذاكري من خلال نص طرفي مماثل
+  docker exec -it coctohug-flora flora keys show --show-mnemonic-seed
+  docker exec -it coctohug-covid covid keys show --show-mnemonic-seed
+  docker exec -it coctohug-lucky lucky keys show --show-mnemonic-seed
+</code></pre>
+</li>
+<li>استيراد حساب المحفظة الباردة<pre><code>1. على آلة التعدين الخاصة بك ، قم بزيارة الإعدادات - علامة تبويب المحفظة الباردة
+2. استيراد ملف json المحفظة الباردة السابق الذي تم تنزيله
+3. انتظر بضع دقائق ، وانتقل إلى علامة تبويب المحفظة لمعرفة ما إذا كان عنوان المحفظة البارد محدثًا أم لا
+4. ملاحظة: نوصي بعمل نسخة احتياطية من تكوينات محفظتك قبل الاستيراد
+</code></pre>
+<img src="../../images/cold_wallet-min.png" alt="English"></li>
+</ul>
+<p id="cch-secure_passphrase">&nbsp;</p>
+
+<h2 id="تأمين-مرور-24-كلمة-ذاكري">تأمين مرور 24 كلمة ذاكري</h2>
+<ul>
+<li><a target='_blank' href='https://github.com/raingggg/coctohug-passphrase'>coctohug-passphrase</a> يمكن استخدامها لتأمين 24 كلمة ذاكري</li>
+<li>يقوم بتشفير المفاتيح الخاصة بك بكلمة مرور لا يعرفها أحد غيرك</li>
+<li>يمكنك فك تشفيرها بكلمة المرور عند إضافة تفرع blockchain جديد</li>
+</ul>
+<p id="cch-forks">&nbsp;</p>
+
+<h2 id="شوك-بلوكتشين">شوك بلوكتشين</h2>
+<ul>
+<li>تحقق من جيثب كوكتوهوج كل بضعة أيام</li>
+<li>سيتم دعم شوكات blockchain الجديدة قريبًا جدًا</li>
+</ul>
+<p id="cch-harvester">&nbsp;</p>
+
+<h2 id="حصاد">حصاد</h2>
+<ul>
+<li>يزور <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a> وانقر فوق Harvester Mode لإنشاء مجلدات إنشاء عامل الإرساء</li>
+<li>يزور <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a> وانقر فوق Allow Harvester لبناء الرابط بين جهاز التحكم والحصادة</li>
+<li>قم بإعداد مجلدات عامل الإرساء <a href="#cch-linux">قم بإعداد Coctohug على Linux OS</a></li>
+<li>بعد بضع دقائق ، ستتمكن من رؤية آلة الحصاد في علامة تبويب أيدي WebUI</li>
+</ul>
+<p id="cch-upgrade">&nbsp;</p>
+
+<h2 id="تطوير">تطوير</h2>
+<ul>
+<li>نص سطر واحد<pre><code>docker-compose stop &amp;&amp; docker-compose rm -f &amp;&amp; docker-compose pull &amp;&amp; docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>يمكنك أيضًا تنفيذ البرامج النصية أعلاه خطوة بخطوة<pre><code>docker-compose stop
+docker-compose rm -f
+docker-compose pull
+docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>في حالة وجود مشكلة db غير متوافقة ، يمكنك إزالة ملف قاعدة البيانات الموجودة قبل تنفيذ Docker-Compose start script بواسطة<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+</code></pre>
+</li>
+</ul>
+<p id="cch-local_language">&nbsp;</p>
+
+<h2 id="لغة-محلية">لغة محلية</h2>
+<ul>
+<li>في الجزء العلوي الأيمن من WebUI ، اختر اللغة التي تفضلها أكثر</li>
+<li>يمكنك التبديل إلى أي لغة أخرى لاحقًا إذا كنت ترغب في ذلك</li>
+</ul>
+<p id="cch-hardware_requirements">&nbsp;</p>
+
+<h2 id="متطلبات-الأجهزة">متطلبات الأجهزة</h2>
+<ul>
+<li>بمجرد المزامنة ، يجب أن تكون معالجات Intel® Core ™ i7 من الجيل العاشر كافية لاستزراع أكثر من 50 نوعًا من مجموعات blockchain</li>
+<li>ومع ذلك ، بالنسبة لمرحلة مزامنة العقدة الداخلية ، فإنها تأكل وحدة المعالجة المركزية (CPU) حقًا. لذلك نوصي بإعداد 5 شوكات blockchain لكل مجموعة ، والبدء من المجموعة حسب المجموعة</li>
+<li>الذاكرة المطلوبة تساوي: عدد شوكات تعدين blockchain يتضاعف 1.8 جيجا من ذاكرة الوصول العشوائي</li>
+<li>يجب أن يكون القرص العادي مناسبًا لأكثر من 50 نوعًا من تفرع blockchain</li>
+</ul>
+<h1 id="مشاريع-مفتوحة-المصدر-على-جيثب">مشاريع مفتوحة المصدر على جيثب</h1>
+<p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
+<p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cryptodoge">cryptodoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
+<p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
+<p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<h2 id="إشعار-العلامة-التجارية">إشعار العلامة التجارية</h2>
+<p>CHIA NETWORK INC و CHIA ™ و CHIA BLOCKCHAIN ​​™ و CHIA PROTOCOL ™ و CHIALISP ™ و &#34;شعار الأوراق&#34; (بما في ذلك شعار الورقة وحده عندما يشير إلى Chia أو يشير إليه) ، هي علامات تجارية أو علامات تجارية مسجلة لشركة Chia Network، Inc . ، شركة في ولاية ديلاوير. * لا يوجد ارتباط بين مشروع Coctohug ومشروع شبكة Chia الرئيسي. *</p>

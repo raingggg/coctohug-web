@@ -1,0 +1,279 @@
+<h1 id="coctohug---จัดการการขุดของ-chia-blockchain-forks-จากเว็บเบราว์เซอร์">Coctohug - จัดการการขุดของ chia blockchain forks จากเว็บเบราว์เซอร์!</h1>
+<ul>
+<li>การโลคัลไลเซชันที่ดีพร้อมรองรับหลายภาษา: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
+</ul>
+<p>ติดตั้งง่ายโดยใช้ <a href="https://www.coctohug.xyz/">เริ่มต้นอย่างรวดเร็ว</a></p>
+<p><em>ขอความช่วยเหลือเพิ่มเติมเกี่ยวกับ .ของเรา <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/channels/914698944435613716/914698944435613718">Discord</a></em>.</p>
+<h1 id="เริ่มต้นอย่างรวดเร็ว">เริ่มต้นอย่างรวดเร็ว</h1>
+<ul>
+<li><a href="#cch-linux">ตั้งค่า Coctohug บน Linux OS</a></li>
+<li><a href="#cch-windows">ตั้งค่า Coctohug บน Windows OS</a></li>
+<li><a href="#cch-macOS">ตั้งค่า Coctohug บน Mac OS</a></li>
+</ul>
+<h1 id="การตั้งค่าทั่วไป">การตั้งค่าทั่วไป</h1>
+<ul>
+<li><a href="#cch-password">รหัสผ่าน</a></li>
+<li><a href="#cch-keys">กุญแจ</a></li>
+<li><a href="#cch-farming">การขุด</a></li>
+<li><a href="#cch-monitoring">การตรวจสอบ</a></li>
+<li><a href="#cch-nft_recovery">การกู้คืน NFT</a></li>
+<li><a href="#cch-blocks_found">พบบล็อค / เหรียญที่ได้รับ</a></li>
+<li><a href="#cch-farming_warnings">คำเตือนการขุด</a></li>
+<li><a href="#cch-daily_report">รายงานประจำวัน</a></li>
+<li><a href="#cch-weekly_report">รายงานประจำสัปดาห์</a></li>
+<li><a href="#cch-node_sync">โหนดซิงค์</a></li>
+<li><a href="#cch-connections_management">การจัดการการเชื่อมต่อ</a></li>
+<li><a href="#cch-wallets_management">การจัดการกระเป๋าเงิน</a></li>
+<li><a href="#cch-hands_management">การจัดการมือ</a></li>
+<li><a href="#cch-transfer_coins">โอนเหรียญ</a></li>
+</ul>
+<h1 id="ตั้งค่าขั้นสูง">ตั้งค่าขั้นสูง</h1>
+<ul>
+<li><a href="#cch-cold_wallet">กระเป๋าเงินเย็น</a></li>
+<li><a href="#cch-secure_passphrase">รหัสผ่านที่ปลอดภัย 24 Mnemonic Words</a></li>
+<li><a href="#cch-forks">Blockchain Forks</a></li>
+<li><a href="#cch-harvester">รถเกี่ยวข้าว</a></li>
+<li><a href="#cch-upgrade">อัพเกรด</a></li>
+</ul>
+<h1 id="ปฏิบัติที่ดีที่สุด">ปฏิบัติที่ดีที่สุด</h1>
+<ul>
+<li><a href="#cch-local_language">ภาษาท้องถิ่น</a></li>
+<li><a href="#cch-hardware_requirements">ข้อกำหนดฮาร์ดแวร์</a></li>
+</ul>
+<p id="cch-linux">&nbsp;</p>
+
+<h2 id="ตั้งค่า-coctohug-บน-linux-os">ตั้งค่า Coctohug บน Linux OS</h2>
+<ul>
+<li>ติดตั้ง <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
+<li>ไปที่เว็บไซต์ <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, จากนั้นป้อนฟิลด์แบบฟอร์มที่จำเป็นทั้งหมดและดาวน์โหลดไฟล์ zip ที่สร้างขึ้นสำหรับนักเทียบท่า</li>
+<li>เปิดเครื่องรูดโฟลเดอร์ที่ดาวน์โหลดและคัดลอกลงในไดเร็กทอรีการทำงานของคุณ</li>
+<li>เรียกใช้โฟลเดอร์ทั้งหมดตามลำดับ:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>เปิดเบราว์เซอร์และเข้าถึง WebUI ด้วย url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>หมายเหตุ 1: อย่าเริ่มต้นมากกว่า 5 blockchain fork พร้อมกัน เนื่องจาก Chia blockchain fork กิน CPU จริงๆ เมื่อทำการซิงค์โหนดเป็นครั้งแรก</li>
+<li>หมายเหตุ 2: ต้องใช้ RAM ประมาณ 1.8G สำหรับแต่ละบล็อคบล็อค ดังนั้นให้เลือกส้อมบล็อคเชนบางตัวตามหน่วยความจำคอมพิวเตอร์ของคุณ</li>
+</ul>
+<p id="cch-windows">&nbsp;</p>
+
+<h2 id="ตั้งค่า-coctohug-บน-windows-os">ตั้งค่า Coctohug บน Windows OS</h2>
+<ul>
+<li>ติดตั้ง <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
+<li>ติดตั้ง Ubuntu หรือระบบ Linux อื่น ๆ โดยใช้ WSL</li>
+<li>ขั้นตอนที่เหลือเหมือนกันกับด้านบน <a href="#cch-linux">ตั้งค่า Coctohug บน Linux OS</a></li>
+</ul>
+<p id="cch-macOS">&nbsp;</p>
+
+<h2 id="ตั้งค่า-coctohug-บน-mac-os">ตั้งค่า Coctohug บน Mac OS</h2>
+<ul>
+<li>เหมือนกับ <a href="#cch-linux">ตั้งค่า Coctohug บน Linux OS</a></li>
+</ul>
+<p id="cch-password">&nbsp;</p>
+
+<h2 id="รหัสผ่าน">รหัสผ่าน</h2>
+<ul>
+<li>คุณจะได้รับแจ้งให้ตั้งรหัสผ่านสำหรับการตั้งค่าความปลอดภัย เมื่อคุณเข้าถึง WebUI ครั้งแรกด้วย url . เป็นครั้งแรก <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>การตั้งค่าที่ปลอดภัย ได้แก่ Cold Wallet, Coin Transfer, Restart Blockchain Forks, Harvester...</li>
+</ul>
+<p id="cch-keys">&nbsp;</p>
+
+<h2 id="กุญแจ">กุญแจ</h2>
+<ul>
+<li>คุณจะได้รับแจ้งให้ป้อนคำช่วยจำ 24 คำ เมื่อคุณเข้าถึง WebUI ครั้งแรกด้วย url เป็นครั้งแรก ซึ่งมีวัตถุประสงค์หลักเพื่อการเกษตร</li>
+<li>หรือคุณสามารถสร้างคีย์ใหม่ทั้งหมดได้ - ส่วนใหญ่จะใช้สำหรับกระเป๋าสตางค์เย็น</li>
+</ul>
+<p id="cch-farming">&nbsp;</p>
+
+<h2 id="การขุด">การขุด</h2>
+<ul>
+<li>เมื่อทำการซิงค์โหนดเสร็จแล้ว การทำฟาร์มควรเริ่มต้นโดยอัตโนมัติ</li>
+<li>จากนั้นคุณจะสามารถติดตามสถานะการขุดได้หลายวิธี</li>
+</ul>
+<p><img src="../../images/coctohug-summary-en-min.png" alt="English"></p>
+<p id="cch-monitoring">&nbsp;</p>
+
+<h2 id="การตรวจสอบ">การตรวจสอบ</h2>
+<ul>
+<li>แท็บสรุปสามารถแสดง: Total Mined Coins, ยอดคงเหลือในบัญชี, Plot Count, Plot Size, Netspace Size และเวลาที่คาดว่าจะชนะ</li>
+<li>แต่ละแผง fork-panel ของ blockchain ในแท็บ Summary จะมีพื้นหลังสีเขียวอ่อน หากมันทำงานได้ดี มิฉะนั้น มันจะเป็นพื้นหลังสีเหลืองอ่อน</li>
+<li>คุณยังสามารถตรวจสอบรายละเอียดโดยใช้แท็บอื่นๆ ได้</li>
+</ul>
+<p id="cch-nft_recovery">&nbsp;</p>
+
+<h2 id="การกู้คืน-nft">การกู้คืน NFT</h2>
+<ul>
+<li>แท็บเหรียญที่ได้รับมีลิงค์: <a class="nav-link" target="_blank" href="https://alltheblocks.net/nft-recovery">รับรางวัล NFT 7/8 ของคุณ</a></li>
+</ul>
+<p id="cch-blocks_found">&nbsp;</p>
+
+<h2 id="พบบล็อค--เหรียญที่ได้รับ">พบบล็อค / เหรียญที่ได้รับ</h2>
+<ul>
+<li>แสดงรายการบล็อกทั้งหมดที่พบ</li>
+<li>รายชื่อเหรียญทั้งหมดที่ได้รับ</li>
+</ul>
+<p><img src="../../images/received-coins-min.png" alt="English"></p>
+<p id="cch-farming_warnings">&nbsp;</p>
+
+<h2 id="คำเตือนการขุด">คำเตือนการขุด</h2>
+<ul>
+<li>แสดงรายการปัญหาเครือข่ายที่เป็นไปได้</li>
+<li>แสดงรายการปัญหา signapoint ที่เป็นไปได้</li>
+<li>แสดงรายการปัญหาการค้นหาดิสก์ที่เป็นไปได้</li>
+<li>แสดงรายการปัญหาการลดจำนวนพล็อตที่เป็นไปได้</li>
+</ul>
+<p id="cch-daily_report">&nbsp;</p>
+
+<h2 id="รายงานประจำวัน">รายงานประจำวัน</h2>
+<ul>
+<li>สรุปบล็อคที่พบ / เหรียญที่ได้รับในแต่ละวัน</li>
+<li>สรุปคำเตือนการขุดตามวัน</li>
+</ul>
+<p><img src="../../images/daily_report-min.png" alt="English"></p>
+<p id="cch-weekly_report">&nbsp;</p>
+
+<h2 id="รายงานประจำสัปดาห์">รายงานประจำสัปดาห์</h2>
+<ul>
+<li>สรุปบล็อคที่พบ / เหรียญที่ได้รับในแต่ละสัปดาห์</li>
+<li>สรุปคำเตือนการขุดตามสัปดาห์</li>
+</ul>
+<p id="cch-node_sync">&nbsp;</p>
+
+<h2 id="โหนดซิงค์">โหนดซิงค์</h2>
+<ul>
+<li>โหนดจะซิงค์โดยอัตโนมัติโดยค่าเริ่มต้น</li>
+<li>คุณสามารถไปที่แท็บการเชื่อมต่อหรือบล็อคเชนเพื่อตรวจสอบสถานะโดยละเอียด</li>
+<li>ในการเร่งการซิงค์โหนดของคุณ <a href="https://alltheblocks.net/">https://alltheblocks.net/</a> จัดเตรียมรายการโหนดและไฟล์ฐานข้อมูล (คลิกแต่ละบล็อคเชน จากนั้นคุณจะพบได้ที่ส่วนขวาบน)</li>
+</ul>
+<p id="cch-connections_management">&nbsp;</p>
+
+<h2 id="การจัดการการเชื่อมต่อ">การจัดการการเชื่อมต่อ</h2>
+<ul>
+<li>แสดงรายการการเชื่อมต่อโหนดทั้งหมด</li>
+<li>คุณสามารถเพิ่ม/ลบการเชื่อมต่อในแท็บการเชื่อมต่อ</li>
+</ul>
+<p><img src="../../images/connections-min.png" alt="English"></p>
+<p id="cch-wallets_management">&nbsp;</p>
+
+<h2 id="การจัดการกระเป๋าเงิน">การจัดการกระเป๋าเงิน</h2>
+<ul>
+<li>แสดงรายการสถานะกระเป๋าเงินและยอดเงินในบัญชี</li>
+<li>คุณยังสามารถโอนเหรียญในแท็บกระเป๋าสตางค์</li>
+</ul>
+<p><img src="../../images/wallets-min.png" alt="English"></p>
+<p id="cch-hands_management">&nbsp;</p>
+
+<h2 id="การจัดการมือ">การจัดการมือ</h2>
+<ul>
+<li>นี่คือคนงาน fork blockchain แต่ละคน</li>
+<li>คุณอาจเอามือข้างหนึ่งออกเมื่อคุณไม่ได้วางแผนที่จะทำฟาร์มอีกต่อไป</li>
+</ul>
+<p id="cch-transfer_coins">&nbsp;</p>
+
+<h2 id="โอนเหรียญ">โอนเหรียญ</h2>
+<ul>
+<li>ไปที่แท็บกระเป๋าเงินและป้อนรหัสผ่านที่ปลอดภัยของคุณเพื่อโอนเหรียญ</li>
+</ul>
+<p id="cch-cold_wallet">&nbsp;</p>
+
+<h2 id="กระเป๋าเงินเย็น">กระเป๋าเงินเย็น</h2>
+<ul>
+<li>ไปที่แท็บการตั้งค่าด้วยรหัสผ่านที่ปลอดภัยของคุณ</li>
+<li>ส่งออกบัญชี Cold Wallet<pre><code>1. เตรียมเครื่องใหม่(ต่างกับเครื่องขุด)
+2. เยี่ยม https://www.coctohug.xyz และคลิกโหมดกระเป๋าสตางค์เพื่อสร้างโฟลเดอร์เขียนนักเทียบท่า
+3. ตั้งค่าโฟลเดอร์เขียนนักเทียบท่า [ตั้งค่า Coctohug บน Linux OS]
+4. บนหน้าจอเปิดใช้ WebUI ให้สร้างคีย์ใหม่ในครั้งนี้
+5. รอสักครู่เพื่อให้ fork blockchain เริ่มต้นใหม่
+6. ไปที่แต่ละโฟลเดอร์และรันสคริปต์ docker-compose stop &amp;&amp; docker-compose up -d
+7. เยี่ยม http://localhost:12630/, และไปที่การตั้งค่า - แท็บกระเป๋าเงินเย็นเพื่อส่งออกที่อยู่กระเป๋าเงินเย็น
+8. ยืนยันว่าที่อยู่แต่ละรายการถูกต้องด้วยตนเองโดยเปรียบเทียบไฟล์ที่ดาวน์โหลดกับข้อมูลที่แสดงบนแท็บคีย์
+9. รับ 24 คำช่วยจำโดยใช้เทอร์มินัลสคริปต์ที่คล้ายกัน
+  docker exec -it coctohug-flora flora keys show --show-mnemonic-seed
+  docker exec -it coctohug-covid covid keys show --show-mnemonic-seed
+  docker exec -it coctohug-lucky lucky keys show --show-mnemonic-seed
+</code></pre>
+</li>
+<li>นำเข้าบัญชี Cold Wallet<pre><code>1. บนเครื่องขุดของคุณ ไปที่การตั้งค่า - แท็บกระเป๋าเงินเย็น
+2. นำเข้าไฟล์ json กระเป๋าเงินเย็นที่ดาวน์โหลดก่อนหน้านี้
+3. รอสักครู่แล้วไปที่แท็บกระเป๋าเงินเพื่อดูว่าที่อยู่กระเป๋าเงินเย็นได้รับการอัปเดตหรือไม่
+4. หมายเหตุ: เราแนะนำให้สำรองการกำหนดค่ากระเป๋าเงินของคุณก่อนนำเข้า
+</code></pre>
+<img src="../../images/cold_wallet-min.png" alt="English"></li>
+</ul>
+<p id="cch-secure_passphrase">&nbsp;</p>
+
+<h2 id="รหัสผ่านที่ปลอดภัย-24-mnemonic-words">รหัสผ่านที่ปลอดภัย 24 Mnemonic Words</h2>
+<ul>
+<li><a target='_blank' href='https://github.com/raingggg/coctohug-passphrase'>coctohug-passphrase</a> สามารถใช้เพื่อรักษาความปลอดภัย 24 คำช่วยจำของคุณ</li>
+<li>มันเข้ารหัสคีย์ของคุณด้วยรหัสผ่านที่คุณเท่านั้นที่รู้</li>
+<li>คุณสามารถถอดรหัสด้วยรหัสผ่านเมื่อเพิ่ม blockchain forks ใหม่</li>
+</ul>
+<p id="cch-forks">&nbsp;</p>
+
+<h2 id="blockchain-forks">Blockchain Forks</h2>
+<ul>
+<li>ตรวจสอบ coctohug github ทุกสองสามวัน</li>
+<li>ใหม่ blockchain fork จะได้รับการสนับสนุนเร็ว ๆ นี้</li>
+</ul>
+<p id="cch-harvester">&nbsp;</p>
+
+<h2 id="รถเกี่ยวข้าว">รถเกี่ยวข้าว</h2>
+<ul>
+<li>เยี่ยม <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a> และคลิกโหมดเก็บเกี่ยวเพื่อสร้างโฟลเดอร์เขียนนักเทียบท่า</li>
+<li>เยี่ยม <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a> และคลิก Allow Harvester เพื่อสร้างลิงก์ระหว่างผู้ควบคุมและผู้เก็บเกี่ยว</li>
+<li>ตั้งค่าโฟลเดอร์เขียนนักเทียบท่า <a href="#cch-linux">ตั้งค่า Coctohug บน Linux OS</a></li>
+<li>ไม่กี่นาทีต่อมา คุณจะสามารถเห็นเครื่องเก็บเกี่ยวบนแท็บมือของ WebUI</li>
+</ul>
+<p id="cch-upgrade">&nbsp;</p>
+
+<h2 id="อัพเกรด">อัพเกรด</h2>
+<ul>
+<li>สคริปต์หนึ่งบรรทัด<pre><code>docker-compose stop &amp;&amp; docker-compose rm -f &amp;&amp; docker-compose pull &amp;&amp; docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>คุณยังสามารถรันสคริปต์ด้านบนทีละขั้นตอน<pre><code>docker-compose stop
+docker-compose rm -f
+docker-compose pull
+docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>ในกรณีของปัญหา db ที่เข้ากันไม่ได้ คุณสามารถลบไฟล์ฐานข้อมูลที่มีอยู่ก่อนที่จะรันสคริปต์เริ่มต้นของ docker-compose โดย<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+</code></pre>
+</li>
+</ul>
+<p id="cch-local_language">&nbsp;</p>
+
+<h2 id="ภาษาท้องถิ่น">ภาษาท้องถิ่น</h2>
+<ul>
+<li>ที่ด้านบนขวาของ WebUI เลือกภาษาที่คุณชอบมากที่สุด</li>
+<li>คุณสามารถเปลี่ยนไปใช้ภาษาอื่นในภายหลังได้หากต้องการ</li>
+</ul>
+<p id="cch-hardware_requirements">&nbsp;</p>
+
+<h2 id="ข้อกำหนดฮาร์ดแวร์">ข้อกำหนดฮาร์ดแวร์</h2>
+<ul>
+<li>เมื่อซิงโครไนซ์แล้ว โปรเซสเซอร์ Intel® Core™ i7 เจนเนอเรชั่น 10 น่าจะเพียงพอสำหรับการทำฟาร์ม 50+ blockchain fork</li>
+<li>อย่างไรก็ตามสำหรับขั้นตอนการซิงค์โหนดเริ่มต้นนั้นกิน CPU จริงๆ ดังนั้นเราแนะนำให้ตั้งค่า 5 blockchain forks ต่อกลุ่ม และเริ่มกลุ่มตามกลุ่ม</li>
+<li>หน่วยความจำที่ต้องการเท่ากับ: จำนวนบล็อกเชนสำหรับการขุดคูณด้วย 1.8G RAM</li>
+<li>ดิสก์ปกติน่าจะใช้ได้สำหรับ 50+ blockchain forks</li>
+</ul>
+<h1 id="โครงการโอเพ่นซอร์สบน-github">โครงการโอเพ่นซอร์สบน Github</h1>
+<p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
+<p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cryptodoge">cryptodoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
+<p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
+<p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<h2 id="ประกาศเครื่องหมายการค้า">ประกาศเครื่องหมายการค้า</h2>
+<p>CHIA NETWORK INC, CHIA™, CHIA BLOCKCHAIN™, CHIA PROTOCOL™, CHIALISP™ และ “โลโก้ใบไม้” (รวมถึงโลโก้ใบไม้เพียงอย่างเดียวเมื่ออ้างถึงหรือระบุ Chia) เป็นเครื่องหมายการค้าหรือเครื่องหมายการค้าจดทะเบียนของ Chia Network, Inc ., บริษัทเดลาแวร์. <em>โครงการ Coctohug นี้ไม่มีส่วนเกี่ยวข้องกับโครงการ Chia Network หลัก</em></p>

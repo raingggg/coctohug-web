@@ -1,0 +1,279 @@
+<h1 id="coctohug---управлявайте-десетки-блокчейн-форкове-за-добив-на-чиа-от-уеб-браузър">Coctohug - Управлявайте десетки блокчейн форкове за добив на чиа от уеб браузър!</h1>
+<ul>
+<li>Приятна локализация с поддръжка на десетки езици: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
+</ul>
+<p>Лесна настройка с използване <a href="https://www.coctohug.xyz/">Бърз старт</a></p>
+<p><em>Потърсете повече помощ на нашия <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/channels/914698944435613716/914698944435613718">Discord</a></em>.</p>
+<h1 id="бърз-старт">Бърз старт</h1>
+<ul>
+<li><a href="#cch-linux">Инсталирайте Coctohug на Linux OS</a></li>
+<li><a href="#cch-windows">Инсталирайте Coctohug на Windows OS</a></li>
+<li><a href="#cch-macOS">Настройте Coctohug на Mac OS</a></li>
+</ul>
+<h1 id="общи-настройки">Общи настройки</h1>
+<ul>
+<li><a href="#cch-password">парола</a></li>
+<li><a href="#cch-keys">Ключове</a></li>
+<li><a href="#cch-farming">Минен</a></li>
+<li><a href="#cch-monitoring">Мониторинг</a></li>
+<li><a href="#cch-nft_recovery">Възстановяване на NFT</a></li>
+<li><a href="#cch-blocks_found">Намерени блокове / Получени монети</a></li>
+<li><a href="#cch-farming_warnings">Предупреждения за копаене</a></li>
+<li><a href="#cch-daily_report">Дневен доклад</a></li>
+<li><a href="#cch-weekly_report">Седмичен доклад</a></li>
+<li><a href="#cch-node_sync">Синхронизиране на възли</a></li>
+<li><a href="#cch-connections_management">Управление на връзките</a></li>
+<li><a href="#cch-wallets_management">Управление на портфейли</a></li>
+<li><a href="#cch-hands_management">Управление на ръцете</a></li>
+<li><a href="#cch-transfer_coins">Прехвърляне на монети</a></li>
+</ul>
+<h1 id="разширени-настройки">Разширени настройки</h1>
+<ul>
+<li><a href="#cch-cold_wallet">Студен портфейл</a></li>
+<li><a href="#cch-secure_passphrase">Защитени 24 мнемонични думи с парола</a></li>
+<li><a href="#cch-forks">Blockchain Forks</a></li>
+<li><a href="#cch-harvester">комбайн</a></li>
+<li><a href="#cch-upgrade">Подобряване на</a></li>
+</ul>
+<h1 id="най-добри-практики">Най-добри практики</h1>
+<ul>
+<li><a href="#cch-local_language">Местен език</a></li>
+<li><a href="#cch-hardware_requirements">Хардуерни изисквания</a></li>
+</ul>
+<p id="cch-linux">&nbsp;</p>
+
+<h2 id="инсталирайте-coctohug-на-linux-os">Инсталирайте Coctohug на Linux OS</h2>
+<ul>
+<li>Настройвам <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
+<li>Отидете на сайта <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, след това въведете всички необходими полета на формуляра и изтеглете генерираните компресирани файлове на docker-compose</li>
+<li>Разархивирайте изтеглените папки и ги копирайте във вашата работна директория</li>
+<li>Стартирайте всички папки по ред:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>Отворете браузъра и влезте в WebUI с url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>Забележка 1: Не стартирайте повече от 5 блокчейн разклонения едновременно, тъй като chia blockchain вилиците наистина изяждат процесора при синхронизиране на възел за първи път</li>
+<li>Забележка 2: Около 1.8G RAM се изисква за всяка блокчейн вилка, така че изберете някои блокчейн разклонения въз основа на вашата компютърна памет</li>
+</ul>
+<p id="cch-windows">&nbsp;</p>
+
+<h2 id="инсталирайте-coctohug-на-windows-os">Инсталирайте Coctohug на Windows OS</h2>
+<ul>
+<li>Настройвам <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
+<li>Инсталирайте Ubuntu или друга Linux система с помощта на WSL</li>
+<li>Останалите стъпки са същите като по-горе <a href="#cch-linux">Инсталирайте Coctohug на Linux OS</a></li>
+</ul>
+<p id="cch-macOS">&nbsp;</p>
+
+<h2 id="настройте-coctohug-на-mac-os">Настройте Coctohug на Mac OS</h2>
+<ul>
+<li>Същото с <a href="#cch-linux">Инсталирайте Coctohug на Linux OS</a></li>
+</ul>
+<p id="cch-password">&nbsp;</p>
+
+<h2 id="парола">парола</h2>
+<ul>
+<li>Ще бъдете подканени да зададете парола за защитени настройки, когато за първи път влезете в WebUI с url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>Сигурните настройки включват: Cold Wallet, Coin Transfer, Restart Blockchain Forks, Harvester...</li>
+</ul>
+<p id="cch-keys">&nbsp;</p>
+
+<h2 id="ключове">Ключове</h2>
+<ul>
+<li>Ще бъдете подканени да въведете 24-те мнемонични думи, когато за първи път влезете в WebUI с url - това е главно за земеделска цел</li>
+<li>Или можете да генерирате един изцяло нов ключ - това е основно за целите на студен портфейл</li>
+</ul>
+<p id="cch-farming">&nbsp;</p>
+
+<h2 id="минен">Минен</h2>
+<ul>
+<li>След като синхронизирането на възлите бъде извършено, земеделието трябва да започне автоматично</li>
+<li>След това ще можете да наблюдавате състоянието на копаене по различни начини</li>
+</ul>
+<p><img src="../../images/coctohug-summary-en-min.png" alt="English"></p>
+<p id="cch-monitoring">&nbsp;</p>
+
+<h2 id="мониторинг">Мониторинг</h2>
+<ul>
+<li>Разделът Резюме може да показва: Общо добити монети, Баланс на сметката, Брой на сюжета, Размер на парцела, Размер на мрежовото пространство и очаквано време за победа</li>
+<li>всеки блок-панел на блокчейн в раздела Резюме ще има светлозелен фон, ако работи добре, в противен случай ще бъде светложълт фон</li>
+<li>Можете също да разгледате детайлите, като използвате други раздели</li>
+</ul>
+<p id="cch-nft_recovery">&nbsp;</p>
+
+<h2 id="възстановяване-на-nft">Възстановяване на NFT</h2>
+<ul>
+<li>Разделът Получени монети има връзка: <a class="nav-link" target="_blank" href="https://alltheblocks.net/nft-recovery">Вземете своите награди за NFT 7/8</a></li>
+</ul>
+<p id="cch-blocks_found">&nbsp;</p>
+
+<h2 id="намерени-блокове--получени-монети">Намерени блокове / Получени монети</h2>
+<ul>
+<li>Избройте общите намерени блокове</li>
+<li>Избройте общо получените монети</li>
+</ul>
+<p><img src="../../images/received-coins-min.png" alt="English"></p>
+<p id="cch-farming_warnings">&nbsp;</p>
+
+<h2 id="предупреждения-за-копаене">Предупреждения за копаене</h2>
+<ul>
+<li>Избройте възможния проблем с мрежата</li>
+<li>Избройте възможния проблем със знака</li>
+<li>Избройте възможния проблем при търсене на диск</li>
+<li>Избройте възможния проблем за намаляване на броя на сюжетите</li>
+</ul>
+<p id="cch-daily_report">&nbsp;</p>
+
+<h2 id="дневен-доклад">Дневен доклад</h2>
+<ul>
+<li>Обобщете намерените блокове / монети, получени по ден</li>
+<li>Обобщете предупрежденията за копаене по ден</li>
+</ul>
+<p><img src="../../images/daily_report-min.png" alt="English"></p>
+<p id="cch-weekly_report">&nbsp;</p>
+
+<h2 id="седмичен-доклад">Седмичен доклад</h2>
+<ul>
+<li>Обобщете намерените блокове / получените монети по седмица</li>
+<li>Обобщете предупрежденията за копаене по седмица</li>
+</ul>
+<p id="cch-node_sync">&nbsp;</p>
+
+<h2 id="синхронизиране-на-възли">Синхронизиране на възли</h2>
+<ul>
+<li>Node ще се синхронизира автоматично по подразбиране</li>
+<li>Можете да отидете в раздела Connections или Blockchains, за да разгледате подробното състояние</li>
+<li>За да ускорите синхронизирането на вашия възел, <a href="https://alltheblocks.net/">https://alltheblocks.net/</a> предоставя списък с възли и файл с база данни (щракнете върху всеки блокчейн и след това можете да ги намерите в горния десен раздел)</li>
+</ul>
+<p id="cch-connections_management">&nbsp;</p>
+
+<h2 id="управление-на-връзките">Управление на връзките</h2>
+<ul>
+<li>Избройте всички връзки на възли</li>
+<li>Можете да добавяте/премахвате връзки в раздела Връзки</li>
+</ul>
+<p><img src="../../images/connections-min.png" alt="English"></p>
+<p id="cch-wallets_management">&nbsp;</p>
+
+<h2 id="управление-на-портфейли">Управление на портфейли</h2>
+<ul>
+<li>Избройте състоянието на портфейла и баланса на сметката</li>
+<li>Можете също да прехвърляте монети в раздела на портфейла</li>
+</ul>
+<p><img src="../../images/wallets-min.png" alt="English"></p>
+<p id="cch-hands_management">&nbsp;</p>
+
+<h2 id="управление-на-ръцете">Управление на ръцете</h2>
+<ul>
+<li>Това е всеки блокчейн форк работници</li>
+<li>Можете да премахнете едната си ръка, когато не планирате повече да я фармирате</li>
+</ul>
+<p id="cch-transfer_coins">&nbsp;</p>
+
+<h2 id="прехвърляне-на-монети">Прехвърляне на монети</h2>
+<ul>
+<li>Отидете в раздела портфейл и въведете сигурната парола, за да прехвърлите монети</li>
+</ul>
+<p id="cch-cold_wallet">&nbsp;</p>
+
+<h2 id="студен-портфейл">Студен портфейл</h2>
+<ul>
+<li>Отидете в раздела за настройки с вашата защитена парола</li>
+<li>Експортирайте акаунт в Cold Wallet<pre><code>1. Подгответе нова машина (различна с минната машина)
+2. Посетете https://www.coctohug.xyz и щракнете върху Режим на портфейла, за да генерирате папки за създаване на docker
+3. Настройте папките на docker-compose [Инсталирайте Coctohug на Linux OS]
+4. На стартовия екран на WebUI този път генерирайте нов ключ
+5. Изчакайте няколко минути, за да се рестартира блокчейн разклоненията
+6. Отидете до всяка папка и изпълнете скрипт docker-compose stop &amp;&amp; docker-compose up -d
+7. Посетете http://localhost:12630/, и отидете на настройки - раздел за студен портфейл, за да експортирате адресите на студения портфейл
+8. Потвърдете ръчно, че всеки адрес е правилен, като сравните изтегления файл с информацията, показана в раздела Ключове
+9. Вземете 24 мнемонични думи чрез подобен терминален скрипт
+  docker exec -it coctohug-flora flora keys show --show-mnemonic-seed
+  docker exec -it coctohug-covid covid keys show --show-mnemonic-seed
+  docker exec -it coctohug-lucky lucky keys show --show-mnemonic-seed
+</code></pre>
+</li>
+<li>Импортирайте акаунт в Cold Wallet<pre><code>1. На вашата машина за копаене посетете настройки - раздел студен портфейл
+2. Импортирайте предишния изтеглен json файл на студен портфейл
+3. Изчакайте няколко минути и отидете в раздела на портфейла, за да видите дали адресът на студения портфейл е актуализиран или не
+4. Забележка: препоръчваме да архивирате конфигурациите на портфейла си преди импортиране
+</code></pre>
+<img src="../../images/cold_wallet-min.png" alt="English"></li>
+</ul>
+<p id="cch-secure_passphrase">&nbsp;</p>
+
+<h2 id="защитени-24-мнемонични-думи-с-парола">Защитени 24 мнемонични думи с парола</h2>
+<ul>
+<li><a target='_blank' href='https://github.com/raingggg/coctohug-passphrase'>coctohug-passphrase</a> може да се използва за защита на вашите 24 мнемонични думи</li>
+<li>Той криптира вашите ключове с парола, която само вие знаете</li>
+<li>Можете да го дешифрирате с паролата, когато добавяте нови блокчейн разклонения</li>
+</ul>
+<p id="cch-forks">&nbsp;</p>
+
+<h2 id="blockchain-forks">Blockchain Forks</h2>
+<ul>
+<li>Проверявайте coctohug github на всеки няколко дни</li>
+<li>Новите блокчейн разклонения ще бъдат поддържани много скоро</li>
+</ul>
+<p id="cch-harvester">&nbsp;</p>
+
+<h2 id="комбайн">комбайн</h2>
+<ul>
+<li>Посетете <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a> и щракнете върху Harvester Mode, за да генерирате папки за композиране на docker</li>
+<li>Посетете <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a> и щракнете върху Разреши Harvester, за да изградите връзката между контролера и комбайна</li>
+<li>Настройте папките на docker-compose <a href="#cch-linux">Инсталирайте Coctohug на Linux OS</a></li>
+<li>Няколко минути по-късно ще можете да видите комбайна в раздела ръце на WebUI</li>
+</ul>
+<p id="cch-upgrade">&nbsp;</p>
+
+<h2 id="подобряване-на">Подобряване на</h2>
+<ul>
+<li>Скрипт с един ред<pre><code>docker-compose stop &amp;&amp; docker-compose rm -f &amp;&amp; docker-compose pull &amp;&amp; docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>Можете също така да изпълнявате горните скриптове стъпка по стъпка<pre><code>docker-compose stop
+docker-compose rm -f
+docker-compose pull
+docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>В случай на несъвместим проблем с db, можете да премахнете съществуващия файл на базата данни, преди да изпълните началния скрипт на docker-compose от<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+</code></pre>
+</li>
+</ul>
+<p id="cch-local_language">&nbsp;</p>
+
+<h2 id="местен-език">Местен език</h2>
+<ul>
+<li>В горния десен ъгъл на WebUI изберете езика, който харесвате най-много</li>
+<li>Можете да превключите на други езици по-късно, ако желаете</li>
+</ul>
+<p id="cch-hardware_requirements">&nbsp;</p>
+
+<h2 id="хардуерни-изисквания">Хардуерни изисквания</h2>
+<ul>
+<li>Веднъж синхронизирани, процесори Intel® Core™ i7 от 10-то поколение би трябвало да са достатъчни за селското стопанство на 50+ блокчейн разклонения</li>
+<li>Въпреки това за началния етап на синхронизиране на възел, той наистина изяжда CPU. Затова препоръчваме да настроите 5 блокчейн разклонения на група и да започнете група по група</li>
+<li>Необходима памет е равна на: броят на блокчейн разклонения за копаене умножава 1.8G RAM</li>
+<li>Нормалният диск трябва да е добре за 50+ блокчейн разклонения</li>
+</ul>
+<h1 id="проекти-с-отворен-код-на-github">Проекти с отворен код на Github</h1>
+<p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
+<p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cryptodoge">cryptodoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
+<p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
+<p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<h2 id="известие-за-търговска-марка">Известие за търговска марка</h2>
+<p>CHIA NETWORK INC, CHIA™, CHIA BLOCKCHAIN™, CHIA PROTOCOL™, CHIALISP™ и „логото на листа“ (включително само логото на листата, когато се отнася за или указва Chia), са търговски марки или регистрирани търговски марки на Chia Network, Inc. ., корпорация от Делауеър. <em>Няма връзка между този проект Coctohug и основния проект Chia Network.</em></p>

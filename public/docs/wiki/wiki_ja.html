@@ -1,0 +1,279 @@
+<h1 id="coctohug-webブラウザからマイニングする数十のchiaブロックチェーンフォークを管理します！">Coctohug-Webブラウザからマイニングする数十のchiaブロックチェーンフォークを管理します！</h1>
+<ul>
+<li>数十の言語をサポートする優れたローカリゼーション： <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
+</ul>
+<p>を使用した簡単なセットアップ <a href="https://www.coctohug.xyz/">クイックスタート</a></p>
+<p><em>私たちの助けを求める <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/channels/914698944435613716/914698944435613718">Discord</a></em>.</p>
+<h1 id="クイックスタート">クイックスタート</h1>
+<ul>
+<li><a href="#cch-linux">LinuxOSでCoctohugをセットアップする</a></li>
+<li><a href="#cch-windows">WindowsOSでCoctohugをセットアップする</a></li>
+<li><a href="#cch-macOS">MacOSでCoctohugをセットアップする</a></li>
+</ul>
+<h1 id="共通設定">共通設定</h1>
+<ul>
+<li><a href="#cch-password">パスワード</a></li>
+<li><a href="#cch-keys">キー</a></li>
+<li><a href="#cch-farming">鉱業</a></li>
+<li><a href="#cch-monitoring">モニタリング</a></li>
+<li><a href="#cch-nft_recovery">NFTリカバリ</a></li>
+<li><a href="#cch-blocks_found">見つかったブロック/受け取ったコイン</a></li>
+<li><a href="#cch-farming_warnings">マイニング警告</a></li>
+<li><a href="#cch-daily_report">日報</a></li>
+<li><a href="#cch-weekly_report">ウィークリーレポート</a></li>
+<li><a href="#cch-node_sync">ノード同期</a></li>
+<li><a href="#cch-connections_management">接続管理</a></li>
+<li><a href="#cch-wallets_management">ウォレット管理</a></li>
+<li><a href="#cch-hands_management">手の管理</a></li>
+<li><a href="#cch-transfer_coins">コインを転送する</a></li>
+</ul>
+<h1 id="高度な設定">高度な設定</h1>
+<ul>
+<li><a href="#cch-cold_wallet">コールドウォレット</a></li>
+<li><a href="#cch-secure_passphrase">安全なパスフレーズ24ニーモニックワード</a></li>
+<li><a href="#cch-forks">ブロックチェーンフォーク</a></li>
+<li><a href="#cch-harvester">ハーベスター</a></li>
+<li><a href="#cch-upgrade">アップグレード</a></li>
+</ul>
+<h1 id="ベストプラクティス">ベストプラクティス</h1>
+<ul>
+<li><a href="#cch-local_language">現地の言語</a></li>
+<li><a href="#cch-hardware_requirements">ハードウェア要件</a></li>
+</ul>
+<p id="cch-linux">&nbsp;</p>
+
+<h2 id="linuxosでcoctohugをセットアップする">LinuxOSでCoctohugをセットアップする</h2>
+<ul>
+<li>設定 <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
+<li>サイトに移動 <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, 次に、必要なすべてのフォームフィールドに入力し、生成されたzip形式のdocker-composeファイルをダウンロードします</li>
+<li>ダウンロードしたフォルダを解凍して、作業ディレクトリにコピーします</li>
+<li>すべてのフォルダを順番に実行します。<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>ブラウザを開き、URLを使用してWebUIにアクセスします <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>注1：ノードの同期を初めて行う場合、chiaブロックチェーンフォークは実際にCPUを消費するため、5つを超えるブロックチェーンフォークを同時に起動しないでください。</li>
+<li>注2：各ブロックチェーンフォークには約1.8GのRAMが必要なので、コンピュータのメモリに基づいていくつかのブロックチェーンフォークを選択してください</li>
+</ul>
+<p id="cch-windows">&nbsp;</p>
+
+<h2 id="windowsosでcoctohugをセットアップする">WindowsOSでCoctohugをセットアップする</h2>
+<ul>
+<li>設定 <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
+<li>WSLを使用してUbuntuまたは他のLinuxシステムをインストールします</li>
+<li>残りの手順は上記と同じです <a href="#cch-linux">LinuxOSでCoctohugをセットアップする</a></li>
+</ul>
+<p id="cch-macOS">&nbsp;</p>
+
+<h2 id="macosでcoctohugをセットアップする">MacOSでCoctohugをセットアップする</h2>
+<ul>
+<li>と同じ <a href="#cch-linux">LinuxOSでCoctohugをセットアップする</a></li>
+</ul>
+<p id="cch-password">&nbsp;</p>
+
+<h2 id="パスワード">パスワード</h2>
+<ul>
+<li>初めてURLを使用してWebUIにアクセスするときに、安全な設定のためにパスワードを設定するように求められます <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>安全な設定には、コールドウォレット、コイン転送、ブロックチェーンフォークの再起動、ハーベスターなどがあります。</li>
+</ul>
+<p id="cch-keys">&nbsp;</p>
+
+<h2 id="キー">キー</h2>
+<ul>
+<li>初めてURLを使用してWebUIにアクセスすると、24のニーモニックワードを入力するように求められます。これは主に農業目的です。</li>
+<li>または、まったく新しいキーを1つ生成することもできます。これは主にコールドウォレットを目的としています。</li>
+</ul>
+<p id="cch-farming">&nbsp;</p>
+
+<h2 id="鉱業">鉱業</h2>
+<ul>
+<li>ノードの同期が完了すると、ファーミングは自動的に開始されます</li>
+<li>その後、さまざまな方法でマイニングステータスを監視できるようになります</li>
+</ul>
+<p><img src="../../images/coctohug-summary-en-min.png" alt="English"></p>
+<p id="cch-monitoring">&nbsp;</p>
+
+<h2 id="モニタリング">モニタリング</h2>
+<ul>
+<li>[概要]タブには、マイニングされたコインの合計、アカウントの残高、プロット数、プロットサイズ、ネットスペースサイズ、および勝利までの予想時間が表示されます。</li>
+<li>[概要]タブの各ブロックチェーンフォークパネルは、正常に機能している場合は明るい緑色の背景になり、そうでない場合は明るい黄色の背景になります。</li>
+<li>他のタブを使用して詳細を調べることもできます</li>
+</ul>
+<p id="cch-nft_recovery">&nbsp;</p>
+
+<h2 id="nftリカバリ">NFTリカバリ</h2>
+<ul>
+<li>[受け取ったコイン]タブには次のリンクがあります。 <a class="nav-link" target="_blank" href="https://alltheblocks.net/nft-recovery">NFT7 / 8の報酬を請求する</a></li>
+</ul>
+<p id="cch-blocks_found">&nbsp;</p>
+
+<h2 id="見つかったブロック受け取ったコイン">見つかったブロック/受け取ったコイン</h2>
+<ul>
+<li>見つかったブロックの総数を一覧表示します</li>
+<li>受け取ったコインの合計を一覧表示します</li>
+</ul>
+<p><img src="../../images/received-coins-min.png" alt="English"></p>
+<p id="cch-farming_warnings">&nbsp;</p>
+
+<h2 id="マイニング警告">マイニング警告</h2>
+<ul>
+<li>考えられるネットワークの問題を一覧表示する</li>
+<li>考えられるサインポイントの問題をリストする</li>
+<li>考えられるディスク検索の問題を一覧表示します</li>
+<li>考えられるプロット数の減少の問題をリストする</li>
+</ul>
+<p id="cch-daily_report">&nbsp;</p>
+
+<h2 id="日報">日報</h2>
+<ul>
+<li>見つかったブロック/日ごとに受け取ったコインを要約する</li>
+<li>日ごとにマイニング警告を要約する</li>
+</ul>
+<p><img src="../../images/daily_report-min.png" alt="English"></p>
+<p id="cch-weekly_report">&nbsp;</p>
+
+<h2 id="ウィークリーレポート">ウィークリーレポート</h2>
+<ul>
+<li>見つかったブロック/週ごとに受け取ったコインを要約する</li>
+<li>マイニング警告を週ごとに要約する</li>
+</ul>
+<p id="cch-node_sync">&nbsp;</p>
+
+<h2 id="ノード同期">ノード同期</h2>
+<ul>
+<li>ノードはデフォルトで自動的に同期されます</li>
+<li>[接続]または[ブロックチェーン]タブに移動して、詳細なステータスを確認できます</li>
+<li>ノードの同期を加速するには、 <a href="https://alltheblocks.net/">https://alltheblocks.net/</a> ノードリストとデータベースファイルを提供します（各ブロックチェーンをクリックすると、右上のセクションにあります）</li>
+</ul>
+<p id="cch-connections_management">&nbsp;</p>
+
+<h2 id="接続管理">接続管理</h2>
+<ul>
+<li>すべてのノード接続を一覧表示</li>
+<li>[接続]タブで接続を追加/削除できます</li>
+</ul>
+<p><img src="../../images/connections-min.png" alt="English"></p>
+<p id="cch-wallets_management">&nbsp;</p>
+
+<h2 id="ウォレット管理">ウォレット管理</h2>
+<ul>
+<li>ウォレットのステータスとアカウントの残高を一覧表示します</li>
+<li>ウォレットタブでコインを転送することもできます</li>
+</ul>
+<p><img src="../../images/wallets-min.png" alt="English"></p>
+<p id="cch-hands_management">&nbsp;</p>
+
+<h2 id="手の管理">手の管理</h2>
+<ul>
+<li>これは各ブロックチェーンフォークワーカーです</li>
+<li>もう耕作する予定がない場合は、片方の手を離してもかまいません。</li>
+</ul>
+<p id="cch-transfer_coins">&nbsp;</p>
+
+<h2 id="コインを転送する">コインを転送する</h2>
+<ul>
+<li>ウォレットタブに移動し、安全なパスワードを入力してコインを転送します</li>
+</ul>
+<p id="cch-cold_wallet">&nbsp;</p>
+
+<h2 id="コールドウォレット">コールドウォレット</h2>
+<ul>
+<li>安全なパスワードを使用して[設定]タブに移動します</li>
+<li>コールドウォレットアカウントのエクスポート<pre><code>1. 新しいマシンを準備します（マイニングマシンとは異なります）
+2. 訪問 https://www.coctohug.xyz ウォレットモードをクリックして、docker-composeフォルダーを生成します
+3. docker-composeフォルダーをセットアップします [LinuxOSでCoctohugをセットアップする]
+4. WebUI起動画面で、今回は新しいキーを生成します
+5. ブロックチェーンフォークが再起動するまで数分待ちます
+6. 各フォルダに移動してスクリプトを実行します docker-compose stop &amp;&amp; docker-compose up -d
+7. 訪問 http://localhost:12630/, [設定]-[コールドウォレット]タブに移動して、コールドウォレットアドレスをエクスポートします
+8. ダウンロードしたファイルを[キー]タブに表示される情報と比較して、各アドレスが手動で正しいことを確認します
+9. 同様のターミナルスクリプトで24のニーモニックワードを取得します
+  docker exec -it coctohug-flora flora keys show --show-mnemonic-seed
+  docker exec -it coctohug-covid covid keys show --show-mnemonic-seed
+  docker exec -it coctohug-lucky lucky keys show --show-mnemonic-seed
+</code></pre>
+</li>
+<li>コールドウォレットアカウントをインポートする<pre><code>1. マイニングマシンで、設定にアクセスします-コールドウォレットタブ
+2. 以前にダウンロードしたコールドウォレットのjsonファイルをインポートします
+3. 数分待ってから、[ウォレット]タブに移動して、コールドウォレットアドレスが更新されているかどうかを確認します
+4. 注：インポートする前にウォレット構成をバックアップすることをお勧めします
+</code></pre>
+<img src="../../images/cold_wallet-min.png" alt="English"></li>
+</ul>
+<p id="cch-secure_passphrase">&nbsp;</p>
+
+<h2 id="安全なパスフレーズ24ニーモニックワード">安全なパスフレーズ24ニーモニックワード</h2>
+<ul>
+<li><a target='_blank' href='https://github.com/raingggg/coctohug-passphrase'>coctohug-passphrase</a> 24のニーモニックワードを保護するために使用できます</li>
+<li>それはあなただけが知っているパスワードであなたの鍵を暗号化します</li>
+<li>新しいブロックチェーンフォークを追加するときに、パスワードで復号化できます</li>
+</ul>
+<p id="cch-forks">&nbsp;</p>
+
+<h2 id="ブロックチェーンフォーク">ブロックチェーンフォーク</h2>
+<ul>
+<li>数日ごとにcoctohuggithubを確認してください</li>
+<li>新しいブロックチェーンフォークはまもなくサポートされます</li>
+</ul>
+<p id="cch-harvester">&nbsp;</p>
+
+<h2 id="ハーベスター">ハーベスター</h2>
+<ul>
+<li>訪問 <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a> ハーベスタモードをクリックして、docker-composeフォルダーを生成します</li>
+<li>訪問 <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a> [ハーベスターにコントローラーとハーベスター間のリンクを構築することを許可する]をクリックします</li>
+<li>docker-composeフォルダーをセットアップします <a href="#cch-linux">LinuxOSでCoctohugをセットアップする</a></li>
+<li>数分後、WebUIの[ハンズ]タブにハーベスターが表示されます。</li>
+</ul>
+<p id="cch-upgrade">&nbsp;</p>
+
+<h2 id="アップグレード">アップグレード</h2>
+<ul>
+<li>1行のスクリプト<pre><code>docker-compose stop &amp;&amp; docker-compose rm -f &amp;&amp; docker-compose pull &amp;&amp; docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>上記のスクリプトを段階的に実行することもできます<pre><code>docker-compose stop
+docker-compose rm -f
+docker-compose pull
+docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>互換性のないdbの問題が発生した場合は、docker-compose startscriptを実行する前に既存のデータベースファイルを削除できます。<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+</code></pre>
+</li>
+</ul>
+<p id="cch-local_language">&nbsp;</p>
+
+<h2 id="現地の言語">現地の言語</h2>
+<ul>
+<li>WebUIの右上で、最も好きな言語を選択します</li>
+<li>必要に応じて、後で他の言語に切り替えることができます</li>
+</ul>
+<p id="cch-hardware_requirements">&nbsp;</p>
+
+<h2 id="ハードウェア要件">ハードウェア要件</h2>
+<ul>
+<li>同期が完了すると、第10世代Intel®Core™i7プロセッサーは、50以上のブロックチェーンフォークをファームするのに十分なはずです。</li>
+<li>ただし、最初のノード同期段階では、実際にCPUを消費します。したがって、グループごとに5つのブロックチェーンフォークを設定し、グループごとに開始することをお勧めします</li>
+<li>必要なメモリは次のとおりです。マイニングブロックチェーンフォークの数に1.8GRAMを掛ける</li>
+<li>通常のディスクは50以上のブロックチェーンフォークで問題ないはずです</li>
+</ul>
+<h1 id="githubのオープンソースプロジェクト">Githubのオープンソースプロジェクト</h1>
+<p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
+<p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cryptodoge">cryptodoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
+<p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
+<p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<h2 id="商標に関する通知">商標に関する通知</h2>
+<p>CHIA NETWORK INC、CHIA™、CHIA BLOCKCHAIN™、CHIA PROTOCOL™、CHIALISP™、および「リーフロゴ」（Chiaを指す場合はリーフロゴのみを含む）は、Chia Network、Incの商標または登録商標です。 。、デラウェア州法人。 <em>このCoctohugプロジェクトとメインのChiaNetworkプロジェクトの間に提携はありません。</em></p>

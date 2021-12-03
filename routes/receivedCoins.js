@@ -14,7 +14,7 @@ router.get('/', async (req, res, next) => {
         [Op.in]: ['EVT_INTIME_BLOCK_FOUND', 'EVT_INTIME_RECEIVE_COIN']
       }
     },
-    limit: 100,
+    limit: 200,
   });
   res.render('index', {data, pageName: 'receivedCoins' });
 });

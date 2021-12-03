@@ -1,0 +1,279 @@
+<h1 id="coctohug---gestionați-zeci-de-chia-blockchain-forks-extragerea-dintr-un-browser-web">Coctohug - Gestionați zeci de chia blockchain forks extragerea dintr-un browser web!</h1>
+<ul>
+<li>Localizare plăcută cu suport pentru zeci de limbi: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
+</ul>
+<p>Configurare ușoară folosind <a href="https://www.coctohug.xyz/">Pornire rapidă</a></p>
+<p><em>Căutați mai mult ajutor pe site-ul nostru <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/channels/914698944435613716/914698944435613718">Discord</a></em>.</p>
+<h1 id="pornire-rapidă">Pornire rapidă</h1>
+<ul>
+<li><a href="#cch-linux">Configurați Coctohug pe sistemul de operare Linux</a></li>
+<li><a href="#cch-windows">Configurați Coctohug pe sistemul de operare Windows</a></li>
+<li><a href="#cch-macOS">Configurați Coctohug pe Mac OS</a></li>
+</ul>
+<h1 id="setările-comune">Setările comune</h1>
+<ul>
+<li><a href="#cch-password">Parola</a></li>
+<li><a href="#cch-keys">Chei</a></li>
+<li><a href="#cch-farming">Minerit</a></li>
+<li><a href="#cch-monitoring">Monitorizarea</a></li>
+<li><a href="#cch-nft_recovery">Recuperare NFT</a></li>
+<li><a href="#cch-blocks_found">Blocuri găsite/Monede primite</a></li>
+<li><a href="#cch-farming_warnings">Avertismente miniere</a></li>
+<li><a href="#cch-daily_report">Raport zilnic</a></li>
+<li><a href="#cch-weekly_report">Raport saptamanal</a></li>
+<li><a href="#cch-node_sync">Sincronizarea nodului</a></li>
+<li><a href="#cch-connections_management">Managementul conexiunilor</a></li>
+<li><a href="#cch-wallets_management">Gestionarea portofelelor</a></li>
+<li><a href="#cch-hands_management">Managementul mâinilor</a></li>
+<li><a href="#cch-transfer_coins">Transfer monede</a></li>
+</ul>
+<h1 id="setari-avansate">Setari avansate</h1>
+<ul>
+<li><a href="#cch-cold_wallet">Portofel rece</a></li>
+<li><a href="#cch-secure_passphrase">Secure Passphrased 24 de cuvinte mnemonice</a></li>
+<li><a href="#cch-forks">Blockchain Forks</a></li>
+<li><a href="#cch-harvester">Secerator</a></li>
+<li><a href="#cch-upgrade">Modernizare</a></li>
+</ul>
+<h1 id="cele-mai-bune-practici">Cele mai bune practici</h1>
+<ul>
+<li><a href="#cch-local_language">Limba locala</a></li>
+<li><a href="#cch-hardware_requirements">Cerințe hardware</a></li>
+</ul>
+<p id="cch-linux">&nbsp;</p>
+
+<h2 id="configurați-coctohug-pe-sistemul-de-operare-linux">Configurați Coctohug pe sistemul de operare Linux</h2>
+<ul>
+<li>Înființat <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
+<li>Accesați site-ul <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, apoi introduceți toate câmpurile de formular necesare și descărcați fișierele docker-compose arhivate generate</li>
+<li>Dezarhivați folderele descărcate și copiați-le în directorul dvs. de lucru</li>
+<li>Rulați toate folderele după comandă:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>Deschideți browserul și accesați WebUI cu url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>Nota 1: Nu porniți mai mult de 5 furci blockchain în același timp, deoarece furcile chia blockchain mănâncă cu adevărat CPU atunci când se sincronizează nodul pentru prima dată</li>
+<li>Nota 2: Aproximativ 1,8 G RAM este necesar pentru fiecare fork blockchain, așa că alegeți câteva fork blockchain pe baza memoriei computerului dvs.</li>
+</ul>
+<p id="cch-windows">&nbsp;</p>
+
+<h2 id="configurați-coctohug-pe-sistemul-de-operare-windows">Configurați Coctohug pe sistemul de operare Windows</h2>
+<ul>
+<li>Înființat <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
+<li>Instalați Ubuntu sau alt sistem Linux folosind WSL</li>
+<li>Pașii rămași sunt aceiași cu cei de mai sus <a href="#cch-linux">Configurați Coctohug pe sistemul de operare Linux</a></li>
+</ul>
+<p id="cch-macOS">&nbsp;</p>
+
+<h2 id="configurați-coctohug-pe-mac-os">Configurați Coctohug pe Mac OS</h2>
+<ul>
+<li>Acelasi cu <a href="#cch-linux">Configurați Coctohug pe sistemul de operare Linux</a></li>
+</ul>
+<p id="cch-password">&nbsp;</p>
+
+<h2 id="parola">Parola</h2>
+<ul>
+<li>Vi se va solicita să setați o parolă pentru setările securizate, când accesați pentru prima dată WebUI cu url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
+<li>Setările sigure includ: Cold Wallet, Coin Transfer, Restart Blockchain Forks, Harvester...</li>
+</ul>
+<p id="cch-keys">&nbsp;</p>
+
+<h2 id="chei">Chei</h2>
+<ul>
+<li>Vi se va solicita să introduceți cele 24 de cuvinte mnemonice atunci când accesați pentru prima dată WebUI cu url - aceasta este în principal pentru scopuri agricole</li>
+<li>Sau puteți genera o cheie complet nouă - aceasta este în principal pentru scopul portofelului rece</li>
+</ul>
+<p id="cch-farming">&nbsp;</p>
+
+<h2 id="minerit">Minerit</h2>
+<ul>
+<li>Odată ce sincronizarea nodurilor este finalizată, agricultura ar trebui să înceapă automat</li>
+<li>Apoi veți putea monitoriza starea mineritului în diferite moduri</li>
+</ul>
+<p><img src="../../images/coctohug-summary-en-min.png" alt="English"></p>
+<p id="cch-monitoring">&nbsp;</p>
+
+<h2 id="monitorizarea">Monitorizarea</h2>
+<ul>
+<li>Fila Rezumat poate afișa: Total de monede extrase, soldul contului, numărul parcelelor, dimensiunea parcelei, dimensiunea spațiului net și timpul așteptat pentru câștig</li>
+<li>fiecare panou de furcă blockchain din fila Rezumat va avea un fundal verde deschis dacă funcționează bine, altfel va fi un fundal galben deschis</li>
+<li>De asemenea, puteți examina detaliile folosind alte file</li>
+</ul>
+<p id="cch-nft_recovery">&nbsp;</p>
+
+<h2 id="recuperare-nft">Recuperare NFT</h2>
+<ul>
+<li>Fila Monede primite are un link: <a class="nav-link" target="_blank" href="https://alltheblocks.net/nft-recovery">Revendicați-vă recompensele NFT 7/8</a></li>
+</ul>
+<p id="cch-blocks_found">&nbsp;</p>
+
+<h2 id="blocuri-găsitemonede-primite">Blocuri găsite/Monede primite</h2>
+<ul>
+<li>Listează blocurile totale găsite</li>
+<li>Listați numărul total de monede primite</li>
+</ul>
+<p><img src="../../images/received-coins-min.png" alt="English"></p>
+<p id="cch-farming_warnings">&nbsp;</p>
+
+<h2 id="avertismente-miniere">Avertismente miniere</h2>
+<ul>
+<li>Listați posibilele probleme de rețea</li>
+<li>Listați posibilele probleme de semnalizare</li>
+<li>Listați posibilele probleme de căutare pe disc</li>
+<li>Listați posibilele probleme de scădere a numărului de parcele</li>
+</ul>
+<p id="cch-daily_report">&nbsp;</p>
+
+<h2 id="raport-zilnic">Raport zilnic</h2>
+<ul>
+<li>Rezumați blocurile găsite/Monede primite pe zi</li>
+<li>Rezumați avertismentele miniere pe zi</li>
+</ul>
+<p><img src="../../images/daily_report-min.png" alt="English"></p>
+<p id="cch-weekly_report">&nbsp;</p>
+
+<h2 id="raport-saptamanal">Raport saptamanal</h2>
+<ul>
+<li>Rezumați blocurile găsite / monedele primite pe săptămână</li>
+<li>Rezumați avertismentele miniere pe săptămână</li>
+</ul>
+<p id="cch-node_sync">&nbsp;</p>
+
+<h2 id="sincronizarea-nodului">Sincronizarea nodului</h2>
+<ul>
+<li>Node se va sincroniza automat în mod implicit</li>
+<li>Puteți accesa fila Conexiuni sau Blockchains pentru a examina starea detaliată</li>
+<li>Pentru a vă accelera sincronizarea nodului, <a href="https://alltheblocks.net/">https://alltheblocks.net/</a> oferă lista de noduri și fișierul bazei de date (faceți clic pe fiecare blockchain și apoi le puteți găsi în secțiunea din dreapta sus)</li>
+</ul>
+<p id="cch-connections_management">&nbsp;</p>
+
+<h2 id="managementul-conexiunilor">Managementul conexiunilor</h2>
+<ul>
+<li>Listați toate conexiunile nodurilor</li>
+<li>Puteți adăuga/elimina conexiuni în fila Conexiuni</li>
+</ul>
+<p><img src="../../images/connections-min.png" alt="English"></p>
+<p id="cch-wallets_management">&nbsp;</p>
+
+<h2 id="gestionarea-portofelelor">Gestionarea portofelelor</h2>
+<ul>
+<li>Listați starea portofelului și soldul contului</li>
+<li>De asemenea, puteți transfera monede în fila portofel</li>
+</ul>
+<p><img src="../../images/wallets-min.png" alt="English"></p>
+<p id="cch-hands_management">&nbsp;</p>
+
+<h2 id="managementul-mâinilor">Managementul mâinilor</h2>
+<ul>
+<li>Acesta este fiecare lucrători blockchain furk</li>
+<li>Puteți îndepărta o mână când nu intenționați să o mai cultivați</li>
+</ul>
+<p id="cch-transfer_coins">&nbsp;</p>
+
+<h2 id="transfer-monede">Transfer monede</h2>
+<ul>
+<li>Accesați fila Portofel și introduceți parola sigură pentru a transfera monede</li>
+</ul>
+<p id="cch-cold_wallet">&nbsp;</p>
+
+<h2 id="portofel-rece">Portofel rece</h2>
+<ul>
+<li>Accesați fila Setări cu parola dvs. sigură</li>
+<li>Exportați contul Cold Wallet<pre><code>1. Pregătiți o nouă mașină (diferită cu mașina de minerit)
+2. Vizita https://www.coctohug.xyz și faceți clic pe Modul portofel pentru a genera foldere docker-compose
+3. Configurați folderele docker-compose [Configurați Coctohug pe sistemul de operare Linux]
+4. Pe ecranul de lansare WebUI, generați o cheie nouă de data aceasta
+5. Așteptați câteva minute pentru repornirea fork-urilor blockchain
+6. Accesați fiecare folder și executați scriptul docker-compose stop &amp;&amp; docker-compose up -d
+7. Vizita http://localhost:12630/, și accesați setări - fila portofel rece pentru a exporta adresele portofelului rece
+8. Confirmați că fiecare adresă este corectă manual, comparând fișierul descărcat cu informațiile afișate în fila Chei
+9. Obțineți 24 de cuvinte mnemonice printr-un script terminal similar
+  docker exec -it coctohug-flora flora keys show --show-mnemonic-seed
+  docker exec -it coctohug-covid covid keys show --show-mnemonic-seed
+  docker exec -it coctohug-lucky lucky keys show --show-mnemonic-seed
+</code></pre>
+</li>
+<li>Importați contul Cold Wallet<pre><code>1. Pe mașina dvs. de minerit, accesați setări - fila portofel rece
+2. Importați fișierul cold wallet json descărcat anterior
+3. Așteptați câteva minute și accesați fila Portofel pentru a vedea dacă adresa portofelului rece este actualizată sau nu
+4. Notă: vă recomandăm să faceți backup pentru configurațiile portofelului înainte de import
+</code></pre>
+<img src="../../images/cold_wallet-min.png" alt="English"></li>
+</ul>
+<p id="cch-secure_passphrase">&nbsp;</p>
+
+<h2 id="secure-passphrased-24-de-cuvinte-mnemonice">Secure Passphrased 24 de cuvinte mnemonice</h2>
+<ul>
+<li><a target='_blank' href='https://github.com/raingggg/coctohug-passphrase'>coctohug-passphrase</a> poate fi folosit pentru a vă asigura cele 24 de cuvinte mnemonice</li>
+<li>Îți criptează cheile cu o parolă pe care doar tu o cunoști</li>
+<li>Îl puteți decripta cu parola atunci când adăugați noi fork-uri blockchain</li>
+</ul>
+<p id="cch-forks">&nbsp;</p>
+
+<h2 id="blockchain-forks">Blockchain Forks</h2>
+<ul>
+<li>Verificați coctohug github la fiecare câteva zile</li>
+<li>Noile furci blockchain vor fi acceptate foarte curând</li>
+</ul>
+<p id="cch-harvester">&nbsp;</p>
+
+<h2 id="secerator">Secerator</h2>
+<ul>
+<li>Vizita <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a> și faceți clic pe Harvester Mode pentru a genera foldere docker-compose</li>
+<li>Vizita <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a> și faceți clic pe Allow Harvester pentru a construi legătura între controler și harvester</li>
+<li>Configurați folderele docker-compose <a href="#cch-linux">Configurați Coctohug pe sistemul de operare Linux</a></li>
+<li>Câteva minute mai târziu, veți putea vedea recoltatorul în fila mâini WebUI</li>
+</ul>
+<p id="cch-upgrade">&nbsp;</p>
+
+<h2 id="modernizare">Modernizare</h2>
+<ul>
+<li>Script cu o linie<pre><code>docker-compose stop &amp;&amp; docker-compose rm -f &amp;&amp; docker-compose pull &amp;&amp; docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>De asemenea, puteți executa scripturile de mai sus pas cu pas<pre><code>docker-compose stop
+docker-compose rm -f
+docker-compose pull
+docker-compose up -d --force-recreate
+</code></pre>
+</li>
+<li>În cazul unei probleme db incompatibile, puteți elimina fișierul bazei de date existent înainte de a executa scriptul de pornire docker-compose prin<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+</code></pre>
+</li>
+</ul>
+<p id="cch-local_language">&nbsp;</p>
+
+<h2 id="limba-locala">Limba locala</h2>
+<ul>
+<li>În dreapta sus a WebUI, alegeți limba care vă place cel mai mult</li>
+<li>Puteți trece la orice altă limbă mai târziu, dacă doriți</li>
+</ul>
+<p id="cch-hardware_requirements">&nbsp;</p>
+
+<h2 id="cerințe-hardware">Cerințe hardware</h2>
+<ul>
+<li>Odată sincronizate, procesoarele Intel® Core™ i7 de a 10-a generație ar trebui să fie suficiente pentru cultivarea a peste 50 de blocuri blockchain</li>
+<li>Cu toate acestea, pentru etapa inițială de sincronizare a nodului, chiar consumă CPU. Așa că vă recomandăm să configurați 5 fork-uri blockchain per grup și să începeți grup cu grup</li>
+<li>Memoria necesară este egală cu: numărul de furci blockchain de minerit multiplica 1,8 G RAM</li>
+<li>Discul normal ar trebui să fie bine pentru peste 50 de furci blockchain</li>
+</ul>
+<h1 id="proiecte-open-source-pe-github">Proiecte open source pe Github</h1>
+<p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
+<p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
+<p><a href="https://github.com/raingggg/coctohug-cryptodoge">cryptodoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
+<p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
+<p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<h2 id="notificare-privind-mărcile-comerciale">Notificare privind mărcile comerciale</h2>
+<p>CHIA NETWORK INC, CHIA™, CHIA BLOCKCHAIN™, CHIA PROTOCOL™, CHIALISP™ și „sigla frunzei” (inclusiv logo-ul frunzei atunci când se referă la sau indică Chia), sunt mărci comerciale sau mărci comerciale înregistrate ale Chia Network, Inc. ., o corporație din Delaware. <em>Nu există nicio legătură între acest proiect Coctohug și proiectul principal Chia Network.</em></p>
