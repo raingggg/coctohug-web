@@ -94,6 +94,11 @@ $(document).ready(function () {
     window.open('/settingsWeb/coldWalletExport');
   });
 
+  $('button#btnDownloadAllConfigs').click(function () {
+    $(this).attr('disabled', true);
+    window.open('/settingsWeb/downAllWalletConfigs');
+  });
+
   $('#inputImportColdWallet').change(function (e) {
     const [file] = document.querySelector('#inputImportColdWallet').files;
     const reader = new FileReader();
@@ -126,9 +131,11 @@ $(document).ready(function () {
       contentType: 'application/json',
       success: function (data) {
         alert(JSON.stringify(data, null, 2));
+        window.open('/settingsWeb/downAllWalletConfigs');
       },
       error: function (jqXHR, textStatus, err) {
         alert(JSON.stringify(err, null, 2));
+        window.open('/settingsWeb/downAllWalletConfigs');
       }
     });
   });

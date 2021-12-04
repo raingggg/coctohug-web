@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { readFile } = require('fs/promises');
 const { logger } = require('../utils/logger');
 const {
   restartBlockchain,
@@ -7,7 +8,7 @@ const {
   generateKeyBlockchain,
   saveColdWallet,
 } = require('../utils/chiaClient');
-const { blockchainConfig: { blockchain }, isValidAccessToken, getIp } = require('../utils/chiaConfig');
+const { blockchainConfig: { blockchain, config }, isValidAccessToken, getIp } = require('../utils/chiaConfig');
 
 router.get('/restart', async (req, res, next) => {
   if (!isValidAccessToken(req.header('tk'))) {
@@ -82,6 +83,22 @@ router.post('/savecoldwallet', async (req, res, next) => {
   }
 
   return res.json({ result });
+});
+
+router.get('/getConfigFile', async (req, res, next) => {
+  if (!isValidAccessToken(req.header('tk'))) {
+    logger.error('invalid access - blockchain getConfigFile: ', getIp(req));
+    return res.json({ data: 'invalid token' });
+  }
+
+  try {
+    const content = await readFile(config, 'utf8');
+    return res.json({ data: content });
+  } catch (e) {
+    logger.error(e);
+  }
+
+  return res.json({ data: "failed" });
 });
 
 module.exports = router;

@@ -38,6 +38,7 @@ Object.assign(blockchainConfig, {
   mncPath: getFullPath('.coctohug/mnc.txt'),
   coldWalletFile: getFullPath('.coctohug/coldwallet.json'),
   coctohugPath: getFullPath('.coctohug'),
+  downloadsPath: getFullPath('.coctohug/downloads'),
 });
 
 const getHostname = () => {

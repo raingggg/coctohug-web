@@ -7,6 +7,7 @@
   "coldwallet.export_notes": "Notes:<br/> 1. Only export the wallet address that matches 24 words in the mnemonic seed phrase - not including mnemonic words <br/> 2. You can enter `docker exec -it coctohug-flora flora keys show --show-mnemonic-seed` like script in your terminal to get the 24 mnemonic words",
   "coldwallet.import_button": "Import My Cold Wallet to Replace Existing Mining Reward Address",
   "coldwallet.import_message": "Please choose the cold wallet file:",
+  "coldwallet.download_all_configs": "We recommend backup existing config files first, by clicking this button to download them",
   "connections.add_new": "Add New Connection",
   "connections.adding": "Adding... Please check again few minutes later",
   "connections.disconnect_selected": "Disconnect Selected",

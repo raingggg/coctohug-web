@@ -1,12 +1,14 @@
 var i18n = require('i18n');
+const path = require('path');
 const axios = require('axios');
 const express = require('express');
-const { writeFile } = require('fs/promises');
+const { zip } = require('zip-a-folder');
+const { writeFile, mkdir } = require('fs/promises');
 const router = express.Router();
 const { Hand, Key, AppConfig } = require('../models');
 const { logger } = require('../utils/logger');
 const { getWalletAddress } = require('../utils/blockUtil');
-const { blockchainConfig: { coldWalletFile }, getWorkerToken } = require('../utils/chiaConfig');
+const { blockchainConfig: { coldWalletFile, downloadsPath }, getWorkerToken } = require('../utils/chiaConfig');
 
 router.get('/restartWeb', async (req, res, next) => {
   const data = await Hand.findAll({
@@ -33,7 +35,7 @@ router.get('/restartOp', async (req, res, next) => {
 
     const url = data && data[0] && data[0].url;
     const finalUrl = `${url}/blockchainsWorker/restart`;
-    const apiRes = await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hostname, blockchain) } });
+    const apiRes = await axios.get(finalUrl, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } });
     return res.json(apiRes.data);
   } catch (e) {
     logger.error('restartOp', e);
@@ -44,6 +46,45 @@ router.get('/restartOp', async (req, res, next) => {
 
 router.get('/coldWalletWeb', async (req, res, next) => {
   res.render('index', { pageName: 'coldWallet' });
+});
+
+router.get('/downAllWalletConfigs', async (req, res, next) => {
+  try {
+    const obj = {};
+    const data = await Hand.findAll({
+      where: {
+        mode: 'fullnode'
+      },
+      order: [
+        ['blockchain', 'ASC'],
+      ]
+    });
+
+    const tmpPath = new Date().toISOString().replaceAll(':', '-').substring(0, 19);
+    const configTmpPath = path.resolve(downloadsPath, tmpPath);
+    const configZipFile = path.resolve(downloadsPath, `${tmpPath}.zip`);
+    await mkdir(configTmpPath, { recursive: true });
+    for (let i = 0; i < data.length; i++) {
+      try {
+        const { url, hostname, blockchain } = data[i];
+        if (url) {
+          const finalUrl = `${url}/blockchainsWorker/getConfigFile`;
+          const res = await axios.get(finalUrl, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } });
+          const downloadDestination = path.resolve(configTmpPath, `${blockchain}_config.yaml`)
+          await writeFile(downloadDestination, res.data.data);
+        }
+      } catch (ex) {
+        logger.error(ex);
+      }
+    }
+
+    await zip(configTmpPath, configZipFile);
+    return res.download(configZipFile, `${tmpPath}.zip`);
+  } catch (e) {
+    logger.error('coldWalletExport', e);
+  }
+
+  return res.json({ result: 'failed' });
 });
 
 router.get('/coldWalletExport', async (req, res, next) => {
@@ -69,6 +110,7 @@ router.get('/coldWalletExport', async (req, res, next) => {
   return res.json({ result: 'failed' });
 });
 
+
 router.post('/coldWalletImport', async (req, res, next) => {
   try {
     let result = {};
@@ -86,10 +128,10 @@ router.post('/coldWalletImport', async (req, res, next) => {
         if (url && wallets[blockchain]) {
           const finalUrl = `${url}/blockchainsWorker/savecoldwallet`;
           const apiRes = await axios.post(finalUrl, { coldWalletAddress: wallets[blockchain] },
-            { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
+            { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
               logger.error(error);
             });
-          result[blockchain] = apiRes.data;
+          result[blockchain] = apiRes && apiRes.data;
         }
       } catch (ex) {
         logger.error(ex);
@@ -200,7 +242,7 @@ router.get('/harvesterWeb', async (req, res, next) => {
       try {
         const { url, hostname, blockchain } = data[i];
         const finalUrl = `${url}/certificates/allowHarvester`;
-        const apiRes = await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
+        const apiRes = await axios.get(finalUrl, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
           logger.error(error);
         });
       } catch (ex) {
