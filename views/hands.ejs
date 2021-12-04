@@ -37,7 +37,7 @@
             <%= dt.mode %>
           </td>
           <td>
-            <%- dt.versions.replace(/\n/g, "</br>" ) %>
+            <%- dt.versions && dt.versions.replace(/\n/g, "</br>" ) %>
           </td>
           <td>
             <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>

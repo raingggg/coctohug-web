@@ -15,7 +15,7 @@
     <hr>
 
     <div>
-      <button class="btn btn-warning" id="btnDownloadAllConfigs">
+      <button class="btn btn-primary" id="btnDownloadAllConfigs">
         <%= __('coldwallet.download_all_configs') %>
       </button>
     </div>
@@ -24,7 +24,7 @@
         <%= __('coldwallet.import_message') %>
       </p>
       <p><input type="file" id="inputImportColdWallet" name="inputImportColdWallet" accept=".json"></p>
-      <p><textarea id="textareaImportColdWallet"></textarea></p>
+      <p><textarea id="textareaImportColdWallet" disabled></textarea></p>
       <button class="btn btn-outline-danger" id="btnImportColdWallet">
         <%= __('coldwallet.import_button') %>
       </button>

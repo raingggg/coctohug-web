@@ -30,7 +30,7 @@
       </div>
       <div>
         <hr>
-        <%- dt.details.replace(/\n/g, "</br>" ) %>
+        <%- dt.details && dt.details.replace(/\n/g, "</br>" ) %>
       </div>
       <div class="transferMoney" data-blockchain="<%= dt.blockchain %>" data-hostname="<%= dt.hostname %>">
         <hr>

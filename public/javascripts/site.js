@@ -112,13 +112,16 @@ $(document).ready(function () {
     }
   });
 
+  let coldWalletImportModal = null;
   $("#btnImportColdWallet").click(function (e) {
-    const coldWalletImportModal = new bootstrap.Modal(document.getElementById('coldWalletImportModal'), { keyboard: false });
+    if (!coldWalletImportModal) {
+      coldWalletImportModal = new bootstrap.Modal(document.getElementById('coldWalletImportModal'), { keyboard: false });
+    }
     coldWalletImportModal.show();
   });
 
   $("#btnColdWalletImportConfirm").click(function (e) {
-    e.preventDefault();
+    if (coldWalletImportModal) coldWalletImportModal.hide();
 
     $(this).prop("disabled", true);
 
@@ -131,11 +134,9 @@ $(document).ready(function () {
       contentType: 'application/json',
       success: function (data) {
         alert(JSON.stringify(data, null, 2));
-        window.open('/settingsWeb/downAllWalletConfigs');
       },
       error: function (jqXHR, textStatus, err) {
         alert(JSON.stringify(err, null, 2));
-        window.open('/settingsWeb/downAllWalletConfigs');
       }
     });
   });

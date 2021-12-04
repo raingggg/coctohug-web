@@ -23,7 +23,7 @@
             <%= dt.createdAt.toLocaleString("en-US", {hour12: false}) %>
           </td>
           <td>
-            <%- dt.message.replace(/\n/g, "<br/>" ) %>
+            <%- dt.message && dt.message.replace(/\n/g, "<br/>" ) %>
           </td>
           <td>
             <%= dt.blockchain %>

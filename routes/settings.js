@@ -35,8 +35,8 @@ router.get('/restartOp', async (req, res, next) => {
 
     const url = data && data[0] && data[0].url;
     const finalUrl = `${url}/blockchainsWorker/restart`;
-    const apiRes = await axios.get(finalUrl, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } });
-    return res.json(apiRes.data);
+    const apiRes = await axios.get(finalUrl, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) { logger.error(error); });
+    return res.json(apiRes && apiRes.data);
   } catch (e) {
     logger.error('restartOp', e);
   }
@@ -69,9 +69,11 @@ router.get('/downAllWalletConfigs', async (req, res, next) => {
         const { url, hostname, blockchain } = data[i];
         if (url) {
           const finalUrl = `${url}/blockchainsWorker/getConfigFile`;
-          const res = await axios.get(finalUrl, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } });
-          const downloadDestination = path.resolve(configTmpPath, `${blockchain}_config.yaml`)
-          await writeFile(downloadDestination, res.data.data);
+          const res = await axios.get(finalUrl, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) { logger.error(error); });
+          if (res) {
+            const downloadDestination = path.resolve(configTmpPath, `${blockchain}_config.yaml`)
+            await writeFile(downloadDestination, res.data.data);
+          }
         }
       } catch (ex) {
         logger.error(ex);
