@@ -54,8 +54,9 @@ $(document).ready(function () {
 
     $(this).prop("disabled", true);
     $(this).closest('#main-form').find('.generating-wrapper').removeClass('visually-hidden');
-    $('#main-form').attr('action', '/walletsWeb/generateNew');
-    $("#main-form").submit();
+    $.get('/walletsWeb/generateNew', function (data) {
+      alert(JSON.stringify(data, null, 2));
+    });
   });
 
   $('.nav-tab').click(function () {

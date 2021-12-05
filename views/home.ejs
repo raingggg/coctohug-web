@@ -45,13 +45,13 @@
         <%= __('home.generate_message') %>
           <%= mncPath %>
       </p>
+      <div class="generating-wrapper visually-hidden text-danger">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        <%= __('home.generating') %> <i>docker-compose start up -d</i>
+      </div>
       <button class="btn btn-outline-success" id="btnGenerate">
         <%= __('home.generate_button') %>
       </button>
-      <div class="generating-wrapper visually-hidden text-danger">
-        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-        <%= __('home.generating') %>
-      </div>
     </form>
   </div>
 </div>

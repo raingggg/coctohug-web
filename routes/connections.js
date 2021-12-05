@@ -2,6 +2,7 @@ var i18n = require('i18n');
 const axios = require('axios');
 const express = require('express');
 const router = express.Router();
+const { Op } = require("sequelize");
 const { Connection, Hand } = require('../models');
 const { parseConnecitons } = require('../utils/chiaParser');
 const { getWorkerToken } = require('../utils/chiaConfig');
@@ -24,7 +25,7 @@ router.get('/', async (req, res, next) => {
   })
 
 
-  res.render('index', {data, pageName: 'connections' });
+  res.render('index', { data, pageName: 'connections' });
 });
 
 router.post('/remove', async (req, res, next) => {
@@ -32,7 +33,7 @@ router.post('/remove', async (req, res, next) => {
     const { blockchain, hostname, nodeIds } = req.body;
     const data = await Hand.findOne({
       where: {
-        mode: 'fullnode',
+        mode: { [Op.in]: ['fullnode', 'wallet'] },
         blockchain,
         hostname
       }
@@ -57,7 +58,7 @@ router.post('/add', async (req, res, next) => {
     const { blockchain, hostname, connection } = req.body;
     const data = await Hand.findOne({
       where: {
-        mode: 'fullnode',
+        mode: { [Op.in]: ['fullnode', 'wallet'] },
         blockchain,
         hostname
       }

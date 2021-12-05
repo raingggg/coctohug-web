@@ -37,7 +37,7 @@
   "home.enter_24_words": "Please enter exactly 24 words in the mnemonic seed phrase to import.",
   "home.generate_button": "Generate New Key",
   "home.generate_message": "You can generate a brand-new mnemonic phrase that will be written to path:",
-  "home.generating": "Generating... You will be redirected to summary page once the operation is done.",
+  "home.generating": "Generating... Please check keys tab few minutes later. If it fails, you may restart the docker containers by executing scripts:",
   "home.import_button": "Import Existing Key",
   "home.import_message": "To get started with Coctohug, either import your existing 24-word mnemonic seed phrase:",
   "home.importing": "Import... You will be redirected to summary page once the operation is done.",

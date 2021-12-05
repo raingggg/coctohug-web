@@ -2,12 +2,14 @@ var i18n = require('i18n');
 const axios = require('axios');
 const express = require('express');
 const router = express.Router();
+const { Op } = require("sequelize");
 const { Wallet, Hand, AppConfig } = require('../models');
 const { logger } = require('../utils/logger');
 const { saveMNC } = require('../utils/chiaClient');
 const chainConfigs = require('../utils/chainConfigs');
-const { getWorkerToken, getIp } = require('../utils/chiaConfig');
+const { getWorkerToken, getIp, isFullnodeMode } = require('../utils/chiaConfig');
 
+const isFullnode = isFullnodeMode();
 const UNSYNC_THRESHHOLD = 10 * 60 * 1000; // 10 mins
 router.get('/', async (req, res, next) => {
   const data = await Wallet.findAll({
@@ -48,11 +50,11 @@ router.post('/importNew', async (req, res, next) => {
   return res.redirect('/reviewWeb');
 });
 
-router.post('/generateNew', async (req, res, next) => {
+router.get('/generateNew', async (req, res, next) => {
   try {
     const data = await Hand.findAll({
       where: {
-        mode: 'fullnode'
+        mode: { [Op.in]: ['fullnode', 'wallet'] },
       }
     });
 
@@ -66,12 +68,15 @@ router.post('/generateNew', async (req, res, next) => {
       if (other) gResult = await genKey(other);
     }
 
-    if (gResult) await addKeyNRestart(data);
+    if (gResult) {
+      await addKeyNRestart(data);
+      return res.json({ status: 'success' });
+    }
   } catch (e) {
     logger.error(e);
   }
 
-  return res.redirect('/reviewWeb');
+  return res.json({ status: 'failed' });
 });
 
 router.post('/transferCoin', async (req, res, next) => {
@@ -84,7 +89,7 @@ router.post('/transferCoin', async (req, res, next) => {
     if (data && data.value === password) {
       const hand = await Hand.findOne({
         where: {
-          mode: 'fullnode',
+          mode: { [Op.in]: ['fullnode', 'wallet'] },
           blockchain,
           hostname,
         }
@@ -133,8 +138,10 @@ const addKeyNRestart = async (data) => {
       let finalUrl = `${hand.url}/blockchainsWorker/addkey`;
       await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hand.hostname, hand.blockchain) } }).catch(function (error) { logger.error(error); });
 
-      finalUrl = `${hand.url}/blockchainsWorker/restart`;
-      await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hand.hostname, hand.blockchain) } }).catch(function (error) { logger.error(error); });
+      if (isFullnode) {
+        finalUrl = `${hand.url}/blockchainsWorker/restart`;
+        await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hand.hostname, hand.blockchain) } }).catch(function (error) { logger.error(error); });
+      }
     } catch (ex) {
       logger.error(ex);
     }

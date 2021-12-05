@@ -2,6 +2,7 @@ var i18n = require('i18n');
 const path = require('path');
 const axios = require('axios');
 const express = require('express');
+const { Op } = require("sequelize");
 const { zip } = require('zip-a-folder');
 const { writeFile, mkdir } = require('fs/promises');
 const router = express.Router();
@@ -13,7 +14,7 @@ const { blockchainConfig: { coldWalletFile, downloadsPath }, getWorkerToken } = 
 router.get('/restartWeb', async (req, res, next) => {
   const data = await Hand.findAll({
     where: {
-      mode: 'fullnode'
+      mode: { [Op.in]: ['fullnode', 'wallet'] },
     },
     order: [
       ['blockchain', 'ASC'],
@@ -27,7 +28,7 @@ router.get('/restartOp', async (req, res, next) => {
     const { hostname, blockchain } = req.query;
     const data = await Hand.findAll({
       where: {
-        mode: 'fullnode',
+        mode: { [Op.in]: ['fullnode', 'wallet'] },
         hostname,
         blockchain
       }
@@ -53,7 +54,7 @@ router.get('/downAllWalletConfigs', async (req, res, next) => {
     const obj = {};
     const data = await Hand.findAll({
       where: {
-        mode: 'fullnode'
+        mode: { [Op.in]: ['fullnode', 'wallet'] },
       },
       order: [
         ['blockchain', 'ASC'],
@@ -120,7 +121,7 @@ router.post('/coldWalletImport', async (req, res, next) => {
 
     const data = await Hand.findAll({
       where: {
-        mode: 'fullnode'
+        mode: { [Op.in]: ['fullnode', 'wallet'] },
       }
     });
 
