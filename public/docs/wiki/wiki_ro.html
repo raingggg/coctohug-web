@@ -57,14 +57,20 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 <li>Deschideți browserul și accesați WebUI cu url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Nota 1: Nu porniți mai mult de 5 furci blockchain în același timp, deoarece furcile chia blockchain mănâncă cu adevărat CPU atunci când se sincronizează nodul pentru prima dată</li>
 <li>Nota 2: Aproximativ 1,8 G RAM este necesar pentru fiecare fork blockchain, așa că alegeți câteva fork blockchain pe baza memoriei computerului dvs.</li>
+<li>Nota 3: Dacă există probleme, poate fi necesar să rulați din nou toate folderele după comandă:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>Notă 4: poate fi necesar să adăugați porturi de permisie de la 12630 la 12700 în setările firewall-ului sistemului dvs.</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="configurați-coctohug-pe-sistemul-de-operare-windows">Configurați Coctohug pe sistemul de operare Windows</h2>
 <ul>
-<li>Înființat <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
-<li>Instalați Ubuntu sau alt sistem Linux folosind WSL</li>
-<li>Pașii rămași sunt aceiași cu cei de mai sus <a href="#cch-linux">Configurați Coctohug pe sistemul de operare Linux</a></li>
+<li>Acelasi cu <a href="#cch-linux">Configurați Coctohug pe sistemul de operare Linux</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 

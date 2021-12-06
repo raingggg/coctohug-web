@@ -57,14 +57,20 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 <li>Tarayıcıyı açın ve url ile WebUI&#39;ye erişin <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Not 1: Chia blok zinciri çatalları, düğüm senkronizasyonu ilk kez yapıldığında gerçekten CPU yediğinden, aynı anda 5&#39;ten fazla blok zinciri çatalı başlatmayın.</li>
 <li>Not 2: Her blok zinciri çatalı için yaklaşık 1.8G RAM gereklidir, bu nedenle bilgisayar belleğinize göre bazı blok zincir çatalları seçin</li>
+<li>Not 3: Herhangi bir sorun varsa, tüm klasörleri sırayla yeniden çalıştırmanız gerekebilir:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>Not 4: Sistem güvenlik duvarı ayarlarınıza 12630&#39;dan 12700&#39;e kadar izin verilen bağlantı noktaları eklemeniz gerekebilir.</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="windows-işletim-sisteminde-coctohugu-kurun">Windows işletim sisteminde Coctohug&#39;u kurun</h2>
 <ul>
-<li>Kurmak <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
-<li>WSL kullanarak Ubuntu veya diğer Linux sistemlerini kurun</li>
-<li>Kalan adımlar yukarıdaki ile aynıdır <a href="#cch-linux">Linux işletim sisteminde Coctohug&#39;u kurun</a></li>
+<li>İle aynı <a href="#cch-linux">Linux işletim sisteminde Coctohug&#39;u kurun</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 

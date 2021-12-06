@@ -57,14 +57,20 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 <li>Abre o navegador e accede á WebUI con url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Nota 1: Non inicie máis de 5 forks de cadea de bloques ao mesmo tempo, xa que os garfos de cadea de bloques de chia realmente comen CPU cando se sincronizan os nodos por primeira vez</li>
 <li>Nota 2: Requírese ao redor de 1,8 G de RAM para cada bifurcación de cadea de bloques, polo que escolla algunhas garfos de cadea de bloques en función da memoria do ordenador</li>
+<li>Nota 3: Se hai algún problema, é posible que necesites volver executar todos os cartafoles por orde:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>Nota 4: Quizais necesites engadir portos permitidos de 12630 a 12700 na configuración do firewall do teu sistema</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="configura-coctohug-no-sistema-operativo-windows">Configura Coctohug no sistema operativo Windows</h2>
 <ul>
-<li>Montar <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
-<li>Instale Ubuntu ou outro sistema Linux usando WSL</li>
-<li>Os pasos restantes son os mesmos cos anteriores <a href="#cch-linux">Configura Coctohug en Linux OS</a></li>
+<li>O mesmo con <a href="#cch-linux">Configura Coctohug en Linux OS</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 

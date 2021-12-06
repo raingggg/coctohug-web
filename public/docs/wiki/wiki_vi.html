@@ -57,14 +57,20 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 <li>Mở trình duyệt và truy cập WebUI bằng url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Lưu ý 1: Không khởi động nhiều hơn 5 nhánh blockchain cùng một lúc, vì các nhánh chia blockchain thực sự ăn CPU khi đồng bộ hóa nút lần đầu tiên</li>
 <li>Lưu ý 2: Cần có khoảng 1,8G RAM cho mỗi lần fork blockchain, vì vậy hãy chọn một số nhánh blockchain dựa trên bộ nhớ máy tính của bạn</li>
+<li>Lưu ý 3: Nếu có bất kỳ sự cố nào, bạn có thể cần chạy lại tất cả các thư mục theo thứ tự:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>Lưu ý 4: Bạn có thể cần thêm các cổng cho phép từ 12630 đến 12700 trên cài đặt tường lửa hệ thống của mình</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="thiết-lập-coctohug-trên-windows-os">Thiết lập Coctohug trên Windows OS</h2>
 <ul>
-<li>Cài đặt <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
-<li>Cài đặt Ubuntu hoặc hệ thống Linux khác bằng WSL</li>
-<li>Các bước còn lại tương tự như trên <a href="#cch-linux">Thiết lập Coctohug trên Hệ điều hành Linux</a></li>
+<li>Giống với <a href="#cch-linux">Thiết lập Coctohug trên Hệ điều hành Linux</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 

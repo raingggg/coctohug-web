@@ -57,14 +57,20 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 <li>Отворите претраживач и приступите ВебУИ са урл-ом <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Напомена 1: Немојте покретати више од 5 блоцкцхаин виљушки у исто време, пошто цхиа блоцкцхаин виљушке заиста једу ЦПУ када се чвор синхронизује по први пут</li>
 <li>Напомена 2: Око 1,8Г РАМ-а је потребно за сваку виљушку блоцкцхаин-а, тако да изаберите неке блокчејн виљушке на основу меморије вашег рачунара</li>
+<li>Напомена 3: Ако постоје проблеми, можда ћете морати поново да покренете све фасцикле по редоследу:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>Напомена 4: Можда ћете морати да додате дозвољене портове од 12630 до 12700 у поставкама заштитног зида система</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="подесите-цоцтохуг-на-виндовс-ос">Подесите Цоцтохуг на Виндовс ОС</h2>
 <ul>
-<li>Подесити <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
-<li>Инсталирајте Убунту или други Линук систем користећи ВСЛ</li>
-<li>Преостали кораци су исти као горе <a href="#cch-linux">Поставите Цоцтохуг на Линук ОС</a></li>
+<li>Исто је и са <a href="#cch-linux">Поставите Цоцтохуг на Линук ОС</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 

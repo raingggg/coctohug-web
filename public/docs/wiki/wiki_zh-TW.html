@@ -57,14 +57,20 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 <li>打開瀏覽器並通過 url 訪問 WebUI <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>注意1：不要同時啟動超過5個區塊鏈分叉，因為chia區塊鏈分叉在第一次節點同步時真的很吃CPU</li>
 <li>注 2：每個區塊鏈分叉大約需要 1.8G RAM，因此請根據您的計算機內存選擇一些區塊鏈分叉</li>
+<li>注意3：如果有任何問題，您可能需要按順序重新運行所有文件夾：<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>注意 4：您可能需要在系統防火牆設置中添加從 12630 到 12700 的允許端口</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="在-windows-操作系統上設置-coctohug">在 Windows 操作系統上設置 Coctohug</h2>
 <ul>
-<li>設置 <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
-<li>使用 WSL 安裝 Ubuntu 或其他 Linux 系統</li>
-<li>其餘步驟同上 <a href="#cch-linux">在 Linux 操作系統上設置 Coctohug</a></li>
+<li>同 <a href="#cch-linux">在 Linux 操作系統上設置 Coctohug</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 

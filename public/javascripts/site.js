@@ -28,6 +28,8 @@ $(document).ready(function () {
   }
   detectLanguage();
 
+  $("#fadeOutMessage").fadeOut(10000);
+
   $('#lang-picker li a').click(function () {
     const lang = $(this).data('lang');
     $.cookie('language', lang, { expires: 30 });

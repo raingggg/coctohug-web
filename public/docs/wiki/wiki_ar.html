@@ -57,14 +57,20 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 <li>افتح المستعرض وقم بالوصول إلى WebUI باستخدام عنوان url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>ملحوظة 1: لا تبدأ تشغيل أكثر من 5 مفترقات blockchain في نفس الوقت ، لأن شوكات blockchain chia تأكل بالفعل وحدة المعالجة المركزية عند مزامنة العقدة لأول مرة</li>
 <li>ملاحظة 2: مطلوب حوالي 1.8 جيجا من ذاكرة الوصول العشوائي لكل مفترق blockchain ، لذلك اختر بعض مفترقات blockchain بناءً على ذاكرة الكمبيوتر لديك</li>
+<li>ملاحظة 3: إذا كانت هناك أية مشكلات ، فقد تحتاج إلى إعادة تشغيل جميع المجلدات بالترتيب:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>ملاحظة 4: قد تحتاج إلى إضافة السماح بمنافذ من 12630 إلى 12700 على إعدادات جدار حماية النظام الخاص بك</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="قم-بإعداد-coctohug-على-نظام-التشغيل-windows">قم بإعداد Coctohug على نظام التشغيل Windows</h2>
 <ul>
-<li>اقامة <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
-<li>قم بتثبيت Ubuntu أو أي نظام Linux آخر باستخدام WSL</li>
-<li>الخطوات المتبقية هي نفسها المذكورة أعلاه <a href="#cch-linux">قم بإعداد Coctohug على Linux OS</a></li>
+<li>نفس الشيء مع <a href="#cch-linux">قم بإعداد Coctohug على Linux OS</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 

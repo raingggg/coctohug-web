@@ -57,14 +57,20 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 <li>Buka browser dan akses WebUI dengan url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Catatan 1: Jangan memulai lebih dari 5 garpu blockchain secara bersamaan, karena garpu blockchain chia benar-benar memakan CPU saat sinkronisasi node untuk pertama kalinya</li>
 <li>Catatan 2: Sekitar 1,8G RAM diperlukan untuk setiap garpu blockchain, jadi pilihlah beberapa garpu blockchain berdasarkan memori komputer Anda</li>
+<li>Catatan 3: Jika ada masalah, Anda mungkin perlu menjalankan ulang semua folder berdasarkan pesanan:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>Catatan 4: Anda mungkin perlu menambahkan port yang diizinkan dari 12630 hingga 12700 pada pengaturan firewall sistem Anda</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="siapkan-coctohug-di-os-windows">Siapkan Coctohug di OS Windows</h2>
 <ul>
-<li>Mempersiapkan <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
-<li>Instal Ubuntu atau sistem Linux lainnya menggunakan WSL</li>
-<li>Langkah-langkah yang tersisa sama dengan di atas <a href="#cch-linux">Setup Coctohug di OS Linux</a></li>
+<li>Sama dengan <a href="#cch-linux">Setup Coctohug di OS Linux</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 

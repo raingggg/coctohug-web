@@ -57,14 +57,20 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 <li>เปิดเบราว์เซอร์และเข้าถึง WebUI ด้วย url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>หมายเหตุ 1: อย่าเริ่มต้นมากกว่า 5 blockchain fork พร้อมกัน เนื่องจาก Chia blockchain fork กิน CPU จริงๆ เมื่อทำการซิงค์โหนดเป็นครั้งแรก</li>
 <li>หมายเหตุ 2: ต้องใช้ RAM ประมาณ 1.8G สำหรับแต่ละบล็อคบล็อค ดังนั้นให้เลือกส้อมบล็อคเชนบางตัวตามหน่วยความจำคอมพิวเตอร์ของคุณ</li>
+<li>หมายเหตุ 3: หากมีปัญหาใดๆ คุณอาจต้องเรียกใช้โฟลเดอร์ทั้งหมดใหม่ตามลำดับ:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
+cd ../coctohug1 &amp;&amp; docker-compose up -d
+cd ../coctohug2 &amp;&amp; docker-compose up -d
+cd ../coctohug3 &amp;&amp; docker-compose up -d
+...
+</code></pre>
+</li>
+<li>หมายเหตุ 4: คุณอาจต้องเพิ่มพอร์ตอนุญาตจาก 12630 ถึง 12700 ในการตั้งค่าไฟร์วอลล์ระบบของคุณ</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="ตั้งค่า-coctohug-บน-windows-os">ตั้งค่า Coctohug บน Windows OS</h2>
 <ul>
-<li>ติดตั้ง <a target='_blank' href='https://docs.microsoft.com/en-us/windows/wsl/setup/environment#install-wsl'>WSL / WSL 2</a></li>
-<li>ติดตั้ง Ubuntu หรือระบบ Linux อื่น ๆ โดยใช้ WSL</li>
-<li>ขั้นตอนที่เหลือเหมือนกันกับด้านบน <a href="#cch-linux">ตั้งค่า Coctohug บน Linux OS</a></li>
+<li>เหมือนกับ <a href="#cch-linux">ตั้งค่า Coctohug บน Linux OS</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 
