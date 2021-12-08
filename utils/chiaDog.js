@@ -15,17 +15,22 @@ const isWebController = isWebControllerMode();
 
 const startWatchDog = () => {
   if (isWebController) return;
-  const cwd = new ChiaWatchDog(chainlog);
 
-  cwd.on('dog', (evs) => {
-    postEvents(evs);
-  });
+  try {
+    const cwd = new ChiaWatchDog(chainlog);
 
-  cwd.on('dailydog', (evs) => {
-    postDailyEvents(evs);
-  });
+    cwd.on('dog', (evs) => {
+      postEvents(evs);
+    });
 
-  cwd.start();
+    cwd.on('dailydog', (evs) => {
+      postDailyEvents(evs);
+    });
+
+    cwd.start();
+  } catch (e) {
+    logger.error('startWatchDog failed: ', e);
+  }
 };
 
 const postEvents = (evs) => {
