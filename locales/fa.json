@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "لطفا مطمئن شوید که تمام فیلدها به درستی وارد شده اند!",
   "wallets.transfer_success": "تراکنش به بلاک چین متعهد شده است. برای مشاهده جزئیات می توانید آدرس فرستنده/گیرنده خود را در https://alltheblocks.net/ وارد کنید.",
   "wallets.transfer_with_password": "انتقال سکه به دیگران با رمز عبور امن",
-  "wallets.your_password": "رمزتون:"
+  "wallets.your_password": "رمزتون:",
+  "wallets.check_first_wallet_reward": "اولین کیف پول پاداش آنلاین را بررسی کنید"
 }

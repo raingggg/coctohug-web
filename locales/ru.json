@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "Убедитесь, что все поля введены правильно!",
   "wallets.transfer_success": "Транзакция зафиксирована в блокчейне. Вы можете ввести свой адрес отправителя / получателя на https://alltheblocks.net/, чтобы увидеть подробности.",
   "wallets.transfer_with_password": "Передача монет другим людям с безопасным паролем",
-  "wallets.your_password": "Ваш пароль:"
+  "wallets.your_password": "Ваш пароль:",
+  "wallets.check_first_wallet_reward": "Проверьте первое вознаграждение кошелька онлайн"
 }

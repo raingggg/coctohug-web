@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "Certifique-se de que todos os campos foram inseridos corretamente!",
   "wallets.transfer_success": "A transação foi enviada para o blockchain. Você pode inserir seu endereço de remetente / destinatário em https://alltheblocks.net/ para ver os detalhes.",
   "wallets.transfer_with_password": "Transfira moedas para outras pessoas com senha segura",
-  "wallets.your_password": "Sua senha:"
+  "wallets.your_password": "Sua senha:",
+  "wallets.check_first_wallet_reward": "Verifique a primeira recompensa da carteira online"
 }

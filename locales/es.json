@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "¡Asegúrese de que todos los campos estén ingresados ​​correctamente!",
   "wallets.transfer_success": "La transacción se ha comprometido con blockchain. Puede ingresar su dirección de remitente / receptor en https://alltheblocks.net/ para ver los detalles.",
   "wallets.transfer_with_password": "Transferir monedas a otros con contraseña segura",
-  "wallets.your_password": "Tu contraseña:"
+  "wallets.your_password": "Tu contraseña:",
+  "wallets.check_first_wallet_reward": "Verifique la recompensa de la primera billetera en línea"
 }

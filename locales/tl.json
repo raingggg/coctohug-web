@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "Pakitiyak na ang lahat ng mga patlang ay naipasok nang tama!",
   "wallets.transfer_success": "Ang transaksyon ay ginawa sa blockchain. Maaari mong ilagay ang iyong sender/receiver address sa https://alltheblocks.net/ para makita ang mga detalye.",
   "wallets.transfer_with_password": "Maglipat ng mga Barya sa Iba gamit ang Secure Password",
-  "wallets.your_password": "Ang iyong password:"
+  "wallets.your_password": "Ang iyong password:",
+  "wallets.check_first_wallet_reward": "Tingnan ang First Wallet Reward Online"
 }

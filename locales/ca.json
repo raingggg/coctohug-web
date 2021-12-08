@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "Assegureu-vos que tots els camps estiguin introduïts correctament!",
   "wallets.transfer_success": "La transacció s'ha compromès amb blockchain. Podeu introduir la vostra adreça de remitent/receptor a https://alltheblocks.net/ per veure els detalls.",
   "wallets.transfer_with_password": "Transfereix monedes a altres persones amb contrasenya segura",
-  "wallets.your_password": "La teva contrasenya:"
+  "wallets.your_password": "La teva contrasenya:",
+  "wallets.check_first_wallet_reward": "Comproveu First Wallet Reward en línia"
 }

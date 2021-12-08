@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "Vui lòng đảm bảo tất cả các trường được nhập chính xác!",
   "wallets.transfer_success": "Giao dịch đã được cam kết với blockchain. Bạn có thể nhập địa chỉ người gửi / người nhận của mình vào https://alltheblocks.net/ để xem chi tiết.",
   "wallets.transfer_with_password": "Chuyển tiền cho người khác bằng mật khẩu an toàn",
-  "wallets.your_password": "Mật khẩu của bạn:"
+  "wallets.your_password": "Mật khẩu của bạn:",
+  "wallets.check_first_wallet_reward": "Kiểm tra phần thưởng trên Wallet đầu tiên trực tuyến"
 }

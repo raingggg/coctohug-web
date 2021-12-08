@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "Будь ласка, переконайтеся, що всі поля введені правильно!",
   "wallets.transfer_success": "Транзакція була здійснена на блокчейні. Ви можете ввести свою адресу відправника/одержувача на https://alltheblocks.net/, щоб побачити деталі.",
   "wallets.transfer_with_password": "Передавайте монети іншим за допомогою безпечного пароля",
-  "wallets.your_password": "Ваш пароль:"
+  "wallets.your_password": "Ваш пароль:",
+  "wallets.check_first_wallet_reward": "Перевірте First Wallet Reward онлайн"
 }

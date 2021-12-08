@@ -93,6 +93,7 @@
   "review.plots_size": "Plot Size:",
   "review.total_coins": "Total Coins:",
   "wallets.check_farming_rewards": "Check Farming Rewards Online",
+  "wallets.check_first_wallet_reward": "Check First Wallet Reward Online",
   "wallets.recipient_address": "Recipient Address:",
   "wallets.transfer_amount": "Transfer Amount:",
   "wallets.transfer_incorrect_fields": "Please ensure all fields are entered correctly!",

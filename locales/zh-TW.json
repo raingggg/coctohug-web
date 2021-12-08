@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "請確保所有字段輸入正確！",
   "wallets.transfer_success": "交易已提交至區塊鏈。您可以在 https://alltheblocks.net/ 中輸入您的發件人/收件人地址以查看詳細信息。",
   "wallets.transfer_with_password": "使用安全密碼將硬幣轉移給他人",
-  "wallets.your_password": "你的密碼："
+  "wallets.your_password": "你的密碼：",
+  "wallets.check_first_wallet_reward": "在線查看第一個錢包獎勵"
 }

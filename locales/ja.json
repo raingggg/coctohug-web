@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "すべてのフィールドが正しく入力されていることを確認してください。",
   "wallets.transfer_success": "トランザクションはブロックチェーンにコミットされました。送信者/受信者のアドレスをhttps://alltheblocks.net/に入力して、詳細を確認できます。",
   "wallets.transfer_with_password": "安全なパスワードで他の人にコインを転送する",
-  "wallets.your_password": "あなたのパスワード："
+  "wallets.your_password": "あなたのパスワード：",
+  "wallets.check_first_wallet_reward": "ファーストウォレットリワードをオンラインでチェック"
 }

@@ -5,9 +5,13 @@
         <ul class="nav nav-tabs">
           <% data.forEach(function(dt, index){ %>
             <li class="nav-item">
-              <a class="nav-link nav-tab <%= index === 0 ? 'active' : '' %>" href="#" data-tabp-index="<%= index %>"><span><%= dt.blockchain %></span><span> <%= index + 1 %></a>
+              <a class="nav-link nav-tab <%= index === 0 ? 'active' : '' %>" href="#"
+                data-tabp-index="<%= index %>"><span>
+                  <%= dt.blockchain %>
+                </span><span>
+                  <%= index + 1 %></a>
             </li>
-          <% }); %>
+            <% }); %>
         </ul>
       </div>
     </div>
@@ -15,8 +19,18 @@
 
   <% data.forEach(function(dt, index){ %>
     <div class="tab-panel <%= index === 0 ? '' : 'd-none' %>" data-panel-index="<%= index %>">
-      <div><%= __('general.updatedAt') %> <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %></div>
-      <div><hr><%- dt.details && dt.details.replace(/\n/g, "</br>") %></div>
+      <div>
+        <a class="nav-link" target="_blank" href="<%= dt.firstWallet %>">
+          <%= __('wallets.check_first_wallet_reward') %>
+        </a>
+        <p>
+          <%= __('general.updatedAt') %>
+            <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
+      </div>
+      <div>
+        <hr>
+        <%- dt.details && dt.details.replace(/\n/g, "</br>" ) %>
+      </div>
     </div>
-  <% }); %>
+    <% }); %>
 </div>

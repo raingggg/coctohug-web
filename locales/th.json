@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "กรุณากรอกทุกช่องให้ถูกต้อง!",
   "wallets.transfer_success": "การทำธุรกรรมได้รับการผูกมัดกับ blockchain คุณสามารถป้อนที่อยู่ผู้ส่ง/ผู้รับของคุณใน https://alltheblocks.net/ เพื่อดูรายละเอียด",
   "wallets.transfer_with_password": "โอนเหรียญให้ผู้อื่นด้วยรหัสผ่านที่ปลอดภัย",
-  "wallets.your_password": "รหัสผ่านของคุณ:"
+  "wallets.your_password": "รหัสผ่านของคุณ:",
+  "wallets.check_first_wallet_reward": "ตรวจสอบรางวัลกระเป๋าเงินออนไลน์ครั้งแรก"
 }

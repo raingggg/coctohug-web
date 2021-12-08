@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "Моля, уверете се, че всички полета са въведени правилно!",
   "wallets.transfer_success": "Транзакцията е ангажирана с блокчейн. Можете да въведете вашия адрес на подател/получател в https://alltheblocks.net/, за да видите подробностите.",
   "wallets.transfer_with_password": "Прехвърлете монети на други със сигурна парола",
-  "wallets.your_password": "Твоята парола:"
+  "wallets.your_password": "Твоята парола:",
+  "wallets.check_first_wallet_reward": "Проверете First Wallet Reward онлайн"
 }

@@ -129,12 +129,15 @@ router.post('/coldWalletImport', async (req, res, next) => {
       try {
         const { url, hostname, blockchain } = data[i];
         if (url && wallets[blockchain]) {
-          const finalUrl = `${url}/blockchainsWorker/savecoldwallet`;
+          let finalUrl = `${url}/blockchainsWorker/savecoldwallet`;
           const apiRes = await axios.post(finalUrl, { coldWalletAddress: wallets[blockchain] },
             { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
               logger.error(error);
             });
           result[blockchain] = apiRes && apiRes.data;
+
+          finalUrl = `${url}/blockchainsWorker/restart`;
+          await axios.get(finalUrl, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) { logger.error(error); });
         }
       } catch (ex) {
         logger.error(ex);

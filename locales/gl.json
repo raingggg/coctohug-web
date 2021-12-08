@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "Asegúrate de que todos os campos estean introducidos correctamente!",
   "wallets.transfer_success": "A transacción foi comprometida coa cadea de bloques. Podes introducir o teu enderezo de remitente/receptor en https://alltheblocks.net/ para ver os detalles.",
   "wallets.transfer_with_password": "Transfire moedas a outros con contrasinal seguro",
-  "wallets.your_password": "O teu contrasinal:"
+  "wallets.your_password": "O teu contrasinal:",
+  "wallets.check_first_wallet_reward": "Consulte a Primeira Recompensa de Wallet en liña"
 }

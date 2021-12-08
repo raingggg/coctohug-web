@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "Bitte stellen Sie sicher, dass alle Felder korrekt ausgefüllt sind!",
   "wallets.transfer_success": "Die Transaktion wurde an die Blockchain gebunden. Sie können Ihre Absender-/Empfängeradresse in https://alltheblocks.net/ eingeben, um die Details anzuzeigen.",
   "wallets.transfer_with_password": "Übertragen Sie Münzen mit einem sicheren Passwort an andere",
-  "wallets.your_password": "Ihr Passwort:"
+  "wallets.your_password": "Ihr Passwort:",
+  "wallets.check_first_wallet_reward": "Überprüfen Sie die erste Wallet-Prämie online"
 }

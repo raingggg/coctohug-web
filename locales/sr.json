@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "Уверите се да су сва поља исправно унета!",
   "wallets.transfer_success": "Трансакција је посвећена блокчејну. Можете да унесете адресу пошиљаоца/примаоца на хттпс://аллтхеблоцкс.нет/ да бисте видели детаље.",
   "wallets.transfer_with_password": "Пренесите новчиће другима помоћу безбедне лозинке",
-  "wallets.your_password": "Твоја лозинка:"
+  "wallets.your_password": "Твоја лозинка:",
+  "wallets.check_first_wallet_reward": "Проверите прву награду за новчаник на мрежи"
 }

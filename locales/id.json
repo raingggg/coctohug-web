@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "Harap pastikan semua bidang dimasukkan dengan benar!",
   "wallets.transfer_success": "Transaksi telah dilakukan ke blockchain. Anda dapat memasukkan alamat pengirim/penerima Anda ke https://alltheblocks.net/ untuk melihat detailnya.",
   "wallets.transfer_with_password": "Transfer Koin ke Orang Lain dengan Kata Sandi Aman",
-  "wallets.your_password": "Kata sandi Anda:"
+  "wallets.your_password": "Kata sandi Anda:",
+  "wallets.check_first_wallet_reward": "Periksa Hadiah Dompet Pertama Secara Online"
 }

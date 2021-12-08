@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "Veuillez vous assurer que tous les champs sont correctement renseignés !",
   "wallets.transfer_success": "La transaction a été engagée dans la blockchain. Vous pouvez entrer votre adresse d'expéditeur/destinataire dans https://alltheblocks.net/ pour voir les détails.",
   "wallets.transfer_with_password": "Transférer des pièces à d'autres avec un mot de passe sécurisé",
-  "wallets.your_password": "Votre mot de passe:"
+  "wallets.your_password": "Votre mot de passe:",
+  "wallets.check_first_wallet_reward": "Vérifiez la récompense du premier portefeuille en ligne"
 }

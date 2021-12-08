@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "يرجى التأكد من إدخال جميع الحقول بشكل صحيح!",
   "wallets.transfer_success": "تم الالتزام بعملية التحويل إلى blockchain. يمكنك إدخال عنوان المرسل / المستلم في https://alltheblocks.net/ للاطلاع على التفاصيل.",
   "wallets.transfer_with_password": "تحويل العملات المعدنية للآخرين بكلمة مرور آمنة",
-  "wallets.your_password": "كلمة السر خاصتك:"
+  "wallets.your_password": "كلمة السر خاصتك:",
+  "wallets.check_first_wallet_reward": "تحقق من First Wallet Reward عبر الإنترنت"
 }

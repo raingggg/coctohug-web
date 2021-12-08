@@ -98,5 +98,6 @@
   "wallets.transfer_incorrect_fields": "Lütfen tüm alanların doğru girildiğinden emin olun!",
   "wallets.transfer_success": "İşlem blok zincirine taahhüt edildi. Ayrıntıları görmek için gönderici/alıcı adresinizi https://alltheblocks.net/ adresine girebilirsiniz.",
   "wallets.transfer_with_password": "Güvenli Şifre ile Paraları Başkalarına Aktarın",
-  "wallets.your_password": "Şifreniz:"
+  "wallets.your_password": "Şifreniz:",
+  "wallets.check_first_wallet_reward": "İlk Cüzdan Ödülünü Çevrimiçi Kontrol Edin"
 }

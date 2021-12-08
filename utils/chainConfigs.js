@@ -31,6 +31,7 @@ const chainConfigs = {
   socks: { exp: 'https://alltheblocks.net/socks/address/' },
   mogua: { exp: 'https://alltheblocks.net/mogua/address/' },
   mint: { exp: 'https://alltheblocks.net/mint/address/' },
+  salvia: { exp: 'https://alltheblocks.net/salvia/address/' },
 };
 
 module.exports = chainConfigs;
