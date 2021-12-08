@@ -203,9 +203,15 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 </code></pre>
 </li>
 <li>Увезите налог хладног новчаника<pre><code>1. На вашој машини за рударење посетите подешавања - картицу хладног новчаника
-2. Увезите претходно преузету јсон датотеку хладног новчаника
+2. Увезите претходно преузету јсон датотеку хладног новчаника (препоручено на другој машини).
 3. Сачекајте неколико минута и идите на картицу Новчаник да видите да ли је адреса хладног новчаника ажурирана или не
-4. Напомена: препоручујемо да направите резервну копију конфигурација новчаника пре увоза
+4. Напомена 1: препоручујемо да направите резервну копију конфигурација новчаника пре увоза
+5. Напомена 2: Само функционалне виљушке блокчејна могу да увезу хладни новчаник. Пре него што то урадите, проверите да ли постоје заустављене виљушке блокчејна или не. Сигурно можете и касније поново да увезете када се поново покрену
+6. Напомена 3: Ако постоје проблеми, можда ћете морати поново да покренете све фасцикле по редоследу:
+  cd coctohug0 &amp;&amp; docker-compose up -d
+  cd ../coctohug1 &amp;&amp; docker-compose up -d
+  cd ../coctohug2 &amp;&amp; docker-compose up -d
+  cd ../coctohug3 &amp;&amp; docker-compose up -d
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -266,7 +272,7 @@ docker-compose up -d --force-recreate
 <li>Потребна меморија је једнака: број рударских блокчејн виљушки помножи 1,8Г РАМ-а</li>
 <li>Нормални диск би требао бити у реду за 50+ блокчејн виљушки</li>
 </ul>
-<h1 id="пројекти-отвореног-кода-на-гитхуб-у">Пројекти отвореног кода на Гитхуб-у</h1>
+<h1 id="наши-пројекти-отвореног-кода-на-гитхуб-у">Наши пројекти отвореног кода на Гитхуб-у</h1>
 <p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
 <p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
 <p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
@@ -274,12 +280,28 @@ docker-compose up -d --force-recreate
 <p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
 <p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
 <p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
-<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> </p>
+<p><a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
 <p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
 <p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
-<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> </p>
+<p><a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
 <p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
 <p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
 <p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<p><a href="https://github.com/raingggg/coctohug-btcgreen">btcgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-hddcoin">hddcoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-maize">maize</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flax">flax</a></p>
+<p><a href="https://github.com/raingggg/coctohug-aedge">aedge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-apple">apple</a></p>
+<p><a href="https://github.com/raingggg/coctohug-wheat">wheat</a></p>
+<p><a href="https://github.com/raingggg/coctohug-dogechia">dogechia</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tad">tad</a></p>
+<p><a href="https://github.com/raingggg/coctohug-taco">taco</a></p>
+<p><a href="https://github.com/raingggg/coctohug-socks">socks</a></p>
+<p><a href="https://github.com/raingggg/coctohug-mogua">mogua</a></p>
+<p><a href="https://github.com/raingggg/coctohug-mint">mint</a></p>
+<p><a href="https://github.com/raingggg/coctohug-salvia">salvia</a></p>
 <h2 id="обавештење-о-жиговима">Обавештење о жиговима</h2>
 <p>ЦХИА НЕТВОРК ИНЦ, ЦХИА™, ЦХИА БЛОЦКЦХАИН™, ЦХИА ПРОТОЦОЛ™, ЦХИАЛИСП™ и „лого листа“ (укључујући само лого листа када се односи на или означава Цхиа), су заштитни знаци или регистровани заштитни знаци компаније Цхиа Нетворк, Инц. ., корпорација из Делавера. <em>Не постоји веза између овог пројекта Цоцтохуг и главног пројекта Цхиа Нетворк.</em></p>

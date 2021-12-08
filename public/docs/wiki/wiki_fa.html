@@ -203,9 +203,15 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 </code></pre>
 </li>
 <li>وارد کردن حساب کیف پول سرد<pre><code>1. در دستگاه ماینینگ خود، به تنظیمات - تب کیف پول سرد مراجعه کنید
-2. فایل json کیف پول سرد دانلود شده قبلی را وارد کنید
+2. فایل json کیف پول سرد دانلود شده قبلی (توصیه شده در دستگاه های مختلف) را وارد کنید
 3. چند دقیقه صبر کنید و به تب کیف پول بروید تا ببینید آیا آدرس کیف پول سرد به روز شده است یا خیر
-4. توجه: توصیه می کنیم قبل از وارد کردن، از تنظیمات کیف پول خود نسخه پشتیبان تهیه کنید
+4. نکته 1: توصیه می کنیم قبل از وارد کردن، از تنظیمات کیف پول خود نسخه پشتیبان تهیه کنید
+5. نکته 2: فقط چنگال های بلاک چین فعال می توانند کیف پول سرد وارد کنند. لطفاً قبل از انجام این کار بررسی کنید که آیا فورک های بلاک چین متوقف شده است یا خیر. مطمئناً می‌توانید بعداً با راه‌اندازی مجدد آنها دوباره وارد کنید
+6. نکته 3: در صورت وجود هر گونه مشکل، ممکن است لازم باشد همه پوشه ها را به ترتیب مجدد اجرا کنید:
+  cd coctohug0 &amp;&amp; docker-compose up -d
+  cd ../coctohug1 &amp;&amp; docker-compose up -d
+  cd ../coctohug2 &amp;&amp; docker-compose up -d
+  cd ../coctohug3 &amp;&amp; docker-compose up -d
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -266,7 +272,7 @@ docker-compose up -d --force-recreate
 <li>حافظه مورد نیاز برابر است با: تعداد فورک های استخراج بلاک چین، ضربدر 1.8G RAM</li>
 <li>دیسک معمولی باید برای فورک های بلاک چین بیش از 50 مناسب باشد</li>
 </ul>
-<h1 id="پروژه-های-متن-باز-در-github">پروژه های متن باز در Github</h1>
+<h1 id="پروژه-های-منبع-باز-ما-در-github">پروژه های منبع باز ما در Github</h1>
 <p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
 <p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
 <p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
@@ -274,12 +280,28 @@ docker-compose up -d --force-recreate
 <p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
 <p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
 <p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
-<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> </p>
+<p><a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
 <p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
 <p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
-<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> </p>
+<p><a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
 <p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
 <p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
 <p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<p><a href="https://github.com/raingggg/coctohug-btcgreen">btcgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-hddcoin">hddcoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-maize">maize</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flax">flax</a></p>
+<p><a href="https://github.com/raingggg/coctohug-aedge">aedge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-apple">apple</a></p>
+<p><a href="https://github.com/raingggg/coctohug-wheat">wheat</a></p>
+<p><a href="https://github.com/raingggg/coctohug-dogechia">dogechia</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tad">tad</a></p>
+<p><a href="https://github.com/raingggg/coctohug-taco">taco</a></p>
+<p><a href="https://github.com/raingggg/coctohug-socks">socks</a></p>
+<p><a href="https://github.com/raingggg/coctohug-mogua">mogua</a></p>
+<p><a href="https://github.com/raingggg/coctohug-mint">mint</a></p>
+<p><a href="https://github.com/raingggg/coctohug-salvia">salvia</a></p>
 <h2 id="اعلامیه-علامت-تجاری">اعلامیه علامت تجاری</h2>
 <p>CHIA NETWORK INC، CHIA™، CHIA BLOCKCHAIN™، CHIA PROTOCOL™، CHIALISP™ و &#34;لوگوی برگ&#34; (شامل لوگوی برگ به تنهایی هنگامی که به Chia اشاره یا نشان می دهد)، علائم تجاری یا علائم تجاری ثبت شده Chia Network, Inc هستند. .، یک شرکت دلاور. <em>هیچ وابستگی بین این پروژه Coctohug و پروژه اصلی Chia Network وجود ندارد.</em></p>

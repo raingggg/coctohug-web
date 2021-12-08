@@ -203,9 +203,15 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 </code></pre>
 </li>
 <li>Mag-import ng Cold Wallet Account<pre><code>1. Sa iyong mining machine, bisitahin ang mga setting - tab na cold wallet
-2. I-import ang dating na-download na cold wallet json file
+2. I-import ang nakaraang na-download na cold wallet(inirerekomenda sa ibang machine) json file
 3. Maghintay ng ilang minuto, at pumunta sa tab na wallet para makita kung na-update o hindi ang address ng cold wallet
-4. Tandaan: inirerekomenda namin na i-backup ang iyong mga configuration ng wallet bago mag-import
+4. Tandaan 1: inirerekomenda namin na i-backup ang iyong mga configuration ng wallet bago mag-import
+5. Tandaan 2: Tanging mga gumaganang blockchain forks lang ang makakapag-import ng cold wallet. Pakisuri kung may mga tumigil na blockchain forks o wala bago gawin ito. Tiyak na maaari ka ring mag-import sa ibang pagkakataon muli kapag sila ay muling nagsimula
+6. Tandaan 3: Kung mayroong anumang mga isyu, maaaring kailanganin mong muling patakbuhin ang lahat ng mga folder ayon sa pagkakasunud-sunod:
+  cd coctohug0 &amp;&amp; docker-compose up -d
+  cd ../coctohug1 &amp;&amp; docker-compose up -d
+  cd ../coctohug2 &amp;&amp; docker-compose up -d
+  cd ../coctohug3 &amp;&amp; docker-compose up -d
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -266,7 +272,7 @@ docker-compose up -d --force-recreate
 <li>Ang memory na kailangan ay katumbas ng: ang bilang ng mga mining blockchain forks ay dumarami sa 1.8G RAM</li>
 <li>Ang normal na disk ay dapat na maayos para sa 50+ blockchain forks</li>
 </ul>
-<h1 id="mga-open-source-na-proyekto-sa-github">Mga Open Source na Proyekto sa Github</h1>
+<h1 id="ang-aming-mga-open-source-na-proyekto-sa-github">Ang aming mga Open Source na Proyekto sa Github</h1>
 <p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
 <p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
 <p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
@@ -274,12 +280,28 @@ docker-compose up -d --force-recreate
 <p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
 <p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
 <p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
-<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> </p>
+<p><a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
 <p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
 <p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
-<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> </p>
+<p><a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
 <p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
 <p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
 <p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<p><a href="https://github.com/raingggg/coctohug-btcgreen">btcgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-hddcoin">hddcoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-maize">maize</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flax">flax</a></p>
+<p><a href="https://github.com/raingggg/coctohug-aedge">aedge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-apple">apple</a></p>
+<p><a href="https://github.com/raingggg/coctohug-wheat">wheat</a></p>
+<p><a href="https://github.com/raingggg/coctohug-dogechia">dogechia</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tad">tad</a></p>
+<p><a href="https://github.com/raingggg/coctohug-taco">taco</a></p>
+<p><a href="https://github.com/raingggg/coctohug-socks">socks</a></p>
+<p><a href="https://github.com/raingggg/coctohug-mogua">mogua</a></p>
+<p><a href="https://github.com/raingggg/coctohug-mint">mint</a></p>
+<p><a href="https://github.com/raingggg/coctohug-salvia">salvia</a></p>
 <h2 id="paunawa-sa-trademark">Paunawa sa Trademark</h2>
 <p>Ang CHIA NETWORK INC, CHIA™, ang CHIA BLOCKCHAIN™, ang CHIA PROTOCOL™, CHIALISP™ at ang “leaf Logo” (kabilang ang leaf logo lamang kapag ito ay tumutukoy o nagpapahiwatig ng Chia), ay mga trademark o rehistradong trademark ng Chia Network, Inc ., isang korporasyon ng Delaware. <em>Walang kaugnayan ang proyektong ito ng Coctohug at ang pangunahing proyekto ng Chia Network.</em></p>

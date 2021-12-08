@@ -203,9 +203,15 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 </code></pre>
 </li>
 <li>Nhập tài khoản ví lạnh<pre><code>1. Trên máy khai thác của bạn, hãy truy cập cài đặt - tab ví lạnh
-2. Nhập tệp json ví lạnh đã tải xuống trước đó
+2. Nhập tệp json ví lạnh đã tải xuống trước đó (được khuyến nghị trên các máy khác)
 3. Chờ vài phút và chuyển đến tab ví để xem địa chỉ ví lạnh đã được cập nhật hay chưa
-4. Lưu ý: chúng tôi khuyên bạn nên sao lưu cấu hình ví của mình trước khi nhập
+4. Lưu ý 1: chúng tôi khuyên bạn nên sao lưu cấu hình ví của bạn trước khi nhập
+5. Lưu ý 2: Chỉ những nhánh blockchain đang hoạt động mới có thể nhập ví lạnh. Vui lòng kiểm tra xem có các nhánh blockchain bị dừng hay không trước khi thực hiện việc này. Chắc chắn bạn cũng có thể nhập lại sau khi chúng được khởi động lại
+6. Lưu ý 3: Nếu có bất kỳ sự cố nào, bạn có thể cần chạy lại tất cả các thư mục theo thứ tự:
+  cd coctohug0 &amp;&amp; docker-compose up -d
+  cd ../coctohug1 &amp;&amp; docker-compose up -d
+  cd ../coctohug2 &amp;&amp; docker-compose up -d
+  cd ../coctohug3 &amp;&amp; docker-compose up -d
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -266,7 +272,7 @@ docker-compose up -d --force-recreate
 <li>Bộ nhớ cần thiết bằng: số lượng nhánh blockchain khai thác nhân 1,8G RAM</li>
 <li>Đĩa thông thường sẽ ổn cho hơn 50 nhánh blockchain</li>
 </ul>
-<h1 id="dự-án-nguồn-mở-trên-github">Dự án nguồn mở trên Github</h1>
+<h1 id="các-dự-án-nguồn-mở-của-chúng-tôi-trên-github">Các dự án nguồn mở của chúng tôi trên Github</h1>
 <p><a href="https://github.com/raingggg/coctohug-web-docker">webui</a></p>
 <p><a href="https://github.com/raingggg/coctohug-cactus">cactus</a></p>
 <p><a href="https://github.com/raingggg/coctohug-covid">covid</a></p>
@@ -274,12 +280,28 @@ docker-compose up -d --force-recreate
 <p><a href="https://github.com/raingggg/coctohug-ethgreen">ethgreen</a></p>
 <p><a href="https://github.com/raingggg/coctohug-flora">flora</a></p>
 <p><a href="https://github.com/raingggg/coctohug-greendoge">greendoge</a></p>
-<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> <a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-lucky">lucky</a> </p>
+<p><a href="https://github.com/raingggg/coctohug-pipscoin">pipscoin</a></p>
 <p><a href="https://github.com/raingggg/coctohug-shibgreen">shibgreen</a></p>
 <p><a href="https://github.com/raingggg/coctohug-silicoin">silicoin</a></p>
-<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> <a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-skynet">skynet</a> </p>
+<p><a href="https://github.com/raingggg/coctohug-staicoin">staicoin</a></p>
 <p><a href="https://github.com/raingggg/coctohug-stor">stor</a></p>
 <p><a href="https://github.com/raingggg/coctohug-tranzact">tranzact</a></p>
 <p><a href="https://github.com/raingggg/coctohug-venidium">venidium</a></p>
+<p><a href="https://github.com/raingggg/coctohug-btcgreen">btcgreen</a></p>
+<p><a href="https://github.com/raingggg/coctohug-hddcoin">hddcoin</a></p>
+<p><a href="https://github.com/raingggg/coctohug-maize">maize</a></p>
+<p><a href="https://github.com/raingggg/coctohug-flax">flax</a></p>
+<p><a href="https://github.com/raingggg/coctohug-aedge">aedge</a></p>
+<p><a href="https://github.com/raingggg/coctohug-apple">apple</a></p>
+<p><a href="https://github.com/raingggg/coctohug-wheat">wheat</a></p>
+<p><a href="https://github.com/raingggg/coctohug-dogechia">dogechia</a></p>
+<p><a href="https://github.com/raingggg/coctohug-tad">tad</a></p>
+<p><a href="https://github.com/raingggg/coctohug-taco">taco</a></p>
+<p><a href="https://github.com/raingggg/coctohug-socks">socks</a></p>
+<p><a href="https://github.com/raingggg/coctohug-mogua">mogua</a></p>
+<p><a href="https://github.com/raingggg/coctohug-mint">mint</a></p>
+<p><a href="https://github.com/raingggg/coctohug-salvia">salvia</a></p>
 <h2 id="thông-báo-nhãn-hiệu">Thông báo nhãn hiệu</h2>
 <p>CHIA NETWORK INC, CHIA ™, CHIA BLOCKCHAIN ​​™, CHIA PROTOCOL ™, CHIALISP ™ và “Biểu trưng chiếc lá” (bao gồm cả biểu tượng chiếc lá khi nó đề cập hoặc chỉ Chia), là các nhãn hiệu hoặc nhãn hiệu đã đăng ký của Chia Network, Inc. ., một tập đoàn Delaware. * Không có mối liên hệ nào giữa dự án Coctohug này và dự án Mạng Chia chính. *</p>
