@@ -23,14 +23,16 @@ const updateColdwalletCoins = async () => {
         const actualWallet = dataWallets.find(dw => dw.hostname === hostname && dw.blockchain === blockchain);
         if (firstWalletAdress && actualWallet && actualWallet.coldWallet && firstWalletAdress !== actualWallet.coldWallet) {
           const coinsTotal = await get1HourOnlineWalletCoinsAmount(blockchain, actualWallet.coldWallet);
-          await News.create({
-            hostname,
-            blockchain,
-            priority: 'low',
-            service: 'COCTHUG_WEB',
-            type: 'EVT_INTIME_RECEIVE_COIN',
-            message: `Last hour ColdWallet received ${coinsTotal} coins☘️`,
-          });
+          if (coinsTotal > 0) {
+            await News.create({
+              hostname,
+              blockchain,
+              priority: 'low',
+              service: 'COCTHUG_WEB',
+              type: 'EVT_INTIME_RECEIVE_COIN',
+              message: `Last hour ColdWallet received ${coinsTotal} coins☘️`,
+            });
+          }
         }
       } catch (ee) {
         logger.error('updateColdwalletCoins-onechain', ee);
