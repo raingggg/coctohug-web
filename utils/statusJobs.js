@@ -10,9 +10,14 @@ const {
   updateHand,
 } = require('../jobs');
 
+const {
+  updateColdwalletCoins
+} = require('../controllerJobs');
+
 const everyMinute = '0 */1 * * * *';
 const every5Minute = '0 */5 * * * *';
 const every30Minute = '0 */30 * * * *';
+const every1Hour = '0 0 */1 * * *';
 const every4Hour = '0 0 */4 * * *';
 
 const isWebController = isWebControllerMode();
@@ -58,6 +63,14 @@ const thirtyMinuteJob = new CronJob(every30Minute, async () => {
   logger.info('thirtyMinuteJob end');
 }, null, true, 'America/Los_Angeles');
 
+const oneHourJob = new CronJob(every1Hour, async () => {
+  logger.info('oneHourJob start');
+  if (isWebController) {
+    await updateColdwalletCoins();
+  }
+  logger.info('oneHourJob end');
+}, null, true, 'America/Los_Angeles');
+
 const fourHourJob = new CronJob(every4Hour, async () => {
   logger.info('fourHourJob start');
   if (!isWebController) {
@@ -74,6 +87,8 @@ const startAllJobs = async () => {
     fiveMinuteJob.start();
     thirtyMinuteJob.start();
     fourHourJob.start();
+  } else {
+    oneHourJob.start();
   }
   logger.info('all jobs end');
 };
