@@ -30,7 +30,7 @@ const updateColdwalletCoins = async () => {
               priority: 'low',
               service: 'COCTHUG_WEB',
               type: 'EVT_INTIME_RECEIVE_COIN',
-              message: `Last hour ColdWallet received ${coinsTotal} coins☘️`,
+              message: `ColdWallet received ${coinsTotal} coins☘️`,
             });
           }
         }
