@@ -2,6 +2,7 @@ const fs = require('fs');
 const { promisify } = require('util');
 const { stat, readFile, copyFile, writeFile } = require('fs/promises');
 const exec = promisify(require('child_process').exec);
+const axios = require('axios');
 
 const dir = require('node-dir');
 const {
@@ -16,6 +17,7 @@ const {
   blockchainConfig: { binary, blockchain, config, mncPath, coldWalletName },
   getCoctohugWebVersion,
 } = require('./chiaConfig');
+const chainConfigs = require('./chainConfigs');
 const { logger } = require('./logger');
 
 
@@ -113,12 +115,42 @@ const loadConnectionsShow = async () => {
   try {
     const cmdOutput = await exec(`${binary} show --connections`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = cmdOutput.stdout.trim();
+    checkPeerConnections(result);
   } catch (e) {
     logger.error(e);
   }
   logger.debug(result);
 
   return result;
+};
+
+const checkPeerConnections = async (result) => {
+  try {
+    // 2 are local connection, so 5 means checking at least 3 peers
+    const cns = parseConnecitons(result);
+    if (cns.length < 5 && chainConfigs[blockchain]) {
+      const apiRes = await axios.get(chainConfigs[blockchain].peers, { timeout: TIMEOUT_1MINUTE }).catch(function (error) { logger.error(error); });
+      const peers = apiRes && apiRes.data;
+      const peersCount = peers && peers.length;
+      if (peersCount > 0) {
+        let peersConnections = [];
+        if (peersCount > 30) {
+          for (let i = 0; i < 30; i++) {
+            const p = peers[Math.floor(Math.random() * peersCount)];
+            peersConnections.push(`${p.host}:${p.port}`);
+          }
+        } else {
+          peersConnections = peers.map(p => `${p.host}:${p.port}`);
+        }
+
+        for (let i = 0; i < peersConnections.length; i++) {
+          await addConnection(peersConnections[i]);
+        }
+      }
+    }
+  } catch (e) {
+    logger.error(e);
+  }
 };
 
 const loadKeysShow = async () => {
@@ -343,7 +375,7 @@ const transferCoin = async (toAddress, amount) => {
 //   const tresult = await loadWalletShow();
 //   const tresult = await loadPlotnftShow();
 //   const tresult = await loadBlockchainShow();
-//   const tresult = await loadConnectionsShow();
+// const tresult = await loadConnectionsShow();
 //   const tresult = await loadKeysShow();
 //   const tresult = await loadAllVersions();
 //   const tresult = await restartBlockchain();

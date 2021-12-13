@@ -32,26 +32,30 @@ const parseBlockchain = (cmdStr) => {
 const parseConnecitons = (cmdStr) => {
   const cns = [];
 
-  const lines = cmdStr.replace(/(\s*)(-SB Height:)(.*)/g, " $3").split('\n');
-  lines.forEach(line => {
-    const tLine = line.trim();
-    if (tLine && !tLine.startsWith('Connections:') && !tLine.startsWith('Type')) {
-      const vals = tLine.split(/\s+/);
-      if (vals.length > 7) {
-        cns.push({
-          'type': vals[0],
-          'ip': vals[1],
-          'ports': vals[2],
-          'nodeid': vals[3].replace('...', ''),
-          'last_connect': vals[4] + ' ' + vals[5] + ' ' + vals[6],
-          'mib_up': vals[7].split('|')[0],
-          'mib_down': vals[7].split('|')[1],
-          'height': vals[8] || '',
-        });
+  try {
+    const lines = cmdStr.replace(/(\s*)(-SB Height:)(.*)/g, " $3").split('\n');
+    lines.forEach(line => {
+      const tLine = line.trim();
+      if (tLine && !tLine.startsWith('Connections:') && !tLine.startsWith('Type')) {
+        const vals = tLine.split(/\s+/);
+        if (vals.length > 7) {
+          cns.push({
+            'type': vals[0],
+            'ip': vals[1],
+            'ports': vals[2],
+            'nodeid': vals[3].replace('...', ''),
+            'last_connect': vals[4] + ' ' + vals[5] + ' ' + vals[6],
+            'mib_up': vals[7].split('|')[0],
+            'mib_down': vals[7].split('|')[1],
+            'height': vals[8] || '',
+          });
+        }
       }
-    }
 
-  });
+    });
+  } catch (e) {
+    console.error(e);
+  }
 
   return cns.sort((a, b) => a.height - b.height);
 };
