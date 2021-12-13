@@ -14,6 +14,7 @@
 <ul>
 <li><a href="#cch-password">密码</a></li>
 <li><a href="#cch-keys">钥匙</a></li>
+<li><a href="#cch-node_sync">节点同步</a></li>
 <li><a href="#cch-farming">矿业</a></li>
 <li><a href="#cch-monitoring">监控</a></li>
 <li><a href="#cch-nft_recovery">NFT 恢复</a></li>
@@ -21,7 +22,6 @@
 <li><a href="#cch-farming_warnings">采矿警告</a></li>
 <li><a href="#cch-daily_report">每日报告</a></li>
 <li><a href="#cch-weekly_report">每周报告</a></li>
-<li><a href="#cch-node_sync">节点同步</a></li>
 <li><a href="#cch-connections_management">连接管理</a></li>
 <li><a href="#cch-wallets_management">钱包管理</a></li>
 <li><a href="#cch-hands_management">手部管理</a></li>
@@ -152,7 +152,23 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 <ul>
 <li>默认情况下，节点将自动同步</li>
 <li>您可以前往连接或区块链选项卡查看详细状态</li>
-<li>为了加速您的节点同步， <a href="https://alltheblocks.net/">https://alltheblocks.net/</a> 提供节点列表和数据库文件（单击每个区块链，然后您可以在右上角找到它们）</li>
+<li>要加速您的节点同步： <a href="https://www.coctohug.xyz/">https://www.coctohug.xyz/</a> 提供数据库文件链接 - 开发和赞助： <a href="https://chiaforksblockchain.com/">Maize fork</a><pre><code>1. 下载文件：blockchain_v1_mainnet.sqlite 和 peer_table_node.sqlite
+2.通过类似的终端脚本（在每个文件夹内）停止区块链分叉：
+  docker-compose stop coctohug-flora
+  docker-compose stop coctohug-covid
+  docker-compose stop coctohug-lucky
+3. 将这些文件复制到区块链 fork 文件夹中，类似于：
+  /home/username/.coctohug-flora/flora/mainnet/db/
+  /home/username/.coctohug-covid/covid/mainnet/db/
+  /home/username/.coctohug-lucky/lucky/mainnet/db/
+4.通过类似的终端脚本（在每个文件夹内）启动区块链分叉：
+  docker-compose restart coctohug-flora
+  docker-compose restart coctohug-covid
+  docker-compose restart coctohug-lucky
+注意事项1：您的分叉钱包区块链需要在分叉程序中单独同步
+注 2：将下载的数据库连接到您的区块链分叉最多可能需要 5 分钟！
+</code></pre>
+</li>
 </ul>
 <p id="cch-connections_management">&nbsp;</p>
 
@@ -300,7 +316,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/VAu4VfVkwg">Discord </a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://www.cactus-network.net/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/u7wSDJYT#9KGpDVOGGK5-frBBI1v_Rg">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -309,7 +325,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/5mFKC6DbXa">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://www.pinksheetscrypto.com/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/K24wiK7D#Qw_HJqs7ZX9A8fWQtmzZfQ">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -318,7 +334,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/fRBK4chVds">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="http://cryptodoge.cc/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/T75UDKpA#dLVq8OhdsjK5kPxNwCaP8Q">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -327,7 +343,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/Fg9rZHRdcj">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td>Site</td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/GyxCzIDb#vWioPeCQ5QVkbqHduQA9oA">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -336,7 +352,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/GvwQhW4Yk3">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="http://floracoin.farm/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/CjpSzYzR#7MR4AHEP2nFkaJa6cy45gg">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -345,7 +361,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/XmkZAMn8kj">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://greendoge.dog/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/SywmzIDI#wOyzuaQN_3jxUJY3f-Dypg">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -354,7 +370,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/pgdj4snppb">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://www.luckysix.top/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/WnpS0YRT#CSg5qMEknE9cWImAAdlPLw">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -363,7 +379,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/T8taazt7Pf">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://www.pipscoin.net/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/irhGxQ6Z#UMA2Ir_x7pSTrvj5SIoiHQ">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -372,7 +388,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/PCyTa4CNx4">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td>Site</td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/SnhEXJLT#HkbG3IhiWzFbABSmYb6lTA">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -381,7 +397,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/p7GYjnUJdz">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://www.silicoin.cc/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/Wy52jaZB#nwo0FmY3XMxdTMvtvLwDcw">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -390,7 +406,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/8atUub5E5h">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://skynet-network.org/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/irp0VK7Q#KUlqWB5jfu7RrwDczXt8Kw">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -399,7 +415,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/7MhBBGaB3d">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://www.station-i.de/stai">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/OqgSjYCY#MCwYdt3YnnHA2C6gJV6lvw">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -408,7 +424,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/eXMCYDA3Xe">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://stor.network/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/mr52AapZ#d91-gZoq6auEOWFbcqn8uQ">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -417,7 +433,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/XvvaamXuuF">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://tranzact.network/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/fiogwYzT#YtwnJku9fe59FgCLpweeVw">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -426,7 +442,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/VsA7MX8awj">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://venidium.io/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/ijhC0apB#hu4b1pAL6W6atEaR3H3f_Q">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -435,7 +451,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/PKr7BcaWvx">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://www.btcgreen.us/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/uvoEhaaJ#ozryRZYe2wIx-9eyx84nxQ">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -444,7 +460,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/ZTtQ9922zp">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://hddcoin.org/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/Hu5miQpa#KAZPquVHG6pfYC5k0-qlsA">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -453,7 +469,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/9GWRKHjTec">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://maize.farm/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/W7YWUBzJ#7pTVcC2F_a7zFCJCMbbDKw">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -462,7 +478,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/y3KqSdw8v2">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://flaxnetwork.org/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/impAUA6K#u82XUxLXyicpfEH-CDajyQ">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -471,7 +487,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/m569ExDwXY">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://aedgecoin.com/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/in5URKrI#URsKl-G8pfcE2evUFZL1Zw">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -480,7 +496,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://applecoin.in/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/vioAUQQZ#Y99I47Mz4IRAg68JsMl1Ow">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -489,7 +505,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/rfYzrmqQTP">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="http://wheat.network/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/37oUESqT#fVhlY1qZXfTzXXZsaeUo2A">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -498,7 +514,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/ht3v4PYTyc">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://dogechia.org/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/auoU3YrZ#2ILW03LPw2Z_tdqWCNCA0Q">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -507,7 +523,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/vnxnXDZwTN">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://tadcoin.xyz/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/mmxwRAiT#de5HGjji2VqkQVDwDvmoKQ">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -516,7 +532,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/XRdzSyv5U9">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://taconetwork.net/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/br4EUQAA#4I3etq8dIM8EtcthuBH1xw">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -525,7 +541,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/yteqP7PDTd">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="http://socks.works/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td>Files</td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -534,7 +550,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/G3eEamXY6T">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td>Site</td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/nmwGXCCS#LQHaKL-4YbujnHJZzUUEGQ">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -543,7 +559,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/mR5DZ4yCRZ">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://mintnet.work/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/H6oCWICS#bpa_tgPiMj1ChkgpiEV2CQ">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 <tr>
@@ -552,7 +568,7 @@ docker-compose up -d --force-recreate
 <td><a href="https://discord.gg/C9yHnxUkwd">Discord</a></td>
 <td><a href="https://discord.gg/2QHx9yT5">Discord</a></td>
 <td><a href="https://salvianetwork.net/">Site</a></td>
-<td><a href="https://chiaforksblockchain.com/">Files</a></td>
+<td><a href="https://mega.nz/folder/O35WGSSI#ftadMcOnzk2lnkw1xSgURw">Files</a></td>
 <td><a href="https://alltheblocks.net/">Explorer</a></td>
 </tr>
 </tbody></table>
