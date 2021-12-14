@@ -1,5 +1,11 @@
-const { updateColdwalletCoins } = require('./wallets');
+const {
+  updateHourlyColdwalletCoins,
+  updateDailyColdwalletCoins,
+  updateWeeklyColdwalletCoins,
+} = require('./wallets');
 
 module.exports = {
-  updateColdwalletCoins
+  updateHourlyColdwalletCoins,
+  updateDailyColdwalletCoins,
+  updateWeeklyColdwalletCoins,
 }

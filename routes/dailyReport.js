@@ -12,11 +12,11 @@ router.get('/', async (req, res, next) => {
     where: {
       type: 'EVT_DAILY_ALL_IN_ONE'
     },
-    limit: 100,
+    limit: 200,
   });
 
-  
-  res.render('index', {data, pageName: 'dailyReport' });
+
+  res.render('index', { data, pageName: 'dailyReport' });
 });
 
 module.exports = router;

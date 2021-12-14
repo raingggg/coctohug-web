@@ -1,1 +1,38 @@
-this is a summary
+<div class="page-wrapper">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <td>
+          <%= __('general.createdAt') %>
+        </td>
+        <td>
+          <%= __('general.message') %>
+        </td>
+        <td>
+          <%= __('general.blockchain') %>
+        </td>
+        <td>
+          <%= __('general.hostname') %>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(function(dt, index){ %>
+        <tr>
+          <td>
+            <%= dt.createdAt.toLocaleString("en-US", {hour12: false}) %>
+          </td>
+          <td>
+            <%- dt.message && dt.message.replace(/\n/g, "<br/>" ) %>
+          </td>
+          <td>
+            <%= dt.blockchain %>
+          </td>
+          <td>
+            <%= dt.hostname %>
+          </td>
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>
+</div>

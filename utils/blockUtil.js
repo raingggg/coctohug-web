@@ -1,8 +1,16 @@
 const axios = require('axios');
-const cheerio = require('cheerio');
 
 const { logger } = require('./logger');
-const chainConfigs = require('./chainConfigs');
+const {
+  chainConfigs,
+  getCoinRecordsUrl,
+  getBalanceUrl,
+} = require('./chainConfigs');
+const {
+  getLastHourDates,
+  getLastDayDates,
+  getLastWeekDates,
+} = require('./jsUtil');
 
 const TIMEOUT_1MINUTE = 60 * 1000;
 const TIME_1HOUR = 60 * 60 * 1000;
@@ -26,69 +34,73 @@ const getWalletAddress = (str) => {
   if (match && match[1]) return match[1].trim();
 }
 
-const getOnlineWalletRecords = async (blockchain, walletAdress, duration) => {
-  if (!blockchain || !walletAdress) return [];
+const getOnlineWalletRecords = async (blockchain, walletAdress, startDate, endDate) => {
 
-  const prefix = chainConfigs[blockchain];
-  if (!prefix) return [];
-
-  try {
-    const now = new Date().getTime();
-    const finalUrl = `${prefix.exp}${walletAdress}`;
-    const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) { logger.error(error); });
-    if (apiRes && apiRes.data) {
-      const records = [];
-      const $ = cheerio.load(apiRes.data);
-      const trs = $('.card-body div[data-fetch-key="3"] table tbody tr');
-      for (let i = 0; i < trs.length; i++) {
-        const oneRecord = [];
-        $(trs[i]).find('td').each(function () {
-          oneRecord.push($(this).text().trim());
-        });
-        records.push(oneRecord);
-      }
-
-      return records.filter(rec => (now - new Date(rec[0]).getTime() <= duration)).map(rec => rec[5]);
-    }
-  } catch (e) {
-    logger.error(e);
-  }
-
-  return [];
 };
 
-const getOnlineWalletCoinsAmount = async (blockchain, walletAdress, duration) => {
+const getOnlineWalletCoinsAmount = async (blockchain, walletAdress, startDate, endDate) => {
   let total = 0;
+  const forkConfig = chainConfigs[blockchain];
+  if (!forkConfig || !blockchain || !walletAdress || !startDate || !endDate) return total;
 
-  try {
-    const coins = await getOnlineWalletRecords(blockchain, walletAdress, duration);
-    coins.forEach(cn => {
-      total += parseFloat(cn);
-    });
-  } catch (e) {
-    logger.error(e);
+  // at most request API 50 times, this should support 50P+ cases
+  let shouldStop = false;
+  for (let p = 0; p < 50; p++) {
+    if (shouldStop) break;
+
+    try {
+      const finalUrl = getCoinRecordsUrl(blockchain, walletAdress, p, 500);
+      const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) { logger.error(error); });
+      const records = apiRes && apiRes.data && apiRes.data.content;
+      if (records && records.length > 0) {
+        records.forEach(rc => {
+          const { amount, timestamp } = rc;
+          const recordDate = new Date(timestamp * 1000); // unix * 1000 = js timestamp
+          if ((recordDate >= startDate) && (recordDate < endDate)) {
+            total += parseFloat(amount) / forkConfig.mojoDivider;
+          } else if (recordDate < startDate) { // stop when find a pre-unrelevant record
+            shouldStop = true;
+          }
+        });
+      } else { // stop on last no records page
+        shouldStop = true;
+        break;
+      }
+    } catch (ex) {
+      logger.error(ex);
+    }
   }
 
   return total;
 };
 
 const get1HourOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
-  return await getOnlineWalletCoinsAmount(blockchain, walletAdress, TIME_1HOUR);
+  const { startDate, endDate } = getLastHourDates();
+  return await getOnlineWalletCoinsAmount(blockchain, walletAdress, startDate, endDate);
 };
 
-// not accurate since online only return 50 records
-// const get1DayOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
-//   return await getOnlineWalletCoinsAmount(blockchain, walletAdress, TIME_1HOUR * 24);
-// };
+const get1DayOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
+  const { startDate, endDate } = getLastDayDates();
+  return await getOnlineWalletCoinsAmount(blockchain, walletAdress, startDate, endDate);
+};
 
-// not accurate since online only return 50 records
-// const get1WeekOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
-//   return await getOnlineWalletCoinsAmount(blockchain, walletAdress, TIME_1HOUR * 24 * 7);
-// };
+const get1WeekOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
+  const { startDate, endDate } = getLastWeekDates();
+  return await getOnlineWalletCoinsAmount(blockchain, walletAdress, startDate, endDate);
+};
 
-// get1HourOnlineWalletCoinsAmount('covid', 'cov18e2k68pxw66f2daukkkp4tguhfpv79vc0gtqrx7lvvckgdnvh0tqvjdzge');
-// get1DayOnlineWalletCoinsAmount('covid', 'cov18e2k68pxw66f2daukkkp4tguhfpv79vc0gtqrx7lvvckgdnvh0tqvjdzge');
-// get1WeekOnlineWalletCoinsAmount('covid', 'cov18e2k68pxw66f2daukkkp4tguhfpv79vc0gtqrx7lvvckgdnvh0tqvjdzge');
+// const tt = async () => {
+//   let amount = 0;
+//   name = 'hddcoin';
+//   address = 'hdd15u86w7e9c3nqayymqe3ayuhsxqvrdwh9ht6pf30epdhtczdu7kgqa7u4d9';
+//   amount = await get1HourOnlineWalletCoinsAmount(name, address);
+//   console.log(amount);
+//   amount = await get1DayOnlineWalletCoinsAmount(name, address);
+//   console.log(amount);
+//   amount = await get1WeekOnlineWalletCoinsAmount(name, address);
+//   console.log(amount);
+// };
+// tt();
 
 module.exports = {
   getTotalBalance,
@@ -96,4 +108,6 @@ module.exports = {
   getOnlineWalletRecords,
   getOnlineWalletCoinsAmount,
   get1HourOnlineWalletCoinsAmount,
+  get1DayOnlineWalletCoinsAmount,
+  get1WeekOnlineWalletCoinsAmount,
 }

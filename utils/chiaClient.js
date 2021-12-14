@@ -17,7 +17,7 @@ const {
   blockchainConfig: { binary, blockchain, config, mncPath, coldWalletName },
   getCoctohugWebVersion,
 } = require('./chiaConfig');
-const chainConfigs = require('./chainConfigs');
+const { chainConfigs } = require('./chainConfigs');
 const { logger } = require('./logger');
 
 

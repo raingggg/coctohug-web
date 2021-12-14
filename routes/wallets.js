@@ -6,7 +6,7 @@ const { Op } = require("sequelize");
 const { Wallet, Hand, AppConfig } = require('../models');
 const { logger } = require('../utils/logger');
 const { saveMNC } = require('../utils/chiaClient');
-const chainConfigs = require('../utils/chainConfigs');
+const { chainConfigs } = require('../utils/chainConfigs');
 const { getWorkerToken, getIp, isFullnodeMode } = require('../utils/chiaConfig');
 
 const isFullnode = isFullnodeMode();

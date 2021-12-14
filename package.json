@@ -25,7 +25,6 @@
   ],
   "dependencies": {
     "axios": "^0.24.0",
-    "cheerio": "^1.0.0-rc.10",
     "chia-watch-dog": "0.0.8",
     "cookie-parser": "~1.4.4",
     "cron": "^1.8.2",

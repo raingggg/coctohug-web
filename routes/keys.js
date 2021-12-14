@@ -2,7 +2,7 @@ var i18n = require('i18n');
 const express = require('express');
 const router = express.Router();
 const { Key } = require('../models');
-const chainConfigs = require('../utils/chainConfigs');
+const { chainConfigs } = require('../utils/chainConfigs');
 const { getWalletAddress } = require('../utils/blockUtil');
 
 router.get('/', async (req, res, next) => {
