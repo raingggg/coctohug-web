@@ -8,6 +8,7 @@ const WalletBalance = sequelize.define('WalletBalance', {
   address: { type: DataTypes.STRING, primaryKey: true },
   balance: { type: DataTypes.REAL },
   price: { type: DataTypes.REAL },
+  total_price: { type: DataTypes.REAL },
 }, {
 
 });

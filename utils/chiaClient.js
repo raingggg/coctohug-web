@@ -32,7 +32,7 @@ const loadFarmSummary = async () => {
     const cmdOutput = await exec(`${binary} farm summary`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = cmdOutput.stdout.trim();
   } catch (e) {
-    logger.error(e);
+    logger.error('loadFarmSummary', e);
   }
   logger.debug(result);
   return parseFarm(result);
@@ -56,7 +56,7 @@ const loadWalletShowCallback = async (done) => {
   });
 
   sp.stderr.on('data', (data) => {
-    logger.error(`stderr: ${data}`);
+    logger.error(`loadWalletShowCallback stderr: ${data}`);
     return done(data);
   });
 
@@ -85,7 +85,7 @@ const loadPlotnftShowCallback = async (done) => {
   });
 
   sp.stderr.on('data', (data) => {
-    logger.error(`stderr: ${data}`);
+    logger.error(`loadPlotnftShowCallback stderr: ${data}`);
     return done(data);
   });
 
@@ -103,7 +103,7 @@ const loadBlockchainShow = async () => {
     const cmdOutput = await exec(`${binary} show --state`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
     result = cmdOutput.stdout.trim();
   } catch (e) {
-    logger.error(e);
+    logger.error('loadBlockchainShow', e);
   }
   logger.debug(result);
   return parseBlockchain(result);
@@ -117,7 +117,7 @@ const loadConnectionsShow = async () => {
     result = cmdOutput.stdout.trim();
     checkPeerConnections(result);
   } catch (e) {
-    logger.error(e);
+    logger.error('loadConnectionsShow', e);
   }
   logger.debug(result);
 
@@ -129,7 +129,9 @@ const checkPeerConnections = async (result) => {
     // 2 are local connection, so 5 means checking at least 3 peers
     const cns = parseConnecitons(result);
     if (cns.length < 5 && chainConfigs[blockchain]) {
-      const apiRes = await axios.get(chainConfigs[blockchain].peers, { timeout: TIMEOUT_1MINUTE }).catch(function (error) { logger.error(error); });
+      const apiRes = await axios.get(chainConfigs[blockchain].peers, { timeout: TIMEOUT_1MINUTE }).catch(function (error) {
+        logger.error('api-req-peers', error);
+      });
       const peers = apiRes && apiRes.data;
       const peersCount = peers && peers.length;
       if (peersCount > 0) {
@@ -144,12 +146,16 @@ const checkPeerConnections = async (result) => {
         }
 
         for (let i = 0; i < peersConnections.length; i++) {
-          await addConnection(peersConnections[i]);
+          try {
+            await addConnection(peersConnections[i]);
+          } catch (ex) {
+            logger.error('checkPeerConnections-one', ex);
+          }
         }
       }
     }
   } catch (e) {
-    logger.error(e);
+    logger.error('checkPeerConnections', e);
   }
 };
 
@@ -160,7 +166,7 @@ const loadKeysShow = async () => {
     const cmdOutput = await exec(`${binary} keys show`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = cmdOutput.stdout.trim();
   } catch (e) {
-    logger.error(e);
+    logger.error('loadKeysShow', e);
   }
   logger.debug(result);
   return parseKeys(result);
@@ -185,7 +191,7 @@ const loadPlots = async () => {
       }
     }
     catch (e) {
-      logger.error(e);
+      logger.error('loadPlots', e);
     }
   }
 
@@ -197,7 +203,7 @@ const loadConfig = async () => {
   try {
     content = await readFile(config, 'utf8');
   } catch (e) {
-    logger.error(e);
+    logger.error('loadConfig', e);
   }
   return content;
 };
@@ -210,7 +216,7 @@ const saveConfig = async (newConfig) => {
     await writeFile(config, newConfig);
     result = true;
   } catch (e) {
-    logger.error(e);
+    logger.error('saveConfig', e);
   }
 
   return result;
@@ -226,7 +232,7 @@ const saveColdWallet = async (coldWalletAddress) => {
     const newConfig = content.replace(reg, dest);
     result = await saveConfig(newConfig);
   } catch (e) {
-    logger.error(e);
+    logger.error('saveColdWallet', e);
   }
 
   return result;
@@ -238,7 +244,7 @@ const saveMNC = async (mnc) => {
   try {
     await writeFile(mncPath, mnc.trim());
   } catch (e) {
-    logger.error(e);
+    logger.error('saveMNC', e);
   }
 };
 
@@ -250,7 +256,7 @@ const addConnection = async (connection) => {
     const cmdOutput = await exec(`${binary} show --add-connection ${connection}`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = cmdOutput.stdout.trim();
   } catch (e) {
-    logger.error(e);
+    logger.error('addConnection', e);
   }
   logger.debug(result);
 
@@ -264,11 +270,11 @@ const removeConnection = async (nodeIds) => {
         const nodeId = nodeIds[i];
         await exec(`${binary} show --remove-connection ${nodeId}`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
       } catch (ex) {
-        logger.error(ex);
+        logger.error('removeConnection-one', ex);
       }
     }
   } catch (e) {
-    logger.error(e);
+    logger.error('removeConnection', e);
   }
 };
 
@@ -291,7 +297,7 @@ const loadAllVersions = async () => {
     const cmdOutput = await exec(`${binary} version`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
     result = `${blockchain}: ${cmdOutput.stdout.trim()}`;
   } catch (e) {
-    logger.error(e);
+    logger.error('loadAllVersions', e);
   }
   logger.debug(result);
 
@@ -308,7 +314,7 @@ const restartBlockchain = async () => {
     const cmdOutput = await exec(`${binary} start farmer -r`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = `${blockchain}: ${cmdOutput.stdout.trim()}`;
   } catch (e) {
-    logger.error(e);
+    logger.error('restartBlockchain', e);
   }
 
   logger.debug(result);
@@ -323,7 +329,7 @@ const addKeyBlockchain = async () => {
     const cmdOutput = await exec(`${binary} keys add -f ${mncPath}`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = `${addKeyBlockchain}: ${cmdOutput.stdout.trim()}`;
   } catch (e) {
-    logger.error(e);
+    logger.error('addKeyBlockchain', e);
   }
 
   logger.debug(result);
@@ -337,7 +343,7 @@ const generateKeyBlockchain = async () => {
     const cmdOutput = await exec(`${binary} keys show --show-mnemonic-seed | tail -n 1`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     await saveMNC(cmdOutput.stdout.trim());
   } catch (e) {
-    logger.error(e);
+    logger.error('generateKeyBlockchain', e);
   }
 };
 
@@ -350,7 +356,7 @@ const getColdWalletAddress = async () => {
     const match = reg.exec(content);
     if (match) result = match[2];
   } catch (e) {
-    logger.error(e);
+    logger.error('getColdWalletAddress', e);
   }
 
   return result;
@@ -363,7 +369,7 @@ const transferCoin = async (toAddress, amount) => {
     const cmdOutput = await exec(`${binary} wallet send -t ${toAddress} -a ${amount}`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = cmdOutput.stdout.trim();
   } catch (e) {
-    logger.error(e);
+    logger.error('transferCoin', e);
   }
   logger.debug(result);
 

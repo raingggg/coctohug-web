@@ -12,21 +12,26 @@ const { getWorkerToken, getIp, isFullnodeMode } = require('../utils/chiaConfig')
 const isFullnode = isFullnodeMode();
 const UNSYNC_THRESHHOLD = 10 * 60 * 1000; // 10 mins
 router.get('/', async (req, res, next) => {
-  const data = await Wallet.findAll({
-    order: [
-      ['blockchain', 'ASC'],
-    ]
-  });
-
-  const now = new Date().getTime();
-  data.forEach(dt => {
-    const lastReview = new Date(dt.updatedAt).getTime();
-    const exp = chainConfigs[dt.blockchain] ? chainConfigs[dt.blockchain].exp : chainConfigs.default.exp;
-    Object.assign(dt, {
-      status: (now - lastReview > UNSYNC_THRESHHOLD) ? 'SyncError' : 'Normal',
-      coldWallet: `${exp}${dt.coldWallet}`,
+  let data = [];
+  try {
+    data = await Wallet.findAll({
+      order: [
+        ['blockchain', 'ASC'],
+      ]
     });
-  })
+
+    const now = new Date().getTime();
+    data.forEach(dt => {
+      const lastReview = new Date(dt.updatedAt).getTime();
+      const exp = chainConfigs[dt.blockchain] ? chainConfigs[dt.blockchain].exp : chainConfigs.default.exp;
+      Object.assign(dt, {
+        status: (now - lastReview > UNSYNC_THRESHHOLD) ? 'SyncError' : 'Normal',
+        coldWallet: `${exp}${dt.coldWallet}`,
+      });
+    })
+  } catch (e) {
+    logger.error('walletsWeb', e);
+  }
 
   res.render('index', { data, pageName: 'wallets' });
 });
@@ -73,7 +78,7 @@ router.get('/generateNew', async (req, res, next) => {
       return res.json({ status: 'success' });
     }
   } catch (e) {
-    logger.error(e);
+    logger.error('generateNew', e);
   }
 
   return res.json({ status: 'failed' });
@@ -99,7 +104,7 @@ router.post('/transferCoin', async (req, res, next) => {
         const finalUrl = `${hand.url}/walletsWorker/transfer`;
         logger.error('transferCoin', [blockchain, toAddress, amount, getIp(req)]);
         await axios.post(finalUrl, { toAddress, amount }, { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
-          logger.error(error);
+          logger.error('walletsWorker/transfer', error);
         });
         return res.json({ status: 'success' });
       }
@@ -107,7 +112,7 @@ router.post('/transferCoin', async (req, res, next) => {
       return res.json({ status: 'incorrect_old_password' });
     }
   } catch (e) {
-    logger.error(e);
+    logger.error('transferCoin', e);
   }
 
   return res.json({ status: 'failed' });
@@ -124,7 +129,7 @@ const genKey = async (hand) => {
         gResult = true;
       }
     } catch (ex) {
-      logger.error(ex);
+      logger.error('genKey', ex);
     }
   }
 
@@ -143,7 +148,7 @@ const addKeyNRestart = async (data) => {
         await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hand.hostname, hand.blockchain) } }).catch(function (error) { logger.error(error); });
       }
     } catch (ex) {
-      logger.error(ex);
+      logger.error('addKeyNRestart', ex);
     }
   }
 };

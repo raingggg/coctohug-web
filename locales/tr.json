@@ -99,5 +99,11 @@
   "wallets.transfer_success": "İşlem blok zincirine taahhüt edildi. Ayrıntıları görmek için gönderici/alıcı adresinizi https://alltheblocks.net/ adresine girebilirsiniz.",
   "wallets.transfer_with_password": "Güvenli Şifre ile Paraları Başkalarına Aktarın",
   "wallets.your_password": "Şifreniz:",
-  "wallets.check_first_wallet_reward": "İlk Cüzdan Ödülünü Çevrimiçi Kontrol Edin"
+  "wallets.check_first_wallet_reward": "İlk Cüzdan Ödülünü Çevrimiçi Kontrol Edin",
+  "balance.address": "Madeni Para Adresi",
+  "balance.balance": "Madeni Para Bakiyesi",
+  "balance.price": "Madeni Para Fiyatı",
+  "balance.total_dollar_all_coins": "Tüm Madeni Paraların Toplam Değeri:",
+  "balance.total_price": "$ Değeri",
+  "leftbar.dollar_balance": "$ Bakiye"
 }

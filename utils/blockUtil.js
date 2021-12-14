@@ -5,6 +5,7 @@ const {
   chainConfigs,
   getCoinRecordsUrl,
   getBalanceUrl,
+  getPriceUrl,
 } = require('./chainConfigs');
 const {
   getLastHourDates,
@@ -67,7 +68,7 @@ const getOnlineWalletCoinsAmount = async (blockchain, walletAdress, startDate, e
         break;
       }
     } catch (ex) {
-      logger.error(ex);
+      logger.error('getOnlineWalletCoinsAmount', ex);
     }
   }
 
@@ -89,6 +90,44 @@ const get1WeekOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
   return await getOnlineWalletCoinsAmount(blockchain, walletAdress, startDate, endDate);
 };
 
+const getAllCoinsPrice = async () => {
+  const coinsPrice = {};
+  try {
+    const finalUrl = getPriceUrl();
+    const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) { logger.error(error); });
+    const records = apiRes && apiRes.data;
+    if (records && records.length > 0) {
+      records.forEach(rc => {
+        coinsPrice[rc.pathName] = rc.stats && rc.stats.priceUsd;
+        if (coinsPrice[rc.pathName] < 0) coinsPrice[rc.pathName] = 0;
+      });
+    }
+  } catch (e) {
+    logger.error('getAllCoinsPrice', e);
+  }
+  return coinsPrice;
+};
+
+const getCoinBalance = async (blockchain, walletAdress) => {
+  let balance = 0;
+
+  try {
+    const forkConfig = chainConfigs[blockchain];
+    if (!forkConfig || !blockchain || !walletAdress) return balance;
+
+    const finalUrl = getBalanceUrl(blockchain, walletAdress);
+    const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) { logger.error(error); });
+    const apiBalance = apiRes && apiRes.data && apiRes.data.balance;
+    if (apiBalance > 0) {
+      balance = apiBalance / forkConfig.mojoDivider;
+    }
+  } catch (e) {
+    logger.error('getCoinBalance', e);
+  }
+
+  return balance;
+};
+
 // const tt = async () => {
 //   let amount = 0;
 //   name = 'hddcoin';
@@ -99,6 +138,10 @@ const get1WeekOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
 //   console.log(amount);
 //   amount = await get1WeekOnlineWalletCoinsAmount(name, address);
 //   console.log(amount);
+// const prices = await getAllCoinsPrice();
+// console.log(prices);
+//   const balance = await getCoinBalance('apple', 'apple18ds3fw56wtttg7xm2d9s4wul720xr8ex50us54t3kz74ylc7avzspa6mey');
+//   console.log(balance);
 // };
 // tt();
 
@@ -110,4 +153,6 @@ module.exports = {
   get1HourOnlineWalletCoinsAmount,
   get1DayOnlineWalletCoinsAmount,
   get1WeekOnlineWalletCoinsAmount,
+  getAllCoinsPrice,
+  getCoinBalance,
 }

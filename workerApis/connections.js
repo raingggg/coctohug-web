@@ -15,7 +15,7 @@ router.post('/remove', async (req, res, next) => {
     logger.debug('api-connection-remove', payload);
     await removeConnection(payload.nodeIds);
   } catch (e) {
-    logger.error(e);
+    logger.error('api-connection-remove', e);
   }
 
   return res.json({ status: "success" });
@@ -32,7 +32,7 @@ router.post('/add', async (req, res, next) => {
     logger.debug('api-connection-add', payload);
     await addConnection(payload.connection);
   } catch (e) {
-    logger.error(e);
+    logger.error('api-connection-add', e);
   }
 
   return res.json({ status: "success" });

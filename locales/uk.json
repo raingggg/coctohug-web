@@ -99,5 +99,11 @@
   "wallets.transfer_success": "Транзакція була здійснена на блокчейні. Ви можете ввести свою адресу відправника/одержувача на https://alltheblocks.net/, щоб побачити деталі.",
   "wallets.transfer_with_password": "Передавайте монети іншим за допомогою безпечного пароля",
   "wallets.your_password": "Ваш пароль:",
-  "wallets.check_first_wallet_reward": "Перевірте First Wallet Reward онлайн"
+  "wallets.check_first_wallet_reward": "Перевірте First Wallet Reward онлайн",
+  "balance.address": "Адреса монети",
+  "balance.balance": "Баланс монет",
+  "balance.price": "Ціна монети",
+  "balance.total_dollar_all_coins": "Загальна вартість усіх монет:",
+  "balance.total_price": "$ Ціна",
+  "leftbar.dollar_balance": "$ Баланс"
 }

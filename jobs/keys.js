@@ -21,7 +21,7 @@ const updateKey = async () => {
     axios.post(`${controllerUrl}/keys/update`, payload, {
       headers: { 'Content-Type': 'application/json' }
     }).catch(function (error) {
-      logger.error(error);
+      logger.error('keys/update', error);
     });
   } catch (e) {
     logger.error('updateKey-job', e);

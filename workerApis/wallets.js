@@ -15,7 +15,7 @@ router.post('/transfer', async (req, res, next) => {
     logger.debug('api-wallet-transfer', [toAddress, amount]);
     await transferCoin(toAddress, amount);
   } catch (e) {
-    logger.error(e);
+    logger.error('api-wallet-transfer', e);
   }
 
   return res.json({ status: "success" });

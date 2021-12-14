@@ -99,5 +99,11 @@
   "wallets.transfer_success": "トランザクションはブロックチェーンにコミットされました。送信者/受信者のアドレスをhttps://alltheblocks.net/に入力して、詳細を確認できます。",
   "wallets.transfer_with_password": "安全なパスワードで他の人にコインを転送する",
   "wallets.your_password": "あなたのパスワード：",
-  "wallets.check_first_wallet_reward": "ファーストウォレットリワードをオンラインでチェック"
+  "wallets.check_first_wallet_reward": "ファーストウォレットリワードをオンラインでチェック",
+  "balance.address": "コインアドレス",
+  "balance.balance": "コインバランス",
+  "balance.price": "コイン価格",
+  "balance.total_dollar_all_coins": "すべてのコインの合計値：",
+  "balance.total_price": "$値",
+  "leftbar.dollar_balance": "$残高"
 }

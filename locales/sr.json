@@ -99,5 +99,11 @@
   "wallets.transfer_success": "Трансакција је посвећена блокчејну. Можете да унесете адресу пошиљаоца/примаоца на хттпс://аллтхеблоцкс.нет/ да бисте видели детаље.",
   "wallets.transfer_with_password": "Пренесите новчиће другима помоћу безбедне лозинке",
   "wallets.your_password": "Твоја лозинка:",
-  "wallets.check_first_wallet_reward": "Проверите прву награду за новчаник на мрежи"
+  "wallets.check_first_wallet_reward": "Проверите прву награду за новчаник на мрежи",
+  "balance.address": "Цоин Аддресс",
+  "balance.balance": "Стање новчића",
+  "balance.price": "Цоин Прице",
+  "balance.total_dollar_all_coins": "Укупна вредност свих кованица:",
+  "balance.total_price": "$ Валуе",
+  "leftbar.dollar_balance": "$ Салдо"
 }

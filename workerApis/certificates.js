@@ -16,7 +16,7 @@ router.get('/', async (req, res, next) => {
       return res.download(zipFileName, `certs.zip`);
     }
   } catch (e) {
-    logger.error(e);
+    logger.error('certificatesweb', e);
   }
 
   return res.json({ status: "failed" });

@@ -1,0 +1,60 @@
+<div class="page-wrapper">
+  <div class="container badge bg-success">
+    <span>
+      <%= __('balance.total_dollar_all_coins') %>
+    </span>
+    <span>
+      $<%= allCoinsDollars %>
+    </span>
+  </div>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <td>
+          <%= __('general.updatedAt') %>
+        </td>
+        <td>
+          <%= __('general.blockchain') %>
+        </td>
+        <td>
+          <%= __('balance.balance') %>
+        </td>
+        <td>
+          <%= __('balance.price') %>
+        </td>
+        <td>
+          <%= __('balance.total_price') %>
+        </td>
+        <td>
+          <%= __('balance.address') %>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(function(dt, index){ %>
+        <tr>
+          <td>
+            <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
+          </td>
+          <td>
+            <%= dt.blockchain %>
+          </td>
+          <td>
+            <%= dt.balance %>
+          </td>
+          <td>
+            <%= dt.price %>
+          </td>
+          <td>
+            <%= dt.total_price %>
+          </td>
+          <td>
+            <span class="d-inline-block text-truncate" style="max-width: 150px;">
+              <%= dt.address %>
+            </span>
+          </td>
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>
+</div>

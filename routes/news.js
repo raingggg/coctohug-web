@@ -8,7 +8,8 @@ const { logger } = require('../utils/logger');
 
 router.get('/', async (req, res, next) => {
   let data = [];
-  let latestNews = {};
+  let latestNews = '';
+
   try {
     data = await News.findAll({
       order: [
@@ -24,11 +25,11 @@ router.get('/', async (req, res, next) => {
 
     const finalUrl = `https://www.coctohug.xyz/latestNews?locale=${req.cookies.language || 'en'}`;
     const apiRes = await axios.get(finalUrl).catch(function (error) {
-      logger.error(error);
+      logger.error('xyz/latestNews', error);
     });
     latestNews = apiRes.data;
   } catch (e) {
-    logger.error(e);
+    logger.error('latestNews', e);
   }
 
   res.render('index', { data, latestNews, pageName: 'news' });

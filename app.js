@@ -55,6 +55,7 @@ const {
   reviewWeb,
   settingsWeb,
   walletsWeb,
+  walletBalanceWeb,
   weeklyReportWeb,
   faqWeb,
 } = require('./routes');
@@ -124,6 +125,7 @@ if (isWebController) {
   app.use('/reviewWeb', reviewWeb);
   app.use('/settingsWeb', settingsWeb);
   app.use('/walletsWeb', walletsWeb);
+  app.use('/walletBalanceWeb', walletBalanceWeb);
   app.use('/weeklyReportWeb', weeklyReportWeb);
   app.use('/faqWeb', faqWeb);
 }

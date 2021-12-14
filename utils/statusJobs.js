@@ -12,6 +12,7 @@ const {
 
 const {
   updateHourlyColdwalletCoins,
+  updateDailyWalletBalance,
   updateDailyColdwalletCoins,
   updateWeeklyColdwalletCoins,
 } = require('../controllerJobs');
@@ -31,71 +32,120 @@ const MAX_TRY = 10;
 let currentTry = 0;
 const immediateTryTasks = async () => {
   logger.info('immediateTryTasks start');
-  if (currentTry < MAX_TRY) {
-    currentTry += 1;
-    if (isNotHarvester) await updateKey();
-    await updateHand();
-    logger.info('immediateTryTasks trying: ', currentTry);
+
+  try {
+    if (currentTry < MAX_TRY) {
+      currentTry += 1;
+      if (isNotHarvester) await updateKey();
+      await updateHand();
+      logger.info('immediateTryTasks trying: ', currentTry);
+    }
+  } catch (e) {
+    logger.error('immediateTryTasks', e);
   }
+
   logger.info('immediateTryTasks end');
 };
 
 const oneMinuteJob = new CronJob(everyMinute, async () => {
   logger.info('oneMinuteJob start');
-  if (!isWebController) {
-    await immediateTryTasks();
-    if (isNotHarvester) await updateBlockchain();
+
+  try {
+    if (!isWebController) {
+      await immediateTryTasks();
+      if (isNotHarvester) await updateBlockchain();
+    }
+  } catch (e) {
+    logger.error('oneMinuteJob', e);
   }
+
   logger.info('oneMinuteJob end');
 }, null, true, 'America/Los_Angeles');
 
 const fiveMinuteJob = new CronJob(every5Minute, async () => {
   logger.info('fiveMinuteJob start');
-  if (!isWebController) {
-    if (isNotHarvester) await updateFarm();
-    if (isNotHarvester) await updateWallet();
-    if (isNotHarvester) await updateConnection();
+
+  try {
+    if (!isWebController) {
+      if (isNotHarvester) await updateFarm();
+      if (isNotHarvester) await updateWallet();
+      if (isNotHarvester) await updateConnection();
+    }
+  } catch (e) {
+    logger.error('fiveMinuteJob', e);
   }
+
   logger.info('fiveMinuteJob end');
 }, null, true, 'America/Los_Angeles');
 
 const thirtyMinuteJob = new CronJob(every30Minute, async () => {
   logger.info('thirtyMinuteJob start');
-  if (!isWebController) {
-    await updateHand();
+
+  try {
+    if (!isWebController) {
+      await updateHand();
+    }
+  } catch (e) {
+    logger.error('thirtyMinuteJob', e);
   }
+
   logger.info('thirtyMinuteJob end');
 }, null, true, 'America/Los_Angeles');
 
 const oneHourJob = new CronJob(every1Hour, async () => {
   logger.info('oneHourJob start');
-  if (isWebController) {
-    await updateHourlyColdwalletCoins();
+
+  try {
+    if (isWebController) {
+      await updateHourlyColdwalletCoins();
+    }
+  } catch (e) {
+    logger.error('oneHourJob', e);
   }
+
   logger.info('oneHourJob end');
 }, null, true, 'America/Los_Angeles');
 
 const fourHourJob = new CronJob(every4Hour, async () => {
   logger.info('fourHourJob start');
-  if (!isWebController) {
-    if (isNotHarvester) await updateKey();
+
+  try {
+    if (!isWebController) {
+      if (isNotHarvester) await updateKey();
+    }
+  } catch (e) {
+    logger.error('fourHourJob', e);
   }
+
   logger.info('fourHourJob end');
 }, null, true, 'America/Los_Angeles');
 
 const oneDayJob = new CronJob(everyMidnight, async () => {
   logger.info('oneDayJob start');
-  if (isWebController) {
-    await updateDailyColdwalletCoins();
+
+  try {
+    if (isWebController) {
+      await updateDailyWalletBalance();
+      await updateDailyColdwalletCoins();
+    }
+  } catch (e) {
+    logger.error('oneDayJob', e);
   }
+
   logger.info('oneDayJob end');
 }, null, true, 'America/Los_Angeles');
 
 const oneWeekJob = new CronJob(everyMondayMidnight, async () => {
   logger.info('oneWeekJob start');
-  if (isWebController) {
-    await updateWeeklyColdwalletCoins();
+
+  try {
+    if (isWebController) {
+      await updateWeeklyColdwalletCoins();
+    }
+  } catch (e) {
+    logger.error('oneWeekJob', e);
   }
+
   logger.info('oneWeekJob end');
 }, null, true, 'America/Los_Angeles');
 

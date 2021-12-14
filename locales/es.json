@@ -99,5 +99,11 @@
   "wallets.transfer_success": "La transacción se ha comprometido con blockchain. Puede ingresar su dirección de remitente / receptor en https://alltheblocks.net/ para ver los detalles.",
   "wallets.transfer_with_password": "Transferir monedas a otros con contraseña segura",
   "wallets.your_password": "Tu contraseña:",
-  "wallets.check_first_wallet_reward": "Verifique la recompensa de la primera billetera en línea"
+  "wallets.check_first_wallet_reward": "Verifique la recompensa de la primera billetera en línea",
+  "balance.address": "Dirección de moneda",
+  "balance.balance": "Balance de monedas",
+  "balance.price": "Precio de la moneda",
+  "balance.total_dollar_all_coins": "Valor total de todas las monedas:",
+  "balance.total_price": "Valor $",
+  "leftbar.dollar_balance": "$ Saldo"
 }

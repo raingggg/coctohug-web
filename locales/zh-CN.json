@@ -99,5 +99,11 @@
   "wallets.transfer_success": "交易已提交至区块链。您可以在 https://alltheblocks.net/ 中输入您的发件人/收件人地址以查看详细信息。",
   "wallets.transfer_with_password": "使用安全密码将硬币转移给他人",
   "wallets.your_password": "你的密码：",
-  "wallets.check_first_wallet_reward": "在线查看第一个钱包奖励"
+  "wallets.check_first_wallet_reward": "在线查看第一个钱包奖励",
+  "balance.address": "硬币地址",
+  "balance.balance": "硬币余额",
+  "balance.price": "硬币价格",
+  "balance.total_dollar_all_coins": "所有硬币的总价值：",
+  "balance.total_price": "美元价值",
+  "leftbar.dollar_balance": "$余额"
 }

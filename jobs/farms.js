@@ -23,7 +23,7 @@ const updateFarm = async () => {
     axios.post(`${controllerUrl}/farms/update`, payload, {
       headers: { 'Content-Type': 'application/json' }
     }).catch(function (error) {
-      logger.error(error);
+      logger.error('farms/update', error);
     });
   } catch (e) {
     logger.error('updateFarm-job', e);

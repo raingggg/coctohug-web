@@ -1,13 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const { Key } = require('../models');
+const { Key, WalletBalance } = require('../models');
 const { logger } = require('../utils/logger');
+const { getWalletAddress } = require('../utils/blockUtil');
 
 router.post('/update', async (req, res, next) => {
   try {
     const payload = req.body;
     logger.debug('api-key-update', payload);
-    Key.upsert(payload);
+    await Key.upsert(payload);
+    if (payload && payload.details) {
+      const firstWalletAdress = getWalletAddress(payload.details);
+      await WalletBalance.upsert({ blockchain: payload.blockchain, address: firstWalletAdress });
+    }
   } catch (e) {
     logger.error('api-key-update', e);
   }

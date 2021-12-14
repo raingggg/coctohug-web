@@ -99,5 +99,11 @@
   "wallets.transfer_success": "Ang transaksyon ay ginawa sa blockchain. Maaari mong ilagay ang iyong sender/receiver address sa https://alltheblocks.net/ para makita ang mga detalye.",
   "wallets.transfer_with_password": "Maglipat ng mga Barya sa Iba gamit ang Secure Password",
   "wallets.your_password": "Ang iyong password:",
-  "wallets.check_first_wallet_reward": "Tingnan ang First Wallet Reward Online"
+  "wallets.check_first_wallet_reward": "Tingnan ang First Wallet Reward Online",
+  "balance.address": "Address ng barya",
+  "balance.balance": "Balanse ng barya",
+  "balance.price": "Presyo ng barya",
+  "balance.total_dollar_all_coins": "Kabuuang Halaga ng Lahat ng Barya:",
+  "balance.total_price": "$ Halaga",
+  "leftbar.dollar_balance": "$ Balanse"
 }

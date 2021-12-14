@@ -99,5 +99,11 @@
   "wallets.transfer_success": "La transacció s'ha compromès amb blockchain. Podeu introduir la vostra adreça de remitent/receptor a https://alltheblocks.net/ per veure els detalls.",
   "wallets.transfer_with_password": "Transfereix monedes a altres persones amb contrasenya segura",
   "wallets.your_password": "La teva contrasenya:",
-  "wallets.check_first_wallet_reward": "Comproveu First Wallet Reward en línia"
+  "wallets.check_first_wallet_reward": "Comproveu First Wallet Reward en línia",
+  "balance.address": "Adreça de moneda",
+  "balance.balance": "Balanç de monedes",
+  "balance.price": "Preu de la moneda",
+  "balance.total_dollar_all_coins": "Valor total de totes les monedes:",
+  "balance.total_price": "Valor de $",
+  "leftbar.dollar_balance": "Saldo de $"
 }

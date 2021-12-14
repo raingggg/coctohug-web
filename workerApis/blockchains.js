@@ -79,7 +79,7 @@ router.post('/savecoldwallet', async (req, res, next) => {
     logger.debug('api-blockchain-savecoldwallet', coldWalletAddress);
     result = await saveColdWallet(coldWalletAddress);
   } catch (e) {
-    logger.error(e);
+    logger.error('savecoldwallet', e);
   }
 
   return res.json({ result });
@@ -95,7 +95,7 @@ router.get('/getConfigFile', async (req, res, next) => {
     const content = await readFile(config, 'utf8');
     return res.json({ data: content });
   } catch (e) {
-    logger.error(e);
+    logger.error('getConfigFile', e);
   }
 
   return res.json({ data: "failed" });

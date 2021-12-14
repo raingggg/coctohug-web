@@ -99,5 +99,11 @@
   "wallets.transfer_success": "Tranzacția a fost angajată în blockchain. Puteți introduce adresa expeditorului/destinatarului pe https://alltheblocks.net/ pentru a vedea detaliile.",
   "wallets.transfer_with_password": "Transferați monede către alții cu parolă sigură",
   "wallets.your_password": "Parola Dvs:",
-  "wallets.check_first_wallet_reward": "Verificați online First Wallet Reward"
+  "wallets.check_first_wallet_reward": "Verificați online First Wallet Reward",
+  "balance.address": "Adresa monedei",
+  "balance.balance": "Soldul monedelor",
+  "balance.price": "Prețul monedei",
+  "balance.total_dollar_all_coins": "Valoarea totală a tuturor monedelor:",
+  "balance.total_price": "Valoare $",
+  "leftbar.dollar_balance": "Sold $"
 }

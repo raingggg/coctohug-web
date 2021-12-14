@@ -99,5 +99,11 @@
   "wallets.transfer_success": "تراکنش به بلاک چین متعهد شده است. برای مشاهده جزئیات می توانید آدرس فرستنده/گیرنده خود را در https://alltheblocks.net/ وارد کنید.",
   "wallets.transfer_with_password": "انتقال سکه به دیگران با رمز عبور امن",
   "wallets.your_password": "رمزتون:",
-  "wallets.check_first_wallet_reward": "اولین کیف پول پاداش آنلاین را بررسی کنید"
+  "wallets.check_first_wallet_reward": "اولین کیف پول پاداش آنلاین را بررسی کنید",
+  "balance.address": "آدرس سکه",
+  "balance.balance": "موجودی سکه",
+  "balance.price": "قیمت سکه",
+  "balance.total_dollar_all_coins": "ارزش کل تمام سکه ها:",
+  "balance.total_price": "ارزش دلار",
+  "leftbar.dollar_balance": "تعادل $"
 }

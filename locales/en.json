@@ -70,6 +70,7 @@
   "leftbar.review": "Summary",
   "leftbar.settings": "Settings",
   "leftbar.wallets": "Wallets",
+  "leftbar.dollar_balance": "$ Balance",
   "leftbar.weekly_report": "Weekly Report",
   "password.add_button": "Create to Use This Password for Secure Operations",
   "password.confirm": "Confrim Password:",
@@ -99,5 +100,10 @@
   "wallets.transfer_incorrect_fields": "Please ensure all fields are entered correctly!",
   "wallets.transfer_success": "Transaction has been commited to blockchain. You may enter your sender/receiver address into https://alltheblocks.net/ to see the details.",
   "wallets.transfer_with_password": "Transfer Coins to Others with Secure Password",
-  "wallets.your_password": "Your Password:"
+  "wallets.your_password": "Your Password:",
+  "balance.address": "Coin Address",
+  "balance.balance": "Coin Balance",
+  "balance.price": "Coin Price",
+  "balance.total_price": "$ Value",
+  "balance.total_dollar_all_coins": "Total Value of All Coins:"
 }

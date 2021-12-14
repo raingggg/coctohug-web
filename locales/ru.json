@@ -99,5 +99,11 @@
   "wallets.transfer_success": "Транзакция зафиксирована в блокчейне. Вы можете ввести свой адрес отправителя / получателя на https://alltheblocks.net/, чтобы увидеть подробности.",
   "wallets.transfer_with_password": "Передача монет другим людям с безопасным паролем",
   "wallets.your_password": "Ваш пароль:",
-  "wallets.check_first_wallet_reward": "Проверьте первое вознаграждение кошелька онлайн"
+  "wallets.check_first_wallet_reward": "Проверьте первое вознаграждение кошелька онлайн",
+  "balance.address": "Адрес монеты",
+  "balance.balance": "Монетный баланс",
+  "balance.price": "Цена монеты",
+  "balance.total_dollar_all_coins": "Общая стоимость всех монет:",
+  "balance.total_price": "$ Значение",
+  "leftbar.dollar_balance": "$ Баланс"
 }

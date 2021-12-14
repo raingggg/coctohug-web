@@ -9,7 +9,7 @@ router.post('/update', async (req, res, next) => {
     logger.debug(payload);
     Plotnft.upsert(payload);
   } catch (e) {
-    logger.error(e);
+    logger.error('plotnft-update', e);
   }
 
   return res.json({ status: "success" });

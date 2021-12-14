@@ -35,7 +35,7 @@ const updateHourlyColdwalletCoins = async () => {
               priority: 'low',
               service: 'COCTHUG_WEB',
               type: 'EVT_INTIME_RECEIVE_COIN',
-              message: `ColdWallet received ${coinsTotal} coins☘️ in last hour`,
+              message: `Cold wallet received ${coinsTotal} coins☘️ in last hour`,
             });
           }
         }
@@ -74,7 +74,7 @@ const updateDailyColdwalletCoins = async () => {
             priority: 'low',
             service: 'COCTHUG_WEB',
             type: 'EVT_DAILY_ALL_IN_ONE',
-            message: `ColdWallet received ${coinsTotal} coins☘️ in last day`,
+            message: `Cold wallet received ${coinsTotal} coins☘️ in last day`,
           });
         }
       } catch (ee) {
@@ -112,7 +112,7 @@ const updateWeeklyColdwalletCoins = async () => {
             priority: 'low',
             service: 'COCTHUG_WEB',
             type: 'EVT_WEEKLY_ALL_IN_ONE',
-            message: `ColdWallet received ${coinsTotal} coins☘️ in last week`,
+            message: `Cold wallet received ${coinsTotal} coins☘️ in last week`,
           });
         }
       } catch (ee) {
@@ -123,7 +123,6 @@ const updateWeeklyColdwalletCoins = async () => {
     logger.error('updateWeeklyColdwalletCoins-job', e);
   }
 };
-
 
 module.exports = {
   updateHourlyColdwalletCoins,

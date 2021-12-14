@@ -28,7 +28,7 @@ const updateHand = async () => {
     axios.post(`${controllerUrl}/hands/update`, payload, {
       headers: { 'Content-Type': 'application/json', 'tk': getAccessToken() }
     }).catch(function (error) {
-      logger.error(error);
+      logger.error('hands/update', error);
     });
   } catch (e) {
     logger.error('updateHand-job', e);

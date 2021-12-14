@@ -56,6 +56,10 @@ const getBalanceUrl = (blockchain, address) => {
   return `https://api.alltheblocks.net/${apiName}/address/name/${address}`;
 };
 
+const getPriceUrl = () => {
+  return 'https://api.alltheblocks.net/atb/blockchain/settings-and-stats';
+};
+
 const getMojoDivider = (blockchain) => {
   if (['shibgreen'].includes(blockchain)) return 1000;
   else if (['cryptodoge'].includes(blockchain)) return 1000000;
@@ -79,4 +83,5 @@ module.exports = {
   chainConfigs,
   getCoinRecordsUrl,
   getBalanceUrl,
+  getPriceUrl,
 };

@@ -99,5 +99,11 @@
   "wallets.transfer_success": "تم الالتزام بعملية التحويل إلى blockchain. يمكنك إدخال عنوان المرسل / المستلم في https://alltheblocks.net/ للاطلاع على التفاصيل.",
   "wallets.transfer_with_password": "تحويل العملات المعدنية للآخرين بكلمة مرور آمنة",
   "wallets.your_password": "كلمة السر خاصتك:",
-  "wallets.check_first_wallet_reward": "تحقق من First Wallet Reward عبر الإنترنت"
+  "wallets.check_first_wallet_reward": "تحقق من First Wallet Reward عبر الإنترنت",
+  "balance.address": "عنوان العملة",
+  "balance.balance": "رصيد العملة",
+  "balance.price": "سعر العملة",
+  "balance.total_dollar_all_coins": "القيمة الإجمالية لجميع العملات:",
+  "balance.total_price": "القيمة $",
+  "leftbar.dollar_balance": "الرصيد بالدولار"
 }

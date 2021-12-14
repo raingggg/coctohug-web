@@ -19,10 +19,10 @@ const updateWallet = async () => {
       details: data,
     };
     await axios.post(`${controllerUrl}/plotnfts/update`, payload).catch(function (error) {
-      logger.error(error);
+      logger.error('plotnfts/update', error);
     });
   } catch (e) {
-    logger.error(e);
+    logger.error('updateWallet', e);
   }
 };
 

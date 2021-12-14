@@ -99,5 +99,11 @@
   "wallets.transfer_success": "การทำธุรกรรมได้รับการผูกมัดกับ blockchain คุณสามารถป้อนที่อยู่ผู้ส่ง/ผู้รับของคุณใน https://alltheblocks.net/ เพื่อดูรายละเอียด",
   "wallets.transfer_with_password": "โอนเหรียญให้ผู้อื่นด้วยรหัสผ่านที่ปลอดภัย",
   "wallets.your_password": "รหัสผ่านของคุณ:",
-  "wallets.check_first_wallet_reward": "ตรวจสอบรางวัลกระเป๋าเงินออนไลน์ครั้งแรก"
+  "wallets.check_first_wallet_reward": "ตรวจสอบรางวัลกระเป๋าเงินออนไลน์ครั้งแรก",
+  "balance.address": "ที่อยู่เหรียญ",
+  "balance.balance": "ยอดเหรียญ",
+  "balance.price": "ราคาเหรียญ",
+  "balance.total_dollar_all_coins": "มูลค่ารวมของเหรียญทั้งหมด:",
+  "balance.total_price": "มูลค่า $",
+  "leftbar.dollar_balance": "ยอดคงเหลือ $"
 }

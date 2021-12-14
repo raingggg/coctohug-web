@@ -18,7 +18,7 @@ router.get('/', async (req, res, next) => {
     ]
   });
 
-  res.render('index', {data, pageName: 'hands' });
+  res.render('index', { data, pageName: 'hands' });
 });
 
 router.post('/remove', async (req, res, next) => {
@@ -36,7 +36,7 @@ router.post('/remove', async (req, res, next) => {
         await News.destroy({ where: { blockchain, hostname } });
         await Wallet.destroy({ where: { blockchain, hostname } });
       } catch (ex) {
-        logger.error(ex);
+        logger.error('remove-one-hand', ex);
       }
     }
 

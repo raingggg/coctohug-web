@@ -99,5 +99,11 @@
   "wallets.transfer_success": "Transaksi telah dilakukan ke blockchain. Anda dapat memasukkan alamat pengirim/penerima Anda ke https://alltheblocks.net/ untuk melihat detailnya.",
   "wallets.transfer_with_password": "Transfer Koin ke Orang Lain dengan Kata Sandi Aman",
   "wallets.your_password": "Kata sandi Anda:",
-  "wallets.check_first_wallet_reward": "Periksa Hadiah Dompet Pertama Secara Online"
+  "wallets.check_first_wallet_reward": "Periksa Hadiah Dompet Pertama Secara Online",
+  "balance.address": "Alamat Koin",
+  "balance.balance": "Saldo Koin",
+  "balance.price": "Harga Koin",
+  "balance.total_dollar_all_coins": "Nilai Total Semua Koin:",
+  "balance.total_price": "$ Nilai",
+  "leftbar.dollar_balance": "$ Saldo"
 }

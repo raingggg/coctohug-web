@@ -51,10 +51,10 @@ const postEvents = (evs) => {
       axios.post(`${controllerUrl}/news/add`, payload, {
         headers: { 'Content-Type': 'application/json' }
       }).catch(function (error) {
-        logger.error(error);
+        logger.error('postEvents-one', error);
       });
     } catch (e) {
-      logger.error(e);
+      logger.error('postEvents', e);
     }
   });
 };
@@ -104,10 +104,10 @@ const postDailyEvents = (evs) => {
     axios.post(`${controllerUrl}/news/add`, payload, {
       headers: { 'Content-Type': 'application/json' }
     }).catch(function (error) {
-      logger.error(error);
+      logger.error('postDailyEvents-one', error);
     });
   } catch (e) {
-    logger.error(e);
+    logger.error('postDailyEvents', e);
   }
 };
 

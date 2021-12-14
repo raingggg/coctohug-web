@@ -12,6 +12,7 @@ const receivedCoinsWeb = require('./receivedCoins');
 const reviewWeb = require('./review');
 const settingsWeb = require('./settings');
 const walletsWeb = require('./wallets');
+const walletBalanceWeb = require('./walletBalance');
 const weeklyReportWeb = require('./weeklyReport');
 const faqWeb = require('./faq');
 
@@ -30,6 +31,7 @@ module.exports = {
   reviewWeb,
   settingsWeb,
   walletsWeb,
+  walletBalanceWeb,
   weeklyReportWeb,
   faqWeb,
 };

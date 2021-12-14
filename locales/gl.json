@@ -99,5 +99,11 @@
   "wallets.transfer_success": "A transacción foi comprometida coa cadea de bloques. Podes introducir o teu enderezo de remitente/receptor en https://alltheblocks.net/ para ver os detalles.",
   "wallets.transfer_with_password": "Transfire moedas a outros con contrasinal seguro",
   "wallets.your_password": "O teu contrasinal:",
-  "wallets.check_first_wallet_reward": "Consulte a Primeira Recompensa de Wallet en liña"
+  "wallets.check_first_wallet_reward": "Consulte a Primeira Recompensa de Wallet en liña",
+  "balance.address": "Enderezo da moeda",
+  "balance.balance": "Saldo de moedas",
+  "balance.price": "Prezo da moeda",
+  "balance.total_dollar_all_coins": "Valor total de todas as moedas:",
+  "balance.total_price": "Valor $",
+  "leftbar.dollar_balance": "Saldo $"
 }

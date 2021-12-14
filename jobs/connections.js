@@ -21,7 +21,7 @@ const updateConnection = async () => {
     axios.post(`${controllerUrl}/connections/update`, payload, {
       headers: { 'Content-Type': 'application/json' }
     }).catch(function (error) {
-      logger.error(error);
+      logger.error('connections/update', error);
     });
   } catch (e) {
     logger.error('updateConnection-job', e);
