@@ -105,5 +105,6 @@
   "balance.price": "Prix ​​de la pièce",
   "balance.total_dollar_all_coins": "Valeur totale de toutes les pièces :",
   "balance.total_price": "Valeur en $",
-  "leftbar.dollar_balance": "$ Solde"
+  "leftbar.dollar_balance": "$ Solde",
+  "general.addNew": "Ajouter un nouvel enregistrement"
 }

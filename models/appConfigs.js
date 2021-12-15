@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 
 const { getConnection } = require('../utils/sqlConnection');
 
-sequelize = getConnection();
+const sequelize = getConnection();
 const AppConfig = sequelize.define('AppConfig', {
   key: { type: DataTypes.STRING(70), primaryKey: true },
   value: { type: DataTypes.STRING },

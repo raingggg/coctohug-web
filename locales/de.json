@@ -105,5 +105,6 @@
   "balance.price": "Münzpreis",
   "balance.total_dollar_all_coins": "Gesamtwert aller Münzen:",
   "balance.total_price": "$ Wert",
-  "leftbar.dollar_balance": "$ Guthaben"
+  "leftbar.dollar_balance": "$ Guthaben",
+  "general.addNew": "Neuen Datensatz hinzufügen"
 }

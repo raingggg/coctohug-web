@@ -45,8 +45,30 @@ const getLastWeekDates = () => {
   return { startDate, endDate };
 };
 
+const getDaysBefore = (days) => {
+  const startDate = new Date();
+  if (days) {
+    startDate.setDate(startDate.getDate() - days);
+  }
+  startDate.setHours(0);
+  startDate.setMinutes(0);
+  startDate.setSeconds(0);
+
+  return startDate;
+};
+
+const formattedDateStr = (date) => {
+  return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+};
+
+const getFormattedDaysBefore = (days) => {
+  return formattedDateStr(getDaysBefore(days));
+};
+
 module.exports = {
   getLastHourDates,
   getLastDayDates,
   getLastWeekDates,
+  getDaysBefore,
+  getFormattedDaysBefore,
 };

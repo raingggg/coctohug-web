@@ -105,5 +105,6 @@
   "balance.price": "Giá tiền xu",
   "balance.total_dollar_all_coins": "Tổng giá trị của tất cả các loại tiền:",
   "balance.total_price": "Giá trị $",
-  "leftbar.dollar_balance": "Số dư $"
+  "leftbar.dollar_balance": "Số dư $",
+  "general.addNew": "Thêm bản ghi mới"
 }

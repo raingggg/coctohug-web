@@ -105,5 +105,6 @@
   "balance.price": "Prețul monedei",
   "balance.total_dollar_all_coins": "Valoarea totală a tuturor monedelor:",
   "balance.total_price": "Valoare $",
-  "leftbar.dollar_balance": "Sold $"
+  "leftbar.dollar_balance": "Sold $",
+  "general.addNew": "Adăugați o înregistrare nouă"
 }

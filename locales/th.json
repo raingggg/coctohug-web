@@ -105,5 +105,6 @@
   "balance.price": "ราคาเหรียญ",
   "balance.total_dollar_all_coins": "มูลค่ารวมของเหรียญทั้งหมด:",
   "balance.total_price": "มูลค่า $",
-  "leftbar.dollar_balance": "ยอดคงเหลือ $"
+  "leftbar.dollar_balance": "ยอดคงเหลือ $",
+  "general.addNew": "เพิ่มบันทึกใหม่"
 }

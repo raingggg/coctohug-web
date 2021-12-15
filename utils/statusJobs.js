@@ -15,6 +15,7 @@ const {
   updateDailyWalletBalance,
   updateDailyColdwalletCoins,
   updateWeeklyColdwalletCoins,
+  removeOutdatedNews,
 } = require('../controllerJobs');
 
 const everyMinute = '0 */1 * * * *';
@@ -127,6 +128,7 @@ const oneDayJob = new CronJob(everyMidnight, async () => {
     if (isWebController) {
       await updateDailyWalletBalance();
       await updateDailyColdwalletCoins();
+      await removeOutdatedNews();
     }
   } catch (e) {
     logger.error('oneDayJob', e);
@@ -151,6 +153,7 @@ const oneWeekJob = new CronJob(everyMondayMidnight, async () => {
 
 const startAllJobs = async () => {
   logger.info('all jobs start');
+
   oneMinuteJob.start();
   fiveMinuteJob.start();
   thirtyMinuteJob.start();
@@ -158,6 +161,7 @@ const startAllJobs = async () => {
   fourHourJob.start();
   oneDayJob.start();
   oneWeekJob.start();
+
   logger.info('all jobs end');
 };
 

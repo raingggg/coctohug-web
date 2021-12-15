@@ -105,5 +105,6 @@
   "balance.price": "Цоин Прице",
   "balance.total_dollar_all_coins": "Укупна вредност свих кованица:",
   "balance.total_price": "$ Валуе",
-  "leftbar.dollar_balance": "$ Салдо"
+  "leftbar.dollar_balance": "$ Салдо",
+  "general.addNew": "Додај нови запис"
 }

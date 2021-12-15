@@ -105,5 +105,6 @@
   "balance.price": "Precio de la moneda",
   "balance.total_dollar_all_coins": "Valor total de todas las monedas:",
   "balance.total_price": "Valor $",
-  "leftbar.dollar_balance": "$ Saldo"
+  "leftbar.dollar_balance": "$ Saldo",
+  "general.addNew": "Añadir nuevo registro"
 }

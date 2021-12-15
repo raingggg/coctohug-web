@@ -105,5 +105,6 @@
   "balance.price": "سعر العملة",
   "balance.total_dollar_all_coins": "القيمة الإجمالية لجميع العملات:",
   "balance.total_price": "القيمة $",
-  "leftbar.dollar_balance": "الرصيد بالدولار"
+  "leftbar.dollar_balance": "الرصيد بالدولار",
+  "general.addNew": "إضافة سجل جديد"
 }

@@ -105,5 +105,6 @@
   "balance.price": "Madeni Para Fiyatı",
   "balance.total_dollar_all_coins": "Tüm Madeni Paraların Toplam Değeri:",
   "balance.total_price": "$ Değeri",
-  "leftbar.dollar_balance": "$ Bakiye"
+  "leftbar.dollar_balance": "$ Bakiye",
+  "general.addNew": "Yeni Kayıt Ekle"
 }

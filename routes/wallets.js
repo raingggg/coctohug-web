@@ -124,7 +124,9 @@ const genKey = async (hand) => {
   if (hand) {
     try {
       let finalUrl = `${hand.url}/blockchainsWorker/generatekey`;
-      let apiRes = await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hand.hostname, hand.blockchain) } }).catch(function (error) { logger.error(error); });
+      let apiRes = await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hand.hostname, hand.blockchain) } }).catch(function (error) {
+        logger.error('blockchainsWorker/generatekey', error);
+      });
       if (apiRes && apiRes.data && apiRes.data.status === 'OK') {
         gResult = true;
       }
@@ -141,11 +143,15 @@ const addKeyNRestart = async (data) => {
     try {
       const hand = data[i];
       let finalUrl = `${hand.url}/blockchainsWorker/addkey`;
-      await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hand.hostname, hand.blockchain) } }).catch(function (error) { logger.error(error); });
+      await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hand.hostname, hand.blockchain) } }).catch(function (error) {
+        logger.error('blockchainsWorker/addkey', error);
+      });
 
       if (isFullnode) {
         finalUrl = `${hand.url}/blockchainsWorker/restart`;
-        await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hand.hostname, hand.blockchain) } }).catch(function (error) { logger.error(error); });
+        await axios.get(finalUrl, { headers: { 'tk': getWorkerToken(hand.hostname, hand.blockchain) } }).catch(function (error) {
+          logger.error('blockchainsWorker/restart', error);
+        });
       }
     } catch (ex) {
       logger.error('addKeyNRestart', ex);

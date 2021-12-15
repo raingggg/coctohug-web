@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 
 const { getConnection } = require('../utils/sqlConnection');
 
-sequelize = getConnection();
+const sequelize = getConnection();
 const Plot = sequelize.define('Plot', {
     hostname: { type: DataTypes.STRING, primaryKey: true },
     displayname: { type: DataTypes.STRING },

@@ -105,5 +105,6 @@
   "balance.price": "قیمت سکه",
   "balance.total_dollar_all_coins": "ارزش کل تمام سکه ها:",
   "balance.total_price": "ارزش دلار",
-  "leftbar.dollar_balance": "تعادل $"
+  "leftbar.dollar_balance": "تعادل $",
+  "general.addNew": "افزودن رکورد جدید"
 }

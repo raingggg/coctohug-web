@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 
 const { getConnection } = require('../utils/sqlConnection');
 
-sequelize = getConnection();
+const sequelize = getConnection();
 const ReviewPlotCount = sequelize.define('ReviewPlotCount', {
   id: { type: DataTypes.INTEGER, primaryKey: true },
   value: { type: DataTypes.REAL },

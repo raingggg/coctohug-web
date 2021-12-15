@@ -105,5 +105,6 @@
   "balance.price": "Presyo ng barya",
   "balance.total_dollar_all_coins": "Kabuuang Halaga ng Lahat ng Barya:",
   "balance.total_price": "$ Halaga",
-  "leftbar.dollar_balance": "$ Balanse"
+  "leftbar.dollar_balance": "$ Balanse",
+  "general.addNew": "Magdagdag ng Bagong Record"
 }

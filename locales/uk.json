@@ -105,5 +105,6 @@
   "balance.price": "Ціна монети",
   "balance.total_dollar_all_coins": "Загальна вартість усіх монет:",
   "balance.total_price": "$ Ціна",
-  "leftbar.dollar_balance": "$ Баланс"
+  "leftbar.dollar_balance": "$ Баланс",
+  "general.addNew": "Додати новий запис"
 }

@@ -105,5 +105,6 @@
   "balance.price": "Harga Koin",
   "balance.total_dollar_all_coins": "Nilai Total Semua Koin:",
   "balance.total_price": "$ Nilai",
-  "leftbar.dollar_balance": "$ Saldo"
+  "leftbar.dollar_balance": "$ Saldo",
+  "general.addNew": "Tambahkan Rekor Baru"
 }

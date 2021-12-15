@@ -105,5 +105,6 @@
   "balance.price": "硬币价格",
   "balance.total_dollar_all_coins": "所有硬币的总价值：",
   "balance.total_price": "美元价值",
-  "leftbar.dollar_balance": "$余额"
+  "leftbar.dollar_balance": "$余额",
+  "general.addNew": "添加新记录"
 }

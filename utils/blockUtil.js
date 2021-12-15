@@ -51,7 +51,9 @@ const getOnlineWalletCoinsAmount = async (blockchain, walletAdress, startDate, e
 
     try {
       const finalUrl = getCoinRecordsUrl(blockchain, walletAdress, p, 500);
-      const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) { logger.error(error); });
+      const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) {
+        logger.error('getOnlineWalletCoinsAmount-api', error);
+      });
       const records = apiRes && apiRes.data && apiRes.data.content;
       if (records && records.length > 0) {
         records.forEach(rc => {
@@ -94,7 +96,9 @@ const getAllCoinsPrice = async () => {
   const coinsPrice = {};
   try {
     const finalUrl = getPriceUrl();
-    const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) { logger.error(error); });
+    const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) {
+      logger.error('getAllCoinsPrice-api', error);
+    });
     const records = apiRes && apiRes.data;
     if (records && records.length > 0) {
       records.forEach(rc => {
@@ -116,7 +120,9 @@ const getCoinBalance = async (blockchain, walletAdress) => {
     if (!forkConfig || !blockchain || !walletAdress) return balance;
 
     const finalUrl = getBalanceUrl(blockchain, walletAdress);
-    const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) { logger.error(error); });
+    const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) {
+      logger.error('getCoinBalance-api', error);
+    });
     const apiBalance = apiRes && apiRes.data && apiRes.data.balance;
     if (apiBalance > 0) {
       balance = apiBalance / forkConfig.mojoDivider;

@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 
 const { getConnection } = require('../utils/sqlConnection');
 
-sequelize = getConnection();
+const sequelize = getConnection();
 const Pool = sequelize.define('Pool', {
     unique_id: { type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4, primaryKey: true },
     hostname: { type: DataTypes.STRING },
