@@ -29,7 +29,7 @@ router.get('/', async (req, res, next) => {
       const apiRes = await axios.get(finalUrl, { timeout: 5000 }).catch(function (error) {
         logger.error('xyz/latestNews', error);
       });
-      latestNews = apiRes.data;
+      latestNews = (apiRes && apiRes.data) ? apiRes.data : '';
     }
   } catch (e) {
     logger.error('latestNews', e);

@@ -2,6 +2,7 @@ var i18n = require('i18n');
 const axios = require('axios');
 const express = require('express');
 const router = express.Router();
+const { logger } = require('../utils/logger');
 const { Op } = require("sequelize");
 const { Connection, Hand } = require('../models');
 const { parseConnecitons } = require('../utils/chiaParser');
