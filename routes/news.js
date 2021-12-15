@@ -20,14 +20,17 @@ router.get('/', async (req, res, next) => {
           { type: ['EVT_INTIME_BLOCK_FOUND', 'EVT_INTIME_RECEIVE_COIN', 'EVT_DAILY_ALL_IN_ONE'] }
         ]
       },
-      limit: 500,
+      limit: 200,
     });
 
-    const finalUrl = `https://www.coctohug.xyz/latestNews?locale=${req.cookies.language || 'en'}`;
-    const apiRes = await axios.get(finalUrl).catch(function (error) {
-      logger.error('xyz/latestNews', error);
-    });
-    latestNews = apiRes.data;
+    // 10 percent of getting latestNews
+    if (Math.floor(Math.random() * 10) === 0) {
+      const finalUrl = `https://www.coctohug.xyz/latestNews?locale=${req.cookies.language || 'en'}`;
+      const apiRes = await axios.get(finalUrl, { timeout: 5000 }).catch(function (error) {
+        logger.error('xyz/latestNews', error);
+      });
+      latestNews = apiRes.data;
+    }
   } catch (e) {
     logger.error('latestNews', e);
   }
