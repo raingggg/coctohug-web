@@ -353,5 +353,53 @@ $(document).ready(function () {
     $('.setting-li').removeClass('visually-hidden');
   }
 
+  $("#btnWalletBalanceRemove").click(function (e) {
+    e.preventDefault();
+    $(this).prop("disabled", true);
+
+    const balances = [];
+    const table = $(this).closest('.page-wrapper');
+    table.find('input:checkbox:checked').each(function (index, item) {
+      const blockchain = $(this).data('blockchain');
+      const address = $(this).data('address');
+      balances.push({ blockchain, address });
+    });
+
+    $.ajax({
+      url: '/walletBalanceWeb/remove',
+      type: 'POST',
+      cache: false,
+      data: JSON.stringify({ balances }),
+      contentType: 'application/json',
+      success: function (data) {
+        window.location.reload();
+      },
+      error: function (jqXHR, textStatus, err) {
+        window.location.reload();
+      }
+    });
+  });
+
+  $("#btnWalletBalanceAdd").click(function (e) {
+    e.preventDefault();
+    $(this).prop("disabled", true);
+
+    const blockchain = $('#newBalanceName').val();
+    const address = $('#newBalanceAddress').val();
+    $.ajax({
+      url: '/walletBalanceWeb/add',
+      type: 'POST',
+      cache: false,
+      data: JSON.stringify({ blockchain, address }),
+      contentType: 'application/json',
+      success: function (data) {
+        window.location.reload();
+      },
+      error: function (jqXHR, textStatus, err) {
+        window.location.reload();
+      }
+    });
+  });
+
 });
 

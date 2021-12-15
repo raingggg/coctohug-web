@@ -10,6 +10,7 @@
   <table class="table table-striped table-hover">
     <thead>
       <tr>
+        <td></td>
         <td>
           <%= __('general.updatedAt') %>
         </td>
@@ -34,6 +35,10 @@
       <% data.forEach(function(dt, index){ %>
         <tr>
           <td>
+            <input type="checkbox" name="wbcheck" value="<%= index %>" data-address="<%= dt.address %>"
+              data-blockchain="<%= dt.blockchain %>" />
+          </td>
+          <td>
             <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
           </td>
           <td>
@@ -57,4 +62,27 @@
         <% }); %>
     </tbody>
   </table>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <button class="btn btn-outline-success" id="btnWalletBalanceRemove">
+          <%= __('hands.remove_selected') %>
+        </button>
+      </div>
+      <div class="col-1">
+        <input class="form-control me-2 new-connection" type="text" placeholder="chia" id="newBalanceName">
+      </div>
+      <div class="col-7">
+        <input class="form-control me-2 new-connection" type="text"
+          placeholder="xch1hheexed9apm4cpln96gk2epkv850y357rkmgwhhst4evu84vpwxqldw3vg" id="newBalanceAddress">
+      </div>
+      <div class="col-2">
+        <button class="btn btn-outline-success text-right" id="btnWalletBalanceAdd">
+          <%= __('general.addNew') %>
+        </button>
+      </div>
+    </div>
+    <p></p>
+  </div>
 </div>

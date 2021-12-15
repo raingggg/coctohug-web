@@ -21,6 +21,7 @@
   "connections.ports": "Ports",
   "connections.removing": "Removing... Please check again few minutes later",
   "connections.type": "Type",
+  "general.addNew": "Add New Record",
   "general.actions": "Actions",
   "general.blockchain": "Blockchain",
   "general.cancel": "Cancel",
