@@ -7,6 +7,7 @@ const {
   getControllerUrl,
   isWebControllerMode,
 } = require('./chiaConfig');
+const { chainConfigs } = require('./chainConfigs');
 
 const { chainlog, blockchain } = blockchainConfig;
 const hostname = getHostname();
@@ -48,6 +49,12 @@ const postEvents = (evs) => {
         type: ev.message.type,
         message: ev.message.msg,
       };
+
+      const cc = chainConfigs[blockchain];
+      if ('EVT_INTIME_RECEIVE_COIN' === payload.type && ev.message.amountCoins && cc && cc.mojoMultiplier) {
+        payload.message = `Cha-ching! Just received ${ev.message.amountCoins * cc.mojoMultiplier} coins ☘️`;
+      }
+
       axios.post(`${controllerUrl}/news/add`, payload, {
         headers: { 'Content-Type': 'application/json' }
       }).catch(function (error) {
@@ -70,7 +77,14 @@ const postDailyEvents = (evs) => {
 
     logger.error('evs: ', evs);
     let tempEv = evs.find(ev => ev.message && ev.message.type === 'EVT_DAILY_RECEIVE_COIN');
-    if (tempEv) msg += `${tempEv.message.msg}\n`;
+    if (tempEv) {
+      const cc = chainConfigs[blockchain];
+      if (ev.message.totalAddedCoins && cc && cc.mojoMultiplier) {
+        msg += `Received ☘️: ${ev.message.totalAddedCoins * cc.mojoMultiplier} coins`;
+      } else {
+        msg += `${tempEv.message.msg}\n`;
+      }
+    }
 
     tempEv = evs.find(ev => ev.message && ev.message.type === 'EVT_DAILY_PROOF_FOUND');
     if (tempEv) msg += `${tempEv.message.msg}\n`;

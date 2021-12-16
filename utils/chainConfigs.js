@@ -68,13 +68,20 @@ const getMojoDivider = (blockchain) => {
   return 1000000000000;
 };
 
+const getMojoMultiplier = (blockchain) => {
+  if (['cryptodoge', 'shibgreen'].includes(blockchain)) return 1000000;
+
+  return 1;
+};
+
 const chainConfigs = {};
 Object.keys(chainNameMap).forEach(cname => {
   const apiName = chainNameMap[cname];
   chainConfigs[cname] = {
     exp: getExp(apiName),
     peers: getPeers(apiName),
-    mojoDivider: getMojoDivider(cname)
+    mojoDivider: getMojoDivider(cname),
+    mojoMultiplier: getMojoMultiplier(cname),
   };
 });
 
