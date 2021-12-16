@@ -6,14 +6,15 @@
     <span>
       $<%= allCoinsDollars %>
     </span>
+    <span>
+      --- <%= __('general.updatedAt') %>
+        <%= lastUpdatedAt.toLocaleString("en-US", {hour12: false}) %>
+    </span>
   </div>
   <table class="table table-striped table-hover">
     <thead>
       <tr>
         <td></td>
-        <td>
-          <%= __('general.updatedAt') %>
-        </td>
         <td>
           <%= __('general.blockchain') %>
         </td>
@@ -37,9 +38,6 @@
           <td>
             <input type="checkbox" name="wbcheck" value="<%= index %>" data-address="<%= dt.address %>"
               data-blockchain="<%= dt.blockchain %>" />
-          </td>
-          <td>
-            <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
           </td>
           <td>
             <%= dt.blockchain %>

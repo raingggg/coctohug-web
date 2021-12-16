@@ -5,8 +5,9 @@ const { logger } = require('../utils/logger');
 const { WalletBalance } = require('../models');
 
 router.get('/', async (req, res, next) => {
-  let allCoinsDollars = 0;
   let data = [];
+  let allCoinsDollars = 0;
+  let lastUpdatedAt = new Date();
 
   try {
     data = await WalletBalance.findAll({
@@ -19,12 +20,16 @@ router.get('/', async (req, res, next) => {
       if (dt.total_price) {
         allCoinsDollars += dt.total_price;
       }
+
+      if (lastUpdatedAt > dt.updatedAt) {
+        lastUpdatedAt = dt.updatedAt; // use the most last one
+      }
     });
   } catch (e) {
     logger.error('walletBalanceWeb', e);
   }
 
-  res.render('index', { data, allCoinsDollars, pageName: 'walletBalance' });
+  res.render('index', { data, allCoinsDollars, lastUpdatedAt, pageName: 'walletBalance' });
 });
 
 router.post('/remove', async (req, res, next) => {
