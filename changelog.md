@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.1.0] - 2021-12-15
+- harvester support for all forks
+- chia and nchain support
+- trivial ui fix
+
 ## [1.0.5] - 2021-12-15
 - Account balance of Wallet in US Dollar
 - weekly report with coldwallet
