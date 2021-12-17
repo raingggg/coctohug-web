@@ -1,6 +1,10 @@
 # Changelog
 
-## [1.1.0] - 2021-12-15
+## [1.2.0] - 2021-12-17
+- farmer support for all forks
+- restart fix depeneds on modes
+
+## [1.1.0] - 2021-12-16
 - harvester support for all forks
 - chia and nchain support
 - trivial ui fix
