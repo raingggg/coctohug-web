@@ -10,9 +10,14 @@ var http = require('http');
 const { logger } = require('../utils/logger');
 const { startAllJobs } = require('../utils/statusJobs');
 const { startWatchDog } = require('../utils/chiaDog');
-const { isFullnodeMode } = require('../utils/chiaConfig');
+const {
+  isFullnodeMode,
+  isFarmerMode,
+} = require('../utils/chiaConfig');
 
 const isFullnode = isFullnodeMode();
+const isFarmer = isFarmerMode();
+
 /**
  * Get port from environment and store in Express.
  */
@@ -36,7 +41,7 @@ function startServer() {
   server.on('listening', onListening);
 
   startAllJobs();
-  if (isFullnode) {
+  if (isFullnode || isFarmer) {
     startWatchDog();
   }
 }

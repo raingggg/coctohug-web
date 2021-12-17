@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.1] - 2021-12-17
+- farmer mode add watch-dog
+- wallet mode start blockchain by default
+
 ## [1.2.0] - 2021-12-17
 - farmer support for all forks
 - restart fix depeneds on modes
