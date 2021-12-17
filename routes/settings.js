@@ -13,9 +13,6 @@ const { blockchainConfig: { coldWalletFile, downloadsPath }, getWorkerToken } = 
 
 router.get('/restartWeb', async (req, res, next) => {
   const data = await Hand.findAll({
-    where: {
-      mode: { [Op.in]: ['fullnode', 'wallet'] },
-    },
     order: [
       ['blockchain', 'ASC'],
     ]
@@ -28,7 +25,6 @@ router.get('/restartOp', async (req, res, next) => {
     const { hostname, blockchain } = req.query;
     const data = await Hand.findAll({
       where: {
-        mode: { [Op.in]: ['fullnode', 'wallet'] },
         hostname,
         blockchain
       }
@@ -53,11 +49,7 @@ router.get('/coldWalletWeb', async (req, res, next) => {
 
 router.get('/downAllWalletConfigs', async (req, res, next) => {
   try {
-    const obj = {};
     const data = await Hand.findAll({
-      where: {
-        mode: { [Op.in]: ['fullnode', 'wallet'] },
-      },
       order: [
         ['blockchain', 'ASC'],
       ]
@@ -125,7 +117,7 @@ router.post('/coldWalletImport', async (req, res, next) => {
 
     const data = await Hand.findAll({
       where: {
-        mode: { [Op.in]: ['fullnode', 'wallet'] },
+        mode: { [Op.in]: ['fullnode', 'farmer', 'wallet'] },
       }
     });
 

@@ -16,10 +16,18 @@ const {
 const {
   blockchainConfig: { binary, blockchain, config, mncPath, coldWalletName },
   getCoctohugWebVersion,
+  isHarvesterMode,
+  isFullnodeMode,
+  isFarmerMode,
+  isWalletMode,
 } = require('./chiaConfig');
 const { chainConfigs } = require('./chainConfigs');
 const { logger } = require('./logger');
 
+const isHarvester = isHarvesterMode();
+const isFullnode = isFullnodeMode();
+const isFarmer = isFarmerMode();
+const isWallet = isWalletMode();
 
 const G_SIZE = 1024 * 1024 * 1024;
 const TIMEOUT_1MINUTE = 60 * 1000;
@@ -311,7 +319,16 @@ const restartBlockchain = async () => {
   let result = '';
 
   try {
-    const cmdOutput = await exec(`${binary} start farmer -r`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
+    let scriptStr = `${binary} start farmer -r`;
+    if (isHarvester) {
+      scriptStr = `${binary} start harvester -r`;
+    } else if (isFarmer) {
+      scriptStr = `${binary} start farmer-no-wallet -r`;
+    } else if (isWallet) {
+      scriptStr = `${binary} start wallet -r`;
+    }
+
+    const cmdOutput = await exec(scriptStr, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = `${blockchain}: ${cmdOutput.stdout.trim()}`;
   } catch (e) {
     logger.error('restartBlockchain', e);

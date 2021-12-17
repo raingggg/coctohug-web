@@ -65,6 +65,14 @@ const isFullnodeMode = () => {
   return MODE.includes('fullnode');
 };
 
+const isFarmerMode = () => {
+  return MODE.includes('farmer');
+};
+
+const isWalletMode = () => {
+  return MODE.includes('wallet');
+};
+
 const getSqlitePath = () => {
   return getFullPath('.coctohug-web/db/coctohug.sqlite');
 };
@@ -121,6 +129,8 @@ module.exports = {
   getMode,
   isHarvesterMode,
   isFullnodeMode,
+  isFarmerMode,
+  isWalletMode,
   getSqlitePath,
   isWebControllerMode,
   getWebLogLevel,
