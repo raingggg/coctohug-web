@@ -16,7 +16,7 @@ const {
 const TIMEOUT_1MINUTE = 60 * 1000;
 const TIME_1HOUR = 60 * 60 * 1000;
 
-const REG_BALANCE = /-Total\sBalance:\s+((?:\d*\.\d+)|(?:\d+\.?))/g;
+const REG_BALANCE = /-Total\sBalance:\s+((?:\d*\.?\d+e-\d*)|(?:\d*\.\d+)|(?:\d+\.?))/g;
 const REG_WALLET_ADDR = /First wallet address: (\w*)/;
 
 const getTotalBalance = (str) => {

@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.2.2] - 2021-12-17
+- coin amount fix for 1e-7 cases
+
 ## [1.2.1] - 2021-12-17
 - farmer mode add watch-dog
 - wallet mode start blockchain by default

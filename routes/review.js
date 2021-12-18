@@ -28,14 +28,19 @@ router.get('/', async (req, res, next) => {
         Object.assign(dt, { status: 'Sync Error' });
       }
 
+      let total_coins = dt.total_coins;
+      if (total_coins > 0) total_coins = parseFloat(total_coins.toFixed(6));
+      Object.assign(dt, { total_coins });
+
       const wd = walletData.find(w => w.blockchain === dt.blockchain);
       if (wd) {
-        const balance = getTotalBalance(wd.details);
+        let balance = getTotalBalance(wd.details);
+        if (balance > 0) balance = parseFloat(balance.toFixed(6));
         Object.assign(dt, { balance });
       }
     })
 
-    res.render('index', {data, pageName: 'review' });
+    res.render('index', { data, pageName: 'review' });
   } else {
     res.render('index', { pageName: 'api' });
   }
