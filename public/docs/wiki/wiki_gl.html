@@ -46,31 +46,45 @@
 <ul>
 <li>Montar <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
 <li>Ir ao sitio <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, a continuación, introduza todos os campos de formulario necesarios e descargue os ficheiros de composición docker-compose comprimidos xerados</li>
-<li>Descomprime os cartafoles descargados e cópiaos no teu directorio de traballo</li>
-<li>Executar todos os cartafoles por orde:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
-cd ../coctohug1 &amp;&amp; docker-compose up -d
-cd ../coctohug2 &amp;&amp; docker-compose up -d
-cd ../coctohug3 &amp;&amp; docker-compose up -d
+<li>Descomprime os cartafoles descargados e cópiaos no teu directorio de traballo. Elimina tamén eses cartafoles de forks de cadea de bloques non desexados para evitar que o ordenador non teña recursos</li>
+<li>Instala forks de cadea de bloques mediante scripts similares:<pre><code>./ccm.sh start flora
+./ccm.sh start flax
+./ccm.sh start hddcoin
+./ccm.sh start chia
 ...
 </code></pre>
 </li>
 <li>Abre o navegador e accede á WebUI con url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Nota 1: Non inicie máis de 5 forks de cadea de bloques ao mesmo tempo, xa que os garfos de cadea de bloques de chia realmente comen CPU cando se sincronizan os nodos por primeira vez</li>
 <li>Nota 2: Requírese ao redor de 1,8 G de RAM para cada bifurcación de cadea de bloques, polo que escolla algunhas garfos de cadea de bloques en función da memoria do ordenador</li>
-<li>Nota 3: Se hai algún problema, é posible que necesites volver executar todos os cartafoles por orde:<pre><code>cd coctohug0 &amp;&amp; docker-compose up -d
-cd ../coctohug1 &amp;&amp; docker-compose up -d
-cd ../coctohug2 &amp;&amp; docker-compose up -d
-cd ../coctohug3 &amp;&amp; docker-compose up -d
+<li>Nota 3: Se hai algún problema, é posible que necesites reiniciar todos os forks da cadea de bloques:<pre><code>./ccm.sh restart flora
+./ccm.sh restart flax
+./ccm.sh restart hddcoin
+./ccm.sh restart chia
 ...
 </code></pre>
 </li>
 <li>Nota 4: Quizais necesites engadir portos permitidos de 12630 a 12700 na configuración do firewall do teu sistema</li>
+<li>Nota 5: lembre de mover o cartafol dos garfos da cadea de bloques non desexados do cartafol coctohug. En caso contrario, iniciaranse ao mesmo tempo cando opere en todos os forks de cadea de bloques que funcionen, e o que pode provocar que o seu ordenador se quede sen recursos.
+```
+./ccm.sh start all
+./ccm.sh restart all
+./ccm.sh stop all
+./ccm.sh upgrade all
+...</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="configura-coctohug-no-sistema-operativo-windows">Configura Coctohug no sistema operativo Windows</h2>
 <ul>
-<li>O mesmo con <a href="#cch-linux">Configura Coctohug en Linux OS</a></li>
+<li>A maioría dos pasos son os mesmos <a href="#cch-linux">Configura Coctohug en Linux OS</a></li>
+<li>Instala forks de cadea de bloques mediante scripts similares:<pre><code>.\ccm.ps1 start flora
+.\ccm.ps1 start flax
+.\ccm.ps1 start hddcoin
+.\ccm.ps1 start chia
+...
+</code></pre>
+</li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 
@@ -154,19 +168,16 @@ cd ../coctohug3 &amp;&amp; docker-compose up -d
 <li>Podes ir á pestana Conexións ou Blockchains para examinar o estado detallado</li>
 <li>Para acelerar a sincronización do teu nodo: <a href="https://www.coctohug.xyz/#dbFilesAndOpenSources">Coctohug site</a> ofrece ligazóns a ficheiros de bases de datos desenvolvidas e patrocinadas por: <a href="https://chiaforksblockchain.com/">Maize fork</a><pre><code>1. Descarga ficheiros: blockchain_v1_mainnet.sqlite e peer_table_node.sqlite
 2. Detén a bifurcación da cadea de bloques mediante un script de terminal similar (dentro de cada cartafol):
-  docker-compose stop coctohug-flora
-  docker-compose stop coctohug-covid
-  docker-compose stop coctohug-lucky
+  Windows: .\ccm.ps1 stop all
+  Linux / Mac: ./ccm.sh stop all
 3. Copia eses ficheiros no cartafol do fork blockchain de xeito similar a:
-  /home/username/.coctohug-flora/flora/mainnet/db/
-  /home/username/.coctohug-covid/covid/mainnet/db/
-  /home/username/.coctohug-lucky/lucky/mainnet/db/
+  Windows: /c:/users/username/.coctohug-covid/covid/mainnet/db/
+  Linux / Mac: /home/username/.coctohug-flora/flora/mainnet/db/
 4. Inicia o fork blockchain mediante un script de terminal similar (dentro de cada cartafol):
-  docker-compose restart coctohug-flora
-  docker-compose restart coctohug-covid
-  docker-compose restart coctohug-lucky
+   Windows: .\ccm.ps1 restart all
+   Linux / Mac: ./ccm.sh restart all
 Notas 1: a túa carteira necesita sincronización individual no programa de fork
-Notas 2: a conexión da base de datos descargada ao teu fork blockchain pode levar ata 5 minutos.
+Notas 2: a conexión da base de datos descargada á túa cadea de bloques pode levar ata 30 minutos.
 </code></pre>
 </li>
 </ul>
@@ -209,10 +220,9 @@ Notas 2: a conexión da base de datos descargada ao teu fork blockchain pode lev
 3. Configure os cartafoles docker-compose [Configura Coctohug en Linux OS]
 4. Na pantalla de inicio de WebUI, xera unha nova clave esta vez
 5. Agarde uns minutos para que se reinicien os garfos de blockchain
-6. Vaia a cada cartafol e execute o script docker-compose stop &amp;&amp; docker-compose up -d
-7. Visita http://localhost:12630/, e vai a configuración - pestana de carteira fría para exportar os enderezos de carteira fría
-8. Confirme que cada enderezo é correcto manualmente comparando o ficheiro descargado coa información que se mostra na pestana Chaves
-9. Obtén 24 palabras mnemónicas mediante un script de terminal similar
+6. Visita http://localhost:12630/, e vai a configuración - pestana de carteira fría para exportar os enderezos de carteira fría
+7. Confirme que cada enderezo é correcto manualmente comparando o ficheiro descargado coa información que se mostra na pestana Chaves
+8. Obtén 24 palabras mnemónicas mediante un script de terminal similar
   docker exec -it coctohug-flora flora keys show --show-mnemonic-seed
   docker exec -it coctohug-covid covid keys show --show-mnemonic-seed
   docker exec -it coctohug-lucky lucky keys show --show-mnemonic-seed
@@ -223,11 +233,9 @@ Notas 2: a conexión da base de datos descargada ao teu fork blockchain pode lev
 3. Agarde uns minutos e vai á pestana da carteira para ver se o enderezo da carteira fría está actualizado ou non
 4. Nota 1: recomendamos facer unha copia de seguridade das configuracións da carteira antes de importar
 5. Nota 2: só os garfos blockchain que funcionan poden importar carteira fría. Comproba se hai forks blockchain parados ou non antes de facelo. Seguro que tamén pode importar máis tarde de novo cando se reinicien
-6. Nota 3: Se hai algún problema, é posible que necesites volver executar todos os cartafoles por orde:
-  cd coctohug0 &amp;&amp; docker-compose up -d
-  cd ../coctohug1 &amp;&amp; docker-compose up -d
-  cd ../coctohug2 &amp;&amp; docker-compose up -d
-  cd ../coctohug3 &amp;&amp; docker-compose up -d
+6. Nota 3: Se hai algún problema, é posible que necesites reiniciar todos os forks da cadea de bloques:
+  Windows: .\ccm.ps1 restart all
+  Linux / Mac: ./ccm.sh restart all
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -260,13 +268,12 @@ Notas 2: a conexión da base de datos descargada ao teu fork blockchain pode lev
 <h2 id="actualizar">Actualizar</h2>
 <ul>
 <li>Isto precisa de novo as 24 palabras mnemotécnicas. Por favor, colócaas no ficheiro /home/user/.coctohug/mnc.txt. Despois de comezar todos os novos contedores docker, podes baleirar o ficheiro mnc.txt para mellorar o teu nivel de seguranza</li>
-<li>Guión dunha liña<pre><code>docker-compose stop &amp;&amp; docker-compose rm -f &amp;&amp; docker-compose pull &amp;&amp; docker-compose up -d --force-recreate
+<li>Guión dunha liña<pre><code>Windows: .\ccm.ps1 upgrade all; .\ccm.ps1 start all
+Linux / Mac: ./ccm.sh upgrade all &amp;&amp; ./ccm.sh start all
 </code></pre>
 </li>
-<li>Tamén pode executar os scripts anteriores paso a paso<pre><code>docker-compose stop
-docker-compose rm -f
-docker-compose pull
-docker-compose up -d --force-recreate
+<li>Tamén pode executar os scripts anteriores paso a paso<pre><code>.\ccm.ps1 upgrade all
+.\ccm.ps1 start all
 </code></pre>
 </li>
 <li>En caso de problema de base de datos incompatible, pode eliminar o ficheiro de base de datos existente antes de executar o script de inicio docker-compose mediante<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite

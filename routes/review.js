@@ -2,11 +2,13 @@ var i18n = require('i18n');
 const express = require('express');
 const router = express.Router();
 const { Farm, Wallet } = require('../models');
-const { isWebControllerMode } = require('../utils/chiaConfig');
+const { isWebControllerMode, getCoctohugWebVersion } = require('../utils/chiaConfig');
 const { getTotalBalance } = require('../utils/blockUtil');
 const isWebController = isWebControllerMode();
 
 const UNSYNC_THRESHHOLD = 30 * 60 * 1000; // 30 mins
+const webVersion = getCoctohugWebVersion();
+
 router.get('/', async (req, res, next) => {
   if (isWebController) {
     const data = await Farm.findAll({
@@ -40,7 +42,7 @@ router.get('/', async (req, res, next) => {
       }
     })
 
-    res.render('index', { data, pageName: 'review' });
+    res.render('index', { data, webVersion, pageName: 'review' });
   } else {
     res.render('index', { pageName: 'api' });
   }
