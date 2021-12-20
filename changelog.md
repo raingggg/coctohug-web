@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.2.4] - 2021-12-20
+- show yellow background for not getting data longer than 30 minutes cases 
+
 ## [1.2.3] - 2021-12-20
 - clear logs everyday: watchdoglog, blockchainlog, weblog
 - fix chia-watch-dog not sending daily stats

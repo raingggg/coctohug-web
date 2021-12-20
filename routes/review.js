@@ -6,7 +6,7 @@ const { isWebControllerMode } = require('../utils/chiaConfig');
 const { getTotalBalance } = require('../utils/blockUtil');
 const isWebController = isWebControllerMode();
 
-const UNSYNC_THRESHHOLD = 10 * 60 * 1000; // 10 mins
+const UNSYNC_THRESHHOLD = 30 * 60 * 1000; // 30 mins
 router.get('/', async (req, res, next) => {
   if (isWebController) {
     const data = await Farm.findAll({
