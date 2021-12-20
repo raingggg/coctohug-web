@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.2.3] - 2021-12-20
+- clear logs everyday: watchdoglog, blockchainlog, weblog
+- fix chia-watch-dog not sending daily stats
+- wallet-no-farmer docker-image fix
+
 ## [1.2.2] - 2021-12-17
 - coin amount fix for 1e-7 cases
 

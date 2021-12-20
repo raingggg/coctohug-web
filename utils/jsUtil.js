@@ -1,3 +1,6 @@
+const TIMEOUT_1MINUTE = 60 * 1000;
+const TIMEOUT_2MINUTE = 2 * 60 * 1000;
+
 const getLastHourDates = () => {
   const startDate = new Date();
   startDate.setHours(startDate.getHours() - 1);
@@ -66,6 +69,8 @@ const getFormattedDaysBefore = (days) => {
 };
 
 module.exports = {
+  TIMEOUT_1MINUTE,
+  TIMEOUT_2MINUTE,
   getLastHourDates,
   getLastDayDates,
   getLastWeekDates,

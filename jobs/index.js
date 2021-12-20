@@ -8,6 +8,7 @@ const { updateConnection } = isWebController ? emptyObject : require('./connecti
 const { updateKey } = isWebController ? emptyObject : require('./keys');
 const { updateBlockchain } = isWebController ? emptyObject : require('./blockchains');
 const { updateHand } = isWebController ? emptyObject : require('./hands');
+const { emptyWorkerLogs } = isWebController ? emptyObject : require('./logs');
 
 module.exports = {
   updateWallet,
@@ -16,4 +17,5 @@ module.exports = {
   updateKey,
   updateBlockchain,
   updateHand,
+  emptyWorkerLogs,
 };

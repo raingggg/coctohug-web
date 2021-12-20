@@ -79,8 +79,8 @@ const postDailyEvents = (evs) => {
     let tempEv = evs.find(ev => ev.message && ev.message.type === 'EVT_DAILY_RECEIVE_COIN');
     if (tempEv) {
       const cc = chainConfigs[blockchain];
-      if (ev.message.totalAddedCoins && cc && cc.mojoMultiplier) {
-        msg += `Received ☘️: ${ev.message.totalAddedCoins * cc.mojoMultiplier} coins`;
+      if (cc && cc.mojoMultiplier) {
+        msg += `Received ☘️: ${tempEv.message.totalAddedCoins * cc.mojoMultiplier} coins`;
       } else {
         msg += `${tempEv.message.msg}\n`;
       }

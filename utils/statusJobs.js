@@ -8,6 +8,7 @@ const {
   updateKey,
   updateBlockchain,
   updateHand,
+  emptyWorkerLogs,
 } = require('../jobs');
 
 const {
@@ -16,6 +17,7 @@ const {
   updateDailyColdwalletCoins,
   updateWeeklyColdwalletCoins,
   removeOutdatedNews,
+  emptyControllerLogs,
 } = require('../controllerJobs');
 
 const everyMinute = '0 */1 * * * *';
@@ -129,6 +131,9 @@ const oneDayJob = new CronJob(everyMidnight, async () => {
       await updateDailyWalletBalance();
       await updateDailyColdwalletCoins();
       await removeOutdatedNews();
+      await emptyControllerLogs();
+    } else {
+      await emptyWorkerLogs();
     }
   } catch (e) {
     logger.error('oneDayJob', e);

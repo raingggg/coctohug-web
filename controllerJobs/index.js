@@ -5,6 +5,7 @@ const {
 } = require('./wallets');
 const { updateDailyWalletBalance } = require('./walletBalance');
 const { removeOutdatedNews } = require('./news');
+const { emptyControllerLogs } = require('./logs');
 
 module.exports = {
   updateHourlyColdwalletCoins,
@@ -12,4 +13,5 @@ module.exports = {
   updateDailyColdwalletCoins,
   updateWeeklyColdwalletCoins,
   removeOutdatedNews,
+  emptyControllerLogs,
 }
