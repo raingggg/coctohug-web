@@ -238,7 +238,7 @@ router.get('/harvesterWeb', async (req, res, next) => {
     logger.debug('harvesterWeb');
     const data = await Hand.findAll({
       where: {
-        mode: 'fullnode'
+        mode: { [Op.in]: ['fullnode', 'farmer'] },
       }
     });
 
