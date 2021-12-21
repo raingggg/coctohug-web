@@ -2,7 +2,7 @@
 <ul>
 <li>Düzinelerce dil desteğiyle güzel yerelleştirme: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
 </ul>
-<p>Kullanımı Kolay Kurulum <a href="https://www.coctohug.xyz/">Hızlı başlangıç</a></p>
+<p>Kullanımı Kolay Kurulum <a href="https://www.coctohug.xyz/">Hızlı başlangıç</a> &amp; <a href="../ccm/ccm_tr.html">ccm</a></p>
 <p><em>Bizimle ilgili daha fazla yardım isteyin <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/invite/RcVpCw3ef7">Discord</a></em>.</p>
 <h1 id="hızlı-başlangıç">Hızlı başlangıç</h1>
 <ul>
@@ -47,44 +47,37 @@
 <li>Kurmak <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
 <li>siteye git <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, ardından gerekli tüm form alanlarını girin ve oluşturulan sıkıştırılmış docker-compose dosyalarını indirin</li>
 <li>İndirdiğiniz klasörleri açın ve çalışma dizininize kopyalayın. Bilgisayarın kaynaklarının tükenmesini önlemek için lütfen bu istenmeyen blok zinciri çatal klasörlerini de kaldırın.</li>
-<li>Blok zinciri çatallarını benzer komut dosyalarıyla kurun:<pre><code>./ccm.sh start flora
-./ccm.sh start flax
-./ccm.sh start hddcoin
-./ccm.sh start chia
+<li>Blok zinciri çatallarını benzer komut dosyalarıyla kurun:<pre><code>ccm start flora
+ccm start flax
+ccm start hddcoin
+ccm start chia
 ...
 </code></pre>
 </li>
 <li>Tarayıcıyı açın ve url ile WebUI&#39;ye erişin <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Not 1: Chia blok zinciri çatalları, düğüm senkronizasyonu ilk kez yapıldığında gerçekten CPU yediğinden, aynı anda 5&#39;ten fazla blok zinciri çatalı başlatmayın.</li>
 <li>Not 2: Her blok zinciri çatalı için yaklaşık 1.8G RAM gereklidir, bu nedenle bilgisayar belleğinize göre bazı blok zincir çatalları seçin</li>
-<li>Not 3: Herhangi bir sorun varsa, tüm blockchain çatallarını yeniden başlatmanız gerekebilir:<pre><code>./ccm.sh restart flora
-./ccm.sh restart flax
-./ccm.sh restart hddcoin
-./ccm.sh restart chia
+<li>Not 3: Herhangi bir sorun varsa, tüm blockchain çatallarını yeniden başlatmanız gerekebilir:<pre><code>ccm restart flora
+ccm restart flax
+ccm restart hddcoin
+ccm restart chia
 ...
 </code></pre>
 </li>
 <li>Not 4: Sistem güvenlik duvarı ayarlarınıza 12630&#39;dan 12700&#39;e kadar izin verilen bağlantı noktaları eklemeniz gerekebilir.</li>
 <li>Not 5: Lütfen bu istenmeyen blockchain çatalları klasörünü coctohug klasöründen çıkarmayı unutmayın. Aksi takdirde, çalışan tüm blok zinciri çatalları üzerinde çalıştığınızda aynı anda başlatılırlar ve bu da bilgisayarınızın kaynaklarının tükenmesine neden olabilir.
 ```
-./ccm.sh start all
-./ccm.sh restart all
-./ccm.sh stop all
-./ccm.sh upgrade all
+ccm start all
+ccm restart all
+ccm stop all
+ccm upgrade all
 ...</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="windows-işletim-sisteminde-coctohugu-kurun">Windows işletim sisteminde Coctohug&#39;u kurun</h2>
 <ul>
-<li>Çoğu adım aynı <a href="#cch-linux">Linux işletim sisteminde Coctohug&#39;u kurun</a></li>
-<li>Blok zinciri çatallarını benzer komut dosyalarıyla kurun:<pre><code>.\ccm.ps1 start flora
-.\ccm.ps1 start flax
-.\ccm.ps1 start hddcoin
-.\ccm.ps1 start chia
-...
-</code></pre>
-</li>
+<li>İle aynı <a href="#cch-linux">Linux işletim sisteminde Coctohug&#39;u kurun</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 
@@ -168,14 +161,14 @@
 <li>Ayrıntılı durumu incelemek için Bağlantılar veya Blokajlar sekmesine gidebilirsiniz.</li>
 <li>Düğüm senkronizasyonunuzu hızlandırmak için: <a href="https://www.coctohug.xyz/#dbFilesAndOpenSources">Coctohug site</a> veritabanı dosya bağlantıları sağlar - tarafından geliştirilen ve desteklenen: <a href="https://chiaforksblockchain.com/">Maize fork</a><pre><code>1. Dosyaları indirin: blockchain_v1_mainnet.sqlite ve peer_table_node.sqlite
 2. Blok zinciri çatalını benzer terminal komut dosyasıyla durdurun (her klasörün içinde):
-  Windows: .\ccm.ps1 stop all
-  Linux / Mac: ./ccm.sh stop all
+  ccm stop flora
+  ccm stop all
 3. Bu dosyaları aşağıdakine benzer şekilde blockchain çatal klasörüne kopyalayın:
   Windows: /c:/users/username/.coctohug-covid/covid/mainnet/db/
   Linux / Mac: /home/username/.coctohug-flora/flora/mainnet/db/
 4. Blok zinciri çatalını benzer terminal komut dosyasıyla başlatın (her klasörün içinde):
-   Windows: .\ccm.ps1 restart all
-   Linux / Mac: ./ccm.sh restart all
+   ccm restart cryptodoge
+   ccm restart all
 Notlar 1: Cüzdanınızın çatal programında bireysel senkronizasyona ihtiyacı var
 Not 2: İndirilen veritabanının blok zinciri çatalınıza bağlanması 30 dakika kadar sürebilir!
 </code></pre>
@@ -234,8 +227,8 @@ Not 2: İndirilen veritabanının blok zinciri çatalınıza bağlanması 30 dak
 4. Not 1: İçe aktarmadan önce cüzdan yapılandırmalarınızı yedeklemenizi öneririz.
 5. Not 2: Yalnızca çalışan blok zinciri çatalları, soğuk cüzdanı içe aktarabilir. Lütfen bunu yapmadan önce blok zinciri çatallarının durup durmadığını kontrol edin. Elbette daha sonra yeniden başlatıldıklarında tekrar içe aktarabilirsiniz.
 6. Not 3: Herhangi bir sorun varsa, tüm blockchain çatallarını yeniden başlatmanız gerekebilir:
-  Windows: .\ccm.ps1 restart all
-  Linux / Mac: ./ccm.sh restart all
+  ccm restart all
+  ccm restart ethgreen
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -268,15 +261,14 @@ Not 2: İndirilen veritabanının blok zinciri çatalınıza bağlanması 30 dak
 <h2 id="güncelleme">Güncelleme</h2>
 <ul>
 <li>Bunun için tekrar 24 anımsatıcı kelimeye ihtiyacı var. Lütfen bunları /home/user/.coctohug/mnc.txt dosyasına koyun. Tüm yeni docker kapsayıcıları başlatıldıktan sonra, güvenlik düzeyinizi artırmak için mnc.txt dosyasını boşaltabilirsiniz.</li>
-<li>Tek satırlık komut dosyası<pre><code>Windows: .\ccm.ps1 upgrade all; .\ccm.ps1 start all
-Linux / Mac: ./ccm.sh upgrade all &amp;&amp; ./ccm.sh start all
+<li>Tek satırlık komut dosyası<pre><code>ccm upgrade all &amp;&amp; ccm start all
 </code></pre>
 </li>
-<li>Ayrıca yukarıdaki komut dosyalarını adım adım çalıştırabilirsiniz.<pre><code>.\ccm.ps1 upgrade all
-.\ccm.ps1 start all
+<li>Ayrıca yukarıdaki komut dosyalarını adım adım çalıştırabilirsiniz.<pre><code>ccm upgrade all
+ccm start all
 </code></pre>
 </li>
-<li>Uyumsuz db sorunu olması durumunda, docker-compose başlatma komut dosyasını çalıştırmadan önce mevcut veritabanı dosyasını şu şekilde kaldırabilirsiniz:<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+<li>Uyumsuz db sorunu olması durumunda, docker-compose başlatma komut dosyasını çalıştırmadan önce mevcut veritabanı dosyasını şu şekilde kaldırabilirsiniz:<pre><code>rm -f ~/.coctohug-web/db/coctohug.sqlite
 </code></pre>
 </li>
 </ul>

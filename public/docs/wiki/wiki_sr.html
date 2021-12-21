@@ -2,7 +2,7 @@
 <ul>
 <li>Лепа локализација са подршком за десетине језика: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
 </ul>
-<p>Лако подешавање помоћу <a href="https://www.coctohug.xyz/">Брз почетак</a></p>
+<p>Лако подешавање помоћу <a href="https://www.coctohug.xyz/">Брз почетак</a> &amp; <a href="../ccm/ccm_sr.html">ccm</a></p>
 <p><em>Потражите додатну помоћ на нашем <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/invite/RcVpCw3ef7">Discord</a></em>.</p>
 <h1 id="брз-почетак">Брз почетак</h1>
 <ul>
@@ -47,44 +47,37 @@
 <li>Подесити <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
 <li>Иди на сајт <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, затим унесите сва потребна поља обрасца и преузмите генерисане зиповане доцкер-цомпосе датотеке</li>
 <li>Распакујте преузете фасцикле и копирајте их у свој радни директоријум. Уклоните и те нежељене блокцхаин форкс фолдере да бисте избегли случај да рачунар остане без ресурса</li>
-<li>Инсталирајте блоцкцхаин форкс помоћу сличних скрипти:<pre><code>./ccm.sh start flora
-./ccm.sh start flax
-./ccm.sh start hddcoin
-./ccm.sh start chia
+<li>Инсталирајте блоцкцхаин форкс помоћу сличних скрипти:<pre><code>ccm start flora
+ccm start flax
+ccm start hddcoin
+ccm start chia
 ...
 </code></pre>
 </li>
 <li>Отворите претраживач и приступите ВебУИ са урл-ом <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Напомена 1: Немојте покретати више од 5 блоцкцхаин виљушки у исто време, пошто цхиа блоцкцхаин виљушке заиста једу ЦПУ када се чвор синхронизује по први пут</li>
 <li>Напомена 2: Око 1,8Г РАМ-а је потребно за сваку виљушку блоцкцхаин-а, тако да изаберите неке блокчејн виљушке на основу меморије вашег рачунара</li>
-<li>Напомена 3: Ако постоје проблеми, можда ћете морати поново да покренете све блокчејн виљушке:<pre><code>./ccm.sh restart flora
-./ccm.sh restart flax
-./ccm.sh restart hddcoin
-./ccm.sh restart chia
+<li>Напомена 3: Ако постоје проблеми, можда ћете морати поново да покренете све блокчејн виљушке:<pre><code>ccm restart flora
+ccm restart flax
+ccm restart hddcoin
+ccm restart chia
 ...
 </code></pre>
 </li>
 <li>Напомена 4: Можда ћете морати да додате дозвољене портове од 12630 до 12700 у поставкама заштитног зида система</li>
 <li>Напомена 5: Не заборавите да преместите те нежељене блокцхаин форкс фасцикле из фасцикле цоцтохуг. У супротном, они ће бити покренути у исто време када радите на свим радним блокчејнским виљушкама и што може довести до губитка ресурса вашег рачунара
 ```
-./ccm.sh start all
-./ccm.sh restart all
-./ccm.sh stop all
-./ccm.sh upgrade all
+ccm start all
+ccm restart all
+ccm stop all
+ccm upgrade all
 ...</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="подесите-цоцтохуг-на-виндовс-ос">Подесите Цоцтохуг на Виндовс ОС</h2>
 <ul>
-<li>Већина корака је иста <a href="#cch-linux">Поставите Цоцтохуг на Линук ОС</a></li>
-<li>Инсталирајте блоцкцхаин форкс помоћу сличних скрипти:<pre><code>.\ccm.ps1 start flora
-.\ccm.ps1 start flax
-.\ccm.ps1 start hddcoin
-.\ccm.ps1 start chia
-...
-</code></pre>
-</li>
+<li>Исто је и са <a href="#cch-linux">Поставите Цоцтохуг на Линук ОС</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 
@@ -168,14 +161,14 @@
 <li>Можете отићи на картицу Везе или Блоцкцхаинс да бисте испитали детаљан статус</li>
 <li>Да бисте убрзали синхронизацију чвора: <a href="https://www.coctohug.xyz/#dbFilesAndOpenSources">Coctohug site</a> пружа везе до датотека базе података - развијене и спонзорисане од: <a href="https://chiaforksblockchain.com/">Maize fork</a><pre><code>1. Преузмите датотеке: блоцкцхаин_в1_маиннет.склите и пеер_табле_ноде.склите
 2. Зауставите блоцкцхаин форк помоћу сличне терминалске скрипте (унутар сваке фасцикле):
-  Windows: .\ccm.ps1 stop all
-  Linux / Mac: ./ccm.sh stop all
+  ccm stop flora
+  ccm stop all
 3. Копирајте те датотеке у фолдер блоцкцхаин форк слично:
   Windows: /c:/users/username/.coctohug-covid/covid/mainnet/db/
   Linux / Mac: /home/username/.coctohug-flora/flora/mainnet/db/
 4. Покрените блоцкцхаин форк помоћу сличне терминалске скрипте (унутар сваке фасцикле):
-   Windows: .\ccm.ps1 restart all
-   Linux / Mac: ./ccm.sh restart all
+   ccm restart cryptodoge
+   ccm restart all
 Напомене 1: Вашем новчанику је потребна индивидуална синхронизација у форк програму
 Напомене 2: Повезивање преузете базе података са вашом блоцкцхаин форком може потрајати до 30 минута!
 </code></pre>
@@ -234,8 +227,8 @@
 4. Напомена 1: препоручујемо да направите резервну копију конфигурација новчаника пре увоза
 5. Напомена 2: Само функционалне виљушке блокчејна могу да увезу хладни новчаник. Пре него што то урадите, проверите да ли постоје заустављене виљушке блокчејна или не. Сигурно можете и касније поново да увезете када се поново покрену
 6. Напомена 3: Ако постоје проблеми, можда ћете морати поново да покренете све блокчејн виљушке:
-  Windows: .\ccm.ps1 restart all
-  Linux / Mac: ./ccm.sh restart all
+  ccm restart all
+  ccm restart ethgreen
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -268,15 +261,14 @@
 <h2 id="надоградите">Надоградите</h2>
 <ul>
 <li>За ово су поново потребне 24 мнемоничке речи. Ставите их у датотеку /хоме/усер/.цоцтохуг/мнц.ткт. Након покретања свих нових доцкер контејнера, можете испразнити датотеку мнц.ткт да бисте побољшали ниво безбедности</li>
-<li>Скрипта у једном реду<pre><code>Windows: .\ccm.ps1 upgrade all; .\ccm.ps1 start all
-Linux / Mac: ./ccm.sh upgrade all &amp;&amp; ./ccm.sh start all
+<li>Скрипта у једном реду<pre><code>ccm upgrade all &amp;&amp; ccm start all
 </code></pre>
 </li>
-<li>Такође можете извршити горе наведене скрипте корак по корак<pre><code>.\ccm.ps1 upgrade all
-.\ccm.ps1 start all
+<li>Такође можете извршити горе наведене скрипте корак по корак<pre><code>ccm upgrade all
+ccm start all
 </code></pre>
 </li>
-<li>У случају некомпатибилног дб проблема, можете уклонити постојећу датотеку базе података пре него што извршите доцкер-цомпосе старт скрипту тако што ћете<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+<li>У случају некомпатибилног дб проблема, можете уклонити постојећу датотеку базе података пре него што извршите доцкер-цомпосе старт скрипту тако што ћете<pre><code>rm -f ~/.coctohug-web/db/coctohug.sqlite
 </code></pre>
 </li>
 </ul>

@@ -1,0 +1,82 @@
+<h1 id="coctohug---웹-브라우저에서-수십-개의-chia-블록체인-포크-마이닝을-관리하세요">Coctohug - 웹 브라우저에서 수십 개의 chia 블록체인 포크 마이닝을 관리하세요!</h1>
+<ul>
+<li>수십 가지 언어를 지원하는 멋진 현지화: <a href="./ccm_en.html">English</a>, <a href="./ccm_ar.html">العربية</a>, <a href="./ccm_bg.html">Bulgarian</a>, <a href="./ccm_ca.html">Catalan</a>, <a href="./ccm_de.html">Deutsch</a>, <a href="./ccm_es.html">Español</a>, <a href="./ccm_fa.html">زبان فارسی</a>, <a href="./ccm_fr.html">Français</a>, <a href="./ccm_gl.html">Galego</a>, <a href="./ccm_id.html">Indonesian</a>, <a href="./ccm_it.html">Italiano</a>, <a href="./ccm_ja.html">日本語</a>, <a href="./ccm_ko.html">한국어</a>, <a href="./ccm_pt.html">Português do Brasil</a>, <a href="./ccm_ro.html">limba română</a>, <a href="./ccm_ru.html">Русский</a>, <a href="./ccm_sr.html">Serbian</a>, <a href="./ccm_th.html">Thai</a>, <a href="./ccm_tl.html">Tagalog (Filipino)</a>, <a href="./ccm_tr.html">Türkçe</a>, <a href="./ccm_uk.html">Українська</a>, <a href="./ccm_vi.html">Vietnamese</a>, <a href="./ccm_zh-CN.html">简体中文</a>, <a href="./ccm_zh-TW.html">繁體中文</a></li>
+</ul>
+<h1 id="빠른-시작">빠른 시작</h1>
+<ul>
+<li><a href="#ccm-setup">설정</a></li>
+<li><a href="#ccm-help">돕다</a></li>
+<li><a href="#ccm-sample">식물상 블록체인 포크에 대한 샘플 명령</a></li>
+<li><a href="#ccm-all">모든 블록체인 포크에 대한 빠른 명령</a></li>
+<li><a href="#ccm-view">자세한 블록체인 포크 상태 보기</a></li>
+<li><a href="#ccm-docker">도커 컨테이너로 이동</a></li>
+<li><a href="#ccm-docker-manage">도커 운영 관리</a></li>
+<li><a href="#ccm-more">더</a></li>
+</ul>
+<p id="ccm-setup">&nbsp;</p>
+
+<h2 id="설정">설정</h2>
+<ul>
+<li>터미널을 열고 작업 디렉토리를 ccm.sh가 포함된 폴더로 변경합니다.</li>
+<li>(Linux / Mac)링크를 생성하여 ccm 초기화: <i>sudo ln -s /full/path/to/your/file/ccm.sh /usr/local/bin/ccm</i></li>
+</ul>
+<p id="ccm-help">&nbsp;</p>
+
+<h2 id="돕다">돕다</h2>
+<ul>
+<li>명령 가이드: <i>ccm help</i></li>
+</ul>
+<p id="ccm-sample">&nbsp;</p>
+
+<h2 id="식물상-블록체인-포크에-대한-샘플-명령">식물상 블록체인 포크에 대한 샘플 명령</h2>
+<ul>
+<li>식물상과 같은 하나의 블록체인 포크를 설치합니다. <i>ccm install flora</i></li>
+<li>식물상과 같은 하나의 블록체인 포크 시작: <i>ccm start flora</i></li>
+<li>식물상과 같은 하나의 블록체인 포크를 중지합니다. <i>ccm stop flora</i></li>
+<li>식물상과 같은 하나의 블록체인 포크를 다시 시작합니다. <i>ccm restart flora</i></li>
+<li>식물상과 같은 하나의 블록체인 포크 업그레이드: <i>ccm upgrade flora</i></li>
+<li>식물상과 같은 하나의 블록체인 포크를 제거합니다. <i>ccm uninstall flora</i></li>
+</ul>
+<p id="ccm-all">&nbsp;</p>
+
+<h2 id="모든-블록체인-포크에-대한-빠른-명령">모든 블록체인 포크에 대한 빠른 명령</h2>
+<ul>
+<li>모든 블록체인 포크 설치: <i>ccm install all</i></li>
+<li>모든 블록체인 포크 시작: <i>ccm start all</i></li>
+<li>모든 블록체인 포크 중지: <i>ccm stop all</i></li>
+<li>모든 블록체인 포크를 다시 시작합니다. <i>ccm restart all</i></li>
+<li>모든 블록체인 포크 업그레이드: <i>ccm upgrade all</i></li>
+<li>모든 블록체인 포크 제거: <i>ccm uninstall all</i></li>
+</ul>
+<p id="ccm-view">&nbsp;</p>
+
+<h2 id="자세한-블록체인-포크-상태-보기">자세한 블록체인 포크 상태 보기</h2>
+<ul>
+<li>ethgreen과 같은 연결 정보 보기: <i>ccm vconnection ethgreen</i></li>
+<li>ethgreen과 같은 팜 요약 정보 보기: <i>ccm vsummary ethgreen</i></li>
+<li>ethgreen과 같은 지갑 정보 보기: <i>ccm vwallet ethgreen</i></li>
+<li>ethgreen과 같은 키 정보 보기: <i>ccm vkey ethgreen</i></li>
+<li>ethgreen과 같은 로그 정보 보기: <i>ccm vlog ethgreen</i></li>
+</ul>
+<p id="ccm-docker">&nbsp;</p>
+
+<h2 id="도커-컨테이너로-이동">도커 컨테이너로 이동</h2>
+<ul>
+<li>tranzact와 같은 도커 내부로 이동합니다. <i>ccm docker tranzact</i></li>
+</ul>
+<p id="ccm-docker-manage">&nbsp;</p>
+
+<h2 id="도커-운영-관리">도커 운영 관리</h2>
+<ul>
+<li>사용하지 않는 모든 도커 이미지를 정리합니다. <i>ccm clean</i></li>
+<li>모든 도커 컨테이너 표시: <i>ccm container</i></li>
+<li>모든 Docker 이미지 표시: <i>ccm image</i></li>
+</ul>
+<p id="ccm-more">&nbsp;</p>
+
+<h2 id="더">더</h2>
+<ul>
+<li><a href="https://github.com/raingggg/coctohug-manager">Github</a></li>
+</ul>
+<h2 id="상표권-고지">상표권 고지</h2>
+<p>CHIA NETWORK INC, CHIA™, CHIA BLOCKCHAIN™, CHIA PROTOCOL™, CHIALISP™ 및 &#34;잎 로고&#34;(Chia를 지칭하거나 나타내는 경우 잎 로고만 포함)는 Chia Network, Inc.의 상표 또는 등록 상표입니다. ., 델라웨어 기업. <em>이 Coctohug 프로젝트와 주요 Chia Network 프로젝트 사이에는 아무런 관련이 없습니다.</em></p>

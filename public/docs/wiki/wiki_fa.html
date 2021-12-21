@@ -2,7 +2,7 @@
 <ul>
 <li>بومی سازی خوب با پشتیبانی از ده ها زبان: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
 </ul>
-<p>راه اندازی آسان با استفاده از <a href="https://www.coctohug.xyz/">شروع سریع</a></p>
+<p>راه اندازی آسان با استفاده از <a href="https://www.coctohug.xyz/">شروع سریع</a> &amp; <a href="../ccm/ccm_fa.html">ccm</a></p>
 <p><em>از ما کمک بیشتری بخواهید <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/invite/RcVpCw3ef7">Discord</a></em>.</p>
 <h1 id="شروع-سریع">شروع سریع</h1>
 <ul>
@@ -47,44 +47,37 @@
 <li>برپایی <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
 <li>به سایت بروید <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, سپس تمام فیلدهای فرم لازم را وارد کرده و فایل های زیپ شده docker-compose تولید شده را دانلود کنید</li>
 <li>پوشه های دانلود شده را از حالت فشرده خارج کنید و آنها را در پوشه کاری خود کپی کنید. لطفاً پوشه‌های فورک‌های ناخواسته بلاک چین را نیز حذف کنید تا از کمبود منابع رایانه جلوگیری کنید</li>
-<li>فورک های بلاک چین را با اسکریپت های مشابه نصب کنید:<pre><code>./ccm.sh start flora
-./ccm.sh start flax
-./ccm.sh start hddcoin
-./ccm.sh start chia
+<li>فورک های بلاک چین را با اسکریپت های مشابه نصب کنید:<pre><code>ccm start flora
+ccm start flax
+ccm start hddcoin
+ccm start chia
 ...
 </code></pre>
 </li>
 <li>مرورگر را باز کنید و با url به WebUI دسترسی پیدا کنید <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>نکته 1: بیش از 5 فورک بلاک چین را همزمان راه اندازی نکنید، زیرا فورک های بلاک چین چیا هنگام همگام سازی گره برای اولین بار CPU را می خورند.</li>
 <li>نکته 2: برای هر فورک بلاک چین حدود 1.8 گیگ رم لازم است، بنابراین چند فورک بلاک چین را بر اساس حافظه رایانه خود انتخاب کنید.</li>
-<li>نکته 3: در صورت وجود هر گونه مشکل، ممکن است لازم باشد همه فورک های بلاک چین را مجددا راه اندازی کنید:<pre><code>./ccm.sh restart flora
-./ccm.sh restart flax
-./ccm.sh restart hddcoin
-./ccm.sh restart chia
+<li>نکته 3: در صورت وجود هر گونه مشکل، ممکن است لازم باشد همه فورک های بلاک چین را مجددا راه اندازی کنید:<pre><code>ccm restart flora
+ccm restart flax
+ccm restart hddcoin
+ccm restart chia
 ...
 </code></pre>
 </li>
 <li>نکته 4: ممکن است لازم باشد پورت های مجاز از 12630 تا 12700 را به تنظیمات فایروال سیستم خود اضافه کنید.</li>
 <li>نکته 5: لطفاً به یاد داشته باشید که پوشه فورک های ناخواسته بلاک چین را از پوشه کوکتولوگ خارج کنید. در غیر این صورت، زمانی که شما روی تمام فورک‌های بلاک چین کار می‌کنید، همزمان راه‌اندازی می‌شوند و ممکن است باعث از بین رفتن منابع رایانه شما شود.
 ```
-./ccm.sh start all
-./ccm.sh restart all
-./ccm.sh stop all
-./ccm.sh upgrade all
+ccm start all
+ccm restart all
+ccm stop all
+ccm upgrade all
 ...</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="coctohug-را-در-سیستم-عامل-ویندوز-راه-اندازی-کنید">Coctohug را در سیستم عامل ویندوز راه اندازی کنید</h2>
 <ul>
-<li>اکثر مراحل یکسان است <a href="#cch-linux">راه اندازی Coctohug در سیستم عامل لینوکس</a></li>
-<li>فورک های بلاک چین را با اسکریپت های مشابه نصب کنید:<pre><code>.\ccm.ps1 start flora
-.\ccm.ps1 start flax
-.\ccm.ps1 start hddcoin
-.\ccm.ps1 start chia
-...
-</code></pre>
-</li>
+<li>مشابه با <a href="#cch-linux">راه اندازی Coctohug در سیستم عامل لینوکس</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 
@@ -168,14 +161,14 @@
 <li>برای بررسی وضعیت دقیق می توانید به تب Connections یا Blockchains بروید</li>
 <li>برای تسریع همگام سازی گره خود: <a href="https://www.coctohug.xyz/#dbFilesAndOpenSources">Coctohug site</a> پیوندهای فایل پایگاه داده را فراهم می کند - توسعه یافته و حمایت شده توسط: <a href="https://chiaforksblockchain.com/">Maize fork</a><pre><code>1. دانلود فایل ها: blockchain_v1_mainnet.sqlite و peer_table_node.sqlite
 2. فورک بلاک چین را با اسکریپت ترمینال مشابه (داخل هر پوشه) متوقف کنید:
-  Windows: .\ccm.ps1 stop all
-  Linux / Mac: ./ccm.sh stop all
+  ccm stop flora
+  ccm stop all
 3. آن فایل‌ها را در پوشه فورک بلاک چین مشابه موارد زیر کپی کنید:
   Windows: /c:/users/username/.coctohug-covid/covid/mainnet/db/
   Linux / Mac: /home/username/.coctohug-flora/flora/mainnet/db/
 4. فورک بلاک چین را با اسکریپت ترمینال مشابه (در داخل هر پوشه) شروع کنید:
-   Windows: .\ccm.ps1 restart all
-   Linux / Mac: ./ccm.sh restart all
+   ccm restart cryptodoge
+   ccm restart all
 یادداشت 1: کیف پول شما نیاز به همگام سازی فردی در برنامه فورک دارد
 نکته 2: اتصال پایگاه داده دانلود شده به فورک بلاک چین شما می تواند تا 30 دقیقه طول بکشد!
 </code></pre>
@@ -234,8 +227,8 @@
 4. نکته 1: توصیه می کنیم قبل از وارد کردن، از تنظیمات کیف پول خود نسخه پشتیبان تهیه کنید
 5. نکته 2: فقط چنگال های بلاک چین فعال می توانند کیف پول سرد وارد کنند. لطفاً قبل از انجام این کار بررسی کنید که آیا فورک های بلاک چین متوقف شده است یا خیر. مطمئناً می‌توانید بعداً با راه‌اندازی مجدد آنها دوباره وارد کنید
 6. نکته 3: در صورت وجود هر گونه مشکل، ممکن است لازم باشد همه فورک های بلاک چین را مجددا راه اندازی کنید:
-  Windows: .\ccm.ps1 restart all
-  Linux / Mac: ./ccm.sh restart all
+  ccm restart all
+  ccm restart ethgreen
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -268,15 +261,14 @@
 <h2 id="ارتقا-دهید">ارتقا دهید</h2>
 <ul>
 <li>این دوباره به 24 کلمه یادگاری نیاز دارد. لطفاً آنها را در فایل /home/user/.coctohug/mnc.txt قرار دهید. پس از شروع همه کانتینرهای docker جدید، می توانید فایل mnc.txt را خالی کنید تا سطح امنیت خود را افزایش دهید</li>
-<li>اسکریپت یک خطی<pre><code>Windows: .\ccm.ps1 upgrade all; .\ccm.ps1 start all
-Linux / Mac: ./ccm.sh upgrade all &amp;&amp; ./ccm.sh start all
+<li>اسکریپت یک خطی<pre><code>ccm upgrade all &amp;&amp; ccm start all
 </code></pre>
 </li>
-<li>همچنین می توانید اسکریپت های بالا را مرحله به مرحله اجرا کنید<pre><code>.\ccm.ps1 upgrade all
-.\ccm.ps1 start all
+<li>همچنین می توانید اسکریپت های بالا را مرحله به مرحله اجرا کنید<pre><code>ccm upgrade all
+ccm start all
 </code></pre>
 </li>
-<li>در صورت بروز مشکل db ناسازگار، می توانید فایل پایگاه داده موجود را قبل از اجرای اسکریپت شروع docker-compose حذف کنید.<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+<li>در صورت بروز مشکل db ناسازگار، می توانید فایل پایگاه داده موجود را قبل از اجرای اسکریپت شروع docker-compose حذف کنید.<pre><code>rm -f ~/.coctohug-web/db/coctohug.sqlite
 </code></pre>
 </li>
 </ul>

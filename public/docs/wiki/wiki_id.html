@@ -2,7 +2,7 @@
 <ul>
 <li>Lokalisasi yang bagus dengan dukungan puluhan bahasa: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
 </ul>
-<p>Pengaturan Mudah menggunakan <a href="https://www.coctohug.xyz/">Mulai cepat</a></p>
+<p>Pengaturan Mudah menggunakan <a href="https://www.coctohug.xyz/">Mulai cepat</a> &amp; <a href="../ccm/ccm_id.html">ccm</a></p>
 <p><em>Cari bantuan lebih lanjut di kami <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/invite/RcVpCw3ef7">Discord</a></em>.</p>
 <h1 id="mulai-cepat">Mulai cepat</h1>
 <ul>
@@ -47,44 +47,37 @@
 <li>Mempersiapkan <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
 <li>Pergi ke situs <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, lalu masukkan semua bidang formulir yang diperlukan dan unduh file komposisi buruh pelabuhan zip yang dihasilkan</li>
 <li>Buka zip folder yang diunduh dan salin ke direktori kerja Anda. Harap juga hapus folder garpu blockchain yang tidak diinginkan itu untuk menghindari kasus komputer kehabisan sumber daya</li>
-<li>Instal garpu blockchain dengan skrip serupa:<pre><code>./ccm.sh start flora
-./ccm.sh start flax
-./ccm.sh start hddcoin
-./ccm.sh start chia
+<li>Instal garpu blockchain dengan skrip serupa:<pre><code>ccm start flora
+ccm start flax
+ccm start hddcoin
+ccm start chia
 ...
 </code></pre>
 </li>
 <li>Buka browser dan akses WebUI dengan url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Catatan 1: Jangan memulai lebih dari 5 garpu blockchain secara bersamaan, karena garpu blockchain chia benar-benar memakan CPU saat sinkronisasi node untuk pertama kalinya</li>
 <li>Catatan 2: Sekitar 1,8G RAM diperlukan untuk setiap garpu blockchain, jadi pilihlah beberapa garpu blockchain berdasarkan memori komputer Anda</li>
-<li>Catatan 3: Jika ada masalah, Anda mungkin perlu memulai ulang semua garpu blockchain:<pre><code>./ccm.sh restart flora
-./ccm.sh restart flax
-./ccm.sh restart hddcoin
-./ccm.sh restart chia
+<li>Catatan 3: Jika ada masalah, Anda mungkin perlu memulai ulang semua garpu blockchain:<pre><code>ccm restart flora
+ccm restart flax
+ccm restart hddcoin
+ccm restart chia
 ...
 </code></pre>
 </li>
 <li>Catatan 4: Anda mungkin perlu menambahkan port yang diizinkan dari 12630 hingga 12700 pada pengaturan firewall sistem Anda</li>
 <li>Catatan 5: Harap ingat untuk memindahkan folder garpu blockchain yang tidak diinginkan dari folder coctohug. Jika tidak, mereka akan dimulai pada saat yang sama ketika Anda mengoperasikan semua garpu blockchain yang berfungsi, dan yang dapat menyebabkan komputer Anda kehabisan sumber daya.
 ```
-./ccm.sh start all
-./ccm.sh restart all
-./ccm.sh stop all
-./ccm.sh upgrade all
+ccm start all
+ccm restart all
+ccm stop all
+ccm upgrade all
 ...</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="siapkan-coctohug-di-os-windows">Siapkan Coctohug di OS Windows</h2>
 <ul>
-<li>Sebagian besar langkahnya sama <a href="#cch-linux">Setup Coctohug di OS Linux</a></li>
-<li>Instal garpu blockchain dengan skrip serupa:<pre><code>.\ccm.ps1 start flora
-.\ccm.ps1 start flax
-.\ccm.ps1 start hddcoin
-.\ccm.ps1 start chia
-...
-</code></pre>
-</li>
+<li>Sama dengan <a href="#cch-linux">Setup Coctohug di OS Linux</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 
@@ -168,14 +161,14 @@
 <li>Anda dapat membuka tab Connections atau Blockchains untuk memeriksa status detailnya</li>
 <li>Untuk mempercepat sinkronisasi simpul Anda: <a href="https://www.coctohug.xyz/#dbFilesAndOpenSources">Coctohug site</a> menyediakan tautan file basis data - dikembangkan dan disponsori oleh: <a href="https://chiaforksblockchain.com/">Maize fork</a><pre><code>1. Unduh file: blockchain_v1_mainnet.sqlite dan peer_table_node.sqlite
 2. Hentikan garpu blockchain dengan skrip terminal serupa (di dalam setiap folder):
-  Windows: .\ccm.ps1 stop all
-  Linux / Mac: ./ccm.sh stop all
+  ccm stop flora
+  ccm stop all
 3. Salin file-file itu ke folder garpu blockchain yang mirip dengan:
   Windows: /c:/users/username/.coctohug-covid/covid/mainnet/db/
   Linux / Mac: /home/username/.coctohug-flora/flora/mainnet/db/
 4. Mulai garpu blockchain dengan skrip terminal serupa (di dalam setiap folder):
-   Windows: .\ccm.ps1 restart all
-   Linux / Mac: ./ccm.sh restart all
+   ccm restart cryptodoge
+   ccm restart all
 Catatan 1: Dompet Anda memerlukan sinkronisasi individual dalam program fork
 Catatan 2: Koneksi database yang diunduh ke garpu blockchain Anda dapat memakan waktu hingga 30 menit!
 </code></pre>
@@ -234,8 +227,8 @@ Catatan 2: Koneksi database yang diunduh ke garpu blockchain Anda dapat memakan 
 4. Catatan 1: kami sarankan untuk membuat cadangan konfigurasi dompet Anda sebelum mengimpor
 5. Catatan 2: Hanya garpu blockchain yang berfungsi yang dapat mengimpor dompet dingin. Silakan periksa apakah ada garpu blockchain yang dihentikan atau tidak sebelum melakukan ini. Tentunya Anda juga dapat mengimpor lagi nanti ketika mereka dimulai kembali
 6. Catatan 3: Jika ada masalah, Anda mungkin perlu memulai ulang semua garpu blockchain:
-  Windows: .\ccm.ps1 restart all
-  Linux / Mac: ./ccm.sh restart all
+  ccm restart all
+  ccm restart ethgreen
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -268,15 +261,14 @@ Catatan 2: Koneksi database yang diunduh ke garpu blockchain Anda dapat memakan 
 <h2 id="meningkatkan">Meningkatkan</h2>
 <ul>
 <li>Ini membutuhkan 24 kata mnemonik lagi. Silakan masukkan ke dalam file /home/user/.coctohug/mnc.txt. Setelah semua kontainer buruh pelabuhan baru dimulai, Anda dapat mengosongkan file mnc.txt untuk meningkatkan tingkat keamanan Anda</li>
-<li>Skrip satu baris<pre><code>Windows: .\ccm.ps1 upgrade all; .\ccm.ps1 start all
-Linux / Mac: ./ccm.sh upgrade all &amp;&amp; ./ccm.sh start all
+<li>Skrip satu baris<pre><code>ccm upgrade all &amp;&amp; ccm start all
 </code></pre>
 </li>
-<li>Anda juga dapat menjalankan skrip di atas langkah demi langkah<pre><code>.\ccm.ps1 upgrade all
-.\ccm.ps1 start all
+<li>Anda juga dapat menjalankan skrip di atas langkah demi langkah<pre><code>ccm upgrade all
+ccm start all
 </code></pre>
 </li>
-<li>Jika ada masalah db yang tidak kompatibel, Anda dapat menghapus file database yang ada sebelum menjalankan skrip awal penulisan docker dengan:<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+<li>Jika ada masalah db yang tidak kompatibel, Anda dapat menghapus file database yang ada sebelum menjalankan skrip awal penulisan docker dengan:<pre><code>rm -f ~/.coctohug-web/db/coctohug.sqlite
 </code></pre>
 </li>
 </ul>

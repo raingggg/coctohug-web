@@ -2,7 +2,7 @@
 <ul>
 <li>توطين لطيف مع دعم عشرات اللغات: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
 </ul>
-<p>الإعداد السهل باستخدام <a href="https://www.coctohug.xyz/">بداية سريعة</a></p>
+<p>الإعداد السهل باستخدام <a href="https://www.coctohug.xyz/">بداية سريعة</a> &amp; <a href="../ccm/ccm_ar.html">ccm</a></p>
 <p><em>اطلب المزيد من المساعدة في موقعنا <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/invite/RcVpCw3ef7">Discord</a></em>.</p>
 <h1 id="بداية-سريعة">بداية سريعة</h1>
 <ul>
@@ -47,44 +47,37 @@
 <li>اقامة <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
 <li>انتقل إلى الموقع <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, ثم أدخل جميع حقول النموذج الضرورية وقم بتنزيل ملفات إنشاء عامل الإرساء المضغوطة التي تم إنشاؤها</li>
 <li>قم بفك ضغط المجلدات التي تم تنزيلها وانسخها في دليل العمل الخاص بك. يرجى أيضًا إزالة مجلدات شوكات blockchain غير المرغوب فيها لتجنب حالة نفاد موارد الكمبيوتر</li>
-<li>قم بتثبيت مفترقات blockchain بواسطة نصوص برمجية مماثلة:<pre><code>./ccm.sh start flora
-./ccm.sh start flax
-./ccm.sh start hddcoin
-./ccm.sh start chia
+<li>قم بتثبيت مفترقات blockchain بواسطة نصوص برمجية مماثلة:<pre><code>ccm start flora
+ccm start flax
+ccm start hddcoin
+ccm start chia
 ...
 </code></pre>
 </li>
 <li>افتح المستعرض وقم بالوصول إلى WebUI باستخدام عنوان url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>ملحوظة 1: لا تبدأ تشغيل أكثر من 5 مفترقات blockchain في نفس الوقت ، لأن شوكات blockchain chia تأكل بالفعل وحدة المعالجة المركزية عند مزامنة العقدة لأول مرة</li>
 <li>ملاحظة 2: مطلوب حوالي 1.8 جيجا من ذاكرة الوصول العشوائي لكل مفترق blockchain ، لذلك اختر بعض مفترقات blockchain بناءً على ذاكرة الكمبيوتر لديك</li>
-<li>ملاحظة 3: إذا كانت هناك أية مشكلات ، فقد تحتاج إلى إعادة تشغيل جميع مفترقات blockchain:<pre><code>./ccm.sh restart flora
-./ccm.sh restart flax
-./ccm.sh restart hddcoin
-./ccm.sh restart chia
+<li>ملاحظة 3: إذا كانت هناك أية مشكلات ، فقد تحتاج إلى إعادة تشغيل جميع مفترقات blockchain:<pre><code>ccm restart flora
+ccm restart flax
+ccm restart hddcoin
+ccm restart chia
 ...
 </code></pre>
 </li>
 <li>ملاحظة 4: قد تحتاج إلى إضافة السماح بمنافذ من 12630 إلى 12700 على إعدادات جدار حماية النظام الخاص بك</li>
 <li>ملاحظة 5: يرجى تذكر نقل مجلد شوكات blockchain غير المرغوب فيه من مجلد coctohug. خلاف ذلك ، سيتم تشغيلهم في نفس الوقت عندما تعمل على جميع مفترقات blockchain العاملة ، مما قد يتسبب في نفاد موارد جهاز الكمبيوتر الخاص بك
 ```
-./ccm.sh start all
-./ccm.sh restart all
-./ccm.sh stop all
-./ccm.sh upgrade all
+ccm start all
+ccm restart all
+ccm stop all
+ccm upgrade all
 ...</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="قم-بإعداد-coctohug-على-نظام-التشغيل-windows">قم بإعداد Coctohug على نظام التشغيل Windows</h2>
 <ul>
-<li>معظم الخطوات متشابهة <a href="#cch-linux">قم بإعداد Coctohug على Linux OS</a></li>
-<li>قم بتثبيت مفترقات blockchain بواسطة نصوص برمجية مماثلة:<pre><code>.\ccm.ps1 start flora
-.\ccm.ps1 start flax
-.\ccm.ps1 start hddcoin
-.\ccm.ps1 start chia
-...
-</code></pre>
-</li>
+<li>نفس الشيء مع <a href="#cch-linux">قم بإعداد Coctohug على Linux OS</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 
@@ -168,14 +161,14 @@
 <li>يمكنك الانتقال إلى علامة التبويب Connections أو Blockchains لفحص الحالة التفصيلية</li>
 <li>لتسريع مزامنة العقدة الخاصة بك: <a href="https://www.coctohug.xyz/#dbFilesAndOpenSources">Coctohug site</a> يوفر روابط ملفات قاعدة البيانات - تم تطويرها ورعايتها بواسطة: <a href="https://chiaforksblockchain.com/">Maize fork</a><pre><code>1. تنزيل الملفات: blockchain_v1_mainnet.sqlite و peer_table_node.sqlite
 2. قم بإيقاف مفترق blockchain بواسطة برنامج نصي طرفي مماثل (داخل كل مجلد):
-  Windows: .\ccm.ps1 stop all
-  Linux / Mac: ./ccm.sh stop all
+  ccm stop flora
+  ccm stop all
 3. انسخ هذه الملفات إلى مجلد blockchain fork المماثل لما يلي:
   Windows: /c:/users/username/.coctohug-covid/covid/mainnet/db/
   Linux / Mac: /home/username/.coctohug-flora/flora/mainnet/db/
 4. ابدأ تفرع blockchain بواسطة برنامج نصي طرفي مماثل (داخل كل مجلد):
-   Windows: .\ccm.ps1 restart all
-   Linux / Mac: ./ccm.sh restart all
+   ccm restart cryptodoge
+   ccm restart all
 ملاحظات 1: تحتاج محفظتك إلى مزامنة فردية في برنامج fork
 ملاحظات 2: يمكن أن يستغرق اتصال قاعدة البيانات التي تم تنزيلها بشوكة blockchain ما يصل إلى 30 دقيقة!
 </code></pre>
@@ -234,8 +227,8 @@
 4. ملاحظة 1: نوصي بعمل نسخة احتياطية من تكوينات محفظتك قبل الاستيراد
 5. ملاحظة 2: يمكن فقط لشوكات blockchain العاملة استيراد المحفظة الباردة. يرجى التحقق مما إذا كان هناك شوكات blockchain متوقفة أم لا قبل القيام بذلك. بالتأكيد يمكنك أيضًا الاستيراد لاحقًا مرة أخرى عند إعادة تشغيلها
 6. ملاحظة 3: إذا كانت هناك أية مشكلات ، فقد تحتاج إلى إعادة تشغيل جميع مفترقات blockchain:
-  Windows: .\ccm.ps1 restart all
-  Linux / Mac: ./ccm.sh restart all
+  ccm restart all
+  ccm restart ethgreen
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -268,15 +261,14 @@
 <h2 id="تطوير">تطوير</h2>
 <ul>
 <li>هذا يحتاج إلى 24 كلمة ذاكري مرة أخرى. يرجى وضعها في ملف /home/user/.coctohug/mnc.txt. بعد بدء تشغيل جميع حاويات Docker الجديدة ، يمكنك بعد ذلك تفريغ الملف mnc.txt لتحسين مستوى الأمان لديك</li>
-<li>نص سطر واحد<pre><code>Windows: .\ccm.ps1 upgrade all; .\ccm.ps1 start all
-Linux / Mac: ./ccm.sh upgrade all &amp;&amp; ./ccm.sh start all
+<li>نص سطر واحد<pre><code>ccm upgrade all &amp;&amp; ccm start all
 </code></pre>
 </li>
-<li>يمكنك أيضًا تنفيذ البرامج النصية أعلاه خطوة بخطوة<pre><code>.\ccm.ps1 upgrade all
-.\ccm.ps1 start all
+<li>يمكنك أيضًا تنفيذ البرامج النصية أعلاه خطوة بخطوة<pre><code>ccm upgrade all
+ccm start all
 </code></pre>
 </li>
-<li>في حالة وجود مشكلة db غير متوافقة ، يمكنك إزالة ملف قاعدة البيانات الموجودة قبل تنفيذ Docker-Compose start script بواسطة<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+<li>في حالة وجود مشكلة db غير متوافقة ، يمكنك إزالة ملف قاعدة البيانات الموجودة قبل تنفيذ Docker-Compose start script بواسطة<pre><code>rm -f ~/.coctohug-web/db/coctohug.sqlite
 </code></pre>
 </li>
 </ul>

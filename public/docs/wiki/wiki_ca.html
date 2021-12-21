@@ -2,7 +2,7 @@
 <ul>
 <li>Bona localització amb suport de desenes d&#39;idiomes: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
 </ul>
-<p>Configuració fàcil utilitzant <a href="https://www.coctohug.xyz/">Començament ràpid</a></p>
+<p>Configuració fàcil utilitzant <a href="https://www.coctohug.xyz/">Començament ràpid</a> &amp; <a href="../ccm/ccm_ca.html">ccm</a></p>
 <p><em>Busqueu més ajuda al nostre <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/invite/RcVpCw3ef7">Discord</a></em>.</p>
 <h1 id="començament-ràpid">Començament ràpid</h1>
 <ul>
@@ -47,44 +47,37 @@
 <li>Configuració <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
 <li>Vés al lloc <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, a continuació, introduïu tots els camps de formulari necessaris i descarregueu els fitxers de docker-compose comprimits generats</li>
 <li>Descomprimiu les carpetes descarregades i copieu-les al vostre directori de treball. Si us plau, elimineu també aquestes carpetes de forquilla de cadena de blocs no desitjades per evitar que l&#39;ordinador es quedi sense recursos</li>
-<li>Instal·leu forquilles de cadena de blocs mitjançant scripts similars:<pre><code>./ccm.sh start flora
-./ccm.sh start flax
-./ccm.sh start hddcoin
-./ccm.sh start chia
+<li>Instal·leu forquilles de cadena de blocs mitjançant scripts similars:<pre><code>ccm start flora
+ccm start flax
+ccm start hddcoin
+ccm start chia
 ...
 </code></pre>
 </li>
 <li>Obriu el navegador i accediu a la WebUI amb l&#39;URL <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Nota 1: no engegueu més de 5 bifurcacions de cadena de blocs al mateix temps, ja que les bifurcacions de cadena de blocs de chia realment mengen CPU quan es sincronitzen el node per primera vegada</li>
 <li>Nota 2: es necessiten al voltant d&#39;1,8 G de RAM per a cada bifurcació de cadena de blocs, així que trieu algunes bifurcacions de cadena de blocs en funció de la memòria de l&#39;ordinador.</li>
-<li>Nota 3: si hi ha cap problema, és possible que hàgiu de reiniciar totes les bifurcacions de cadena de blocs:<pre><code>./ccm.sh restart flora
-./ccm.sh restart flax
-./ccm.sh restart hddcoin
-./ccm.sh restart chia
+<li>Nota 3: si hi ha cap problema, és possible que hàgiu de reiniciar totes les bifurcacions de cadena de blocs:<pre><code>ccm restart flora
+ccm restart flax
+ccm restart hddcoin
+ccm restart chia
 ...
 </code></pre>
 </li>
 <li>Nota 4: és possible que hàgiu d&#39;afegir ports que permeten des del 12630 al 12700 a la configuració del tallafoc del vostre sistema</li>
 <li>Nota 5: si us plau, recordeu moure la carpeta de forquilles blockchain no desitjades de la carpeta coctohug. En cas contrari, s&#39;iniciaran al mateix temps quan opereu amb totes les bifurcacions de cadena de blocs que funcionin, i això pot provocar que el vostre ordinador es quedi sense recursos.
 ```
-./ccm.sh start all
-./ccm.sh restart all
-./ccm.sh stop all
-./ccm.sh upgrade all
+ccm start all
+ccm restart all
+ccm stop all
+ccm upgrade all
 ...</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="configura-coctohug-al-sistema-operatiu-windows">Configura Coctohug al sistema operatiu Windows</h2>
 <ul>
-<li>La majoria dels passos són els mateixos <a href="#cch-linux">Configura Coctohug al sistema operatiu Linux</a></li>
-<li>Instal·leu forquilles de cadena de blocs mitjançant scripts similars:<pre><code>.\ccm.ps1 start flora
-.\ccm.ps1 start flax
-.\ccm.ps1 start hddcoin
-.\ccm.ps1 start chia
-...
-</code></pre>
-</li>
+<li>El mateix amb <a href="#cch-linux">Configura Coctohug al sistema operatiu Linux</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 
@@ -168,14 +161,14 @@
 <li>Podeu anar a la pestanya Connections o Blockchains per examinar l&#39;estat detallat</li>
 <li>Per accelerar la sincronització del vostre node: <a href="https://www.coctohug.xyz/#dbFilesAndOpenSources">Coctohug site</a> proporciona enllaços a fitxers de bases de dades, desenvolupats i patrocinats per: <a href="https://chiaforksblockchain.com/">Maize fork</a><pre><code>1. Baixeu fitxers: blockchain_v1_mainnet.sqlite i peer_table_node.sqlite
 2. Atureu la bifurcació de cadena de blocs mitjançant un script de terminal similar (dins de cada carpeta):
-  Windows: .\ccm.ps1 stop all
-  Linux / Mac: ./ccm.sh stop all
+  ccm stop flora
+  ccm stop all
 3. Copieu aquests fitxers a la carpeta de la bifurcació de la cadena de blocs de manera semblant a:
   Windows: /c:/users/username/.coctohug-covid/covid/mainnet/db/
   Linux / Mac: /home/username/.coctohug-flora/flora/mainnet/db/
 4. Inicieu la bifurcació de cadena de blocs mitjançant un script de terminal similar (dins de cada carpeta):
-   Windows: .\ccm.ps1 restart all
-   Linux / Mac: ./ccm.sh restart all
+   ccm restart cryptodoge
+   ccm restart all
 Notes 1: la vostra cartera necessita una sincronització individual al programa de forquilla
 Notes 2: la connexió de la base de dades descarregada a la vostra forquilla blockchain pot trigar fins a 30 minuts!
 </code></pre>
@@ -234,8 +227,8 @@ Notes 2: la connexió de la base de dades descarregada a la vostra forquilla blo
 4. Nota 1: recomanem una còpia de seguretat de les configuracions de la cartera abans d&amp;#39;importar
 5. Nota 2: només les forquilles de cadena de blocs que funcionen poden importar cartera freda. Si us plau, comproveu si hi ha bifurcacions blockchain aturades o no abans de fer-ho. Segurament també podeu importar més tard de nou quan es reiniciïn
 6. Nota 3: si hi ha cap problema, és possible que hàgiu de reiniciar totes les bifurcacions de cadena de blocs:
-  Windows: .\ccm.ps1 restart all
-  Linux / Mac: ./ccm.sh restart all
+  ccm restart all
+  ccm restart ethgreen
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -268,15 +261,14 @@ Notes 2: la connexió de la base de dades descarregada a la vostra forquilla blo
 <h2 id="actualitza">Actualitza</h2>
 <ul>
 <li>Això necessita de nou les 24 paraules mnemotècniques. Si us plau, poseu-los al fitxer /home/user/.coctohug/mnc.txt. Després de començar tots els contenidors de Docker nous, podeu buidar el fitxer mnc.txt per millorar el vostre nivell de seguretat</li>
-<li>Guió d&#39;una línia<pre><code>Windows: .\ccm.ps1 upgrade all; .\ccm.ps1 start all
-Linux / Mac: ./ccm.sh upgrade all &amp;&amp; ./ccm.sh start all
+<li>Guió d&#39;una línia<pre><code>ccm upgrade all &amp;&amp; ccm start all
 </code></pre>
 </li>
-<li>També podeu executar els scripts anteriors pas a pas<pre><code>.\ccm.ps1 upgrade all
-.\ccm.ps1 start all
+<li>També podeu executar els scripts anteriors pas a pas<pre><code>ccm upgrade all
+ccm start all
 </code></pre>
 </li>
-<li>En cas de problemes de base de dades incompatibles, podeu eliminar el fitxer de base de dades existent abans d&#39;executar l&#39;script d&#39;inici de docker-compose mitjançant<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+<li>En cas de problemes de base de dades incompatibles, podeu eliminar el fitxer de base de dades existent abans d&#39;executar l&#39;script d&#39;inici de docker-compose mitjançant<pre><code>rm -f ~/.coctohug-web/db/coctohug.sqlite
 </code></pre>
 </li>
 </ul>

@@ -2,7 +2,7 @@
 <ul>
 <li>Agradable localización con soporte para decenas de idiomas: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
 </ul>
-<p>Fácil instalación usando <a href="https://www.coctohug.xyz/">Inicio rápido</a></p>
+<p>Fácil instalación usando <a href="https://www.coctohug.xyz/">Inicio rápido</a> &amp; <a href="../ccm/ccm_gl.html">ccm</a></p>
 <p><em>Busca máis axuda no noso <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/invite/RcVpCw3ef7">Discord</a></em>.</p>
 <h1 id="inicio-rápido">Inicio rápido</h1>
 <ul>
@@ -47,44 +47,37 @@
 <li>Montar <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
 <li>Ir ao sitio <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, a continuación, introduza todos os campos de formulario necesarios e descargue os ficheiros de composición docker-compose comprimidos xerados</li>
 <li>Descomprime os cartafoles descargados e cópiaos no teu directorio de traballo. Elimina tamén eses cartafoles de forks de cadea de bloques non desexados para evitar que o ordenador non teña recursos</li>
-<li>Instala forks de cadea de bloques mediante scripts similares:<pre><code>./ccm.sh start flora
-./ccm.sh start flax
-./ccm.sh start hddcoin
-./ccm.sh start chia
+<li>Instala forks de cadea de bloques mediante scripts similares:<pre><code>ccm start flora
+ccm start flax
+ccm start hddcoin
+ccm start chia
 ...
 </code></pre>
 </li>
 <li>Abre o navegador e accede á WebUI con url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Nota 1: Non inicie máis de 5 forks de cadea de bloques ao mesmo tempo, xa que os garfos de cadea de bloques de chia realmente comen CPU cando se sincronizan os nodos por primeira vez</li>
 <li>Nota 2: Requírese ao redor de 1,8 G de RAM para cada bifurcación de cadea de bloques, polo que escolla algunhas garfos de cadea de bloques en función da memoria do ordenador</li>
-<li>Nota 3: Se hai algún problema, é posible que necesites reiniciar todos os forks da cadea de bloques:<pre><code>./ccm.sh restart flora
-./ccm.sh restart flax
-./ccm.sh restart hddcoin
-./ccm.sh restart chia
+<li>Nota 3: Se hai algún problema, é posible que necesites reiniciar todos os forks da cadea de bloques:<pre><code>ccm restart flora
+ccm restart flax
+ccm restart hddcoin
+ccm restart chia
 ...
 </code></pre>
 </li>
 <li>Nota 4: Quizais necesites engadir portos permitidos de 12630 a 12700 na configuración do firewall do teu sistema</li>
 <li>Nota 5: lembre de mover o cartafol dos garfos da cadea de bloques non desexados do cartafol coctohug. En caso contrario, iniciaranse ao mesmo tempo cando opere en todos os forks de cadea de bloques que funcionen, e o que pode provocar que o seu ordenador se quede sen recursos.
 ```
-./ccm.sh start all
-./ccm.sh restart all
-./ccm.sh stop all
-./ccm.sh upgrade all
+ccm start all
+ccm restart all
+ccm stop all
+ccm upgrade all
 ...</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="configura-coctohug-no-sistema-operativo-windows">Configura Coctohug no sistema operativo Windows</h2>
 <ul>
-<li>A maioría dos pasos son os mesmos <a href="#cch-linux">Configura Coctohug en Linux OS</a></li>
-<li>Instala forks de cadea de bloques mediante scripts similares:<pre><code>.\ccm.ps1 start flora
-.\ccm.ps1 start flax
-.\ccm.ps1 start hddcoin
-.\ccm.ps1 start chia
-...
-</code></pre>
-</li>
+<li>O mesmo con <a href="#cch-linux">Configura Coctohug en Linux OS</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 
@@ -168,14 +161,14 @@
 <li>Podes ir á pestana Conexións ou Blockchains para examinar o estado detallado</li>
 <li>Para acelerar a sincronización do teu nodo: <a href="https://www.coctohug.xyz/#dbFilesAndOpenSources">Coctohug site</a> ofrece ligazóns a ficheiros de bases de datos desenvolvidas e patrocinadas por: <a href="https://chiaforksblockchain.com/">Maize fork</a><pre><code>1. Descarga ficheiros: blockchain_v1_mainnet.sqlite e peer_table_node.sqlite
 2. Detén a bifurcación da cadea de bloques mediante un script de terminal similar (dentro de cada cartafol):
-  Windows: .\ccm.ps1 stop all
-  Linux / Mac: ./ccm.sh stop all
+  ccm stop flora
+  ccm stop all
 3. Copia eses ficheiros no cartafol do fork blockchain de xeito similar a:
   Windows: /c:/users/username/.coctohug-covid/covid/mainnet/db/
   Linux / Mac: /home/username/.coctohug-flora/flora/mainnet/db/
 4. Inicia o fork blockchain mediante un script de terminal similar (dentro de cada cartafol):
-   Windows: .\ccm.ps1 restart all
-   Linux / Mac: ./ccm.sh restart all
+   ccm restart cryptodoge
+   ccm restart all
 Notas 1: a túa carteira necesita sincronización individual no programa de fork
 Notas 2: a conexión da base de datos descargada á túa cadea de bloques pode levar ata 30 minutos.
 </code></pre>
@@ -234,8 +227,8 @@ Notas 2: a conexión da base de datos descargada á túa cadea de bloques pode l
 4. Nota 1: recomendamos facer unha copia de seguridade das configuracións da carteira antes de importar
 5. Nota 2: só os garfos blockchain que funcionan poden importar carteira fría. Comproba se hai forks blockchain parados ou non antes de facelo. Seguro que tamén pode importar máis tarde de novo cando se reinicien
 6. Nota 3: Se hai algún problema, é posible que necesites reiniciar todos os forks da cadea de bloques:
-  Windows: .\ccm.ps1 restart all
-  Linux / Mac: ./ccm.sh restart all
+  ccm restart all
+  ccm restart ethgreen
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -268,15 +261,14 @@ Notas 2: a conexión da base de datos descargada á túa cadea de bloques pode l
 <h2 id="actualizar">Actualizar</h2>
 <ul>
 <li>Isto precisa de novo as 24 palabras mnemotécnicas. Por favor, colócaas no ficheiro /home/user/.coctohug/mnc.txt. Despois de comezar todos os novos contedores docker, podes baleirar o ficheiro mnc.txt para mellorar o teu nivel de seguranza</li>
-<li>Guión dunha liña<pre><code>Windows: .\ccm.ps1 upgrade all; .\ccm.ps1 start all
-Linux / Mac: ./ccm.sh upgrade all &amp;&amp; ./ccm.sh start all
+<li>Guión dunha liña<pre><code>ccm upgrade all &amp;&amp; ccm start all
 </code></pre>
 </li>
-<li>Tamén pode executar os scripts anteriores paso a paso<pre><code>.\ccm.ps1 upgrade all
-.\ccm.ps1 start all
+<li>Tamén pode executar os scripts anteriores paso a paso<pre><code>ccm upgrade all
+ccm start all
 </code></pre>
 </li>
-<li>En caso de problema de base de datos incompatible, pode eliminar o ficheiro de base de datos existente antes de executar o script de inicio docker-compose mediante<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+<li>En caso de problema de base de datos incompatible, pode eliminar o ficheiro de base de datos existente antes de executar o script de inicio docker-compose mediante<pre><code>rm -f ~/.coctohug-web/db/coctohug.sqlite
 </code></pre>
 </li>
 </ul>

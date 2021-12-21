@@ -1,0 +1,82 @@
+<h1 id="coctohug---จัดการการขุดของ-chia-blockchain-forks-จากเว็บเบราว์เซอร์">Coctohug - จัดการการขุดของ chia blockchain forks จากเว็บเบราว์เซอร์!</h1>
+<ul>
+<li>การโลคัลไลเซชันที่ดีพร้อมรองรับหลายภาษา: <a href="./ccm_en.html">English</a>, <a href="./ccm_ar.html">العربية</a>, <a href="./ccm_bg.html">Bulgarian</a>, <a href="./ccm_ca.html">Catalan</a>, <a href="./ccm_de.html">Deutsch</a>, <a href="./ccm_es.html">Español</a>, <a href="./ccm_fa.html">زبان فارسی</a>, <a href="./ccm_fr.html">Français</a>, <a href="./ccm_gl.html">Galego</a>, <a href="./ccm_id.html">Indonesian</a>, <a href="./ccm_it.html">Italiano</a>, <a href="./ccm_ja.html">日本語</a>, <a href="./ccm_ko.html">한국어</a>, <a href="./ccm_pt.html">Português do Brasil</a>, <a href="./ccm_ro.html">limba română</a>, <a href="./ccm_ru.html">Русский</a>, <a href="./ccm_sr.html">Serbian</a>, <a href="./ccm_th.html">Thai</a>, <a href="./ccm_tl.html">Tagalog (Filipino)</a>, <a href="./ccm_tr.html">Türkçe</a>, <a href="./ccm_uk.html">Українська</a>, <a href="./ccm_vi.html">Vietnamese</a>, <a href="./ccm_zh-CN.html">简体中文</a>, <a href="./ccm_zh-TW.html">繁體中文</a></li>
+</ul>
+<h1 id="เริ่มต้นอย่างรวดเร็ว">เริ่มต้นอย่างรวดเร็ว</h1>
+<ul>
+<li><a href="#ccm-setup">ติดตั้ง</a></li>
+<li><a href="#ccm-help">ช่วย</a></li>
+<li><a href="#ccm-sample">คำสั่งตัวอย่างสำหรับส้อม blockchain ฟลอร่า</a></li>
+<li><a href="#ccm-all">คำสั่งด่วนสำหรับส้อมบล็อคเชนทั้งหมด</a></li>
+<li><a href="#ccm-view">ดูสถานะ fork blockchain โดยละเอียด</a></li>
+<li><a href="#ccm-docker">ไปที่คอนเทนเนอร์นักเทียบท่า</a></li>
+<li><a href="#ccm-docker-manage">การจัดการการปฏิบัติงานของนักเทียบท่า</a></li>
+<li><a href="#ccm-more">มากกว่า</a></li>
+</ul>
+<p id="ccm-setup">&nbsp;</p>
+
+<h2 id="ติดตั้ง">ติดตั้ง</h2>
+<ul>
+<li>เปิดเทอร์มินัลและเปลี่ยนไดเร็กทอรีการทำงานเป็นโฟลเดอร์ที่มี ccm.sh</li>
+<li>(Linux / Mac) เริ่ม ccm โดยสร้างลิงค์: <i>sudo ln -s /full/path/to/your/file/ccm.sh /usr/local/bin/ccm</i></li>
+</ul>
+<p id="ccm-help">&nbsp;</p>
+
+<h2 id="ช่วย">ช่วย</h2>
+<ul>
+<li>คู่มือคำสั่ง: <i>ccm help</i></li>
+</ul>
+<p id="ccm-sample">&nbsp;</p>
+
+<h2 id="คำสั่งตัวอย่างสำหรับส้อม-blockchain-ฟลอร่า">คำสั่งตัวอย่างสำหรับส้อม blockchain ฟลอร่า</h2>
+<ul>
+<li>ติดตั้งส้อมบล็อคเชนหนึ่งอัน เช่น ฟลอรา: <i>ccm install flora</i></li>
+<li>เริ่มต้นหนึ่ง blockchain fork เช่น ฟลอรา: <i>ccm start flora</i></li>
+<li>หยุดหนึ่งส้อมบล็อคเชนเช่นฟลอรา: <i>ccm stop flora</i></li>
+<li>รีสตาร์ทหนึ่งส้อมบล็อคเชนเช่นฟลอรา: <i>ccm restart flora</i></li>
+<li>อัปเกรดส้อมบล็อคเชนหนึ่งอัน เช่น ฟลอรา: <i>ccm upgrade flora</i></li>
+<li>ถอนการติดตั้ง blockchain fork หนึ่งอัน เช่น ฟลอรา: <i>ccm uninstall flora</i></li>
+</ul>
+<p id="ccm-all">&nbsp;</p>
+
+<h2 id="คำสั่งด่วนสำหรับส้อมบล็อคเชนทั้งหมด">คำสั่งด่วนสำหรับส้อมบล็อคเชนทั้งหมด</h2>
+<ul>
+<li>ติดตั้งส้อม blockchain ทั้งหมด: <i>ccm install all</i></li>
+<li>เริ่มส้อม blockchain ทั้งหมด: <i>ccm start all</i></li>
+<li>หยุดส้อมบล็อคเชนทั้งหมด: <i>ccm stop all</i></li>
+<li>รีสตาร์ทส้อมบล็อคเชนทั้งหมด: <i>ccm restart all</i></li>
+<li>อัปเกรดส้อม blockchain ทั้งหมด: <i>ccm upgrade all</i></li>
+<li>ถอนการติดตั้ง blockchain fork ทั้งหมด: <i>ccm uninstall all</i></li>
+</ul>
+<p id="ccm-view">&nbsp;</p>
+
+<h2 id="ดูสถานะ-fork-blockchain-โดยละเอียด">ดูสถานะ fork blockchain โดยละเอียด</h2>
+<ul>
+<li>ดูข้อมูลการเชื่อมต่อเช่น ethgreen: <i>ccm vconnection ethgreen</i></li>
+<li>ดูข้อมูลสรุปฟาร์มเช่น ethgreen: <i>ccm vsummary ethgreen</i></li>
+<li>ดูข้อมูลกระเป๋าเงินเช่น ethgreen: <i>ccm vwallet ethgreen</i></li>
+<li>ดูข้อมูลคีย์เช่น ethgreen: <i>ccm vkey ethgreen</i></li>
+<li>ดูข้อมูลบันทึกเช่น ethgreen: <i>ccm vlog ethgreen</i></li>
+</ul>
+<p id="ccm-docker">&nbsp;</p>
+
+<h2 id="ไปที่คอนเทนเนอร์นักเทียบท่า">ไปที่คอนเทนเนอร์นักเทียบท่า</h2>
+<ul>
+<li>เข้าไปข้างในนักเทียบท่าเช่น tranzact: <i>ccm docker tranzact</i></li>
+</ul>
+<p id="ccm-docker-manage">&nbsp;</p>
+
+<h2 id="การจัดการการปฏิบัติงานของนักเทียบท่า">การจัดการการปฏิบัติงานของนักเทียบท่า</h2>
+<ul>
+<li>ล้างภาพนักเทียบท่าที่ไม่ได้ใช้ทั้งหมด: <i>ccm clean</i></li>
+<li>แสดงคอนเทนเนอร์นักเทียบท่าทั้งหมด: <i>ccm container</i></li>
+<li>แสดงภาพนักเทียบท่าทั้งหมด: <i>ccm image</i></li>
+</ul>
+<p id="ccm-more">&nbsp;</p>
+
+<h2 id="มากกว่า">มากกว่า</h2>
+<ul>
+<li><a href="https://github.com/raingggg/coctohug-manager">Github</a></li>
+</ul>
+<h2 id="ประกาศเครื่องหมายการค้า">ประกาศเครื่องหมายการค้า</h2>
+<p>CHIA NETWORK INC, CHIA™, CHIA BLOCKCHAIN™, CHIA PROTOCOL™, CHIALISP™ และ “โลโก้ใบไม้” (รวมถึงโลโก้ใบไม้เพียงอย่างเดียวเมื่ออ้างถึงหรือระบุ Chia) เป็นเครื่องหมายการค้าหรือเครื่องหมายการค้าจดทะเบียนของ Chia Network, Inc ., บริษัทเดลาแวร์. <em>โครงการ Coctohug นี้ไม่มีส่วนเกี่ยวข้องกับโครงการ Chia Network หลัก</em></p>

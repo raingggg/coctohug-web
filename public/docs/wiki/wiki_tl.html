@@ -2,7 +2,7 @@
 <ul>
 <li>Magandang lokalisasyon na may suporta ng dose-dosenang mga wika: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
 </ul>
-<p>Madaling paggamit ng Setup <a href="https://www.coctohug.xyz/">Mabilis na Pagsisimula</a></p>
+<p>Madaling paggamit ng Setup <a href="https://www.coctohug.xyz/">Mabilis na Pagsisimula</a> &amp; <a href="../ccm/ccm_tl.html">ccm</a></p>
 <p><em>Humingi ng higit pang tulong sa aming <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/invite/RcVpCw3ef7">Discord</a></em>.</p>
 <h1 id="mabilis-na-pagsisimula">Mabilis na Pagsisimula</h1>
 <ul>
@@ -47,44 +47,37 @@
 <li>Setup <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
 <li>Pumunta sa site <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, pagkatapos ay ilagay ang lahat ng kinakailangang mga patlang ng form at i-download ang nabuong mga naka-zip na docker-compose na mga file</li>
 <li>I-unzip ang mga na-download na folder at kopyahin ang mga ito sa iyong gumaganang direktoryo. Mangyaring alisin din ang mga hindi gustong blockchain forks na mga folder upang maiwasan ang kaso ng computer na wala sa mga mapagkukunan</li>
-<li>Mag-install ng mga blockchain forks sa pamamagitan ng mga katulad na script:<pre><code>./ccm.sh start flora
-./ccm.sh start flax
-./ccm.sh start hddcoin
-./ccm.sh start chia
+<li>Mag-install ng mga blockchain forks sa pamamagitan ng mga katulad na script:<pre><code>ccm start flora
+ccm start flax
+ccm start hddcoin
+ccm start chia
 ...
 </code></pre>
 </li>
 <li>Buksan ang browser at i-access ang WebUI gamit ang url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Tandaan 1: Huwag simulan ang higit sa 5 blockchain forks nang sabay-sabay, dahil ang chia blockchain forks ay talagang kumakain ng CPU kapag ang node ay nagsi-sync sa unang pagkakataon</li>
 <li>Tandaan 2: Humigit-kumulang 1.8G RAM ang kinakailangan para sa bawat blockchain fork, kaya pumili ng ilang blockchain forks batay sa memorya ng iyong computer</li>
-<li>Tandaan 3: Kung mayroong anumang mga isyu, maaaring kailanganin mong i-restart ang lahat ng blockchain forks:<pre><code>./ccm.sh restart flora
-./ccm.sh restart flax
-./ccm.sh restart hddcoin
-./ccm.sh restart chia
+<li>Tandaan 3: Kung mayroong anumang mga isyu, maaaring kailanganin mong i-restart ang lahat ng blockchain forks:<pre><code>ccm restart flora
+ccm restart flax
+ccm restart hddcoin
+ccm restart chia
 ...
 </code></pre>
 </li>
 <li>Tandaan 4: Maaaring kailanganin mong magdagdag ng pagpapahintulot sa mga port mula 12630 hanggang 12700 sa iyong mga setting ng firewall ng system</li>
 <li>Tandaan 5: Mangyaring tandaan na ilipat ang mga hindi gustong blockchain forks folder mula sa folder ng coctohug. Kung hindi, magsisimula ang mga ito nang sabay-sabay kapag nag-operate ka sa lahat ng gumaganang blockchain forks, at maaaring maging sanhi ng pagkawala ng iyong computer sa mga mapagkukunan.
 ```
-./ccm.sh start all
-./ccm.sh restart all
-./ccm.sh stop all
-./ccm.sh upgrade all
+ccm start all
+ccm restart all
+ccm stop all
+ccm upgrade all
 ...</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="i-setup-ang-coctohug-sa-windows-os">I-setup ang Coctohug sa Windows OS</h2>
 <ul>
-<li>Karamihan sa mga hakbang ay pareho <a href="#cch-linux">I-setup ang Coctohug sa Linux OS</a></li>
-<li>Mag-install ng mga blockchain forks sa pamamagitan ng mga katulad na script:<pre><code>.\ccm.ps1 start flora
-.\ccm.ps1 start flax
-.\ccm.ps1 start hddcoin
-.\ccm.ps1 start chia
-...
-</code></pre>
-</li>
+<li>Pareho sa <a href="#cch-linux">I-setup ang Coctohug sa Linux OS</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 
@@ -168,14 +161,14 @@
 <li>Maaari kang pumunta sa tab na Connections o Blockchains upang suriin ang detalyadong katayuan</li>
 <li>Upang mapabilis ang iyong pag-sync ng node: <a href="https://www.coctohug.xyz/#dbFilesAndOpenSources">Coctohug site</a> nagbibigay ng mga link sa database file - binuo at inisponsor ng: <a href="https://chiaforksblockchain.com/">Maize fork</a><pre><code>1. Mag-download ng mga file: blockchain_v1_mainnet.sqlite at peer_table_node.sqlite
 2. Itigil ang blockchain fork sa pamamagitan ng katulad na terminal script (sa loob ng bawat folder):
-  Windows: .\ccm.ps1 stop all
-  Linux / Mac: ./ccm.sh stop all
+  ccm stop flora
+  ccm stop all
 3. Kopyahin ang mga file na iyon sa blockchain fork folder na katulad ng:
   Windows: /c:/users/username/.coctohug-covid/covid/mainnet/db/
   Linux / Mac: /home/username/.coctohug-flora/flora/mainnet/db/
 4. Simulan ang blockchain fork sa pamamagitan ng katulad na terminal script (sa loob ng bawat folder):
-   Windows: .\ccm.ps1 restart all
-   Linux / Mac: ./ccm.sh restart all
+   ccm restart cryptodoge
+   ccm restart all
 Mga Tala 1: Ang iyong wallet ay nangangailangan ng indibidwal na pag-synchronize sa programa ng tinidor
 Mga Tala 2: Ang koneksyon ng na-download na database sa iyong blockchain fork ay maaaring tumagal nang hanggang 30 minuto!
 </code></pre>
@@ -234,8 +227,8 @@ Mga Tala 2: Ang koneksyon ng na-download na database sa iyong blockchain fork ay
 4. Tandaan 1: inirerekomenda namin na i-backup ang iyong mga configuration ng wallet bago mag-import
 5. Tandaan 2: Tanging mga gumaganang blockchain forks lang ang makakapag-import ng cold wallet. Pakisuri kung may mga tumigil na blockchain forks o wala bago gawin ito. Tiyak na maaari ka ring mag-import sa ibang pagkakataon muli kapag sila ay muling nagsimula
 6. Tandaan 3: Kung mayroong anumang mga isyu, maaaring kailanganin mong i-restart ang lahat ng blockchain forks:
-  Windows: .\ccm.ps1 restart all
-  Linux / Mac: ./ccm.sh restart all
+  ccm restart all
+  ccm restart ethgreen
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -268,15 +261,14 @@ Mga Tala 2: Ang koneksyon ng na-download na database sa iyong blockchain fork ay
 <h2 id="mag-upgrade">Mag-upgrade</h2>
 <ul>
 <li>Kailangan nitong muli ang 24 na mnemonic na salita. Mangyaring ilagay ang mga ito sa file /home/user/.coctohug/mnc.txt. Pagkatapos magsimula ng lahat ng bagong docker container, maaari mong alisan ng laman ang file mnc.txt para mapahusay ang iyong antas ng seguridad</li>
-<li>Isang linyang script<pre><code>Windows: .\ccm.ps1 upgrade all; .\ccm.ps1 start all
-Linux / Mac: ./ccm.sh upgrade all &amp;&amp; ./ccm.sh start all
+<li>Isang linyang script<pre><code>ccm upgrade all &amp;&amp; ccm start all
 </code></pre>
 </li>
-<li>Maaari mo ring isagawa ang mga script sa itaas nang sunud-sunod<pre><code>.\ccm.ps1 upgrade all
-.\ccm.ps1 start all
+<li>Maaari mo ring isagawa ang mga script sa itaas nang sunud-sunod<pre><code>ccm upgrade all
+ccm start all
 </code></pre>
 </li>
-<li>Sa kaso ng hindi tugmang isyu sa db, maaari mong alisin ang umiiral na database file bago isagawa ang docker-compose start script sa pamamagitan ng<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+<li>Sa kaso ng hindi tugmang isyu sa db, maaari mong alisin ang umiiral na database file bago isagawa ang docker-compose start script sa pamamagitan ng<pre><code>rm -f ~/.coctohug-web/db/coctohug.sqlite
 </code></pre>
 </li>
 </ul>

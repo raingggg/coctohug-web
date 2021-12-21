@@ -2,7 +2,7 @@
 <ul>
 <li>支持数十种语言的良好本地化： <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
 </ul>
-<p>使用简单设置 <a href="https://www.coctohug.xyz/">快速开始</a></p>
+<p>使用简单设置 <a href="https://www.coctohug.xyz/">快速开始</a> &amp; <a href="../ccm/ccm_zh-CN.html">ccm</a></p>
 <p><em>寻求更多关于我们的帮助 <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/invite/RcVpCw3ef7">Discord</a></em>.</p>
 <h1 id="快速开始">快速开始</h1>
 <ul>
@@ -47,44 +47,37 @@
 <li>设置 <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
 <li>前往网站 <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, 然后输入所有必要的表单字段并下载生成的压缩 docker-compose 文件</li>
 <li>解压缩下载的文件夹并将它们复制到您的工作目录中。还请删除那些不需要的区块链分叉文件夹，以避免计算机资源不足的情况</li>
-<li>通过类似的脚本安装区块链分叉：<pre><code>./ccm.sh start flora
-./ccm.sh start flax
-./ccm.sh start hddcoin
-./ccm.sh start chia
+<li>通过类似的脚本安装区块链分叉：<pre><code>ccm start flora
+ccm start flax
+ccm start hddcoin
+ccm start chia
 ...
 </code></pre>
 </li>
 <li>打开浏览器并通过 url 访问 WebUI <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>注意1：不要同时启动超过5个区块链分叉，因为chia区块链分叉在第一次节点同步时真的很吃CPU</li>
 <li>注 2：每个区块链分叉大约需要 1.8G RAM，因此请根据您的计算机内存选择一些区块链分叉</li>
-<li>注 3：如果出现任何问题，您可能需要重启所有区块链分叉：<pre><code>./ccm.sh restart flora
-./ccm.sh restart flax
-./ccm.sh restart hddcoin
-./ccm.sh restart chia
+<li>注 3：如果出现任何问题，您可能需要重启所有区块链分叉：<pre><code>ccm restart flora
+ccm restart flax
+ccm restart hddcoin
+ccm restart chia
 ...
 </code></pre>
 </li>
 <li>注意 4：您可能需要在系统防火墙设置中添加从 12630 到 12700 的允许端口</li>
 <li>注意 5：请记住将不需要的区块链分叉文件夹移出 coctohug 文件夹。否则，它们会在您操作所有正在运行的区块链分叉时同时启动，并可能导致您的计算机资源不足
 ```
-./ccm.sh start all
-./ccm.sh restart all
-./ccm.sh stop all
-./ccm.sh upgrade all
+ccm start all
+ccm restart all
+ccm stop all
+ccm upgrade all
 ...</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="在-windows-操作系统上设置-coctohug">在 Windows 操作系统上设置 Coctohug</h2>
 <ul>
-<li>大多数步骤是一样的 <a href="#cch-linux">在 Linux 操作系统上设置 Coctohug</a></li>
-<li>通过类似的脚本安装区块链分叉：<pre><code>.\ccm.ps1 start flora
-.\ccm.ps1 start flax
-.\ccm.ps1 start hddcoin
-.\ccm.ps1 start chia
-...
-</code></pre>
-</li>
+<li>同 <a href="#cch-linux">在 Linux 操作系统上设置 Coctohug</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 
@@ -168,14 +161,14 @@
 <li>您可以前往连接或区块链选项卡查看详细状态</li>
 <li>要加速您的节点同步： <a href="https://www.coctohug.xyz/#dbFilesAndOpenSources">Coctohug site</a> 提供数据库文件链接 - 开发和赞助： <a href="https://chiaforksblockchain.com/">Maize fork</a><pre><code>1. 下载文件：blockchain_v1_mainnet.sqlite 和 peer_table_node.sqlite
 2.通过类似的终端脚本（在每个文件夹内）停止区块链分叉：
-  Windows: .\ccm.ps1 stop all
-  Linux / Mac: ./ccm.sh stop all
+  ccm stop flora
+  ccm stop all
 3. 将这些文件复制到区块链 fork 文件夹中，类似于：
   Windows: /c:/users/username/.coctohug-covid/covid/mainnet/db/
   Linux / Mac: /home/username/.coctohug-flora/flora/mainnet/db/
 4.通过类似的终端脚本（在每个文件夹内）启动区块链分叉：
-   Windows: .\ccm.ps1 restart all
-   Linux / Mac: ./ccm.sh restart all
+   ccm restart cryptodoge
+   ccm restart all
 注意事项1：您的钱包需要在分叉程序中单独同步
 注2：您blockchain叉下载数据库的连接可能需要长达30分钟！
 </code></pre>
@@ -234,8 +227,8 @@
 4. 注意1：我们建议在导入之前备份您的钱包配置
 5. 注 2：只有工作的区块链分叉才能导入冷钱包。在执行此操作之前，请检查是否有停止的区块链分叉。当然，您也可以稍后在重新启动时再次导入
 6. 注 3：如果出现任何问题，您可能需要重启所有区块链分叉：
-  Windows: .\ccm.ps1 restart all
-  Linux / Mac: ./ccm.sh restart all
+  ccm restart all
+  ccm restart ethgreen
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -268,15 +261,14 @@
 <h2 id="升级">升级</h2>
 <ul>
 <li>这又需要24个助记词。请将它们放入文件/home/user/.coctohug/mnc.txt。在所有新的 docker 容器启动后，您可以清空文件 mnc.txt 以提高您的安全级别</li>
-<li>一行脚本<pre><code>Windows: .\ccm.ps1 upgrade all; .\ccm.ps1 start all
-Linux / Mac: ./ccm.sh upgrade all &amp;&amp; ./ccm.sh start all
+<li>一行脚本<pre><code>ccm upgrade all &amp;&amp; ccm start all
 </code></pre>
 </li>
-<li>也可以一步步执行上面的脚本<pre><code>.\ccm.ps1 upgrade all
-.\ccm.ps1 start all
+<li>也可以一步步执行上面的脚本<pre><code>ccm upgrade all
+ccm start all
 </code></pre>
 </li>
-<li>如果出现不兼容的数据库问题，您可以在执行 docker-compose 启动脚本之前删除现有的数据库文件<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+<li>如果出现不兼容的数据库问题，您可以在执行 docker-compose 启动脚本之前删除现有的数据库文件<pre><code>rm -f ~/.coctohug-web/db/coctohug.sqlite
 </code></pre>
 </li>
 </ul>

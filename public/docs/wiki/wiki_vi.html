@@ -2,7 +2,7 @@
 <ul>
 <li>Bản địa hóa tốt với sự hỗ trợ của hàng chục ngôn ngữ: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
 </ul>
-<p>Cài đặt dễ dàng bằng cách sử dụng <a href="https://www.coctohug.xyz/">Bắt đầu nhanh</a></p>
+<p>Cài đặt dễ dàng bằng cách sử dụng <a href="https://www.coctohug.xyz/">Bắt đầu nhanh</a> &amp; <a href="../ccm/ccm_vi.html">ccm</a></p>
 <p><em>Tìm kiếm thêm trợ giúp về <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/invite/RcVpCw3ef7">Discord</a></em>.</p>
 <h1 id="bắt-đầu-nhanh">Bắt đầu nhanh</h1>
 <ul>
@@ -47,44 +47,37 @@
 <li>Cài đặt <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
 <li>Đi đến trang web <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, sau đó nhập tất cả các trường biểu mẫu cần thiết và tải xuống các tệp soạn nhạc do docker nén đã tạo</li>
 <li>Giải nén các thư mục đã tải xuống và sao chép chúng vào thư mục làm việc của bạn. Cũng vui lòng xóa các thư mục blockchain fork không mong muốn đó để tránh trường hợp máy tính hết tài nguyên</li>
-<li>Cài đặt các nhánh blockchain bằng các tập lệnh tương tự:<pre><code>./ccm.sh start flora
-./ccm.sh start flax
-./ccm.sh start hddcoin
-./ccm.sh start chia
+<li>Cài đặt các nhánh blockchain bằng các tập lệnh tương tự:<pre><code>ccm start flora
+ccm start flax
+ccm start hddcoin
+ccm start chia
 ...
 </code></pre>
 </li>
 <li>Mở trình duyệt và truy cập WebUI bằng url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Lưu ý 1: Không khởi động nhiều hơn 5 nhánh blockchain cùng một lúc, vì các nhánh chia blockchain thực sự ăn CPU khi đồng bộ hóa nút lần đầu tiên</li>
 <li>Lưu ý 2: Cần có khoảng 1,8G RAM cho mỗi lần fork blockchain, vì vậy hãy chọn một số nhánh blockchain dựa trên bộ nhớ máy tính của bạn</li>
-<li>Lưu ý 3: Nếu có bất kỳ sự cố nào, bạn có thể cần khởi động lại tất cả các nhánh blockchain:<pre><code>./ccm.sh restart flora
-./ccm.sh restart flax
-./ccm.sh restart hddcoin
-./ccm.sh restart chia
+<li>Lưu ý 3: Nếu có bất kỳ sự cố nào, bạn có thể cần khởi động lại tất cả các nhánh blockchain:<pre><code>ccm restart flora
+ccm restart flax
+ccm restart hddcoin
+ccm restart chia
 ...
 </code></pre>
 </li>
 <li>Lưu ý 4: Bạn có thể cần thêm các cổng cho phép từ 12630 đến 12700 trên cài đặt tường lửa hệ thống của mình</li>
 <li>Lưu ý 5: Hãy nhớ chuyển thư mục blockchain fork không mong muốn đó ra khỏi thư mục coctohug. Nếu không, chúng sẽ được khởi động cùng lúc khi bạn vận hành trên tất cả các nhánh blockchain đang hoạt động và điều này có thể khiến máy tính của bạn hết tài nguyên
 ```
-./ccm.sh start all
-./ccm.sh restart all
-./ccm.sh stop all
-./ccm.sh upgrade all
+ccm start all
+ccm restart all
+ccm stop all
+ccm upgrade all
 ...</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="thiết-lập-coctohug-trên-windows-os">Thiết lập Coctohug trên Windows OS</h2>
 <ul>
-<li>Hầu hết các bước đều giống nhau <a href="#cch-linux">Thiết lập Coctohug trên Hệ điều hành Linux</a></li>
-<li>Cài đặt các nhánh blockchain bằng các tập lệnh tương tự:<pre><code>.\ccm.ps1 start flora
-.\ccm.ps1 start flax
-.\ccm.ps1 start hddcoin
-.\ccm.ps1 start chia
-...
-</code></pre>
-</li>
+<li>Giống với <a href="#cch-linux">Thiết lập Coctohug trên Hệ điều hành Linux</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 
@@ -168,14 +161,14 @@
 <li>Bạn có thể chuyển đến tab Connections hoặc Blockchains để kiểm tra trạng thái chi tiết</li>
 <li>Để tích lũy đồng bộ hóa nút của bạn: <a href="https://www.coctohug.xyz/#dbFilesAndOpenSources">Coctohug site</a> cung cấp liên kết tệp cơ sở dữ liệu - được phát triển và tài trợ bởi: <a href="https://chiaforksblockchain.com/">Maize fork</a><pre><code>1. Tải xuống các tệp: blockchain_v1_mainnet.sqlite và peer_table_node.sqlite
 2. Dừng phân nhánh blockchain bằng tập lệnh đầu cuối tương tự (bên trong mỗi thư mục):
-  Windows: .\ccm.ps1 stop all
-  Linux / Mac: ./ccm.sh stop all
+  ccm stop flora
+  ccm stop all
 3. Sao chép các tệp đó vào thư mục blockchain fork tương tự như:
   Windows: /c:/users/username/.coctohug-covid/covid/mainnet/db/
   Linux / Mac: /home/username/.coctohug-flora/flora/mainnet/db/
 4. Bắt đầu fork blockchain bằng tập lệnh đầu cuối tương tự (bên trong mỗi thư mục):
-   Windows: .\ccm.ps1 restart all
-   Linux / Mac: ./ccm.sh restart all
+   ccm restart cryptodoge
+   ccm restart all
 Lưu ý 1: Ví của bạn cần đồng bộ hóa cá nhân trong chương trình fork
 Lưu ý 2: Kết nối cơ sở dữ liệu đã tải xuống với chuỗi phân tách blockchain của bạn có thể mất đến 30 phút!
 </code></pre>
@@ -234,8 +227,8 @@ Lưu ý 2: Kết nối cơ sở dữ liệu đã tải xuống với chuỗi ph�
 4. Lưu ý 1: chúng tôi khuyên bạn nên sao lưu cấu hình ví của bạn trước khi nhập
 5. Lưu ý 2: Chỉ những nhánh blockchain đang hoạt động mới có thể nhập ví lạnh. Vui lòng kiểm tra xem có các nhánh blockchain bị dừng hay không trước khi thực hiện việc này. Chắc chắn bạn cũng có thể nhập lại sau khi chúng được khởi động lại
 6. Lưu ý 3: Nếu có bất kỳ sự cố nào, bạn có thể cần khởi động lại tất cả các nhánh blockchain:
-  Windows: .\ccm.ps1 restart all
-  Linux / Mac: ./ccm.sh restart all
+  ccm restart all
+  ccm restart ethgreen
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -268,15 +261,14 @@ Lưu ý 2: Kết nối cơ sở dữ liệu đã tải xuống với chuỗi ph�
 <h2 id="nâng-cấp">Nâng cấp</h2>
 <ul>
 <li>Điều này cần 24 từ ghi nhớ một lần nữa. Vui lòng đưa chúng vào tệp /home/user/.coctohug/mnc.txt. Sau khi tất cả các vùng chứa docker mới bắt đầu, bạn có thể làm trống tệp mnc.txt để nâng cao mức độ bảo mật của mình</li>
-<li>Tập lệnh một dòng<pre><code>Windows: .\ccm.ps1 upgrade all; .\ccm.ps1 start all
-Linux / Mac: ./ccm.sh upgrade all &amp;&amp; ./ccm.sh start all
+<li>Tập lệnh một dòng<pre><code>ccm upgrade all &amp;&amp; ccm start all
 </code></pre>
 </li>
-<li>Bạn cũng có thể thực thi các tập lệnh trên theo từng bước<pre><code>.\ccm.ps1 upgrade all
-.\ccm.ps1 start all
+<li>Bạn cũng có thể thực thi các tập lệnh trên theo từng bước<pre><code>ccm upgrade all
+ccm start all
 </code></pre>
 </li>
-<li>Trong trường hợp xảy ra sự cố db không tương thích, bạn có thể xóa tệp cơ sở dữ liệu hiện có trước khi thực thi tập lệnh bắt đầu do docker-soạn bằng cách<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+<li>Trong trường hợp xảy ra sự cố db không tương thích, bạn có thể xóa tệp cơ sở dữ liệu hiện có trước khi thực thi tập lệnh bắt đầu do docker-soạn bằng cách<pre><code>rm -f ~/.coctohug-web/db/coctohug.sqlite
 </code></pre>
 </li>
 </ul>

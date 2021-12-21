@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.5] - 2021-12-20
+- allow harverst fix for farmer-no-wallet mode
+- ccm full guide
+
 ## [1.2.4] - 2021-12-20
 - show yellow background for not getting data longer than 30 minutes cases
 - add version number to leftbar

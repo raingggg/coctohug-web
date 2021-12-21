@@ -2,7 +2,7 @@
 <ul>
 <li>Bella localizzazione con supporto di dozzine di lingue: <a href="./wiki_en.html">English</a>, <a href="./wiki_ar.html">العربية</a>, <a href="./wiki_bg.html">Bulgarian</a>, <a href="./wiki_ca.html">Catalan</a>, <a href="./wiki_de.html">Deutsch</a>, <a href="./wiki_es.html">Español</a>, <a href="./wiki_fa.html">زبان فارسی</a>, <a href="./wiki_fr.html">Français</a>, <a href="./wiki_gl.html">Galego</a>, <a href="./wiki_id.html">Indonesian</a>, <a href="./wiki_it.html">Italiano</a>, <a href="./wiki_ja.html">日本語</a>, <a href="./wiki_ko.html">한국어</a>, <a href="./wiki_pt.html">Português do Brasil</a>, <a href="./wiki_ro.html">limba română</a>, <a href="./wiki_ru.html">Русский</a>, <a href="./wiki_sr.html">Serbian</a>, <a href="./wiki_th.html">Thai</a>, <a href="./wiki_tl.html">Tagalog (Filipino)</a>, <a href="./wiki_tr.html">Türkçe</a>, <a href="./wiki_uk.html">Українська</a>, <a href="./wiki_vi.html">Vietnamese</a>, <a href="./wiki_zh-CN.html">简体中文</a>, <a href="./wiki_zh-TW.html">繁體中文</a></li>
 </ul>
-<p>Facile installazione utilizzando <a href="https://www.coctohug.xyz/">Avvio veloce</a></p>
+<p>Facile installazione utilizzando <a href="https://www.coctohug.xyz/">Avvio veloce</a> &amp; <a href="../ccm/ccm_it.html">ccm</a></p>
 <p><em>Cerca più aiuto sul nostro <a href="https://www.coctohug.xyz/">Website</a> / <a href="https://github.com/raingggg/coctohug">Github</a> / <a href="https://github.com/raingggg/coctohug/discussions">Discussions</a> / <a href="https://discord.com/invite/RcVpCw3ef7">Discord</a></em>.</p>
 <h1 id="avvio-veloce">Avvio veloce</h1>
 <ul>
@@ -47,44 +47,37 @@
 <li>Impostare <a target='_blank' href='https://www.docker.com/products/docker-desktop'>Docker</a> + <a target='_blank' href='https://docs.docker.com/compose/install/'>Docker-Compose</a> </li>
 <li>Vai al sito <a target='_blank' href='https://www.coctohug.xyz/'>https://www.coctohug.xyz</a>, quindi inserisci tutti i campi del modulo necessari e scarica i file docker-compose zippati generati</li>
 <li>Decomprimi le cartelle scaricate e copiale nella directory di lavoro. Si prega di rimuovere anche quelle cartelle di fork blockchain indesiderate per evitare il caso di computer senza risorse</li>
-<li>Installa fork blockchain con script simili:<pre><code>./ccm.sh start flora
-./ccm.sh start flax
-./ccm.sh start hddcoin
-./ccm.sh start chia
+<li>Installa fork blockchain con script simili:<pre><code>ccm start flora
+ccm start flax
+ccm start hddcoin
+ccm start chia
 ...
 </code></pre>
 </li>
 <li>Apri il browser e accedi a WebUI con url <a target='_blank' href='http://localhost:12630/'>http://localhost:12630/</a></li>
 <li>Nota 1: non avviare più di 5 fork blockchain contemporaneamente, poiché i fork blockchain di chia consumano davvero la CPU quando si sincronizzano i nodi per la prima volta</li>
 <li>Nota 2: sono necessari circa 1,8 G di RAM per ogni blockchain fork, quindi scegli alcuni fork blockchain basati sulla memoria del tuo computer</li>
-<li>Nota 3: in caso di problemi, potrebbe essere necessario riavviare tutti i fork della blockchain:<pre><code>./ccm.sh restart flora
-./ccm.sh restart flax
-./ccm.sh restart hddcoin
-./ccm.sh restart chia
+<li>Nota 3: in caso di problemi, potrebbe essere necessario riavviare tutti i fork della blockchain:<pre><code>ccm restart flora
+ccm restart flax
+ccm restart hddcoin
+ccm restart chia
 ...
 </code></pre>
 </li>
 <li>Nota 4: potrebbe essere necessario aggiungere porte consentite da 12630 a 12700 nelle impostazioni del firewall di sistema</li>
 <li>Nota 5: ricordati di spostare la cartella fork blockchain indesiderata fuori dalla cartella coctohug. Altrimenti, verranno avviati nello stesso momento in cui operi su tutti i fork blockchain funzionanti e ciò potrebbe causare l&#39;esaurimento delle risorse del tuo computer
 ```
-./ccm.sh start all
-./ccm.sh restart all
-./ccm.sh stop all
-./ccm.sh upgrade all
+ccm start all
+ccm restart all
+ccm stop all
+ccm upgrade all
 ...</li>
 </ul>
 <p id="cch-windows">&nbsp;</p>
 
 <h2 id="configura-coctohug-su-sistema-operativo-windows">Configura Coctohug su sistema operativo Windows</h2>
 <ul>
-<li>La maggior parte dei passaggi sono gli stessi <a href="#cch-linux">Configura Coctohug su sistema operativo Linux</a></li>
-<li>Installa fork blockchain con script simili:<pre><code>.\ccm.ps1 start flora
-.\ccm.ps1 start flax
-.\ccm.ps1 start hddcoin
-.\ccm.ps1 start chia
-...
-</code></pre>
-</li>
+<li>Lo stesso con <a href="#cch-linux">Configura Coctohug su sistema operativo Linux</a></li>
 </ul>
 <p id="cch-macOS">&nbsp;</p>
 
@@ -168,14 +161,14 @@
 <li>Puoi andare alla scheda Connessioni o Blockchain per esaminare lo stato dettagliato</li>
 <li>Per accelerare la sincronizzazione del nodo: <a href="https://www.coctohug.xyz/#dbFilesAndOpenSources">Coctohug site</a> fornisce collegamenti ai file di database - sviluppati e sponsorizzati da: <a href="https://chiaforksblockchain.com/">Maize fork</a><pre><code>1. Scarica i file: blockchain_v1_mainnet.sqlite e peer_table_node.sqlite
 2. Arresta il fork della blockchain con uno script di terminale simile (all&amp;#39;interno di ogni cartella):
-  Windows: .\ccm.ps1 stop all
-  Linux / Mac: ./ccm.sh stop all
+  ccm stop flora
+  ccm stop all
 3. Copia questi file nella cartella fork blockchain in modo simile a:
   Windows: /c:/users/username/.coctohug-covid/covid/mainnet/db/
   Linux / Mac: /home/username/.coctohug-flora/flora/mainnet/db/
 4. Avvia il fork della blockchain con uno script di terminale simile (all&amp;#39;interno di ogni cartella):
-   Windows: .\ccm.ps1 restart all
-   Linux / Mac: ./ccm.sh restart all
+   ccm restart cryptodoge
+   ccm restart all
 Note 1: Il tuo portafoglio ha bisogno di una sincronizzazione individuale nel programma fork
 Note 2: La connessione del database scaricato al tuo blockchain fork può richiedere fino a 30 minuti!
 </code></pre>
@@ -234,8 +227,8 @@ Note 2: La connessione del database scaricato al tuo blockchain fork può richie
 4. Nota 1: si consiglia di eseguire il backup delle configurazioni del portafoglio prima dell&amp;#39;importazione
 5. Nota 2: solo i fork blockchain funzionanti possono importare cold wallet. Si prega di verificare se ci sono fork blockchain bloccati o meno prima di farlo. Sicuramente puoi anche importare di nuovo in seguito quando vengono riavviati
 6. Nota 3: in caso di problemi, potrebbe essere necessario riavviare tutti i fork della blockchain:
-  Windows: .\ccm.ps1 restart all
-  Linux / Mac: ./ccm.sh restart all
+  ccm restart all
+  ccm restart ethgreen
 </code></pre>
 <img src="../../images/cold_wallet-min.png" alt="English"></li>
 </ul>
@@ -268,15 +261,14 @@ Note 2: La connessione del database scaricato al tuo blockchain fork può richie
 <h2 id="aggiornamento">Aggiornamento</h2>
 <ul>
 <li>Questo ha bisogno di nuovo delle 24 parole mnemoniche. Inseriscili nel file /home/user/.coctohug/mnc.txt. Dopo che tutti i nuovi contenitori docker sono stati avviati, puoi svuotare il file mnc.txt per migliorare il tuo livello di sicurezza</li>
-<li>Script di una riga<pre><code>Windows: .\ccm.ps1 upgrade all; .\ccm.ps1 start all
-Linux / Mac: ./ccm.sh upgrade all &amp;&amp; ./ccm.sh start all
+<li>Script di una riga<pre><code>ccm upgrade all &amp;&amp; ccm start all
 </code></pre>
 </li>
-<li>Puoi anche eseguire gli script sopra passo dopo passo<pre><code>.\ccm.ps1 upgrade all
-.\ccm.ps1 start all
+<li>Puoi anche eseguire gli script sopra passo dopo passo<pre><code>ccm upgrade all
+ccm start all
 </code></pre>
 </li>
-<li>In caso di problema con db incompatibile, è possibile rimuovere il file di database esistente prima di eseguire lo script di avvio docker-compose tramite<pre><code>rm ~/.coctohug-web/db/coctohug.sqlite
+<li>In caso di problema con db incompatibile, è possibile rimuovere il file di database esistente prima di eseguire lo script di avvio docker-compose tramite<pre><code>rm -f ~/.coctohug-web/db/coctohug.sqlite
 </code></pre>
 </li>
 </ul>
