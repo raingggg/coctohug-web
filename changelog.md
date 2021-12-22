@@ -4,6 +4,22 @@
 - clear news data longer than 2 days
 - clear weekly/all data longer than 2 weeks
 - remove chia-watch-dog events from log
+- docker wallet-no-farmer mode config.yml edit fix with nodejs
+- support new 10+ forks:
+chives
+avocado
+kale
+cannabis
+melati
+sector
+scam
+fork
+
+seno
+rose
+goji
+spare
+chaingreen
 
 ## [1.2.5] - 2021-12-21
 - allow harverst fix for farmer-no-wallet mode

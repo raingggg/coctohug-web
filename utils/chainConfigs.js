@@ -36,6 +36,20 @@ const chainNameMap = {
   chia: 'chia',
 
   nchain: 'nchain',
+  chives: 'chives',
+  avocado: 'avocado',
+  kale: 'kale',
+  cannabis: 'cannabis',
+  melati: 'melati',
+  sector: 'sector',
+  scam: 'scam',
+  fork: 'fork',
+  seno: 'seno',
+
+  rose: 'rose',
+  goji: 'goji',
+  spare: 'spare',
+  chaingreen: 'chaingreen',
 };
 
 const getExp = (blockchain) => {
