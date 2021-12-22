@@ -75,7 +75,6 @@ const postDailyEvents = (evs) => {
   try {
     let msg = "Hello farmer! 👋 Here's what happened in the last 24 hours:\n\n";
 
-    logger.error('evs: ', evs);
     let tempEv = evs.find(ev => ev.message && ev.message.type === 'EVT_DAILY_RECEIVE_COIN');
     if (tempEv) {
       const cc = chainConfigs[blockchain];

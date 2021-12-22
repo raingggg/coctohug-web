@@ -3,6 +3,7 @@
 ## [1.2.6] - 2021-12-22
 - clear news data longer than 2 days
 - clear weekly/all data longer than 2 weeks
+- remove chia-watch-dog events from log
 
 ## [1.2.5] - 2021-12-21
 - allow harverst fix for farmer-no-wallet mode
