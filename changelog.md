@@ -1,6 +1,10 @@
 # Changelog
 
-## [1.2.5] - 2021-12-20
+## [1.2.6] - 2021-12-22
+- clear news data longer than 2 days
+- clear weekly/all data longer than 2 weeks
+
+## [1.2.5] - 2021-12-21
 - allow harverst fix for farmer-no-wallet mode
 - ccm full guide
 

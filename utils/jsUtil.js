@@ -61,7 +61,7 @@ const getDaysBefore = (days) => {
 };
 
 const formattedDateStr = (date) => {
-  return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+  return `${date.getFullYear()}-${(date.getMonth() + 1) % 13}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 };
 
 const getFormattedDaysBefore = (days) => {

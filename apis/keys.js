@@ -11,7 +11,9 @@ router.post('/update', async (req, res, next) => {
     await Key.upsert(payload);
     if (payload && payload.details) {
       const firstWalletAdress = getWalletAddress(payload.details);
-      await WalletBalance.upsert({ blockchain: payload.blockchain, address: firstWalletAdress });
+      if (firstWalletAdress) {
+        await WalletBalance.upsert({ blockchain: payload.blockchain, address: firstWalletAdress });
+      }
     }
   } catch (e) {
     logger.error('api-key-update', e);
