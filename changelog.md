@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.7] - 2021-12-23
+- summary board color fix when fork number bigger than 20
+- keep 2 days record for: received coins and daily report
+
 ## [1.2.6] - 2021-12-22
 - clear news data longer than 2 days
 - clear weekly/all data longer than 2 weeks

@@ -5,7 +5,7 @@ const { logger } = require('../utils/logger');
 const sequelize = getConnection();
 const removeOutdatedNews = async () => {
   try {
-    let time = getFormattedDaysBefore(2);
+    let time = getFormattedDaysBefore(3);
     await sequelize.query(`DELETE from News where type != 'EVT_WEEKLY_ALL_IN_ONE' and createdAt < '${time}'`);
 
     // clear any message longer than 2 weeks
