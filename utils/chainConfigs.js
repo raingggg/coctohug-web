@@ -52,6 +52,59 @@ const chainNameMap = {
   chaingreen: 'chaingreen',
 };
 
+const chainSymbolMap = {
+  default: 'chia',
+
+  cactus: 'CAC',
+  covid: 'COV',
+  cryptodoge: 'XCD',
+  ethgreen: 'XETH',
+  flora: 'XFL',
+  greendoge: 'GDOG',
+  lucky: 'SIX',
+  pipscoin: 'PIPS',
+  shibgreen: 'XSHIB',
+  silicoin: 'SIT',
+
+  skynet: 'XNT',
+  stor: 'STOR',
+  staicoin: 'STAI',
+  tranzact: 'TRZ',
+  venidium: 'XVM',
+  btcgreen: 'XBTC',
+  hddcoin: 'HDD',
+  maize: 'XMZ',
+  flax: 'XFX',
+  aedge: 'AEC',
+
+  apple: 'APPLE',
+  wheat: 'WHEAT',
+  dogechia: 'XDG',
+  tad: 'TAD',
+  taco: 'XTX',
+  socks: 'SOCK',
+  mogua: 'MGA',
+  mint: 'XKM',
+  salvia: 'XSLV',
+  chia: 'XCH',
+
+  nchain: 'NCH',
+  chives: 'XCC',
+  avocado: 'AVO',
+  kale: 'XKA',
+  cannabis: 'CANS',
+  melati: 'XMX',
+  sector: 'XSC',
+  scam: 'SCM',
+  fork: 'XFK',
+  seno: 'XSE',
+
+  rose: 'XCR',
+  goji: 'XGJ',
+  spare: 'SPARE',
+  chaingreen: 'CGN',
+};
+
 const getExp = (blockchain) => {
   return `https://alltheblocks.net/${blockchain}/address/`
 };
@@ -88,6 +141,8 @@ const getMojoMultiplier = (blockchain) => {
   return 1;
 };
 
+
+
 const chainConfigs = {};
 Object.keys(chainNameMap).forEach(cname => {
   const apiName = chainNameMap[cname];
@@ -96,6 +151,7 @@ Object.keys(chainNameMap).forEach(cname => {
     peers: getPeers(apiName),
     mojoDivider: getMojoDivider(cname),
     mojoMultiplier: getMojoMultiplier(cname),
+    symbol: chainSymbolMap[cname],
   };
 });
 

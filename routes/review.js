@@ -1,15 +1,43 @@
 var i18n = require('i18n');
 const express = require('express');
 const router = express.Router();
-const { Farm, Wallet } = require('../models');
+const { AllInOne, Wallet } = require('../models');
 const { isWebControllerMode, getCoctohugWebVersion } = require('../utils/chiaConfig');
 const { getTotalBalance } = require('../utils/blockUtil');
+const { logger } = require('../utils/logger');
+
 const isWebController = isWebControllerMode();
 
 const UNSYNC_THRESHHOLD = 30 * 60 * 1000; // 30 mins
 const webVersion = getCoctohugWebVersion();
 
 router.get('/', async (req, res, next) => {
+  if (isWebController) {
+    let data = [];
+    let allCoinsDollars = 0;
+    try {
+      data = await AllInOne.findAll({
+        order: [
+          ['blockchain', 'ASC'],
+        ]
+      });
+
+      data.forEach(dt => {
+        if (dt.total_price) {
+          allCoinsDollars += dt.total_price;
+        }
+      })
+    } catch (e) {
+      logger.error('review-web', e);
+    }
+
+    res.render('index', { data, webVersion, allCoinsDollars, pageName: 'review' });
+  } else {
+    res.render('index', { pageName: 'api' });
+  }
+});
+
+router.get('/old', async (req, res, next) => {
   if (isWebController) {
     const data = await Farm.findAll({
       order: [

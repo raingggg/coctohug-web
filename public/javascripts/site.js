@@ -401,5 +401,10 @@ $(document).ready(function () {
     });
   });
 
+  const isReviewPage = $('#reviewPage');
+  if (isReviewPage) {
+    $("#reviewTable").tablesorter();
+  }
+
 });
 

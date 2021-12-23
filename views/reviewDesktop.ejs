@@ -1,0 +1,86 @@
+<div class="desktop-review">
+  <table id="reviewTable" class="table tablesorter">
+    <thead>
+      <tr>
+        <th>blockchain</th>
+        <th>status</th>
+        <th>chain_sync_to_time</th>
+        <th>chain_height</th>
+        <th>plot_count</th>
+        <th>plots_size</th>
+        <th>netspace_size</th>
+        <th>expected_time_to_win</th>
+        <th>connection_count</th>
+        <th>wallet_status</th>
+        <th>wallet_height</th>
+        <th>blockchain</th>
+        <th>symbol</th>
+        <th>price</th>
+        <th>total_coins</th>
+        <th>wallet_balance</th>
+        <th>reward_balance</th>
+        <th>total_price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(function(dt, dtIndex){ %>
+        <tr class="<%= dt.status === 'Farming' ? 'table-success' : 'table-warning' %>">
+          <td>
+            <%= dt.blockchain %>
+          </td>
+          <td>
+            <%= dt.status %>
+          </td>
+          <td>
+            <%= dt.chain_sync_to_time && dt.chain_sync_to_time.toLocaleString("en-US", {hour12: false}) %>
+          </td>
+          <td>
+            <%= dt.chain_height %>
+          </td>
+          <td>
+            <%= dt.plot_count %>
+          </td>
+          <td>
+            <%= dt.plots_size %>
+          </td>
+          <td>
+            <%= dt.netspace_size %>
+          </td>
+          <td>
+            <%= dt.expected_time_to_win %>
+          </td>
+          <td>
+            <%= dt.connection_count %>
+          </td>
+          <td>
+            <%= dt.wallet_status %>
+          </td>
+          <td>
+            <%= dt.wallet_height %>
+          </td>
+          <td>
+            <%= dt.blockchain %>
+          </td>
+          <td>
+            <%= dt.symbol %>
+          </td>
+          <td>
+            <%= dt.price %>
+          </td>
+          <td>
+            <%= dt.total_coins %>
+          </td>
+          <td>
+            <%= dt.wallet_balance %>
+          </td>
+          <td>
+            <%= dt.reward_balance %>
+          </td>
+          <td>
+            <%= dt.total_price %>
+          </td>
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>
+</div>

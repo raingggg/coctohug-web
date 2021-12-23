@@ -192,4 +192,34 @@ body {
       display: none;
     }
   }
+
+  #reviewPage {
+    .desktop-review {
+      display: none;
+    }
+
+    .mobile-review {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  #reviewPage {
+    .desktop-review {
+      display: block;
+
+      .table-warning td {
+        background-color: #fff3cd;
+      }
+    }
+
+    .content-wrapper {
+      width: max-content;
+    }
+
+    .mobile-review {
+      display: none;
+    }
+  }
 }

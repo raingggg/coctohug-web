@@ -11,6 +11,7 @@ const {
   getLastHourDates,
   getLastDayDates,
   getLastWeekDates,
+  toNumber,
 } = require('./jsUtil');
 
 const TIMEOUT_1MINUTE = 60 * 1000;
@@ -18,6 +19,9 @@ const TIME_1HOUR = 60 * 60 * 1000;
 
 const REG_BALANCE = /-Total\sBalance:\s+((?:\d*\.?\d+e-\d*)|(?:\d*\.\d+)|(?:\d+\.?))/g;
 const REG_WALLET_ADDR = /First wallet address: (\w*)/;
+const REG_WALLET_HEIGHT = /Wallet height:\s+(\d+)/;
+const REG_WALLET_STATUS = /Sync status:\s+(.*)/;
+const REG_CHAIN_INFO = /Time:\s+(.{1,60})Height:\s+(.{1,30})/;
 
 const getTotalBalance = (str) => {
   let sum = 0;
@@ -134,6 +138,40 @@ const getCoinBalance = async (blockchain, walletAdress) => {
   return balance;
 };
 
+const getBlockchainInfo = (details) => {
+  let chain_sync_to_time = null;
+  let chain_height = 0;
+
+  if (details) {
+    const match = REG_CHAIN_INFO.exec(details);
+    if (match && match[1] && match[2]) {
+      chain_sync_to_time = new Date(match[1].replace('CST', ''));
+      chain_height = match[2];
+    }
+  }
+
+  return { chain_sync_to_time, chain_height };
+};
+
+const getWalletInfo = (details) => {
+  let wallet_status = '';
+  let wallet_height = 0;
+
+  let match = REG_WALLET_STATUS.exec(details);
+  if (match && match[1]) wallet_status = match[1];
+
+  match = REG_WALLET_HEIGHT.exec(details);
+  if (match && match[1]) wallet_height = toNumber(match[1]);
+
+  let wallet_balance = getTotalBalance(details);
+  if (wallet_balance > 0) wallet_balance = parseFloat(wallet_balance.toFixed(6));
+
+  return {
+    wallet_status,
+    wallet_height,
+    wallet_balance
+  };
+};
 // const tt = async () => {
 //   let amount = 0;
 //   name = 'hddcoin';
@@ -161,4 +199,6 @@ module.exports = {
   get1WeekOnlineWalletCoinsAmount,
   getAllCoinsPrice,
   getCoinBalance,
+  getBlockchainInfo,
+  getWalletInfo,
 }

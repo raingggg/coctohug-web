@@ -1,5 +1,8 @@
 const TIMEOUT_1MINUTE = 60 * 1000;
 const TIMEOUT_2MINUTE = 2 * 60 * 1000;
+const TIMEOUT_5MINUTE = 5 * 60 * 1000;
+const TIMEOUT_10MINUTE = 10 * 60 * 1000;
+const TIMEOUT_30MINUTE = 30 * 60 * 1000;
 
 const getLastHourDates = () => {
   const startDate = new Date();
@@ -68,12 +71,27 @@ const getFormattedDaysBefore = (days) => {
   return formattedDateStr(getDaysBefore(days));
 };
 
+const toNumber = (anything) => {
+  let result = 0;
+
+  try {
+    result = parseFloat(anything);
+    if (!result) result = 0;
+  } catch (e) { }
+
+  return result;
+};
+
 module.exports = {
   TIMEOUT_1MINUTE,
   TIMEOUT_2MINUTE,
+  TIMEOUT_5MINUTE,
+  TIMEOUT_10MINUTE,
+  TIMEOUT_30MINUTE,
   getLastHourDates,
   getLastDayDates,
   getLastWeekDates,
   getDaysBefore,
   getFormattedDaysBefore,
+  toNumber,
 };

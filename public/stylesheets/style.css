@@ -132,4 +132,24 @@ body {
   .leftbar-wrapper .link-text {
     display: none;
   }
+  #reviewPage .desktop-review {
+    display: none;
+  }
+  #reviewPage .mobile-review {
+    display: block;
+  }
+}
+@media (min-width: 1025px) {
+  #reviewPage .desktop-review {
+    display: block;
+  }
+  #reviewPage .desktop-review .table-warning td {
+    background-color: #fff3cd;
+  }
+  #reviewPage .content-wrapper {
+    width: max-content;
+  }
+  #reviewPage .mobile-review {
+    display: none;
+  }
 }
