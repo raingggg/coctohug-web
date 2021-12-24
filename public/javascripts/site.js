@@ -1,6 +1,6 @@
-const simpleViewColumns = ['blockchain', 'status', 'netspace_size', 'expected_time_to_win', 'symbol', 'coin_price'];
-const statusViewColumns = ['blockchain', 'status', 'chain_sync_to_time', 'chain_height', 'plot_count', 'plots_size', 'netspace_size', 'expected_time_to_win', 'connection_count', 'wallet_status', 'wallet_height', 'total_coins'];
-const balanceViewColumns = ['blockchain', 'status', 'symbol', 'coin_price', 'total_coins', 'wallet_balance', 'reward_balance', 'total_price'];
+const simpleViewColumns = ['se_no', 'blockchain', 'chain_status', 'netspace_size', 'expected_time_to_win', 'coin_symbol', 'coin_price'];
+const statusViewColumns = ['se_no', 'blockchain', 'chain_status', 'chain_sync_to_time', 'chain_height', 'plot_count', 'plots_size', 'netspace_size', 'expected_time_to_win', 'connection_count', 'wallet_status', 'wallet_height', 'total_coins'];
+const balanceViewColumns = ['se_no', 'blockchain', 'coin_symbol', 'coin_price', 'total_coins', 'wallet_balance', 'reward_balance', 'total_price'];
 
 $(document).ready(function () {
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
@@ -407,6 +407,8 @@ $(document).ready(function () {
 
   $("#btnSimpleView").click(function (e) {
     $('#totalBalanceRow').addClass('visually-hidden');
+    $('.btnViewMode').removeClass('active');
+    $(this).addClass('active');
 
     $('#reviewTable th, #reviewTable td').each(function () {
       const eClass = $(this).attr('class');
@@ -427,6 +429,8 @@ $(document).ready(function () {
 
   $("#btnStatusView").click(function (e) {
     $('#totalBalanceRow').addClass('visually-hidden');
+    $('.btnViewMode').removeClass('active');
+    $(this).addClass('active');
 
     $('#reviewTable th, #reviewTable td').each(function () {
       const eClass = $(this).attr('class');
@@ -447,6 +451,8 @@ $(document).ready(function () {
 
   $("#btnBalanceView").click(function (e) {
     $('#totalBalanceRow').removeClass('visually-hidden');
+    $('.btnViewMode').removeClass('active');
+    $(this).addClass('active');
 
     $('#reviewTable th, #reviewTable td').each(function () {
       const eClass = $(this).attr('class');
@@ -467,6 +473,8 @@ $(document).ready(function () {
 
   $("#btnFullView").click(function (e) {
     $('#totalBalanceRow').addClass('visually-hidden');
+    $('.btnViewMode').removeClass('active');
+    $(this).addClass('active');
 
     $('#reviewTable th, #reviewTable td').each(function () {
       $(this).removeClass('visually-hidden');

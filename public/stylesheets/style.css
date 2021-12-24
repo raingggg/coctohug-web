@@ -122,6 +122,9 @@ body {
 .transferMoney .formLabel {
   color: #9f5c5c;
 }
+#desktopReviewPage .desktop-review td {
+  background-color: #c6eded3d;
+}
 #desktopReviewPage .desktop-review .table-warning td {
   background-color: #e9debe;
 }

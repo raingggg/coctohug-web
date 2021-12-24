@@ -1,16 +1,16 @@
 <div class="page-wrapper" id="desktopReviewPage">
   <div class="desktop-review container">
     <div class="viewRow">
-      <button class="btn btn-outline-success btn-sm" id="btnSimpleView">
+      <button class="btn btn-outline-success btn-sm btnViewMode" id="btnSimpleView">
         <%= __('review.simple_view') %>
       </button>
-      <button class="btn btn-outline-success btn-sm" id="btnStatusView">
+      <button class="btn btn-outline-success btn-sm btnViewMode" id="btnStatusView">
         <%= __('review.status_view') %>
       </button>
-      <button class="btn btn-outline-success btn-sm" id="btnBalanceView">
+      <button class="btn btn-outline-success btn-sm btnViewMode" id="btnBalanceView">
         <%= __('review.balance_view') %>
       </button>
-      <button class="btn btn-outline-success btn-sm visually-hidden" id="btnFullView">
+      <button class="btn btn-outline-success btn-sm btnViewMode visually-hidden" id="btnFullView">
         <%= __('review.full_view') %>
       </button>
     </div>
@@ -27,10 +27,13 @@
     <table id="reviewTable" class="table tablesorter">
       <thead>
         <tr>
+          <th class="se_no">
+            #
+          </th>
           <th class="blockchain">
             <%= __('general.blockchain') %>
           </th>
-          <th class="status">
+          <th class="chain_status">
             <%= __('review.chain_status') %>
           </th>
           <th class="chain_sync_to_time">
@@ -60,7 +63,7 @@
           <th class="wallet_height">
             <%= __('review.wallet_heigt') %>
           </th>
-          <th class="symbol">
+          <th class="coin_symbol">
             <%= __('review.token_name') %>
           </th>
           <th class="coin_price">
@@ -83,12 +86,15 @@
       <tbody>
         <% data.forEach(function(dt, dtIndex){ %>
           <tr class="<%= dt.invalid_farm_status ? 'table-warning' : 'table-success' %>">
+            <td class="se_no">
+              <%= dtIndex + 1 %>
+            </td>
             <td class="blockchain">
               <b>
                 <%= dt.blockchain %>
               </b>
             </td>
-            <td class="status <%= dt.invalid_farm_status ? 'text-danger' : '' %>">
+            <td class="chain_status <%= dt.invalid_farm_status ? 'text-danger' : '' %>">
               <%= dt.status %>
             </td>
             <td class="chain_sync_to_time <%= dt.invalid_chain_status ? 'text-danger' : '' %>">
@@ -118,7 +124,7 @@
             <td class="wallet_height">
               <%= dt.wallet_height %>
             </td>
-            <td class="symbol">
+            <td class="coin_symbol">
               <b>
                 <%= dt.symbol %>
               </b>
