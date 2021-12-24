@@ -1,3 +1,7 @@
+const simpleViewColumns = ['blockchain', 'status', 'netspace_size', 'expected_time_to_win', 'symbol', 'coin_price'];
+const statusViewColumns = ['blockchain', 'status', 'chain_sync_to_time', 'chain_height', 'plot_count', 'plots_size', 'netspace_size', 'expected_time_to_win', 'connection_count', 'wallet_status', 'wallet_height', 'total_coins'];
+const balanceViewColumns = ['blockchain', 'status', 'symbol', 'coin_price', 'total_coins', 'wallet_balance', 'reward_balance', 'total_price'];
+
 $(document).ready(function () {
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -401,9 +405,78 @@ $(document).ready(function () {
     });
   });
 
-  const isReviewPage = $('#reviewPage');
-  if (isReviewPage) {
+  $("#btnSimpleView").click(function (e) {
+    $('#totalBalanceRow').addClass('visually-hidden');
+
+    $('#reviewTable th, #reviewTable td').each(function () {
+      const eClass = $(this).attr('class');
+      let isVisible = false;
+      simpleViewColumns.forEach(sc => {
+        if (eClass.includes(sc)) {
+          isVisible = true;
+        }
+      })
+
+      if (isVisible) {
+        $(this).removeClass('visually-hidden');
+      } else {
+        $(this).addClass('visually-hidden');
+      }
+    });
+  });
+
+  $("#btnStatusView").click(function (e) {
+    $('#totalBalanceRow').addClass('visually-hidden');
+
+    $('#reviewTable th, #reviewTable td').each(function () {
+      const eClass = $(this).attr('class');
+      let isVisible = false;
+      statusViewColumns.forEach(sc => {
+        if (eClass.includes(sc)) {
+          isVisible = true;
+        }
+      })
+
+      if (isVisible) {
+        $(this).removeClass('visually-hidden');
+      } else {
+        $(this).addClass('visually-hidden');
+      }
+    });
+  });
+
+  $("#btnBalanceView").click(function (e) {
+    $('#totalBalanceRow').removeClass('visually-hidden');
+
+    $('#reviewTable th, #reviewTable td').each(function () {
+      const eClass = $(this).attr('class');
+      let isVisible = false;
+      balanceViewColumns.forEach(sc => {
+        if (eClass.includes(sc)) {
+          isVisible = true;
+        }
+      })
+
+      if (isVisible) {
+        $(this).removeClass('visually-hidden');
+      } else {
+        $(this).addClass('visually-hidden');
+      }
+    });
+  });
+
+  $("#btnFullView").click(function (e) {
+    $('#totalBalanceRow').addClass('visually-hidden');
+
+    $('#reviewTable th, #reviewTable td').each(function () {
+      $(this).removeClass('visually-hidden');
+    });
+  });
+
+  const desktopReviewPage = $('#desktopReviewPage');
+  if (desktopReviewPage && desktopReviewPage.length > 0) {
     $("#reviewTable").tablesorter();
+    $("#btnSimpleView").click();
   }
 
 });

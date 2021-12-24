@@ -43,7 +43,7 @@ body {
 .leftbar-wrapper {
   min-height: 100%;
   border-radius: 5px;
-  background: linear-gradient(to right bottom, #f6f6f6 0%, #bbe1da 100%) 100% center no-repeat;
+  background: linear-gradient(to right bottom, #f6f6f6 0%, #8ccdc1 100%) 100% center no-repeat;
 }
 .leftbar-wrapper ul {
   padding-left: 0.6rem;
@@ -55,10 +55,13 @@ body {
 .leftbar-wrapper ul li a.link-primary {
   color: #2c7873;
 }
+.leftbar-wrapper ul li.desktopViewMenu {
+  display: none;
+}
 .content-wrapper {
   min-height: 100%;
   border-radius: 5px;
-  background: linear-gradient(to right bottom, #f6f6f6 0%, #bbe1da 100%) 100% center no-repeat;
+  background: linear-gradient(to right bottom, #f6f6f6 0%, #8ccdc1 100%) 100% center no-repeat;
 }
 .review-column {
   margin-top: 10px;
@@ -119,6 +122,9 @@ body {
 .transferMoney .formLabel {
   color: #9f5c5c;
 }
+#desktopReviewPage .desktop-review .table-warning td {
+  background-color: #e9debe;
+}
 @media (max-width: 1024px) {
   .leftbar-wrapper ul li {
     font-size: larger;
@@ -132,24 +138,24 @@ body {
   .leftbar-wrapper .link-text {
     display: none;
   }
-  #reviewPage .desktop-review {
-    display: none;
+}
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1960px;
   }
-  #reviewPage .mobile-review {
+  .leftbar-wrapper ul li.desktopViewMenu {
     display: block;
   }
 }
-@media (min-width: 1025px) {
-  #reviewPage .desktop-review {
-    display: block;
-  }
-  #reviewPage .desktop-review .table-warning td {
-    background-color: #fff3cd;
-  }
-  #reviewPage .content-wrapper {
-    width: max-content;
-  }
-  #reviewPage .mobile-review {
-    display: none;
+@media (min-width: 992px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 1960px;
   }
 }

@@ -18,6 +18,7 @@ const {
   updateWeeklyColdwalletCoins,
   removeOutdatedNews,
   emptyControllerLogs,
+  updateAllInOne,
 } = require('../controllerJobs');
 
 const everyMinute = '0 */1 * * * *';
@@ -73,6 +74,8 @@ const fiveMinuteJob = new CronJob(every5Minute, async () => {
       if (isNotHarvester) await updateFarm();
       if (isNotHarvester) await updateWallet();
       if (isNotHarvester) await updateConnection();
+    } else {
+      await updateAllInOne();
     }
   } catch (e) {
     logger.error('fiveMinuteJob', e);

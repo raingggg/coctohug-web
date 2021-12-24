@@ -164,7 +164,8 @@ const getWalletInfo = (details) => {
   if (match && match[1]) wallet_height = toNumber(match[1]);
 
   let wallet_balance = getTotalBalance(details);
-  if (wallet_balance > 0) wallet_balance = parseFloat(wallet_balance.toFixed(6));
+  if (wallet_balance > 0) wallet_balance = parseFloat(wallet_balance.toFixed(8));
+  else wallet_balance = 0;
 
   return {
     wallet_status,

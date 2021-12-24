@@ -1,86 +1,112 @@
-<div class="desktop-review">
-  <table id="reviewTable" class="table tablesorter">
-    <thead>
-      <tr>
-        <th>blockchain</th>
-        <th>status</th>
-        <th>chain_sync_to_time</th>
-        <th>chain_height</th>
-        <th>plot_count</th>
-        <th>plots_size</th>
-        <th>netspace_size</th>
-        <th>expected_time_to_win</th>
-        <th>connection_count</th>
-        <th>wallet_status</th>
-        <th>wallet_height</th>
-        <th>blockchain</th>
-        <th>symbol</th>
-        <th>price</th>
-        <th>total_coins</th>
-        <th>wallet_balance</th>
-        <th>reward_balance</th>
-        <th>total_price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% data.forEach(function(dt, dtIndex){ %>
-        <tr class="<%= dt.status === 'Farming' ? 'table-success' : 'table-warning' %>">
-          <td>
-            <%= dt.blockchain %>
-          </td>
-          <td>
-            <%= dt.status %>
-          </td>
-          <td>
-            <%= dt.chain_sync_to_time && dt.chain_sync_to_time.toLocaleString("en-US", {hour12: false}) %>
-          </td>
-          <td>
-            <%= dt.chain_height %>
-          </td>
-          <td>
-            <%= dt.plot_count %>
-          </td>
-          <td>
-            <%= dt.plots_size %>
-          </td>
-          <td>
-            <%= dt.netspace_size %>
-          </td>
-          <td>
-            <%= dt.expected_time_to_win %>
-          </td>
-          <td>
-            <%= dt.connection_count %>
-          </td>
-          <td>
-            <%= dt.wallet_status %>
-          </td>
-          <td>
-            <%= dt.wallet_height %>
-          </td>
-          <td>
-            <%= dt.blockchain %>
-          </td>
-          <td>
-            <%= dt.symbol %>
-          </td>
-          <td>
-            <%= dt.price %>
-          </td>
-          <td>
-            <%= dt.total_coins %>
-          </td>
-          <td>
-            <%= dt.wallet_balance %>
-          </td>
-          <td>
-            <%= dt.reward_balance %>
-          </td>
-          <td>
-            <%= dt.total_price %>
-          </td>
+<div class="page-wrapper" id="desktopReviewPage">
+  <div class="desktop-review container">
+    <div class="viewRow">
+      <button class="btn btn-outline-success btn-sm" id="btnSimpleView">
+        Simple View
+      </button>
+      <button class="btn btn-outline-success btn-sm" id="btnStatusView">
+        Status View
+      </button>
+      <button class="btn btn-outline-success btn-sm" id="btnBalanceView">
+        $Balance View
+      </button>
+      <button class="btn btn-outline-success btn-sm visually-hidden" id="btnFullView">
+        Full View
+      </button>
+    </div>
+
+    <div class="container badge bg-success visually-hidden" id="totalBalanceRow">
+      <span>
+        <%= __('balance.total_dollar_all_coins') %>
+      </span>
+      <span>
+        $<%= allCoinsDollars %>
+      </span>
+    </div>
+
+    <table id="reviewTable" class="table tablesorter">
+      <thead>
+        <tr>
+          <th class="blockchain">blockchain</th>
+          <th class="status">status</th>
+          <th class="chain_sync_to_time">chain_sync_to_time</th>
+          <th class="chain_height">chain_height</th>
+          <th class="plot_count">plot_count</th>
+          <th class="plots_size">plots_size</th>
+          <th class="netspace_size">netspace_size</th>
+          <th class="expected_time_to_win">expected_time_to_win</th>
+          <th class="connection_count">connection_count</th>
+          <th class="wallet_status">wallet_status</th>
+          <th class="wallet_height">wallet_height</th>
+          <th class="symbol">symbol</th>
+          <th class="coin_price">coin_price</th>
+          <th class="total_coins">total_coins</th>
+          <th class="wallet_balance">wallet_balance</th>
+          <th class="reward_balance">reward_balance</th>
+          <th class="total_price">total_price</th>
         </tr>
-        <% }); %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% data.forEach(function(dt, dtIndex){ %>
+          <tr class="<%= dt.invalid_farm_status ? 'table-warning' : 'table-success' %>">
+            <td class="blockchain">
+              <b>
+                <%= dt.blockchain %>
+              </b>
+            </td>
+            <td class="status <%= dt.invalid_farm_status ? 'text-danger' : '' %>">
+              <%= dt.status %>
+            </td>
+            <td class="chain_sync_to_time <%= dt.invalid_chain_status ? 'text-danger' : '' %>">
+              <%= dt.chain_sync_to_time && dt.chain_sync_to_time.toLocaleString("en-US", {hour12: false}) %>
+            </td>
+            <td class="chain_height">
+              <%= dt.chain_height %>
+            </td>
+            <td class="plot_count">
+              <%= dt.plot_count %>
+            </td>
+            <td class="plots_size">
+              <%= dt.plots_size %>
+            </td>
+            <td class="netspace_size">
+              <%= dt.netspace_size %>
+            </td>
+            <td class="expected_time_to_win">
+              <%= dt.expected_time_to_win %>
+            </td>
+            <td class="connection_count <%= dt.invalid_connection_status ? 'text-danger' : '' %>">
+              <%= dt.connection_count %>
+            </td>
+            <td class="wallet_status <%= dt.invalid_wallet_status ? 'text-danger' : '' %>">
+              <%= dt.wallet_status %>
+            </td>
+            <td class="wallet_height">
+              <%= dt.wallet_height %>
+            </td>
+            <td class="symbol">
+              <b>
+                <%= dt.symbol %>
+              </b>
+            </td>
+            <td class="coin_price">
+              <%= dt.coin_price %>
+            </td>
+            <td class="total_coins">
+              <%= dt.total_coins %>
+            </td>
+            <td class="wallet_balance">
+              <%= dt.wallet_balance %>
+            </td>
+            <td class="reward_balance">
+              <%= dt.reward_balance %>
+            </td>
+            <td class="total_price">
+              <%= dt.total_price %>
+            </td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+  </div>
 </div>

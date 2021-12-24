@@ -7,6 +7,8 @@
 @warning: #e9debe;
 @error  : #9f5c5c;
 
+@gradualEnd: #8ccdc1;
+
 html {
   height: 100%;
 }
@@ -71,7 +73,7 @@ body {
 .leftbar-wrapper {
   min-height   : 100%;
   border-radius: 5px;
-  background   : linear-gradient(to right bottom, #f6f6f6 0%, #bbe1da 100%) 100% center no-repeat;
+  background   : linear-gradient(to right bottom, #f6f6f6 0%, @gradualEnd 100%) 100% center no-repeat;
 
   ul {
     padding-left: 0.6rem;
@@ -83,6 +85,10 @@ body {
       a.link-primary {
         color: @lightBlue;
       }
+
+      &.desktopViewMenu {
+        display: none;
+      }
     }
 
   }
@@ -91,7 +97,7 @@ body {
 .content-wrapper {
   min-height   : 100%;
   border-radius: 5px;
-  background   : linear-gradient(to right bottom, #f6f6f6 0%, #bbe1da 100%) 100% center no-repeat;
+  background   : linear-gradient(to right bottom, #f6f6f6 0%, @gradualEnd 100%) 100% center no-repeat;
 }
 
 .review-column {
@@ -175,6 +181,14 @@ body {
   }
 }
 
+#desktopReviewPage {
+  .desktop-review {
+    .table-warning td {
+      background-color: @warning;
+    }
+  }
+}
+
 @media (max-width: 1024px) {
   .leftbar-wrapper {
     ul li {
@@ -193,33 +207,33 @@ body {
     }
   }
 
-  #reviewPage {
-    .desktop-review {
-      display: none;
-    }
+}
 
-    .mobile-review {
-      display: block;
-    }
+
+@media (min-width: 1200px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1960px;
+  }
+
+  .leftbar-wrapper ul li.desktopViewMenu {
+    display: block;
   }
 }
 
-@media (min-width: 1025px) {
-  #reviewPage {
-    .desktop-review {
-      display: block;
+@media (min-width: 992px) {
 
-      .table-warning td {
-        background-color: #fff3cd;
-      }
-    }
-
-    .content-wrapper {
-      width: max-content;
-    }
-
-    .mobile-review {
-      display: none;
-    }
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 1960px;
   }
+
 }
+
+@media (min-width: 1025px) {}

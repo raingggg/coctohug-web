@@ -36,6 +36,7 @@
     "http-errors": "~1.6.3",
     "i18n": "^0.13.3",
     "log4js": "^6.3.0",
+    "mobile-detect": "^1.4.5",
     "morgan": "~1.9.1",
     "node-dir": "^0.1.17",
     "request-ip": "^2.1.3",

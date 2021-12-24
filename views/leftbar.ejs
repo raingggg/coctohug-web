@@ -1,7 +1,14 @@
 <div class="leftbar-wrapper">
   <ul>
+    <li class="desktopViewMenu">
+      <a href="/reviewWeb?pageType=reviewDesktop" class="link-primary"><span class="icon-leaf"></span> <span
+          class="link-text">
+          <%= __('leftbar.review') %>
+        </span></a>
+    </li>
     <li>
-      <a href="/reviewWeb" class="link-primary"><span class="icon-leaf"></span> <span class="link-text">
+      <a href="/reviewWeb?pageType=reviewMobile" class="link-primary"><span class="icon-leaf"></span> <span
+          class="link-text">
           <%= __('leftbar.review') %>
         </span></a>
     </li>
@@ -104,7 +111,7 @@
     </li>
     <li>
       <span class="fs-6 opacity-50">
-        <%= pageName==='review' ? 'v' + webVersion: '' %>
+        <%= ['reviewDesktop', 'reviewMobile' ].includes(pageName) ? 'v' + webVersion: '' %>
       </span>
     </li>
   </ul>

@@ -1,6 +1,7 @@
 var i18n = require('i18n');
 const express = require('express');
 const router = express.Router();
+const MobileDetect = require('mobile-detect');
 const { AllInOne, Wallet } = require('../models');
 const { isWebControllerMode, getCoctohugWebVersion } = require('../utils/chiaConfig');
 const { getTotalBalance } = require('../utils/blockUtil');
@@ -14,6 +15,11 @@ const webVersion = getCoctohugWebVersion();
 router.get('/', async (req, res, next) => {
   if (isWebController) {
     let data = [];
+
+    const { pageType } = req.query;
+    const md = new MobileDetect(req.headers['user-agent']);
+    const isMobile = !!md.mobile();
+
     let allCoinsDollars = 0;
     try {
       data = await AllInOne.findAll({
@@ -31,7 +37,11 @@ router.get('/', async (req, res, next) => {
       logger.error('review-web', e);
     }
 
-    res.render('index', { data, webVersion, allCoinsDollars, pageName: 'review' });
+    let pageName = '';
+    if (['reviewMobile', 'reviewDesktop'].includes(pageType)) pageName = pageType;
+    else pageName = isMobile ? 'reviewMobile' : 'reviewDesktop';
+
+    res.render('index', { data, webVersion, allCoinsDollars, pageName });
   } else {
     res.render('index', { pageName: 'api' });
   }

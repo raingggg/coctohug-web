@@ -12,6 +12,7 @@ const AllInOne = sequelize.define('AllInOne', {
   chain_last_updated_at: { type: DataTypes.DATE },
   chain_sync_to_time: { type: DataTypes.DATE },
   chain_height: { type: DataTypes.INTEGER, defaultValue: 0 },
+  invalid_chain_status: { type: DataTypes.BOOLEAN },
 
   // farm summary
   farm_last_updated_at: { type: DataTypes.DATE },
@@ -22,16 +23,19 @@ const AllInOne = sequelize.define('AllInOne', {
   total_coins: { type: DataTypes.REAL, defaultValue: 0 }, // farmed coins
   netspace_size: { type: DataTypes.STRING(70) },
   expected_time_to_win: { type: DataTypes.STRING(128) },
+  invalid_farm_status: { type: DataTypes.BOOLEAN },
 
   // connection count
   connection_count: { type: DataTypes.INTEGER, defaultValue: 0 },
+  invalid_connection_status: { type: DataTypes.BOOLEAN },
 
   // wallet
   wallet_status: { type: DataTypes.STRING(128) },
   wallet_height: { type: DataTypes.INTEGER, defaultValue: 0 },
+  invalid_wallet_status: { type: DataTypes.BOOLEAN },
 
   // balances
-  price: { type: DataTypes.REAL, defaultValue: 0 },
+  coin_price: { type: DataTypes.REAL, defaultValue: 0 },
   first_address: { type: DataTypes.STRING }, // if total_coins is 0, then join walletbalance first_address 
   first_balance: { type: DataTypes.REAL, defaultValue: 0 }, // first key balance
   wallet_balance: { type: DataTypes.REAL, defaultValue: 0 }, // wallet showed balance
