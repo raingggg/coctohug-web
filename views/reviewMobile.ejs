@@ -23,27 +23,27 @@
                   <%= dt.status %>
                 </span></div>
               <div class="total-coins" data-bs-html=true data-bs-toggle="tooltip" data-bs-placement="top"
-                title="<div style='background: green;'><%= __('review.farmed') %> <%= dt.total_coins %></br><%= __('review.balance') %> <%= dt.wallet_balance %></div>">
+                title="<div style='background: green;'><%= __('review.farmed') %>: <%= dt.total_coins %></br><%= __('review.balance') %> <%= dt.wallet_balance %></div>">
                 <span>
-                  <%= __('review.total_coins') %>
+                  <%= __('review.total_coins') %>:
                 </span><span>
                   <%= dt.total_coins %>
                 </span><span> - <%= dt.wallet_balance %></span>
               </div>
               <div class="plot-count" data-bs-html=true data-bs-toggle="tooltip" data-bs-placement="top"
-                title="<%= __('review.plot_count') %> <%= dt.plot_count %></br><%= __('review.plots_size') %> <%= dt.plots_size %>">
+                title="<%= __('review.plot_count') %>: <%= dt.plot_count %></br><%= __('review.plots_size') %>: <%= dt.plots_size %>">
                 <span>
-                  <%= __('review.plot_count') %>
+                  <%= __('review.plot_count') %>:
                 </span><span>
                   <%= dt.plot_count %>
                 </span><span> - <%= dt.plots_size %></span>
               </div>
               <div>
-                <%= __('review.netspace_size') %>
+                <%= __('review.netspace_size') %>:
                   <%= dt.netspace_size %>
               </div>
               <div class="expect-win"><span>
-                  <%= __('review.expected_time_to_win') %>
+                  <%= __('review.expected_time_to_win') %>:
                     <%= dt.expected_time_to_win %>
                 </span></div>
             </div>

@@ -1,6 +1,7 @@
 # Changelog
 
-## [1.2.7] - 2021-12-23
+## [1.2.7] - 2021-12-24
+- summary table layout
 - summary board color fix when fork number bigger than 20
 - keep 2 days record for: received coins and daily report
 

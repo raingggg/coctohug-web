@@ -2,16 +2,16 @@
   <div class="desktop-review container">
     <div class="viewRow">
       <button class="btn btn-outline-success btn-sm" id="btnSimpleView">
-        Simple View
+        <%= __('review.simple_view') %>
       </button>
       <button class="btn btn-outline-success btn-sm" id="btnStatusView">
-        Status View
+        <%= __('review.status_view') %>
       </button>
       <button class="btn btn-outline-success btn-sm" id="btnBalanceView">
-        $Balance View
+        <%= __('review.balance_view') %>
       </button>
       <button class="btn btn-outline-success btn-sm visually-hidden" id="btnFullView">
-        Full View
+        <%= __('review.full_view') %>
       </button>
     </div>
 
@@ -27,23 +27,57 @@
     <table id="reviewTable" class="table tablesorter">
       <thead>
         <tr>
-          <th class="blockchain">blockchain</th>
-          <th class="status">status</th>
-          <th class="chain_sync_to_time">chain_sync_to_time</th>
-          <th class="chain_height">chain_height</th>
-          <th class="plot_count">plot_count</th>
-          <th class="plots_size">plots_size</th>
-          <th class="netspace_size">netspace_size</th>
-          <th class="expected_time_to_win">expected_time_to_win</th>
-          <th class="connection_count">connection_count</th>
-          <th class="wallet_status">wallet_status</th>
-          <th class="wallet_height">wallet_height</th>
-          <th class="symbol">symbol</th>
-          <th class="coin_price">coin_price</th>
-          <th class="total_coins">total_coins</th>
-          <th class="wallet_balance">wallet_balance</th>
-          <th class="reward_balance">reward_balance</th>
-          <th class="total_price">total_price</th>
+          <th class="blockchain">
+            <%= __('general.blockchain') %>
+          </th>
+          <th class="status">
+            <%= __('review.chain_status') %>
+          </th>
+          <th class="chain_sync_to_time">
+            <%= __('review.sync_at') %>
+          </th>
+          <th class="chain_height">
+            <%= __('review.chain_height') %>
+          </th>
+          <th class="plot_count">
+            <%= __('review.plot_count') %>
+          </th>
+          <th class="plots_size">
+            <%= __('review.plots_size') %>
+          </th>
+          <th class="netspace_size">
+            <%= __('review.netspace_size') %>
+          </th>
+          <th class="expected_time_to_win">
+            <%= __('review.expected_time_to_win') %>
+          </th>
+          <th class="connection_count">
+            <%= __('review.connect_count') %>
+          </th>
+          <th class="wallet_status">
+            <%= __('review.wallet_status') %>
+          </th>
+          <th class="wallet_height">
+            <%= __('review.wallet_heigt') %>
+          </th>
+          <th class="symbol">
+            <%= __('review.token_name') %>
+          </th>
+          <th class="coin_price">
+            <%= __('review.token_price') %>
+          </th>
+          <th class="total_coins">
+            <%= __('review.mined_count') %>
+          </th>
+          <th class="wallet_balance">
+            <%= __('review.wallet_balance') %>
+          </th>
+          <th class="reward_balance">
+            <%= __('review.reward_balance') %>
+          </th>
+          <th class="total_price">
+            <%= __('review.total_usd_value') %>
+          </th>
         </tr>
       </thead>
       <tbody>
