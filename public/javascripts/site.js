@@ -405,26 +405,44 @@ $(document).ready(function () {
     });
   });
 
-  $("#btnSimpleView").click(function (e) {
-    $('#totalBalanceRow').addClass('visually-hidden');
-    $('.btnViewMode').removeClass('active');
-    $(this).addClass('active');
+  function toggleReviewColumns(visibleColumns) {
+    $("#reviewTable").trigger("destroy");
 
     $('#reviewTable th, #reviewTable td').each(function () {
       const eClass = $(this).attr('class');
       let isVisible = false;
-      simpleViewColumns.forEach(sc => {
+      visibleColumns.forEach(sc => {
         if (eClass.includes(sc)) {
           isVisible = true;
         }
       })
 
       if (isVisible) {
-        $(this).removeClass('visually-hidden');
+        $(this).removeClass('columnSelector-false');
       } else {
-        $(this).addClass('visually-hidden');
+        $(this).addClass('columnSelector-false');
       }
     });
+
+    $("#reviewTable").tablesorter({
+      widgets: ['columnSelector'], // https://mottie.github.io/tablesorter/docs/example-widget-column-selector.html
+      widgetOptions: {
+        // hide columnSelector false columns while in auto mode
+        columnSelector_mediaqueryHidden: true,
+
+        // set the maximum and/or minimum number of visible columns; use null to disable
+        columnSelector_maxVisible: null,
+        columnSelector_minVisible: null,
+      }
+    });
+  }
+
+  $("#btnSimpleView").click(function (e) {
+    $('#totalBalanceRow').addClass('visually-hidden');
+    $('.btnViewMode').removeClass('active');
+    $(this).addClass('active');
+
+    toggleReviewColumns(simpleViewColumns);
   });
 
   $("#btnStatusView").click(function (e) {
@@ -432,21 +450,7 @@ $(document).ready(function () {
     $('.btnViewMode').removeClass('active');
     $(this).addClass('active');
 
-    $('#reviewTable th, #reviewTable td').each(function () {
-      const eClass = $(this).attr('class');
-      let isVisible = false;
-      statusViewColumns.forEach(sc => {
-        if (eClass.includes(sc)) {
-          isVisible = true;
-        }
-      })
-
-      if (isVisible) {
-        $(this).removeClass('visually-hidden');
-      } else {
-        $(this).addClass('visually-hidden');
-      }
-    });
+    toggleReviewColumns(statusViewColumns);
   });
 
   $("#btnBalanceView").click(function (e) {
@@ -454,21 +458,7 @@ $(document).ready(function () {
     $('.btnViewMode').removeClass('active');
     $(this).addClass('active');
 
-    $('#reviewTable th, #reviewTable td').each(function () {
-      const eClass = $(this).attr('class');
-      let isVisible = false;
-      balanceViewColumns.forEach(sc => {
-        if (eClass.includes(sc)) {
-          isVisible = true;
-        }
-      })
-
-      if (isVisible) {
-        $(this).removeClass('visually-hidden');
-      } else {
-        $(this).addClass('visually-hidden');
-      }
-    });
+    toggleReviewColumns(balanceViewColumns);
   });
 
   $("#btnFullView").click(function (e) {
@@ -483,7 +473,6 @@ $(document).ready(function () {
 
   const desktopReviewPage = $('#desktopReviewPage');
   if (desktopReviewPage && desktopReviewPage.length > 0) {
-    $("#reviewTable").tablesorter();
     $("#btnSimpleView").click();
   }
 
