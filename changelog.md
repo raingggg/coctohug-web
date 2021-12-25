@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.8] - 2021-12-26
+- table layout ui improvement
+- move all js/css into coctohug, instead of using online cdn
+
+
+
 ## [1.2.7] - 2021-12-24
 - summary table layout
 - summary board color fix when fork number bigger than 20
