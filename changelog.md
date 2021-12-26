@@ -1,6 +1,7 @@
 # Changelog
 
 ## [1.2.8] - 2021-12-26
+- sample 1% chia-watch-dog to save computer resource
 - table layout ui improvement
 - move all js/css into coctohug, instead of using online cdn
 

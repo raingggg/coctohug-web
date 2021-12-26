@@ -19,6 +19,7 @@ const startWatchDog = () => {
 
   try {
     const cwd = new ChiaWatchDog(chainlog);
+    cwd.sampleWithPercentate(1); // 1% is enough for monitoring purpose
 
     cwd.on('dog', (evs) => {
       postEvents(evs);
