@@ -19,7 +19,7 @@ const CONTROLLER_SCHEME = 'http';
 const homedir = os.homedir();
 const hostname = os.hostname();
 const accessToken = `tk-${Math.random()}`;
-const workerToken = {};
+const simpleCache = {};
 
 const getFullPath = (p) => {
   if (p.startsWith('/')) return p;
@@ -110,11 +110,11 @@ const isValidAccessToken = (token) => {
 };
 
 const setWorkerToken = (hostname, blockchain, tk) => {
-  workerToken[`${hostname}${blockchain}`] = tk;
+  simpleCache[`${hostname}${blockchain}`] = tk;
 }
 
 const getWorkerToken = (hostname, blockchain) => {
-  return workerToken[`${hostname}${blockchain}`] || 'error';
+  return simpleCache[`${hostname}${blockchain}`] || 'error';
 }
 
 const getIp = (req) => {
