@@ -123,5 +123,6 @@
   "review.total_usd_value": "Укупна вредност у УСД",
   "review.wallet_balance": "Стање новчаника",
   "review.wallet_heigt": "Висина новчаника",
-  "review.wallet_status": "Статус новчаника"
+  "review.wallet_status": "Статус новчаника",
+  "review.protocol_port": "Порт протокола пуног чвора"
 }

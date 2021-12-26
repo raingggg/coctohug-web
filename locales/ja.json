@@ -123,5 +123,6 @@
   "review.total_usd_value": "合計米ドル値",
   "review.wallet_balance": "ウォレットの残高",
   "review.wallet_heigt": "ウォレットの高さ",
-  "review.wallet_status": "ウォレットのステータス"
+  "review.wallet_status": "ウォレットのステータス",
+  "review.protocol_port": "フルノードプロトコルポート"
 }

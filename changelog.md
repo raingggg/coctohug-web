@@ -1,11 +1,10 @@
 # Changelog
 
 ## [1.2.8] - 2021-12-26
+- Only execute jobs when WebUser is accessing Coctohug, otherwise once per hour at most
 - sample 1% chia-watch-dog to save computer resource
 - table layout ui improvement
 - move all js/css into coctohug, instead of using online cdn
-
-
 
 ## [1.2.7] - 2021-12-24
 - summary table layout

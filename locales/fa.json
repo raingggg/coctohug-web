@@ -123,5 +123,6 @@
   "review.total_usd_value": "ارزش کل USD",
   "review.wallet_balance": "موجودی کیف پول",
   "review.wallet_heigt": "ارتفاع کیف پول",
-  "review.wallet_status": "وضعیت کیف پول"
+  "review.wallet_status": "وضعیت کیف پول",
+  "review.protocol_port": "پورت پروتکل Fullnode"
 }

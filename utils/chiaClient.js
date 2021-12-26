@@ -20,6 +20,7 @@ const {
   isFullnodeMode,
   isFarmerMode,
   isWalletMode,
+  FORK_CODE_BRANCH,
 } = require('./chiaConfig');
 const { chainConfigs } = require('./chainConfigs');
 const { logger } = require('./logger');
@@ -299,15 +300,15 @@ const getPoolLoginLink = async () => {
 };
 
 const loadAllVersions = async () => {
-  let result = '';
+  let result = FORK_CODE_BRANCH;
 
-  try {
-    const cmdOutput = await exec(`${binary} version`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
-    result = `${blockchain}: ${cmdOutput.stdout.trim()}`;
-  } catch (e) {
-    logger.error('loadAllVersions', e);
-  }
-  logger.debug(result);
+  // try {
+  //   const cmdOutput = await exec(`${binary} version`, { timeout: TIMEOUT_1MINUTE, killSignal: 'SIGKILL' });
+  //   result = `${blockchain}: ${cmdOutput.stdout.trim()}`;
+  // } catch (e) {
+  //   logger.error('loadAllVersions', e);
+  // }
+  // logger.debug(result);
 
   const coctohugWeb = getCoctohugWebVersion();
   result += `\ncoctohugWeb: ${coctohugWeb}`;

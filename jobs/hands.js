@@ -6,9 +6,11 @@ const {
   getControllerUrl,
   getWorkerUrl,
   getMode,
+  getAccessToken,
+  FORK_CODE_BRANCH,
+  FULLNODE_PROTOCOL_PORT,
 } = require('../utils/chiaConfig');
 const { loadAllVersions } = require('../utils/chiaClient');
-const { getAccessToken } = require('../utils/chiaConfig');
 
 const hostname = getHostname();
 const controllerUrl = getControllerUrl();
@@ -24,6 +26,8 @@ const updateHand = async () => {
       mode,
       url,
       versions,
+      protocol_port: FULLNODE_PROTOCOL_PORT,
+      fork_version: FORK_CODE_BRANCH,
     };
     axios.post(`${controllerUrl}/hands/update`, payload, {
       headers: { 'Content-Type': 'application/json', 'tk': getAccessToken() }

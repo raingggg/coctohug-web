@@ -123,5 +123,6 @@
   "review.total_usd_value": "Tổng giá trị USD",
   "review.wallet_balance": "Số dư trên Wallet",
   "review.wallet_heigt": "Chiều cao ví",
-  "review.wallet_status": "Trạng thái Ví"
+  "review.wallet_status": "Trạng thái Ví",
+  "review.protocol_port": "Cổng giao thức Fullnode"
 }

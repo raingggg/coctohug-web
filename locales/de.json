@@ -123,5 +123,6 @@
   "review.total_usd_value": "Gesamt-USD-Wert",
   "review.wallet_balance": "Wallet-Guthaben",
   "review.wallet_heigt": "Höhe der Brieftasche",
-  "review.wallet_status": "Wallet-Status"
+  "review.wallet_status": "Wallet-Status",
+  "review.protocol_port": "Fullnode-Protokoll-Port"
 }

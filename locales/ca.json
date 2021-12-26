@@ -123,5 +123,6 @@
   "review.total_usd_value": "Valor total en USD",
   "review.wallet_balance": "Saldo de cartera",
   "review.wallet_heigt": "Alçada de la cartera",
-  "review.wallet_status": "Estat de la cartera"
+  "review.wallet_status": "Estat de la cartera",
+  "review.protocol_port": "Port de protocol Fullnode"
 }

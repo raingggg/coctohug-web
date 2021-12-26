@@ -123,5 +123,6 @@
   "review.total_usd_value": "Total Nilai USD",
   "review.wallet_balance": "Saldo Dompet",
   "review.wallet_heigt": "Tinggi Dompet",
-  "review.wallet_status": "Status Dompet"
+  "review.wallet_status": "Status Dompet",
+  "review.protocol_port": "Port Protokol Fullnode"
 }

@@ -123,5 +123,6 @@
   "review.total_usd_value": "Загальна вартість у доларах США",
   "review.wallet_balance": "Баланс гаманця",
   "review.wallet_heigt": "Висота гаманця",
-  "review.wallet_status": "Статус гаманця"
+  "review.wallet_status": "Статус гаманця",
+  "review.protocol_port": "Порт протоколу повного вузла"
 }

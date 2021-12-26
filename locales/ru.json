@@ -123,5 +123,6 @@
   "review.total_usd_value": "Общая стоимость в долларах США",
   "review.wallet_balance": "Кошелек",
   "review.wallet_heigt": "Высота кошелька",
-  "review.wallet_status": "Статус кошелька"
+  "review.wallet_status": "Статус кошелька",
+  "review.protocol_port": "Порт протокола Fullnode"
 }

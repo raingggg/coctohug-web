@@ -45,10 +45,10 @@ const AllInOne = sequelize.define('AllInOne', {
   total_price: { type: DataTypes.REAL, defaultValue: 0 },
 
   // extend columns
-  ext_num_1: { type: DataTypes.REAL, defaultValue: 0 },
+  ext_num_1: { type: DataTypes.REAL, defaultValue: 0 }, // protocol_port
   ext_num_2: { type: DataTypes.REAL, defaultValue: 0 },
   ext_num_3: { type: DataTypes.REAL, defaultValue: 0 },
-  ext_str_1: { type: DataTypes.STRING },
+  ext_str_1: { type: DataTypes.STRING }, // fork_version
   ext_str_2: { type: DataTypes.STRING },
   ext_str_3: { type: DataTypes.STRING },
   ext_str_4: { type: DataTypes.STRING },

@@ -81,6 +81,12 @@
           <th class="total_price">
             <%= __('review.total_usd_value') %>
           </th>
+          <th class="protocol_port">
+            <%= __('review.protocol_port') %>
+          </th>
+          <th class="fork_version">
+            <%= __('general.versions') %>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -143,6 +149,12 @@
             </td>
             <td class="total_price">
               <%= dt.total_price %>
+            </td>
+            <td class="protocol_port">
+              <%= dt.ext_num_1 %>
+            </td>
+            <td class="fork_version">
+              <%= dt.ext_str_1 %>
             </td>
           </tr>
           <% }); %>

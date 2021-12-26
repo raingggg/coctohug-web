@@ -123,5 +123,6 @@
   "review.total_usd_value": "총 USD 가치",
   "review.wallet_balance": "지갑 잔액",
   "review.wallet_heigt": "지갑 높이",
-  "review.wallet_status": "지갑 상태"
+  "review.wallet_status": "지갑 상태",
+  "review.protocol_port": "풀노드 프로토콜 포트"
 }

@@ -123,5 +123,6 @@
   "review.total_usd_value": "Toplam ABD Doları Değeri",
   "review.wallet_balance": "Cüzdan Bakiyesi",
   "review.wallet_heigt": "Cüzdan Yüksekliği",
-  "review.wallet_status": "Cüzdan Durumu"
+  "review.wallet_status": "Cüzdan Durumu",
+  "review.protocol_port": "Tam Düğüm Protokolü Bağlantı Noktası"
 }

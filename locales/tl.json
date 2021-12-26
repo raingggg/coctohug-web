@@ -123,5 +123,6 @@
   "review.total_usd_value": "Kabuuang Halaga ng USD",
   "review.wallet_balance": "Balanse sa Wallet",
   "review.wallet_heigt": "Taas ng Wallet",
-  "review.wallet_status": "Katayuan ng Wallet"
+  "review.wallet_status": "Katayuan ng Wallet",
+  "review.protocol_port": "Fullnode Protocol Port"
 }

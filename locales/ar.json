@@ -123,5 +123,6 @@
   "review.total_usd_value": "إجمالي القيمة بالدولار الأمريكي",
   "review.wallet_balance": "رصيد المحفظة",
   "review.wallet_heigt": "ارتفاع المحفظة",
-  "review.wallet_status": "حالة المحفظة"
+  "review.wallet_status": "حالة المحفظة",
+  "review.protocol_port": "منفذ بروتوكول Fullnode"
 }

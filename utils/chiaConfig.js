@@ -13,6 +13,8 @@ const CONTROLLER_HOST = process.env['controller_address'] || 'localhost'
 const CONTROLLER_PORT = process.env['controller_web_port'] || '12630';
 const WORKER_HOST = process.env['worker_address'] || process.env['controller_address'];
 const WORKER_PORT = process.env['worker_web_port'];
+const FORK_CODE_BRANCH = process.env['FORK_CODE_BRANCH'];
+const FULLNODE_PROTOCOL_PORT = process.env['fullnode_protocol_port'];
 
 const MODE = process.env['mode'] || 'fullnode';
 const WEB_MODE = process.env['WEB_MODE'] || 'controller';
@@ -144,6 +146,8 @@ const getIp = (req) => {
 
 module.exports = {
   SQL_LOG,
+  FORK_CODE_BRANCH,
+  FULLNODE_PROTOCOL_PORT,
   blockchainConfig,
   getHostname,
   getControllerUrl,

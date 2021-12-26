@@ -123,5 +123,6 @@
   "review.total_usd_value": "总美元价值",
   "review.wallet_balance": "钱包余额",
   "review.wallet_heigt": "钱包高度",
-  "review.wallet_status": "钱包状态"
+  "review.wallet_status": "钱包状态",
+  "review.protocol_port": "全节点协议端口"
 }
