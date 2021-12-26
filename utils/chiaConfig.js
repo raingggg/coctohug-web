@@ -3,6 +3,10 @@ const path = require('path');
 const { constants } = require('fs');
 const { access } = require('fs/promises');
 const requestIp = require('request-ip');
+const {
+  TIMEOUT_30MINUTE,
+  isSampleByPercentage
+} = require('./jsUtil');
 
 const CONFIG_FILENAME = process.env['config_file'] || '../chia.json';
 const CONTROLLER_HOST = process.env['controller_address'] || 'localhost'
@@ -117,6 +121,23 @@ const getWorkerToken = (hostname, blockchain) => {
   return simpleCache[`${hostname}${blockchain}`] || 'error';
 }
 
+const setLastWebReviewPageAccessTime = () => {
+  simpleCache['lastWebReviewPageAccessTime'] = new Date().getTime();
+}
+
+const shouldRunJobsNormally = (jobInterval) => {
+  let shouldRun = false;
+
+  const duration = new Date().getTime() - simpleCache['lastWebReviewPageAccessTime'];
+  shouldRun = duration <= TIMEOUT_30MINUTE; // run jobs regularly in 30 minutes
+
+  if (!shouldRun && jobInterval) {
+    shouldRun = isSampleByPercentage(jobInterval);
+  }
+
+  return shouldRun;
+}
+
 const getIp = (req) => {
   return requestIp.getClientIp(req);
 }
@@ -142,4 +163,6 @@ module.exports = {
   setWorkerToken,
   getWorkerToken,
   getIp,
+  setLastWebReviewPageAccessTime,
+  shouldRunJobsNormally,
 };

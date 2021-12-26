@@ -1,3 +1,6 @@
+const { setLastWebReviewPageAccessTime } = require('../utils/chiaConfig');
+const { notifyWorkersWebAccessing } = require('../dataHelpers/blockchains');
+
 const securePaths = [
   '/settingsWeb/restartWeb',
   '/settingsWeb/restartOp',
@@ -10,9 +13,15 @@ const securePaths = [
   '/settingsWeb/restartOp'
 ];
 
-const sessionAuth = (req, res, next) => {
+const sessionAuth = async (req, res, next) => {
   const { originalUrl } = req;
   const authed = req.session && req.session.authed && req.session.authed === 'true';
+
+  const isReviewPage = originalUrl.includes('/reviewWeb');
+  if (isReviewPage) {
+    setLastWebReviewPageAccessTime(); // web-controller side update
+    notifyWorkersWebAccessing(); // notify workerAPI all forks
+  }
 
   for (let i = 0; i < securePaths.length; i++) {
     if (!authed && originalUrl.includes(securePaths[i])) {

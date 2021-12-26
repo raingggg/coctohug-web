@@ -1,6 +1,19 @@
 const CronJob = require('cron').CronJob;
 const { logger } = require('./logger');
-const { isWebControllerMode, isHarvesterMode } = require('./chiaConfig');
+const {
+  getRandomDurationByMinutes,
+  SAMPLE_PERCENTAGE_HOUR,
+} = require('./jsUtil');
+
+const {
+  isWebControllerMode,
+  isHarvesterMode,
+  isFullnodeMode,
+  isFarmerMode,
+  isWalletMode,
+  shouldRunJobsNormally,
+} = require('./chiaConfig');
+
 const {
   updateWallet,
   updateFarm,
@@ -30,7 +43,13 @@ const everyMidnight = '0 40 2 * * *';
 const everyMondayMidnight = '0 40 3 * * 1';
 
 const isWebController = isWebControllerMode();
-const isNotHarvester = !isHarvesterMode();
+const isFullnode = isFullnodeMode();
+const isFarmer = isFarmerMode();
+const isWallet = isWalletMode();
+const isHarvester = isHarvesterMode();
+
+const isNotHarvester = !isHarvester;
+const hasPeers = isFullnode || isFarmer;
 
 const MAX_TRY = 10;
 let currentTry = 0;
@@ -54,46 +73,58 @@ const immediateTryTasks = async () => {
 const oneMinuteJob = new CronJob(everyMinute, async () => {
   logger.info('oneMinuteJob start');
 
-  try {
-    if (!isWebController) {
-      await immediateTryTasks();
-      if (isNotHarvester) await updateBlockchain();
+  // build initial connection when web starts
+  setTimeout(async () => {
+    try {
+      if (!isWebController) {
+        await immediateTryTasks();
+      }
+    } catch (e) {
+      logger.error('oneMinuteJob', e);
     }
-  } catch (e) {
-    logger.error('oneMinuteJob', e);
-  }
+  }, getRandomDurationByMinutes(0.8));
+
+  if (!shouldRunJobsNormally(SAMPLE_PERCENTAGE_HOUR['1m'])) return;
+  // put normal 1 minute jobs below
 
   logger.info('oneMinuteJob end');
 }, null, true, 'America/Los_Angeles');
 
 const fiveMinuteJob = new CronJob(every5Minute, async () => {
   logger.info('fiveMinuteJob start');
+  if (!shouldRunJobsNormally(SAMPLE_PERCENTAGE_HOUR['5m'])) return;
 
-  try {
-    if (!isWebController) {
-      if (isNotHarvester) await updateFarm();
-      if (isNotHarvester) await updateWallet();
-      if (isNotHarvester) await updateConnection();
-    } else {
-      await updateAllInOne();
+  setTimeout(async () => {
+    try {
+      if (!isWebController) {
+        if (hasPeers) await updateFarm();
+        if (isNotHarvester) await updateWallet();
+        if (hasPeers) await updateBlockchain();
+        if (hasPeers) await updateConnection();
+      } else {
+        await updateAllInOne();
+      }
+    } catch (e) {
+      logger.error('fiveMinuteJob', e);
     }
-  } catch (e) {
-    logger.error('fiveMinuteJob', e);
-  }
+  }, getRandomDurationByMinutes(3));
 
   logger.info('fiveMinuteJob end');
 }, null, true, 'America/Los_Angeles');
 
 const thirtyMinuteJob = new CronJob(every30Minute, async () => {
   logger.info('thirtyMinuteJob start');
+  if (!shouldRunJobsNormally(SAMPLE_PERCENTAGE_HOUR['30m'])) return;
 
-  try {
-    if (!isWebController) {
-      await updateHand();
+  setTimeout(async () => {
+    try {
+      if (!isWebController) {
+        await updateHand();
+      }
+    } catch (e) {
+      logger.error('thirtyMinuteJob', e);
     }
-  } catch (e) {
-    logger.error('thirtyMinuteJob', e);
-  }
+  }, getRandomDurationByMinutes(20));
 
   logger.info('thirtyMinuteJob end');
 }, null, true, 'America/Los_Angeles');
@@ -101,13 +132,15 @@ const thirtyMinuteJob = new CronJob(every30Minute, async () => {
 const oneHourJob = new CronJob(every1Hour, async () => {
   logger.info('oneHourJob start');
 
-  try {
-    if (isWebController) {
-      await updateHourlyColdwalletCoins();
+  setTimeout(async () => {
+    try {
+      if (isWebController) {
+        await updateHourlyColdwalletCoins();
+      }
+    } catch (e) {
+      logger.error('oneHourJob', e);
     }
-  } catch (e) {
-    logger.error('oneHourJob', e);
-  }
+  }, getRandomDurationByMinutes(40));
 
   logger.info('oneHourJob end');
 }, null, true, 'America/Los_Angeles');
@@ -115,13 +148,15 @@ const oneHourJob = new CronJob(every1Hour, async () => {
 const fourHourJob = new CronJob(every4Hour, async () => {
   logger.info('fourHourJob start');
 
-  try {
-    if (!isWebController) {
-      if (isNotHarvester) await updateKey();
+  setTimeout(async () => {
+    try {
+      if (!isWebController) {
+        if (isNotHarvester) await updateKey();
+      }
+    } catch (e) {
+      logger.error('fourHourJob', e);
     }
-  } catch (e) {
-    logger.error('fourHourJob', e);
-  }
+  }, getRandomDurationByMinutes(180));
 
   logger.info('fourHourJob end');
 }, null, true, 'America/Los_Angeles');
@@ -129,18 +164,20 @@ const fourHourJob = new CronJob(every4Hour, async () => {
 const oneDayJob = new CronJob(everyMidnight, async () => {
   logger.info('oneDayJob start');
 
-  try {
-    if (isWebController) {
-      await updateDailyWalletBalance();
-      await updateDailyColdwalletCoins();
-      await removeOutdatedNews();
-      await emptyControllerLogs();
-    } else {
-      await emptyWorkerLogs();
+  setTimeout(async () => {
+    try {
+      if (isWebController) {
+        await updateDailyWalletBalance();
+        await updateDailyColdwalletCoins();
+        await removeOutdatedNews();
+        await emptyControllerLogs();
+      } else {
+        await emptyWorkerLogs();
+      }
+    } catch (e) {
+      logger.error('oneDayJob', e);
     }
-  } catch (e) {
-    logger.error('oneDayJob', e);
-  }
+  }, getRandomDurationByMinutes(180));
 
   logger.info('oneDayJob end');
 }, null, true, 'America/Los_Angeles');
@@ -148,13 +185,15 @@ const oneDayJob = new CronJob(everyMidnight, async () => {
 const oneWeekJob = new CronJob(everyMondayMidnight, async () => {
   logger.info('oneWeekJob start');
 
-  try {
-    if (isWebController) {
-      await updateWeeklyColdwalletCoins();
+  setTimeout(async () => {
+    try {
+      if (isWebController) {
+        await updateWeeklyColdwalletCoins();
+      }
+    } catch (e) {
+      logger.error('oneWeekJob', e);
     }
-  } catch (e) {
-    logger.error('oneWeekJob', e);
-  }
+  }, getRandomDurationByMinutes(180));
 
   logger.info('oneWeekJob end');
 }, null, true, 'America/Los_Angeles');

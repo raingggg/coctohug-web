@@ -1,8 +1,17 @@
+const TIMEOUT_5SECOND = 5 * 1000;
 const TIMEOUT_1MINUTE = 60 * 1000;
 const TIMEOUT_2MINUTE = 2 * 60 * 1000;
 const TIMEOUT_5MINUTE = 5 * 60 * 1000;
 const TIMEOUT_10MINUTE = 10 * 60 * 1000;
+const TIMEOUT_15MINUTE = 15 * 60 * 1000;
 const TIMEOUT_30MINUTE = 30 * 60 * 1000;
+const TIMEOUT_60MINUTE = 60 * 60 * 1000;
+
+const SAMPLE_PERCENTAGE_HOUR = {
+  '1m': 100 * 1 / 60,
+  '5m': 100 * 5 / 60,
+  '30m': 100 * 30 / 60,
+};
 
 const getLastHourDates = () => {
   const startDate = new Date();
@@ -82,16 +91,30 @@ const toNumber = (anything) => {
   return result;
 };
 
+function getRandomDurationByMinutes(minutes) {
+  return Math.random() * 60 * 1000 * minutes;
+}
+
+function isSampleByPercentage(percent) {
+  return Math.ceil(Math.random() * 100) <= percent;
+}
+
 module.exports = {
+  TIMEOUT_5SECOND,
   TIMEOUT_1MINUTE,
   TIMEOUT_2MINUTE,
   TIMEOUT_5MINUTE,
   TIMEOUT_10MINUTE,
+  TIMEOUT_15MINUTE,
   TIMEOUT_30MINUTE,
+  TIMEOUT_60MINUTE,
+  SAMPLE_PERCENTAGE_HOUR,
   getLastHourDates,
   getLastDayDates,
   getLastWeekDates,
   getDaysBefore,
   getFormattedDaysBefore,
   toNumber,
+  getRandomDurationByMinutes,
+  isSampleByPercentage,
 };

@@ -8,7 +8,16 @@ const {
   generateKeyBlockchain,
   saveColdWallet,
 } = require('../utils/chiaClient');
-const { blockchainConfig: { blockchain, config }, isValidAccessToken, getIp } = require('../utils/chiaConfig');
+const {
+  blockchainConfig: { blockchain, config },
+  isValidAccessToken,
+  getIp,
+  setLastWebReviewPageAccessTime,
+} = require('../utils/chiaConfig');
+const {
+  updateHand
+} = require('../jobs');
+
 
 router.get('/restart', async (req, res, next) => {
   if (!isValidAccessToken(req.header('tk'))) {
@@ -99,6 +108,17 @@ router.get('/getConfigFile', async (req, res, next) => {
   }
 
   return res.json({ data: "failed" });
+});
+
+router.get('/updateLastWebReviewPageAccessTime', async (req, res, next) => {
+  if (!isValidAccessToken(req.header('tk'))) {
+    logger.error('invalid access - blockchain updateLastWebReviewPageAccessTime: ', getIp(req));
+    logger.error('sending token again to WebContorller');
+    await updateHand();
+  }
+
+  setLastWebReviewPageAccessTime();
+  return res.json({ data: 'success' });
 });
 
 module.exports = router;
