@@ -2,6 +2,7 @@ var i18n = require('i18n');
 const express = require('express');
 const router = express.Router();
 const MobileDetect = require('mobile-detect');
+const { Op } = require("sequelize");
 const { AllInOne, Wallet } = require('../models');
 const { isWebControllerMode, getCoctohugWebVersion } = require('../utils/chiaConfig');
 const { getTotalBalance } = require('../utils/blockUtil');
@@ -23,6 +24,9 @@ router.get('/', async (req, res, next) => {
     let allCoinsDollars = 0;
     try {
       data = await AllInOne.findAll({
+        where: {
+          mode: { [Op.in]: ['fullnode', 'farmer', 'wallet'] },
+        },
         order: [
           ['blockchain', 'ASC'],
         ]

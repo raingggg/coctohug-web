@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.2.9] - 2021-12-27
+- don't show harvester records on summary page
+
 ## [1.2.8] - 2021-12-27
 - only execute jobs when WebUser is accessing Coctohug, otherwise once per hour at most
 - sample 1% chia-watch-dog to save computer resource
