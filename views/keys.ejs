@@ -20,9 +20,14 @@
   <% data.forEach(function(dt, index){ %>
     <div class="tab-panel <%= index === 0 ? '' : 'd-none' %>" data-panel-index="<%= index %>">
       <div>
-        <a class="nav-link" target="_blank" href="<%= dt.firstWallet %>">
+        <a class="nav-link" target="_blank" href="<%= dt.firstWalletOnline %>">
           <%= __('wallets.check_first_wallet_reward') %>
         </a>
+        <span>
+          <%= __('balance.address') %>:
+        </span> <span>
+          <%= dt.firstWallet %>
+        </span>
         <p>
           <%= __('general.updatedAt') %>
             <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>

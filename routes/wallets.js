@@ -26,7 +26,7 @@ router.get('/', async (req, res, next) => {
       const exp = chainConfigs[dt.blockchain] ? chainConfigs[dt.blockchain].exp : chainConfigs.default.exp;
       Object.assign(dt, {
         status: (now - lastReview > UNSYNC_THRESHHOLD) ? 'SyncError' : 'Normal',
-        coldWallet: `${exp}${dt.coldWallet}`,
+        coldWalletOnline: `${exp}${dt.coldWallet}`,
       });
     })
   } catch (e) {

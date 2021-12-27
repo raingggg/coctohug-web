@@ -16,7 +16,8 @@ router.get('/', async (req, res, next) => {
     const exp = chainConfigs[dt.blockchain] ? chainConfigs[dt.blockchain].exp : chainConfigs.default.exp;
     const firstWallet = getWalletAddress(dt.details);
     Object.assign(dt, {
-      firstWallet: `${exp}${firstWallet}`,
+      firstWallet,
+      firstWalletOnline: `${exp}${firstWallet}`,
     });
   })
 
