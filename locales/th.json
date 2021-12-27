@@ -124,5 +124,6 @@
   "review.wallet_balance": "ยอดคงเหลือในกระเป๋าเงิน",
   "review.wallet_heigt": "ความสูงของกระเป๋าสตางค์",
   "review.wallet_status": "สถานะกระเป๋าเงิน",
-  "review.protocol_port": "พอร์ตโปรโตคอล Fullnode"
+  "review.protocol_port": "พอร์ตโปรโตคอล",
+  "review.toggle_font": "สลับขนาดตัวอักษร"
 }

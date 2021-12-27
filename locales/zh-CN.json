@@ -124,5 +124,6 @@
   "review.wallet_balance": "钱包余额",
   "review.wallet_heigt": "钱包高度",
   "review.wallet_status": "钱包状态",
-  "review.protocol_port": "全节点协议端口"
+  "review.protocol_port": "协议端口",
+  "review.toggle_font": "切换字体大小"
 }

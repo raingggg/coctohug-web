@@ -124,5 +124,6 @@
   "review.wallet_balance": "موجودی کیف پول",
   "review.wallet_heigt": "ارتفاع کیف پول",
   "review.wallet_status": "وضعیت کیف پول",
-  "review.protocol_port": "پورت پروتکل Fullnode"
+  "review.protocol_port": "پورت پروتکل",
+  "review.toggle_font": "تغییر اندازه قلم"
 }

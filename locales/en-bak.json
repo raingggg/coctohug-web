@@ -111,6 +111,7 @@
   "review.wallet_balance": "Wallet Balance",
   "review.reward_balance": "Reward Address Balance",
   "review.total_usd_value": "Total USD Value",
+  "review.protocol_port": "Fullnode Protocol Port",
   "wallets.check_farming_rewards": "Check Farming Rewards Online",
   "wallets.check_first_wallet_reward": "Check First Wallet Reward Online",
   "wallets.recipient_address": "Recipient Address:",

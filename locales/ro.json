@@ -124,5 +124,6 @@
   "review.wallet_balance": "Soldul portofelului",
   "review.wallet_heigt": "Înălțimea portofelului",
   "review.wallet_status": "Stare portofel",
-  "review.protocol_port": "Port Protocol Fullnode"
+  "review.protocol_port": "Port de protocol",
+  "review.toggle_font": "Comutați dimensiunea fontului"
 }

@@ -124,5 +124,6 @@
   "review.wallet_balance": "Số dư trên Wallet",
   "review.wallet_heigt": "Chiều cao ví",
   "review.wallet_status": "Trạng thái Ví",
-  "review.protocol_port": "Cổng giao thức Fullnode"
+  "review.protocol_port": "Cổng giao thức",
+  "review.toggle_font": "Chuyển đổi kích thước phông chữ"
 }

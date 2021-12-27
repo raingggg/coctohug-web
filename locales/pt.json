@@ -124,5 +124,6 @@
   "review.wallet_balance": "Saldo da carteira",
   "review.wallet_heigt": "Altura da Carteira",
   "review.wallet_status": "Status da carteira",
-  "review.protocol_port": "Fullnode Protocol Port"
+  "review.protocol_port": "Porta de protocolo",
+  "review.toggle_font": "Alternar tamanho da fonte"
 }

@@ -1,10 +1,12 @@
 # Changelog
 
-## [1.2.8] - 2021-12-26
-- Only execute jobs when WebUser is accessing Coctohug, otherwise once per hour at most
+## [1.2.8] - 2021-12-27
+- only execute jobs when WebUser is accessing Coctohug, otherwise once per hour at most
 - sample 1% chia-watch-dog to save computer resource
+- connections page supports adding multiple peers with multiple format
 - add blockchain version and port to UI
 - show wallet address on Keys and Wallet page
+- toggle font-size support on table layout page
 - wallet mode js function to automatically alter configuration of connecting fullnode
 - table layout ui improvement
 - move all js/css into coctohug, instead of using online cdn

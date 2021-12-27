@@ -490,5 +490,9 @@ $(document).ready(function () {
     $("#btnSimpleView").click();
   }
 
+  $('#btnToggleFont').click(function (e) {
+    $("#reviewTable").toggleClass('fs-6');
+  });
+
 });
 

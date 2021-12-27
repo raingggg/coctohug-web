@@ -124,5 +124,6 @@
   "review.wallet_balance": "Стање новчаника",
   "review.wallet_heigt": "Висина новчаника",
   "review.wallet_status": "Статус новчаника",
-  "review.protocol_port": "Порт протокола пуног чвора"
+  "review.protocol_port": "Протокол порт",
+  "review.toggle_font": "Пребаци величину фонта"
 }

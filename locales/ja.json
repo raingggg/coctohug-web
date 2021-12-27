@@ -124,5 +124,6 @@
   "review.wallet_balance": "ウォレットの残高",
   "review.wallet_heigt": "ウォレットの高さ",
   "review.wallet_status": "ウォレットのステータス",
-  "review.protocol_port": "フルノードプロトコルポート"
+  "review.protocol_port": "プロトコルポート",
+  "review.toggle_font": "フォントサイズの切り替え"
 }

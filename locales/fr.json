@@ -124,5 +124,6 @@
   "review.wallet_balance": "Solde du portefeuille",
   "review.wallet_heigt": "Hauteur du portefeuille",
   "review.wallet_status": "État du portefeuille",
-  "review.protocol_port": "Port de protocole de nœud complet"
+  "review.protocol_port": "Port de protocole",
+  "review.toggle_font": "Basculer la taille de la police"
 }

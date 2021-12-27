@@ -124,5 +124,6 @@
   "review.wallet_balance": "Balanse sa Wallet",
   "review.wallet_heigt": "Taas ng Wallet",
   "review.wallet_status": "Katayuan ng Wallet",
-  "review.protocol_port": "Fullnode Protocol Port"
+  "review.protocol_port": "Port ng Protocol",
+  "review.toggle_font": "I-toggle ang Laki ng Font"
 }

@@ -124,5 +124,6 @@
   "review.wallet_balance": "Баланс в портфейла",
   "review.wallet_heigt": "Височина на портфейла",
   "review.wallet_status": "Състояние на портфейла",
-  "review.protocol_port": "Порт за протокол на пълен възел"
+  "review.protocol_port": "Протокол порт",
+  "review.toggle_font": "Превключване на размера на шрифта"
 }

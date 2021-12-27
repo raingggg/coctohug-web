@@ -124,5 +124,6 @@
   "review.wallet_balance": "رصيد المحفظة",
   "review.wallet_heigt": "ارتفاع المحفظة",
   "review.wallet_status": "حالة المحفظة",
-  "review.protocol_port": "منفذ بروتوكول Fullnode"
+  "review.protocol_port": "منفذ البروتوكول",
+  "review.toggle_font": "تبديل حجم الخط"
 }
