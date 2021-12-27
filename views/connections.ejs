@@ -1,4 +1,4 @@
-<div class="page-wrapper">
+<div class="page-wrapper connection-page">
   <nav class="navbar navbar-expand navbar-light bg-light">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -91,9 +91,6 @@
       <div class="alert alert-success removing-connection visually-hidden" role="alert">
         <%= __('connections.removing') %>
       </div>
-      <div class="alert alert-success adding-connection visually-hidden" role="alert">
-        <%= __('connections.adding') %>
-      </div>
       <div class="alert alert-danger connection-error visually-hidden" role="alert">
         <%= __('connections.no_colon') %>
       </div>
@@ -104,14 +101,22 @@
             <%= __('connections.disconnect_selected') %>
           </button>
         </div>
-
-        <div class="col-3">
-          <input class="form-control me-2 new-connection" type="text" placeholder="node.chia.net:8444">
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <br />
+          <textarea class="form-control me-2 new-connection"
+            placeholder="35.81.19.45&#10;35.81.19.45:8444&#10;node.chia.net:8444&#10;chia show -a 35.81.19.45:8444"></textarea>
         </div>
-        <div class="col-3">
+        <div class="alert alert-warning adding-connection visually-hidden" role="alert">
+          <%= __('connections.adding') %>
+        </div>
+        <div class="col-12">
           <button class="btn btn-outline-success text-nowrap text-right btnConnectionAdd">
             <%= __('connections.add_new') %>
           </button>
+          <br />
+          <br />
         </div>
       </div>
     </div>

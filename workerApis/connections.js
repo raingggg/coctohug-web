@@ -30,7 +30,10 @@ router.post('/add', async (req, res, next) => {
   try {
     const payload = req.body;
     logger.debug('api-connection-add', payload);
-    await addConnection(payload.connection);
+    const { connections } = payload;
+    for (let i = 0; i < connections.length; i++) {
+      await addConnection(connections[i]);
+    }
   } catch (e) {
     logger.error('api-connection-add', e);
   }

@@ -21,6 +21,7 @@ const {
   isFarmerMode,
   isWalletMode,
   FORK_CODE_BRANCH,
+  FULLNODE_PROTOCOL_PORT,
 } = require('./chiaConfig');
 const { chainConfigs } = require('./chainConfigs');
 const { logger } = require('./logger');
@@ -262,7 +263,8 @@ const addConnection = async (connection) => {
   let result = '';
 
   try {
-    const cmdOutput = await exec(`${binary} show --add-connection ${connection}`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
+    const cmdStr = connection.includes(FULLNODE_PROTOCOL_PORT) ? `${binary} show --add-connection ${connection}` : `${binary} show --add-connection ${connection}:${FULLNODE_PROTOCOL_PORT}`;
+    const cmdOutput = await exec(cmdStr, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = cmdOutput.stdout.trim();
   } catch (e) {
     logger.error('addConnection', e);

@@ -131,6 +131,9 @@ body {
 #desktopReviewPage .viewRow {
   padding-top: 10px;
 }
+.connection-page .new-connection {
+  height: 300px;
+}
 @media (max-width: 1024px) {
   .leftbar-wrapper ul li {
     font-size: larger;

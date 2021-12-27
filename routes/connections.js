@@ -56,7 +56,7 @@ router.post('/remove', async (req, res, next) => {
 
 router.post('/add', async (req, res, next) => {
   try {
-    const { blockchain, hostname, connection } = req.body;
+    const { blockchain, hostname, connections } = req.body;
     const data = await Hand.findOne({
       where: {
         mode: { [Op.in]: ['fullnode', 'wallet'] },
@@ -67,7 +67,7 @@ router.post('/add', async (req, res, next) => {
 
     if (data) {
       const finalUrl = `${data.url}/connectionsWorker/add`;
-      await axios.post(finalUrl, { connection }, { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
+      axios.post(finalUrl, { connections }, { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
         logger.error('connectionsWorker/add', error);
       });
       return res.json({ status: 'success' });

@@ -211,18 +211,32 @@ $(document).ready(function () {
     const blockchain = table.data('blockchain');
     const hostname = table.data('hostname');
     const connection = $(this).closest('.row').find('.new-connection').val();
-    if (connection && connection.length > 10 && connection.includes(':')) {
-      $.ajax({
-        url: '/connectionsWeb/add',
-        type: 'POST',
-        cache: false,
-        data: JSON.stringify({ blockchain, hostname, connection }),
-        contentType: 'application/json'
-      });
+    if (connection && connection.length > 8) {
+      const connectionIps = new Set();
+      const lines = connection.trim().split('\n');
+      for (let i = 0; i < lines.length; i++) {
+        let line = lines[i] && lines[i].trim();
+        if (line) {
+          line = line.replace(/.*-a\s+/g, '');
+          line = line.replace(/:\d+/g, '');
+          if (line) connectionIps.add(line);
+        }
+      }
 
-      tabPanel.find('.adding-connection').removeClass('visually-hidden');
-    } else {
-      tabPanel.find('.connection-error').removeClass('visually-hidden');
+      const connections = Array.from(connectionIps);
+      if (connections.length > 0) {
+        $(this).prop("disabled", true);
+
+        $.ajax({
+          url: '/connectionsWeb/add',
+          type: 'POST',
+          cache: false,
+          data: JSON.stringify({ blockchain, hostname, connections }),
+          contentType: 'application/json'
+        });
+
+        tabPanel.find('.adding-connection').removeClass('visually-hidden');
+      }
     }
   });
 
