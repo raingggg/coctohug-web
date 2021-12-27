@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.3.0] - 2021-12-27
+- fix too many offline and signage point warning issue
+
 ## [1.2.9] - 2021-12-27
 - don't show harvester records on summary page
 
