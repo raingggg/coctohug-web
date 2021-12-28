@@ -140,7 +140,7 @@ const oneHourJob = new CronJob(every1Hour, async () => {
     } catch (e) {
       logger.error('oneHourJob', e);
     }
-  }, getRandomDurationByMinutes(40));
+  }, getRandomDurationByMinutes(20));
 
   logger.info('oneHourJob end');
 }, null, true, 'America/Los_Angeles');
@@ -198,6 +198,22 @@ const oneWeekJob = new CronJob(everyMondayMidnight, async () => {
   logger.info('oneWeekJob end');
 }, null, true, 'America/Los_Angeles');
 
+const thirtyMinuteImportantJob = new CronJob(every30Minute, async () => {
+  logger.info('thirtyMinuteImportantJob start');
+
+  setTimeout(async () => {
+    try {
+      if (!isWebController) {
+        if (hasPeers) await updateFarm();
+      }
+    } catch (e) {
+      logger.error('thirtyMinuteImportantJob', e);
+    }
+  }, getRandomDurationByMinutes(10));
+
+  logger.info('thirtyMinuteImportantJob end');
+}, null, true, 'America/Los_Angeles');
+
 const startAllJobs = async () => {
   logger.info('all jobs start');
 
@@ -208,6 +224,8 @@ const startAllJobs = async () => {
   fourHourJob.start();
   oneDayJob.start();
   oneWeekJob.start();
+
+  thirtyMinuteImportantJob.start();
 
   logger.info('all jobs end');
 };

@@ -7,6 +7,7 @@ const {
 const {
   TIMEOUT_10MINUTE,
   TIMEOUT_30MINUTE,
+  TIMEOUT_90MINUTE,
   toNumber,
 } = require('../utils/jsUtil');
 const { logger } = require('../utils/logger');
@@ -67,7 +68,7 @@ const updateAllInOne = async () => {
 
         // farm summary
         const lastReview = new Date(farm_last_updated_at).getTime();
-        if (now - lastReview > TIMEOUT_30MINUTE) {
+        if (now - lastReview > TIMEOUT_90MINUTE) {
           Object.assign(payload, { status: 'Sync Error' });
         }
 
@@ -90,14 +91,14 @@ const updateAllInOne = async () => {
         const bls = balances.filter(rc => rc.blockchain === blockchain);
         if (bls.length > 0) {
           Object.assign(payload, {
-            coin_price: toNumber(bls[0].price),
+            coin_price: parseFloat(toNumber(bls[0].price).toFixed(8)),
           });
 
           let oneRecord = bls.find(rc => rc.address === payload.reward_address);
-          Object.assign(payload, { reward_balance: toNumber(oneRecord && oneRecord.balance) });
+          Object.assign(payload, { reward_balance: parseFloat(toNumber(oneRecord && oneRecord.balance).toFixed(8)) });
 
           oneRecord = bls.find(rc => rc.address === payload.first_address);
-          Object.assign(payload, { first_balance: toNumber(oneRecord && oneRecord.balance) });
+          Object.assign(payload, { first_balance: parseFloat(toNumber(oneRecord && oneRecord.balance).toFixed(8)) });
 
           // use first_balance as wallet_balance in case of it is invalid
           if (!payload.wallet_balance && payload.first_balance >= 0) {
@@ -108,11 +109,13 @@ const updateAllInOne = async () => {
           Object.assign(payload, { total_price: parseFloat((totalBalance * payload.coin_price).toFixed(8)) });
         }
 
+        // format amount
         Object.assign(payload, { wallet_balance: parseFloat(toNumber(payload.wallet_balance).toFixed(8)) });
+        Object.assign(payload, { total_coins: parseFloat(toNumber(payload.total_coins).toFixed(8)) });
 
         // status update
         Object.assign(payload, { invalid_farm_status: payload.status !== 'Farming' });
-        Object.assign(payload, { invalid_chain_status: (now - new Date(chain_sync_to_time).getTime()) > TIMEOUT_10MINUTE });
+        Object.assign(payload, { invalid_chain_status: (now - new Date(chain_sync_to_time).getTime()) > TIMEOUT_90MINUTE });
         Object.assign(payload, { invalid_connection_status: payload.connection_count <= 0 });
         Object.assign(payload, { invalid_wallet_status: payload.wallet_status !== 'Synced' });
 

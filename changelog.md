@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.3.1] - 2021-12-28
+- show correct farming status immediately after users opening the summary page
+- update coin price and amount to show at most 8 digits
+- optimize docker file to speed up the deploying process
+  
 ## [1.3.0] - 2021-12-27
 - fix too many offline and signage point warning issue
 
