@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
       ],
       where: {
         [Op.not]: [
-          { type: ['EVT_INTIME_BLOCK_FOUND', 'EVT_INTIME_RECEIVE_COIN', 'EVT_DAILY_ALL_IN_ONE'] }
+          { type: ['EVT_INTIME_BLOCK_FOUND', 'EVT_INTIME_RECEIVE_COIN', 'EVT_DAILY_ALL_IN_ONE', 'EVT_WEEKLY_ALL_IN_ONE'] }
         ]
       },
       limit: 200,
