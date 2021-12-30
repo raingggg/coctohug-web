@@ -28,9 +28,9 @@ const updateHourlyColdwalletCoins = async () => {
       setTimeout(async () => {
         try {
           const { hostname, blockchain, details } = dataKeys[i];
-          const firstWalletAdress = getWalletAddress(details);
+          // const firstWalletAdress = getWalletAddress(details);
           const actualWallet = dataWallets.find(dw => dw.hostname === hostname && dw.blockchain === blockchain);
-          if (firstWalletAdress && actualWallet && actualWallet.coldWallet && firstWalletAdress !== actualWallet.coldWallet) {
+          if (actualWallet && actualWallet.coldWallet) {
             const coinsTotal = await get1HourOnlineWalletCoinsAmount(blockchain, actualWallet.coldWallet);
             if (coinsTotal > 0) {
               await News.create({
@@ -39,7 +39,7 @@ const updateHourlyColdwalletCoins = async () => {
                 priority: 'low',
                 service: 'COCTHUG_WEB',
                 type: 'EVT_INTIME_RECEIVE_COIN',
-                message: `Cold wallet received ${coinsTotal} coins☘️ in last hour`,
+                message: `Reward address received ${coinsTotal} coins☘️ in last hour`,
               });
             }
           }

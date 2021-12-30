@@ -1,5 +1,9 @@
 # Changelog
 
+
+## [1.3.3] - 2021-12-30
+- Reward address updates balance every hour
+  
 ## [1.3.2] - 2021-12-28
 - call APIs with random interval to reduce PC and Server pressure
 
