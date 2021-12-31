@@ -184,12 +184,35 @@ body {
 
 #desktopReviewPage {
   .desktop-review {
+
+    table.tablesorter {
+      &.table-hover>tbody>tr:hover.clicked-row>* {
+        background-color    : @green;
+        --bs-table-accent-bg: @green;
+      }
+    }
+
     td {
       background-color: @lightgreen;
     }
 
     .table-warning td {
       background-color: @warning;
+    }
+
+    tbody {
+      tr.clicked-row td {
+        background-color: @green;
+      }
+
+      td.wallet_balance,
+      td.reward_balance {
+        color: @lightBlue;
+      }
+
+      td.wallet_balance {
+        font-weight: bold;
+      }
     }
   }
 

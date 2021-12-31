@@ -100,7 +100,7 @@
   "wallets.transfer_with_password": "使用安全密碼將硬幣轉移給他人",
   "wallets.your_password": "你的密碼：",
   "wallets.check_first_wallet_reward": "在線查看第一個錢包獎勵",
-  "balance.address": "硬幣地址",
+  "balance.address": "錢包地址",
   "balance.balance": "硬幣餘額",
   "balance.price": "硬幣價格",
   "balance.total_dollar_all_coins": "所有硬幣的總價值：",

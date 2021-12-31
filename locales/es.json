@@ -100,7 +100,7 @@
   "wallets.transfer_with_password": "Transferir monedas a otros con contraseña segura",
   "wallets.your_password": "Tu contraseña:",
   "wallets.check_first_wallet_reward": "Verifique la recompensa de la primera billetera en línea",
-  "balance.address": "Dirección de moneda",
+  "balance.address": "Dirección de billetera",
   "balance.balance": "Balance de monedas",
   "balance.price": "Precio de la moneda",
   "balance.total_dollar_all_coins": "Valor total de todas las monedas:",

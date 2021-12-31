@@ -100,7 +100,7 @@
   "wallets.transfer_with_password": "Передача монет другим людям с безопасным паролем",
   "wallets.your_password": "Ваш пароль:",
   "wallets.check_first_wallet_reward": "Проверьте первое вознаграждение кошелька онлайн",
-  "balance.address": "Адрес монеты",
+  "balance.address": "Адрес кошелька",
   "balance.balance": "Монетный баланс",
   "balance.price": "Цена монеты",
   "balance.total_dollar_all_coins": "Общая стоимость всех монет:",

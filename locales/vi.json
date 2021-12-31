@@ -100,7 +100,7 @@
   "wallets.transfer_with_password": "Chuyển tiền cho người khác bằng mật khẩu an toàn",
   "wallets.your_password": "Mật khẩu của bạn:",
   "wallets.check_first_wallet_reward": "Kiểm tra phần thưởng trên Wallet đầu tiên trực tuyến",
-  "balance.address": "Địa chỉ Coin",
+  "balance.address": "Địa chỉ Ví",
   "balance.balance": "Số dư tiền xu",
   "balance.price": "Giá tiền xu",
   "balance.total_dollar_all_coins": "Tổng giá trị của tất cả các loại tiền:",

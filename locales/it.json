@@ -100,7 +100,7 @@
   "wallets.transfer_with_password": "Trasferisci monete ad altri con password sicura",
   "wallets.your_password": "La tua password:",
   "wallets.check_first_wallet_reward": "Controlla il primo premio del portafoglio online",
-  "balance.address": "Indirizzo moneta",
+  "balance.address": "Indirizzo portafoglio",
   "balance.balance": "Saldo moneta",
   "balance.price": "Prezzo della moneta",
   "balance.total_dollar_all_coins": "Valore totale di tutte le monete:",

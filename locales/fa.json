@@ -100,7 +100,7 @@
   "wallets.transfer_with_password": "انتقال سکه به دیگران با رمز عبور امن",
   "wallets.your_password": "رمزتون:",
   "wallets.check_first_wallet_reward": "اولین کیف پول پاداش آنلاین را بررسی کنید",
-  "balance.address": "آدرس سکه",
+  "balance.address": "آدرس کیف پول",
   "balance.balance": "موجودی سکه",
   "balance.price": "قیمت سکه",
   "balance.total_dollar_all_coins": "ارزش کل تمام سکه ها:",

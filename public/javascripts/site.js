@@ -12,7 +12,7 @@ $(document).ready(function () {
     if (!$.cookie('language')) {
       let userLang = navigator.language || navigator.userLanguage;
       const codes = $('#lang-picker a').map(function () { return $(this).data('lang'); }).toArray();
-      console.log('codes', codes);
+      // console.log('codes', codes);
 
       let finalLang = ''
       if (codes.includes(userLang)) {
@@ -438,7 +438,64 @@ $(document).ready(function () {
       }
     });
 
+    $.tablesorter.addParser({
+      id: 'netspace',
+      is: function (s) {
+        return false;
+      },
+      format: function (str) {
+        const isTb = str.includes('TiB');
+        const isEb = str.includes('EiB');
+        const isPb = str.includes('PiB');
+        let n = parseFloat(str);
+        if (n > 0) {
+          if (isTb) n = n * 1000;
+          if (isPb) n = n * 1000 * 1000;
+          if (isEb) n = n * 1000 * 1000 * 1000;
+        }
+        // console.log(n, str);
+        return !isNaN(n) && isFinite(n) ? n : 0;
+      },
+      type: 'numeric'
+    });
+
+    function getTimeInSeconds(n, str) {
+      if (n && str) {
+        let mut = str.includes('second') ? 1 : 0;
+        if (!mut) mut = str.includes('minute') ? 60 : 0;
+        if (!mut) mut = str.includes('hour') ? 60 * 60 : 0;
+        if (!mut) mut = str.includes('day') ? 60 * 60 * 24 : 0;
+        if (!mut) mut = str.includes('week') ? 60 * 60 * 24 * 7 : 0;
+        if (!mut) mut = str.includes('month') ? 60 * 60 * 24 * 30 : 0;
+
+        if (mut) {
+          return parseFloat(n) * mut;
+        }
+      }
+
+      return 0;
+    }
+
+    const REG_ETW = /(\d+)\s+(\w+)(\s+and\s+)?(\d+)?\s?(\w+)?/;
+    $.tablesorter.addParser({
+      id: 'expected_time_to_win',
+      is: function (s) {
+        return false;
+      },
+      format: function (str) {
+        const match = REG_ETW.exec(str);
+        let n = 0;
+        if (match) {
+          n = getTimeInSeconds(match[1], match[2]) + getTimeInSeconds(match[4], match[5]);
+        }
+        // console.log(n, str);
+        return !isNaN(n) && isFinite(n) ? n : str;
+      },
+      type: 'numeric'
+    });
+
     $("#reviewTable").tablesorter({
+      headers: { 7: { sorter: "netspace" }, 8: { sorter: "expected_time_to_win" } },
       widgets: ['columnSelector'], // https://mottie.github.io/tablesorter/docs/example-widget-column-selector.html
       widgetOptions: {
         // hide columnSelector false columns while in auto mode
@@ -488,10 +545,24 @@ $(document).ready(function () {
   const desktopReviewPage = $('#desktopReviewPage');
   if (desktopReviewPage && desktopReviewPage.length > 0) {
     $("#btnSimpleView").click();
+
+    const reviewTableFontSize = $.cookie('reviewTableFontSize');
+    if (reviewTableFontSize) {
+      $("#reviewTable").addClass(reviewTableFontSize);
+    }
   }
 
   $('#btnToggleFont').click(function (e) {
     $("#reviewTable").toggleClass('fs-6');
+    if ($("#reviewTable").hasClass('fs-6')) {
+      $.cookie('reviewTableFontSize', 'fs-6', { expires: 30 });
+    } else {
+      $.cookie('reviewTableFontSize', '', { expires: 30 });
+    }
+  });
+
+  $('#desktopReviewPage #reviewTable tbody tr').click(function (e) {
+    $(this).toggleClass('clicked-row');
   });
 
 });

@@ -122,11 +122,25 @@ body {
 .transferMoney .formLabel {
   color: #9f5c5c;
 }
+#desktopReviewPage .desktop-review table.tablesorter.table-hover > tbody > tr:hover.clicked-row > * {
+  background-color: #6fb98f;
+  --bs-table-accent-bg: #6fb98f;
+}
 #desktopReviewPage .desktop-review td {
   background-color: #c6eded3d;
 }
 #desktopReviewPage .desktop-review .table-warning td {
   background-color: #e9debe;
+}
+#desktopReviewPage .desktop-review tbody tr.clicked-row td {
+  background-color: #6fb98f;
+}
+#desktopReviewPage .desktop-review tbody td.wallet_balance,
+#desktopReviewPage .desktop-review tbody td.reward_balance {
+  color: #2c7873;
+}
+#desktopReviewPage .desktop-review tbody td.wallet_balance {
+  font-weight: bold;
 }
 #desktopReviewPage .viewRow {
   padding-top: 10px;

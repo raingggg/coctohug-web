@@ -100,7 +100,7 @@
   "wallets.transfer_with_password": "تحويل العملات المعدنية للآخرين بكلمة مرور آمنة",
   "wallets.your_password": "كلمة السر خاصتك:",
   "wallets.check_first_wallet_reward": "تحقق من First Wallet Reward عبر الإنترنت",
-  "balance.address": "عنوان العملة",
+  "balance.address": "عنوان المحفظة",
   "balance.balance": "رصيد العملة",
   "balance.price": "سعر العملة",
   "balance.total_dollar_all_coins": "القيمة الإجمالية لجميع العملات:",

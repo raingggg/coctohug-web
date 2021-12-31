@@ -100,7 +100,7 @@
   "wallets.transfer_with_password": "Übertragen Sie Münzen mit einem sicheren Passwort an andere",
   "wallets.your_password": "Ihr Passwort:",
   "wallets.check_first_wallet_reward": "Überprüfen Sie die erste Wallet-Prämie online",
-  "balance.address": "Münzadresse",
+  "balance.address": "Wallet-Adresse",
   "balance.balance": "Münzenstand",
   "balance.price": "Münzpreis",
   "balance.total_dollar_all_coins": "Gesamtwert aller Münzen:",

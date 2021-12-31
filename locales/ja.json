@@ -100,7 +100,7 @@
   "wallets.transfer_with_password": "安全なパスワードで他の人にコインを転送する",
   "wallets.your_password": "あなたのパスワード：",
   "wallets.check_first_wallet_reward": "ファーストウォレットリワードをオンラインでチェック",
-  "balance.address": "コインアドレス",
+  "balance.address": "ウォレットアドレス",
   "balance.balance": "コインバランス",
   "balance.price": "コイン価格",
   "balance.total_dollar_all_coins": "すべてのコインの合計値：",

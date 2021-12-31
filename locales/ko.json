@@ -100,7 +100,7 @@
   "wallets.transfer_with_password": "안전한 비밀번호로 코인을 타인에게 양도",
   "wallets.your_password": "너의 비밀번호:",
   "wallets.check_first_wallet_reward": "첫 번째 지갑 보상 온라인 확인",
-  "balance.address": "코인 주소",
+  "balance.address": "지갑 주소",
   "balance.balance": "코인 잔액",
   "balance.price": "코인 가격",
   "balance.total_dollar_all_coins": "모든 코인의 총 가치:",

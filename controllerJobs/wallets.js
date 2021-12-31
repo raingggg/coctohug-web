@@ -80,7 +80,7 @@ const updateDailyColdwalletCoins = async () => {
               priority: 'low',
               service: 'COCTHUG_WEB',
               type: 'EVT_DAILY_ALL_IN_ONE',
-              message: `Cold wallet received ${coinsTotal} coins☘️ in last day`,
+              message: `Reward address received ${coinsTotal} coins☘️ in last day`,
             });
           }
         } catch (ee) {
@@ -120,7 +120,7 @@ const updateWeeklyColdwalletCoins = async () => {
               priority: 'low',
               service: 'COCTHUG_WEB',
               type: 'EVT_WEEKLY_ALL_IN_ONE',
-              message: `Cold wallet received ${coinsTotal} coins☘️ in last week`,
+              message: `Reward address received ${coinsTotal} coins☘️ in last week`,
             });
           }
         } catch (ee) {

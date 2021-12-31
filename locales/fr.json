@@ -100,7 +100,7 @@
   "wallets.transfer_with_password": "Transférer des pièces à d'autres avec un mot de passe sécurisé",
   "wallets.your_password": "Votre mot de passe:",
   "wallets.check_first_wallet_reward": "Vérifiez la récompense du premier portefeuille en ligne",
-  "balance.address": "Adresse de la pièce",
+  "balance.address": "Adresse du portefeuille",
   "balance.balance": "Solde des pièces",
   "balance.price": "Prix ​​de la pièce",
   "balance.total_dollar_all_coins": "Valeur totale de toutes les pièces :",
