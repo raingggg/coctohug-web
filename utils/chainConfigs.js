@@ -50,6 +50,10 @@ const chainNameMap = {
   goji: 'goji',
   spare: 'spare',
   chaingreen: 'chaingreen',
+  rolls: 'rolls',
+  melon: 'melon',
+  goldcoin: 'goldcoin',
+  kujenga: 'kujenga',
 };
 
 const chainSymbolMap = {
@@ -103,6 +107,10 @@ const chainSymbolMap = {
   goji: 'XGJ',
   spare: 'SPARE',
   chaingreen: 'CGN',
+  rolls: 'rolls',
+  melon: 'melon',
+  goldcoin: 'goldcoin',
+  kujenga: 'kujenga',
 };
 
 const getExp = (blockchain) => {
