@@ -107,10 +107,10 @@ const chainSymbolMap = {
   goji: 'XGJ',
   spare: 'SPARE',
   chaingreen: 'CGN',
-  rolls: 'rolls',
-  melon: 'melon',
-  goldcoin: 'goldcoin',
-  kujenga: 'kujenga',
+  rolls: 'ROLLS',
+  melon: 'MELON',
+  goldcoin: 'OZT',
+  kujenga: 'XKJ',
 };
 
 const getExp = (blockchain) => {

@@ -17,7 +17,12 @@ const {
   getWalletAddress,
 } = require('../utils/blockUtil');
 const { chainConfigs } = require('../utils/chainConfigs');
+const {
+  isFarmerMode
+} = require('../utils/chiaConfig');
 const { parseConnecitons } = require('../utils/chiaParser');
+
+const isFarmer = isFarmerMode();
 
 const sequelize = getConnection();
 const updateAllInOne = async () => {
@@ -101,7 +106,7 @@ const updateAllInOne = async () => {
           Object.assign(payload, { first_balance: parseFloat(toNumber(oneRecord && oneRecord.balance).toFixed(8)) });
 
           // use first_balance as wallet_balance in case of it is invalid
-          if (!payload.wallet_balance && payload.first_balance >= 0) {
+          if (isFarmer && !payload.wallet_balance && payload.first_balance >= 0) {
             Object.assign(payload, { wallet_balance: payload.first_balance });
           }
 
