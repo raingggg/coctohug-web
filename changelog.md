@@ -1,11 +1,15 @@
 # Changelog
 
+## [1.3.7] - 2022-01-08
+- Support 3 new forks: lotus thyme kiwi
+- Make timeout longer for farm_summary and wallet_summary
+
 ## [1.3.6] - 2022-01-07
-- Support 4 new forks: rolls  melon goldcoin kujenga
+- Support 4 new forks: rolls melon goldcoin kujenga
 - fix fullnode wallet_balance not accurate issue
 
 ## [1.3.5] - 2022-01-06
-- Support 4 new forks: rolls  melon goldcoin kujenga
+- Support 4 new forks: rolls melon goldcoin kujenga
 - Save RAM usage by more than 30% improvement
 
 ## [1.3.4] - 2021-12-31

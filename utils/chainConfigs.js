@@ -54,6 +54,10 @@ const chainNameMap = {
   melon: 'melon',
   goldcoin: 'goldcoin',
   kujenga: 'kujenga',
+  lotus: 'lotus',
+  thyme: 'thyme',
+
+  kiwi: 'kiwi',
 };
 
 const chainSymbolMap = {
@@ -111,6 +115,10 @@ const chainSymbolMap = {
   melon: 'MELON',
   goldcoin: 'OZT',
   kujenga: 'XKJ',
+  lotus: 'LCH',
+  thyme: 'XTH',
+
+  kiwi: 'XKW',
 };
 
 const getExp = (blockchain) => {
