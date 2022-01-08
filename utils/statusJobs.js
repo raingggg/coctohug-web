@@ -107,7 +107,7 @@ const fiveMinuteJob = new CronJob(every5Minute, async () => {
     } catch (e) {
       logger.error('fiveMinuteJob', e);
     }
-  }, getRandomDurationByMinutes(3));
+  }, getRandomDurationByMinutes(2));
 
   logger.info('fiveMinuteJob end');
 }, null, true, 'America/Los_Angeles');
@@ -209,7 +209,7 @@ const thirtyMinuteImportantJob = new CronJob(every30Minute, async () => {
     } catch (e) {
       logger.error('thirtyMinuteImportantJob', e);
     }
-  }, getRandomDurationByMinutes(10));
+  }, getRandomDurationByMinutes(5));
 
   logger.info('thirtyMinuteImportantJob end');
 }, null, true, 'America/Los_Angeles');

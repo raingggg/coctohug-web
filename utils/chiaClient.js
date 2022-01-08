@@ -25,6 +25,11 @@ const {
 } = require('./chiaConfig');
 const { chainConfigs } = require('./chainConfigs');
 const { logger } = require('./logger');
+const {
+  TIMEOUT_1MINUTE,
+  TIMEOUT_2MINUTE,
+  TIMEOUT_3MINUTE,
+} = require('./jsUtil');
 
 const isHarvester = isHarvesterMode();
 const isFullnode = isFullnodeMode();
@@ -32,14 +37,12 @@ const isFarmer = isFarmerMode();
 const isWallet = isWalletMode();
 
 const G_SIZE = 1024 * 1024 * 1024;
-const TIMEOUT_1MINUTE = 60 * 1000;
-const TIMEOUT_2MINUTE = 2 * 60 * 1000;
 
 const loadFarmSummary = async () => {
   let result = '';
 
   try {
-    const cmdOutput = await exec(`${binary} farm summary`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
+    const cmdOutput = await exec(`${binary} farm summary`, { timeout: TIMEOUT_3MINUTE, killSignal: 'SIGKILL' });
     result = cmdOutput.stdout.trim();
   } catch (e) {
     logger.error('loadFarmSummary', e);
@@ -50,7 +53,7 @@ const loadFarmSummary = async () => {
 
 const loadWalletShowCallback = async (done) => {
   const spawn = require('child_process').spawn;
-  const sp = spawn(binary, ['wallet', 'show'], { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
+  const sp = spawn(binary, ['wallet', 'show'], { timeout: TIMEOUT_3MINUTE, killSignal: 'SIGKILL' });
 
   sp.stdout.on('data', (data) => {
     logger.info(`stdout: ${data}`);
