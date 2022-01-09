@@ -55,11 +55,13 @@ const loadWalletShowCallback = async (done) => {
   const spawn = require('child_process').spawn;
   const sp = spawn(binary, ['wallet', 'show'], { timeout: TIMEOUT_3MINUTE, killSignal: 'SIGKILL' });
 
+  let dataResult = '';
   sp.stdout.on('data', (data) => {
     logger.info(`stdout: ${data}`);
     if (data) {
-      if (data.includes("Wallet height:")) {
-        return done(null, parseWallet(data.toString()));
+      dataResult += data.toString();
+      if (data.includes("Sync status:")) {
+        return done(null, parseWallet(dataResult));
       } else if (data.includes("Choose wallet key")) {
         sp.stdin.write("1\n");
       } else if (data.includes("No online backup file found")) {
@@ -70,7 +72,7 @@ const loadWalletShowCallback = async (done) => {
 
   sp.stderr.on('data', (data) => {
     logger.error(`loadWalletShowCallback stderr: ${data}`);
-    return done(data);
+    // return done(data);
   });
 
   sp.on('close', (code) => {
@@ -404,15 +406,15 @@ const transferCoin = async (toAddress, amount) => {
 //   const tresult = await loadWalletShow();
 //   const tresult = await loadPlotnftShow();
 //   const tresult = await loadBlockchainShow();
-// const tresult = await loadConnectionsShow();
+//   const tresult = await loadConnectionsShow();
 //   const tresult = await loadKeysShow();
 //   const tresult = await loadAllVersions();
 //   const tresult = await restartBlockchain();
-// await saveMNC('hoholala');
-// const tresult = await addKeyBlockchain();
-// await generateKeyBlockchain();
-// const tresult = await saveColdWallet('cac19sgmf7ulreve95rzmyqyyc5rduqx0aw8kt53thw3dt5zs8v830zqcm4vk8');
-// const tresult = await getColdWalletAddress();
+//   await saveMNC('hoholala');
+//   const tresult = await addKeyBlockchain();
+//   await generateKeyBlockchain();
+//   const tresult = await saveColdWallet('cac19sgmf7ulreve95rzmyqyyc5rduqx0aw8kt53thw3dt5zs8v830zqcm4vk8');
+//   const tresult = await getColdWalletAddress();
 //   const tresult = await transferCoin('cac19sgmf7ulreve95rzmyqyyc5rduqx0aw8kt53thw3dt5zs8v830zqcm4vk8');
 //   console.log('tresult: ', tresult);
 // };
