@@ -9,6 +9,14 @@ const {
 const updateDailyWalletBalance = async () => {
   try {
     const prices = await getAllCoinsPrice();
+    let topPrice = 0;
+    Object.keys(prices).forEach(ch => {
+      if (prices[ch] > topPrice) {
+        topPrice = prices[ch];
+      }
+    });
+    if (topPrice == 0) return;
+
     const data = await WalletBalance.findAll({
       order: [
         ['blockchain', 'ASC'],

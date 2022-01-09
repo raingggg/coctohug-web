@@ -152,6 +152,8 @@ const fourHourJob = new CronJob(every4Hour, async () => {
     try {
       if (!isWebController) {
         if (isNotHarvester) await updateKey();
+      } else {
+        await updateDailyWalletBalance();
       }
     } catch (e) {
       logger.error('fourHourJob', e);
@@ -167,7 +169,6 @@ const oneDayJob = new CronJob(everyMidnight, async () => {
   setTimeout(async () => {
     try {
       if (isWebController) {
-        await updateDailyWalletBalance();
         await updateDailyColdwalletCoins();
         await removeOutdatedNews();
         await emptyControllerLogs();
