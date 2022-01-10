@@ -60,7 +60,7 @@ const loadWalletShowCallback = async (done) => {
     logger.info(`stdout: ${data}`);
     if (data) {
       dataResult += data.toString();
-      if (data.includes("Sync status:")) {
+      if (data.includes("Spendable:")) {
         return done(null, parseWallet(dataResult));
       } else if (data.includes("Choose wallet key")) {
         sp.stdin.write("1\n");
