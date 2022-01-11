@@ -163,7 +163,7 @@
               <%= dt.ext_str_1 %>
             </td>
             <td class="last_block_time">
-              <%= new Date(dt.ext_str_2).toLocaleString("en-US", {hour12: false}) %>
+              <%= new Date(parseInt(dt.ext_str_2)).toLocaleString("en-US", {hour12: false}) %>
             </td>
           </tr>
           <% }); %>

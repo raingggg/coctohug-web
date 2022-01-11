@@ -494,8 +494,24 @@ $(document).ready(function () {
       type: 'numeric'
     });
 
+    $.tablesorter.addParser({
+      id: 'last_block_time',
+      is: function (s) {
+        return false;
+      },
+      format: function (str) {
+        const n = new Date(str).getTime();
+        return !isNaN(n) && isFinite(n) ? n : 0;
+      },
+      type: 'numeric'
+    });
+
     $("#reviewTable").tablesorter({
-      headers: { 7: { sorter: "netspace" }, 8: { sorter: "expected_time_to_win" } },
+      headers: {
+        7: { sorter: "netspace" },
+        8: { sorter: "expected_time_to_win" },
+        20: { sorter: "last_block_time" }
+      },
       widgets: ['columnSelector'], // https://mottie.github.io/tablesorter/docs/example-widget-column-selector.html
       widgetOptions: {
         // hide columnSelector false columns while in auto mode
