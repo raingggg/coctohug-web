@@ -1,4 +1,4 @@
-const { Key, Wallet, News } = require('../models');
+const { Key, Wallet, News, AllInOne } = require('../models');
 const { logger } = require('../utils/logger');
 const {
   getWalletAddress,
@@ -31,7 +31,8 @@ const updateHourlyColdwalletCoins = async () => {
           // const firstWalletAdress = getWalletAddress(details);
           const actualWallet = dataWallets.find(dw => dw.hostname === hostname && dw.blockchain === blockchain);
           if (actualWallet && actualWallet.coldWallet) {
-            const coinsTotal = await get1HourOnlineWalletCoinsAmount(blockchain, actualWallet.coldWallet);
+            const { total, last_block_time } = await get1HourOnlineWalletCoinsAmount(blockchain, actualWallet.coldWallet);
+            const coinsTotal = total;
             if (coinsTotal > 0) {
               await News.create({
                 hostname,
@@ -42,6 +43,12 @@ const updateHourlyColdwalletCoins = async () => {
                 message: `Reward address received ${coinsTotal} coins☘️ in last hour`,
               });
             }
+
+            await AllInOne.upsert({
+              hostname,
+              blockchain,
+              ext_str_2: last_block_time,
+            });
           }
         } catch (ee) {
           logger.error('updateHourlyColdwalletCoins-onechain', ee);

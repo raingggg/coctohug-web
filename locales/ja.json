@@ -125,5 +125,6 @@
   "review.wallet_heigt": "ウォレットの高さ",
   "review.wallet_status": "ウォレットのステータス",
   "review.protocol_port": "プロトコルポート",
-  "review.toggle_font": "フォントサイズの切り替え"
+  "review.toggle_font": "フォントサイズの切り替え",
+  "review.last_block_time": "最後に見つかったブロック"
 }

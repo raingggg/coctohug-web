@@ -125,5 +125,6 @@
   "review.wallet_heigt": "ارتفاع کیف پول",
   "review.wallet_status": "وضعیت کیف پول",
   "review.protocol_port": "پورت پروتکل",
-  "review.toggle_font": "تغییر اندازه قلم"
+  "review.toggle_font": "تغییر اندازه قلم",
+  "review.last_block_time": "آخرین بلوک یافت شده"
 }

@@ -125,5 +125,6 @@
   "review.wallet_heigt": "Înălțimea portofelului",
   "review.wallet_status": "Stare portofel",
   "review.protocol_port": "Port de protocol",
-  "review.toggle_font": "Comutați dimensiunea fontului"
+  "review.toggle_font": "Comutați dimensiunea fontului",
+  "review.last_block_time": "Ultimul bloc găsit"
 }

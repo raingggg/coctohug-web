@@ -125,5 +125,6 @@
   "review.wallet_heigt": "Höhe der Brieftasche",
   "review.wallet_status": "Wallet-Status",
   "review.protocol_port": "Protokoll-Port",
-  "review.toggle_font": "Schriftgröße umschalten"
+  "review.toggle_font": "Schriftgröße umschalten",
+  "review.last_block_time": "Letzter gefundener Block"
 }

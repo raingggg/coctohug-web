@@ -125,5 +125,6 @@
   "review.wallet_heigt": "Cüzdan Yüksekliği",
   "review.wallet_status": "Cüzdan Durumu",
   "review.protocol_port": "Protokol Bağlantı Noktası",
-  "review.toggle_font": "Yazı Tipi Boyutunu Değiştir"
+  "review.toggle_font": "Yazı Tipi Boyutunu Değiştir",
+  "review.last_block_time": "En Son Bulunan Blok"
 }

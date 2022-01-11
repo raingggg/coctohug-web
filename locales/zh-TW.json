@@ -125,5 +125,6 @@
   "review.wallet_heigt": "錢包高度",
   "review.wallet_status": "錢包狀態",
   "review.protocol_port": "協議端口",
-  "review.toggle_font": "切換字體大小"
+  "review.toggle_font": "切換字體大小",
+  "review.last_block_time": "最新發現的區塊"
 }

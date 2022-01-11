@@ -90,6 +90,9 @@
           <th class="fork_version">
             <%= __('general.versions') %>
           </th>
+          <th class="last_block_time">
+            <%= __('review.last_block_time') %>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -158,6 +161,9 @@
             </td>
             <td class="fork_version">
               <%= dt.ext_str_1 %>
+            </td>
+            <td class="last_block_time">
+              <%= new Date(dt.ext_str_2).toLocaleString("en-US", {hour12: false}) %>
             </td>
           </tr>
           <% }); %>

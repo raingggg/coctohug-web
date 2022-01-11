@@ -125,5 +125,6 @@
   "review.wallet_heigt": "Височина на портфейла",
   "review.wallet_status": "Състояние на портфейла",
   "review.protocol_port": "Протокол порт",
-  "review.toggle_font": "Превключване на размера на шрифта"
+  "review.toggle_font": "Превключване на размера на шрифта",
+  "review.last_block_time": "Последният намерен блок"
 }

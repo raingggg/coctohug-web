@@ -125,5 +125,6 @@
   "review.wallet_heigt": "Altura de la cartera",
   "review.wallet_status": "Estado de la billetera",
   "review.protocol_port": "Puerto de protocolo",
-  "review.toggle_font": "Alternar tamaño de fuente"
+  "review.toggle_font": "Alternar tamaño de fuente",
+  "review.last_block_time": "Último bloque encontrado"
 }

@@ -125,5 +125,6 @@
   "review.wallet_heigt": "Chiều cao ví",
   "review.wallet_status": "Trạng thái Ví",
   "review.protocol_port": "Cổng giao thức",
-  "review.toggle_font": "Chuyển đổi kích thước phông chữ"
+  "review.toggle_font": "Chuyển đổi kích thước phông chữ",
+  "review.last_block_time": "Khối tìm thấy cuối cùng"
 }

@@ -125,5 +125,6 @@
   "review.wallet_heigt": "Hauteur du portefeuille",
   "review.wallet_status": "État du portefeuille",
   "review.protocol_port": "Port de protocole",
-  "review.toggle_font": "Basculer la taille de la police"
+  "review.toggle_font": "Basculer la taille de la police",
+  "review.last_block_time": "Dernier bloc trouvé"
 }

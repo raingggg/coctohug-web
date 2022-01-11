@@ -43,13 +43,14 @@ const getOnlineWalletRecords = async (blockchain, walletAdress, startDate, endDa
 
 };
 
-const getOnlineWalletCoinsAmount = async (blockchain, walletAdress, startDate, endDate) => {
+const getOnlineWalletCoinsAmount = async (blockchain, walletAdress, startDate, endDate, computeLastBlockTime) => {
   let total = 0;
   const forkConfig = chainConfigs[blockchain];
   if (!forkConfig || !blockchain || !walletAdress || !startDate || !endDate) return total;
 
   // at most request API 50 times, this should support 50P+ cases
   let shouldStop = false;
+  let last_block_time = new Date('1970-01-01').getTime();
   for (let p = 0; p < 50; p++) {
     if (shouldStop) break;
 
@@ -62,7 +63,12 @@ const getOnlineWalletCoinsAmount = async (blockchain, walletAdress, startDate, e
       if (records && records.length > 0) {
         records.forEach(rc => {
           const { amount, timestamp } = rc;
-          const recordDate = new Date(timestamp * 1000); // unix * 1000 = js timestamp
+          const jsTimestamp = timestamp * 1000;
+          if (computeLastBlockTime && last_block_time < jsTimestamp) {
+            last_block_time = jsTimestamp;
+          }
+
+          const recordDate = new Date(jsTimestamp); // unix * 1000 = js timestamp
           if ((recordDate >= startDate) && (recordDate < endDate)) {
             total += parseFloat(amount) / forkConfig.mojoDivider;
           } else if (recordDate < startDate) { // stop when find a pre-unrelevant record
@@ -78,22 +84,25 @@ const getOnlineWalletCoinsAmount = async (blockchain, walletAdress, startDate, e
     }
   }
 
-  return total;
+  return { total, last_block_time };
 };
 
 const get1HourOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
   const { startDate, endDate } = getLastHourDates();
-  return await getOnlineWalletCoinsAmount(blockchain, walletAdress, startDate, endDate);
+  const { total, last_block_time } = await getOnlineWalletCoinsAmount(blockchain, walletAdress, startDate, endDate, true);
+  return { total, last_block_time };
 };
 
 const get1DayOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
   const { startDate, endDate } = getLastDayDates();
-  return await getOnlineWalletCoinsAmount(blockchain, walletAdress, startDate, endDate);
+  const { total } = await getOnlineWalletCoinsAmount(blockchain, walletAdress, startDate, endDate, false);
+  return total;
 };
 
 const get1WeekOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
   const { startDate, endDate } = getLastWeekDates();
-  return await getOnlineWalletCoinsAmount(blockchain, walletAdress, startDate, endDate);
+  const { total } = await getOnlineWalletCoinsAmount(blockchain, walletAdress, startDate, endDate, false);
+  return total;
 };
 
 const getAllCoinsPrice = async () => {
@@ -173,6 +182,7 @@ const getWalletInfo = (details) => {
     wallet_balance
   };
 };
+
 // const tt = async () => {
 //   let amount = 0;
 //   name = 'hddcoin';
@@ -183,8 +193,8 @@ const getWalletInfo = (details) => {
 //   console.log(amount);
 //   amount = await get1WeekOnlineWalletCoinsAmount(name, address);
 //   console.log(amount);
-// const prices = await getAllCoinsPrice();
-// console.log(prices);
+//   const prices = await getAllCoinsPrice();
+//   console.log(prices);
 //   const balance = await getCoinBalance('apple', 'apple18ds3fw56wtttg7xm2d9s4wul720xr8ex50us54t3kz74ylc7avzspa6mey');
 //   console.log(balance);
 // };

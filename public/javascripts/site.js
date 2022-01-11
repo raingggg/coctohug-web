@@ -1,4 +1,4 @@
-const simpleViewColumns = ['se_no', 'blockchain', 'chain_status', 'netspace_size', 'expected_time_to_win', 'coin_symbol', 'coin_price', 'protocol_port', 'fork_version'];
+const simpleViewColumns = ['se_no', 'blockchain', 'chain_status', 'netspace_size', 'expected_time_to_win', 'coin_symbol', 'coin_price', 'protocol_port', 'fork_version', 'last_block_time'];
 const statusViewColumns = ['se_no', 'blockchain', 'chain_status', 'chain_sync_to_time', 'chain_height', 'plot_count', 'plots_size', 'netspace_size', 'expected_time_to_win', 'connection_count', 'wallet_status', 'wallet_height', 'total_coins'];
 const balanceViewColumns = ['se_no', 'blockchain', 'coin_symbol', 'coin_price', 'total_coins', 'wallet_balance', 'reward_balance', 'total_price'];
 

@@ -121,7 +121,7 @@
   "wallets.transfer_success": "Transaction has been commited to blockchain. You may enter your sender/receiver address into https://alltheblocks.net/ to see the details.",
   "wallets.transfer_with_password": "Transfer Coins to Others with Secure Password",
   "wallets.your_password": "Your Password:",
-  "balance.address": "Coin Address",
+  "balance.address": "Wallet Address",
   "balance.balance": "Coin Balance",
   "balance.price": "Coin Price",
   "balance.total_price": "$ Value",

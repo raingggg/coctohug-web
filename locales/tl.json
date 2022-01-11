@@ -125,5 +125,6 @@
   "review.wallet_heigt": "Taas ng Wallet",
   "review.wallet_status": "Katayuan ng Wallet",
   "review.protocol_port": "Port ng Protocol",
-  "review.toggle_font": "I-toggle ang Laki ng Font"
+  "review.toggle_font": "I-toggle ang Laki ng Font",
+  "review.last_block_time": "Huling Nahanap na Block"
 }

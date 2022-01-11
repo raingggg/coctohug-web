@@ -15,7 +15,7 @@ router.post('/update', async (req, res, next) => {
       blockchain: payload.blockchain,
       ext_num_1: payload.protocol_port,
       ext_str_1: payload.fork_version,
-    })
+    });
   } catch (e) {
     logger.error('api-hand-update', e);
   }

@@ -125,5 +125,6 @@
   "review.wallet_heigt": "Высота кошелька",
   "review.wallet_status": "Статус кошелька",
   "review.protocol_port": "Порт протокола",
-  "review.toggle_font": "Переключить размер шрифта"
+  "review.toggle_font": "Переключить размер шрифта",
+  "review.last_block_time": "Последний найденный блок"
 }

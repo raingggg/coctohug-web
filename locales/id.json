@@ -125,5 +125,6 @@
   "review.wallet_heigt": "Tinggi Dompet",
   "review.wallet_status": "Status Dompet",
   "review.protocol_port": "Port Protokol",
-  "review.toggle_font": "Alihkan Ukuran Font"
+  "review.toggle_font": "Alihkan Ukuran Font",
+  "review.last_block_time": "Blok Terakhir Ditemukan"
 }

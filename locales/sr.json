@@ -125,5 +125,6 @@
   "review.wallet_heigt": "Висина новчаника",
   "review.wallet_status": "Статус новчаника",
   "review.protocol_port": "Протокол порт",
-  "review.toggle_font": "Пребаци величину фонта"
+  "review.toggle_font": "Пребаци величину фонта",
+  "review.last_block_time": "Последњи пронађени блок"
 }

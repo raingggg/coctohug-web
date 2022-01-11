@@ -113,6 +113,7 @@
   "review.total_usd_value": "Total USD Value",
   "review.protocol_port": "Protocol Port",
   "review.toggle_font": "Toggle Font Size",
+  "review.last_block_time": "Lastest Found Block",
   "wallets.check_farming_rewards": "Check Farming Rewards Online",
   "wallets.check_first_wallet_reward": "Check First Wallet Reward Online",
   "wallets.recipient_address": "Recipient Address:",
