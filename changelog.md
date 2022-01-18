@@ -1,7 +1,7 @@
 # Changelog
 
-## [1.4.3] - 2022-01-20
-- show hours since last block instead of days
+## [1.4.4] - 2022-01-20
+- hours_since_last_block with 1 decimal point
 
 ## [1.4.2] - 2022-01-18
 - how long it has passed since last winning block
