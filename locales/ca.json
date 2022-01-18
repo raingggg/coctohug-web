@@ -128,5 +128,5 @@
   "review.toggle_font": "Commuta la mida de la lletra",
   "review.last_block_time": "Últim bloc trobat",
   "review.blockCountToday": "Total de blocs avui",
-  "review.noBlockInDays": "Dies des de l'últim bloc"
+  "review.noBlockInDays": "Hores des de l'últim bloc"
 }

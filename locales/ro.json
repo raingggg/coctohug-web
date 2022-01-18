@@ -128,5 +128,5 @@
   "review.toggle_font": "Comutați dimensiunea fontului",
   "review.last_block_time": "Ultimul bloc găsit",
   "review.blockCountToday": "Blocuri totale astăzi",
-  "review.noBlockInDays": "Zile de la ultimul bloc"
+  "review.noBlockInDays": "Ore de la ultimul bloc"
 }

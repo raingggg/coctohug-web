@@ -96,6 +96,7 @@ const getOnlineWalletCoinsAmount = async (blockchain, walletAdress, startDate, e
 
   if (computeLastBlockTime) {
     noBlockInDays = parseFloat(((nowTime - last_block_time) / TIMEOUT_1Day).toFixed(2));
+    blockCountToday = parseFloat(blockCountToday.toFixed(8));
   }
 
   return { total, last_block_time, noBlockInDays, blockCountToday };

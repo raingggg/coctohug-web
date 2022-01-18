@@ -128,5 +128,5 @@
   "review.toggle_font": "Basculer la taille de la police",
   "review.last_block_time": "Dernier bloc trouvé",
   "review.blockCountToday": "Total de blocs aujourd'hui",
-  "review.noBlockInDays": "Jours depuis le dernier bloc"
+  "review.noBlockInDays": "Heures depuis le dernier bloc"
 }

@@ -128,5 +128,5 @@
   "review.toggle_font": "Yazı Tipi Boyutunu Değiştir",
   "review.last_block_time": "En Son Bulunan Blok",
   "review.blockCountToday": "Bugünkü Toplam Blok",
-  "review.noBlockInDays": "Son Bloktan Beri Günler"
+  "review.noBlockInDays": "Son Bloktan Beri Saatler"
 }

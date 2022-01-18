@@ -128,5 +128,5 @@
   "review.toggle_font": "글꼴 크기 전환",
   "review.last_block_time": "마지막으로 찾은 블록",
   "review.blockCountToday": "오늘의 총 블록 수",
-  "review.noBlockInDays": "마지막 차단 이후 일수"
+  "review.noBlockInDays": "마지막 블록 이후 시간"
 }

@@ -128,5 +128,5 @@
   "review.toggle_font": "Alihkan Ukuran Font",
   "review.last_block_time": "Blok Terakhir Ditemukan",
   "review.blockCountToday": "Total Blok Hari Ini",
-  "review.noBlockInDays": "Hari Sejak Blok Terakhir"
+  "review.noBlockInDays": "Jam Sejak Blok Terakhir"
 }

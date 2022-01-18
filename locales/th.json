@@ -128,5 +128,5 @@
   "review.toggle_font": "สลับขนาดตัวอักษร",
   "review.last_block_time": "บล็อกที่พบล่าสุด",
   "review.blockCountToday": "บล็อกทั้งหมดวันนี้",
-  "review.noBlockInDays": "วันนับตั้งแต่บล็อกสุดท้าย"
+  "review.noBlockInDays": "ชั่วโมงนับตั้งแต่บล็อกที่แล้ว"
 }

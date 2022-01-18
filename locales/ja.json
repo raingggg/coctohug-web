@@ -128,5 +128,5 @@
   "review.toggle_font": "フォントサイズの切り替え",
   "review.last_block_time": "最後に見つかったブロック",
   "review.blockCountToday": "今日の総ブロック数",
-  "review.noBlockInDays": "最後のブロックからの日数"
+  "review.noBlockInDays": "最後のブロックからの時間"
 }

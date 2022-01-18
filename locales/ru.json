@@ -128,5 +128,5 @@
   "review.toggle_font": "Переключить размер шрифта",
   "review.last_block_time": "Последний найденный блок",
   "review.blockCountToday": "Всего блоков сегодня",
-  "review.noBlockInDays": "Дней с момента последнего блока"
+  "review.noBlockInDays": "Часы с момента последнего блока"
 }

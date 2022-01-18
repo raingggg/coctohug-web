@@ -128,5 +128,5 @@
   "review.toggle_font": "تبديل حجم الخط",
   "review.last_block_time": "أحدث كتلة تم العثور عليها",
   "review.blockCountToday": "إجمالي الكتل اليوم",
-  "review.noBlockInDays": "الأيام منذ آخر كتلة"
+  "review.noBlockInDays": "ساعات منذ آخر كتلة"
 }

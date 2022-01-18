@@ -128,5 +128,5 @@
   "review.toggle_font": "Пребаци величину фонта",
   "review.last_block_time": "Последњи пронађени блок",
   "review.blockCountToday": "Тотал Блоцкс Тодаи",
-  "review.noBlockInDays": "Дана од последњег блока"
+  "review.noBlockInDays": "Сати од последњег блока"
 }

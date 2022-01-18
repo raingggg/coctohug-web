@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "Success! Please setup your harvester in 30 minutes!",
+  "allowharvester.success": "Success! Please setup your harvester in 120 minutes!",
   "coldwallet.dialog_confirm": "All mining rewards will go to addresses included in the uploaded cold wallet file. <br/> Do you really feel safe to make this change?",
   "coldwallet.dialog_title": "Use New Wallet Address for Mining Rewards",
   "coldwallet.download_all_configs": "We recommend backup existing config files first, by clicking this button to download them",
@@ -114,6 +114,8 @@
   "review.protocol_port": "Protocol Port",
   "review.toggle_font": "Toggle Font Size",
   "review.last_block_time": "Lastest Found Block",
+  "review.noBlockInDays": "Days Since Last Block",
+  "review.blockCountToday": "Total Blocks Today",
   "wallets.check_farming_rewards": "Check Farming Rewards Online",
   "wallets.check_first_wallet_reward": "Check First Wallet Reward Online",
   "wallets.recipient_address": "Recipient Address:",

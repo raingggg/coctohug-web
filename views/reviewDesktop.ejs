@@ -165,8 +165,9 @@
             <td class="fork_version">
               <%= dt.ext_str_1 %>
             </td>
-            <td class="noBlockInDays">
-              <%= dt.ext_num_2 %>
+            <td class="noBlockInDays" data-bs-html=true data-bs-toggle="tooltip" data-bs-placement="top"
+            title="<div style='background: green;'><%= dt.ext_num_2 %> days</div>">
+              <%= dt.ext_num_2 * 24 %>
             </td>
             <td class="blockCountToday">
               <%= dt.ext_num_3 %>

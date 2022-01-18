@@ -128,5 +128,5 @@
   "review.toggle_font": "Alterna o tamaño da fonte",
   "review.last_block_time": "Último bloque atopado",
   "review.blockCountToday": "Total de bloques hoxe",
-  "review.noBlockInDays": "Días desde o último bloque"
+  "review.noBlockInDays": "Horas desde o último bloque"
 }

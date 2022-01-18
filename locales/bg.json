@@ -128,5 +128,5 @@
   "review.toggle_font": "Превключване на размера на шрифта",
   "review.last_block_time": "Последният намерен блок",
   "review.blockCountToday": "Общо блокове днес",
-  "review.noBlockInDays": "Дни от последния блок"
+  "review.noBlockInDays": "Часове от последния блок"
 }
