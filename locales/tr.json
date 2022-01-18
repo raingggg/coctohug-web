@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "Başarı! Lütfen hasat makinenizi 30 dakika içinde kurun!",
+  "allowharvester.success": "Başarı! Lütfen hasat makinenizi 120 dakika içinde kurun!",
   "coldwallet.dialog_confirm": "Tüm madencilik ödülleri, yüklenen soğuk cüzdan dosyasında bulunan adreslere gidecek. <br/> Bu değişikliği yapmak için gerçekten güvende hissediyor musunuz?",
   "coldwallet.dialog_title": "Madencilik Ödülleri için Yeni Cüzdan Adresini Kullan",
   "coldwallet.download_all_configs": "İndirmek için bu düğmeyi tıklatarak önce mevcut yapılandırma dosyalarını yedeklemenizi öneririz.",
@@ -126,5 +126,7 @@
   "review.wallet_status": "Cüzdan Durumu",
   "review.protocol_port": "Protokol Bağlantı Noktası",
   "review.toggle_font": "Yazı Tipi Boyutunu Değiştir",
-  "review.last_block_time": "En Son Bulunan Blok"
+  "review.last_block_time": "En Son Bulunan Blok",
+  "review.blockCountToday": "Bugünkü Toplam Blok",
+  "review.noBlockInDays": "Son Bloktan Beri Günler"
 }

@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "Sucesso! Configure sua colheitadeira em 30 minutos!",
+  "allowharvester.success": "Sucesso! Por favor, configure sua colheitadeira em 120 minutos!",
   "coldwallet.dialog_confirm": "Todas as recompensas de mineração irão para os endereços incluídos no arquivo cold wallet carregado. <br/> Você realmente se sente seguro para fazer essa alteração?",
   "coldwallet.dialog_title": "Use o novo endereço da carteira para recompensas de mineração",
   "coldwallet.download_all_configs": "Recomendamos fazer backup dos arquivos de configuração existentes primeiro, clicando neste botão para baixá-los",
@@ -126,5 +126,7 @@
   "review.wallet_status": "Status da carteira",
   "review.protocol_port": "Porta de protocolo",
   "review.toggle_font": "Alternar tamanho da fonte",
-  "review.last_block_time": "Último bloco encontrado"
+  "review.last_block_time": "Último bloco encontrado",
+  "review.blockCountToday": "Total de blocos hoje",
+  "review.noBlockInDays": "Dias desde o último bloco"
 }

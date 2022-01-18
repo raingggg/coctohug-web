@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "成功！ 30分でハーベスターをセットアップしてください！",
+  "allowharvester.success": "成功！ 120分でハーベスターをセットアップしてください！",
   "coldwallet.dialog_confirm": "すべてのマイニング報酬は、アップロードされたコールドウォレットファイルに含まれているアドレスに送られます。 <br/>この変更を行うのは本当に安全だと思いますか？",
   "coldwallet.dialog_title": "マイニングリワードに新しいウォレットアドレスを使用する",
   "coldwallet.download_all_configs": "このボタンをクリックしてダウンロードすることにより、最初に既存の構成ファイルをバックアップすることをお勧めします",
@@ -126,5 +126,7 @@
   "review.wallet_status": "ウォレットのステータス",
   "review.protocol_port": "プロトコルポート",
   "review.toggle_font": "フォントサイズの切り替え",
-  "review.last_block_time": "最後に見つかったブロック"
+  "review.last_block_time": "最後に見つかったブロック",
+  "review.blockCountToday": "今日の総ブロック数",
+  "review.noBlockInDays": "最後のブロックからの日数"
 }

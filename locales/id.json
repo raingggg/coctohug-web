@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "Kesuksesan! Harap siapkan pemanen Anda dalam 30 menit!",
+  "allowharvester.success": "Kesuksesan! Harap siapkan pemanen Anda dalam 120 menit!",
   "coldwallet.dialog_confirm": "Semua hadiah penambangan akan dikirim ke alamat yang disertakan dalam file dompet dingin yang diunggah. <br/> Apakah Anda benar-benar merasa aman untuk melakukan perubahan ini?",
   "coldwallet.dialog_title": "Gunakan Alamat Dompet Baru untuk Hadiah Penambangan",
   "coldwallet.download_all_configs": "Kami menyarankan untuk membuat cadangan file konfigurasi yang ada terlebih dahulu, dengan mengklik tombol ini untuk mengunduhnya",
@@ -126,5 +126,7 @@
   "review.wallet_status": "Status Dompet",
   "review.protocol_port": "Port Protokol",
   "review.toggle_font": "Alihkan Ukuran Font",
-  "review.last_block_time": "Blok Terakhir Ditemukan"
+  "review.last_block_time": "Blok Terakhir Ditemukan",
+  "review.blockCountToday": "Total Blok Hari Ini",
+  "review.noBlockInDays": "Hari Sejak Blok Terakhir"
 }

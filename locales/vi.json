@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "Sự thành công! Vui lòng thiết lập máy gặt của bạn trong 30 phút!",
+  "allowharvester.success": "Thành công! Vui lòng thiết lập máy gặt đập của bạn sau 120 phút!",
   "coldwallet.dialog_confirm": "Tất cả phần thưởng khai thác sẽ chuyển đến các địa chỉ có trong tệp ví lạnh đã tải lên. <br/> Bạn có thực sự cảm thấy an toàn khi thực hiện thay đổi này không?",
   "coldwallet.dialog_title": "Sử dụng Địa chỉ Ví mới để Khai thác Phần thưởng",
   "coldwallet.download_all_configs": "Chúng tôi khuyên bạn nên sao lưu các tệp cấu hình hiện có trước, bằng cách nhấp vào nút này để tải xuống",
@@ -126,5 +126,7 @@
   "review.wallet_status": "Trạng thái Ví",
   "review.protocol_port": "Cổng giao thức",
   "review.toggle_font": "Chuyển đổi kích thước phông chữ",
-  "review.last_block_time": "Khối tìm thấy cuối cùng"
+  "review.last_block_time": "Khối tìm thấy cuối cùng",
+  "review.blockCountToday": "Tổng số khối hôm nay",
+  "review.noBlockInDays": "Số ngày kể từ lần chặn cuối cùng"
 }

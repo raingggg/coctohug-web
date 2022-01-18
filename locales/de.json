@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "Erfolg! Bitte richten Sie Ihren Mähdrescher in 30 Minuten ein!",
+  "allowharvester.success": "Erfolg! Bitte richten Sie Ihren Harvester in 120 Minuten ein!",
   "coldwallet.dialog_confirm": "Alle Mining-Belohnungen gehen an Adressen, die in der hochgeladenen Cold Wallet-Datei enthalten sind. <br/> Fühlen Sie sich wirklich sicher, diese Änderung vorzunehmen?",
   "coldwallet.dialog_title": "Neue Wallet-Adresse für Mining Rewards verwenden",
   "coldwallet.download_all_configs": "Wir empfehlen, zuerst vorhandene Konfigurationsdateien zu sichern, indem Sie auf diese Schaltfläche klicken, um sie herunterzuladen",
@@ -126,5 +126,7 @@
   "review.wallet_status": "Wallet-Status",
   "review.protocol_port": "Protokoll-Port",
   "review.toggle_font": "Schriftgröße umschalten",
-  "review.last_block_time": "Letzter gefundener Block"
+  "review.last_block_time": "Letzter gefundener Block",
+  "review.blockCountToday": "Insgesamt Blöcke heute",
+  "review.noBlockInDays": "Tage seit letztem Block"
 }

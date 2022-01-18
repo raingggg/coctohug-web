@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "Succes! Vă rugăm să configurați mașina de recoltat în 30 de minute!",
+  "allowharvester.success": "Succes! Vă rugăm să configurați mașina de recoltat în 120 de minute!",
   "coldwallet.dialog_confirm": "Toate recompensele miniere vor merge la adresele incluse în fișierul cold wallet încărcat. <br/> Chiar te simți în siguranță să faci această schimbare?",
   "coldwallet.dialog_title": "Utilizați o nouă adresă de portofel pentru recompensele miniere",
   "coldwallet.download_all_configs": "Vă recomandăm mai întâi să faceți backup pentru fișierele de configurare existente, făcând clic pe acest buton pentru a le descărca",
@@ -126,5 +126,7 @@
   "review.wallet_status": "Stare portofel",
   "review.protocol_port": "Port de protocol",
   "review.toggle_font": "Comutați dimensiunea fontului",
-  "review.last_block_time": "Ultimul bloc găsit"
+  "review.last_block_time": "Ultimul bloc găsit",
+  "review.blockCountToday": "Blocuri totale astăzi",
+  "review.noBlockInDays": "Zile de la ultimul bloc"
 }

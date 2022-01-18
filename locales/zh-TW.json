@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "成功！請在 30 分鐘內設置您的收割機！",
+  "allowharvester.success": "成功！請在 120 分鐘內設置好您的收割機！",
   "coldwallet.dialog_confirm": "所有挖礦獎勵都將轉到上傳的冷錢包文件中包含的地址。 <br/> 你真的覺得做出這個改變是安全的嗎？",
   "coldwallet.dialog_title": "使用新錢包地址獲取挖礦獎勵",
   "coldwallet.download_all_configs": "我們建議先備份現有的配置文件，單擊此按鈕下載它們",
@@ -126,5 +126,7 @@
   "review.wallet_status": "錢包狀態",
   "review.protocol_port": "協議端口",
   "review.toggle_font": "切換字體大小",
-  "review.last_block_time": "最新發現的區塊"
+  "review.last_block_time": "最新發現的區塊",
+  "review.blockCountToday": "今天的總塊數",
+  "review.noBlockInDays": "自上次區塊以來的天數"
 }

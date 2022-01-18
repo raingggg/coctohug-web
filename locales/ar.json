@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "النجاح! يرجى إعداد حصادك في 30 دقيقة!",
+  "allowharvester.success": "نجاح! يرجى إعداد حصادك في 120 دقيقة!",
   "coldwallet.dialog_confirm": "ستذهب جميع مكافآت التعدين إلى العناوين المضمنة في ملف المحفظة الباردة الذي تم تحميله. <br/> هل تشعر حقًا بالأمان لإجراء هذا التغيير؟",
   "coldwallet.dialog_title": "استخدم عنوان المحفظة الجديد للحصول على مكافآت التعدين",
   "coldwallet.download_all_configs": "نوصي بالنسخ الاحتياطي لملفات التكوين الموجودة أولاً ، بالنقر فوق هذا الزر لتنزيلها",
@@ -126,5 +126,7 @@
   "review.wallet_status": "حالة المحفظة",
   "review.protocol_port": "منفذ البروتوكول",
   "review.toggle_font": "تبديل حجم الخط",
-  "review.last_block_time": "أحدث كتلة تم العثور عليها"
+  "review.last_block_time": "أحدث كتلة تم العثور عليها",
+  "review.blockCountToday": "إجمالي الكتل اليوم",
+  "review.noBlockInDays": "الأيام منذ آخر كتلة"
 }

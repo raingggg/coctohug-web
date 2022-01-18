@@ -8,6 +8,7 @@ const TIMEOUT_15MINUTE = 15 * 60 * 1000;
 const TIMEOUT_30MINUTE = 30 * 60 * 1000;
 const TIMEOUT_60MINUTE = 60 * 60 * 1000;
 const TIMEOUT_90MINUTE = 90 * 60 * 1000;
+const TIMEOUT_1Day = 24 * 60 * 60 * 1000;
 
 const SAMPLE_PERCENTAGE_HOUR = {
   '1m': 100 * 1 / 60,
@@ -112,6 +113,7 @@ module.exports = {
   TIMEOUT_30MINUTE,
   TIMEOUT_60MINUTE,
   TIMEOUT_90MINUTE,
+  TIMEOUT_1Day,
   SAMPLE_PERCENTAGE_HOUR,
   getLastHourDates,
   getLastDayDates,

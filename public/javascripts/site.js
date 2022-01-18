@@ -1,4 +1,4 @@
-const simpleViewColumns = ['se_no', 'blockchain', 'chain_status', 'netspace_size', 'expected_time_to_win', 'coin_symbol', 'coin_price', 'protocol_port', 'fork_version', 'last_block_time'];
+const simpleViewColumns = ['se_no', 'blockchain', 'chain_status', 'netspace_size', 'expected_time_to_win', 'coin_symbol', 'coin_price', 'protocol_port', 'fork_version', 'noBlockInDays', 'blockCountToday'];
 const statusViewColumns = ['se_no', 'blockchain', 'chain_status', 'chain_sync_to_time', 'chain_height', 'plot_count', 'plots_size', 'netspace_size', 'expected_time_to_win', 'connection_count', 'wallet_status', 'wallet_height', 'total_coins'];
 const balanceViewColumns = ['se_no', 'blockchain', 'coin_symbol', 'coin_price', 'total_coins', 'wallet_balance', 'reward_balance', 'total_price'];
 
@@ -494,23 +494,23 @@ $(document).ready(function () {
       type: 'numeric'
     });
 
-    $.tablesorter.addParser({
-      id: 'last_block_time',
-      is: function (s) {
-        return false;
-      },
-      format: function (str) {
-        const n = new Date(str).getTime();
-        return !isNaN(n) && isFinite(n) ? n : 0;
-      },
-      type: 'numeric'
-    });
+    // $.tablesorter.addParser({
+    //   id: 'last_block_time',
+    //   is: function (s) {
+    //     return false;
+    //   },
+    //   format: function (str) {
+    //     const n = new Date(str).getTime();
+    //     return !isNaN(n) && isFinite(n) ? n : 0;
+    //   },
+    //   type: 'numeric'
+    // });
 
     $("#reviewTable").tablesorter({
       headers: {
         7: { sorter: "netspace" },
         8: { sorter: "expected_time_to_win" },
-        20: { sorter: "last_block_time" }
+        // 20: { sorter: "last_block_time" }
       },
       widgets: ['columnSelector'], // https://mottie.github.io/tablesorter/docs/example-widget-column-selector.html
       widgetOptions: {

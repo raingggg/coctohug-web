@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "Èxit! Si us plau, configureu la vostra recol·lectora en 30 minuts!",
+  "allowharvester.success": "Èxit! Si us plau, configureu la vostra recol·lectora en 120 minuts!",
   "coldwallet.dialog_confirm": "Totes les recompenses de mineria aniran a les adreces incloses al fitxer de cartera freda penjat. <br/> Realment et sents segur per fer aquest canvi?",
   "coldwallet.dialog_title": "Utilitzeu la nova adreça de cartera per a les recompenses de mineria",
   "coldwallet.download_all_configs": "Recomanem fer una còpia de seguretat dels fitxers de configuració existents primer, fent clic en aquest botó per descarregar-los",
@@ -126,5 +126,7 @@
   "review.wallet_status": "Estat de la cartera",
   "review.protocol_port": "Port de protocol",
   "review.toggle_font": "Commuta la mida de la lletra",
-  "review.last_block_time": "Últim bloc trobat"
+  "review.last_block_time": "Últim bloc trobat",
+  "review.blockCountToday": "Total de blocs avui",
+  "review.noBlockInDays": "Dies des de l'últim bloc"
 }

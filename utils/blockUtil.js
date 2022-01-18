@@ -8,6 +8,7 @@ const {
   getPriceUrl,
 } = require('./chainConfigs');
 const {
+  TIMEOUT_1Day,
   getLastHourDates,
   getLastDayDates,
   getLastWeekDates,
@@ -50,6 +51,11 @@ const getOnlineWalletCoinsAmount = async (blockchain, walletAdress, startDate, e
 
   // at most request API 50 times, this should support 50P+ cases
   let shouldStop = false;
+  let blockCountToday = 0;
+  let noBlockInDays = 1000;
+  const lastDay = getLastDayDates();
+  const todayStartTime = lastDay.endDate;
+  const nowTime = new Date().getTime();
   let last_block_time = new Date('1970-01-01').getTime();
   for (let p = 0; p < 50; p++) {
     if (shouldStop) break;
@@ -74,6 +80,10 @@ const getOnlineWalletCoinsAmount = async (blockchain, walletAdress, startDate, e
           } else if (recordDate < startDate) { // stop when find a pre-unrelevant record
             shouldStop = true;
           }
+
+          if (computeLastBlockTime && recordDate >= todayStartTime) {
+            blockCountToday += parseFloat(amount) / forkConfig.mojoDivider;
+          }
         });
       } else { // stop on last no records page
         shouldStop = true;
@@ -84,13 +94,17 @@ const getOnlineWalletCoinsAmount = async (blockchain, walletAdress, startDate, e
     }
   }
 
-  return { total, last_block_time };
+  if (computeLastBlockTime) {
+    noBlockInDays = parseFloat(((nowTime - last_block_time) / TIMEOUT_1Day).toFixed(2));
+  }
+
+  return { total, last_block_time, noBlockInDays, blockCountToday };
 };
 
 const get1HourOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
   const { startDate, endDate } = getLastHourDates();
-  const { total, last_block_time } = await getOnlineWalletCoinsAmount(blockchain, walletAdress, startDate, endDate, true);
-  return { total, last_block_time };
+  const { total, last_block_time, noBlockInDays, blockCountToday } = await getOnlineWalletCoinsAmount(blockchain, walletAdress, startDate, endDate, true);
+  return { total, last_block_time, noBlockInDays, blockCountToday };
 };
 
 const get1DayOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
@@ -189,14 +203,14 @@ const getWalletInfo = (details) => {
 //   address = 'hdd15u86w7e9c3nqayymqe3ayuhsxqvrdwh9ht6pf30epdhtczdu7kgqa7u4d9';
 //   amount = await get1HourOnlineWalletCoinsAmount(name, address);
 //   console.log(amount);
-//   amount = await get1DayOnlineWalletCoinsAmount(name, address);
-//   console.log(amount);
-//   amount = await get1WeekOnlineWalletCoinsAmount(name, address);
-//   console.log(amount);
-//   const prices = await getAllCoinsPrice();
-//   console.log(prices);
-//   const balance = await getCoinBalance('apple', 'apple18ds3fw56wtttg7xm2d9s4wul720xr8ex50us54t3kz74ylc7avzspa6mey');
-//   console.log(balance);
+  //   amount = await get1DayOnlineWalletCoinsAmount(name, address);
+  //   console.log(amount);
+  //   amount = await get1WeekOnlineWalletCoinsAmount(name, address);
+  //   console.log(amount);
+  //   const prices = await getAllCoinsPrice();
+  //   console.log(prices);
+  //   const balance = await getCoinBalance('apple', 'apple18ds3fw56wtttg7xm2d9s4wul720xr8ex50us54t3kz74ylc7avzspa6mey');
+  //   console.log(balance);
 // };
 // tt();
 

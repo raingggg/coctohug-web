@@ -20,6 +20,9 @@
 
   <% data.forEach(function(dt, index){ %>
     <div class="tab-panel <%= index === 0 ? '' : 'd-none' %>" data-panel-index="<%= index %>">
+      <div>
+        <%= __('general.updatedAt') %>: <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
+      </div>
       <table class="table table-striped table-hover" data-blockchain="<%=dt.blockchain %>" data-hostname="<%= dt.hostname
           %>">
         <thead>

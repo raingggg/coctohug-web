@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "Éxito! Configura a túa colleitadora en 30 minutos.",
+  "allowharvester.success": "Éxito! Configura a túa colleitadora en 120 minutos.",
   "coldwallet.dialog_confirm": "Todas as recompensas de minería irán a enderezos incluídos no ficheiro de carteira fría cargado. <br/> Séntesche seguro de facer este cambio?",
   "coldwallet.dialog_title": "Usa o novo enderezo de carteira para as recompensas de minería",
   "coldwallet.download_all_configs": "Recomendamos facer unha copia de seguridade dos ficheiros de configuración existentes primeiro, facendo clic neste botón para descargalos",
@@ -126,5 +126,7 @@
   "review.wallet_status": "Estado da carteira",
   "review.protocol_port": "Protocolo Porto",
   "review.toggle_font": "Alterna o tamaño da fonte",
-  "review.last_block_time": "Último bloque atopado"
+  "review.last_block_time": "Último bloque atopado",
+  "review.blockCountToday": "Total de bloques hoxe",
+  "review.noBlockInDays": "Días desde o último bloque"
 }

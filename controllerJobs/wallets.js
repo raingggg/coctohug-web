@@ -31,7 +31,7 @@ const updateHourlyColdwalletCoins = async () => {
           // const firstWalletAdress = getWalletAddress(details);
           const actualWallet = dataWallets.find(dw => dw.hostname === hostname && dw.blockchain === blockchain);
           if (actualWallet && actualWallet.coldWallet) {
-            const { total, last_block_time } = await get1HourOnlineWalletCoinsAmount(blockchain, actualWallet.coldWallet);
+            const { total, noBlockInDays, blockCountToday } = await get1HourOnlineWalletCoinsAmount(blockchain, actualWallet.coldWallet);
             const coinsTotal = total;
             if (coinsTotal > 0) {
               await News.create({
@@ -47,7 +47,8 @@ const updateHourlyColdwalletCoins = async () => {
             await AllInOne.upsert({
               hostname,
               blockchain,
-              ext_str_2: last_block_time,
+              ext_num_2: noBlockInDays,
+              ext_num_3: blockCountToday,
             });
           }
         } catch (ee) {

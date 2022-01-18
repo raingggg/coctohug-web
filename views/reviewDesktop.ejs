@@ -90,8 +90,11 @@
           <th class="fork_version">
             <%= __('general.versions') %>
           </th>
-          <th class="last_block_time">
-            <%= __('review.last_block_time') %>
+          <th class="noBlockInDays">
+            <%= __('review.noBlockInDays') %>
+          </th>
+          <th class="blockCountToday">
+            <%= __('review.blockCountToday') %>
           </th>
         </tr>
       </thead>
@@ -162,8 +165,11 @@
             <td class="fork_version">
               <%= dt.ext_str_1 %>
             </td>
-            <td class="last_block_time">
-              <%= new Date(parseInt(dt.ext_str_2)).toLocaleString("en-US", {hour12: false}) %>
+            <td class="noBlockInDays">
+              <%= dt.ext_num_2 %>
+            </td>
+            <td class="blockCountToday">
+              <%= dt.ext_num_3 %>
             </td>
           </tr>
           <% }); %>

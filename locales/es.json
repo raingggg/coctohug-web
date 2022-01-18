@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "¡Éxito! ¡Configure su cosechadora en 30 minutos!",
+  "allowharvester.success": "¡Éxito! ¡Configure su cosechadora en 120 minutos!",
   "coldwallet.dialog_confirm": "Todas las recompensas mineras irán a las direcciones incluidas en el archivo de billetera fría cargado. <br/> ¿Realmente se siente seguro para realizar este cambio?",
   "coldwallet.dialog_title": "Usar nueva dirección de billetera para recompensas mineras",
   "coldwallet.download_all_configs": "Recomendamos hacer una copia de seguridad de los archivos de configuración existentes primero, haciendo clic en este botón para descargarlos",
@@ -126,5 +126,7 @@
   "review.wallet_status": "Estado de la billetera",
   "review.protocol_port": "Puerto de protocolo",
   "review.toggle_font": "Alternar tamaño de fuente",
-  "review.last_block_time": "Último bloque encontrado"
+  "review.last_block_time": "Último bloque encontrado",
+  "review.blockCountToday": "Bloques totales hoy",
+  "review.noBlockInDays": "Días desde el último bloque"
 }

@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "성공! 30분 안에 수확기를 설정하세요!",
+  "allowharvester.success": "성공! 120분 안에 수확기를 설정하세요!",
   "coldwallet.dialog_confirm": "모든 채굴 보상은 업로드된 콜드 월렛 파일에 포함된 주소로 이동합니다. <br/> 이 변경을 하는 것이 정말 안전하다고 느끼십니까?",
   "coldwallet.dialog_title": "채굴 보상에 새 지갑 주소 사용",
   "coldwallet.download_all_configs": "이 버튼을 클릭하여 다운로드하여 기존 구성 파일을 먼저 백업하는 것이 좋습니다.",
@@ -126,5 +126,7 @@
   "review.wallet_status": "지갑 상태",
   "review.protocol_port": "프로토콜 포트",
   "review.toggle_font": "글꼴 크기 전환",
-  "review.last_block_time": "마지막으로 찾은 블록"
+  "review.last_block_time": "마지막으로 찾은 블록",
+  "review.blockCountToday": "오늘의 총 블록 수",
+  "review.noBlockInDays": "마지막 차단 이후 일수"
 }

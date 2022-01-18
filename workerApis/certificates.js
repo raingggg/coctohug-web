@@ -5,7 +5,7 @@ const { logger } = require('../utils/logger');
 const { blockchainConfig } = require('../utils/chiaConfig');
 const { isValidAccessToken, getIp, setWorkerToken, getWorkerToken } = require('../utils/chiaConfig');
 
-const CERTIFICATE_OPEN_TIME = 1000 * 60 * 30;
+const CERTIFICATE_OPEN_TIME = 1000 * 60 * 120; // 2 hours
 router.get('/', async (req, res, next) => {
   try {
     const tokenTime = getWorkerToken('allow', 'harvester');

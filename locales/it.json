@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "Successo! Installa la tua mietitrice in 30 minuti!",
+  "allowharvester.success": "Successo! Installa la tua mietitrice in 120 minuti!",
   "coldwallet.dialog_confirm": "Tutti i premi minerari andranno agli indirizzi inclusi nel file del portafoglio freddo caricato. <br/> Ti senti davvero sicuro di fare questo cambiamento?",
   "coldwallet.dialog_title": "Usa il nuovo indirizzo del portafoglio per i premi minerari",
   "coldwallet.download_all_configs": "Si consiglia di eseguire prima il backup dei file di configurazione esistenti, facendo clic su questo pulsante per scaricarli",
@@ -126,5 +126,7 @@
   "review.wallet_status": "Stato del portafoglio",
   "review.protocol_port": "Porta protocollo",
   "review.toggle_font": "Cambia dimensione carattere",
-  "review.last_block_time": "Ultimo blocco trovato"
+  "review.last_block_time": "Ultimo blocco trovato",
+  "review.blockCountToday": "Blocchi totali oggi",
+  "review.noBlockInDays": "Giorni dall'ultimo blocco"
 }

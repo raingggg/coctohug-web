@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "Tagumpay! Mangyaring i-setup ang iyong harvester sa loob ng 30 minuto!",
+  "allowharvester.success": "Tagumpay! Mangyaring i-setup ang iyong harvester sa loob ng 120 minuto!",
   "coldwallet.dialog_confirm": "Mapupunta ang lahat ng reward sa pagmimina sa mga address na kasama sa na-upload na cold wallet file. <br/> Talaga bang ligtas kang gawin ang pagbabagong ito?",
   "coldwallet.dialog_title": "Gumamit ng Bagong Wallet Address para sa Mga Rewards sa Pagmimina",
   "coldwallet.download_all_configs": "Inirerekomenda muna namin ang pag-backup ng mga umiiral nang config file, sa pamamagitan ng pag-click sa button na ito para i-download ang mga ito",
@@ -126,5 +126,7 @@
   "review.wallet_status": "Katayuan ng Wallet",
   "review.protocol_port": "Port ng Protocol",
   "review.toggle_font": "I-toggle ang Laki ng Font",
-  "review.last_block_time": "Huling Nahanap na Block"
+  "review.last_block_time": "Huling Nahanap na Block",
+  "review.blockCountToday": "Kabuuang Blocks Ngayon",
+  "review.noBlockInDays": "Mga Araw Mula Noong Huling Pag-block"
 }

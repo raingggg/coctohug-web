@@ -1,5 +1,5 @@
 {
-  "allowharvester.success": "Succès! Veuillez configurer votre abatteuse en 30 minutes !",
+  "allowharvester.success": "Succès! Veuillez configurer votre moissonneuse en 120 minutes !",
   "coldwallet.dialog_confirm": "Toutes les récompenses minières iront aux adresses incluses dans le fichier de portefeuille froid téléchargé. <br/> Vous sentez-vous vraiment en sécurité pour effectuer ce changement ?",
   "coldwallet.dialog_title": "Utiliser la nouvelle adresse de portefeuille pour les récompenses minières",
   "coldwallet.download_all_configs": "Nous vous recommandons de sauvegarder d'abord les fichiers de configuration existants, en cliquant sur ce bouton pour les télécharger",
@@ -126,5 +126,7 @@
   "review.wallet_status": "État du portefeuille",
   "review.protocol_port": "Port de protocole",
   "review.toggle_font": "Basculer la taille de la police",
-  "review.last_block_time": "Dernier bloc trouvé"
+  "review.last_block_time": "Dernier bloc trouvé",
+  "review.blockCountToday": "Total de blocs aujourd'hui",
+  "review.noBlockInDays": "Jours depuis le dernier bloc"
 }
