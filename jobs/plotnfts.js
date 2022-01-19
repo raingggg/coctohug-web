@@ -18,8 +18,9 @@ const updateWallet = async () => {
       blockchain,
       details: data,
     };
-    await axios.post(`${controllerUrl}/plotnfts/update`, payload).catch(function (error) {
-      logger.error('plotnfts/update', error);
+    const finalUrl = `${controllerUrl}/plotnfts/update`;
+    await axios.post(finalUrl, payload).catch(function (error) {
+      logger.error('plotnfts/update', finalUrl);
     });
   } catch (e) {
     logger.error('updateWallet', e);

@@ -19,7 +19,7 @@ const notifyWorkersWebAccessing = async () => {
         if (url && blockchain) {
           const finalUrl = `${url}/blockchainsWorker/updateLastWebReviewPageAccessTime`;
           await axios.get(finalUrl, { timeout: TIMEOUT_5SECOND, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
-            logger.error('blockchainsWorker/updateLastWebReviewPageAccessTime', error);
+            logger.error('blockchainsWorker/updateLastWebReviewPageAccessTime', finalUrl);
           });
         }
       } catch (ex) {

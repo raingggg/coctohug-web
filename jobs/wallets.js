@@ -20,10 +20,11 @@ const updateWallet = async () => {
       details: data,
       coldWallet,
     };
-    axios.post(`${controllerUrl}/wallets/update`, payload, {
+    const finalUrl = `${controllerUrl}/wallets/update`;
+    axios.post(finalUrl, payload, {
       headers: { 'Content-Type': 'application/json' }
     }).catch(function (error) {
-      logger.error('wallets/update', error);
+      logger.error('wallets/update', finalUrl);
     });
   } catch (e) {
     logger.error('updateWallet-job', e);

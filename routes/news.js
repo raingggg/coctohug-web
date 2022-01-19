@@ -27,7 +27,7 @@ router.get('/', async (req, res, next) => {
     if (Math.floor(Math.random() * 10) === 0) {
       const finalUrl = `https://www.coctohug.xyz/latestNews?locale=${req.cookies.language || 'en'}`;
       const apiRes = await axios.get(finalUrl, { timeout: 5000 }).catch(function (error) {
-        logger.error('xyz/latestNews', error);
+        logger.error('xyz/latestNews', finalUrl);
       });
       latestNews = (apiRes && apiRes.data) ? apiRes.data : '';
     }

@@ -144,8 +144,9 @@ const checkPeerConnections = async (result) => {
     // 2 are local connection, so 5 means checking at least 3 peers
     const cns = parseConnecitons(result);
     if (cns.length < 5 && chainConfigs[blockchain]) {
-      const apiRes = await axios.get(chainConfigs[blockchain].peers, { timeout: TIMEOUT_1MINUTE }).catch(function (error) {
-        logger.error('api-req-peers', error);
+      const finalUrl = chainConfigs[blockchain].peers;
+      const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) {
+        logger.error('api-req-peers', finalUrl);
       });
       const peers = apiRes && apiRes.data;
       const peersCount = peers && peers.length;
@@ -269,6 +270,7 @@ const addConnection = async (connection) => {
 
   try {
     const cmdStr = connection.includes(FULLNODE_PROTOCOL_PORT) ? `${binary} show --add-connection ${connection}` : `${binary} show --add-connection ${connection}:${FULLNODE_PROTOCOL_PORT}`;
+    logger.error('add-peer', cmdStr);
     const cmdOutput = await exec(cmdStr, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = cmdOutput.stdout.trim();
   } catch (e) {

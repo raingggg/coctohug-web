@@ -1,6 +1,10 @@
 # Changelog
 
-## [1.4.4] - 2022-01-20
+## [1.4.5] - 2022-01-20
+- improve logger info for api access failure cases
+
+
+## [1.4.4] - 2022-01-18
 - hours_since_last_block with 1 decimal point
 
 ## [1.4.2] - 2022-01-18

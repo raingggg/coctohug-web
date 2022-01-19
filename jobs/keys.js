@@ -18,10 +18,11 @@ const updateKey = async () => {
       blockchain,
       details: data,
     };
-    axios.post(`${controllerUrl}/keys/update`, payload, {
+    const finalUrl = `${controllerUrl}/keys/update`;
+    axios.post(finalUrl, payload, {
       headers: { 'Content-Type': 'application/json' }
     }).catch(function (error) {
-      logger.error('keys/update', error);
+      logger.error('keys/update', finalUrl);
     });
   } catch (e) {
     logger.error('updateKey-job', e);

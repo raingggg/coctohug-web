@@ -43,7 +43,7 @@ router.post('/remove', async (req, res, next) => {
     if (data) {
       const finalUrl = `${data.url}/connectionsWorker/remove`;
       await axios.post(finalUrl, { nodeIds }, { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
-        logger.error('connectionsWorker/remove', error);
+        logger.error('connectionsWorker/remove', finalUrl);
       });
       return res.json({ status: 'success' });
     }
@@ -68,7 +68,7 @@ router.post('/add', async (req, res, next) => {
     if (data) {
       const finalUrl = `${data.url}/connectionsWorker/add`;
       axios.post(finalUrl, { connections }, { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
-        logger.error('connectionsWorker/add', error);
+        logger.error('connectionsWorker/add', finalUrl);
       });
       return res.json({ status: 'success' });
     }

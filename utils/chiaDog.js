@@ -56,10 +56,11 @@ const postEvents = (evs) => {
         payload.message = `Cha-ching! Just received ${ev.message.amountCoins * cc.mojoMultiplier} coins ☘️`;
       }
 
-      axios.post(`${controllerUrl}/news/add`, payload, {
+      const finalUrl = `${controllerUrl}/news/add`;
+      axios.post(finalUrl, payload, {
         headers: { 'Content-Type': 'application/json' }
       }).catch(function (error) {
-        logger.error('postEvents-one', error);
+        logger.error('postEvents-one', finalUrl);
       });
     } catch (e) {
       logger.error('postEvents', e);
@@ -115,10 +116,11 @@ const postDailyEvents = (evs) => {
       type: 'EVT_DAILY_ALL_IN_ONE',
       message: msg,
     };
-    axios.post(`${controllerUrl}/news/add`, payload, {
+    const finalUrl = `${controllerUrl}/news/add`;
+    axios.post(finalUrl, payload, {
       headers: { 'Content-Type': 'application/json' }
     }).catch(function (error) {
-      logger.error('postDailyEvents-one', error);
+      logger.error('postDailyEvents-one', finalUrl);
     });
   } catch (e) {
     logger.error('postDailyEvents', e);
