@@ -8,6 +8,7 @@ const {
   TIMEOUT_10MINUTE,
   TIMEOUT_30MINUTE,
   TIMEOUT_90MINUTE,
+  TIMEOUT_4HOUR,
   toNumber,
 } = require('../utils/jsUtil');
 const { logger } = require('../utils/logger');
@@ -73,7 +74,7 @@ const updateAllInOne = async () => {
 
         // farm summary
         const lastReview = new Date(farm_last_updated_at).getTime();
-        if (now - lastReview > TIMEOUT_90MINUTE) {
+        if (now - lastReview > TIMEOUT_4HOUR) {
           Object.assign(payload, { status: 'Sync Error' });
         }
 
@@ -120,7 +121,7 @@ const updateAllInOne = async () => {
 
         // status update
         Object.assign(payload, { invalid_farm_status: payload.status !== 'Farming' });
-        Object.assign(payload, { invalid_chain_status: (now - new Date(chain_sync_to_time).getTime()) > TIMEOUT_90MINUTE });
+        Object.assign(payload, { invalid_chain_status: (now - new Date(chain_sync_to_time).getTime()) > TIMEOUT_4HOUR });
         Object.assign(payload, { invalid_connection_status: payload.connection_count <= 0 });
         Object.assign(payload, { invalid_wallet_status: payload.wallet_status !== 'Synced' });
 

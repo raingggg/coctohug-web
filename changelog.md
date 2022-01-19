@@ -3,7 +3,7 @@
 ## [1.4.5] - 2022-01-20
 - improve logger info for api access failure cases
 - move hostname into last column for restart menu
-- 
+- alter force-status from 90 minutes to 4 hours
 
 
 ## [1.4.4] - 2022-01-18
