@@ -8,6 +8,7 @@ const { logger } = require('../utils/logger');
 const { saveMNC } = require('../utils/chiaClient');
 const { chainConfigs } = require('../utils/chainConfigs');
 const { getWorkerToken, getIp, isFullnodeMode } = require('../utils/chiaConfig');
+const { getChiaPoolWalletId } = require('../utils/blockUtil');
 
 const isFullnode = isFullnodeMode();
 const UNSYNC_THRESHHOLD = 10 * 60 * 1000; // 10 mins
@@ -113,6 +114,42 @@ router.post('/transferCoin', async (req, res, next) => {
     }
   } catch (e) {
     logger.error('transferCoin', e);
+  }
+
+  return res.json({ status: 'failed' });
+});
+
+router.post('/claimChiaNFT', async (req, res, next) => {
+  try {
+    const { blockchain, hostname } = req.body;
+    const hand = await Hand.findOne({
+      where: {
+        mode: { [Op.in]: ['fullnode', 'wallet'] },
+        blockchain,
+        hostname,
+      }
+    });
+
+    if (hand && hand.url) {
+      const wallet = await Wallet.findOne({
+        where: {
+          blockchain,
+          hostname,
+        }
+      });
+
+      if (wallet && wallet.details) {
+        const walletId = getChiaPoolWalletId(wallet.details);
+        const finalUrl = `${hand.url}/walletsWorker/claimChiaNFT`;
+        logger.error('claimChiaNFT', [blockchain, walletId, getIp(req)]);
+        await axios.post(finalUrl, { walletId }, { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
+          logger.error('walletsWorker/claimChiaNFT', finalUrl);
+        });
+        return res.json({ status: 'success' });
+      }
+    }
+  } catch (e) {
+    logger.error('claimChiaNFT', e);
   }
 
   return res.json({ status: 'failed' });

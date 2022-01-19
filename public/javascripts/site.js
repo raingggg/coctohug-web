@@ -336,6 +336,34 @@ $(document).ready(function () {
     }
   });
 
+  $("#chiaClaimNFTButton").click(function (e) {
+    e.preventDefault();
+    $(this).prop("disabled", true);
+
+    const parent = $(this).closest('.claimNFTWrapper');
+    const blockchain = parent.data('blockchain');
+    const hostname = parent.data('hostname');
+    if (blockchain && hostname) {
+      $.ajax({
+        url: '/walletsWeb/claimChiaNFT',
+        type: 'POST',
+        cache: false,
+        data: JSON.stringify({ blockchain, hostname }),
+        contentType: 'application/json',
+        success: function (data) {
+          if (data.status === 'success') {
+            parent.find('.transferSuccess').removeClass('visually-hidden');
+          } else {
+            alert(JSON.stringify(data, null, 2));
+          }
+        },
+        error: function (jqXHR, textStatus, err) {
+          alert(JSON.stringify(err, null, 2));
+        }
+      });
+    }
+  });
+
   const passwordModal = new bootstrap.Modal(document.getElementById('passwordModal'), { keyboard: false });
   $(".settings-link").click(function (e) {
     if ($.cookie('authed') !== 'true') {

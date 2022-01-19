@@ -29,8 +29,17 @@
           <%= dt.coldWallet %>
         </span>
         <p>
-          <%= __('general.updatedAt') %>
-            <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
+          <span>
+            <%= __('general.updatedAt') %>
+              <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
+          </span>
+          <span class="claimNFTWrapper" data-blockchain="<%= dt.blockchain %>" data-hostname="<%= dt.hostname %>">
+            <% if (dt.blockchain==='chia' ) { %>
+              <button class="btn btn-success btn-sm" id="chiaClaimNFTButton">
+                <%= __('general.nft_recovery') %>
+              </button>
+              <% } %>
+          </span>
         </p>
       </div>
       <div>

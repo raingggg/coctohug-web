@@ -18,7 +18,9 @@ const {
 const TIMEOUT_1MINUTE = 60 * 1000;
 const TIME_1HOUR = 60 * 60 * 1000;
 
+
 const REG_BALANCE = /-Total\sBalance:\s+((?:\d*\.?\d+e-\d*)|(?:\d*\.\d+)|(?:\d+\.?))/g;
+const REG_POOL_WALLET = /Wallet ID (\d+) type POOLING_WALLET.*\n.*Total Balance: ((?:\d*\.?\d+e-\d*)|(?:\d*\.\d+)|(?:\d+\.?)) xch/gm;
 const REG_WALLET_ADDR = /First wallet address: (\w*)/;
 const REG_WALLET_HEIGHT = /Wallet height:\s+(\d+)/;
 const REG_WALLET_STATUS = /Sync status:\s+(.*)/;
@@ -33,6 +35,20 @@ const getTotalBalance = (str) => {
   }
 
   return sum;
+}
+
+const getChiaPoolWalletId = (str) => {
+  let poolWalletId = 2;
+
+  const reg = new RegExp(REG_POOL_WALLET);
+  while (null != (z = reg.exec(str))) {
+    if (parseFloat(z[2]) > 0) {
+      poolWalletId = z[1];
+      break;
+    }
+  }
+
+  return poolWalletId;
 }
 
 const getWalletAddress = (str) => {
@@ -204,14 +220,14 @@ const getWalletInfo = (details) => {
 //   address = 'hdd15u86w7e9c3nqayymqe3ayuhsxqvrdwh9ht6pf30epdhtczdu7kgqa7u4d9';
 //   amount = await get1HourOnlineWalletCoinsAmount(name, address);
 //   console.log(amount);
-  //   amount = await get1DayOnlineWalletCoinsAmount(name, address);
-  //   console.log(amount);
-  //   amount = await get1WeekOnlineWalletCoinsAmount(name, address);
-  //   console.log(amount);
-  //   const prices = await getAllCoinsPrice();
-  //   console.log(prices);
-  //   const balance = await getCoinBalance('apple', 'apple18ds3fw56wtttg7xm2d9s4wul720xr8ex50us54t3kz74ylc7avzspa6mey');
-  //   console.log(balance);
+//   amount = await get1DayOnlineWalletCoinsAmount(name, address);
+//   console.log(amount);
+//   amount = await get1WeekOnlineWalletCoinsAmount(name, address);
+//   console.log(amount);
+//   const prices = await getAllCoinsPrice();
+//   console.log(prices);
+//   const balance = await getCoinBalance('apple', 'apple18ds3fw56wtttg7xm2d9s4wul720xr8ex50us54t3kz74ylc7avzspa6mey');
+//   console.log(balance);
 // };
 // tt();
 
@@ -227,4 +243,5 @@ module.exports = {
   getCoinBalance,
   getBlockchainInfo,
   getWalletInfo,
+  getChiaPoolWalletId,
 }

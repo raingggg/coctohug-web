@@ -1,10 +1,10 @@
 # Changelog
 
 ## [1.4.5] - 2022-01-20
+- claim nft 7/8 reward button for chia
+- alter force-status from 90 minutes to 4 hours
 - improve logger info for api access failure cases
 - move hostname into last column for restart menu
-- alter force-status from 90 minutes to 4 hours
-
 
 ## [1.4.4] - 2022-01-18
 - hours_since_last_block with 1 decimal point

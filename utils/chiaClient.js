@@ -393,7 +393,25 @@ const transferCoin = async (toAddress, amount) => {
   let result = '';
 
   try {
-    const cmdOutput = await exec(`${binary} wallet send -t ${toAddress} -a ${amount}`, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
+    const cmdStr = `${binary} wallet send -t ${toAddress} -a ${amount}`;
+    logger.error('transferCoin', cmdStr);
+    const cmdOutput = await exec(cmdStr, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
+    result = cmdOutput.stdout.trim();
+  } catch (e) {
+    logger.error('transferCoin', e);
+  }
+  logger.debug(result);
+
+  return result;
+};
+
+const claimChiaNFT = async (walletId) => {
+  let result = '';
+
+  try {
+    const cmdStr = `${binary} plotnft claim -i ${walletId}`;
+    logger.error('claimChiaNFT', cmdStr);
+    const cmdOutput = await exec(cmdStr, { timeout: TIMEOUT_2MINUTE, killSignal: 'SIGKILL' });
     result = cmdOutput.stdout.trim();
   } catch (e) {
     logger.error('transferCoin', e);
@@ -445,4 +463,5 @@ module.exports = {
   saveColdWallet,
   getColdWalletAddress,
   transferCoin,
+  claimChiaNFT,
 }
