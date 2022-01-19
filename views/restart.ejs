@@ -2,17 +2,18 @@
   <table class="table table-striped table-hover">
     <thead>
       <tr>
-        <td>
-          <%= __('general.hostname') %>
-        </td>
+        <td>#</td>
         <td>
           <%= __('general.blockchain') %>
+        </td>
+        <td>
+          <%= __('general.actions') %>
         </td>
         <td>
           <%= __('general.updatedAt') %>
         </td>
         <td>
-          <%= __('general.actions') %>
+          <%= __('general.hostname') %>
         </td>
       </tr>
     </thead>
@@ -20,16 +21,21 @@
       <% data.forEach(function(dt, index){ %>
         <tr>
           <td>
-            <%= dt.hostname %>
+            <%= index + 1 %>
           </td>
           <td>
             <%= dt.blockchain %>
           </td>
+          <td><button class="btn btn-outline-success restart" data-hostname="<%= dt.hostname %>"
+              data-blockchain="<%= dt.blockchain %>">
+              <%= __('leftbar.restart') %>
+            </button></td>
           <td>
             <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
           </td>
-          <td><button class="btn btn-outline-success restart" data-hostname="<%= dt.hostname %>"
-              data-blockchain="<%= dt.blockchain %>"><%= __('leftbar.restart') %></button></td>
+          <td>
+            <%= dt.hostname %>
+          </td>
         </tr>
         <% }); %>
     </tbody>

@@ -2,6 +2,8 @@
 
 ## [1.4.5] - 2022-01-20
 - improve logger info for api access failure cases
+- move hostname into last column for restart menu
+- 
 
 
 ## [1.4.4] - 2022-01-18
