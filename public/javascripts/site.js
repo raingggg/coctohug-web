@@ -336,7 +336,7 @@ $(document).ready(function () {
     }
   });
 
-  $("#chiaClaimNFTButton").click(function (e) {
+  $(".chiaClaimNFTButton").click(function (e) {
     e.preventDefault();
     $(this).prop("disabled", true);
 
@@ -352,7 +352,7 @@ $(document).ready(function () {
         contentType: 'application/json',
         success: function (data) {
           if (data.status === 'success') {
-            parent.find('.transferSuccess').removeClass('visually-hidden');
+            parent.closest('.tab-panel').find('.transferSuccess').removeClass('visually-hidden');
           } else {
             alert(JSON.stringify(data, null, 2));
           }

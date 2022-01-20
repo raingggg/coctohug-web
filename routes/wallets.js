@@ -142,10 +142,12 @@ router.post('/claimChiaNFT', async (req, res, next) => {
         const walletId = getChiaPoolWalletId(wallet.details);
         const finalUrl = `${hand.url}/walletsWorker/claimChiaNFT`;
         logger.error('claimChiaNFT', [blockchain, walletId, getIp(req)]);
-        await axios.post(finalUrl, { walletId }, { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
-          logger.error('walletsWorker/claimChiaNFT', finalUrl);
-        });
-        return res.json({ status: 'success' });
+        if (walletId) {
+          await axios.post(finalUrl, { walletId }, { headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
+            logger.error('walletsWorker/claimChiaNFT', finalUrl);
+          });
+          return res.json({ status: 'success' });
+        }
       }
     }
   } catch (e) {

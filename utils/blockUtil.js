@@ -38,7 +38,7 @@ const getTotalBalance = (str) => {
 }
 
 const getChiaPoolWalletId = (str) => {
-  let poolWalletId = 2;
+  let poolWalletId = 0;
 
   const reg = new RegExp(REG_POOL_WALLET);
   while (null != (z = reg.exec(str))) {
