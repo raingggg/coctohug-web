@@ -142,6 +142,10 @@ body {
 #desktopReviewPage .desktop-review tbody td.wallet_balance {
   font-weight: bold;
 }
+#desktopReviewPage .desktop-review .fork_version {
+  max-width: 100px;
+  word-break: break-all;
+}
 #desktopReviewPage .viewRow {
   padding-top: 10px;
 }
