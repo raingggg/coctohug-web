@@ -58,6 +58,7 @@ const chainNameMap = {
   thyme: 'thyme',
 
   kiwi: 'kiwi',
+  littlelambocoin: 'littlelambocoin',
 };
 
 const chainSymbolMap = {
@@ -119,6 +120,7 @@ const chainSymbolMap = {
   thyme: 'XTH',
 
   kiwi: 'XKW',
+  littlelambocoin: 'LLC',
 };
 
 const getExp = (blockchain) => {
