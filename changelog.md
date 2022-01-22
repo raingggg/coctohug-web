@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.4.7] - 2022-01-22
+- correct littlelambocoin mojo unit
+
 ## [1.4.6] - 2022-01-22
 - littlelambocoin support
 
