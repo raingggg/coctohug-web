@@ -146,7 +146,7 @@ const getPriceUrl = () => {
 };
 
 const getMojoDivider = (blockchain) => {
-  if (['shibgreen'].includes(blockchain)) return 1000;
+  if (['shibgreen', 'littlelambocoin'].includes(blockchain)) return 1000;
   else if (['cryptodoge'].includes(blockchain)) return 1000000;
   else if (['ethgreen', 'staicoin', 'melon'].includes(blockchain)) return 1000000000;
 
