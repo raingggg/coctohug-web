@@ -1,6 +1,7 @@
 # Changelog
 
-## [1.4.5] - 2022-01-20
+## [1.4.5] - 2022-01-22
+- no_block_time and today_block_count added to balance view
 - claim nft 7/8 reward button for chia
 - alter force-status from 90 minutes to 4 hours
 - improve logger info for api access failure cases

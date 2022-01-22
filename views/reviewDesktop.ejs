@@ -75,6 +75,12 @@
           <th class="total_coins">
             <%= __('review.mined_count') %>
           </th>
+          <th class="noBlockInDays">
+            <%= __('review.noBlockInDays') %>
+          </th>
+          <th class="blockCountToday">
+            <%= __('review.blockCountToday') %>
+          </th>
           <th class="wallet_balance">
             <%= __('review.wallet_balance') %>
           </th>
@@ -89,12 +95,6 @@
           </th>
           <th class="fork_version">
             <%= __('general.versions') %>
-          </th>
-          <th class="noBlockInDays">
-            <%= __('review.noBlockInDays') %>
-          </th>
-          <th class="blockCountToday">
-            <%= __('review.blockCountToday') %>
           </th>
         </tr>
       </thead>
@@ -150,6 +150,13 @@
             <td class="total_coins">
               <%= dt.total_coins %>
             </td>
+            <td class="noBlockInDays" data-bs-html=true data-bs-toggle="tooltip" data-bs-placement="top"
+              title="<div style='background: green;'><%= dt.ext_num_2 %> days</div>">
+              <%= parseFloat((dt.ext_num_2 * 24).toFixed(1)) %>
+            </td>
+            <td class="blockCountToday">
+              <%= dt.ext_num_3 %>
+            </td>
             <td class="wallet_balance">
               <%= dt.wallet_balance %>
             </td>
@@ -164,13 +171,6 @@
             </td>
             <td class="fork_version">
               <%= dt.ext_str_1 %>
-            </td>
-            <td class="noBlockInDays" data-bs-html=true data-bs-toggle="tooltip" data-bs-placement="top"
-            title="<div style='background: green;'><%= dt.ext_num_2 %> days</div>">
-              <%= parseFloat((dt.ext_num_2 * 24).toFixed(1)) %>
-            </td>
-            <td class="blockCountToday">
-              <%= dt.ext_num_3 %>
             </td>
           </tr>
           <% }); %>
