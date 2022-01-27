@@ -20,6 +20,7 @@ const {
   isFullnodeMode,
   isFarmerMode,
   isWalletMode,
+  isStandardWalletMode,
   FORK_CODE_BRANCH,
   FULLNODE_PROTOCOL_PORT,
 } = require('./chiaConfig');
@@ -35,6 +36,7 @@ const isHarvester = isHarvesterMode();
 const isFullnode = isFullnodeMode();
 const isFarmer = isFarmerMode();
 const isWallet = isWalletMode();
+const isStandardWallet = isStandardWalletMode();
 
 const G_SIZE = 1024 * 1024 * 1024;
 
@@ -335,6 +337,8 @@ const restartBlockchain = async () => {
     } else if (isFarmer) {
       scriptStr = `${binary} start farmer-no-wallet -r`;
     } else if (isWallet) {
+      scriptStr = `${binary} start wallet-only -r`;
+    } else if (isStandardWallet) {
       scriptStr = `${binary} start wallet -r`;
     }
 

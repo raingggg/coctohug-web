@@ -77,7 +77,11 @@ const isFarmerMode = () => {
 };
 
 const isWalletMode = () => {
-  return MODE.includes('wallet');
+  return MODE === 'wallet';
+};
+
+const isStandardWalletMode = () => {
+  return MODE === 'standard_wallet';
 };
 
 const getSqlitePath = () => {
@@ -157,6 +161,7 @@ module.exports = {
   isFullnodeMode,
   isFarmerMode,
   isWalletMode,
+  isStandardWalletMode,
   getSqlitePath,
   isWebControllerMode,
   getWebLogLevel,
