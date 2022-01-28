@@ -117,7 +117,7 @@ router.post('/coldWalletImport', async (req, res, next) => {
 
     const data = await Hand.findAll({
       where: {
-        mode: { [Op.in]: ['fullnode', 'farmer', 'wallet'] },
+        mode: { [Op.in]: ['fullnode', 'farmer', 'wallet', 'standard_wallet'] },
       }
     });
 

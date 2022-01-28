@@ -25,7 +25,7 @@ router.get('/', async (req, res, next) => {
     try {
       data = await AllInOne.findAll({
         where: {
-          mode: { [Op.in]: ['fullnode', 'farmer', 'wallet'] },
+          mode: { [Op.in]: ['fullnode', 'farmer', 'wallet', 'standard_wallet'] },
         },
         order: [
           ['blockchain', 'ASC'],

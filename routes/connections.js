@@ -34,7 +34,7 @@ router.post('/remove', async (req, res, next) => {
     const { blockchain, hostname, nodeIds } = req.body;
     const data = await Hand.findOne({
       where: {
-        mode: { [Op.in]: ['fullnode', 'wallet'] },
+        mode: { [Op.in]: ['fullnode', 'farmer', 'standard_wallet'] },
         blockchain,
         hostname
       }
@@ -59,7 +59,7 @@ router.post('/add', async (req, res, next) => {
     const { blockchain, hostname, connections } = req.body;
     const data = await Hand.findOne({
       where: {
-        mode: { [Op.in]: ['fullnode', 'wallet'] },
+        mode: { [Op.in]: ['fullnode', 'farmer', 'standard_wallet'] },
         blockchain,
         hostname
       }

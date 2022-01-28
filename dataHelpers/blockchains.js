@@ -9,7 +9,7 @@ const notifyWorkersWebAccessing = async () => {
   try {
     const data = await Hand.findAll({
       where: {
-        mode: { [Op.in]: ['fullnode', 'farmer', 'wallet'] },
+        mode: { [Op.in]: ['fullnode', 'farmer', 'wallet', 'standard_wallet'] },
       }
     });
 

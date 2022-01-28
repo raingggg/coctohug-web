@@ -11,6 +11,7 @@ const {
   isFullnodeMode,
   isFarmerMode,
   isWalletMode,
+  isStandardWalletMode,
   shouldRunJobsNormally,
 } = require('./chiaConfig');
 
@@ -46,10 +47,11 @@ const isWebController = isWebControllerMode();
 const isFullnode = isFullnodeMode();
 const isFarmer = isFarmerMode();
 const isWallet = isWalletMode();
+const isStandardWallet = isStandardWalletMode();
 const isHarvester = isHarvesterMode();
 
 const isNotHarvester = !isHarvester;
-const hasPeers = isFullnode || isFarmer;
+const hasPeers = isFullnode || isFarmer || isStandardWallet;
 
 const MAX_TRY = 10;
 let currentTry = 0;

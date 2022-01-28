@@ -60,7 +60,7 @@ router.get('/generateNew', async (req, res, next) => {
   try {
     const data = await Hand.findAll({
       where: {
-        mode: { [Op.in]: ['fullnode', 'wallet'] },
+        mode: { [Op.in]: ['fullnode', 'wallet', 'standard_wallet'] },
       }
     });
 
@@ -95,7 +95,7 @@ router.post('/transferCoin', async (req, res, next) => {
     if (data && data.value === password) {
       const hand = await Hand.findOne({
         where: {
-          mode: { [Op.in]: ['fullnode', 'wallet'] },
+          mode: { [Op.in]: ['fullnode', 'wallet', 'standard_wallet'] },
           blockchain,
           hostname,
         }
@@ -124,7 +124,7 @@ router.post('/claimChiaNFT', async (req, res, next) => {
     const { blockchain, hostname } = req.body;
     const hand = await Hand.findOne({
       where: {
-        mode: { [Op.in]: ['fullnode', 'wallet'] },
+        mode: { [Op.in]: ['fullnode', 'wallet', 'standard_wallet'] },
         blockchain,
         hostname,
       }
