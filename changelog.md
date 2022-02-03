@@ -1,7 +1,8 @@
 # Changelog
 
-## [1.4.9] - 2022-01-29
+## [1.4.9] - 2022-02-03
 - correct rose mojo unit
+- support 2 new forks: beet, beer
 
 ## [1.4.8] - 2022-01-28
 - standard wallet mode support

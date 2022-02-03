@@ -59,6 +59,8 @@ const chainNameMap = {
 
   kiwi: 'kiwi',
   littlelambocoin: 'littlelambocoin',
+  beer: 'beer',
+  beet: 'beet',
 };
 
 const chainSymbolMap = {
@@ -121,6 +123,8 @@ const chainSymbolMap = {
 
   kiwi: 'XKW',
   littlelambocoin: 'LLC',
+  beer: 'XBR',
+  beet: 'XBT',
 };
 
 const getExp = (blockchain) => {
