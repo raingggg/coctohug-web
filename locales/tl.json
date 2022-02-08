@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Gumamit ng malamig na wallet para sa reward sa pagmimina",
   "review.best_practice_3": "3. Panatilihin ang file /home/user/.coctohug/mnc.txt, at alisan ng laman ang nilalaman nito",
   "review.best_practice_4": "4. Laging suriin ang komunidad ng Coctohug",
-  "review.expected_time_to_win": "Inaasahang Oras para Manalo",
+  "review.expected_time_to_win": "Inaasahang oras upang manalo (oras)",
   "review.farmed": "Mined",
   "review.netspace_size": "Laki ng Netspace",
   "review.plot_count": "Bilang ng Plot",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Port ng Protocol",
   "review.toggle_font": "I-toggle ang Laki ng Font",
   "review.last_block_time": "Huling Nahanap na Block",
-  "review.blockCountToday": "Kabuuang Blocks Ngayon",
+  "review.blockCountToday": "Kabuuang mga barya ngayon",
   "review.noBlockInDays": "Mga Oras Mula Noong Huling Pag-block"
 }

@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. 使用冷錢包獲得挖礦獎勵",
   "review.best_practice_3": "3.保留文件/home/user/.coctohug/mnc.txt，清空其中的內容",
   "review.best_practice_4": "4. 定期查看 Coctohug 社區",
-  "review.expected_time_to_win": "預計獲勝時間",
+  "review.expected_time_to_win": "贏得預期的時間（小時）",
   "review.farmed": "開採",
   "review.netspace_size": "網絡空間大小",
   "review.plot_count": "繪圖計數",
@@ -127,6 +127,6 @@
   "review.protocol_port": "協議端口",
   "review.toggle_font": "切換字體大小",
   "review.last_block_time": "最新發現的區塊",
-  "review.blockCountToday": "今天的總塊數",
+  "review.blockCountToday": "今天的總硬幣",
   "review.noBlockInDays": "自上次區塊以來的小時數"
 }

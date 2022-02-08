@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. استخدم المحفظة الباردة لمكافأة التعدين",
   "review.best_practice_3": "3. احتفظ بالملف /home/user/.coctohug/mnc.txt ، وقم بإفراغ محتوياته",
   "review.best_practice_4": "4. تحقق من مجتمع Coctohug بشكل واضح",
-  "review.expected_time_to_win": "الوقت المتوقع للفوز",
+  "review.expected_time_to_win": "الوقت المتوقع للفوز (ساعات)",
   "review.farmed": "عقل",
   "review.netspace_size": "حجم Netspace",
   "review.plot_count": "عدد المؤامرة",
@@ -127,6 +127,6 @@
   "review.protocol_port": "منفذ البروتوكول",
   "review.toggle_font": "تبديل حجم الخط",
   "review.last_block_time": "أحدث كتلة تم العثور عليها",
-  "review.blockCountToday": "إجمالي الكتل اليوم",
+  "review.blockCountToday": "إجمالي العملات اليوم",
   "review.noBlockInDays": "ساعات منذ آخر كتلة"
 }

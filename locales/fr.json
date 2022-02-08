@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Utilisez un portefeuille froid pour la récompense minière",
   "review.best_practice_3": "3. Conservez le fichier /home/user/.coctohug/mnc.txt, et videz le contenu dont",
   "review.best_practice_4": "4. Vérifiez régulièrement la communauté Coctohug",
-  "review.expected_time_to_win": "Temps prévu pour gagner",
+  "review.expected_time_to_win": "Temps prévu pour gagner (heures)",
   "review.farmed": "Miné",
   "review.netspace_size": "Taille de l'espace réseau",
   "review.plot_count": "Nombre de parcelles",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Port de protocole",
   "review.toggle_font": "Basculer la taille de la police",
   "review.last_block_time": "Dernier bloc trouvé",
-  "review.blockCountToday": "Total de blocs aujourd'hui",
+  "review.blockCountToday": "Total des pièces aujourd'hui",
   "review.noBlockInDays": "Heures depuis le dernier bloc"
 }

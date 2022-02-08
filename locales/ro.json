@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Folosiți portofelul rece pentru recompensa de minerit",
   "review.best_practice_3": "3. Păstrați fișierul /home/user/.coctohug/mnc.txt și goliți conținutul căruia",
   "review.best_practice_4": "4. Verificați în mod regulat comunitatea Coctohug",
-  "review.expected_time_to_win": "Timpul așteptat pentru a câștiga",
+  "review.expected_time_to_win": "Timpul așteptat pentru a câștiga (ore)",
   "review.farmed": "Minat",
   "review.netspace_size": "Dimensiunea spațiului net",
   "review.plot_count": "Număr de complot",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Port de protocol",
   "review.toggle_font": "Comutați dimensiunea fontului",
   "review.last_block_time": "Ultimul bloc găsit",
-  "review.blockCountToday": "Blocuri totale astăzi",
+  "review.blockCountToday": "Total monede astăzi",
   "review.noBlockInDays": "Ore de la ultimul bloc"
 }

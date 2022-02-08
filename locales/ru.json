@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Используйте холодный кошелек для получения вознаграждения за майнинг.",
   "review.best_practice_3": "3. Сохраните файл /home/user/.coctohug/mnc.txt и очистите его содержимое.",
   "review.best_practice_4": "4. Регулярно проверяйте сообщество Coctohug.",
-  "review.expected_time_to_win": "Ожидаемое время для победы",
+  "review.expected_time_to_win": "Ожидаемое время выиграть (часы)",
   "review.farmed": "Добытый",
   "review.netspace_size": "Размер Netspace",
   "review.plot_count": "Количество участков",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Порт протокола",
   "review.toggle_font": "Переключить размер шрифта",
   "review.last_block_time": "Последний найденный блок",
-  "review.blockCountToday": "Всего блоков сегодня",
+  "review.blockCountToday": "Общие монеты сегодня",
   "review.noBlockInDays": "Часы с момента последнего блока"
 }

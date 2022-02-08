@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Използвайте студен портфейл за наградата за копаене",
   "review.best_practice_3": "3. Запазете файла /home/user/.coctohug/mnc.txt и изпразнете съдържанието, което",
   "review.best_practice_4": "4. Редовно проверявайте общността на Coctohug",
-  "review.expected_time_to_win": "Очаквано време за победа",
+  "review.expected_time_to_win": "Очаквано време за победа (часове)",
   "review.farmed": "Миниран",
   "review.netspace_size": "Размер на мрежовото пространство",
   "review.plot_count": "Парцел Брой",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Протокол порт",
   "review.toggle_font": "Превключване на размера на шрифта",
   "review.last_block_time": "Последният намерен блок",
-  "review.blockCountToday": "Общо блокове днес",
+  "review.blockCountToday": "Общо монети днес",
   "review.noBlockInDays": "Часове от последния блок"
 }

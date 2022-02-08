@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Utilitzeu la cartera freda per a la recompensa minera",
   "review.best_practice_3": "3. Conserveu el fitxer /home/user/.coctohug/mnc.txt i buideu el contingut del qual",
   "review.best_practice_4": "4. Comproveu regularment la comunitat Coctohug",
-  "review.expected_time_to_win": "Temps esperat per guanyar",
+  "review.expected_time_to_win": "Temps previst per guanyar (hores)",
   "review.farmed": "Minat",
   "review.netspace_size": "Mida de l'espai net",
   "review.plot_count": "Recompte de trames",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Port de protocol",
   "review.toggle_font": "Commuta la mida de la lletra",
   "review.last_block_time": "Últim bloc trobat",
-  "review.blockCountToday": "Total de blocs avui",
+  "review.blockCountToday": "Total monedes d'avui",
   "review.noBlockInDays": "Hores des de l'últim bloc"
 }

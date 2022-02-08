@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Gunakan dompet dingin untuk hadiah penambangan",
   "review.best_practice_3": "3. Simpan file /home/user/.coctohug/mnc.txt, dan kosongkan isinya",
   "review.best_practice_4": "4. Periksa komunitas Coctohug secara berkala",
-  "review.expected_time_to_win": "Waktu yang Diharapkan untuk Menang",
+  "review.expected_time_to_win": "Waktu yang diharapkan untuk menang (jam)",
   "review.farmed": "Beranjau",
   "review.netspace_size": "Ukuran Netspace",
   "review.plot_count": "Jumlah Plot",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Port Protokol",
   "review.toggle_font": "Alihkan Ukuran Font",
   "review.last_block_time": "Blok Terakhir Ditemukan",
-  "review.blockCountToday": "Total Blok Hari Ini",
+  "review.blockCountToday": "Total koin hari ini",
   "review.noBlockInDays": "Jam Sejak Blok Terakhir"
 }

@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Use carteira fria para a recompensa de mineração",
   "review.best_practice_3": "3. Mantenha o arquivo /home/user/.coctohug/mnc.txt e esvazie o conteúdo do qual",
   "review.best_practice_4": "4. Verifique novamente a comunidade Coctohug",
-  "review.expected_time_to_win": "Tempo esperado para vencer",
+  "review.expected_time_to_win": "Oczekiwany czas na wygranie (godziny)",
   "review.farmed": "Minado",
   "review.netspace_size": "Tamanho do Netspace",
   "review.plot_count": "Contagem de enredo",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Porta de protocolo",
   "review.toggle_font": "Alternar tamanho da fonte",
   "review.last_block_time": "Último bloco encontrado",
-  "review.blockCountToday": "Total de blocos hoje",
+  "review.blockCountToday": "Total Monety już dziś",
   "review.noBlockInDays": "Horas desde o último bloco"
 }

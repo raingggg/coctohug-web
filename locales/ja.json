@@ -86,7 +86,7 @@
   "review.best_practice_2": "2.マイニング報酬にコールドウォレットを使用する",
   "review.best_practice_3": "3.ファイル/home/user/.coctohug/mnc.txtを保持し、その内容を空にします",
   "review.best_practice_4": "4.Coctohugコミュニティを定期的にチェックします",
-  "review.expected_time_to_win": "勝つための予想時間",
+  "review.expected_time_to_win": "勝つ期待時間（時間）",
   "review.farmed": "採掘",
   "review.netspace_size": "ネットスペースサイズ",
   "review.plot_count": "プロット数",
@@ -127,6 +127,6 @@
   "review.protocol_port": "プロトコルポート",
   "review.toggle_font": "フォントサイズの切り替え",
   "review.last_block_time": "最後に見つかったブロック",
-  "review.blockCountToday": "今日の総ブロック数",
+  "review.blockCountToday": "今日の総コイン",
   "review.noBlockInDays": "最後のブロックからの時間"
 }

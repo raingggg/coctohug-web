@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Verwenden Sie Cold Wallet für die Mining-Belohnung",
   "review.best_practice_3": "3. Behalten Sie die Datei /home/user/.coctohug/mnc.txt und leeren Sie deren Inhalt",
   "review.best_practice_4": "4. Überprüfen Sie regelmäßig die Coctohug-Community",
-  "review.expected_time_to_win": "Erwartete Zeit zum Gewinnen",
+  "review.expected_time_to_win": "Erwartete Zeit, um zu gewinnen (Stunden)",
   "review.farmed": "Abgebaut",
   "review.netspace_size": "Netspace-Größe",
   "review.plot_count": "Grundstücksanzahl",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Protokoll-Port",
   "review.toggle_font": "Schriftgröße umschalten",
   "review.last_block_time": "Letzter gefundener Block",
-  "review.blockCountToday": "Insgesamt Blöcke heute",
+  "review.blockCountToday": "Gesamtmünzen heute.",
   "review.noBlockInDays": "Stunden seit letztem Block"
 }

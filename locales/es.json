@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Utilice la billetera fría para la recompensa minera",
   "review.best_practice_3": "3. Conserve el archivo /home/user/.coctohug/mnc.txt y vacíe el contenido",
   "review.best_practice_4": "4. Verifique con regularidad la comunidad de Coctohug",
-  "review.expected_time_to_win": "Tiempo esperado para ganar",
+  "review.expected_time_to_win": "Tiempo esperado para ganar (horas)",
   "review.farmed": "Minado",
   "review.netspace_size": "Tamaño de Netspace",
   "review.plot_count": "Recuento de parcelas",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Puerto de protocolo",
   "review.toggle_font": "Alternar tamaño de fuente",
   "review.last_block_time": "Último bloque encontrado",
-  "review.blockCountToday": "Bloques totales hoy",
+  "review.blockCountToday": "Monedas totales hoy",
   "review.noBlockInDays": "Horas desde el último bloque"
 }

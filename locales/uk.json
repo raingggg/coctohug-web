@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Використовуйте холодний гаманець для винагороди за майнінг",
   "review.best_practice_3": "3. Збережіть файл /home/user/.coctohug/mnc.txt і очистіть вміст якого",
   "review.best_practice_4": "4. Регулярно перевіряйте спільноту Coctohug",
-  "review.expected_time_to_win": "Очікуваний час для перемоги",
+  "review.expected_time_to_win": "Очікуваний час, щоб виграти (годин)",
   "review.farmed": "Здобуто",
   "review.netspace_size": "Розмір мережевого простору",
   "review.plot_count": "Підрахунок сюжету",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Порт протоколу",
   "review.toggle_font": "Увімкніть розмір шрифту",
   "review.last_block_time": "Останній знайдений блок",
-  "review.blockCountToday": "Total Blocks Today",
+  "review.blockCountToday": "Загальні монети сьогодні",
   "review.noBlockInDays": "Години з останнього блоку"
 }

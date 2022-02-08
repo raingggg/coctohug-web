@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Usa il portafoglio freddo per la ricompensa del mining",
   "review.best_practice_3": "3. Conserva il file /home/user/.coctohug/mnc.txt e svuota il cui contenuto",
   "review.best_practice_4": "4. Controlla regolarmente la comunità di Coctohug",
-  "review.expected_time_to_win": "Tempo previsto per vincere",
+  "review.expected_time_to_win": "Tempo previsto per vincere (ore)",
   "review.farmed": "Estratto",
   "review.netspace_size": "Dimensione dello spazio di rete",
   "review.plot_count": "Conteggio trama",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Porta protocollo",
   "review.toggle_font": "Cambia dimensione carattere",
   "review.last_block_time": "Ultimo blocco trovato",
-  "review.blockCountToday": "Blocchi totali oggi",
+  "review.blockCountToday": "Monete totali oggi",
   "review.noBlockInDays": "Ore dall'ultimo blocco"
 }

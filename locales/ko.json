@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. 채굴 보상으로 콜드월렛 사용",
   "review.best_practice_3": "3. /home/user/.coctohug/mnc.txt 파일을 유지하고 그 내용을 비웁니다.",
   "review.best_practice_4": "4. Coctohug 커뮤니티를 정기적으로 확인하십시오.",
-  "review.expected_time_to_win": "예상 우승 시간",
+  "review.expected_time_to_win": "예상되는 시간 (시간)",
   "review.farmed": "채광 한",
   "review.netspace_size": "넷스페이스 크기",
   "review.plot_count": "플롯 수",
@@ -127,6 +127,6 @@
   "review.protocol_port": "프로토콜 포트",
   "review.toggle_font": "글꼴 크기 전환",
   "review.last_block_time": "마지막으로 찾은 블록",
-  "review.blockCountToday": "오늘의 총 블록 수",
+  "review.blockCountToday": "오늘의 총 동전",
   "review.noBlockInDays": "마지막 블록 이후 시간"
 }

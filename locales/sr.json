@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Користите хладан новчаник за награду за рударење",
   "review.best_practice_3": "3. Задржите датотеку /хоме/усер/.цоцтохуг/мнц.ткт и испразните њен садржај",
   "review.best_practice_4": "4. Редовно проверавајте Цоцтохуг заједницу",
-  "review.expected_time_to_win": "Очекивано време за победу",
+  "review.expected_time_to_win": "Очекивано време за победу (сати)",
   "review.farmed": "Минед",
   "review.netspace_size": "Нетспаце Сизе",
   "review.plot_count": "Плот Цоунт",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Протокол порт",
   "review.toggle_font": "Пребаци величину фонта",
   "review.last_block_time": "Последњи пронађени блок",
-  "review.blockCountToday": "Тотал Блоцкс Тодаи",
+  "review.blockCountToday": "Тотал Цоинс данас",
   "review.noBlockInDays": "Сати од последњег блока"
 }

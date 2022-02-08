@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Use a carteira fría para a recompensa mineira",
   "review.best_practice_3": "3. Manteña o ficheiro /home/user/.coctohug/mnc.txt e baleira o contido do cal",
   "review.best_practice_4": "4. Comprobe regularmente a comunidade Coctohug",
-  "review.expected_time_to_win": "Tempo esperado para gañar",
+  "review.expected_time_to_win": "Tempo esperado para gañar (horas)",
   "review.farmed": "Minado",
   "review.netspace_size": "Tamaño do espazo neto",
   "review.plot_count": "Conta de tramas",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Protocolo Porto",
   "review.toggle_font": "Alterna o tamaño da fonte",
   "review.last_block_time": "Último bloque atopado",
-  "review.blockCountToday": "Total de bloques hoxe",
+  "review.blockCountToday": "Monedas totais hoxe",
   "review.noBlockInDays": "Horas desde o último bloque"
 }

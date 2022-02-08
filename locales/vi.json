@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Sử dụng ví lạnh để nhận phần thưởng khai thác",
   "review.best_practice_3": "3. Giữ tệp /home/user/.coctohug/mnc.txt và làm trống nội dung",
   "review.best_practice_4": "4. Kiểm tra lại cộng đồng Coctohug",
-  "review.expected_time_to_win": "Thời gian mong đợi để giành chiến thắng",
+  "review.expected_time_to_win": "Thời gian dự kiến ​​sẽ thắng (giờ)",
   "review.farmed": "Khai thác",
   "review.netspace_size": "Kích thước Netspace",
   "review.plot_count": "Số lượng lô đất",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Cổng giao thức",
   "review.toggle_font": "Chuyển đổi kích thước phông chữ",
   "review.last_block_time": "Khối tìm thấy cuối cùng",
-  "review.blockCountToday": "Tổng số khối hôm nay",
+  "review.blockCountToday": "Tổng số tiền hôm nay",
   "review.noBlockInDays": "Giờ kể từ lần chặn cuối cùng"
 }

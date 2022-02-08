@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. Madencilik ödülü için soğuk cüzdan kullanın",
   "review.best_practice_3": "3. /home/user/.coctohug/mnc.txt dosyasını saklayın ve içeriğini boşaltın.",
   "review.best_practice_4": "4. Coctohug topluluğunu düzenli olarak kontrol edin",
-  "review.expected_time_to_win": "Kazanmak için Beklenen Zaman",
+  "review.expected_time_to_win": "Kazanmak için Beklenen Zaman (Saatler)",
   "review.farmed": "mayınlı",
   "review.netspace_size": "Ağ Alanı Boyutu",
   "review.plot_count": "Arsa Sayısı",
@@ -127,6 +127,6 @@
   "review.protocol_port": "Protokol Bağlantı Noktası",
   "review.toggle_font": "Yazı Tipi Boyutunu Değiştir",
   "review.last_block_time": "En Son Bulunan Blok",
-  "review.blockCountToday": "Bugünkü Toplam Blok",
+  "review.blockCountToday": "Bugün Toplam Paralar",
   "review.noBlockInDays": "Son Bloktan Beri Saatler"
 }

@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. ใช้กระเป๋าเงินเย็นเพื่อรับรางวัลการขุด",
   "review.best_practice_3": "3. เก็บไฟล์ /home/user/.coctohug/mnc.txt และล้างเนื้อหาที่",
   "review.best_practice_4": "4. ตรวจสอบชุมชน Coctohug ซ้ำๆ",
-  "review.expected_time_to_win": "เวลาที่คาดว่าจะชนะ",
+  "review.expected_time_to_win": "เวลาที่คาดหวังที่จะชนะ (ชั่วโมง)",
   "review.farmed": "ขุด",
   "review.netspace_size": "ขนาดเน็ตสเปซ",
   "review.plot_count": "จำนวนพล็อต",
@@ -127,6 +127,6 @@
   "review.protocol_port": "พอร์ตโปรโตคอล",
   "review.toggle_font": "สลับขนาดตัวอักษร",
   "review.last_block_time": "บล็อกที่พบล่าสุด",
-  "review.blockCountToday": "บล็อกทั้งหมดวันนี้",
+  "review.blockCountToday": "เหรียญทั้งหมดวันนี้",
   "review.noBlockInDays": "ชั่วโมงนับตั้งแต่บล็อกที่แล้ว"
 }

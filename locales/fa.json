@@ -86,7 +86,7 @@
   "review.best_practice_2": "2. از کیف پول سرد برای پاداش استخراج استفاده کنید",
   "review.best_practice_3": "3. فایل /home/user/.coctohug/mnc.txt را نگه دارید و محتوای آن را خالی کنید",
   "review.best_practice_4": "4. به طور منظم انجمن Coctohug را بررسی کنید",
-  "review.expected_time_to_win": "زمان مورد انتظار برای برنده شدن",
+  "review.expected_time_to_win": "زمان انتظار برای پیروزی (ساعت)",
   "review.farmed": "استخراج شده",
   "review.netspace_size": "اندازه نت اسپیس",
   "review.plot_count": "تعداد طرح",
@@ -127,6 +127,6 @@
   "review.protocol_port": "پورت پروتکل",
   "review.toggle_font": "تغییر اندازه قلم",
   "review.last_block_time": "آخرین بلوک یافت شده",
-  "review.blockCountToday": "کل بلوک امروز",
+  "review.blockCountToday": "سکه های کل امروز",
   "review.noBlockInDays": "ساعت از آخرین بلوک"
 }

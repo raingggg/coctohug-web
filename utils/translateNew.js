@@ -87,5 +87,5 @@ const retryTrans = async (val, options) => {
   }).join('');
 };
 
-// translateAll();
-translateAll('zh-CN');
+translateAll();
+// translateAll('zh-CN');
