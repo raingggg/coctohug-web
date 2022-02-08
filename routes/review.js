@@ -5,7 +5,7 @@ const MobileDetect = require('mobile-detect');
 const { Op } = require("sequelize");
 const { AllInOne, Wallet } = require('../models');
 const { isWebControllerMode, getCoctohugWebVersion } = require('../utils/chiaConfig');
-const { getTotalBalance } = require('../utils/blockUtil');
+const { getTotalBalance, getETWHours } = require('../utils/blockUtil');
 const { logger } = require('../utils/logger');
 
 const isWebController = isWebControllerMode();
@@ -33,6 +33,8 @@ router.get('/', async (req, res, next) => {
       });
 
       data.forEach(dt => {
+        dt.expected_hours_to_win = getETWHours(dt.expected_time_to_win);
+
         if (dt.total_price) {
           allCoinsDollars += dt.total_price;
         }

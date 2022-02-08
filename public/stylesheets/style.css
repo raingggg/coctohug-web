@@ -145,6 +145,9 @@ body {
 #desktopReviewPage .desktop-review .fork_version {
   max-width: 100px;
   word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 #desktopReviewPage .viewRow {
   padding-top: 10px;

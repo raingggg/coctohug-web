@@ -45,6 +45,15 @@
           <th class="chain_height">
             <%= __('review.chain_height') %>
           </th>
+          <th class="expected_time_to_win">
+            <%= __('review.expected_time_to_win') %>
+          </th>
+          <th class="noBlockInDays">
+            <%= __('review.noBlockInDays') %>
+          </th>
+          <th class="blockCountToday">
+            <%= __('review.blockCountToday') %>
+          </th>
           <th class="plot_count">
             <%= __('review.plot_count') %>
           </th>
@@ -53,9 +62,6 @@
           </th>
           <th class="netspace_size">
             <%= __('review.netspace_size') %>
-          </th>
-          <th class="expected_time_to_win">
-            <%= __('review.expected_time_to_win') %>
           </th>
           <th class="connection_count">
             <%= __('review.connect_count') %>
@@ -74,12 +80,6 @@
           </th>
           <th class="total_coins">
             <%= __('review.mined_count') %>
-          </th>
-          <th class="noBlockInDays">
-            <%= __('review.noBlockInDays') %>
-          </th>
-          <th class="blockCountToday">
-            <%= __('review.blockCountToday') %>
           </th>
           <th class="wallet_balance">
             <%= __('review.wallet_balance') %>
@@ -114,9 +114,23 @@
             </td>
             <td class="chain_sync_to_time <%= dt.invalid_chain_status ? 'text-danger' : '' %>">
               <%= dt.chain_sync_to_time && dt.chain_sync_to_time.toLocaleString("en-US", {hour12: false}) %>
+                <span class="visually-hidden">
+                  <%= dt.chain_sync_to_time %>
+                </span>
             </td>
             <td class="chain_height">
               <%= dt.chain_height %>
+            </td>
+            <td class="expected_time_to_win" data-bs-html=true data-bs-toggle="tooltip" data-bs-placement="top"
+              title="<div style='background: green;'><%= dt.expected_time_to_win %></div>">
+              <%= dt.expected_hours_to_win %>
+            </td>
+            <td class="noBlockInDays" data-bs-html=true data-bs-toggle="tooltip" data-bs-placement="top"
+              title="<div style='background: green;'><%= dt.ext_num_2 %> days</div>">
+              <%= parseFloat((dt.ext_num_2 * 24).toFixed(1)) %>
+            </td>
+            <td class="blockCountToday">
+              <%= dt.ext_num_3 %>
             </td>
             <td class="plot_count">
               <%= dt.plot_count %>
@@ -126,9 +140,6 @@
             </td>
             <td class="netspace_size">
               <%= dt.netspace_size %>
-            </td>
-            <td class="expected_time_to_win">
-              <%= dt.expected_time_to_win %>
             </td>
             <td class="connection_count <%= dt.invalid_connection_status ? 'text-danger' : '' %>">
               <%= dt.connection_count %>
@@ -149,13 +160,6 @@
             </td>
             <td class="total_coins">
               <%= dt.total_coins %>
-            </td>
-            <td class="noBlockInDays" data-bs-html=true data-bs-toggle="tooltip" data-bs-placement="top"
-              title="<div style='background: green;'><%= dt.ext_num_2 %> days</div>">
-              <%= parseFloat((dt.ext_num_2 * 24).toFixed(1)) %>
-            </td>
-            <td class="blockCountToday">
-              <%= dt.ext_num_3 %>
             </td>
             <td class="wallet_balance">
               <%= dt.wallet_balance %>

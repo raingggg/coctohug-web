@@ -25,6 +25,7 @@ const REG_WALLET_ADDR = /First wallet address: (\w*)/;
 const REG_WALLET_HEIGHT = /Wallet height:\s+(\d+)/;
 const REG_WALLET_STATUS = /Sync status:\s+(.*)/;
 const REG_CHAIN_INFO = /Time:\s+(.{1,60})Height:\s+(.{1,30})/;
+const REG_ETW = /(\d+)\s+(\w+)(\s+and\s+)?(\d+)?\s?(\w+)?/;
 
 const getTotalBalance = (str) => {
   let sum = 0;
@@ -214,6 +215,37 @@ const getWalletInfo = (details) => {
   };
 };
 
+const getTimeInSeconds = (n, str) => {
+  if (n && str) {
+    let mut = str.includes('second') ? 1 : 0;
+    if (!mut) mut = str.includes('minute') ? 60 : 0;
+    if (!mut) mut = str.includes('hour') ? 60 * 60 : 0;
+    if (!mut) mut = str.includes('day') ? 60 * 60 * 24 : 0;
+    if (!mut) mut = str.includes('week') ? 60 * 60 * 24 * 7 : 0;
+    if (!mut) mut = str.includes('month') ? 60 * 60 * 24 * 30 : 0;
+
+    if (mut) {
+      return parseFloat(n) * mut;
+    }
+  }
+
+  return 0;
+}
+
+const getETWHours = (str) => {
+  try {
+    const match = REG_ETW.exec(str);
+    let n = 0;
+    if (match) {
+      n = getTimeInSeconds(match[1], match[2]) + getTimeInSeconds(match[4], match[5]);
+    }
+
+    return !isNaN(n) && isFinite(n) ? parseFloat((n / 3600).toFixed(1)) : str;
+  } catch (e) {
+    return str;
+  }
+};
+
 // const tt = async () => {
 //   let amount = 0;
 //   name = 'hddcoin';
@@ -227,7 +259,8 @@ const getWalletInfo = (details) => {
 //   const prices = await getAllCoinsPrice();
 //   console.log(prices);
 //   const balance = await getCoinBalance('apple', 'apple18ds3fw56wtttg7xm2d9s4wul720xr8ex50us54t3kz74ylc7avzspa6mey');
-//   console.log(balance);
+// console.log(balance);
+// console.log(getETWHours('2 weeks and 5 days'));
 // };
 // tt();
 
@@ -244,4 +277,5 @@ module.exports = {
   getBlockchainInfo,
   getWalletInfo,
   getChiaPoolWalletId,
+  getETWHours,
 }

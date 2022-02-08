@@ -1,4 +1,4 @@
-const simpleViewColumns = ['se_no', 'blockchain', 'chain_status', 'netspace_size', 'expected_time_to_win', 'coin_symbol', 'coin_price', 'protocol_port', 'fork_version', 'noBlockInDays', 'blockCountToday'];
+const simpleViewColumns = ['se_no', 'blockchain', 'chain_status', 'netspace_size', 'expected_time_to_win', 'plot_count', 'coin_symbol', 'coin_price', 'protocol_port', 'fork_version', 'noBlockInDays', 'blockCountToday'];
 const statusViewColumns = ['se_no', 'blockchain', 'chain_status', 'chain_sync_to_time', 'chain_height', 'plot_count', 'plots_size', 'netspace_size', 'expected_time_to_win', 'connection_count', 'wallet_status', 'wallet_height', 'total_coins'];
 const balanceViewColumns = ['se_no', 'blockchain', 'coin_symbol', 'coin_price', 'total_coins', 'wallet_balance', 'reward_balance', 'total_price', 'noBlockInDays', 'blockCountToday'];
 
@@ -487,40 +487,40 @@ $(document).ready(function () {
       type: 'numeric'
     });
 
-    function getTimeInSeconds(n, str) {
-      if (n && str) {
-        let mut = str.includes('second') ? 1 : 0;
-        if (!mut) mut = str.includes('minute') ? 60 : 0;
-        if (!mut) mut = str.includes('hour') ? 60 * 60 : 0;
-        if (!mut) mut = str.includes('day') ? 60 * 60 * 24 : 0;
-        if (!mut) mut = str.includes('week') ? 60 * 60 * 24 * 7 : 0;
-        if (!mut) mut = str.includes('month') ? 60 * 60 * 24 * 30 : 0;
+    // function getTimeInSeconds(n, str) {
+    //   if (n && str) {
+    //     let mut = str.includes('second') ? 1 : 0;
+    //     if (!mut) mut = str.includes('minute') ? 60 : 0;
+    //     if (!mut) mut = str.includes('hour') ? 60 * 60 : 0;
+    //     if (!mut) mut = str.includes('day') ? 60 * 60 * 24 : 0;
+    //     if (!mut) mut = str.includes('week') ? 60 * 60 * 24 * 7 : 0;
+    //     if (!mut) mut = str.includes('month') ? 60 * 60 * 24 * 30 : 0;
 
-        if (mut) {
-          return parseFloat(n) * mut;
-        }
-      }
+    //     if (mut) {
+    //       return parseFloat(n) * mut;
+    //     }
+    //   }
 
-      return 0;
-    }
+    //   return 0;
+    // }
 
-    const REG_ETW = /(\d+)\s+(\w+)(\s+and\s+)?(\d+)?\s?(\w+)?/;
-    $.tablesorter.addParser({
-      id: 'expected_time_to_win',
-      is: function (s) {
-        return false;
-      },
-      format: function (str) {
-        const match = REG_ETW.exec(str);
-        let n = 0;
-        if (match) {
-          n = getTimeInSeconds(match[1], match[2]) + getTimeInSeconds(match[4], match[5]);
-        }
-        // console.log(n, str);
-        return !isNaN(n) && isFinite(n) ? n : str;
-      },
-      type: 'numeric'
-    });
+    // const REG_ETW = /(\d+)\s+(\w+)(\s+and\s+)?(\d+)?\s?(\w+)?/;
+    // $.tablesorter.addParser({
+    //   id: 'expected_time_to_win',
+    //   is: function (s) {
+    //     return false;
+    //   },
+    //   format: function (str) {
+    //     const match = REG_ETW.exec(str);
+    //     let n = 0;
+    //     if (match) {
+    //       n = getTimeInSeconds(match[1], match[2]) + getTimeInSeconds(match[4], match[5]);
+    //     }
+    //     // console.log(n, str);
+    //     return !isNaN(n) && isFinite(n) ? n : str;
+    //   },
+    //   type: 'numeric'
+    // });
 
     // $.tablesorter.addParser({
     //   id: 'last_block_time',
@@ -536,8 +536,8 @@ $(document).ready(function () {
 
     $("#reviewTable").tablesorter({
       headers: {
-        7: { sorter: "netspace" },
-        8: { sorter: "expected_time_to_win" },
+        10: { sorter: "netspace" },
+        // 5: { sorter: "expected_time_to_win" },
         // 20: { sorter: "last_block_time" }
       },
       widgets: ['columnSelector'], // https://mottie.github.io/tablesorter/docs/example-widget-column-selector.html

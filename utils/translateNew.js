@@ -41,6 +41,7 @@ const translateAll = async (startLocale) => {
       if (fileName === en) {
         objContent[key] = val;
       } else {
+        console.log('translating:', val);
         const res = await retryTrans(val, { client: "dict-chrome-ex", from: 'en', to: locale });
         objContent[key] = res;
       }
@@ -52,18 +53,39 @@ const translateAll = async (startLocale) => {
 
 const retryTrans = async (val, options) => {
   let res = '';
-  for (let i = 0; i < 3; i++) {
-    if (res && res.data && res.data.sentences) break;
+  let result = '';
+  for (let i = 0; i < 20; i++) {
+    // console.log('1'.repeat(10));
+    if (res && res.data) {
+      // console.log(res.data);
+      if (res.data.sentences && res.data.sentences.length > 0) {
+        result = res.data.sentences;
+      } else if (res.data.length > 0) {
+        result = res.data;
+      }
+    }
+    // console.log('2'.repeat(10));
+    if (result) break;
 
     try {
+      // console.log('3'.repeat(10));
       res = await translate(val, options);
+      // console.log('4'.repeat(10), res.data);
     } catch (e) {
       console.log('retrying...');
     }
   }
 
-  return res.data.sentences.map(s => s.trans).join('');
+  console.log('result', result);
+  return result.map(s => {
+    if (typeof s === 'object') {
+      if (s.trans) return s.trans;
+      return '';
+    }
+
+    return s;
+  }).join('');
 };
 
-translateAll();
-// translateAll('fr');
+// translateAll();
+translateAll('zh-CN');

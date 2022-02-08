@@ -1,8 +1,10 @@
 # Changelog
 
-## [1.4.9] - 2022-02-03
-- correct rose mojo unit
-- support 2 new forks: beet, beer
+## [1.5.0] - 2022-02-09
+- table veiw improvement for columns: version, #plots, blocksToday, ETW
+- ccm improvement for: restart, silicoin
+- peers_count improvement for all forks
+- add polish language support
 
 ## [1.4.8] - 2022-01-28
 - standard wallet mode support
