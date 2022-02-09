@@ -112,11 +112,9 @@
             <td class="chain_status <%= dt.invalid_farm_status ? 'text-danger' : '' %>">
               <%= dt.status %>
             </td>
-            <td class="chain_sync_to_time <%= dt.invalid_chain_status ? 'text-danger' : '' %>">
+            <td class="chain_sync_to_time <%= dt.invalid_chain_status ? 'text-danger' : '' %>"
+              data-sync="<%= dt.chain_sync_to_time %>">
               <%= dt.chain_sync_to_time && dt.chain_sync_to_time.toLocaleString("en-US", {hour12: false}) %>
-                <span class="visually-hidden">
-                  <%= dt.chain_sync_to_time %>
-                </span>
             </td>
             <td class="chain_height">
               <%= dt.chain_height %>

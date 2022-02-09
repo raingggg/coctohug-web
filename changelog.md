@@ -4,7 +4,6 @@
 - table veiw improvement for columns: version, #plots, blocksToday, ETW
 - ccm improvement for: restart, silicoin
 - peers_count improvement for all forks
-- add polish language support
 
 ## [1.4.8] - 2022-01-28
 - standard wallet mode support
