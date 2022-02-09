@@ -61,6 +61,7 @@ const chainNameMap = {
   littlelambocoin: 'littlelambocoin',
   beer: 'beer',
   beet: 'beet',
+  bpx: 'bpx',
 };
 
 const chainSymbolMap = {
@@ -125,6 +126,7 @@ const chainSymbolMap = {
   littlelambocoin: 'LLC',
   beer: 'XBR',
   beet: 'XBT',
+  bpx: 'BPX',
 };
 
 const getExp = (blockchain) => {
