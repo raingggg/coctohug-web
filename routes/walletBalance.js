@@ -2,6 +2,7 @@ var i18n = require('i18n');
 const express = require('express');
 const router = express.Router();
 const { logger } = require('../utils/logger');
+const { chainConfigs } = require('../utils/chainConfigs');
 const { WalletBalance } = require('../models');
 
 router.get('/', async (req, res, next) => {
@@ -17,6 +18,9 @@ router.get('/', async (req, res, next) => {
     });
 
     data.forEach(dt => {
+      const chainConfig = chainConfigs[dt.blockchain];
+      Object.assign(dt, { symbol: chainConfig && chainConfig.symbol });
+
       if (dt.total_price) {
         allCoinsDollars += dt.total_price;
       }

@@ -11,12 +11,12 @@ router.get('/', async (req, res, next) => {
     ],
     where: {
       type: {
-        [Op.in]: ['EVT_INTIME_BLOCK_FOUND', 'EVT_INTIME_RECEIVE_COIN']
+        [Op.in]: ['EVT_INTIME_RECEIVE_COIN'] // 'EVT_INTIME_BLOCK_FOUND',
       }
     },
     limit: 200,
   });
-  res.render('index', {data, pageName: 'receivedCoins' });
+  res.render('index', { data, pageName: 'receivedCoins' });
 });
 
 module.exports = router;

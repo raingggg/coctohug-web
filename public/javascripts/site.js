@@ -609,5 +609,38 @@ $(document).ready(function () {
     $(this).toggleClass('clicked-row');
   });
 
+  $("#balanceTabTable").tablesorter({
+    headers: {
+      // 10: { sorter: "netspace" },
+      // 5: { sorter: "expected_time_to_win" },
+      // 20: { sorter: "last_block_time" }
+    },
+    widgets: ['columnSelector'], // https://mottie.github.io/tablesorter/docs/example-widget-column-selector.html
+    widgetOptions: {
+      // hide columnSelector false columns while in auto mode
+      columnSelector_mediaqueryHidden: true,
+
+      // set the maximum and/or minimum number of visible columns; use null to disable
+      columnSelector_maxVisible: null,
+      columnSelector_minVisible: null,
+    }
+  });
+
+  $("#receivedCoinsTable").tablesorter({
+    headers: {
+      // 10: { sorter: "netspace" },
+      // 5: { sorter: "expected_time_to_win" },
+      // 20: { sorter: "last_block_time" }
+    },
+    widgets: ['columnSelector'], // https://mottie.github.io/tablesorter/docs/example-widget-column-selector.html
+    widgetOptions: {
+      // hide columnSelector false columns while in auto mode
+      columnSelector_mediaqueryHidden: true,
+
+      // set the maximum and/or minimum number of visible columns; use null to disable
+      columnSelector_maxVisible: null,
+      columnSelector_minVisible: null,
+    }
+  });
 });
 

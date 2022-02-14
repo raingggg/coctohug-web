@@ -16,6 +16,8 @@
           <div class="col">
             <div class="review-column <%= dt.status === 'Farming' ? 'Farming' : 'NotFarming' %>">
               <div><span>
+                  <img src="images/logos/<%= dt.blockchain %>-min.png" alt="<%= dt.blockchain %>" width="20"
+                    height="20">
                   <%= dt.blockchain %>
                 </span><span>
                   <%= dtIndex + 1 %>

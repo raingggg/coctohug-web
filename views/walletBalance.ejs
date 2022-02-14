@@ -11,47 +11,61 @@
         <%= lastUpdatedAt.toLocaleString("en-US", {hour12: false}) %>
     </span>
   </div>
-  <table class="table table-striped table-hover">
+  <table class="table table-striped table-hover" id="balanceTabTable">
     <thead>
       <tr>
-        <td></td>
-        <td>
+        <th class="se_no">
+          #
+        </th>
+        <th class="blockchain">
           <%= __('general.blockchain') %>
-        </td>
-        <td>
+        </th>
+        <th class="balance">
           <%= __('balance.balance') %>
-        </td>
-        <td>
+        </th>
+        <th class="coin_symbol">
+          <%= __('review.token_name') %>
+        </th>
+        <th class="price">
           <%= __('balance.price') %>
-        </td>
-        <td>
+        </th>
+        <th class="total_price">
           <%= __('balance.total_price') %>
-        </td>
-        <td>
+        </th>
+        <th class="address">
           <%= __('balance.address') %>
-        </td>
+        </th>
       </tr>
     </thead>
     <tbody>
       <% data.forEach(function(dt, index){ %>
         <tr>
-          <td>
+          <td class="se_no">
             <input type="checkbox" name="wbcheck" value="<%= index %>" data-address="<%= dt.address %>"
               data-blockchain="<%= dt.blockchain %>" />
+            <%= index + 1 %>
           </td>
-          <td>
-            <%= dt.blockchain %>
+          <td class="blockchain">
+            <img src="images/logos/<%= dt.blockchain %>-min.png" alt="<%= dt.blockchain %>" width="20" height="20">
+            <b>
+              <%= dt.blockchain %>
+            </b>
           </td>
-          <td>
+          <td class="balance">
             <%= dt.balance %>
           </td>
-          <td>
+          <td class="coin_symbol">
+            <b>
+              <%= dt.symbol %>
+            </b>
+          </td>
+          <td class="price">
             <%= dt.price %>
           </td>
-          <td>
+          <td class="total_price">
             <%= dt.total_price %>
           </td>
-          <td>
+          <td class="address">
             <span class="d-inline-block text-truncate" style="max-width: 150px;">
               <%= dt.address %>
             </span>
