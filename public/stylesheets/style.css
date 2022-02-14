@@ -142,6 +142,9 @@ body {
 #desktopReviewPage .desktop-review tbody td.wallet_balance {
   font-weight: bold;
 }
+#desktopReviewPage .desktop-review .blockchain {
+  min-width: 120px;
+}
 #desktopReviewPage .desktop-review .fork_version {
   max-width: 100px;
   word-break: break-all;
