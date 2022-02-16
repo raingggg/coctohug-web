@@ -128,5 +128,6 @@
   "review.toggle_font": "Увімкніть розмір шрифту",
   "review.last_block_time": "Останній знайдений блок",
   "review.blockCountToday": "Загальні монети сьогодні",
-  "review.noBlockInDays": "Години з останнього блоку"
+  "review.noBlockInDays": "Години з останнього блоку",
+  "leftbar.best": "Кращі практики"
 }

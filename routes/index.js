@@ -5,6 +5,7 @@ const connectionsWeb = require('./connections');
 const dailyReportWeb = require('./dailyReport');
 const handsWeb = require('./hands');
 const keysWeb = require('./keys');
+const bestWeb = require('./best');
 const newsWeb = require('./news');
 const plotsWeb = require('./plots');
 const poolsWeb = require('./pools');
@@ -24,6 +25,7 @@ module.exports = {
   dailyReportWeb,
   handsWeb,
   keysWeb,
+  bestWeb,
   newsWeb,
   plotsWeb,
   poolsWeb,

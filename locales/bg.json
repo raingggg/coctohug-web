@@ -128,5 +128,6 @@
   "review.toggle_font": "Превключване на размера на шрифта",
   "review.last_block_time": "Последният намерен блок",
   "review.blockCountToday": "Общо монети днес",
-  "review.noBlockInDays": "Часове от последния блок"
+  "review.noBlockInDays": "Часове от последния блок",
+  "leftbar.best": "Най-добри практики"
 }

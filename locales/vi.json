@@ -128,5 +128,6 @@
   "review.toggle_font": "Chuyển đổi kích thước phông chữ",
   "review.last_block_time": "Khối tìm thấy cuối cùng",
   "review.blockCountToday": "Tổng số tiền hôm nay",
-  "review.noBlockInDays": "Giờ kể từ lần chặn cuối cùng"
+  "review.noBlockInDays": "Giờ kể từ lần chặn cuối cùng",
+  "leftbar.best": "Thực hành tốt nhất"
 }

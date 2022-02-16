@@ -48,6 +48,7 @@ const {
   dailyReportWeb,
   handsWeb,
   keysWeb,
+  bestWeb,
   newsWeb,
   plotsWeb,
   poolsWeb,
@@ -118,6 +119,7 @@ if (isWebController) {
   app.use('/dailyReportWeb', dailyReportWeb);
   app.use('/handsWeb', handsWeb);
   app.use('/keysWeb', keysWeb);
+  app.use('/bestWeb', bestWeb);
   app.use('/newsWeb', newsWeb);
   app.use('/plotsWeb', plotsWeb);
   app.use('/poolsWeb', poolsWeb);

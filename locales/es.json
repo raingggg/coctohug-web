@@ -128,5 +128,6 @@
   "review.toggle_font": "Alternar tamaño de fuente",
   "review.last_block_time": "Último bloque encontrado",
   "review.blockCountToday": "Monedas totales hoy",
-  "review.noBlockInDays": "Horas desde el último bloque"
+  "review.noBlockInDays": "Horas desde el último bloque",
+  "leftbar.best": "Mejores prácticas"
 }

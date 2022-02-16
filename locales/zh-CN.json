@@ -128,5 +128,6 @@
   "review.toggle_font": "切换字体大小",
   "review.last_block_time": "最新发现的区块",
   "review.blockCountToday": "今天的总硬币",
-  "review.noBlockInDays": "自上次区块以来的小时数"
+  "review.noBlockInDays": "自上次区块以来的小时数",
+  "leftbar.best": "最佳实践"
 }

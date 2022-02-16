@@ -128,5 +128,6 @@
   "review.toggle_font": "I-toggle ang Laki ng Font",
   "review.last_block_time": "Huling Nahanap na Block",
   "review.blockCountToday": "Kabuuang mga barya ngayon",
-  "review.noBlockInDays": "Mga Oras Mula Noong Huling Pag-block"
+  "review.noBlockInDays": "Mga Oras Mula Noong Huling Pag-block",
+  "leftbar.best": "Pinakamahusay na kasanayan"
 }

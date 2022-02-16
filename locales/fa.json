@@ -128,5 +128,6 @@
   "review.toggle_font": "تغییر اندازه قلم",
   "review.last_block_time": "آخرین بلوک یافت شده",
   "review.blockCountToday": "سکه های کل امروز",
-  "review.noBlockInDays": "ساعت از آخرین بلوک"
+  "review.noBlockInDays": "ساعت از آخرین بلوک",
+  "leftbar.best": "بهترین شیوه ها"
 }
