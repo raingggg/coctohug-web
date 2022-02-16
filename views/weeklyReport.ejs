@@ -1,34 +1,41 @@
 <div class="page-wrapper">
-  <table class="table table-striped table-hover">
+  <table class="table table-striped table-hover generalMessageTable">
     <thead>
       <tr>
-        <td>
-          <%= __('general.createdAt') %>
-        </td>
-        <td>
-          <%= __('general.message') %>
-        </td>
-        <td>
+        <th class="se_no">#</th>
+        <th class="blockchain">
           <%= __('general.blockchain') %>
-        </td>
-        <td>
+        </th>
+        <th class="message">
+          <%= __('general.message') %>
+        </th>
+        <th class="createdAt">
+          <%= __('general.createdAt') %>
+        </th>
+        <th class="hostname">
           <%= __('general.hostname') %>
-        </td>
+        </th>
       </tr>
     </thead>
     <tbody>
       <% data.forEach(function(dt, index){ %>
         <tr>
-          <td>
-            <%= dt.createdAt.toLocaleString("en-US", {hour12: false}) %>
+          <td class="se_no">
+            <%= index + 1 %>
           </td>
-          <td>
+          <td class="blockchain">
+            <img src="images/logos/<%= dt.blockchain %>-min.png" alt="<%= dt.blockchain %>" width="20" height="20">
+            <b>
+              <%= dt.blockchain %>
+            </b>
+          </td>
+          <td class="message">
             <%- dt.message && dt.message.replace(/\n/g, "<br/>" ) %>
           </td>
-          <td>
-            <%= dt.blockchain %>
+          <td class="createdAt">
+            <%= dt.createdAt.toLocaleString("en-US", {hour12: false}) %>
           </td>
-          <td>
+          <td class="hostname">
             <%= dt.hostname %>
           </td>
         </tr>

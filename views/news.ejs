@@ -2,34 +2,41 @@
   <div class="container latestNewsDiv badge bg-success text-wrap">
     <%- latestNews %>
   </div>
-  <table class="table table-striped table-hover">
+  <table class="table table-striped table-hover generalMessageTable">
     <thead>
       <tr>
-        <td>
-          <%= __('general.createdAt') %>
-        </td>
-        <td>
-          <%= __('general.message') %>
-        </td>
-        <td>
+        <th>#</th>
+        <th>
           <%= __('general.blockchain') %>
-        </td>
-        <td>
+        </th>
+        <th>
+          <%= __('general.message') %>
+        </th>
+        <th>
+          <%= __('general.createdAt') %>
+        </th>
+        <th>
           <%= __('general.hostname') %>
-        </td>
+        </th>
       </tr>
     </thead>
     <tbody>
       <% data.forEach(function(dt, index){ %>
         <tr>
           <td>
-            <%= dt.createdAt.toLocaleString("en-US", {hour12: false}) %>
+            <%= index + 1 %>
+          </td>
+          <td>
+            <img src="images/logos/<%= dt.blockchain %>-min.png" alt="<%= dt.blockchain %>" width="20" height="20">
+            <b>
+              <%= dt.blockchain %>
+            </b>
           </td>
           <td>
             <%= dt.message %>
           </td>
           <td>
-            <%= dt.blockchain %>
+            <%= dt.createdAt.toLocaleString("en-US", {hour12: false}) %>
           </td>
           <td>
             <%= dt.hostname %>

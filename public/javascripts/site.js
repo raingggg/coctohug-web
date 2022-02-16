@@ -626,7 +626,7 @@ $(document).ready(function () {
     }
   });
 
-  $("#receivedCoinsTable").tablesorter({
+  $(".generalMessageTable").tablesorter({
     headers: {
       // 10: { sorter: "netspace" },
       // 5: { sorter: "expected_time_to_win" },

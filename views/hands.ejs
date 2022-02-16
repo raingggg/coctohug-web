@@ -1,46 +1,49 @@
 <div class="page-wrapper">
-  <table class="table table-striped table-hover">
+  <table class="table table-striped table-hover generalMessageTable">
     <thead>
       <tr>
-        <td></td>
-        <td>
+        <th class="se_no">#</th>
+        <th class="blockchain">
           <%= __('general.blockchain') %>
-        </td>
-        <td>
+        </th>
+        <th class="mode">
           <%= __('general.mode') %>
-        </td>
-        <td>
+        </th>
+        <th class="versions">
           <%= __('general.versions') %>
-        </td>
-        <td>
+        </th>
+        <th class="updatedAt">
           <%= __('general.updatedAt') %>
-        </td>
-        <td>
+        </th>
+        <th class="hostname">
           <%= __('general.hostname') %>
-        </td>
+        </th>
       </tr>
     </thead>
     <tbody>
       <% data.forEach(function(dt, index){ %>
         <tr>
-          <td>
+          <td class="se_no">
             <input type="checkbox" name="handcheck" value="<%= index %>" data-hostname="<%= dt.hostname %>"
               data-blockchain="<%= dt.blockchain %>" />
             <%= index + 1 %>
           </td>
-          <td>
-            <%= dt.blockchain %>
+          <td class="blockchain">
+            <img src="images/logos/<%= dt.blockchain %>-min.png" alt="<%= dt.blockchain %>" width="20" height="20">
+            <b>
+              <%= dt.blockchain %>
+            </b>
           </td>
-          <td>
+          <td class="mode">
             <%= dt.mode %>
           </td>
-          <td>
+          <td class="versions">
             <%- dt.versions && dt.versions.replace(/\n/g, "</br>" ) %>
           </td>
-          <td>
+          <td class="updatedAt">
             <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
           </td>
-          <td>
+          <td class="blockchain">
             <%= dt.hostname %>
           </td>
         </tr>
