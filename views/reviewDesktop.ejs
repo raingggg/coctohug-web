@@ -124,7 +124,8 @@
               title="<div style='background: green;'><%= dt.expected_time_to_win %></div>">
               <%= dt.expected_hours_to_win %>
             </td>
-            <td class="noBlockInDays" data-bs-html=true data-bs-toggle="tooltip" data-bs-placement="top"
+            <td class="noBlockInDays <%= dt.isValidETW ? '' : 'text-danger' %>" data-bs-html=true
+              data-bs-toggle="tooltip" data-bs-placement="top"
               title="<div style='background: green;'><%= dt.ext_num_2 %> days</div>">
               <%= parseFloat((dt.ext_num_2 * 24).toFixed(1)) %>
             </td>

@@ -34,6 +34,7 @@ router.get('/', async (req, res, next) => {
 
       data.forEach(dt => {
         dt.expected_hours_to_win = getETWHours(dt.expected_time_to_win);
+        dt.isValidETW = (dt.expected_hours_to_win > 0 && dt.ext_num_2 > 0) ? (dt.ext_num_2 * 24 / dt.expected_hours_to_win) <= 4 : true;
 
         if (dt.total_price) {
           allCoinsDollars += dt.total_price;
