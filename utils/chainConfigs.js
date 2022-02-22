@@ -150,7 +150,8 @@ const getBalanceUrl = (blockchain, address) => {
 };
 
 const getPriceUrl = () => {
-  return 'https://api.alltheblocks.net/atb/blockchain/settings-and-stats';
+  return 'https://market.posat.io/api/prices';
+  // return 'https://api.alltheblocks.net/atb/blockchain/settings-and-stats';
 };
 
 const getMojoDivider = (blockchain) => {

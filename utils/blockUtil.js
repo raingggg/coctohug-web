@@ -137,7 +137,29 @@ const get1WeekOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
   return total;
 };
 
+// https://market.posat.io/api/prices
 const getAllCoinsPrice = async () => {
+  const coinsPrice = {};
+  try {
+    const finalUrl = getPriceUrl();
+    const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) {
+      logger.error('getAllCoinsPrice-api', finalUrl);
+    });
+    const records = apiRes && apiRes.data;
+    Object.keys(records).forEach(key => {
+      const forkName = key && key.replaceAll('-', '').toLowerCase();
+      if (records[key] >= 0) {
+        coinsPrice[forkName] = parseFloat(records[key]);
+      }
+    });
+  } catch (e) {
+    logger.error('getAllCoinsPrice', e);
+  }
+  return coinsPrice;
+};
+
+// alltheblocks
+const getAllCoinsPriceATB = async () => {
   const coinsPrice = {};
   try {
     const finalUrl = getPriceUrl();
@@ -256,8 +278,8 @@ const getETWHours = (str) => {
 //   console.log(amount);
 //   amount = await get1WeekOnlineWalletCoinsAmount(name, address);
 //   console.log(amount);
-//   const prices = await getAllCoinsPrice();
-//   console.log(prices);
+// const prices = await getAllCoinsPrice();
+// console.log(prices);
 //   const balance = await getCoinBalance('apple', 'apple18ds3fw56wtttg7xm2d9s4wul720xr8ex50us54t3kz74ylc7avzspa6mey');
 // console.log(balance);
 // console.log(getETWHours('2 weeks and 5 days'));
