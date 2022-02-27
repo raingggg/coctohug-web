@@ -1,4 +1,5 @@
 const axios = require('axios');
+const cheerio = require('cheerio');
 
 const { logger } = require('./logger');
 const {
@@ -137,13 +138,39 @@ const get1WeekOnlineWalletCoinsAmount = async (blockchain, walletAdress) => {
   return total;
 };
 
-// https://market.posat.io/api/prices
-const getAllCoinsPrice = async () => {
+const getAllTheBlocksPrice = async () => {
   const coinsPrice = {};
+
   try {
-    const finalUrl = getPriceUrl();
+    const finalUrl = 'https://alltheblocks.net/';
     const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) {
-      logger.error('getAllCoinsPrice-api', finalUrl);
+      logger.error('getAllTheBlocksPrice', finalUrl);
+    });
+
+    if (apiRes && apiRes.data) {
+      const $ = cheerio.load(apiRes.data);
+      const trs = $('.card-body div table tbody tr');
+      for (let i = 0; i < trs.length; i++) {
+        const key = $(trs[i]).find('td[aria-colindex="1"] a').text().trim();
+        const forkName = key && key.replaceAll('-', '').toLowerCase();
+        const forkPrice = $(trs[i]).find('td[aria-colindex="3"]').text().trim().replaceAll('$', '');
+        coinsPrice[forkName] = parseFloat(forkPrice);
+      }
+    }
+  } catch (e) {
+    logger.error('getAllTheBlocksPrice', e);
+  }
+
+  return coinsPrice;
+};
+
+const getPosatPrice = async () => {
+  const coinsPrice = {};
+
+  try {
+    const finalUrl = 'https://market.posat.io/api/prices';
+    const apiRes = await axios.get(finalUrl, { timeout: TIMEOUT_1MINUTE }).catch(function (error) {
+      logger.error('getPosatPrice-api', finalUrl);
     });
     const records = apiRes && apiRes.data;
     Object.keys(records).forEach(key => {
@@ -153,8 +180,27 @@ const getAllCoinsPrice = async () => {
       }
     });
   } catch (e) {
+    logger.error('getPosatPrice', e);
+  }
+
+  return coinsPrice;
+};
+
+const getAllCoinsPrice = async () => {
+  let coinsPrice = {};
+
+  try {
+    coinsPrice = await getPosatPrice();
+    const atbPrice = await getAllTheBlocksPrice();
+    Object.keys(atbPrice).forEach(key => {
+      if (atbPrice[key] > 0 && !coinsPrice[key]) {
+        coinsPrice[key] = atbPrice[key]; // only merge missing price
+      }
+    });
+  } catch (e) {
     logger.error('getAllCoinsPrice', e);
   }
+
   return coinsPrice;
 };
 
