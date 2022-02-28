@@ -105,7 +105,10 @@
               <%= dtIndex + 1 %>
             </td>
             <td class="blockchain">
-              <img src="images/logos/<%= dt.blockchain %>-min.png" alt="<%= dt.blockchain %>" width="20" height="20">
+              <a target="_blank"
+                href="https://alltheblocks.net/<%= dt.blockchain === 'staicoin' ? 'stai': dt.blockchain %>">
+                <img src="images/logos/<%= dt.blockchain %>-min.png" alt="<%= dt.blockchain %>" width="20" height="20">
+              </a>
               <b>
                 <%= dt.blockchain %>
               </b>
