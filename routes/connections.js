@@ -7,6 +7,7 @@ const { Op } = require("sequelize");
 const { Connection, Hand } = require('../models');
 const { parseConnecitons } = require('../utils/chiaParser');
 const { getWorkerToken } = require('../utils/chiaConfig');
+const { getConnectionStyle } = require('../utils/blockUtil');
 
 const UNSYNC_THRESHHOLD = 10 * 60 * 1000; // 10 mins
 router.get('/', async (req, res, next) => {
@@ -16,11 +17,9 @@ router.get('/', async (req, res, next) => {
     ]
   });
 
-  const now = new Date().getTime();
   data.forEach(dt => {
-    const lastReview = new Date(dt.updatedAt).getTime();
     Object.assign(dt, {
-      status: (now - lastReview > UNSYNC_THRESHHOLD) ? 'SyncError' : 'Normal',
+      style: getConnectionStyle(dt),
       connections: parseConnecitons(dt.details),
     });
   })

@@ -9,15 +9,14 @@ const {
   getPriceUrl,
 } = require('./chainConfigs');
 const {
+  TIMEOUT_1MINUTE,
+  TIMEOUT_4HOUR,
   TIMEOUT_1Day,
   getLastHourDates,
   getLastDayDates,
   getLastWeekDates,
   toNumber,
 } = require('./jsUtil');
-
-const TIMEOUT_1MINUTE = 60 * 1000;
-const TIME_1HOUR = 60 * 60 * 1000;
 
 
 const REG_BALANCE = /-Total\sBalance:\s+((?:\d*\.?\d+e-\d*)|(?:\d*\.\d+)|(?:\d+\.?))/g;
@@ -320,6 +319,41 @@ const getFarmStyle = (status) => {
   else return 'danger';
 };
 
+const getBlockchainStyle = (dt) => {
+  const now = new Date().getTime();
+  const lastReview = new Date(dt.updatedAt).getTime();
+  if (now - lastReview > TIMEOUT_4HOUR) return 'danger';
+  else if (dt.details.includes('Not Synced')) return 'warning';
+  else if (!dt.details.includes('Full Node Synced')) return 'danger';
+
+  return 'success';
+};
+
+const getConnectionStyle = (dt) => {
+  const now = new Date().getTime();
+  const lastReview = new Date(dt.updatedAt).getTime();
+  if (now - lastReview > TIMEOUT_4HOUR) return 'danger';
+  else if ((dt.details.match(/FULL_NODE/g) || []).length < 3) return 'warning';
+  else if (!dt.details.includes('FULL_NODE')) return 'danger';
+
+  return 'success';
+};
+
+const getWalletStyle = (dt) => {
+  const now = new Date().getTime();
+  const lastReview = new Date(dt.updatedAt).getTime();
+  if (now - lastReview > TIMEOUT_4HOUR) return 'danger';
+  else if (dt.details.includes('Not Synced')) return 'warning';
+  else if (!dt.details.includes('Sync status: Synced')) return 'danger';
+
+  return 'success';
+};
+
+const getKeyStyle = (dt) => {
+  if (dt.details.includes('Fingerprint')) return 'success';
+  else return 'danger';
+};
+
 // const tt = async () => {
 //   let amount = 0;
 //   name = 'hddcoin';
@@ -353,4 +387,8 @@ module.exports = {
   getChiaPoolWalletId,
   getETWHours,
   getFarmStyle,
+  getBlockchainStyle,
+  getConnectionStyle,
+  getWalletStyle,
+  getKeyStyle,
 }

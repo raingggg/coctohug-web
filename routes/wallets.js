@@ -8,10 +8,9 @@ const { logger } = require('../utils/logger');
 const { saveMNC } = require('../utils/chiaClient');
 const { chainConfigs } = require('../utils/chainConfigs');
 const { getWorkerToken, getIp, isFullnodeMode } = require('../utils/chiaConfig');
-const { getChiaPoolWalletId } = require('../utils/blockUtil');
+const { getChiaPoolWalletId, getWalletStyle } = require('../utils/blockUtil');
 
 const isFullnode = isFullnodeMode();
-const UNSYNC_THRESHHOLD = 10 * 60 * 1000; // 10 mins
 router.get('/', async (req, res, next) => {
   let data = [];
   try {
@@ -23,10 +22,9 @@ router.get('/', async (req, res, next) => {
 
     const now = new Date().getTime();
     data.forEach(dt => {
-      const lastReview = new Date(dt.updatedAt).getTime();
       const exp = chainConfigs[dt.blockchain] ? chainConfigs[dt.blockchain].exp : chainConfigs.default.exp;
       Object.assign(dt, {
-        status: (now - lastReview > UNSYNC_THRESHHOLD) ? 'SyncError' : 'Normal',
+        style: getWalletStyle(dt),
         coldWalletOnline: `${exp}${dt.coldWallet}`,
       });
     })

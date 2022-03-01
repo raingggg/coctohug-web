@@ -5,7 +5,7 @@
         <ul class="nav nav-tabs">
           <% data.forEach(function(dt, index){ %>
             <li class="nav-item">
-              <a class="nav-link nav-tab <%= index === 0 ? 'active' : '' %>" href="#"
+              <a class="nav-link nav-tab <%= index === 0 ? 'active' : '' %> <%= dt.style %>" href="#"
                 data-tabp-index="<%= index %>"><span>
                   <img src="images/logos/<%= dt.blockchain %>-min.png" alt="<%= dt.blockchain %>" width="20"
                     height="20">

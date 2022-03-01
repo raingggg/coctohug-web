@@ -28,7 +28,10 @@ body {
   background: #6fb98f;
   border-radius: 30px;
 }
-.nav-tabs a.nav-link.SyncError {
+.nav-tabs a.nav-link.warning {
+  color: #cfaf52;
+}
+.nav-tabs a.nav-link.danger {
   color: #9f5c5c;
 }
 .nav-tabs a.nav-link span:nth-child(2) {

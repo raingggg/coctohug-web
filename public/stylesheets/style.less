@@ -3,6 +3,7 @@
 @lightBlue : #2c7873;
 @green     : #6fb98f;
 @lightgreen: #c6eded3d;
+@yellow    : #cfaf52;
 
 @blue   : #9696bf;
 @warning: #e9debe;
@@ -49,7 +50,11 @@ body {
       border-radius: 30px;
     }
 
-    &.SyncError {
+    &.warning {
+      color: @yellow;
+    }
+
+    &.danger {
       color: @error;
     }
 

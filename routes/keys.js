@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const { Key } = require('../models');
 const { chainConfigs } = require('../utils/chainConfigs');
-const { getWalletAddress } = require('../utils/blockUtil');
+const { getWalletAddress, getKeyStyle } = require('../utils/blockUtil');
 
 router.get('/', async (req, res, next) => {
   const data = await Key.findAll({
@@ -16,6 +16,7 @@ router.get('/', async (req, res, next) => {
     const exp = chainConfigs[dt.blockchain] ? chainConfigs[dt.blockchain].exp : chainConfigs.default.exp;
     const firstWallet = getWalletAddress(dt.details);
     Object.assign(dt, {
+      style: getKeyStyle(dt),
       firstWallet,
       firstWalletOnline: `${exp}${firstWallet}`,
     });
