@@ -7,6 +7,7 @@
 @blue   : #9696bf;
 @warning: #e9debe;
 @error  : #9f5c5c;
+@danger : #f5dcdc;
 
 @gradualEnd: #8ccdc1;
 
@@ -109,8 +110,12 @@ body {
   height       : 100%;
   box-shadow   : 6px 5px 5px @lightBlue;
 
-  &.NotFarming {
+  &.warning {
     background: @warning;
+  }
+
+  &.danger {
+    background: @danger;
   }
 
   div:first-child {
@@ -198,6 +203,10 @@ body {
 
     .table-warning td {
       background-color: @warning;
+    }
+
+    .table-danger td {
+      background-color: @danger;
     }
 
     tbody {

@@ -16,6 +16,7 @@ const {
   getBlockchainInfo,
   getWalletInfo,
   getWalletAddress,
+  getFarmStyle,
 } = require('../utils/blockUtil');
 const { chainConfigs } = require('../utils/chainConfigs');
 const {
@@ -120,7 +121,7 @@ const updateAllInOne = async () => {
         Object.assign(payload, { total_coins: parseFloat(toNumber(payload.total_coins).toFixed(8)) });
 
         // status update
-        Object.assign(payload, { invalid_farm_status: payload.status !== 'Farming' });
+        Object.assign(payload, { ext_str_2: getFarmStyle(payload.status) });
         Object.assign(payload, { invalid_chain_status: (now - new Date(chain_sync_to_time).getTime()) > TIMEOUT_4HOUR });
         Object.assign(payload, { invalid_connection_status: payload.connection_count <= 0 });
         Object.assign(payload, { invalid_wallet_status: payload.wallet_status !== 'Synced' });

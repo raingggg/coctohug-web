@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.9] - 2022-03-01
+- Error with red colors; Syncing with yellow colors
+- add comments for update duration
+- add possibility to change config files via gui
+- "Daily Report" and "Weekly Report" a. remove message column b. add instead Amount column and Token name collumn c. total wallet ballance represented in %
+
 ## [1.5.8] - 2022-02-27
 - go to alltheblocks.net when clicking on fork icon for table view
 

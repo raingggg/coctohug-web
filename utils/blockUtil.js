@@ -314,6 +314,12 @@ const getETWHours = (str) => {
   }
 };
 
+const getFarmStyle = (status) => {
+  if ('Farming' === status) return 'success';
+  else if ('Syncing' === status) return 'warning';
+  else return 'danger';
+};
+
 // const tt = async () => {
 //   let amount = 0;
 //   name = 'hddcoin';
@@ -346,4 +352,5 @@ module.exports = {
   getWalletInfo,
   getChiaPoolWalletId,
   getETWHours,
+  getFarmStyle,
 }

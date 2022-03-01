@@ -4,7 +4,7 @@
       <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
         <% data.forEach(function(dt, dtIndex){ %>
           <div class="col">
-            <div class="review-column <%= dt.status === 'Farming' ? 'Farming' : 'NotFarming' %>">
+            <div class="review-column <%= dt.ext_str_2 %>">
               <div><span>
                   <img src="images/logos/<%= dt.blockchain %>-min.png" alt="<%= dt.blockchain %>" width="20"
                     height="20">

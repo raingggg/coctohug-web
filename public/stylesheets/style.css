@@ -71,8 +71,11 @@ body {
   height: 100%;
   box-shadow: 6px 5px 5px #2c7873;
 }
-.review-column.NotFarming {
+.review-column.warning {
   background: #e9debe;
+}
+.review-column.danger {
+  background: #f5dcdc;
 }
 .review-column div:first-child {
   margin-bottom: 5px;
@@ -131,6 +134,9 @@ body {
 }
 #desktopReviewPage .desktop-review .table-warning td {
   background-color: #e9debe;
+}
+#desktopReviewPage .desktop-review .table-danger td {
+  background-color: #f5dcdc;
 }
 #desktopReviewPage .desktop-review tbody tr.clicked-row td {
   background-color: #6fb98f;

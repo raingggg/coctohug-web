@@ -49,7 +49,7 @@ const AllInOne = sequelize.define('AllInOne', {
   ext_num_2: { type: DataTypes.REAL, defaultValue: 0 }, // how many days it has passed since last winning block
   ext_num_3: { type: DataTypes.REAL, defaultValue: 0 }, // how many blocks winned today
   ext_str_1: { type: DataTypes.STRING }, // fork_version
-  ext_str_2: { type: DataTypes.STRING },
+  ext_str_2: { type: DataTypes.STRING }, // farm style
   ext_str_3: { type: DataTypes.STRING },
   ext_str_4: { type: DataTypes.STRING },
   ext_str_5: { type: DataTypes.STRING },

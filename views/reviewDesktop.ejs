@@ -100,7 +100,7 @@
       </thead>
       <tbody>
         <% data.forEach(function(dt, dtIndex){ %>
-          <tr class="<%= dt.invalid_farm_status ? 'table-warning' : 'table-success' %>">
+          <tr class="table-<%= dt.ext_str_2 %>">
             <td class="se_no">
               <%= dtIndex + 1 %>
             </td>
@@ -113,7 +113,7 @@
                 <%= dt.blockchain %>
               </b>
             </td>
-            <td class="chain_status <%= dt.invalid_farm_status ? 'text-danger' : '' %>">
+            <td class="chain_status text-<%= dt.ext_str_2 %>">
               <%= dt.status %>
             </td>
             <td class="chain_sync_to_time <%= dt.invalid_chain_status ? 'text-danger' : '' %>"
