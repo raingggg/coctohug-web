@@ -7,6 +7,7 @@ const {
   addKeyBlockchain,
   generateKeyBlockchain,
   saveColdWallet,
+  saveConfig,
 } = require('../utils/chiaClient');
 const {
   blockchainConfig: { blockchain, config },
@@ -105,6 +106,22 @@ router.get('/getConfigFile', async (req, res, next) => {
     return res.json({ data: content });
   } catch (e) {
     logger.error('getConfigFile', e);
+  }
+
+  return res.json({ data: "failed" });
+});
+
+router.post('/editConfigFile', async (req, res, next) => {
+  if (!isValidAccessToken(req.header('tk'))) {
+    logger.error('invalid access - blockchain editConfigFile: ', getIp(req));
+    return res.json({ data: 'invalid token' });
+  }
+
+  try {
+    const status = await saveConfig(req.body.newConfig);
+    return res.json({ data: status });
+  } catch (e) {
+    logger.error('editConfigFile', e);
   }
 
   return res.json({ data: "failed" });

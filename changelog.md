@@ -2,7 +2,6 @@
 
 ## [1.5.9] - 2022-03-01
 - mark error with red colors; mark syncing with yellow colors
-- add comments for update duration
 - add possibility to change config files via gui
 - "Daily Report" and "Weekly Report" a. remove message column b. add instead Amount column and Token name collumn c. total wallet ballance represented in %
 

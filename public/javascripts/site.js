@@ -642,5 +642,48 @@ $(document).ready(function () {
       columnSelector_minVisible: null,
     }
   });
+
+  $('.configYaml button.download').click(function () {
+    const hostname = $(this).data("hostname");
+    const blockchain = $(this).data("blockchain");
+    window.open(`/settingsWeb/downloadConfigYaml?hostname=${hostname}&blockchain=${blockchain}`);
+  });
+
+  let configYamlModal = null;
+  $('.configYaml button.view').click(function () {
+    configYamlModal = new bootstrap.Modal(document.getElementById('configYamlModal'), { keyboard: false });
+    const hostname = $(this).data("hostname");
+    const blockchain = $(this).data("blockchain");
+    $.get(`/settingsWeb/viewConfigYaml?hostname=${hostname}&blockchain=${blockchain}`, function (data) {
+      configYamlModal.show();
+
+      $('#configYamlHost').html(` - ${blockchain} - ${hostname}`);
+      $('#btnSaveConfigYaml').data('hostname', hostname);
+      $('#btnSaveConfigYaml').data('blockchain', blockchain);
+      $('#textareaConfigYaml').val(data);
+    });
+  });
+
+  $("#btnSaveConfigYaml").click(function (e) {
+    const hostname = $(this).data("hostname");
+    const blockchain = $(this).data("blockchain");
+    const newConfig = $('#textareaConfigYaml').val();
+    if (newConfig) {
+      $.ajax({
+        url: '/settingsWeb/editConfigYaml',
+        type: 'POST',
+        cache: false,
+        data: JSON.stringify({ hostname, blockchain, newConfig }),
+        contentType: 'application/json',
+        success: function (data) {
+          configYamlModal.hide();
+          alert(JSON.stringify(data, null, 2));
+        },
+        error: function (jqXHR, textStatus, err) {
+          alert(JSON.stringify(err, null, 2));
+        }
+      });
+    }
+  });
 });
 

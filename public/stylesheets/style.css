@@ -115,6 +115,13 @@ body {
   width: 100%;
   height: 260px;
 }
+#textareaConfigYaml {
+  width: 100%;
+  height: 500px;
+}
+.configYamlModalWrapper #configYamlModal.modal.show .modal-dialog {
+  max-width: 90%;
+}
 .formLabel {
   display: inline-block;
   min-width: 140px;

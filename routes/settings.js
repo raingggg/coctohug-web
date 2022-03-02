@@ -20,6 +20,15 @@ router.get('/restartWeb', async (req, res, next) => {
   res.render('index', { data, pageName: 'restart' });
 });
 
+router.get('/configWeb', async (req, res, next) => {
+  const data = await Hand.findAll({
+    order: [
+      ['blockchain', 'ASC'],
+    ]
+  });
+  res.render('index', { data, pageName: 'configYaml' });
+});
+
 router.get('/restartOp', async (req, res, next) => {
   try {
     const { hostname, blockchain } = req.query;
@@ -64,12 +73,12 @@ router.get('/downAllWalletConfigs', async (req, res, next) => {
         const { url, hostname, blockchain } = data[i];
         if (url) {
           const finalUrl = `${url}/blockchainsWorker/getConfigFile`;
-          const res = await axios.get(finalUrl, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
+          const apiRes = await axios.get(finalUrl, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
             logger.error('blockchainsWorker/getConfigFile', finalUrl);
           });
-          if (res) {
+          if (apiRes) {
             const downloadDestination = path.resolve(configTmpPath, `${blockchain}_config.yaml`)
-            await writeFile(downloadDestination, res.data.data);
+            await writeFile(downloadDestination, apiRes.data.data);
           }
         }
       } catch (ex) {
@@ -260,6 +269,92 @@ router.get('/harvesterWeb', async (req, res, next) => {
   }
 
   res.render('index', { result, pageName: 'harvester' });
+});
+
+router.get('/downloadConfigYaml', async (req, res, next) => {
+  try {
+    const { hostname, blockchain } = req.query;
+    const data = await Hand.findAll({
+      where: {
+        hostname,
+        blockchain
+      }
+    });
+
+    const url = data && data[0] && data[0].url;
+    const tmpPath = new Date().toISOString().replaceAll(':', '-').substring(0, 19);
+    const configTmpPath = path.resolve(downloadsPath, tmpPath);
+    const configZipFile = path.resolve(downloadsPath, `${tmpPath}.zip`);
+    await mkdir(configTmpPath, { recursive: true });
+    const finalUrl = `${url}/blockchainsWorker/getConfigFile`;
+    const apiRes = await axios.get(finalUrl, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
+      logger.error('blockchainsWorker/getConfigFile', finalUrl);
+    });
+    if (apiRes) {
+      const downloadDestination = path.resolve(configTmpPath, `${blockchain}_config.yaml`)
+      await writeFile(downloadDestination, apiRes.data.data);
+    }
+
+    await zip(configTmpPath, configZipFile);
+    return res.download(configZipFile, `${tmpPath}.zip`);
+  } catch (e) {
+    logger.error('coldWalletExport', e);
+  }
+
+  return res.json({ result: 'failed' });
+});
+
+router.get('/viewConfigYaml', async (req, res, next) => {
+  try {
+    const { hostname, blockchain } = req.query;
+    const data = await Hand.findAll({
+      where: {
+        hostname,
+        blockchain
+      }
+    });
+
+    const url = data && data[0] && data[0].url;
+    const finalUrl = `${url}/blockchainsWorker/getConfigFile`;
+    const apiRes = await axios.get(finalUrl, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
+      logger.error('blockchainsWorker/getConfigFile', finalUrl);
+    });
+
+    if (apiRes) {
+      return res.json(apiRes.data.data);
+    }
+  } catch (e) {
+    logger.error('coldWalletExport', e);
+  }
+
+  return res.json({ result: 'failed' });
+});
+
+
+router.post('/editConfigYaml', async (req, res, next) => {
+  try {
+    const { hostname, blockchain, newConfig } = req.body;
+    const data = await Hand.findOne({
+      where: {
+        hostname,
+        blockchain
+      }
+    });
+
+    const url = data && data.url;
+    const finalUrl = `${url}/blockchainsWorker/editConfigFile`;
+    const apiRes = await axios.post(finalUrl, { newConfig }, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
+      logger.error('blockchainsWorker/editConfigFile', finalUrl);
+    });
+
+    if (apiRes) {
+      return res.json(apiRes.data.data);
+    }
+  } catch (e) {
+    logger.error('coldWalletExport', e);
+  }
+
+  return res.json({ result: 'failed' });
 });
 
 module.exports = router;

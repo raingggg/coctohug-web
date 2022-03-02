@@ -1,0 +1,70 @@
+<div class="page-wrapper">
+  <table class="table table-striped table-hover configYaml">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>
+          <%= __('general.blockchain') %>
+        </td>
+        <td>
+          <%= __('general.actions') %>
+        </td>
+        <td>
+          <%= __('general.hostname') %>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(function(dt, index){ %>
+        <tr>
+          <td>
+            <%= index + 1 %>
+          </td>
+          <td>
+            <img src="/images/logos/<%= dt.blockchain %>-min.png" alt="<%= dt.blockchain %>" width="20" height="20">
+            <%= dt.blockchain %>
+          </td>
+          <td><button class="btn btn-outline-success download" data-hostname="<%= dt.hostname %>"
+              data-blockchain="<%= dt.blockchain %>">
+              <%= __('general.download') %> config.yaml
+            </button>
+            <button class="btn btn-outline-danger view" data-hostname="<%= dt.hostname %>"
+              data-blockchain="<%= dt.blockchain %>">
+              <%= __('general.edit') %> config.yaml
+            </button>
+          </td>
+          <td>
+            <%= dt.hostname %>
+          </td>
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>
+
+  <div class="configYamlModalWrapper">
+    <div class="modal fade" id="configYamlModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="configYamlModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="configYamlModalLabel">
+              config.yaml <span id="configYamlHost"></span>
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <textarea id="textareaConfigYaml" spellcheck="false"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              <%= __('general.cancel') %>
+            </button>
+            <button type="button" class="btn btn-success" id="btnSaveConfigYaml">
+              <%= __('general.submit') %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

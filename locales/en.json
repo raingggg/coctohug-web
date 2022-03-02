@@ -39,6 +39,8 @@
   "general.title": "Coctohug",
   "general.updatedAt": "Updated At",
   "general.versions": "Versions",
+  "general.download": "Download",
+  "general.edit": "Edit",
   "hands.remove_selected": "Remove Selected",
   "home.enter_24_words": "Please enter exactly 24 words in the mnemonic seed phrase to import.",
   "home.generate_button": "Generate New Key",
