@@ -6,8 +6,11 @@
         <th class="blockchain">
           <%= __('general.blockchain') %>
         </th>
-        <th class="message">
-          <%= __('general.message') %>
+        <th class="symbol">
+          <%= __('review.token_name') %>
+        </th>
+        <th class="coins">
+          <%= __('review.total_coins') %>
         </th>
         <th class="createdAt">
           <%= __('general.createdAt') %>
@@ -29,8 +32,11 @@
               <%= dt.blockchain %>
             </b>
           </td>
-          <td class="message">
-            <%- dt.message && dt.message.replace(/\n/g, "<br/>" ) %>
+          <td class="symbol">
+            <%= dt.symbol %>
+          </td>
+          <td class="coins">
+            <%= dt.coins %>
           </td>
           <td class="createdAt">
             <%= dt.createdAt.toLocaleString("en-US", {hour12: false}) %>
