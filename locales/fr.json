@@ -129,5 +129,7 @@
   "review.last_block_time": "Dernier bloc trouvé",
   "review.blockCountToday": "Total des pièces aujourd'hui",
   "review.noBlockInDays": "Heures depuis le dernier bloc",
-  "leftbar.best": "Les meilleures pratiques"
+  "leftbar.best": "Les meilleures pratiques",
+  "general.download": "Télécharger",
+  "general.edit": "Éditer"
 }

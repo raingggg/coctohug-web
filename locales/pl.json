@@ -129,5 +129,7 @@
   "review.last_block_time": "Último bloco encontrado",
   "review.blockCountToday": "Total Monety już dziś",
   "review.noBlockInDays": "Horas desde o último bloco",
-  "leftbar.best": "Najlepsze praktyki"
+  "leftbar.best": "Najlepsze praktyki",
+  "general.download": "Pobierać",
+  "general.edit": "Edytować"
 }

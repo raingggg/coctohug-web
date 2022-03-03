@@ -129,5 +129,7 @@
   "review.last_block_time": "最後に見つかったブロック",
   "review.blockCountToday": "今日の総コイン",
   "review.noBlockInDays": "最後のブロックからの時間",
-  "leftbar.best": "ベストプラクティス"
+  "leftbar.best": "ベストプラクティス",
+  "general.download": "ダウンロード",
+  "general.edit": "編集"
 }

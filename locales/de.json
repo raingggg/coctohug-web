@@ -129,5 +129,7 @@
   "review.last_block_time": "Letzter gefundener Block",
   "review.blockCountToday": "Gesamtmünzen heute.",
   "review.noBlockInDays": "Stunden seit letztem Block",
-  "leftbar.best": "Empfohlene Vorgehensweise"
+  "leftbar.best": "Empfohlene Vorgehensweise",
+  "general.download": "Herunterladen",
+  "general.edit": "Bearbeiten"
 }

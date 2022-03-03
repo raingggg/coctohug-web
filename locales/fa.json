@@ -129,5 +129,7 @@
   "review.last_block_time": "آخرین بلوک یافت شده",
   "review.blockCountToday": "سکه های کل امروز",
   "review.noBlockInDays": "ساعت از آخرین بلوک",
-  "leftbar.best": "بهترین شیوه ها"
+  "leftbar.best": "بهترین شیوه ها",
+  "general.download": "دانلود",
+  "general.edit": "ویرایش کردن"
 }

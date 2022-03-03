@@ -129,5 +129,7 @@
   "review.last_block_time": "Ultimul bloc găsit",
   "review.blockCountToday": "Total monede astăzi",
   "review.noBlockInDays": "Ore de la ultimul bloc",
-  "leftbar.best": "Cele mai bune practici"
+  "leftbar.best": "Cele mai bune practici",
+  "general.download": "Descarca",
+  "general.edit": "Editați | ×"
 }

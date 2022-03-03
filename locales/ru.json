@@ -129,5 +129,7 @@
   "review.last_block_time": "Последний найденный блок",
   "review.blockCountToday": "Общие монеты сегодня",
   "review.noBlockInDays": "Часы с момента последнего блока",
-  "leftbar.best": "Лучшие практики"
+  "leftbar.best": "Лучшие практики",
+  "general.download": "Скачать",
+  "general.edit": "Редактировать"
 }

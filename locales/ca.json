@@ -129,5 +129,7 @@
   "review.last_block_time": "Últim bloc trobat",
   "review.blockCountToday": "Total monedes d'avui",
   "review.noBlockInDays": "Hores des de l'últim bloc",
-  "leftbar.best": "Millors pràctiques"
+  "leftbar.best": "Millors pràctiques",
+  "general.download": "descarregar",
+  "general.edit": "Preprarar una edició"
 }

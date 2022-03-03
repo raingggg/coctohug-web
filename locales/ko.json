@@ -129,5 +129,7 @@
   "review.last_block_time": "마지막으로 찾은 블록",
   "review.blockCountToday": "오늘의 총 동전",
   "review.noBlockInDays": "마지막 블록 이후 시간",
-  "leftbar.best": "모범 사례"
+  "leftbar.best": "모범 사례",
+  "general.download": "... 다운로드하기",
+  "general.edit": "편집하다"
 }

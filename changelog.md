@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.6.1] - 2022-03-03
+- translation improvement for config.yaml page
+
 ## [1.6.0] - 2022-03-03
 - mark error with red colors; mark syncing with yellow colors
 

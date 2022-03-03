@@ -129,5 +129,7 @@
   "review.last_block_time": "Huling Nahanap na Block",
   "review.blockCountToday": "Kabuuang mga barya ngayon",
   "review.noBlockInDays": "Mga Oras Mula Noong Huling Pag-block",
-  "leftbar.best": "Pinakamahusay na kasanayan"
+  "leftbar.best": "Pinakamahusay na kasanayan",
+  "general.download": "I-download",
+  "general.edit": "I-edit"
 }

@@ -129,5 +129,7 @@
   "review.last_block_time": "บล็อกที่พบล่าสุด",
   "review.blockCountToday": "เหรียญทั้งหมดวันนี้",
   "review.noBlockInDays": "ชั่วโมงนับตั้งแต่บล็อกที่แล้ว",
-  "leftbar.best": "ปฏิบัติที่ดีที่สุด"
+  "leftbar.best": "ปฏิบัติที่ดีที่สุด",
+  "general.download": "ดาวน์โหลด",
+  "general.edit": "แก้ไข"
 }

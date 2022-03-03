@@ -129,5 +129,7 @@
   "review.last_block_time": "Blok Terakhir Ditemukan",
   "review.blockCountToday": "Total koin hari ini",
   "review.noBlockInDays": "Jam Sejak Blok Terakhir",
-  "leftbar.best": "Praktik terbaik"
+  "leftbar.best": "Praktik terbaik",
+  "general.download": "Unduh.",
+  "general.edit": "Edit"
 }

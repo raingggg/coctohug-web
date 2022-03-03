@@ -129,5 +129,7 @@
   "review.last_block_time": "Останній знайдений блок",
   "review.blockCountToday": "Загальні монети сьогодні",
   "review.noBlockInDays": "Години з останнього блоку",
-  "leftbar.best": "Кращі практики"
+  "leftbar.best": "Кращі практики",
+  "general.download": "Завантажити",
+  "general.edit": "Редагувати"
 }

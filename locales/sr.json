@@ -129,5 +129,7 @@
   "review.last_block_time": "Последњи пронађени блок",
   "review.blockCountToday": "Тотал Цоинс данас",
   "review.noBlockInDays": "Сати од последњег блока",
-  "leftbar.best": "Најбоље праксе"
+  "leftbar.best": "Најбоље праксе",
+  "general.download": "Преузимање",
+  "general.edit": "Уредити"
 }

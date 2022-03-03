@@ -129,5 +129,7 @@
   "review.last_block_time": "Последният намерен блок",
   "review.blockCountToday": "Общо монети днес",
   "review.noBlockInDays": "Часове от последния блок",
-  "leftbar.best": "Най-добри практики"
+  "leftbar.best": "Най-добри практики",
+  "general.download": "Изтегли",
+  "general.edit": "редактиране"
 }

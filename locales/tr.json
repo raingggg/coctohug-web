@@ -129,5 +129,7 @@
   "review.last_block_time": "En Son Bulunan Blok",
   "review.blockCountToday": "Bugün Toplam Paralar",
   "review.noBlockInDays": "Son Bloktan Beri Saatler",
-  "leftbar.best": "En iyi uygulamalar"
+  "leftbar.best": "En iyi uygulamalar",
+  "general.download": "İndirmek",
+  "general.edit": "Düzenlemek"
 }

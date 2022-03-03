@@ -129,5 +129,7 @@
   "review.last_block_time": "Último bloque atopado",
   "review.blockCountToday": "Monedas totais hoxe",
   "review.noBlockInDays": "Horas desde o último bloque",
-  "leftbar.best": "Mellores prácticas"
+  "leftbar.best": "Mellores prácticas",
+  "general.download": "Descarga",
+  "general.edit": "Editar."
 }

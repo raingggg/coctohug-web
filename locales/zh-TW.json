@@ -129,5 +129,7 @@
   "review.last_block_time": "最新發現的區塊",
   "review.blockCountToday": "今天的總硬幣",
   "review.noBlockInDays": "自上次區塊以來的小時數",
-  "leftbar.best": "最佳實踐"
+  "leftbar.best": "最佳實踐",
+  "general.download": "下載",
+  "general.edit": "編輯"
 }

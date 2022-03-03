@@ -129,5 +129,7 @@
   "review.last_block_time": "Khối tìm thấy cuối cùng",
   "review.blockCountToday": "Tổng số tiền hôm nay",
   "review.noBlockInDays": "Giờ kể từ lần chặn cuối cùng",
-  "leftbar.best": "Thực hành tốt nhất"
+  "leftbar.best": "Thực hành tốt nhất",
+  "general.download": "Tải xuống",
+  "general.edit": "Biên tập"
 }

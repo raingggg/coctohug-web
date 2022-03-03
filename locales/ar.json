@@ -129,5 +129,7 @@
   "review.last_block_time": "أحدث كتلة تم العثور عليها",
   "review.blockCountToday": "إجمالي العملات اليوم",
   "review.noBlockInDays": "ساعات منذ آخر كتلة",
-  "leftbar.best": "أفضل الممارسات"
+  "leftbar.best": "أفضل الممارسات",
+  "general.download": "تحميل",
+  "general.edit": "يحرر"
 }
