@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.6.0] - 2022-03-03
+- mark error with red colors; mark syncing with yellow colors
+
 ## [1.5.9] - 2022-03-03
 - mark error with red colors; mark syncing with yellow colors
 - add possibility to change config files via gui

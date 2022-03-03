@@ -33,7 +33,7 @@
             </b>
           </td>
           <td>
-            <%= dt.message %>
+            <%- dt.message && dt.message.replace(/\n/g, "<br/>" ) %>
           </td>
           <td>
             <%= dt.createdAt.toLocaleString("en-US", {hour12: false}) %>
