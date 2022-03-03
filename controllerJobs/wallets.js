@@ -1,4 +1,4 @@
-const { Key, Wallet, News, AllInOne } = require('../models');
+const { Key, Wallet, News, AllInOne, DailyReport, WeeklyReport } = require('../models');
 const { logger } = require('../utils/logger');
 const {
   getWalletAddress,
@@ -9,6 +9,7 @@ const {
 const {
   getRandomDurationByMinutes,
 } = require('../utils/jsUtil');
+const { chainConfigs } = require('../utils/chainConfigs');
 
 const updateHourlyColdwalletCoins = async () => {
   try {
@@ -79,16 +80,15 @@ const updateDailyColdwalletCoins = async () => {
       setTimeout(async () => {
         try {
           const { hostname, blockchain } = dataKeys[i];
+          const chainConfig = chainConfigs[blockchain];
           const actualWallet = dataWallets.find(dw => dw.hostname === hostname && dw.blockchain === blockchain);
           if (actualWallet && actualWallet.coldWallet) {
             const coinsTotal = await get1DayOnlineWalletCoinsAmount(blockchain, actualWallet.coldWallet);
-            await News.create({
+            await DailyReport.create({
               hostname,
               blockchain,
-              priority: 'low',
-              service: 'COCTHUG_WEB',
-              type: 'EVT_DAILY_ALL_IN_ONE',
-              message: `Reward address received ${coinsTotal} coins☘️ in last day`,
+              symbol: chainConfig && chainConfig.symbol,
+              coins: coinsTotal,
             });
           }
         } catch (ee) {
@@ -119,16 +119,15 @@ const updateWeeklyColdwalletCoins = async () => {
       setTimeout(async () => {
         try {
           const { hostname, blockchain } = dataKeys[i];
+          const chainConfig = chainConfigs[blockchain];
           const actualWallet = dataWallets.find(dw => dw.hostname === hostname && dw.blockchain === blockchain);
           if (actualWallet && actualWallet.coldWallet) {
             const coinsTotal = await get1WeekOnlineWalletCoinsAmount(blockchain, actualWallet.coldWallet);
-            await News.create({
+            await WeeklyReport.create({
               hostname,
               blockchain,
-              priority: 'low',
-              service: 'COCTHUG_WEB',
-              type: 'EVT_WEEKLY_ALL_IN_ONE',
-              message: `Reward address received ${coinsTotal} coins☘️ in last week`,
+              symbol: chainConfig && chainConfig.symbol,
+              coins: coinsTotal,
             });
           }
         } catch (ee) {

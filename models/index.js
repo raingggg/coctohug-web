@@ -15,6 +15,8 @@ const { Wallet } = isWebController ? require('./wallets') : emptyObject;
 const { WalletBalance } = isWebController ? require('./walletBalance') : emptyObject;
 const { AppConfig } = isWebController ? require('./appConfigs') : emptyObject;
 const { AllInOne } = isWebController ? require('./allInOne') : emptyObject;
+const { DailyReport } = isWebController ? require('./dailyReport') : emptyObject;
+const { WeeklyReport } = isWebController ? require('./weeklyReport') : emptyObject;
 const {
   ReviewPlotCount,
   ReviewPlotsSize,
@@ -40,6 +42,8 @@ module.exports = {
   WalletBalance,
   AppConfig,
   AllInOne,
+  DailyReport,
+  WeeklyReport,
   ReviewPlotCount,
   ReviewPlotsSize,
   ReviewTotalChia,
