@@ -12,12 +12,15 @@ const removeOutdatedNews = async () => {
     if (new Date().getDay() === 3) {
       time = getFormattedDaysBefore(16);
       await sequelize.query(`DELETE from News where createdAt < '${time}'`);
+      await sequelize.query(`DELETE from DailyReports where createdAt < '${time}'`);
+
+      time = getFormattedDaysBefore(50);
+      await sequelize.query(`DELETE from WeeklyReports where createdAt < '${time}'`);
     }
   } catch (e) {
     logger.error('removeOutdatedNews', e);
   }
 };
-
 
 module.exports = {
   removeOutdatedNews

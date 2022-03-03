@@ -140,6 +140,9 @@ const updateWeeklyColdwalletCoins = async () => {
   }
 };
 
+// updateDailyColdwalletCoins();
+// updateWeeklyColdwalletCoins();
+
 module.exports = {
   updateHourlyColdwalletCoins,
   updateDailyColdwalletCoins,
