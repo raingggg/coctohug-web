@@ -131,5 +131,9 @@
   "review.noBlockInDays": "Giờ kể từ lần chặn cuối cùng",
   "leftbar.best": "Thực hành tốt nhất",
   "general.download": "Tải xuống",
-  "general.edit": "Biên tập"
+  "general.edit": "Biên tập",
+  "general.blockchainExplorer": "Blockchain Browser.",
+  "general.dbcenter": "Trung tâm cơ sở dữ liệu",
+  "general.forksExchange": "Trao đổi blockchain.",
+  "general.webLink": "Liên kết web."
 }

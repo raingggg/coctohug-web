@@ -131,5 +131,9 @@
   "review.noBlockInDays": "Son Bloktan Beri Saatler",
   "leftbar.best": "En iyi uygulamalar",
   "general.download": "İndirmek",
-  "general.edit": "Düzenlemek"
+  "general.edit": "Düzenlemek",
+  "general.blockchainExplorer": "Blockchain tarayıcısı",
+  "general.dbcenter": "Veritabanı merkezi",
+  "general.forksExchange": "Blockchain değişimi",
+  "general.webLink": "Web bağlantısı"
 }

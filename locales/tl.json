@@ -131,5 +131,9 @@
   "review.noBlockInDays": "Mga Oras Mula Noong Huling Pag-block",
   "leftbar.best": "Pinakamahusay na kasanayan",
   "general.download": "I-download",
-  "general.edit": "I-edit"
+  "general.edit": "I-edit",
+  "general.blockchainExplorer": "Blockchain Browser.",
+  "general.dbcenter": "Database Center.",
+  "general.forksExchange": "Blockchain Exchange.",
+  "general.webLink": "Web Link."
 }

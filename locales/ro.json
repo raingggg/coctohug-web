@@ -131,5 +131,9 @@
   "review.noBlockInDays": "Ore de la ultimul bloc",
   "leftbar.best": "Cele mai bune practici",
   "general.download": "Descarca",
-  "general.edit": "Editați | ×"
+  "general.edit": "Editați | ×",
+  "general.blockchainExplorer": "Browser blockchain.",
+  "general.dbcenter": "Centrul de baze de date",
+  "general.forksExchange": "Blockchain Schimb",
+  "general.webLink": "Web Link."
 }

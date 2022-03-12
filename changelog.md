@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.6.2] - 2022-03-12
+- chia wallet balance does not include CAT
+- add useful site links to Best Practice menu
+
 ## [1.6.1] - 2022-03-03
 - translation improvement for config.yaml page
 

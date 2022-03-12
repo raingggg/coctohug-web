@@ -131,5 +131,9 @@
   "review.noBlockInDays": "Ore dall'ultimo blocco",
   "leftbar.best": "Migliori pratiche",
   "general.download": "Scaricamento",
-  "general.edit": "Modificare"
+  "general.edit": "Modificare",
+  "general.blockchainExplorer": "Browser BlockChain.",
+  "general.dbcenter": "Centro di database",
+  "general.forksExchange": "Blockchain Exchange.",
+  "general.webLink": "Collegamento web"
 }

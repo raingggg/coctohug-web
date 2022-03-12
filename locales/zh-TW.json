@@ -131,5 +131,9 @@
   "review.noBlockInDays": "自上次區塊以來的小時數",
   "leftbar.best": "最佳實踐",
   "general.download": "下載",
-  "general.edit": "編輯"
+  "general.edit": "編輯",
+  "general.blockchainExplorer": "區塊鏈瀏覽器",
+  "general.dbcenter": "數據庫中心",
+  "general.forksExchange": "區塊鏈交換",
+  "general.webLink": "網頁鏈接"
 }

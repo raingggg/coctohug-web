@@ -131,5 +131,9 @@
   "review.noBlockInDays": "Години з останнього блоку",
   "leftbar.best": "Кращі практики",
   "general.download": "Завантажити",
-  "general.edit": "Редагувати"
+  "general.edit": "Редагувати",
+  "general.blockchainExplorer": "Блокшой браузер",
+  "general.dbcenter": "Центр баз даних",
+  "general.forksExchange": "Блокшойн обмін",
+  "general.webLink": "Веб посилання"
 }

@@ -131,5 +131,9 @@
   "review.noBlockInDays": "自上次区块以来的小时数",
   "leftbar.best": "最佳实践",
   "general.download": "下载",
-  "general.edit": "编辑"
+  "general.edit": "编辑",
+  "general.blockchainExplorer": "区块链浏览器",
+  "general.dbcenter": "数据库中心",
+  "general.forksExchange": "区块链交换",
+  "general.webLink": "网页链接"
 }

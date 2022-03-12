@@ -131,5 +131,9 @@
   "review.noBlockInDays": "ساعت از آخرین بلوک",
   "leftbar.best": "بهترین شیوه ها",
   "general.download": "دانلود",
-  "general.edit": "ویرایش کردن"
+  "general.edit": "ویرایش کردن",
+  "general.blockchainExplorer": "مرورگر Blockchain",
+  "general.dbcenter": "مرکز پایگاه داده",
+  "general.forksExchange": "تبادل Blockchain",
+  "general.webLink": "لینک وب"
 }

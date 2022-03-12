@@ -131,5 +131,9 @@
   "review.noBlockInDays": "ชั่วโมงนับตั้งแต่บล็อกที่แล้ว",
   "leftbar.best": "ปฏิบัติที่ดีที่สุด",
   "general.download": "ดาวน์โหลด",
-  "general.edit": "แก้ไข"
+  "general.edit": "แก้ไข",
+  "general.blockchainExplorer": "BLOCKCHAIN ​​เบราว์เซอร์",
+  "general.dbcenter": "ศูนย์ฐานข้อมูล",
+  "general.forksExchange": "การแลกเปลี่ยน Blockchain",
+  "general.webLink": "เว็บลิงค์"
 }

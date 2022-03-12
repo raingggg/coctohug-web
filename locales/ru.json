@@ -131,5 +131,9 @@
   "review.noBlockInDays": "Часы с момента последнего блока",
   "leftbar.best": "Лучшие практики",
   "general.download": "Скачать",
-  "general.edit": "Редактировать"
+  "general.edit": "Редактировать",
+  "general.blockchainExplorer": "Блокчан браузер",
+  "general.dbcenter": "Центр баз данных",
+  "general.forksExchange": "Блокчан обмену",
+  "general.webLink": "Интернет-ссылка"
 }

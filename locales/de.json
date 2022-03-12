@@ -131,5 +131,9 @@
   "review.noBlockInDays": "Stunden seit letztem Block",
   "leftbar.best": "Empfohlene Vorgehensweise",
   "general.download": "Herunterladen",
-  "general.edit": "Bearbeiten"
+  "general.edit": "Bearbeiten",
+  "general.blockchainExplorer": "Blockchain-Browser",
+  "general.dbcenter": "Datenbankzentrum",
+  "general.forksExchange": "Blockchain-Austausch",
+  "general.webLink": "Web-Link"
 }

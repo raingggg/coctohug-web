@@ -131,5 +131,9 @@
   "review.noBlockInDays": "Horas desde o último bloco",
   "leftbar.best": "Najlepsze praktyki",
   "general.download": "Pobierać",
-  "general.edit": "Edytować"
+  "general.edit": "Edytować",
+  "general.blockchainExplorer": "Blockchain Browser.",
+  "general.dbcenter": "Centrum bazy danych.",
+  "general.forksExchange": "Giełda Blockchain",
+  "general.webLink": "Link do strony internetowej"
 }

@@ -19,7 +19,7 @@ const {
 } = require('./jsUtil');
 
 
-const REG_BALANCE = /-Total\sBalance:\s+((?:\d*\.?\d+e-\d*)|(?:\d*\.\d+)|(?:\d+\.?))/g;
+const REG_BALANCE = /-Total\sBalance:\s+((?:\d*\.?\d+e-\d*)|(?:\d*\.\d+)|(?:\d+\.?))\s+(\w+)/g;
 const REG_POOL_WALLET = /Wallet ID (\d+) type POOLING_WALLET.*\n.*Total Balance: ((?:\d*\.?\d+e-\d*)|(?:\d*\.\d+)|(?:\d+\.?)) xch/gm;
 const REG_WALLET_ADDR = /First wallet address: (\w*)/;
 const REG_WALLET_HEIGHT = /Wallet height:\s+(\d+)/;
@@ -369,6 +369,15 @@ const getKeyStyle = (dt) => {
 //   const balance = await getCoinBalance('apple', 'apple18ds3fw56wtttg7xm2d9s4wul720xr8ex50us54t3kz74ylc7avzspa6mey');
 // console.log(balance);
 // console.log(getETWHours('2 weeks and 5 days'));
+//   console.log(getTotalBalance(`
+// Wallet height: 583353
+// Sync status: Synced
+// Balances, fingerprint: 512045812
+// Wallet ID 1 type STANDARD_WALLET Chia Wallet
+// -Total Balance: 12.25 sit (12250000000000 mojo)
+// -Pending Total Balance: 12.25 sit (12250000000000 mojo)
+// -Spendable: 12.25 sit (12250000000000 mojo)
+// `));
 // };
 // tt();
 

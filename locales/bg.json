@@ -131,5 +131,9 @@
   "review.noBlockInDays": "Часове от последния блок",
   "leftbar.best": "Най-добри практики",
   "general.download": "Изтегли",
-  "general.edit": "редактиране"
+  "general.edit": "редактиране",
+  "general.blockchainExplorer": "Броузъчен браузър",
+  "general.dbcenter": "Център за база данни",
+  "general.forksExchange": "Блокчайн обмен",
+  "general.webLink": "Уеб линк"
 }
