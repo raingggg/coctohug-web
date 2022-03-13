@@ -42,6 +42,7 @@ const {
 
 const {
   home,
+  farmDetailsWeb,
   blockchainsWeb,
   coldWalletWeb,
   connectionsWeb,
@@ -113,6 +114,7 @@ app.use(sessionAuth);
 app.use('/', home);
 if (isWebController) {
   app.use('/users', usersRouter);
+  app.use('/farmDetailsWeb', farmDetailsWeb);
   app.use('/blockchainsWeb', blockchainsWeb);
   app.use('/coldWalletWeb', coldWalletWeb);
   app.use('/connectionsWeb', connectionsWeb);

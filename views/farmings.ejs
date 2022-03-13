@@ -1,0 +1,34 @@
+<div class="page-wrapper">
+  <nav class="navbar navbar-expand navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav nav-tabs">
+          <% data.forEach(function(dt, index){ %>
+            <li class="nav-item">
+              <a class="nav-link nav-tab <%= index === 0 ? 'active' : '' %> <%= dt.style %>" href="#"
+                data-tabp-index="<%= index %>"><span>
+                  <img src="images/logos/<%= dt.blockchain %>-min.png" alt="<%= dt.blockchain %>" width="20"
+                    height="20">
+                  <%= dt.blockchain %>
+                </span><span>
+                  <%= index + 1 %>
+                </span></a>
+            </li>
+            <% }); %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <% data.forEach(function(dt, index){ %>
+    <div class="tab-panel <%= index === 0 ? '' : 'd-none' %>" data-panel-index="<%= index %>">
+      <div>
+        <%= __('general.updatedAt') %>: <%= dt.updatedAt.toLocaleString("en-US", {hour12: false}) %>
+      </div>
+      <div>
+        <hr>
+        <%- dt.details && dt.details.replace(/\n/g, "</br>" ) %>
+      </div>
+    </div>
+    <% }); %>
+</div>

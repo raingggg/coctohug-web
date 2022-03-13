@@ -1,5 +1,5 @@
 const parseFarm = (cmdStr) => {
-  const result = {};
+  const result = { details: cmdStr };
 
   const lines = cmdStr.split('\n');
   lines.forEach(line => {

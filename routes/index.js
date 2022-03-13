@@ -1,4 +1,5 @@
 const home = require('./home');
+const farmDetailsWeb = require('./farmDetails');
 const blockchainsWeb = require('./blockchains');
 const coldWalletWeb = require('./coldWallet');
 const connectionsWeb = require('./connections');
@@ -19,6 +20,7 @@ const faqWeb = require('./faq');
 
 module.exports = {
   home,
+  farmDetailsWeb,
   blockchainsWeb,
   coldWalletWeb,
   connectionsWeb,

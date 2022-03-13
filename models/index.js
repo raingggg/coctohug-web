@@ -3,6 +3,7 @@ const isWebController = isWebControllerMode();
 const emptyObject = {};
 
 const { Blockchain } = isWebController ? require('./blockchains') : emptyObject;
+const { FarmDetail } = isWebController ? require('./farmDetails') : emptyObject;
 const { Connection } = isWebController ? require('./connections') : emptyObject;
 const { Farm } = isWebController ? require('./farms') : emptyObject;
 const { Hand } = isWebController ? require('./hands') : emptyObject;
@@ -30,6 +31,7 @@ const {
 
 module.exports = {
   Blockchain,
+  FarmDetail,
   Connection,
   Farm,
   Hand,
