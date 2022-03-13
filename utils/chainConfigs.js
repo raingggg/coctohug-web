@@ -63,6 +63,7 @@ const chainNameMap = {
   beet: 'beet',
   bpx: 'bpx',
   gold: 'gold',
+  joker: 'joker',
 };
 
 const chainSymbolMap = {
@@ -129,6 +130,7 @@ const chainSymbolMap = {
   beet: 'XBT',
   bpx: 'BPX',
   gold: 'GL',
+  joker: 'XJK',
 };
 
 const getExp = (blockchain) => {
