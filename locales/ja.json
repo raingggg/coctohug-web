@@ -135,5 +135,6 @@
   "general.blockchainExplorer": "ブロックチェーンブラウザ",
   "general.dbcenter": "データベースセンター",
   "general.forksExchange": "ブロックチェーンエクスチェンジ",
-  "general.webLink": "ウェブリンク"
+  "general.webLink": "ウェブリンク",
+  "leftbar.farming": "農業"
 }

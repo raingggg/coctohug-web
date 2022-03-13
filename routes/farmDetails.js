@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
     });
   })
 
-  res.render('index', { data, pageName: 'blockchains' });
+  res.render('index', { data, pageName: 'farmDetails' });
 });
 
 module.exports = router;

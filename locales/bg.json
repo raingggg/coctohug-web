@@ -135,5 +135,6 @@
   "general.blockchainExplorer": "Броузъчен браузър",
   "general.dbcenter": "Център за база данни",
   "general.forksExchange": "Блокчайн обмен",
-  "general.webLink": "Уеб линк"
+  "general.webLink": "Уеб линк",
+  "leftbar.farming": "Земеделие"
 }

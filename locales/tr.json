@@ -135,5 +135,6 @@
   "general.blockchainExplorer": "Blockchain tarayıcısı",
   "general.dbcenter": "Veritabanı merkezi",
   "general.forksExchange": "Blockchain değişimi",
-  "general.webLink": "Web bağlantısı"
+  "general.webLink": "Web bağlantısı",
+  "leftbar.farming": "Tarım"
 }

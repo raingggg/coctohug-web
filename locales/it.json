@@ -135,5 +135,6 @@
   "general.blockchainExplorer": "Browser BlockChain.",
   "general.dbcenter": "Centro di database",
   "general.forksExchange": "Blockchain Exchange.",
-  "general.webLink": "Collegamento web"
+  "general.webLink": "Collegamento web",
+  "leftbar.farming": "Agricoltura"
 }

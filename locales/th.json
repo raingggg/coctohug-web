@@ -135,5 +135,6 @@
   "general.blockchainExplorer": "BLOCKCHAIN ​​เบราว์เซอร์",
   "general.dbcenter": "ศูนย์ฐานข้อมูล",
   "general.forksExchange": "การแลกเปลี่ยน Blockchain",
-  "general.webLink": "เว็บลิงค์"
+  "general.webLink": "เว็บลิงค์",
+  "leftbar.farming": "การทำฟาร์ม"
 }

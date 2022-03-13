@@ -135,5 +135,6 @@
   "general.blockchainExplorer": "블록 체인 브라우저",
   "general.dbcenter": "데이터베이스 센터",
   "general.forksExchange": "블록 체인 교환",
-  "general.webLink": "웹 링크"
+  "general.webLink": "웹 링크",
+  "leftbar.farming": "농업"
 }

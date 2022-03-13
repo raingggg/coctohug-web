@@ -135,5 +135,6 @@
   "general.blockchainExplorer": "Blockchain Browser.",
   "general.dbcenter": "Centrum bazy danych.",
   "general.forksExchange": "Giełda Blockchain",
-  "general.webLink": "Link do strony internetowej"
+  "general.webLink": "Link do strony internetowej",
+  "leftbar.farming": "Rolnictwo"
 }

@@ -135,5 +135,6 @@
   "general.blockchainExplorer": "Browser blockchain.",
   "general.dbcenter": "Pusat Database",
   "general.forksExchange": "Pertukaran Blockchain.",
-  "general.webLink": "Tautan web"
+  "general.webLink": "Tautan web",
+  "leftbar.farming": "Pertanian"
 }
