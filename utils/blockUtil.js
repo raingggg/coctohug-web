@@ -358,8 +358,8 @@ const getFarmDetailStyle = (dt) => {
   const now = new Date().getTime();
   const lastReview = new Date(dt.updatedAt).getTime();
   if (now - lastReview > TIMEOUT_4HOUR) return 'danger';
-  else if (dt.details.includes('Not Synced')) return 'warning';
-  else if (!dt.details.includes('Farming status: Farming')) return 'danger';
+  else if (dt.details && dt.details.includes('Not Synced')) return 'warning';
+  else if (dt.details && !dt.details.includes('Farming status: Farming')) return 'danger';
 
   return 'success';
 };
