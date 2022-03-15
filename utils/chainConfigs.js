@@ -64,6 +64,7 @@ const chainNameMap = {
   bpx: 'bpx',
   gold: 'gold',
   joker: 'joker',
+  profit: 'profit',
 };
 
 const chainSymbolMap = {
@@ -131,6 +132,7 @@ const chainSymbolMap = {
   bpx: 'BPX',
   gold: 'GL',
   joker: 'XJK',
+  profit: 'PROFIT',
 };
 
 const getExp = (blockchain) => {
