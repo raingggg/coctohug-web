@@ -342,12 +342,16 @@ router.post('/editConfigYaml', async (req, res, next) => {
     });
 
     const url = data && data.url;
-    const finalUrl = `${url}/blockchainsWorker/editConfigFile`;
+    let finalUrl = `${url}/blockchainsWorker/editConfigFile`;
     const apiRes = await axios.post(finalUrl, { newConfig }, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
       logger.error('blockchainsWorker/editConfigFile', finalUrl);
     });
 
     if (apiRes) {
+      finalUrl = `${url}/blockchainsWorker/restart`;
+      await axios.get(finalUrl, { timeout: 5000, headers: { 'tk': getWorkerToken(hostname, blockchain) } }).catch(function (error) {
+        logger.error('blockchainsWorker/restart', finalUrl);
+      });
       return res.json(apiRes.data.data);
     }
   } catch (e) {
