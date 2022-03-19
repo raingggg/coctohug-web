@@ -7,8 +7,7 @@
 - restart fork after editing the config.yaml
 - update profit: target address, monthly usd for app, staking formulation
 - add donation address
-- add onclick background for menu
-- add more useful links on 'Best Practice' menu
+- add more useful links to 'Best Practice' menu
 
 ## [1.6.6] - 2022-03-15
 - new fork support: profit

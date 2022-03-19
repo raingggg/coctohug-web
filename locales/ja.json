@@ -136,5 +136,7 @@
   "general.dbcenter": "データベースセンター",
   "general.forksExchange": "ブロックチェーンエクスチェンジ",
   "general.webLink": "ウェブリンク",
-  "leftbar.farming": "農業"
+  "leftbar.farming": "農業",
+  "best.donation": "寄付はこのアプリの将来の開発を支援します。",
+  "best.forkslist": "Chia Blockchainフォークの非公式リスト"
 }

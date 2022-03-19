@@ -136,5 +136,7 @@
   "general.dbcenter": "数据库中心",
   "general.forksExchange": "区块链交换",
   "general.webLink": "网页链接",
-  "leftbar.farming": "农业"
+  "leftbar.farming": "农业",
+  "best.donation": "捐赠将支持此应用的未来发展。",
+  "best.forkslist": "Chia BlockChain叉子的非官方名单"
 }

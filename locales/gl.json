@@ -136,5 +136,7 @@
   "general.dbcenter": "Centro de base de datos",
   "general.forksExchange": "Blockchain Exchange.",
   "general.webLink": "Web Link.",
-  "leftbar.farming": "Agricultura"
+  "leftbar.farming": "Agricultura",
+  "best.donation": "Unha doazón apoiará o desenvolvemento futuro desta aplicación.",
+  "best.forkslist": "Lista non oficial de Forks Chia Blockchain"
 }

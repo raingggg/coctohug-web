@@ -136,5 +136,7 @@
   "general.dbcenter": "Veritabanı merkezi",
   "general.forksExchange": "Blockchain değişimi",
   "general.webLink": "Web bağlantısı",
-  "leftbar.farming": "Tarım"
+  "leftbar.farming": "Tarım",
+  "best.donation": "Bir bağış bu uygulamanın gelecekteki gelişimini destekleyecektir.",
+  "best.forkslist": "Chia Blockchain Çatalların Resmi Olmayan Listesi"
 }

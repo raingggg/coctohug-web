@@ -136,5 +136,7 @@
   "general.dbcenter": "Център за база данни",
   "general.forksExchange": "Блокчайн обмен",
   "general.webLink": "Уеб линк",
-  "leftbar.farming": "Земеделие"
+  "leftbar.farming": "Земеделие",
+  "best.donation": "Дарението ще подкрепи бъдещото развитие на това приложение.",
+  "best.forkslist": "Неофициален списък на Chia Blockchain Forks"
 }

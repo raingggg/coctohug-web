@@ -136,5 +136,7 @@
   "general.dbcenter": "Database Center.",
   "general.forksExchange": "Blockchain Exchange.",
   "general.webLink": "Web Link.",
-  "leftbar.farming": "Pagsasaka"
+  "leftbar.farming": "Pagsasaka",
+  "best.donation": "Ang isang donasyon ay sumusuporta sa pag-unlad sa hinaharap ng app na ito.",
+  "best.forkslist": "Hindi opisyal na listahan ng Chia Blockchain Forks."
 }

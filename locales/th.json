@@ -136,5 +136,7 @@
   "general.dbcenter": "ศูนย์ฐานข้อมูล",
   "general.forksExchange": "การแลกเปลี่ยน Blockchain",
   "general.webLink": "เว็บลิงค์",
-  "leftbar.farming": "การทำฟาร์ม"
+  "leftbar.farming": "การทำฟาร์ม",
+  "best.donation": "การบริจาคจะสนับสนุนการพัฒนาในอนาคตของแอพนี้",
+  "best.forkslist": "รายการที่ไม่เป็นทางการของส้อม Chia Blockchain"
 }

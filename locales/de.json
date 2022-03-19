@@ -136,5 +136,7 @@
   "general.dbcenter": "Datenbankzentrum",
   "general.forksExchange": "Blockchain-Austausch",
   "general.webLink": "Web-Link",
-  "leftbar.farming": "Landwirtschaft"
+  "leftbar.farming": "Landwirtschaft",
+  "best.donation": "Eine Spende wird die zukünftige Entwicklung dieser App unterstützen.",
+  "best.forkslist": "Inoffizielle Liste von Chia Blockchain Gabeln"
 }

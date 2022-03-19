@@ -26,6 +26,8 @@
   "connections.ports": "Ports",
   "connections.removing": "Removing... Please check again few minutes later",
   "connections.type": "Type",
+  "best.donation": "A donation will support the future development of this app.",
+  "best.forkslist": "Unofficial List of Chia Blockchain Forks",
   "general.actions": "Actions",
   "general.addNew": "Add New Record",
   "general.blockchain": "Blockchain",

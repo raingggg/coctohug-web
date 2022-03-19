@@ -136,5 +136,7 @@
   "general.dbcenter": "Центр баз данных",
   "general.forksExchange": "Блокчан обмену",
   "general.webLink": "Интернет-ссылка",
-  "leftbar.farming": "Сельское хозяйство"
+  "leftbar.farming": "Сельское хозяйство",
+  "best.donation": "Пожертвование будет поддерживать будущее развитие этого приложения.",
+  "best.forkslist": "Неофициальный список вилок Chia Blockchain"
 }

@@ -136,5 +136,7 @@
   "general.dbcenter": "Centrum bazy danych.",
   "general.forksExchange": "Giełda Blockchain",
   "general.webLink": "Link do strony internetowej",
-  "leftbar.farming": "Rolnictwo"
+  "leftbar.farming": "Rolnictwo",
+  "best.donation": "Darowizna będzie wspierać przyszły rozwój tej aplikacji.",
+  "best.forkslist": "Nieoficjalna lista widelców Blockchain Chia"
 }
