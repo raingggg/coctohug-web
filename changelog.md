@@ -4,6 +4,7 @@
 - update chia to latest 1.3.1
 - add icons for joker and profit
 - add filter to all tables
+- restart fork after editing the config.yaml
 - update profit: target address, monthly usd for app, staking formulation
 - add donation address
 - add onclick background for menu

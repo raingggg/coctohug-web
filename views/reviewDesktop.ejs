@@ -16,6 +16,8 @@
       <button class="btn btn-outline-success btn-sm float-end btnViewMode" id="btnToggleFont">
         <%= __('review.toggle_font') %>
       </button>
+      &nbsp;<input class="search blockchain-fuzzy-search" type="search" data-column="1"
+        placeholder='(blockchain; fuzzy search... try "flax")'>
     </div>
 
     <div class="container badge bg-success visually-hidden" id="totalBalanceRow">
@@ -159,7 +161,9 @@
               </b>
             </td>
             <td class="coin_price">
-              <%= dt.coin_price %>
+              <b>
+                <%= dt.coin_price %>
+              </b>
             </td>
             <td class="total_coins">
               <%= dt.total_coins %>

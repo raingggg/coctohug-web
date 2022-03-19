@@ -540,7 +540,7 @@ $(document).ready(function () {
         // 5: { sorter: "expected_time_to_win" },
         // 20: { sorter: "last_block_time" }
       },
-      widgets: ['columnSelector'], // https://mottie.github.io/tablesorter/docs/example-widget-column-selector.html
+      widgets: ['columnSelector', 'filter'], // https://mottie.github.io/tablesorter/docs/example-widget-column-selector.html
       widgetOptions: {
         // hide columnSelector false columns while in auto mode
         columnSelector_mediaqueryHidden: true,
@@ -548,6 +548,10 @@ $(document).ready(function () {
         // set the maximum and/or minimum number of visible columns; use null to disable
         columnSelector_maxVisible: null,
         columnSelector_minVisible: null,
+
+        filter_external: '.search',
+        filter_defaultFilter: { 1: '~{query}' },// add a default type search to the first name column
+        filter_columnFilters: false, // include column filters
       }
     });
   }
@@ -615,7 +619,7 @@ $(document).ready(function () {
       // 5: { sorter: "expected_time_to_win" },
       // 20: { sorter: "last_block_time" }
     },
-    widgets: ['columnSelector'], // https://mottie.github.io/tablesorter/docs/example-widget-column-selector.html
+    widgets: ['columnSelector', 'filter'], // https://mottie.github.io/tablesorter/docs/example-widget-column-selector.html
     widgetOptions: {
       // hide columnSelector false columns while in auto mode
       columnSelector_mediaqueryHidden: true,
@@ -623,6 +627,10 @@ $(document).ready(function () {
       // set the maximum and/or minimum number of visible columns; use null to disable
       columnSelector_maxVisible: null,
       columnSelector_minVisible: null,
+
+      filter_external: '.search',
+      filter_defaultFilter: { 1: '~{query}' },// add a default type search to the first name column
+      filter_columnFilters: false, // include column filters
     }
   });
 
@@ -632,7 +640,9 @@ $(document).ready(function () {
       // 5: { sorter: "expected_time_to_win" },
       // 20: { sorter: "last_block_time" }
     },
-    widgets: ['columnSelector'], // https://mottie.github.io/tablesorter/docs/example-widget-column-selector.html
+    // https://mottie.github.io/tablesorter/docs/example-widget-column-selector.html
+    // https://mottie.github.io/tablesorter/docs/example-widget-filter-any-match.html
+    widgets: ['columnSelector', 'filter'],
     widgetOptions: {
       // hide columnSelector false columns while in auto mode
       columnSelector_mediaqueryHidden: true,
@@ -640,7 +650,11 @@ $(document).ready(function () {
       // set the maximum and/or minimum number of visible columns; use null to disable
       columnSelector_maxVisible: null,
       columnSelector_minVisible: null,
-    }
+
+      filter_external: '.search',
+      filter_defaultFilter: { 1: '~{query}' },// add a default type search to the first name column
+      filter_columnFilters: false, // include column filters
+    },
   });
 
   $('.configYaml button.download').click(function () {

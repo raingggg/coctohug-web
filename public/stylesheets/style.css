@@ -135,6 +135,10 @@ body {
 .transferMoney .formLabel {
   color: #9f5c5c;
 }
+.blockchain-fuzzy-search {
+  width: 330px;
+  zoom: 0.95;
+}
 #desktopReviewPage .desktop-review table.tablesorter.table-hover > tbody > tr:hover.clicked-row > * {
   background-color: #6fb98f;
   --bs-table-accent-bg: #6fb98f;
