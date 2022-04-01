@@ -65,6 +65,7 @@ const chainNameMap = {
   gold: 'gold',
   joker: 'joker',
   profit: 'profit',
+  ecostake: 'ecostake',
 };
 
 const chainSymbolMap = {
@@ -133,6 +134,7 @@ const chainSymbolMap = {
   gold: 'GL',
   joker: 'XJK',
   profit: 'PROFIT',
+  ecostake: 'ECO',
 };
 
 const getExp = (blockchain) => {
