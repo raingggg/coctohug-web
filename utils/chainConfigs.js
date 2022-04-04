@@ -66,6 +66,7 @@ const chainNameMap = {
   joker: 'joker',
   profit: 'profit',
   ecostake: 'ecostake',
+  petroleum: 'petroleum',
 };
 
 const chainSymbolMap = {
@@ -135,6 +136,7 @@ const chainSymbolMap = {
   joker: 'XJK',
   profit: 'PROFIT',
   ecostake: 'ECO',
+  petroleum: 'XPT',
 };
 
 const getExp = (blockchain) => {
