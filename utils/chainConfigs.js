@@ -166,6 +166,7 @@ const getMojoDivider = (blockchain) => {
   if (['shibgreen', 'littlelambocoin'].includes(blockchain)) return 1000;
   else if (['cryptodoge'].includes(blockchain)) return 1000000;
   else if (['ethgreen', 'staicoin', 'melon', 'rose'].includes(blockchain)) return 1000000000;
+  else if (['chives'].includes(blockchain)) return 100000000;
 
   return 1000000000000;
 };
