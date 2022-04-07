@@ -67,6 +67,8 @@ const chainNameMap = {
   profit: 'profit',
   ecostake: 'ecostake',
   petroleum: 'petroleum',
+
+  chinilla: 'chinilla',
 };
 
 const chainSymbolMap = {
@@ -137,6 +139,8 @@ const chainSymbolMap = {
   profit: 'PROFIT',
   ecostake: 'ECO',
   petroleum: 'XPT',
+
+  chinilla: 'HCX',
 };
 
 const getExp = (blockchain) => {

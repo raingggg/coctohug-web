@@ -11,7 +11,7 @@ const parseFarm = (cmdStr) => {
       result.status = line.trim().split(':')[1].trim();
     } else if (/Total.*farmed.*/.test(line)) {
       result.total_coins = line.trim().split(':')[1].trim();
-    } else if (line.includes('Estimated network space')) {
+    } else if (line.includes('Estimated network space') || line.includes('Estimated effective network space')) {
       result.netspace_size = line.trim().split(':')[1].trim();
     } else if (line.includes('Expected time to win')) {
       result.expected_time_to_win = line.trim().split(':')[1].trim();
