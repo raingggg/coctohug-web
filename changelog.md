@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.7.2] - 2022-04-10
+- add chinilla icon
+- ccm custom script for chinilla
+- chinilla harvester fix
+
 ## [1.7.1] - 2022-04-07
 - new fork support: chinilla
 - Estimated effective network space for petroleum
