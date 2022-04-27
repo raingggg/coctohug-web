@@ -11,6 +11,7 @@ const {
   News,
   Wallet,
   AllInOne,
+  FarmDetail,
 } = require('../models');
 
 router.get('/', async (req, res, next) => {
@@ -38,6 +39,7 @@ router.post('/remove', async (req, res, next) => {
         await News.destroy({ where: { blockchain, hostname } });
         await Wallet.destroy({ where: { blockchain, hostname } });
         await AllInOne.destroy({ where: { blockchain, hostname } });
+        await FarmDetail.destroy({ where: { blockchain, hostname } });
       } catch (ex) {
         logger.error('remove-one-hand', ex);
       }

@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.7.3] - 2022-04-27
+- update chia to latest 1.3.4
+- update chinilla to latest 1.0.3
+- update staicoin to latest 1.2.2
+- add MaxPost link to best practice menu: https://discord.gg/Df8s3KAg5n
+- remove xch donation address from best practice menu
+- Farming menu hands removing fix
+- chinilla path mapping fix
+- investigate on latest posat v2 api: https://mrkt.posat.io/api/prices/v2
+
 ## [1.7.2] - 2022-04-10
 - add chinilla icon
 - ccm custom script for chinilla
