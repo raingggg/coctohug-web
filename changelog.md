@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.7.4] - 2022-05-15
+- connection height not showing fix for some forks
+- auto restart when memory exceeds limit
+- restart all feature on restart page
+- new warnings and received coins message clearing fix
+- netspace size fix for petroleum
+- chinilla vkey fix
+- noticeable mark on clicked menu
+- chia claim nft REGEX update for the pooling part
+
 ## [1.7.3] - 2022-04-27
 - update chia to latest 1.3.4
 - update chinilla to latest 1.0.3
