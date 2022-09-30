@@ -69,6 +69,7 @@ const chainNameMap = {
   petroleum: 'petroleum',
 
   chinilla: 'chinilla',
+  moon: 'moon',
 };
 
 const chainSymbolMap = {
@@ -141,6 +142,7 @@ const chainSymbolMap = {
   petroleum: 'XPT',
 
   chinilla: 'HCX',
+  moon: 'MOC',
 };
 
 const getExp = (blockchain) => {

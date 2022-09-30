@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.7.5] - 2022-09-30
+- moon fork support
+
 ## [1.7.4] - 2022-05-15
 - connection height not showing fix for some forks
 - auto restart when memory exceeds limit
